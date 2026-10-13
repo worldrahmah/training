@@ -14,6 +14,8 @@ def main():
     forbidden={'data','storage','backups','exports','node_modules','.git','.test-evidence'}
     for rel in paths:
         p=pathlib.PurePosixPath(rel)
+        # GitHub distribution artifacts are companions, not nested application files.
+        if p.parts[0]=='releases':continue
         if p.is_absolute() or '..' in p.parts or p.parts[0] in forbidden:raise SystemExit('Unsafe/unexpected tracked distribution path: '+rel)
         source=root/rel
         if source.is_symlink():raise SystemExit('Symlink distribution path: '+rel)

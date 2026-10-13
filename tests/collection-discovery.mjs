@@ -8,7 +8,8 @@ for(const scope of ['admin-live','admin-courses','admin-classes','admin-staff','
 for(const scope of ['trainer-courses','trainer-classes','trainer-participants','trainer-team','report-classes','report-students','report-history','trainer-backups'])must(trainer.includes(scope),`Missing Trainer discovery scope ${scope}`);
 must(builder.includes('builderTreeSearch')&&builder.includes('applyBuilderTreeSearch'),'Builder course tree must be searchable');
 must(builder.includes('builder-templates')&&builder.includes('builder-revisions'),'Builder reusable templates and revision history must be searchable');
-must(trainer.includes("data-action=\"global-search\"")&&trainer.includes('async function globalSearch'),'Trainer must expose global search as well as local collection discovery');
+const shared=read('app/public/core.js');
+must(trainer.includes("data-action=\"global-search\"")&&trainer.includes('workspaceSearch')&&shared.includes('/api/search?q='),'Trainer must expose working shared global search as well as local collection discovery');
 must(discovery.includes('data-discovery-search')&&discovery.includes('data-discovery-filter')&&discovery.includes('data-discovery-sort'),'Shared discovery must support search/filter/sort');
 must(discovery.includes('No results match your search.'),'Discovery needs explicit no-results state');
 must(css.includes('.collection-discovery')&&css.includes('@media(max-width:720px)'),'Discovery controls must be styled and responsive');

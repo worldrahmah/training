@@ -5,3 +5,6 @@ exports/
 node_modules/
 .test-evidence/
 *.log
+
+__pycache__/
+*.pyc

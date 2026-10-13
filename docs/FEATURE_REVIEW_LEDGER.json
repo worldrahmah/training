@@ -1,0 +1,102 @@
+{
+  "release": "RC1R7",
+  "rule": "Status distinguishes code inspection, functional evidence and unresolved scope; no complete-ingestion claim.",
+  "entries": [
+    {
+      "area": "Shared UI/menus/themes/paragraph direction",
+      "inspection": "PARTIALLY INSPECTED",
+      "sources": "app/public/core.js, workspace.css, i18n.js",
+      "scope": "New shared functions/CSS and relevant theme/direction behavior fully reviewed; legacy translation/style dictionary is not a new exhaustive review."
+    },
+    {
+      "area": "Admin/Trainer surfaces",
+      "inspection": "PARTIALLY INSPECTED",
+      "sources": "app/public/admin.js, trainer.js",
+      "scope": "All navigation views exercised; changed workflow handlers inspected; every legacy dialog not certified"
+    },
+    {
+      "area": "Builder",
+      "inspection": "PARTIALLY INSPECTED",
+      "sources": "app/public/builder.js",
+      "scope": "Changed shell/tree/actions fully inspected; inherited all-type settings/draft/workflow gates retained"
+    },
+    {
+      "area": "Participant/live/projector",
+      "inspection": "PARTIALLY INSPECTED",
+      "sources": "app/public/student.js, live.js, projector.js, renderer.js",
+      "scope": "Changed navigation/queue/draft and relevant renderer paths; representative real role interactions"
+    },
+    {
+      "area": "Actual Preview",
+      "inspection": "FULLY INSPECTED",
+      "sources": "app/public/preview.js",
+      "scope": "New module; browser shared-session/version/role/theme checks"
+    },
+    {
+      "area": "Staff/course/tool/class/permission API changes",
+      "inspection": "FULLY INSPECTED",
+      "sources": "Changed handlers in app/server.mjs",
+      "scope": "Negative/positive tests inspect data semantics; unchanged routes separately indexed"
+    },
+    {
+      "area": "Backup/recovery",
+      "inspection": "FULLY INSPECTED",
+      "sources": "app/lib/restore.mjs and restore route",
+      "scope": "New journal/swap/recovery functions; interruption scenarios and inherited real API tests"
+    },
+    {
+      "area": "Remaining API handlers",
+      "inspection": "INDEXED/LISTED ONLY",
+      "sources": "docs/API_ROUTE_INDEX.json",
+      "scope": "Prior inspection/test coverage remains evidence; no new exhaustive audit claim"
+    },
+    {
+      "area": "Database/storage/migration architecture",
+      "inspection": "PARTIALLY INSPECTED",
+      "sources": "app/lib/db.mjs, DATABASE_ARCHITECTURE_REVIEW_BASELINE.md",
+      "scope": "Baseline ER/schema review; no schema migration; populated legacy/backup/restart tests"
+    },
+    {
+      "area": "Registry/current schemas/contracts",
+      "inspection": "FULLY INSPECTED",
+      "sources": "registry/activity-component-registry.json, synchronized schemas/contracts",
+      "scope": "Canonical IDs and schema enums preserved; display labels synchronized"
+    },
+    {
+      "area": "Historical authoring/continuation archives",
+      "inspection": "HISTORICAL ONLY",
+      "sources": "packaged-handoffs and docs/codex-handoff",
+      "scope": "Retained history; cannot override the current registry/runtime"
+    },
+    {
+      "area": "New verification/packaging tests",
+      "inspection": "FULLY INSPECTED",
+      "sources": "tests/operational-authorization.mjs, restore-recovery.mjs, browser-workspace.py, tools/seal-release.py",
+      "scope": "Working-tree/exact-ZIP gates; no browser pass or seal claim until completed"
+    },
+    {
+      "area": "Windows/room hardware/screen readers/large sustained load",
+      "inspection": "NOT YET INSPECTED",
+      "sources": "Owner deployment",
+      "scope": "Explicit external acceptance and capacity gaps"
+    },
+    {
+      "area": "External live sites directly",
+      "inspection": "INACCESSIBLE/MISSING",
+      "sources": "Network-rejected W3C/OWASP direct URLs",
+      "scope": "Official source repositories retrieved instead"
+    },
+    {
+      "area": "School/tenancy/SSO architecture decisions",
+      "inspection": "NOT YET INSPECTED",
+      "sources": "Owner decision gate",
+      "scope": "No unsupported domain schema or deployment assumptions implemented"
+    },
+    {
+      "area": "Local lifecycle/Stop tool",
+      "inspection": "FULLY INSPECTED",
+      "sources": "tools/stop-server.mjs, local shutdown handler and STOP_TRAINING_ENGINE.bat",
+      "scope": "Node/server/foreign-listener behavior tested; Windows wrapper requires hardware acceptance."
+    }
+  ]
+}

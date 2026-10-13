@@ -1,8 +1,8 @@
 {
   "format": "training-engine-one-release",
-  "release_name": "TRAINING_ENGINE_ONE_PROFESSIONAL_REPAIR_v3.5.0_RC1R6",
+  "release_name": "TRAINING_ENGINE_ONE_PROFESSIONAL_EXPERIENCE_v3.5.0_RC1R7",
   "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
-  "app_version": "3.5.0-rc.1.6",
+  "app_version": "3.5.0-rc.1.7",
   "core_schema_version": "3.1",
   "course_authoring_schema_version": "2.0",
   "baseline_core_v2_1_1_sha256": "82a8f0dd04f658429eec7d153319da5953e2bf0f308a43c2293f5947b7c755f5",
@@ -75,5 +75,16 @@
   "repair_browser_evidence": "docs/verification/BROWSER_RESULT.json",
   "release_distribution": "APPLICATION_SOURCE_WITH_SAMPLE_ASSETS_NO_BUNDLED_DATABASE_OR_SESSIONS",
   "repair_automated_status": "PASS_WORKING_TREE_FULL_SUITE_AND_BROWSER",
-  "source_baseline_commit": "04851e7"
+  "source_baseline_commit": "04851e7",
+  "experience_baseline_sha256": "e47bf484a51a56ceb40299ec626547e994077e2469777943cf3d9100a3b3abc2",
+  "experience_checkpoint": "docs/RC1R7_EXPERIENCE_AND_ACCEPTANCE.md",
+  "experience_scope": "Shared navigation/menus, appearance/RTL, role administration, course/tool ownership, truthful workflows, actual Preview, reconnect/input preservation and recoverable restore",
+  "experience_automated_status": "PASS_WORKING_TREE_FULL_SUITE_AND_BROWSER",
+  "experience_manual_status": "PENDING_OWNER_VISUAL_ACCEPTANCE",
+  "experience_known_limitations": "docs/KNOWN_LIMITATIONS_RC1R7.md",
+  "experience_feature_review": "docs/RC1R7_FEATURE_AND_TOOL_REVIEW.md",
+  "experience_migration_impact": "docs/RC1R7_DATA_AND_RECOVERY_IMPACT.md",
+  "experience_test_output": "docs/verification/WORKING_TREE_TEST_OUTPUT.txt",
+  "experience_browser_evidence": "docs/verification/workspace/WORKSPACE_RESULT.json",
+  "experience_product_guide": "docs/RC1R7_PRODUCT_GUIDE.md"
 }

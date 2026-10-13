@@ -1,0 +1,55 @@
+{
+  "status": "Official source snapshots retrieved; relevant passages reviewed; no endorsement implied.",
+  "sources": [
+    {
+      "name": "w3c-bidi-source",
+      "url": "https://raw.githubusercontent.com/w3c/i18n-drafts/gh-pages/questions/qa-html-dir.en.html",
+      "status": 200,
+      "bytes": 41702,
+      "accessed": "2026-10-13",
+      "inspection": "RELEVANT_GUIDANCE_INSPECTED",
+      "snapshot_sha256": "bfb480c0964510bf03e1b631752257c7401d67b854168bc0e0ec07b4bf718483",
+      "snapshot": "docs/verification/research/w3c-bidi-source.source.txt"
+    },
+    {
+      "name": "w3c-disclosure-source",
+      "url": "https://raw.githubusercontent.com/w3c/aria-practices/main/content/patterns/disclosure/disclosure-pattern.html",
+      "status": 200,
+      "bytes": 3523,
+      "accessed": "2026-10-13",
+      "inspection": "RELEVANT_GUIDANCE_INSPECTED",
+      "snapshot_sha256": "4bf2a34ce6ebae8ea48be053eed3c34a1cac1f56667901e1aeaae90881f7016d",
+      "snapshot": "docs/verification/research/w3c-disclosure-source.source.txt"
+    },
+    {
+      "name": "wcag-contrast-source",
+      "url": "https://raw.githubusercontent.com/w3c/wcag/main/understanding/20/contrast-minimum.html",
+      "status": 200,
+      "bytes": 21196,
+      "accessed": "2026-10-13",
+      "inspection": "RELEVANT_GUIDANCE_INSPECTED",
+      "snapshot_sha256": "746d73a6ae38bedeabd826f62f13178cda425dfd2830ff9c70f038ca6be0084b",
+      "snapshot": "docs/verification/research/wcag-contrast-source.source.txt"
+    },
+    {
+      "name": "owasp-bola-source",
+      "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa1-broken-object-level-authorization.md",
+      "status": 200,
+      "bytes": 5340,
+      "accessed": "2026-10-13",
+      "inspection": "RELEVANT_GUIDANCE_INSPECTED",
+      "snapshot_sha256": "f5a827897509a005095c306d05e56b8dc713717a78cb5360a2ba4b3c29bf4b2b",
+      "snapshot": "docs/verification/research/owasp-bola-source.source.txt"
+    },
+    {
+      "name": "owasp-bfla-source",
+      "url": "https://raw.githubusercontent.com/OWASP/API-Security/master/editions/2023/en/0xa5-broken-function-level-authorization.md",
+      "status": 200,
+      "bytes": 4858,
+      "accessed": "2026-10-13",
+      "inspection": "RELEVANT_GUIDANCE_INSPECTED",
+      "snapshot_sha256": "bdaf0f1f0ec6e527c0c30aaca50a7328ed5b3c386bf6ab86e878116f4a3dd808",
+      "snapshot": "docs/verification/research/owasp-bfla-source.source.txt"
+    }
+  ]
+}

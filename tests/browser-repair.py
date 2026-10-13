@@ -38,7 +38,7 @@ try:
   def context(token,locale,theme='light'):
    c=browser.new_context(viewport={'width':1440,'height':900},reduced_motion='reduce')
    c.route('https://**/*',lambda route:route.abort())
-   c.add_init_script('const x='+json.dumps({'token':token or '', 'locale':locale,'theme':theme})+';sessionStorage.setItem("training_engine_session",x.token);sessionStorage.setItem("training_engine_session_rotated_at",String(Date.now()));localStorage.setItem("training_engine_locale",x.locale);localStorage.setItem("training_engine_theme",x.theme);')
+   c.add_init_script('const x='+json.dumps({'token':token or '', 'locale':locale,'theme':theme,'origin':BASE})+';if(location.origin===x.origin){sessionStorage.setItem("training_engine_session",x.token);sessionStorage.setItem("training_engine_session_rotated_at",String(Date.now()));localStorage.setItem("training_engine_locale",x.locale);localStorage.setItem("training_engine_theme",x.theme);}')
    return c
   for locale in ['en','ar']:
    for name,url,token in [('admin','/admin',at),('trainer','/trainer',tt),('builder',f'/builder?course_id={imp["course_id"]}',at),('live',f'/live?class_id={cid}',tt),('student',f'/student?class_id={cid}',st),('projector',f'/present?class_id={cid}&pair={pair}',None)]:

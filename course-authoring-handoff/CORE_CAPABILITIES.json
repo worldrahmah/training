@@ -1,7 +1,7 @@
 {
   "format": "training-engine-core-capabilities",
   "app_name": "Training Engine ONE",
-  "app_version": "3.5.0-rc.1.6",
+  "app_version": "3.5.0-rc.1.7",
   "core_schema_version": "3.1",
   "latest_authoring_schema": "2.0",
   "registry_format": "training-engine-one-capability-registry",

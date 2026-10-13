@@ -17,6 +17,7 @@ const noop=()=>{};
 const storage=()=>{const m=new Map();return {getItem:k=>m.get(k)||'',setItem:(k,v)=>m.set(k,String(v)),removeItem:k=>m.delete(k)}};
 const controls=new Map(),appEl={innerHTML:'',onclickCaptureBound:true,addEventListener:noop};
 const ctx={
+  actionMenu:()=>'',appearanceActions:()=>'',uiIcon:()=>'',
   console,structuredClone,setTimeout,clearTimeout,URLSearchParams,FormData,Blob,Date,Math,JSON,Number,String,Boolean,Array,Object,Map,Set,Promise,Error,
   window:{addEventListener:noop},location:{search:'',href:''},sessionStorage:storage(),localStorage:storage(),confirm:()=>true,fetch:async()=>({json:async()=>({}),ok:true}),
   document:{querySelector:(sel)=>sel==='#app'?appEl:(controls.get(sel)||null),querySelectorAll:()=>[],body:{contains:()=>true},createElement:()=>({})},

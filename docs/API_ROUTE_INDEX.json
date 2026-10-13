@@ -1,0 +1,766 @@
+{
+  "source": "app/server.mjs",
+  "status": "Route condition inventory; not a claim of full semantic review.",
+  "routes": [
+    {
+      "line": 250,
+      "condition": "if(aggregation==='image_interaction')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 251,
+      "condition": "if(aggregation==='drawing_gallery')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 597,
+      "condition": "if(p==='/api/system/local-shutdown'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 603,
+      "condition": "if(p==='/api/health') return json(res,200,",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 604,
+      "condition": "if(p==='/api/capabilities'&&req.method==='GET') return json(res,200,",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 605,
+      "condition": "if(p==='/api/public-settings'&&req.method==='GET') return json(res,200,",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 606,
+      "condition": "if(p==='/api/guest/join'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 609,
+      "condition": "if(p==='/api/login'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 622,
+      "condition": "if(p==='/api/logout'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 623,
+      "condition": "if(p==='/api/me')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 624,
+      "condition": "if(p==='/api/heartbeat'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 625,
+      "condition": "if(p==='/api/account/password'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 630,
+      "condition": "if(p==='/api/account/sessions')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 635,
+      "condition": "if(p==='/api/events')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 640,
+      "condition": "if(p==='/api/network')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 643,
+      "condition": "if(p==='/api/settings')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 648,
+      "condition": "if(p==='/api/dashboard/trainer')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 658,
+      "condition": "if(p==='/api/courses/editable'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 661,
+      "condition": "if(p==='/api/courses')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 683,
+      "condition": "if(/^\\/api\\/courses\\/\\d+$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 689,
+      "condition": "if(p==='/api/courses/validate'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 692,
+      "condition": "if(p==='/api/courses/import'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 709,
+      "condition": "if(/^\\/api\\/course-versions\\/\\d+\\/content$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 712,
+      "condition": "if(p==='/api/classes/import'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 732,
+      "condition": "if(p==='/api/classes')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 760,
+      "condition": "if(/^\\/api\\/classes\\/\\d+$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 767,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/sessions$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 772,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/sessions\\/\\d+$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 777,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/enroll\\/\\d+$/.test(p)&&req.method==='DELETE')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 780,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/teams$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 784,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/teams\\/\\d+$/.test(p)&&req.method==='DELETE')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 787,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/teams\\/auto$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 794,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/activate$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 797,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/attendance$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 806,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/notes$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 809,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/student\\/\\d+$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 812,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/roster$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 822,
+      "condition": "if(p==='/api/staff')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 843,
+      "condition": "if(/^\\/api\\/staff\\/\\d+$/.test(p)&&req.method==='PATCH')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 857,
+      "condition": "if(/^\\/api\\/staff\\/\\d+\\/reset-password$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 860,
+      "condition": "if(/^\\/api\\/students\\/\\d+\\/account$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 866,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/trainers$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 871,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/lifecycle$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 874,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/enroll$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 877,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/roster\\/preview$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 880,
+      "condition": "if(p==='/api/readiness'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 883,
+      "condition": "if(p==='/api/admin/bulk'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 887,
+      "condition": "if(p==='/api/search'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 890,
+      "condition": "if(p==='/api/saved-views')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 893,
+      "condition": "if(/^\\/api\\/saved-views\\/\\d+$/.test(p)&&req.method==='DELETE')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 894,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/calendar\\.ics$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 897,
+      "condition": "if(p==='/api/reports/center'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 935,
+      "condition": "if(p==='/api/reports/analytics'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 955,
+      "condition": "if(/^\\/api\\/reports\\/student\\/\\d+$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 979,
+      "condition": "if(p==='/api/students')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 995,
+      "condition": "if(/^\\/api\\/students\\/\\d+\\/profile$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 998,
+      "condition": "if(p==='/api/live')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1008,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/projector-disconnect$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1009,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/projector-pair$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1014,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/results-history$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1020,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/projector-result$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1025,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/result-view$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1028,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/delivery$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1031,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/context$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1034,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/break$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1037,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/launch$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1043,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/mission$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1046,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/practice$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1052,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/practice\\/close$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1055,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/(close|reveal|explain|clear)$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1076,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/workflow$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1079,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/workflow\\/generic$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1082,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/workflow\\/skip$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1085,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/connected$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1088,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/word-cloud\\/\\d+\\/moderation$/.test(p)&&req.method==='PATCH')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1093,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/q-and-a\\/\\d+\\/settings$/.test(p)&&req.method==='PATCH')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1096,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/q-and-a\\/\\d+\\/question$/.test(p)&&req.method==='PATCH')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1101,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/q-and-a\\/\\d+\\/vote$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1106,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/ideas-board\\/\\d+\\/settings$/.test(p)&&req.method==='PATCH')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1109,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/ideas-board\\/\\d+\\/idea$/.test(p)&&req.method==='PATCH')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1112,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/ideas-board\\/\\d+\\/vote$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1115,
+      "condition": "if(/^\\/api\\/responses\\/\\d+$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1137,
+      "condition": "if(/^\\/api\\/student\\/paced\\/\\d+\\/navigate$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1140,
+      "condition": "if(p==='/api/student/dashboard')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1143,
+      "condition": "if(p==='/api/student/join'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1146,
+      "condition": "if(/^\\/api\\/missions\\/\\d+\\/progress$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1149,
+      "condition": "if(/^\\/api\\/submissions\\/\\d+$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1154,
+      "condition": "if(p==='/api/submissions/review'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1157,
+      "condition": "if(/^\\/api\\/submissions\\/\\d+\\/review$/.test(p)&&req.method==='PATCH')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1160,
+      "condition": "if(/^\\/api\\/submissions\\/\\d+\\/file$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1163,
+      "condition": "if(/^\\/api\\/assets\\/\\d+\\/.+/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1166,
+      "condition": "if(p==='/api/reports/export'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1226,
+      "condition": "if(p==='/api/history'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1236,
+      "condition": "if(p==='/api/profile')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1254,
+      "condition": "if(p==='/api/profile/consent-history'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1257,
+      "condition": "if(p==='/api/notifications'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1265,
+      "condition": "if(p==='/api/notifications'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1276,
+      "condition": "if(/^\\/api\\/notifications\\/\\d+\\/read$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1279,
+      "condition": "if(p==='/api/dashboard/admin'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1293,
+      "condition": "if(/^\\/api\\/admin\\/live\\/\\d+$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1301,
+      "condition": "if(/^\\/api\\/staff\\/\\d+\\/permissions$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1308,
+      "condition": "if(p==='/api/students'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1313,
+      "condition": "if(/^\\/api\\/students\\/\\d+$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1319,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/progress$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1327,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/help$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1330,
+      "condition": "if(/^\\/api\\/help\\/\\d+$/.test(p)&&req.method==='PATCH')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1333,
+      "condition": "if(/^\\/api\\/student\\/runtime\\/\\d+$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1338,
+      "condition": "if(/^\\/api\\/student\\/runtime\\/\\d+\\/help$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1341,
+      "condition": "if(p==='/api/authoring/templates')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1354,
+      "condition": "if(/^\\/api\\/authoring\\/templates\\/\\d+$/.test(p)&&req.method==='DELETE')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1357,
+      "condition": "if(/^\\/api\\/courses\\/\\d+\\/drafts$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1360,
+      "condition": "if(/^\\/api\\/course-versions\\/\\d+\\/draft$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1365,
+      "condition": "if(/^\\/api\\/course-versions\\/\\d+\\/revisions$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1368,
+      "condition": "if(/^\\/api\\/course-versions\\/\\d+\\/revisions\\/\\d+\\/restore$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1371,
+      "condition": "if(/^\\/api\\/course-versions\\/\\d+\\/compare$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1374,
+      "condition": "if(/^\\/api\\/course-versions\\/\\d+\\/presentation-import$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1379,
+      "condition": "if(/^\\/api\\/course-versions\\/\\d+\\/assets$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1382,
+      "condition": "if(/^\\/api\\/course-versions\\/\\d+\\/assets\\/\\d+$/.test(p)&&req.method==='DELETE')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1385,
+      "condition": "if(/^\\/api\\/course-versions\\/\\d+\\/simulate$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1388,
+      "condition": "if(/^\\/api\\/course-versions\\/\\d+\\/publish$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1391,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/navigate$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1394,
+      "condition": "if(p==='/api/account/session/rotate'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1397,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/replay$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1400,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/analytics$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1403,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/health$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1406,
+      "condition": "if(p==='/api/reports/version-impact'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1414,
+      "condition": "if(p==='/api/student/learning-tools'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1417,
+      "condition": "if(p==='/api/student/transcript'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1420,
+      "condition": "if(p==='/api/student/transcript.csv'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1423,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/certificates$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1425,
+      "condition": "if(p==='/api/certificates/verify'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1428,
+      "condition": "if(/^\\/api\\/courses\\/\\d+\\/prerequisites$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1430,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/waitlist$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1432,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/waitlist\\/\\d+\\/enroll$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1435,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/surveys$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1437,
+      "condition": "if(/^\\/api\\/surveys\\/\\d+\\/respond$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1440,
+      "condition": "if(/^\\/api\\/surveys\\/\\d+\\/results$/.test(p)&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1443,
+      "condition": "if(/^\\/api\\/courses\\/\\d+\\/question-banks$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1445,
+      "condition": "if(/^\\/api\\/question-banks\\/\\d+\\/items$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1447,
+      "condition": "if(/^\\/api\\/classes\\/\\d+\\/quizzes$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1449,
+      "condition": "if(/^\\/api\\/quizzes\\/\\d+\\/attempt$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1451,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/presentation-tools$/.test(p))",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1459,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/projector-theme$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1462,
+      "condition": "if(/^\\/api\\/live\\/\\d+\\/projector-mode$/.test(p)&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1466,
+      "condition": "if(p==='/api/system/demo/remove'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1469,
+      "condition": "if(p==='/api/system/demo/reset'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1472,
+      "condition": "if(p==='/api/system/backups'&&req.method==='GET')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1475,
+      "condition": "if(p==='/api/system/backups/create'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1478,
+      "condition": "if(p==='/api/system/backups/verify'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1481,
+      "condition": "if(p==='/api/system/backups/export-encrypted'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1484,
+      "condition": "if(p==='/api/system/backups/import-encrypted'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    },
+    {
+      "line": 1487,
+      "condition": "if(p==='/api/system/backups/restore'&&req.method==='POST')",
+      "inspection": "INDEXED/LISTED ONLY"
+    }
+  ]
+}

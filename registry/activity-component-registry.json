@@ -23,7 +23,8 @@
       "aggregation": "none",
       "scoring": "none",
       "results": [],
-      "participant_input": false
+      "participant_input": false,
+      "label": "Presentation"
     },
     {
       "id": "announcement",
@@ -31,7 +32,8 @@
       "aggregation": "none",
       "scoring": "none",
       "results": [],
-      "participant_input": false
+      "participant_input": false,
+      "label": "Announcement"
     },
     {
       "id": "poll",
@@ -47,7 +49,8 @@
         "ranking",
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Poll"
     },
     {
       "id": "single_choice",
@@ -63,7 +66,8 @@
         "ranking",
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Single choice"
     },
     {
       "id": "multiple_choice",
@@ -79,7 +83,8 @@
         "ranking",
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Multiple choice"
     },
     {
       "id": "true_false",
@@ -93,7 +98,8 @@
         "pie",
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "True / false"
     },
     {
       "id": "word_cloud",
@@ -116,7 +122,8 @@
         "privacy": true,
         "hide_reveal": true,
         "local_normalization": true
-      }
+      },
+      "label": "Word cloud"
     },
     {
       "id": "q_and_a",
@@ -144,7 +151,8 @@
         "answered_state": true,
         "hide_reveal": true,
         "result_recall": true
-      }
+      },
+      "label": "Questions & answers"
     },
     {
       "id": "ideas_board",
@@ -176,7 +184,8 @@
         "categories": true,
         "hide_reveal": true,
         "result_recall": true
-      }
+      },
+      "label": "Ideas board"
     },
     {
       "id": "prioritization_100",
@@ -197,7 +206,8 @@
         "hide_reveal": true,
         "result_recall": true,
         "analytics": true
-      }
+      },
+      "label": "100-point prioritization"
     },
     {
       "id": "quick_interaction",
@@ -218,7 +228,8 @@
         "rapid_response": true,
         "hide_reveal": true,
         "result_recall": true
-      }
+      },
+      "label": "Quick interaction"
     },
     {
       "id": "matching",
@@ -233,7 +244,8 @@
         "shuffle": true,
         "explanation": true,
         "analytics": true
-      }
+      },
+      "label": "Matching"
     },
     {
       "id": "fill_blanks",
@@ -248,7 +260,8 @@
         "multiple_accepted_answers": true,
         "explanation": true,
         "analytics": true
-      }
+      },
+      "label": "Fill in the blanks"
     },
     {
       "id": "sorting",
@@ -263,7 +276,8 @@
         "shuffle": true,
         "explanation": true,
         "analytics": true
-      }
+      },
+      "label": "Sorting"
     },
     {
       "id": "image_interaction",
@@ -283,7 +297,8 @@
         "label": true,
         "drag": true,
         "analytics": true
-      }
+      },
+      "label": "Image interaction"
     },
     {
       "id": "draw_annotate",
@@ -298,7 +313,8 @@
         "drawing": true,
         "annotation": true,
         "background_asset": true
-      }
+      },
+      "label": "Draw & annotate"
     },
     {
       "id": "collaborative_board",
@@ -321,7 +337,8 @@
         "categories": true,
         "privacy": true,
         "result_recall": true
-      }
+      },
+      "label": "Collaborative board"
     },
     {
       "id": "interactive_video",
@@ -340,7 +357,8 @@
         "local_video": true,
         "timed_checkpoints": true,
         "analytics": true
-      }
+      },
+      "label": "Interactive video"
     },
     {
       "id": "short_answer",
@@ -350,7 +368,8 @@
       "results": [
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Short answer"
     },
     {
       "id": "long_answer",
@@ -360,7 +379,8 @@
       "results": [
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Long answer"
     },
     {
       "id": "numeric_answer",
@@ -372,7 +392,8 @@
         "line",
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Numeric answer"
     },
     {
       "id": "rating",
@@ -385,7 +406,8 @@
         "progress",
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Rating"
     },
     {
       "id": "reaction",
@@ -399,7 +421,8 @@
         "pie",
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Reaction"
     },
     {
       "id": "confidence",
@@ -412,7 +435,8 @@
         "progress",
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Confidence"
     },
     {
       "id": "ranking",
@@ -423,7 +447,8 @@
         "ranking",
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Ranking"
     },
     {
       "id": "timer",
@@ -431,7 +456,8 @@
       "aggregation": "none",
       "scoring": "none",
       "results": [],
-      "participant_input": false
+      "participant_input": false,
+      "label": "Timer"
     },
     {
       "id": "reveal",
@@ -439,7 +465,8 @@
       "aggregation": "none",
       "scoring": "none",
       "results": [],
-      "participant_input": false
+      "participant_input": false,
+      "label": "Reveal"
     },
     {
       "id": "team_challenge",
@@ -449,7 +476,8 @@
       "results": [
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Team challenge"
     },
     {
       "id": "checklist",
@@ -459,7 +487,8 @@
       "results": [
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Checklist"
     },
     {
       "id": "url_submission",
@@ -469,7 +498,8 @@
       "results": [
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Link submission"
     },
     {
       "id": "file_submission",
@@ -479,7 +509,8 @@
       "results": [
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "File submission"
     },
     {
       "id": "image_submission",
@@ -489,7 +520,8 @@
       "results": [
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Image submission"
     },
     {
       "id": "reflection",
@@ -499,7 +531,8 @@
       "results": [
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Reflection"
     },
     {
       "id": "self_assessment",
@@ -509,7 +542,8 @@
       "results": [
         "cards"
       ],
-      "participant_input": true
+      "participant_input": true,
+      "label": "Self assessment"
     },
     {
       "id": "participant_choice",
@@ -517,7 +551,8 @@
       "aggregation": "none",
       "scoring": "none",
       "results": [],
-      "participant_input": false
+      "participant_input": false,
+      "label": "Participant choice"
     },
     {
       "id": "practice_gate",
@@ -525,7 +560,8 @@
       "aggregation": "none",
       "scoring": "none",
       "results": [],
-      "participant_input": false
+      "participant_input": false,
+      "label": "Guided practice"
     }
   ],
   "components": [

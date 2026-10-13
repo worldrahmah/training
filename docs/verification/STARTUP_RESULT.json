@@ -1,6 +1,7 @@
 {
-  "version": "3.5.0-rc.1.6",
-  "npm_start": "PASS",
-  "admin_functional_request": "PASS",
-  "official_font_cache": "PACKAGED_LOCAL"
+  "status": "PASS",
+  "version": "3.5.0-rc.1.7",
+  "workflow": "Existing checkout; external disposable runtime directories; authenticated Admin request; own-instance graceful stop.",
+  "stop_confirmed": true,
+  "exit_code": 0
 }

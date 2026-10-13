@@ -1,5 +1,5 @@
-TRAINING_ENGINE_ONE_PROFESSIONAL_REPAIR_v3.5.0_RC1R6
+TRAINING_ENGINE_ONE_PROFESSIONAL_EXPERIENCE_v3.5.0_RC1R7
 OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL
 
-Required owner gate: docs/RC1R6_REPAIR_AND_ACCEPTANCE.md.
-Review Admin Participants/discovery/export, matching submission/update, report charts and data tables, keyboard dialogs, EN/AR responsive layouts and Projector readability. All inherited activities/workflows remain regression requirements. Automated browser evidence does not replace owner acceptance. No global design ranking or complete platform finalization is claimed.
+Owner gate: docs/RC1R7_EXPERIENCE_AND_ACCEPTANCE.md.
+Review all role workspaces/menus, light/dark/system, EN/AR, Arabic punctuation, staff ownership, actual Preview/search, saved edits, reconnect recovery, reports and Projector on Windows/classroom hardware. Automated tests do not replace owner acceptance or certify enterprise/school completion.
