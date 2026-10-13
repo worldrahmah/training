@@ -1,0 +1,46 @@
+TRAINING ENGINE ONE — PROFESSIONAL REPAIR v3.5.0 RC1R6
+OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL
+
+Archive: TRAINING_ENGINE_ONE_PROFESSIONAL_REPAIR_v3.5.0_RC1R6.zip
+Exact SHA-256: e47bf484a51a56ceb40299ec626547e994077e2469777943cf3d9100a3b3abc2
+Bytes: 16613085
+Source commit: dfa03217d8f917225564f1d03eef8ca17ee685df
+Baseline RC1R5: 0262559de4464712888734e1addfbcd3de2b178822d1a188641e22daf8f24016
+
+ZIP files: 315
+CRC / path safety / duplicates / case collisions: PASS
+Root checksum manifest: 314/314 PASS before execution
+Development-authoring manifest: 34/34 PASS
+
+WORKING TREE
+Complete npm test: PASS, exit 0 (47 commands / 46 test programs)
+Application/browser/tool JavaScript syntax: PASS
+Real-browser repair suite: PASS, exit 0
+npm start + authenticated Admin functional request: PASS
+
+EXACT SEALED BYTES
+Fresh extraction: PASS
+Complete npm test from extracted ZIP: PASS, exit 0
+Real-browser repair suite from extracted ZIP: PASS, exit 0
+12 role/locale visits, desktop/tablet/mobile, offline Montserrat/Cairo,
+Admin Participants/discovery/authenticated export, matching submitted/update,
+chart rows/filter/compatibility/zero states, keyboard dialogs,
+Projector dark/light/high contrast at 16:9.
+Inherited 36 Activity Types / 68 result-view cases: PASS
+Migration, restart, backup/restore and 20-participant rehearsal: PASS
+All application/source bytes unchanged by validation.
+Four certification documents regenerated timestamps only; semantic content
+matches packaged evidence. No unexplained changes. Immutable ZIP hash rechecked.
+
+SCOPE
+Fixed baseline answer/private-note/score disclosure, cohort authorization,
+Admin rendering/export, ZIP integrity, and affected UX/accessibility states.
+No database migration, school-domain expansion or remote push.
+Distribution omits databases/sessions/owner storage/backups/exports.
+Font licenses and pinned official-source provenance are included.
+Known limits: docs/KNOWN_LIMITATIONS_RC1R6.md.
+Owner checklist: docs/RC1R6_REPAIR_AND_ACCEPTANCE.md.
+No world-ranking claim or whole-platform FINAL claim.
+
+OWNER MANUAL ACCEPTANCE: PENDING
+Cloud publication / fresh-task restoration: NOT CLAIMED
