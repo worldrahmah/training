@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://training-engine.local/schema/course.schema.json",
+  "title": "Training Engine Course v2.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "format",
+    "schema_version",
+    "course"
+  ],
+  "properties": {
+    "format": {
+      "const": "training-engine-course"
+    },
+    "schema_version": {
+      "enum": [
+        "1.0",
+        "1.1",
+        "2.0"
+      ]
+    },
+    "course": {
+      "type": "object",
+      "required": [
+        "id",
+        "version",
+        "title",
+        "language",
+        "direction",
+        "modules"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string",
+          "minLength": 2
+        },
+        "direction": {
+          "enum": [
+            "ltr",
+            "rtl"
+          ]
+        },
+        "duration_minutes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "branding": {
+          "type": "object",
+          "properties": {
+            "typography": {
+              "type": "object",
+              "properties": {
+                "ui": {
+                  "type": "object",
+                  "properties": {
+                    "ar": {
+                      "type": "string"
+                    },
+                    "en": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "presentation": {
+                  "type": "object",
+                  "properties": {
+                    "ar": {
+                      "type": "string"
+                    },
+                    "en": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "title": {
+                  "type": "object",
+                  "properties": {
+                    "ar": {
+                      "type": "string"
+                    },
+                    "en": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "body": {
+                  "type": "object",
+                  "properties": {
+                    "ar": {
+                      "type": "string"
+                    },
+                    "en": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "objectives": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "id"
+                ]
+              }
+            ]
+          }
+        },
+        "modules": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": [
+                  "file"
+                ],
+                "properties": {
+                  "file": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "$ref": "module.schema.json"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

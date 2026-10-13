@@ -1,0 +1,28 @@
+{
+  "format": "training-engine-course",
+  "schema_version": "2.0",
+  "course": {
+    "id": "course-id",
+    "version": "1.0",
+    "title": "Course title",
+    "subtitle": "Optional subtitle",
+    "description": "Short course description",
+    "language": "en",
+    "direction": "ltr",
+    "duration_minutes": 540,
+    "branding": {
+      "cover_asset": "assets/cover.webp"
+    },
+    "objectives": [
+      {
+        "id": "objective-1",
+        "title": "Human-facing objective"
+      }
+    ],
+    "modules": [
+      {
+        "file": "modules/module_01.json"
+      }
+    ]
+  }
+}

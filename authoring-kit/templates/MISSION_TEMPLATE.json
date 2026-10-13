@@ -1,0 +1,23 @@
+{
+  "id": "mission-id",
+  "title": "Human-facing mission title",
+  "goal": "What the learner will accomplish.",
+  "estimated_minutes": 15,
+  "objective_ids": ["objective-1"],
+  "steps": [
+    {"title": "Step one", "body_md": "Do this first."},
+    {"title": "Step two", "body_md": "Then do this."}
+  ],
+  "prompts": [
+    {"title": "Starter prompt", "text": "A prompt the learner can copy."}
+  ],
+  "assets": [
+    {"asset": "assets/example.pdf", "label": "Practice handout"}
+  ],
+  "external_tools": [
+    {"label": "Open external tool", "url": "https://example.com"}
+  ],
+  "submission": {"type": "text", "prompt": "What did you produce or learn?"},
+  "score": {"completion": 10},
+  "achievement": {"key": "mission-complete", "title": "Mission complete"}
+}

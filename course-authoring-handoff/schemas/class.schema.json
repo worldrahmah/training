@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://training-engine.local/schema/class.schema.json",
+  "title": "Training Engine Class v2.0",
+  "type": "object",
+  "required": [
+    "format",
+    "schema_version",
+    "class"
+  ],
+  "properties": {
+    "format": {
+      "const": "training-engine-class"
+    },
+    "schema_version": {
+      "enum": [
+        "1.0",
+        "1.1",
+        "2.0"
+      ]
+    },
+    "class": {
+      "type": "object",
+      "required": [
+        "course_slug",
+        "course_version",
+        "title"
+      ],
+      "properties": {
+        "course_slug": {
+          "type": "string"
+        },
+        "course_version": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "scheduled",
+            "active",
+            "completed",
+            "archived"
+          ]
+        },
+        "start_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "end_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "start_time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "end_time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "location": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "capacity": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sessions": {
+          "type": "array"
+        },
+        "timezone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

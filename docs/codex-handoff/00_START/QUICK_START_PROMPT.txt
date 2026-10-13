@@ -1,0 +1,9 @@
+Execute this Training Engine modernization exactly against the supplied baseline repository.
+
+Read AGENTS.md, 00_START/READ_FIRST.md, all required product/compatibility/acceptance documents, then execute 00_START/MASTER_CODEX_PROMPT.md.
+
+Do not rebuild a disconnected prototype and do not overwrite the v2.1.1 baseline. Reproduce baseline tests first, use Git with a baseline commit/tag and upgrade branch/worktree, maintain an ExecPlan for the long-running work, and preserve all existing courses/data/history through deterministic migrations and regression tests.
+
+Target outcome: a professional workshop-ready Training Engine with complete Super Admin/Trainer/Participant/Projector experiences, professional responsive Arabic/English UI, visual course authoring, robust workflow runtime and progress tracker, collapsible Course Flow, live help/progress, rich reports, strict backward compatibility, and final authoring contracts suitable for generating a Course Creator Wizard after the Core is frozen.
+
+Only claim TRAINING_ENGINE_PROFESSIONAL_CORE_READY_FOR_COURSE_AUTHORING after the final acceptance file passes on the exact release bytes.

@@ -1,0 +1,114 @@
+
+> training-engine-one@3.0.0 test
+> node tests/i18n.mjs && node tests/responsive.mjs && node tests/role-surfaces.mjs && node tests/course-flow-ui.mjs && node tests/workflow-validation.mjs && node tests/smoke.mjs && node tests/core-v12.mjs && node tests/restart.mjs && node tests/backup-restore.mjs && node tests/core-v20.mjs && node tests/workflow-progress.mjs && node tests/workflow-restart.mjs && node tests/workflow-legacy.mjs && node tests/one-core.mjs && node tests/migration-v211.mjs
+
+I18N_AR_EN_PASS
+RESPONSIVE_UI_PASS
+ROLE_SURFACES_PASS
+COURSE_FLOW_UI_PASS
+WORKFLOW_VALIDATION_PASS
+PASS server starts
+PASS /trainer loads
+PASS /student loads
+PASS /present loads
+PASS trainer login
+PASS student login
+PASS trainer dashboard
+PASS student dashboard + enrollment
+PASS launch generic poll
+PASS student response persisted
+PASS close and reveal results
+PASS clear live state
+PASS trainer history
+PASS backup create/list
+PASS course package validation
+PASS transactional course import
+PASS course asset import/serve
+PASS class template import
+PASS CSV roster import
+PASS team assignment
+PASS imported participant login
+PASS team-scoped response
+PASS mission completion + achievement
+PASS safe demo removal preserves real data
+PASS CSV export
+
+SMOKE_TEST_PASS
+PASS legacy administrator capabilities preserved by admin-like role
+PASS create trainer from administration API
+PASS staff directory
+PASS assign multiple class trainers
+PASS trainer sees assigned class
+PASS trainer cannot browse unassigned class
+PASS unassigned class access denied
+PASS unassigned class mutation denied
+PASS non-lead trainer cannot alter roster
+PASS non-admin trainer cannot access system backups
+PASS trainer reports are limited to assigned scope
+PASS trainer report export is limited to assigned scope
+PASS trainer history is limited to assigned scope
+PASS class lifecycle
+PASS roster preview rejects staff username
+PASS classroom readiness
+PASS reports center
+PASS individual learning report
+PASS report CSV exports
+PASS universal content schema validation
+PASS unsupported activity fails closed
+
+CORE_V12_PASS
+RESTART_PERSISTENCE_PASS
+BACKUP_RESTORE_PASS
+PASS v2 compatibility on canonical ONE server
+PASS super admin seeded
+PASS super admin operations dashboard
+PASS universal typography settings
+PASS secondary trainer
+PASS schema 2 workflow course import
+PASS granular course edit permission
+PASS immutable version -> draft -> validate -> publish
+PASS class creation with trainer assignment
+PASS class session CRUD create
+PASS class activation
+PASS rich participants enrolled
+PASS participant removal preserves enrollment history
+PASS rich self-service participant profile
+PASS in-app participant messaging
+PASS independent participant path branching
+PASS need help queue lifecycle
+PASS milestone progress and completion
+PASS true projector navigation control key
+PASS projector presentation-scale composition
+PASS rich learning analytics
+PASS super admin non-interactive live monitoring
+
+CORE_V20_PASS
+WORKFLOW_PROGRESS_PASS
+WORKFLOW_RESTART_PASS
+LEGACY_WORKFLOW_TRACKER_PASS
+PASS canonical version + security headers
+PASS machine-readable capability contract
+PASS temporary-password enforcement and recovery
+PASS failed-login throttling
+PASS multiple simultaneous live classes
+PASS short-code self enrollment
+PASS class-scoped expiring projector pairing
+PASS Left Early attendance + note
+PASS append-only consent history
+PASS trainer submission review lifecycle
+PASS participant schedule, calendar + reviewed feedback
+PASS participant optimistic concurrency
+PASS draft revisions + compare + strict simulation + conflict protection
+PASS course asset library
+PASS reusable authoring templates
+PASS global search + saved views
+PASS safe audited bulk administration
+PASS configurable backup + live operations policy
+PASS course-improvement analytics surfaces
+PASS verified backup
+PASS concurrent-device session limit
+
+TRAINING_ENGINE_ONE_CORE_PASS
+(node:17848) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+V211_TO_ONE_POPULATED_MIGRATION_PASS

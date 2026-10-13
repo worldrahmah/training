@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://training-engine.local/schema/module.schema.json",
+  "title": "Training Engine Module v2.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "title"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "duration_minutes": {
+      "type": "number",
+      "minimum": 0
+    },
+    "objective_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "activities": {
+      "type": "array",
+      "items": {
+        "$ref": "activity.schema.json"
+      }
+    },
+    "missions": {
+      "type": "array",
+      "items": {
+        "$ref": "mission.schema.json"
+      }
+    },
+    "paths": {
+      "type": "array",
+      "items": {
+        "$ref": "participant-path.schema.json"
+      }
+    },
+    "workflow": {
+      "$ref": "workflow.schema.json"
+    }
+  }
+}

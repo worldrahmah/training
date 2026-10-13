@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+const read=p=>fs.readFileSync(new URL(`../${p}`,import.meta.url),'utf8');
+const admin=read('app/public/admin.js'),trainer=read('app/public/trainer.js'),builder=read('app/public/builder.js'),discovery=read('app/public/discovery.js'),css=read('app/public/one-ui.css'),student=read('app/public/student.js'),present=read('app/public/present.js');
+const must=(ok,msg)=>{if(!ok)throw new Error(msg)};
+must(admin.includes("from '/discovery.js'"),'Admin must use shared discovery module');
+must(trainer.includes("from '/discovery.js'"),'Trainer must use shared discovery module');
+for(const scope of ['admin-live','admin-courses','admin-classes','admin-staff','admin-participants','admin-report-courses','admin-report-versions','admin-messages'])must(admin.includes(scope),`Missing Admin discovery scope ${scope}`);
+for(const scope of ['trainer-courses','trainer-classes','trainer-participants','trainer-team','report-classes','report-students','report-history','trainer-backups'])must(trainer.includes(scope),`Missing Trainer discovery scope ${scope}`);
+must(builder.includes('builderTreeSearch')&&builder.includes('applyBuilderTreeSearch'),'Builder course tree must be searchable');
+must(builder.includes('builder-templates')&&builder.includes('builder-revisions'),'Builder reusable templates and revision history must be searchable');
+must(trainer.includes("data-action=\"global-search\"")&&trainer.includes('async function globalSearch'),'Trainer must expose global search as well as local collection discovery');
+must(discovery.includes('data-discovery-search')&&discovery.includes('data-discovery-filter')&&discovery.includes('data-discovery-sort'),'Shared discovery must support search/filter/sort');
+must(discovery.includes('No results match your search.'),'Discovery needs explicit no-results state');
+must(css.includes('.collection-discovery')&&css.includes('@media(max-width:720px)'),'Discovery controls must be styled and responsive');
+must(!student.includes("from '/discovery.js'")&&!present.includes("from '/discovery.js'"),'Participant/Projector must not gain management discovery chrome');
+must(css.includes('.tree-module-head>.tree-node-actions'),'Builder module action collision repair missing');
+console.log('COLLECTION_DISCOVERY_PASS');

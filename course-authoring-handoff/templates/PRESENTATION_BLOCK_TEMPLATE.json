@@ -1,0 +1,7 @@
+{
+  "type": "hero",
+  "eyebrow": "Optional context",
+  "title": "A strong human-facing idea",
+  "body_md": "Optional supporting **Markdown**.",
+  "align": "center"
+}

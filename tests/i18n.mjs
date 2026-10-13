@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+const store=new Map();
+globalThis.localStorage={getItem:k=>store.has(k)?store.get(k):null,setItem:(k,v)=>store.set(k,String(v)),removeItem:k=>store.delete(k)};
+globalThis.document={documentElement:{lang:'en',dir:'ltr',dataset:{}}};
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const mod=await import(pathToFileURL(path.join(root,'app/public/i18n.js')).href+'?test=1');
+assert.equal(mod.getLocale(),'en');
+assert.equal(mod.t('Home'),'Home');
+mod.setLocale('ar');
+assert.equal(mod.t('Home'),'الرئيسية');
+assert.equal(globalThis.document.documentElement.dir,'rtl');
+assert.equal(globalThis.document.documentElement.lang,'ar');
+assert.equal(mod.t('Hi, {name}',{name:'حسن'}),'مرحبًا، حسن');
+mod.setLocale('en');
+assert.equal(globalThis.document.documentElement.dir,'ltr');
+const files=['core.js','trainer.js','student.js','admin.js','builder.js','live.js','present.js','preview.html'];
+const used=new Set();
+for(const f of files){const txt=fs.readFileSync(path.join(root,'app/public',f),'utf8');for(const m of txt.matchAll(/\bt\('([^']+)'/g))used.add(m[1]);}
+const missing=[...used].filter(k=>!mod.hasArabicTranslation(k)).sort();
+assert.deepEqual(missing,[],`Missing Arabic UI translations: ${missing.join(', ')}`);
+console.log('I18N_AR_EN_PASS');

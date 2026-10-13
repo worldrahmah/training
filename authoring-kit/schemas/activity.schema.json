@@ -1,0 +1,674 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://training-engine.local/schema/activity.schema.json",
+  "title": "Training Engine Activity v2.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "type",
+    "title"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "enum": [
+        "presentation",
+        "announcement",
+        "poll",
+        "single_choice",
+        "multiple_choice",
+        "true_false",
+        "word_cloud",
+        "q_and_a",
+        "ideas_board",
+        "prioritization_100",
+        "quick_interaction",
+        "matching",
+        "fill_blanks",
+        "sorting",
+        "image_interaction",
+        "draw_annotate",
+        "collaborative_board",
+        "interactive_video",
+        "short_answer",
+        "long_answer",
+        "numeric_answer",
+        "rating",
+        "reaction",
+        "confidence",
+        "ranking",
+        "timer",
+        "reveal",
+        "team_challenge",
+        "checklist",
+        "url_submission",
+        "file_submission",
+        "image_submission",
+        "reflection",
+        "self_assessment",
+        "participant_choice",
+        "practice_gate"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "objective_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "response_scope": {
+      "enum": [
+        "individual",
+        "team"
+      ]
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "body_md": {
+          "type": "string"
+        },
+        "hero_word": {
+          "type": "string"
+        },
+        "options": {
+          "type": "array"
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "hero",
+                  "text",
+                  "image",
+                  "image_text",
+                  "cards",
+                  "steps",
+                  "comparison",
+                  "table",
+                  "timeline",
+                  "callout",
+                  "statistic",
+                  "quote",
+                  "checklist",
+                  "asset",
+                  "chart",
+                  "video",
+                  "audio",
+                  "divider",
+                  "spacer",
+                  "gallery",
+                  "prompt",
+                  "editable_prompt",
+                  "resource_list",
+                  "leaderboard",
+                  "document",
+                  "slide_deck",
+                  "formula",
+                  "interactive_video"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "results_display": {
+      "enum": [
+        "bar",
+        "horizontal_bar",
+        "stacked_bar",
+        "donut",
+        "pie",
+        "line",
+        "ranking",
+        "progress",
+        "leaderboard",
+        "cards",
+        "word_cloud",
+        "qa_board",
+        "ideas_board",
+        "prioritization",
+        "quick_interaction",
+        "assessment",
+        "image_heatmap",
+        "drawing_gallery",
+        "collaborative_board",
+        "video_checkpoints"
+      ]
+    },
+    "completion_gate": {
+      "type": "object",
+      "properties": {
+        "minimum_responses": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "minimum_response_rate": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "trainer": {
+      "type": "object",
+      "properties": {
+        "cue": {
+          "type": "string"
+        }
+      }
+    },
+    "score": {
+      "type": "object"
+    },
+    "achievement": {
+      "type": "object"
+    },
+    "flow": {
+      "type": "object",
+      "properties": {
+        "next_activity_id": {
+          "type": "string"
+        },
+        "branches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "next_activity_id"
+            ]
+          }
+        }
+      }
+    },
+    "word_cloud": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_entries": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "default": 3
+        },
+        "max_characters": {
+          "type": "integer",
+          "minimum": 8,
+          "maximum": 60,
+          "default": 32
+        },
+        "allow_phrases": {
+          "type": "boolean",
+          "default": true
+        },
+        "moderation": {
+          "enum": [
+            "off",
+            "pre"
+          ],
+          "default": "off"
+        },
+        "identity_visibility": {
+          "enum": [
+            "trainer_only",
+            "anonymous"
+          ],
+          "default": "trainer_only"
+        }
+      }
+    },
+    "q_and_a": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_questions": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "default": 3
+        },
+        "max_characters": {
+          "type": "integer",
+          "minimum": 40,
+          "maximum": 500,
+          "default": 280
+        },
+        "moderation": {
+          "enum": [
+            "off",
+            "pre"
+          ],
+          "default": "pre"
+        },
+        "identity_visibility": {
+          "enum": [
+            "public",
+            "trainer_only",
+            "anonymous"
+          ],
+          "default": "trainer_only"
+        },
+        "upvoting": {
+          "type": "boolean",
+          "default": true
+        },
+        "allow_self_upvote": {
+          "type": "boolean",
+          "default": false
+        },
+        "sort": {
+          "enum": [
+            "votes",
+            "newest"
+          ],
+          "default": "votes"
+        }
+      }
+    },
+    "ideas_board": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_ideas": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8,
+          "default": 5
+        },
+        "max_characters": {
+          "type": "integer",
+          "minimum": 20,
+          "maximum": 500,
+          "default": 240
+        },
+        "moderation": {
+          "enum": [
+            "off",
+            "pre"
+          ],
+          "default": "pre"
+        },
+        "identity_visibility": {
+          "enum": [
+            "public",
+            "trainer_only",
+            "anonymous"
+          ],
+          "default": "trainer_only"
+        },
+        "upvoting": {
+          "type": "boolean",
+          "default": true
+        },
+        "allow_self_upvote": {
+          "type": "boolean",
+          "default": false
+        },
+        "sort": {
+          "enum": [
+            "votes",
+            "newest"
+          ],
+          "default": "votes"
+        },
+        "categories": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "default": [
+            "Ideas"
+          ]
+        }
+      }
+    },
+    "prioritization": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "budget": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000,
+          "default": 100
+        },
+        "require_full_allocation": {
+          "type": "boolean",
+          "default": true
+        },
+        "max_per_option": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000,
+          "default": 100
+        }
+      }
+    },
+    "quick_interaction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "preset": {
+          "enum": [
+            "agree",
+            "understand",
+            "help",
+            "yes_no",
+            "custom"
+          ],
+          "default": "custom"
+        },
+        "anonymous": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "matching": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "shuffle": {
+          "type": "boolean",
+          "default": true
+        },
+        "pairs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "required": [
+              "left",
+              "right"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "left": {
+                "type": "string"
+              },
+              "right": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "fill_blanks": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "case_sensitive": {
+          "type": "boolean",
+          "default": false
+        },
+        "blanks": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "answers": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "answers"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "sorting": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 20,
+          "items": {
+            "type": "string"
+          }
+        },
+        "correct_order": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 20,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "image_interaction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "enum": [
+            "pin",
+            "find",
+            "label",
+            "drag"
+          ],
+          "default": "pin"
+        },
+        "asset": {
+          "type": "string"
+        },
+        "max_points": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "targets": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "y": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "tolerance": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 30
+              }
+            },
+            "required": [
+              "label",
+              "x",
+              "y"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "draw_annotate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "asset": {
+          "type": "string"
+        },
+        "max_strokes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500,
+          "default": 120
+        },
+        "allow_text": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "collaborative_board": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_notes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12,
+          "default": 5
+        },
+        "max_characters": {
+          "type": "integer",
+          "minimum": 20,
+          "maximum": 500,
+          "default": 240
+        },
+        "categories": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          }
+        },
+        "identity_visibility": {
+          "enum": [
+            "public",
+            "trainer_only",
+            "anonymous"
+          ],
+          "default": "trainer_only"
+        }
+      }
+    },
+    "interactive_video": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "asset": {
+          "type": "string"
+        },
+        "pause_at_checkpoint": {
+          "type": "boolean",
+          "default": true
+        },
+        "checkpoints": {
+          "type": "array",
+          "maxItems": 30,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "time_seconds": {
+                "type": "number",
+                "minimum": 0
+              },
+              "prompt": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "single_choice",
+                  "short_answer",
+                  "confidence"
+                ]
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "correct_answer": {}
+            },
+            "required": [
+              "time_seconds",
+              "prompt"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "challenge": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "time_seconds": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 3600
+        },
+        "points": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000
+        }
+      }
+    },
+    "explanation": {
+      "type": "string"
+    }
+  }
+}

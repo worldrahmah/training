@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+const read=p=>fs.readFileSync(new URL(`../${p}`,import.meta.url),'utf8');
+const admin=read('app/public/admin.js'),trainer=read('app/public/trainer.js'),charts=read('app/public/report-charts.js'),css=read('app/public/one-ui.css');
+const must=(ok,msg)=>{if(!ok)throw new Error(msg)};
+must(admin.includes('mountReportChartWorkspace')&&admin.includes('adminReportChart'),'Admin configurable report workspace missing');
+must(trainer.includes('mountReportChartWorkspace')&&trainer.includes('trainerReportChart'),'Trainer configurable report workspace missing');
+for(const metric of ['participants','responses','average_score'])must(admin.includes(`key:'${metric}'`)||trainer.includes(`key:'${metric}'`),`Expected proposed metric ${metric}`);
+for(const type of ['bar','line','pie','table'])must(charts.includes(`value=\"${type}\"`)||charts.includes(`==='${type}'`),`Chart type ${type} missing`);
+must(charts.includes('Data set')&&charts.includes('Metric')&&charts.includes('Chart type'),'Chart controls incomplete');
+must(charts.includes('rows:Array.isArray')&&charts.includes('metrics:(ds.metrics||[])'),'Chart workspace must consume constrained proposed datasets/metrics');
+must(!charts.match(/fetch\(|https?:\/\//),'Chart renderer must remain local-first with no external data/chart dependency');
+must(css.includes('.report-chart-workspace')&&css.includes('.report-chart-svg')&&css.includes('.chart-legend'),'Report chart styling missing');
+console.log('REPORT_CHART_WORKSPACE_PASS');

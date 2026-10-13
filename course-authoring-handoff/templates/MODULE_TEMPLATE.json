@@ -1,0 +1,17 @@
+{
+  "id": "module-id",
+  "title": "Human-facing module title",
+  "subtitle": "Optional human-facing subtitle",
+  "duration_minutes": 60,
+  "objective_ids": [
+    "objective-1"
+  ],
+  "activities": [],
+  "missions": [],
+  "paths": [],
+  "workflow": {
+    "start_node_id": "",
+    "nodes": [],
+    "edges": []
+  }
+}

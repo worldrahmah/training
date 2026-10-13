@@ -1,0 +1,7 @@
+data/
+storage/
+backups/
+exports/
+node_modules/
+.test-evidence/
+*.log

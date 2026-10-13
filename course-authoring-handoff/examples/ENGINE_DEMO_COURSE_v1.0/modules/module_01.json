@@ -1,0 +1,83 @@
+{
+  "module": {
+    "id": "interactive-start",
+    "title": "Interactive Start",
+    "duration_minutes": 60,
+    "objective_ids": ["participate", "practice"],
+    "activities": [
+      {
+        "id": "welcome",
+        "type": "presentation",
+        "title": "Welcome",
+        "content": {
+          "hero_word": "Welcome",
+          "blocks": [
+            {"type": "hero", "eyebrow": "External course package", "title": "A professional learning scene", "body_md": "This screen is rendered by the **Core**, not custom course code."},
+            {"type": "image_text", "asset": "assets/demo-learning.webp", "alt": "Abstract learning interface illustration", "heading": "Responsive by design", "body_md": "The same authored content adapts to the trainer, projector and participant experience."},
+            {"type": "cards", "heading": "One content model", "items": [
+              {"title": "Trainer", "body_md": "Private controls and cues."},
+              {"title": "Projector", "body_md": "Clean presentation."},
+              {"title": "Participant", "body_md": "Interactive learning."}
+            ]}
+          ]
+        },
+        "trainer": {"cue": "Welcome the class, then open the readiness poll."},
+        "flow": {"next_activity_id": "readiness"}
+      },
+      {
+        "id": "readiness",
+        "type": "poll",
+        "title": "Readiness pulse",
+        "objective_ids": ["participate"],
+        "content": {"hero_word": "Ready?", "question": "How ready are you to begin?", "options": ["Ready", "Curious", "Need a minute"]},
+        "results_display": "horizontal_bar",
+        "completion_gate": {"minimum_response_rate": 0.5},
+        "score": {"participation": 1},
+        "flow": {"next_activity_id": "quick-chart"}
+      },
+      {
+        "id": "quick-chart",
+        "type": "presentation",
+        "title": "Static chart example",
+        "content": {
+          "blocks": [
+            {"type": "statistic", "value": "3", "label": "Experiences, one engine"},
+            {"type": "chart", "heading": "Illustrative learning mix", "chart_type": "donut", "label_key": "label", "value_key": "value", "data": [
+              {"label": "Practice", "value": 60}, {"label": "Discussion", "value": 25}, {"label": "Explanation", "value": 15}
+            ]}
+          ]
+        },
+        "trainer": {"cue": "Point out that charts are defined by course data."},
+        "flow": {"next_activity_id": "team-idea"}
+      },
+      {
+        "id": "team-idea",
+        "type": "team_challenge",
+        "title": "Team idea",
+        "response_scope": "team",
+        "objective_ids": ["participate"],
+        "content": {"hero_word": "Create", "question": "As a team, write one idea that would improve this learning experience.", "placeholder": "One idea from your team…"},
+        "results_display": "cards",
+        "score": {"participation": 5}
+      }
+    ],
+    "missions": [
+      {
+        "id": "reflection-mission",
+        "title": "Reflection Mission",
+        "goal": "Submit one practical takeaway.",
+        "estimated_minutes": 10,
+        "objective_ids": ["practice"],
+        "steps": [
+          {"title": "Think", "body_md": "Choose the most useful thing you noticed."},
+          {"title": "Write", "body_md": "Express it in one clear sentence."}
+        ],
+        "assets": [{"asset": "assets/readme.txt", "label": "Sample resource"}],
+        "prompts": [{"title": "Reflection starter", "text": "The most useful thing I learned was... because..."}],
+        "submission": {"type": "text", "prompt": "What is your takeaway?"},
+        "score": {"completion": 10},
+        "achievement": {"key": "first-mission", "title": "First Mission"}
+      }
+    ]
+  }
+}

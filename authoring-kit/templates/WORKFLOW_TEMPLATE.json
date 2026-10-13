@@ -1,0 +1,16 @@
+{
+  "start_node_id": "intro",
+  "nodes": [
+    {"id": "intro", "type": "trainer_scene", "activity_id": "intro_scene"},
+    {"id": "practice", "type": "practice_start"},
+    {"id": "choice", "type": "participant_choice"},
+    {"id": "path_a", "type": "participant_path", "path_id": "path_a"},
+    {"id": "close", "type": "convergence"}
+  ],
+  "edges": [
+    {"from": "intro", "to": "practice", "scope": "class"},
+    {"from": "practice", "to": "choice", "scope": "participant"},
+    {"from": "choice", "to": "path_a", "scope": "participant"},
+    {"from": "path_a", "to": "close", "scope": "participant"}
+  ]
+}

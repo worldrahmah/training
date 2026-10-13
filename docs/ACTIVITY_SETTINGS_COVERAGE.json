@@ -1,0 +1,245 @@
+{
+  "activity_count": 36,
+  "controls": {
+    "presentation": [],
+    "announcement": [],
+    "reveal": [],
+    "participant_choice": [],
+    "practice_gate": [],
+    "poll": [
+      "basicQuestion",
+      "basicOptions"
+    ],
+    "reaction": [
+      "basicQuestion",
+      "basicOptions"
+    ],
+    "ranking": [
+      "basicQuestion",
+      "basicOptions"
+    ],
+    "single_choice": [
+      "basicQuestion",
+      "basicOptions",
+      "basicCorrect"
+    ],
+    "multiple_choice": [
+      "basicQuestion",
+      "basicOptions",
+      "basicCorrectMany"
+    ],
+    "true_false": [
+      "basicQuestion",
+      "basicTrueFalse"
+    ],
+    "short_answer": [
+      "basicQuestion",
+      "basicPlaceholder"
+    ],
+    "long_answer": [
+      "basicQuestion",
+      "basicPlaceholder"
+    ],
+    "reflection": [
+      "basicQuestion",
+      "basicPlaceholder"
+    ],
+    "self_assessment": [
+      "basicQuestion",
+      "basicPlaceholder"
+    ],
+    "team_challenge": [
+      "basicQuestion",
+      "basicPlaceholder"
+    ],
+    "numeric_answer": [
+      "basicQuestion",
+      "basicNumberCorrect",
+      "basicTolerance",
+      "basicMin",
+      "basicMax",
+      "basicStep"
+    ],
+    "rating": [
+      "basicQuestion",
+      "basicMin",
+      "basicMax",
+      "basicStep",
+      "basicMinLabel",
+      "basicMaxLabel"
+    ],
+    "confidence": [
+      "basicQuestion",
+      "basicMin",
+      "basicMax",
+      "basicStep",
+      "basicMinLabel",
+      "basicMaxLabel"
+    ],
+    "checklist": [
+      "basicQuestion",
+      "basicItems"
+    ],
+    "timer": [
+      "basicSeconds"
+    ],
+    "url_submission": [
+      "basicQuestion",
+      "basicInstructions"
+    ],
+    "file_submission": [
+      "basicQuestion",
+      "basicInstructions"
+    ],
+    "image_submission": [
+      "basicQuestion",
+      "basicInstructions"
+    ],
+    "word_cloud": [
+      "wcQuestion",
+      "wcMaxEntries",
+      "wcMaxCharacters",
+      "wcModeration",
+      "wcIdentity",
+      "wcAllowPhrases"
+    ],
+    "q_and_a": [
+      "qaQuestion",
+      "qaMaxQuestions",
+      "qaMaxCharacters",
+      "qaModeration",
+      "qaIdentity",
+      "qaSort",
+      "qaUpvoting",
+      "qaSelfUpvote"
+    ],
+    "ideas_board": [
+      "ibQuestion",
+      "ibMaxIdeas",
+      "ibMaxCharacters",
+      "ibCategories",
+      "ibModeration",
+      "ibIdentity",
+      "ibSort",
+      "ibUpvoting",
+      "ibSelfUpvote"
+    ],
+    "prioritization_100": [
+      "advQuestion",
+      "advOptions",
+      "advBudget",
+      "advMaxPer",
+      "advRequireFull"
+    ],
+    "quick_interaction": [
+      "advQuestion",
+      "advPreset",
+      "advOptions",
+      "advAnonymous"
+    ],
+    "matching": [
+      "advQuestion",
+      "advPairs",
+      "advShuffle"
+    ],
+    "fill_blanks": [
+      "advQuestion",
+      "advBlanks",
+      "advCaseSensitive"
+    ],
+    "sorting": [
+      "advQuestion",
+      "advItems"
+    ],
+    "image_interaction": [
+      "advImageMode",
+      "advAsset",
+      "advMaxPoints",
+      "advTargets"
+    ],
+    "draw_annotate": [
+      "advQuestion",
+      "advAsset",
+      "advMaxStrokes",
+      "advAllowText"
+    ],
+    "collaborative_board": [
+      "advQuestion",
+      "advCategories",
+      "advMaxNotes",
+      "advMaxCharacters",
+      "advIdentity"
+    ],
+    "interactive_video": [
+      "advAsset",
+      "advCheckpoints",
+      "advPause"
+    ]
+  },
+  "common_controls": [
+    "actTitle",
+    "actType",
+    "actResults",
+    "actCue",
+    "actExplanation",
+    "actChallengeEnabled",
+    "actChallengeSeconds",
+    "actChallengePoints",
+    "actNext",
+    "actMinResponses",
+    "newBlockType"
+  ],
+  "enum_branches": {
+    "q_and_a": {
+      "identity": [
+        "public",
+        "trainer_only",
+        "anonymous"
+      ],
+      "moderation": [
+        "off",
+        "pre"
+      ],
+      "sort": [
+        "votes",
+        "newest"
+      ]
+    },
+    "ideas_board": {
+      "identity": [
+        "public",
+        "trainer_only",
+        "anonymous"
+      ],
+      "sort": [
+        "votes",
+        "newest"
+      ]
+    },
+    "image_interaction": {
+      "modes": [
+        "pin",
+        "find",
+        "label",
+        "drag"
+      ]
+    },
+    "interactive_video": {
+      "checkpoint_types": [
+        "single_choice",
+        "short_answer",
+        "confidence"
+      ]
+    },
+    "quick_interaction": {
+      "presets": [
+        "understand",
+        "agree",
+        "help",
+        "yes_no",
+        "custom"
+      ]
+    }
+  },
+  "status": "PASS"
+}

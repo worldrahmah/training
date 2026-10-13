@@ -1,0 +1,1016 @@
+{
+  "generated_at": "2026-10-13T06:54:34.002Z",
+  "scope": "Defined Training Engine ONE Activity Certification gates",
+  "activity_count": 36,
+  "result_view_cases": 68,
+  "response_models": [
+    "none",
+    "single_choice",
+    "multiple_choice",
+    "true_false",
+    "word_list",
+    "qa_board",
+    "idea_board",
+    "point_allocation",
+    "quick_choice",
+    "matching",
+    "fill_blanks",
+    "sorting",
+    "image_interaction",
+    "drawing",
+    "collab_board",
+    "video_checkpoints",
+    "text",
+    "long_text",
+    "number",
+    "scale",
+    "ranking",
+    "checklist",
+    "url",
+    "file",
+    "image"
+  ],
+  "shared_setting_branches": {
+    "q_and_a": {
+      "identity": [
+        "public",
+        "trainer_only",
+        "anonymous"
+      ],
+      "moderation": [
+        "off",
+        "pre"
+      ],
+      "sort": [
+        "votes",
+        "newest"
+      ]
+    },
+    "ideas_board": {
+      "identity": [
+        "public",
+        "trainer_only",
+        "anonymous"
+      ],
+      "sort": [
+        "votes",
+        "newest"
+      ]
+    },
+    "image_interaction": {
+      "modes": [
+        "pin",
+        "find",
+        "label",
+        "drag"
+      ]
+    },
+    "interactive_video": {
+      "checkpoint_types": [
+        "single_choice",
+        "short_answer",
+        "confidence"
+      ]
+    },
+    "quick_interaction": {
+      "presets": [
+        "understand",
+        "agree",
+        "help",
+        "yes_no",
+        "custom"
+      ]
+    }
+  },
+  "additional_gates": [
+    "ASSESSMENT_FEEDBACK_RUNTIME_PASS",
+    "ACTIVITY_VARIANT_RUNTIME_PASS",
+    "ACTIVITY_INPUT_VALIDATION_PASS",
+    "I18N_AR_EN_PASS",
+    "BUILDER_ACTIVITY_EDITOR_PASS",
+    "BUILDER_DRAFT_TRANSITIONS_PASS"
+  ],
+  "rows": [
+    {
+      "type": "presentation",
+      "participant_input": false,
+      "response_model": "none",
+      "aggregation": "none",
+      "scoring": "none",
+      "builder_settings": [],
+      "result_views": [],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "N/A",
+      "results": "N/A",
+      "report": "N/A",
+      "assessment_feedback": "N/A",
+      "backup_restore": "N/A",
+      "restart": "N/A"
+    },
+    {
+      "type": "announcement",
+      "participant_input": false,
+      "response_model": "none",
+      "aggregation": "none",
+      "scoring": "none",
+      "builder_settings": [],
+      "result_views": [],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "N/A",
+      "results": "N/A",
+      "report": "N/A",
+      "assessment_feedback": "N/A",
+      "backup_restore": "N/A",
+      "restart": "N/A"
+    },
+    {
+      "type": "poll",
+      "participant_input": true,
+      "response_model": "single_choice",
+      "aggregation": "counts",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicOptions"
+      ],
+      "result_views": [
+        "bar",
+        "horizontal_bar",
+        "stacked_bar",
+        "donut",
+        "pie",
+        "ranking",
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "single_choice",
+      "participant_input": true,
+      "response_model": "single_choice",
+      "aggregation": "counts",
+      "scoring": "exact_or_participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicOptions",
+        "basicCorrect"
+      ],
+      "result_views": [
+        "bar",
+        "horizontal_bar",
+        "stacked_bar",
+        "donut",
+        "pie",
+        "ranking",
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "PASS",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "multiple_choice",
+      "participant_input": true,
+      "response_model": "multiple_choice",
+      "aggregation": "counts",
+      "scoring": "exact_or_participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicOptions",
+        "basicCorrectMany"
+      ],
+      "result_views": [
+        "bar",
+        "horizontal_bar",
+        "stacked_bar",
+        "donut",
+        "pie",
+        "ranking",
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "PASS",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "true_false",
+      "participant_input": true,
+      "response_model": "true_false",
+      "aggregation": "counts",
+      "scoring": "exact_or_participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicTrueFalse"
+      ],
+      "result_views": [
+        "bar",
+        "horizontal_bar",
+        "donut",
+        "pie",
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "PASS",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "word_cloud",
+      "participant_input": true,
+      "response_model": "word_list",
+      "aggregation": "word_cloud",
+      "scoring": "participation",
+      "builder_settings": [
+        "wcQuestion",
+        "wcMaxEntries",
+        "wcMaxCharacters",
+        "wcModeration",
+        "wcIdentity",
+        "wcAllowPhrases"
+      ],
+      "result_views": [
+        "word_cloud"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "q_and_a",
+      "participant_input": true,
+      "response_model": "qa_board",
+      "aggregation": "qa_board",
+      "scoring": "participation",
+      "builder_settings": [
+        "qaQuestion",
+        "qaMaxQuestions",
+        "qaMaxCharacters",
+        "qaModeration",
+        "qaIdentity",
+        "qaSort",
+        "qaUpvoting",
+        "qaSelfUpvote"
+      ],
+      "result_views": [
+        "qa_board"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "ideas_board",
+      "participant_input": true,
+      "response_model": "idea_board",
+      "aggregation": "ideas_board",
+      "scoring": "participation",
+      "builder_settings": [
+        "ibQuestion",
+        "ibMaxIdeas",
+        "ibMaxCharacters",
+        "ibCategories",
+        "ibModeration",
+        "ibIdentity",
+        "ibSort",
+        "ibUpvoting",
+        "ibSelfUpvote"
+      ],
+      "result_views": [
+        "ideas_board"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "prioritization_100",
+      "participant_input": true,
+      "response_model": "point_allocation",
+      "aggregation": "point_allocation",
+      "scoring": "participation",
+      "builder_settings": [
+        "advQuestion",
+        "advOptions",
+        "advBudget",
+        "advMaxPer",
+        "advRequireFull"
+      ],
+      "result_views": [
+        "prioritization"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "quick_interaction",
+      "participant_input": true,
+      "response_model": "quick_choice",
+      "aggregation": "counts",
+      "scoring": "participation",
+      "builder_settings": [
+        "advQuestion",
+        "advPreset",
+        "advOptions",
+        "advAnonymous"
+      ],
+      "result_views": [
+        "quick_interaction",
+        "horizontal_bar",
+        "donut"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "matching",
+      "participant_input": true,
+      "response_model": "matching",
+      "aggregation": "assessment",
+      "scoring": "exact",
+      "builder_settings": [
+        "advQuestion",
+        "advPairs",
+        "advShuffle"
+      ],
+      "result_views": [
+        "assessment"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "PASS",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "fill_blanks",
+      "participant_input": true,
+      "response_model": "fill_blanks",
+      "aggregation": "assessment",
+      "scoring": "exact",
+      "builder_settings": [
+        "advQuestion",
+        "advBlanks",
+        "advCaseSensitive"
+      ],
+      "result_views": [
+        "assessment"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "PASS",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "sorting",
+      "participant_input": true,
+      "response_model": "sorting",
+      "aggregation": "assessment",
+      "scoring": "exact",
+      "builder_settings": [
+        "advQuestion",
+        "advItems"
+      ],
+      "result_views": [
+        "assessment"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "PASS",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "image_interaction",
+      "participant_input": true,
+      "response_model": "image_interaction",
+      "aggregation": "image_interaction",
+      "scoring": "exact_or_participation",
+      "builder_settings": [
+        "advImageMode",
+        "advAsset",
+        "advMaxPoints",
+        "advTargets"
+      ],
+      "result_views": [
+        "image_heatmap"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "PASS",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "draw_annotate",
+      "participant_input": true,
+      "response_model": "drawing",
+      "aggregation": "drawing_gallery",
+      "scoring": "participation",
+      "builder_settings": [
+        "advQuestion",
+        "advAsset",
+        "advMaxStrokes",
+        "advAllowText"
+      ],
+      "result_views": [
+        "drawing_gallery"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "collaborative_board",
+      "participant_input": true,
+      "response_model": "collab_board",
+      "aggregation": "collaborative_board",
+      "scoring": "participation",
+      "builder_settings": [
+        "advQuestion",
+        "advCategories",
+        "advMaxNotes",
+        "advMaxCharacters",
+        "advIdentity"
+      ],
+      "result_views": [
+        "collaborative_board"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "interactive_video",
+      "participant_input": true,
+      "response_model": "video_checkpoints",
+      "aggregation": "assessment",
+      "scoring": "exact_or_participation",
+      "builder_settings": [
+        "advAsset",
+        "advCheckpoints",
+        "advPause"
+      ],
+      "result_views": [
+        "video_checkpoints",
+        "assessment"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "PASS",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "short_answer",
+      "participant_input": true,
+      "response_model": "text",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicPlaceholder"
+      ],
+      "result_views": [
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "long_answer",
+      "participant_input": true,
+      "response_model": "long_text",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicPlaceholder"
+      ],
+      "result_views": [
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "numeric_answer",
+      "participant_input": true,
+      "response_model": "number",
+      "aggregation": "numeric",
+      "scoring": "exact_or_participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicNumberCorrect",
+        "basicTolerance",
+        "basicMin",
+        "basicMax",
+        "basicStep"
+      ],
+      "result_views": [
+        "bar",
+        "line",
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "PASS",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "rating",
+      "participant_input": true,
+      "response_model": "scale",
+      "aggregation": "numeric",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicMin",
+        "basicMax",
+        "basicStep",
+        "basicMinLabel",
+        "basicMaxLabel"
+      ],
+      "result_views": [
+        "bar",
+        "line",
+        "progress",
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "reaction",
+      "participant_input": true,
+      "response_model": "single_choice",
+      "aggregation": "counts",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicOptions"
+      ],
+      "result_views": [
+        "bar",
+        "horizontal_bar",
+        "donut",
+        "pie",
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "confidence",
+      "participant_input": true,
+      "response_model": "scale",
+      "aggregation": "numeric",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicMin",
+        "basicMax",
+        "basicStep",
+        "basicMinLabel",
+        "basicMaxLabel"
+      ],
+      "result_views": [
+        "bar",
+        "line",
+        "progress",
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "ranking",
+      "participant_input": true,
+      "response_model": "ranking",
+      "aggregation": "ranking",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicOptions"
+      ],
+      "result_views": [
+        "ranking",
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "timer",
+      "participant_input": false,
+      "response_model": "none",
+      "aggregation": "none",
+      "scoring": "none",
+      "builder_settings": [
+        "basicSeconds"
+      ],
+      "result_views": [],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "N/A",
+      "results": "N/A",
+      "report": "N/A",
+      "assessment_feedback": "N/A",
+      "backup_restore": "N/A",
+      "restart": "N/A"
+    },
+    {
+      "type": "reveal",
+      "participant_input": false,
+      "response_model": "none",
+      "aggregation": "none",
+      "scoring": "none",
+      "builder_settings": [],
+      "result_views": [],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "N/A",
+      "results": "N/A",
+      "report": "N/A",
+      "assessment_feedback": "N/A",
+      "backup_restore": "N/A",
+      "restart": "N/A"
+    },
+    {
+      "type": "team_challenge",
+      "participant_input": true,
+      "response_model": "long_text",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicPlaceholder"
+      ],
+      "result_views": [
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "checklist",
+      "participant_input": true,
+      "response_model": "checklist",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicItems"
+      ],
+      "result_views": [
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "url_submission",
+      "participant_input": true,
+      "response_model": "url",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicInstructions"
+      ],
+      "result_views": [
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "file_submission",
+      "participant_input": true,
+      "response_model": "file",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicInstructions"
+      ],
+      "result_views": [
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "image_submission",
+      "participant_input": true,
+      "response_model": "image",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicInstructions"
+      ],
+      "result_views": [
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "reflection",
+      "participant_input": true,
+      "response_model": "long_text",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicPlaceholder"
+      ],
+      "result_views": [
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "self_assessment",
+      "participant_input": true,
+      "response_model": "long_text",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "builder_settings": [
+        "basicQuestion",
+        "basicPlaceholder"
+      ],
+      "result_views": [
+        "cards"
+      ],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "PASS",
+      "results": "PASS",
+      "report": "PASS",
+      "assessment_feedback": "N/A",
+      "backup_restore": "PASS",
+      "restart": "PASS"
+    },
+    {
+      "type": "participant_choice",
+      "participant_input": false,
+      "response_model": "none",
+      "aggregation": "none",
+      "scoring": "none",
+      "builder_settings": [],
+      "result_views": [],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "N/A",
+      "results": "N/A",
+      "report": "N/A",
+      "assessment_feedback": "N/A",
+      "backup_restore": "N/A",
+      "restart": "N/A"
+    },
+    {
+      "type": "practice_gate",
+      "participant_input": false,
+      "response_model": "none",
+      "aggregation": "none",
+      "scoring": "none",
+      "builder_settings": [],
+      "result_views": [],
+      "admin": "PASS",
+      "trainer": "PASS",
+      "participant": "PASS",
+      "projector": "PASS",
+      "response": "N/A",
+      "results": "N/A",
+      "report": "N/A",
+      "assessment_feedback": "N/A",
+      "backup_restore": "N/A",
+      "restart": "N/A"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,23 @@
+{
+  "format": "training-engine-course-package",
+  "schema_version": "1.1",
+  "course_file": "course.json",
+  "files": [
+    {
+      "path": "assets/readme.txt",
+      "sha256": "381beab8e116f736260fe2197604f8af415b921c2b8808ceb4b677fd9f49c0dd"
+    },
+    {
+      "path": "assets/demo-learning.webp",
+      "sha256": "9cb4e1521c80e33e223e2a3502a12de4660822744986c6fe0b3112c8c4f979ff"
+    },
+    {
+      "path": "course.json",
+      "sha256": "00e4a55ac402afb3ee6066b94c35f36b0a41f8ba3cef304bc3bbd7c2c1ff0611"
+    },
+    {
+      "path": "modules/module_01.json",
+      "sha256": "6f94d15c4fe2254fd5428d9a926a74ed508bb941e0045e55dab911b8b4530a26"
+    }
+  ]
+}
