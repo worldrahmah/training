@@ -1,0 +1,58 @@
+TRAINING ENGINE ONE — PROFESSIONAL EXPERIENCE v3.5.0 RC1R7
+OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL
+
+Archive: TRAINING_ENGINE_ONE_PROFESSIONAL_EXPERIENCE_v3.5.0_RC1R7.zip
+Exact SHA-256: 06440367a2fca0ff2808134523ff8df415117d8f896be320a0a3a8b6e195773a
+Bytes: 39785287
+Source commit: 6c998bb187fa24492daecaee6229649ba621aff3
+Authoritative RC1R5 baseline: 0262559de4464712888734e1addfbcd3de2b178822d1a188641e22daf8f24016
+Preserved RC1R6 candidate: e47bf484a51a56ceb40299ec626547e994077e2469777943cf3d9100a3b3abc2
+
+ZIP INTEGRITY
+Fresh extraction of exact immutable ZIP: PASS
+615 files; CRC / path safety / duplicates / case collisions: PASS
+Root checksum manifest: 614/614 PASS before execution
+Current in-tree authoring checksum manifest: 34/34 PASS before execution
+No database, owner storage, backups, exports, sessions or nested release ZIPs distributed.
+
+WORKING TREE
+Complete npm test: PASS, exit 0 (50 commands / 49 test programs)
+Both real-browser suites: PASS, exit 0
+Application/browser/tool JavaScript syntax: PASS, 34 modules
+Actual startup, authenticated Admin request and own-instance graceful stop: PASS
+
+EXACT SEALED BYTES
+Complete npm test from fresh extraction: PASS, exit 0
+Both real-browser suites from fresh extraction: PASS, exit 0
+Inherited canonical contract: 36 Activity Types / 68 result-view cases PASS
+Populated historical migration, restart, backup/restore and 20-participant API rehearsal: PASS
+81 operational-authorization assertions, nine interrupted-restore scenarios and actual local shutdown/foreign-service boundary: PASS
+12 repair role/locale visits plus 107 recorded workspace screen/view checks
+EN/AR, light/dark/system OS appearance, 1440/768/390 viewports on relevant surfaces
+Actual staff creation, required-password onboarding, scoped search, Builder persistence,
+Preview themes, authenticated calendar, Arabic final-dot glyph order,
+input redraw preservation and real offline/reconnect/rejection retention: PASS
+8482 solid-text contrast comparisons; no recorded contrast failures or page errors
+Contrast checks exclude unresolved image/gradient cases; not full WCAG certification.
+All application/source bytes remain unchanged by validation.
+Four certification documents regenerate timestamps only; full semantic evidence is equal.
+No unexplained packaged-file mutations. Immutable ZIP and GitHub distribution copy hashes match.
+
+RESEARCH / PRODUCT SCOPE
+Shared navigation/menus and role surfaces redesigned; readable themes, RTL direction,
+explicit staff role identity, transactional role/class writes, course ownership checks,
+actual Preview/search/calendar, truthful learning counts, offline recovery,
+recoverable staged restore and authenticated safe instance shutdown.
+Official W3C/OWASP references and an honest feature/API coverage ledger are included.
+No database schema migration or school-domain schema expansion in RC1R7.
+Current in-tree authoring contract remains synchronized. Historical external v1.3 is historical.
+Final external AI Course Creator kit remains a final-Core-freeze deliverable.
+Known limits: docs/KNOWN_LIMITATIONS_RC1R7.md
+Owner checklist and Windows instructions: docs/RC1R7_EXPERIENCE_AND_ACCEPTANCE.md
+Feature review / remaining enterprise program: docs/RC1R7_FEATURE_AND_TOOL_REVIEW.md
+Upgrade/recovery impact: docs/RC1R7_DATA_AND_RECOVERY_IMPACT.md
+
+OWNER WINDOWS/BROWSER/PROJECTOR/CLASSROOM ACCEPTANCE: PENDING
+Full enterprise/SSO/tenant/load/accessibility certification: NOT CLAIMED
+Whole-platform FINAL or world-ranking status: NOT CLAIMED
+Cloud startup instructions saved for review; configuration publication/fresh-task restoration NOT CLAIMED.

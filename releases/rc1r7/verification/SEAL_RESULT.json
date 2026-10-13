@@ -1,0 +1,76 @@
+{
+  "status": "PASS_AUTOMATED_OWNER_ACCEPTANCE_PENDING",
+  "version": "3.5.0-rc.1.7",
+  "sha256": "06440367a2fca0ff2808134523ff8df415117d8f896be320a0a3a8b6e195773a",
+  "bytes": 39785287,
+  "source_commit": "6c998bb187fa24492daecaee6229649ba621aff3",
+  "zip_crc": "PASS",
+  "path_safety": "PASS",
+  "duplicate_and_case_collisions": "PASS",
+  "checksum_manifests_before_execution": [
+    {
+      "path": "SHA256SUMS.txt",
+      "verified_entries": 614,
+      "status": "PASS"
+    },
+    {
+      "path": "course-authoring-handoff/SHA256SUMS.txt",
+      "verified_entries": 34,
+      "status": "PASS"
+    }
+  ],
+  "sealed_node_exit_code": 0,
+  "sealed_browser_exit_code": 0,
+  "full_node_commands": 50,
+  "node_test_programs": 49,
+  "canonical_activities": 36,
+  "result_cases": 68,
+  "repair_role_locale_visits": 12,
+  "workspace_recorded_views": 107,
+  "workspace_screenshots": 269,
+  "solid_text_contrast_comparisons": 8482,
+  "contrast_cases_skipped_unresolved_backgrounds": 420,
+  "browser_page_errors": [],
+  "post_execution_integrity": {
+    "status": "PASS",
+    "immutable_zip_sha256": "06440367a2fca0ff2808134523ff8df415117d8f896be320a0a3a8b6e195773a",
+    "packaged_files_checked": 615,
+    "application_source_mutations": 0,
+    "derived_evidence_timestamp_changes": [
+      {
+        "path": "docs/ACTIVITY_CERTIFICATION_MATRIX.json",
+        "change": "Generated timestamp only; full semantic content unchanged",
+        "before": "2026-10-13T13:03:56.991Z",
+        "after": "2026-10-13T13:21:36.876Z"
+      },
+      {
+        "path": "docs/ACTIVITY_CERTIFICATION_MATRIX.md",
+        "change": "Generated timestamp only; full semantic content unchanged",
+        "before": "Generated: 2026-10-13T13:03:56.991Z",
+        "after": "Generated: 2026-10-13T13:21:36.876Z"
+      },
+      {
+        "path": "docs/ACTIVITY_CERTIFICATION_RUNTIME_RESULT.json",
+        "change": "Generated timestamp only; full semantic content unchanged",
+        "before": "2026-10-13T13:03:55.668Z",
+        "after": "2026-10-13T13:21:36.268Z"
+      },
+      {
+        "path": "docs/ACTIVITY_SURFACE_COVERAGE.json",
+        "change": "Generated timestamp only; full semantic content unchanged",
+        "before": "2026-10-13T13:03:27.242Z",
+        "after": "2026-10-13T13:21:11.918Z"
+      }
+    ],
+    "all_other_packaged_bytes_unchanged": true,
+    "note": "Checksum manifests passed before execution. Tests regenerate four derived evidence timestamps; this does not alter the immutable ZIP."
+  },
+  "syntax": {
+    "status": "PASS",
+    "modules": 34,
+    "source": "Fresh extraction of exact sealed RC1R7 ZIP"
+  },
+  "owner_windows_classroom_visual_acceptance": "PENDING",
+  "enterprise_scope": "Known boundaries and remaining program in docs/KNOWN_LIMITATIONS_RC1R7.md and docs/RC1R7_FEATURE_AND_TOOL_REVIEW.md",
+  "cloud_configuration": "Startup draft saved; environment review/save/publish and fresh-task validation not claimed"
+}

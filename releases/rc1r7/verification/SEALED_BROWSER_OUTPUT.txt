@@ -1,0 +1,11 @@
+
+> training-engine-one@3.5.0-rc.1.7 test:browser
+> python tests/browser-repair.py && python tests/browser-workspace.py
+
+BROWSER_REPAIR_PASS 12 role/locale visits; desktop/tablet/mobile, offline fonts, keyboard, export, matching, charts, Projector themes
+BROWSER_WORKSPACE_PASS 107 recorded screen/view checks; contrast, menus, actual writes, onboarding, RTL punctuation, calendar, role boundaries
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
