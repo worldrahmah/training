@@ -1,45 +1,9 @@
-import zlib from 'node:zlib';
+import {readZipEntries} from './zip.mjs';
 import path from 'node:path';
 import { sha256, safeRelativePath, safeJsonParse, mimeFromName } from './utils.mjs';
 import { ACTIVITY_TYPES, CONTENT_BLOCK_TYPES, RESULT_TYPES, CHART_TYPES, WORKFLOW_NODE_TYPES, COMPLETION_TYPES } from './capabilities.mjs';
 import { activitySpec } from './registry.mjs';
 
-function readZipEntries(buf){
-  if(!Buffer.isBuffer(buf)) buf=Buffer.from(buf);
-  const min=Math.max(0,buf.length-65557);
-  let eocd=-1;
-  for(let i=buf.length-22;i>=min;i--){ if(buf.readUInt32LE(i)===0x06054b50){ eocd=i; break; } }
-  if(eocd<0) throw new Error('ZIP_END_RECORD_NOT_FOUND');
-  const total=buf.readUInt16LE(eocd+10);
-  const centralOffset=buf.readUInt32LE(eocd+16);
-  const out=new Map();
-  let p=centralOffset;
-  for(let n=0;n<total;n++){
-    if(buf.readUInt32LE(p)!==0x02014b50) throw new Error('ZIP_CENTRAL_DIRECTORY_INVALID');
-    const method=buf.readUInt16LE(p+10);
-    const compressedSize=buf.readUInt32LE(p+20);
-    const uncompressedSize=buf.readUInt32LE(p+24);
-    const nameLen=buf.readUInt16LE(p+28), extraLen=buf.readUInt16LE(p+30), commentLen=buf.readUInt16LE(p+32);
-    const localOffset=buf.readUInt32LE(p+42);
-    const rawName=buf.subarray(p+46,p+46+nameLen).toString('utf8');
-    const name=safeRelativePath(rawName);
-    if(!name) throw new Error(`ZIP_UNSAFE_PATH:${rawName}`);
-    if(!name.endsWith('/')){
-      if(buf.readUInt32LE(localOffset)!==0x04034b50) throw new Error('ZIP_LOCAL_HEADER_INVALID');
-      const ln=buf.readUInt16LE(localOffset+26), le=buf.readUInt16LE(localOffset+28);
-      const dataStart=localOffset+30+ln+le;
-      const comp=buf.subarray(dataStart,dataStart+compressedSize);
-      let data;
-      if(method===0) data=Buffer.from(comp);
-      else if(method===8) data=zlib.inflateRawSync(comp);
-      else throw new Error(`ZIP_COMPRESSION_UNSUPPORTED:${method}`);
-      if(data.length!==uncompressedSize) throw new Error(`ZIP_SIZE_MISMATCH:${name}`);
-      out.set(name,data);
-    }
-    p+=46+nameLen+extraLen+commentLen;
-  }
-  return out;
-}
 
 function validateExplicitWorkflow(moduleId, workflow, {activities=[],missions=[],paths=[]}={}, errors, warnings){
   const nodes=Array.isArray(workflow?.nodes)?workflow.nodes:[];

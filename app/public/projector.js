@@ -23,7 +23,7 @@ export function renderProjectorStage(item,state,l){
   if(['results','explain'].includes(state?.phase)&&l.results)h+=`<div class="projector-results">${projectorResultMeta(l.results,item)}${renderLiveResults(l.results,state?.payload?.result_view_override||item.results_display||item?.results?.display||'horizontal_bar',{showNames:item?.type==='q_and_a'?item?.q_and_a?.identity_visibility==='public':item?.type==='ideas_board'?item?.ideas_board?.identity_visibility==='public':item?.results?.show_names===true,projector:true})}</div>`;
   else if(state?.phase==='closed')h+=`<div class="projector-status">${esc(t('Responses are closed.'))}</div>`;
   else if(!['presentation','announcement','reveal','timer'].includes(item.type))h+=`<div class="projector-status">${esc(item.content?.prompt_on_projector||t('Respond on your device.'))}</div>`;
-  if(state?.phase==='explain'){const explanation=String(state?.payload?.explanation||item?.explanation||item?.trainer?.explanation||'').trim();if(explanation)h+=`<div class="explanation-panel"><div class="eyebrow">${esc(t('Explanation'))}</div><p>${esc(explanation)}</p></div>`}
+  if(state?.phase==='explain'){const explanation=String(state?.payload?.explanation||item?.explanation||'').trim();if(explanation)h+=`<div class="explanation-panel"><div class="eyebrow">${esc(t('Explanation'))}</div><p>${esc(explanation)}</p></div>`}
   if(item.type==='timer')h+=renderProjectorTimer(item.content||{},l.instance);
   return h;
 }

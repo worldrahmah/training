@@ -1,4 +1,4 @@
-# Training Engine ONE v3.5.0 RC1R5 — Consolidated Owner Acceptance Gate
+# Training Engine ONE v3.5.0 RC1R6 — Consolidated Owner Acceptance Gate
 
 The owner performs **one** consolidated acceptance pass on the exact sealed candidate after automated verification.
 
@@ -22,3 +22,5 @@ Verify representative paths rather than every automated edge case:
 14. **Configurable Reports:** as Admin and Trainer, choose several proposed datasets/metrics and switch Bar / Line / Pie / Table; confirm charts reflect the selected authorized data and remain readable in EN/AR.
 
 FINAL promotion requires owner acceptance of this exact sealed build and zero known release-blocking defects.
+
+RC1R6 repair scope and authoritative current evidence: `RC1R6_REPAIR_AND_ACCEPTANCE.md`. Earlier gate descriptions are preserved for continuity.

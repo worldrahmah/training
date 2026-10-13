@@ -1,0 +1,6 @@
+{
+  "version": "3.5.0-rc.1.6",
+  "npm_start": "PASS",
+  "admin_functional_request": "PASS",
+  "official_font_cache": "PACKAGED_LOCAL"
+}

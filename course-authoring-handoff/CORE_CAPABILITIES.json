@@ -1,11 +1,11 @@
 {
   "format": "training-engine-core-capabilities",
   "app_name": "Training Engine ONE",
-  "app_version": "3.5.0-rc.1.5",
+  "app_version": "3.5.0-rc.1.6",
   "core_schema_version": "3.1",
   "latest_authoring_schema": "2.0",
   "registry_format": "training-engine-one-capability-registry",
-  "registry_version": "3.5.0-final-expansion",
+  "registry_version": "3.5.0-rc.1.6",
   "compatible_course_schemas": [
     "1.0",
     "1.1",
@@ -712,6 +712,19 @@
     "anonymous_report_redaction": true,
     "moderation_server_authoritative": true,
     "idempotent_retry_required": true
+  },
+  "authoring_policy": {
+    "private_trainer_fields": [
+      "cue",
+      "explanation",
+      "talking_points",
+      "expected_answer",
+      "common_mistakes",
+      "transition"
+    ],
+    "public_explanation_field": "explanation",
+    "audience_solutions": "hidden_until_reveal",
+    "response_acknowledgement": "submitted_without_score"
   },
   "delivery": {
     "modes": [

@@ -90,8 +90,9 @@ async function renderTeam(){
   page.innerHTML=`${pageHead(t('Team'),t('Manage administrators, trainers and assistants who deliver your classes.'),`<button class="btn primary" data-action="new-staff">${esc(t('Add trainer'))}</button>`)}${toolbar}<div class="card collection-card"><div class="table-wrap"><table class="table"><thead><tr><th>${esc(t('Name'))}</th><th>${esc(t('Role'))}</th><th>${esc(t('Username'))}</th><th>${esc(t('Classes'))}</th><th>${esc(t('Status'))}</th><th></th></tr></thead><tbody data-discovery-scope="${scope}">${rows}</tbody></table></div></div>`
 }
 async function renderReports(){
-  const page=document.querySelector('#page'),[center,h]=await Promise.all([api('/api/reports/center'),api('/api/history?limit=120')]);state.history=h.events;const cid=state.activeClassId||0;
+  const page=document.querySelector('#page'),[center,h,analytics]=await Promise.all([api('/api/reports/center'),api('/api/history?limit=120'),api('/api/reports/analytics')]);state.history=h.events;const cid=state.activeClassId||0;
   const catalog=[
+    {label:'Responses over time',ordered:true,labelKey:'label',rows:analytics.responses_by_day,metrics:[{key:'value',label:'Responses'}]},
     {label:'Course performance',labelKey:'title',rows:center.courses,metrics:[{key:'classes',label:'Classes'},{key:'participants',label:'Participants'},{key:'responses',label:'Responses'},{key:'missions',label:'Missions'},{key:'average_score',label:'Average score'}]},
     {label:'Class performance',labelKey:'title',rows:center.classes,metrics:[{key:'participants',label:'Participants'},{key:'responses',label:'Responses'},{key:'missions',label:'Missions'},{key:'objectives_reached',label:'Objectives reached'},{key:'average_score',label:'Average score'}]},
     {label:'Participant performance',labelKey:'display_name',rows:center.students,metrics:[{key:'classes',label:'Classes'},{key:'responses',label:'Activities'},{key:'missions',label:'Missions'},{key:'achievements',label:'Achievements'},{key:'score',label:'Score'}]},

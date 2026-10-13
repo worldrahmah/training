@@ -1,3 +1,4 @@
+import {storedScore} from './score-evidence.mjs';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -102,7 +103,7 @@ try{
      if(type==='file_submission'||type==='image_submission'){const up1=await uploadSubmission(s1.token,cid,type),up2=await uploadSubmission(s2.token,cid,type);ans1={submission_id:up1.id,name:up1.name,size:up1.size};ans2={submission_id:up2.id,name:up2.name,size:up2.size};}
      const p1=await req(`/api/responses/${iid}`,{token:s1.token,method:'POST',json:{answer:ans1,client_submission_id:`${type}-s1`}});row.response=true;
      if(type!=='team_challenge')await req(`/api/responses/${iid}`,{token:s2.token,method:'POST',json:{answer:ans2,client_submission_id:`${type}-s2`}});
-     if(['single_choice','multiple_choice','true_false','numeric_answer','matching','fill_blanks','sorting','image_interaction','interactive_video'].includes(type))assert.ok(Number(p1.score)>0,`${type}: authored correct answer must score above zero`);
+     if(['single_choice','multiple_choice','true_false','numeric_answer','matching','fill_blanks','sorting','image_interaction','interactive_video'].includes(type))assert.ok(Number(storedScore(tmp,iid,s1.user.id))>0,`${type}: authored correct answer must score above zero`);
      const detailBefore=await req(`/api/classes/${cid}/student/${u1.id}`,{token:trainer.token});assert.ok(detailBefore.responses.some(z=>z.activity_id===`a_${type}`)||type==='team_challenge',`${type}: trainer/admin participant detail response`);
      const beforeProjector=(await req(`/api/live?class_id=${cid}&pair=${encodeURIComponent(pair.pair_token)}`)).live;assert.ok(!['results','explain'].includes(beforeProjector.state.phase),`${type}: projector must not be in revealed-results phase while collecting`);
      if(beforeProjector.results?.summary) assert.deepEqual(Object.keys(beforeProjector.results.summary),['total'],`${type}: audience aggregate hidden before reveal`);

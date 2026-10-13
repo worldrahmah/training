@@ -63,3 +63,6 @@ Use safe local assets and the package asset references documented by the schema/
 
 ## Validation rule
 A course is ready only when it validates on a clean ONE Core, all explicit workflows simulate successfully, and it can be previewed for Trainer, Participant and Projector without Core edits.
+
+## RC1R6 privacy/reveal contract
+All trainer fields remain private in every audience phase, including trainer.explanation. Use activity.explanation for intentionally public post-Reveal teaching explanations. Private notes are never an Explain fallback. Audience payloads withhold solution mappings, accepted answers, target coordinates and score definitions before Reveal. Response acknowledgements confirm submission without correctness/score; feedback arrives after authorized Reveal. Matching choices and learner-submitted work remain usable. No stored course is rewritten during this repair.

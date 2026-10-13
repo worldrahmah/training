@@ -1,7 +1,7 @@
 {
   "format": "training-engine-one-course-authoring-handoff",
   "version": "professional-closure-development",
-  "bound_core": "Training Engine ONE v3.5.0-rc.1.5 Professional Interaction & Presentation Closure",
+  "bound_core": "Training Engine ONE v3.5.0-rc.1.6 Professional Interaction & Presentation Closure",
   "bound_core_schema": "3.1",
   "latest_authoring_schema": "2.0",
   "purpose": "External ChatGPT course development against the exact ONE runtime capability contract",

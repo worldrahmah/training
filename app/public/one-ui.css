@@ -2,6 +2,29 @@
    Visual-only layer. It intentionally sits after styles.css so the stable
    functional layout can evolve without coupling product logic to styling. */
 
+/* Repair candidate: readable analytical comparisons and accessible interaction states. */
+.report-chart-filter{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:20px 0 8px}
+.report-chart-filter>label{flex:1;max-width:360px;min-width:180px}
+.report-chart-stage{border:1px solid var(--border);border-radius:20px;padding:24px;background:var(--surface);margin-top:16px}
+.report-bar-list{display:grid;gap:20px;max-height:520px;overflow:auto;padding:8px 4px;scrollbar-width:thin}
+.report-bar-row{display:grid;grid-template-columns:minmax(140px,1fr) minmax(100px,2fr) minmax(45px,auto);gap:20px;align-items:center;font-size:14px}
+.report-bar-label{font-weight:600;overflow-wrap:anywhere}
+.report-bar-track{position:relative;height:12px;border-radius:12px;background:var(--surface-3)}
+.report-bar-fill{position:absolute;inset-block:0;border-radius:12px;min-width:0}
+.report-bar-zero{position:absolute;inset-block:-4px;width:1px;background:var(--muted);opacity:.5}
+.report-bar-row>strong{font-variant-numeric:tabular-nums;text-align:end}
+.report-data-details{margin-top:24px;border-top:1px solid var(--border);padding-top:16px}
+.report-data-details summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--primary);padding:8px 0}
+.report-data-details .table-wrap{margin-top:12px;max-height:420px;overflow:auto}
+.report-chart-stage .table tbody th{font-weight:600;text-align:start}
+.modal [role="status"],.toast[role="status"]{overflow-wrap:anywhere}
+:where(button,a,input,textarea,select,summary):focus-visible{outline:3px solid var(--one-brand,#4f46e5);outline-offset:3px}
+.collection-discovery input,.chart-controls select{min-height:44px}
+@media(max-width:760px){.report-chart-stage{padding:16px;border-radius:16px}.report-bar-row{grid-template-columns:minmax(110px,1fr) minmax(65px,1fr) auto;gap:12px;font-size:13px}.report-bar-list{gap:24px}.chart-controls{width:100%}}
+@media(max-width:480px){.report-bar-row{grid-template-columns:minmax(0,1fr) auto;gap:8px}.report-bar-track{grid-column:1/-1;grid-row:2}.report-bar-row>strong{grid-column:2;grid-row:1}.report-chart-filter>label{max-width:none;width:100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.report-bar-fill{background:Highlight!important}.report-bar-track{border:1px solid CanvasText}.report-bar-zero{background:CanvasText}}
+
 :root{
   --one-canvas:#f3f5f9;
   --one-canvas-deep:#e9edf4;
@@ -660,3 +683,6 @@ button,input,select,textarea{letter-spacing:normal}
 @media(max-width:760px){.tree-module-head>.tree-node-actions{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));justify-content:stretch}.tree-module-head>.tree-node-actions .btn{width:100%}}
 .builder-tree-searchbar{display:grid;grid-template-columns:minmax(180px,1fr) auto;align-items:center}.builder-tree-searchbar .discovery-search{min-width:0}.builder-tree-searchbar .btn{width:auto}
 @media(max-width:620px){.builder-tree-searchbar{grid-template-columns:1fr}.builder-tree-searchbar .btn{width:100%}}
+
+.response-saved-state{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;margin:16px 0;border:1px solid #a7e2cf;border-radius:14px;background:color-mix(in srgb,var(--surface) 90%,#0ea57d 10%);color:var(--text)}
+.response-saved-state strong{font-size:14px}.response-saved-state span{font-size:12px;color:var(--muted)}

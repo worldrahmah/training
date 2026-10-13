@@ -177,6 +177,27 @@
       "properties": {
         "cue": {
           "type": "string"
+        },
+        "explanation": {
+          "type": "string"
+        },
+        "talking_points": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expected_answer": {
+          "type": "string"
+        },
+        "common_mistakes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "transition": {
+          "type": "string"
         }
       }
     },

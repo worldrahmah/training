@@ -1,10 +1,5 @@
-TRAINING_ENGINE_ONE_STAGE1C_IDEAS_BOARD_v3.4.0_RC3
+TRAINING_ENGINE_ONE_PROFESSIONAL_REPAIR_v3.5.0_RC1R6
+OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL
 
-Stage 0 manual visual acceptance: PASS — owner accepted 2026-10-12.
-Stage 1A Word Cloud manual acceptance: PASS — owner accepted RC1R5 on 2026-10-12.
-Stage 1B Moderated / Upvoted Q&A manual acceptance: PASS — owner accepted RC2 on 2026-10-12.
-Stage 1C Brainstorm / Ideas Board manual acceptance: REQUIRED.
-
-Check Builder Ideas Board configuration and categories, Participant EN/AR categorized idea submission and upvoting, Trainer moderation/privacy modes, self-upvote policy, votes/newest order, Highlight, Merge/Unmerge, hide-before-reveal behavior, professional Projector category/card layout and idea/participant counts in Dark / Light / High Contrast, public/trainer-only/anonymous identity behavior, Results History recall, reconnect/retry behavior, and responsive Participant/Projector presentation on the exact sealed build.
-
-Do not call Stage 1C accepted or this release FINAL until the focused Ideas Board manual acceptance passes.
+Required owner gate: docs/RC1R6_REPAIR_AND_ACCEPTANCE.md.
+Review Admin Participants/discovery/export, matching submission/update, report charts and data tables, keyboard dialogs, EN/AR responsive layouts and Projector readability. All inherited activities/workflows remain regression requirements. Automated browser evidence does not replace owner acceptance. No global design ranking or complete platform finalization is claimed.

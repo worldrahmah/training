@@ -1,3 +1,4 @@
+import {storedScore} from './score-evidence.mjs';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -24,7 +25,8 @@ try{
  let r=await fetch(base+'/api/courses/import',{method:'POST',headers:{'X-Session-Token':tr.token,'X-File-Name':'assessment.course.json'},body:Buffer.from(JSON.stringify(course()))}),imp=await r.json();assert.equal(r.status,201,JSON.stringify(imp));const cl=await req('/api/classes',{token:tr.token,method:'POST',json:{course_version_id:imp.version_id,title:'Assessment Class',capacity:20,participant_ids:[u1.id,u2.id],status:'planned'}}),cid=cl.id;await req(`/api/classes/${cid}/activate`,{token:tr.token,method:'POST'});const pair=await req(`/api/live/${cid}/projector-pair`,{token:tr.token,method:'POST',json:{label:'Assessment projector'}});
  for(const id of Object.keys(answers)){
    const launch=await req(`/api/live/${cid}/launch`,{token:tr.token,method:'POST',json:{module_id:'m1',activity_id:id}}),iid=launch.instance_id;
-   const a1=await req(`/api/responses/${iid}`,{token:s1.token,method:'POST',json:{answer:answers[id][0]}}),a2=await req(`/api/responses/${iid}`,{token:s2.token,method:'POST',json:{answer:answers[id][1]}});assert.ok(Number(a2.score)>Number(a1.score||0),`${id}: correct answer must score higher than the deliberately wrong/partial answer`);
+   const a1=await req(`/api/responses/${iid}`,{token:s1.token,method:'POST',json:{answer:answers[id][0]}}),a2=await req(`/api/responses/${iid}`,{token:s2.token,method:'POST',json:{answer:answers[id][1]}});assert.ok(Number(storedScore(tmp,iid,s2.user.id))>Number(storedScore(tmp,iid,s1.user.id)||0),`${id}: correct answer must score higher than the deliberately wrong/partial answer`);
+   assert.equal(a1.score,undefined);assert.equal(a2.score,undefined);
    const before=(await req(`/api/student/dashboard?class_id=${cid}`,{token:s1.token})).active;assert.equal(before.personal_feedback,undefined,`${id}: personal correctness must be hidden before reveal`);assert.deepEqual(Object.keys(before.results?.summary||{}),['total'],`${id}: audience results must be hidden before reveal`);
    await req(`/api/live/${cid}/close`,{token:tr.token,method:'POST'});await req(`/api/live/${cid}/reveal`,{token:tr.token,method:'POST'});
    const trainer=(await req(`/api/live?class_id=${cid}`,{token:tr.token})).live;assert.equal(trainer.results.summary.assessment_meta.responses,2,`${id}: trainer assessment response count`);assert.ok(trainer.results.summary.assessment_meta.correct_answer_display,`${id}: correct answer display required`);assert.equal(trainer.results.summary.assessment_meta.correct_responses,1,`${id}: one fully correct response expected`);

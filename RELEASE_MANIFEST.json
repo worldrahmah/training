@@ -1,8 +1,8 @@
 {
   "format": "training-engine-one-release",
-  "release_name": "TRAINING_ENGINE_ONE_PROFESSIONAL_CLOSURE_v3.5.0_RC1R5",
+  "release_name": "TRAINING_ENGINE_ONE_PROFESSIONAL_REPAIR_v3.5.0_RC1R6",
   "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
-  "app_version": "3.5.0-rc.1.5",
+  "app_version": "3.5.0-rc.1.6",
   "core_schema_version": "3.1",
   "course_authoring_schema_version": "2.0",
   "baseline_core_v2_1_1_sha256": "82a8f0dd04f658429eec7d153319da5953e2bf0f308a43c2293f5947b7c755f5",
@@ -66,5 +66,14 @@
   "professional_closure_rc1r3_baseline_sha256": "f22243c88a89d78bf9fb50591b017213b1a83ea73ef3ce493916b9941f0bfb28",
   "professional_closure_rc1r5_ui_reports_checkpoint": "docs/PROFESSIONAL_CLOSURE_RC1R5_UI_REPORTS_DISCOVERY.md",
   "professional_closure_rc1r5_ui_reports_scope": "Consistent Admin/Trainer collection discovery/search/filter/sort plus responsive action polish and constrained configurable report charts.",
-  "professional_closure_rc1r4_baseline_sha256": "8e334443c09f2760c4eb52b568f0e887f3debe38ce5778e4ac2497e441105069"
+  "professional_closure_rc1r4_baseline_sha256": "8e334443c09f2760c4eb52b568f0e887f3debe38ce5778e4ac2497e441105069",
+  "repair_baseline_sha256": "0262559de4464712888734e1addfbcd3de2b178822d1a188641e22daf8f24016",
+  "repair_checkpoint": "docs/RC1R6_REPAIR_AND_ACCEPTANCE.md",
+  "repair_scope": "Audience privacy/reveal, cohort authorization, verified ZIP imports, Admin/export and accessible analytical/participant experience",
+  "repair_manual_status": "PENDING_CONSOLIDATED_OWNER_ACCEPTANCE",
+  "repair_test_output": "docs/verification/WORKING_TREE_TEST_OUTPUT.txt",
+  "repair_browser_evidence": "docs/verification/BROWSER_RESULT.json",
+  "release_distribution": "APPLICATION_SOURCE_WITH_SAMPLE_ASSETS_NO_BUNDLED_DATABASE_OR_SESSIONS",
+  "repair_automated_status": "PASS_WORKING_TREE_FULL_SUITE_AND_BROWSER",
+  "source_baseline_commit": "04851e7"
 }

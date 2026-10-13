@@ -1,5 +1,16 @@
 const KEY='training_engine_locale';
 const AR={
+  'Response submitted':'تم إرسال الإجابة',
+  'Update response':'تحديث الإجابة',
+  'You can update it until responses close.':'يمكنك تحديثها حتى إغلاق الإجابات.',
+
+  'Collecting responses':'جمع الإجابات',
+  'Filter chart rows':'تصفية بيانات الرسم',
+  'Line charts require ordered data. Pie charts require additive groups.':'تحتاج الرسوم الخطية إلى بيانات مرتبة، والدائرية إلى مجموعات قابلة للجمع.',
+  '{shown} of {total} rows':'{shown} من {total} صفوف',
+  'View data table':'عرض جدول البيانات',
+  'Responses over time':'الإجابات عبر الزمن',
+
   'Activity settings':'إعدادات النشاط',
   'Correct answers':'الإجابات الصحيحة',
   'Correct':'صحيح',

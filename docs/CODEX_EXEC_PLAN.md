@@ -1,64 +1,19 @@
-# ExecPlan — Admin/Trainer Collection Discovery + Configurable Reporting Closure
+# ExecPlan — RC1R6 baseline safety and experience repair
 
-## Baseline facts
-- Source baseline is `TRAINING_ENGINE_ONE_PROFESSIONAL_CLOSURE_v3.5.0_RC1R4.zip`.
-- Baseline `npm test` reproduced PASS on Node v22.16.0 before edits.
-- Existing global search exists, but collection pages do not consistently expose local search/filter/sort controls.
-- Participants already present the preferred polished table visual treatment; Courses/Classes/People/Reports and trainer management surfaces are inconsistent.
-- Reports currently expose fixed cards/tables/bars; users cannot select metric/dimension/chart combinations.
+Baseline: verified RC1R5 SHA-256 0262559de4464712888734e1addfbcd3de2b178822d1a188641e22daf8f24016; full unchanged suite passed (44 commands/43 programs, 36 activities/68 result views). Imported exact source into the existing empty checkout; pristine upload is retained outside it. Owner authorized baseline repairs and exceptional UI/UX. No worktree or remote push.
 
-## Target architecture
-- Add a reusable client-side collection discovery pattern shared by Admin and Trainer: search + context-specific filters + sort + result count, with no server schema change.
-- Apply it to every nontrivial Admin/Trainer management collection (courses, classes, staff/participants, notifications/history, backups, class-detail participant/trainer/team/session lists where practical).
-- Keep Participant and Projector free of management-discovery chrome.
-- Add a constrained configurable Report Chart Workspace using existing report APIs. It only allows proposed metric/dimension combinations that exist in returned report data; no arbitrary SQL/field entry.
-- Use a lightweight in-product SVG chart renderer (bar/line/pie) with table fallback; no cloud/external chart dependency.
+Target: explicit audience projections preserving required response choices while withholding Trainer guidance and solution mappings; server-authorized cohort analytics; verified bounded ZIP import; truthful Admin rendering/export; coherent accessible dialogs, readable constrained charts and actual local Montserrat/Cairo assets. Evolve existing Core, preserve roles and classroom identity.
 
-## Milestones
-1. Shared collection-discovery utilities/CSS and Admin coverage.
-   - Validation: `node tests/collection-discovery.mjs`.
-2. Trainer coverage including class/detail/report collections.
-   - Validation: `node tests/collection-discovery.mjs`.
-3. Configurable Admin/Trainer report chart workspace with valid preset catalog, EN/AR and permission-safe data.
-   - Validation: `node tests/report-chart-workspace.mjs`.
-4. Full regression and sealed-byte verification.
-   - Validation: `npm test` plus new tests.
+Milestones:
+1. Privacy/authorization/import fixes. New negative runtime/ZIP gates plus existing assessment/activity/scoring/variant gates.
+2. Admin/export and affected UX. Real browser page/discovery/download/chart/keyboard/EN-AR and responsive checks.
+3. Full npm test, browser repair tests, syntax checks, migration/restart/backup and 36/68 certification.
+4. New release identity/contracts/notes; clean distribution; all checksums; seal; fresh exact-byte extraction and full suite/browser checks again; seal report, limitations, owner checklist and exact SHA-256.
 
-## Database migration / rollback
-- No database/schema migration is required. All discovery controls are client-side views over existing authorized API data.
-- Report chart configuration is transient UI state; no persistence change is required for this closure.
-- Rollback is exact RC1R4 artifact.
+Database: no schema migration planned. Runtime tests use external disposable data/storage. Existing course schemas 1.0/1.1/2.0, IDs, versions and stored definitions remain unchanged. Audience response projections may change where prior behavior disclosed private answers. Scoring remains server-side; tests inspect privileged/post-reveal evidence rather than a pre-reveal scoring oracle. Rollback: retain original RC1R5 artifact and verified database/storage backups.
 
-## Backward compatibility
-- No course schema changes.
-- No API response shape removals.
-- No historical data mutation.
-- Existing permissions continue to constrain report/API rows before local filtering/charting.
+Experience matrix: EN/LTR/Montserrat, AR/RTL/Cairo; light/dark; desktop/tablet/mobile; Projector 16:9 dark/light/high contrast; keyboard focus containment/return; visible named controls; honest loading/empty/error/zero states and chart table equivalents.
 
-## UI/UX matrix
-- Admin + Trainer: English LTR / Arabic RTL; light/dark/system; desktop/tablet/mobile.
-- Search toolbars must wrap without overlap at narrow widths.
-- Empty query/filter states must be explicit and resettable.
-- Charts must have accessible labels/legend and a table fallback.
-- Projector/Participant unaffected by management UI changes.
+Risks: keep matching choices usable without associations, image labels without coordinates, path state and post-reveal feedback. Do not silently weaken scoring assertions. Non-goals: school schema/features, global rewrite, external ranking claims. School scope awaits owner decisions. Baseline code and historical archives are preserved.
 
-## Risks / non-goals
-- Non-goal: full arbitrary BI/query builder.
-- Non-goal: external charting/cloud dependencies.
-- Risk: large client-side lists; current product data sizes are appropriate, but controls should be structured so server pagination can be added later.
-- Risk: hiding rows client-side must never be confused with authorization; server authorization remains authoritative.
-
-## Decision log
-- Use constrained proposed datasets/metrics rather than arbitrary user-entered fields.
-- Add chart-type compatibility rules (pie only for a single additive series; line for ordered datasets; bar otherwise).
-- Keep the current visual system and improve consistency instead of redesigning role surfaces.
-
-## Final release checklist
-- Baseline PASS recorded.
-- Admin/Trainer collection search/filter/sort coverage gate PASS.
-- Report chart workspace gate PASS.
-- I18N/Responsive/Role surface tests PASS.
-- Complete inherited `npm test` PASS.
-- Regenerate authoring/root checksum manifests.
-- Seal new artifact and rerun full suite from fresh extraction.
-- Owner manual browser acceptance remains required before FINAL.
+Progress: imported baseline, repairs, full regression, syntax and browser gates complete. Exact candidate sealing/retest is the remaining gate; owner visual acceptance remains pending.

@@ -1,3 +1,4 @@
+import {storedScore} from './score-evidence.mjs';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -37,7 +38,7 @@ try{
  let x=await launch(tr.token,cid,'present');await expect(st.token,x.instance_id,'anything',409,'no-input activity must reject participant response');await clear(tr.token,cid);
  x=await launch(tr.token,cid,'poll');await expect(st.token,x.instance_id,'Z',400);await expect(st.token,x.instance_id,'A',200);await clear(tr.token,cid);
  x=await launch(tr.token,cid,'multi');await expect(st.token,x.instance_id,[],400);await expect(st.token,x.instance_id,['A','Z'],400);await expect(st.token,x.instance_id,['A','C'],200);await clear(tr.token,cid);
- x=await launch(tr.token,cid,'tf');let ok=await expect(st.token,x.instance_id,'صحيح',200);assert.ok(Number(ok.data.score)>0,'Arabic semantic True must score as authored True');await req(`/api/live/${cid}/close`,{token:tr.token,method:'POST'});await req(`/api/live/${cid}/reveal`,{token:tr.token,method:'POST'});let tfLive=(await req(`/api/live?class_id=${cid}`,{token:tr.token})).live;assert.equal(tfLive.results.summary.counts['صحيح'],1,'Arabic True label must aggregate under authored display label');assert.equal(tfLive.results.summary.assessment_meta.correct_answer_display,'صحيح','Arabic authored True label must be revealed as correct answer');await clear(tr.token,cid);
+ x=await launch(tr.token,cid,'tf');let ok=await expect(st.token,x.instance_id,'صحيح',200);assert.ok(Number(storedScore(tmp,x.instance_id,st.user.id))>0,'Arabic semantic True must score as authored True');await req(`/api/live/${cid}/close`,{token:tr.token,method:'POST'});await req(`/api/live/${cid}/reveal`,{token:tr.token,method:'POST'});let tfLive=(await req(`/api/live?class_id=${cid}`,{token:tr.token})).live;assert.equal(tfLive.results.summary.counts['صحيح'],1,'Arabic True label must aggregate under authored display label');assert.equal(tfLive.results.summary.assessment_meta.correct_answer_display,'صحيح','Arabic authored True label must be revealed as correct answer');await clear(tr.token,cid);
  x=await launch(tr.token,cid,'num');await expect(st.token,x.instance_id,25,400);await expect(st.token,x.instance_id,10.5,200);await clear(tr.token,cid);
  x=await launch(tr.token,cid,'rating');await expect(st.token,x.instance_id,1.25,400);await expect(st.token,x.instance_id,1.5,200);await clear(tr.token,cid);
  x=await launch(tr.token,cid,'rank');await expect(st.token,x.instance_id,{A:1,B:1,C:3},400);await expect(st.token,x.instance_id,{A:2,B:1,C:3},200);await clear(tr.token,cid);

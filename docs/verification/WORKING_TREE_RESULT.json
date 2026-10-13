@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "source_version": "3.5.0-rc.1.6",
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "full_test_exit_code": 0,
+  "full_test_commands": 47,
+  "test_programs": 46,
+  "browser_exit_code": 0,
+  "role_locale_visits": 12,
+  "activity_types": 36,
+  "result_view_cases": 68,
+  "syntax_checks": "PASS",
+  "baseline_sha256": "0262559de4464712888734e1addfbcd3de2b178822d1a188641e22daf8f24016",
+  "manual_owner_acceptance": "PENDING",
+  "scope": "Defined inherited gates plus RC1R6 repair and representative browser gates"
+}

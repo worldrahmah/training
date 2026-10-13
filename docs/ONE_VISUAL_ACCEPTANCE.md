@@ -1,4 +1,4 @@
-# Training Engine ONE v3.5.0 RC1R5 — Consolidated Visual / Browser Acceptance
+# Training Engine ONE v3.5.0 RC1R6 — Consolidated Visual / Browser Acceptance
 
 This is the **single owner acceptance gate** for the Professional Interaction & Presentation Closure candidate. Automated tests do not replace this visual/browser gate.
 
@@ -27,3 +27,5 @@ The owner is **not** required to manually retest all 36 Activity Types. RC1R4 in
 
 ## Failure conditions
 Any broken RTL, illegible Projector contrast, dead control, privacy leak, duplicate offline submission, workflow rewind, data loss, fake import success, or substantial unprofessional visual regression blocks FINAL promotion.
+
+RC1R6 repair scope and authoritative current evidence: `RC1R6_REPAIR_AND_ACCEPTANCE.md`. Earlier gate descriptions are preserved for continuity.

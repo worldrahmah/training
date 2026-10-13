@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const source=fs.readFileSync(new URL('../app/public/report-charts.js',import.meta.url),'utf8').replace(/^import .*;\n/,'').replaceAll('export function ','function ');
+const ctx={};vm.createContext(ctx);vm.runInContext(source+';globalThis.check=allowedChartTypes;',ctx);
+const views=(ds,m,rows)=>Array.from(ctx.check(ds,m,rows));
+assert.deepEqual(views({rows:[{value:50}]},{key:'value'}),['bar','table'],'Unspecified categorical values are not proportions or time series');
+assert.ok(!views({rows:[{average_score:5}],partition:true},{key:'average_score'}).includes('pie'),'Average scores must not be summed into a pie');
+assert.ok(views({rows:[{value:5}],partition:true},{key:'value',additive:true}).includes('pie'));
+assert.ok(!views({rows:[{value:-5}],partition:true},{key:'value',additive:true}).includes('pie'));
+assert.ok(views({rows:[{value:5}],ordered:true},{key:'value'}).includes('line'));
+console.log('CHART_SEMANTICS_PASS categorical/ordered, additive/average, positive/negative');

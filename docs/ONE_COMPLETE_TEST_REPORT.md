@@ -1,4 +1,4 @@
-# Training Engine ONE v3.5.0 RC1R5 — Professional Closure Test Report
+# Training Engine ONE v3.5.0 RC1R6 — Professional Closure Test Report
 
 ## Automated scope
 The consolidated suite runs canonical contract synchronization, the Professional Closure contract/runtime gates, complete 36/36 Activity Certification, scored-assessment feedback, declared setting/variant and invalid-input gates, all accepted Word Cloud/Q&A/Ideas Board and Projector gates, EN/AR and responsive contracts, role/Course Flow/workflow validation, restart, backup/restore, v2 compatibility, populated v2.1.1 migration, professional completeness and the 20-participant classroom rehearsal.
@@ -24,3 +24,5 @@ The consolidated suite runs canonical contract synchronization, the Professional
 
 ## Release rule
 The final sealed ZIP is independently extracted and the complete `npm test` suite is rerun from those exact bytes. Manual/browser acceptance remains a separate owner gate before FINAL promotion.
+
+RC1R6 repair scope and authoritative current evidence: `RC1R6_REPAIR_AND_ACCEPTANCE.md`. Earlier gate descriptions are preserved for continuity.
