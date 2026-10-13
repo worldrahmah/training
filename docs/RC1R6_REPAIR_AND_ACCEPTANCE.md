@@ -9,7 +9,7 @@ Status: OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL. Source authority is exact RC1R5 SH
 - Assigned-class cohort analytics exclude classes outside the caller's scope. Admin retains global authorized comparisons. Daily report trends use the existing report authorization boundary.
 - Course/PPTX imports use one bounded ZIP reader checking CRC, names, duplicate/case-colliding paths, local/central agreement, traversal, overlap, entry/expanded limits and unsupported archive formats. Corrupt/ambiguous input fails truthfully. Non-ZIP64, unencrypted stored/deflate archives are supported; maximum 4,096 entries, 32 MiB per entry and 100 MiB expanded total. Existing upload limits still apply.
 - Restored Admin role display and authenticated CSV export. Added keyboard-safe named dialogs, local official Montserrat/Cairo with pinned source/license/hash provenance, responsive complete analytical comparisons, filtering/table equivalents and valid chart combinations.
-- Participant displays persisted submission/update state and restores common answer inputs. Closed unsubmitted activities show the truthful closed state. Internal Live state/type labels are replaced with learning-facing labels.
+- Participant displays persisted submission/update state and restores common answer inputs. Closed unsubmitted activities show the truthful closed state. Internal Live state/type labels are replaced with learning-facing labels. Empty assessments show no-data instead of false zero accuracy; result labels have explicit layout spacing.
 - Both activity schema copies document the same supported private Trainer fields; current machine authoring policy records the reveal/privacy boundary. Canonical activity/result counts are unchanged.
 
 ## Verification commands

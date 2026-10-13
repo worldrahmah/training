@@ -68,9 +68,8 @@ try:
     if name=='student':
      assert page.locator('select[name="match"]').count()==2
      page.locator('select[data-key="p1"]').select_option('Processor');page.locator('select[data-key="p2"]').select_option('Memory')
-     if locale=='en':
-      page.locator('#responseForm button[type="submit"]').click();page.locator('.response-saved-state').wait_for();assert page.locator('select[data-key="p1"]').input_value()=='Processor'
-      current=req(f'/api/student/dashboard?class_id={cid}',st)['active'];assert 'trainer' not in current['item'];assert 'right' not in current['item']['matching']['pairs'][0]
+     page.locator('#responseForm button[type="submit"]').click();page.locator('.response-saved-state').wait_for();assert page.locator('select[data-key="p1"]').input_value()=='Processor'
+     current=req(f'/api/student/dashboard?class_id={cid}',st)['active'];assert 'trainer' not in current['item'];assert 'right' not in current['item']['matching']['pairs'][0]
     page.screenshot(path=str(OUT/f'{name}-{locale}-desktop.png'),full_page=True)
     for width,height in [(768,1024),(390,844)]:
      page.set_viewport_size({'width':width,'height':height});page.wait_for_timeout(120)

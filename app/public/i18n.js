@@ -1,5 +1,7 @@
 const KEY='training_engine_locale';
 const AR={
+  'No responses yet.':'لا توجد إجابات بعد.',
+
   'Response submitted':'تم إرسال الإجابة',
   'Update response':'تحديث الإجابة',
   'You can update it until responses close.':'يمكنك تحديثها حتى إغلاق الإجابات.',
