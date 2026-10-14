@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "archive_sha256": "24bd449df0076a08ffc5e3a931c2dcba384ea912c49a263c1ecf223091d4c859",
+  "changed_derived_certification_files": [
+    "docs/ACTIVITY_CERTIFICATION_MATRIX.json",
+    "docs/ACTIVITY_CERTIFICATION_MATRIX.md",
+    "docs/ACTIVITY_CERTIFICATION_RUNTIME_RESULT.json",
+    "docs/ACTIVITY_SURFACE_COVERAGE.json"
+  ],
+  "unexpected_source_changes": [],
+  "derived_semantic_changes": [],
+  "timestamp_paths": [
+    "docs/ACTIVITY_CERTIFICATION_MATRIX.json.generated_at",
+    "docs/ACTIVITY_CERTIFICATION_RUNTIME_RESULT.json.generated_at",
+    "docs/ACTIVITY_SURFACE_COVERAGE.json.generated_at"
+  ]
+}

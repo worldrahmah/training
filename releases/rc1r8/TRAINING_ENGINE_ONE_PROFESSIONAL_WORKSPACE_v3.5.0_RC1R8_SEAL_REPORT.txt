@@ -1,0 +1,31 @@
+TRAINING ENGINE ONE — RC1R8 EXACT-BYTE SEAL REPORT
+
+Archive: TRAINING_ENGINE_ONE_PROFESSIONAL_WORKSPACE_v3.5.0_RC1R8.zip
+SHA-256: 24bd449df0076a08ffc5e3a931c2dcba384ea912c49a263c1ecf223091d4c859
+Bytes: 52297454
+Files: 852
+Source commit: 4b9e3d71a2d3b5cb6b85110634587ca179645090
+Application: 3.5.0-rc.1.8; core/data 3.2; course schema 2.0.
+Status: PASS — OWNER ACCEPTANCE CANDIDATE, NOT FINAL.
+
+Working-tree complete Node suite: PASS, 54 commands / 53 test programs plus contract synchronization.
+Working-tree four browser suites: PASS.
+Fresh extraction of this exact immutable ZIP: PASS.
+ZIP CRC, safe paths, duplicate and case/normalization collisions: PASS.
+Root checksum entries 851; current authoring checksum entries 34: PASS.
+Ten nested sample/historical ZIP/PPTX archives: CRC and duplicate checks PASS.
+Complete Node suite AGAIN from extracted sealed bytes: PASS.
+Four browser suites AGAIN from extracted sealed bytes: PASS.
+36 canonical activities; 68 result-view cases: PASS.
+12 role/locale repair visits; 107 workspace views; 12 new workflow gates: PASS.
+640 actual global-font/layout cases across eight surfaces, EN/AR and desktop/mobile or 16:9: PASS.
+34 real branded report/font PDFs through MuPDF text/bounds, PDFium rendering and Poppler parsing: PASS.
+8658 solid-text contrast comparisons, zero detected failures.
+102 JavaScript module syntax checks; 47 application/tool no-undef modules, zero errors.
+After tests, immutable ZIP SHA unchanged. Extracted application/source unchanged; only four existing derived certification outputs refreshed their generation dates. JSON semantic changes: none.
+
+The ZIP includes runtime/source, deterministic migrations, registry/schemas, current AI authoring kit, sample courses/assets, licensed fonts/PDF runtime, role/upgrade/data guides, working evidence/gallery, known limitations and owner checklist. It contains no owner runtime database/storage/sessions. Demo/test fixtures are explicitly disposable.
+
+This companion attestation supplies the final hash and exact-byte test outcomes without changing the verified ZIP. The ZIP cannot embed its own final SHA-256. Current handoff is RC1R8; v1.3 remains historical.
+
+OWNER GATE: Windows installation/copied real-data upgrade, real devices and physical Projector/visual acceptance remain pending. No world ranking, unlimited-capacity claim, PDF/UA accreditation or whole-platform FINAL is implied.
