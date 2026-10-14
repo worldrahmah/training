@@ -1,0 +1,1 @@
+WORKSPACE_OPERATIONS_PASS 126 assertions: editor isolation/publishing, registered pending admission, notifications/capacity/authorization, removed roster and resumed progress, reusable groups and private profiles

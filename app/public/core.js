@@ -1,3 +1,4 @@
+import {FONT_CATALOG} from '/font-catalog.js';
 import {applyLocale,cycleLocale,direction,getLocale,initLocale,langButton,setLocale,t,userMessage} from '/i18n.js';
 export {applyLocale,cycleLocale,direction,getLocale,initLocale,langButton,setLocale,t,userMessage};
 
@@ -49,7 +50,10 @@ function placeMenu(panel){
   panel.style.width=`${width}px`;panel.style.maxHeight=`${innerHeight-24}px`;
   const height=panel.getBoundingClientRect().height||400;
   panel.style.left=`${Math.max(12,Math.min(document.documentElement.dir==='rtl'?r.left:r.right-width,innerWidth-width-12))}px`;
-  panel.style.top=`${Math.max(12,r.bottom+8+height>innerHeight?r.top-height-8:r.bottom+8)}px`;
+  const below=Math.max(44,innerHeight-r.bottom-20),above=Math.max(44,r.top-20),up=height>below&&above>below;
+  panel.style.maxHeight=`${Math.min(innerHeight-24,up?above:below)}px`;
+  const visibleHeight=panel.getBoundingClientRect().height||Math.min(height,up?above:below);
+  panel.style.top=`${Math.max(12,Math.min(innerHeight-visibleHeight-12,up?r.top-visibleHeight-8:r.bottom+8))}px`;
 }
 document.addEventListener('beforetoggle',e=>{if(!e.target.matches?.('.one-menu-panel'))return;const open=e.newState==='open';menuTrigger(e.target)?.setAttribute('aria-expanded',String(open));if(open){const panel=e.target;panel.style.visibility='hidden';placeMenu(panel);requestAnimationFrame(()=>{if(panel.matches(':popover-open'))placeMenu(panel);panel.style.visibility=''})}},true);
 document.addEventListener('click',e=>{const item=e.target.closest?.('.one-menu-panel button,.one-menu-panel a');if(!item)return;const panel=item.closest('.one-menu-panel'),trigger=menuTrigger(panel);panel.hidePopover();trigger?.focus()},true);
@@ -76,20 +80,28 @@ function normalizeProse(root){
 }
 new MutationObserver(records=>{for(const record of records)for(const node of record.addedNodes)normalizeProse(node)}).observe(document.documentElement,{childList:true,subtree:true});
 
-export function applyTypography(config={},surface='ui'){
-  // Training Engine ONE has one canonical product typography contract:
-  // Montserrat for English/LTR and Cairo for Arabic/RTL. Historical/course
-  // typography metadata is preserved in data for compatibility but cannot
-  // fragment the professional product UI.
-  const ar=getLocale()==='ar'||document.documentElement.dir==='rtl';
-  const family=ar?'\"Cairo\", Tahoma, Arial, sans-serif':'\"Montserrat\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", sans-serif';
-  for(const name of ['--font-ui','--font-title','--font-body','--font-presentation'])document.documentElement.style.setProperty(name,family);
-  document.documentElement.dataset.surface=surface;
-  return {ui:family,title:family,body:family,presentation:family};
+let activeTypography={};
+export function applyTypography(config=null,surface='ui'){
+ if(config&&config.version===2)activeTypography=config;
+ const fonts={};for(const language of ['en','ar']){const selected=String(activeTypography.ui?.[language]||FONT_CATALOG.defaults[language]);fonts[language]=FONT_CATALOG.families.find(font=>font.id===selected&&font.language===language)||FONT_CATALOG.families.find(font=>font.id===FONT_CATALOG.defaults[language]);}
+ const latin=`"${fonts.en.name}", ui-sans-serif, system-ui, sans-serif`,arabic=`"${fonts.ar.name}", "Cairo", ${latin}`,family=getLocale()==='ar'?arabic:latin;
+ document.documentElement.style.setProperty('--font-latin',latin);document.documentElement.style.setProperty('--font-arabic',arabic);
+ for(const name of ['--font-ui','--font-title','--font-body','--font-presentation'])document.documentElement.style.setProperty(name,family);
+ document.documentElement.dataset.surface=surface;document.documentElement.dataset.fontEnglish=fonts.en.id;document.documentElement.dataset.fontArabic=fonts.ar.id;
+ return {ui:family,title:family,body:family,presentation:family};
 }
+
 document.addEventListener('one-locale-change',()=>applyTypography({},document.documentElement.dataset.surface||'ui'));
 export function toast(message,type=''){let w=document.querySelector('.toast-wrap');if(!w){w=document.createElement('div');w.className='toast-wrap';document.body.appendChild(w)}const el=document.createElement('div');el.className=`toast ${type}`;el.setAttribute('role',type==='error'?'alert':'status');el.setAttribute('aria-live',type==='error'?'assertive':'polite');el.textContent=userMessage(message);w.appendChild(el);setTimeout(()=>el.remove(),3200)}
 let dialogSequence=0;
+const dialogStack=[],originalInert=new Map();
+function synchronizeDialogs(){
+  for(let i=dialogStack.length-1;i>=0;i--)if(!dialogStack[i].isConnected)dialogStack.splice(i,1);
+  const top=dialogStack.at(-1);
+  if(top){for(const node of document.body.children){if(!originalInert.has(node))originalInert.set(node,node.inert);node.inert=node!==top;}}
+  else{for(const [node,inert] of originalInert)if(node.isConnected)node.inert=inert;originalInert.clear();}
+  return top;
+}
 export function workspaceSearch(openResult){
   const wrap=modal(t('Search your workspace'),`<label class="field"><span>${esc(t('Find a course, class or participant'))}</span><input class="input" type="search" data-workspace-query autocomplete="off" placeholder="${esc(t('Type at least two characters'))}"></label><div class="workspace-search-status" role="status" aria-live="polite"></div><div class="workspace-search-results"></div>`,{cancelText:t('Close'),onConfirm:null,wide:true});
   const input=wrap.querySelector('[data-workspace-query]'),status=wrap.querySelector('[role="status"]'),results=wrap.querySelector('.workspace-search-results');let timer,sequence=0,rows=[];
@@ -102,10 +114,9 @@ export function workspaceSearch(openResult){
 export function modal(title,bodyHtml,{confirmText=t('Save'),cancelText=t('Cancel'),onConfirm=null,wide=false}={}){
   const id=`one-dialog-${++dialogSequence}`,opener=document.activeElement,wrap=document.createElement('div');
   wrap.className='modal-backdrop';wrap.innerHTML=`<div class="modal${wide?' wide':''}" role="dialog" aria-modal="true" aria-labelledby="${id}" tabindex="-1"><div class="drawer-head"><h2 id="${id}">${esc(title)}</h2><button class="btn icon" data-close aria-label="${esc(t('Close'))}">×</button></div><div data-body>${bodyHtml}</div><div class="form-actions"><button class="btn" data-close>${esc(cancelText)}</button>${onConfirm?`<button class="btn primary" data-confirm>${esc(confirmText)}</button>`:''}</div></div>`;
-  const background=[...document.body.children].map(el=>({el,inert:el.inert}));for(const {el} of background)el.inert=true;
-  document.body.appendChild(wrap);let closed=false,busy=false;const nativeRemove=wrap.remove.bind(wrap);
+  document.body.appendChild(wrap);dialogStack.push(wrap);synchronizeDialogs();let closed=false,busy=false;const nativeRemove=wrap.remove.bind(wrap);
   const focusables=()=>[...wrap.querySelectorAll('button,input,select,textarea,a[href],[tabindex="0"]')].filter(el=>!el.disabled&&!el.hidden&&el.getClientRects().length);
-  const close=()=>{if(closed)return;closed=true;document.removeEventListener('keydown',key,true);nativeRemove();for(const {el,inert} of background)el.inert=inert;if(opener?.isConnected)opener.focus()};
+  const close=()=>{if(closed)return;closed=true;document.removeEventListener('keydown',key,true);nativeRemove();const top=synchronizeDialogs();if(opener?.isConnected&&(!top||top.contains(opener)))opener.focus();else if(top&&!top.contains(document.activeElement))(top.querySelector('input,select,textarea,button')||top.querySelector('[role="dialog"]')).focus()};
   const key=e=>{if(closed||wrap.inert)return;if(e.key==='Escape'&&!busy){e.preventDefault();e.stopPropagation();close()}else if(e.key==='Tab'){const list=focusables(),first=list[0],last=list.at(-1);if(!first){e.preventDefault();wrap.querySelector('[role="dialog"]').focus()}else if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}};
   wrap.remove=close;document.addEventListener('keydown',key,true);
   wrap.querySelectorAll('.field').forEach((field,i)=>{const label=field.querySelector('label'),input=field.querySelector('input,textarea,select');if(label&&input&&!label.htmlFor){input.id||=`${id}-field-${i}`;label.htmlFor=input.id}});
@@ -131,3 +142,8 @@ export function eventSource(onRefresh){let es=null;const connect=()=>{const toke
 export function humanEvent(type=''){const m={signed_in:'Signed in',course_created:'Course created',course_imported:'Course imported',class_created:'Class created',class_imported:'Class imported',class_activated:'Class started',teams_created:'Teams created',attendance_saved:'Attendance saved',student_note_added:'Trainer note added',roster_imported:'Roster imported',activity_opened:'Activity opened',activity_closed:'Activity closed',results_revealed:'Results shown',classroom_cleared:'Classroom returned to waiting',response_submitted:'Response submitted',team_response_submitted:'Team response submitted',mission_opened:'Mission opened',mission_updated:'Mission progress updated',mission_completed:'Mission completed',submission_added:'Submission added',backup_created:'Backup created',demo_removed:'Demo content removed',demo_reset:'Demo workspace restored',classroom_updated:'Classroom updated',password_changed:'Password changed',staff_created:'Trainer added',staff_updated:'Trainer updated',password_reset:'Password reset',participant_activated:'Participant account activated',participant_deactivated:'Participant account deactivated',class_trainers_updated:'Class trainers updated',class_status_changed:'Class status updated',participant_enrolled:'Participant enrolled',profile_updated:'Profile updated',notification_sent:'Notification sent',help_requested:'Help requested',help_request_updated:'Help request updated',participant_progress_updated:'Participant progress updated',course_draft_created:'Course draft created',course_draft_saved:'Course draft saved',course_version_published:'Course version published',projector_navigated:'Projector navigated',permissions_updated:'Permissions updated',course_updated:'Course updated',course_archived:'Course archived',class_updated:'Class updated',class_archived:'Class archived',workflow_node_started:'Section started',workflow_node_completed:'Section completed',workflow_node_skipped:'Section skipped'};return t(m[type]||String(type).replaceAll('_',' '))}
 export function downloadUrl(path){const token=getToken();return `${path}${path.includes('?')?'&':'?'}token=${encodeURIComponent(token)}`}
 export function uiStatus(v=''){const map={draft:'Draft',planned:'Scheduled',active:'Active',scheduled:'Scheduled',completed:'Completed',cancelled:'Cancelled',published:'Published',ready:'Ready'};return t(map[String(v).toLowerCase()]||String(v))}
+
+fetch('/api/public-settings').then(response=>response.ok?response.json():null).then(settings=>{if(settings)applyTypography(settings.typography||{})}).catch(()=>{});
+
+async function syncSystemTypography(){try{const response=await fetch('/api/public-settings');if(response.ok)applyTypography((await response.json()).typography||{})}catch{}}
+window.addEventListener('focus',syncSystemTypography);setInterval(()=>{if(document.visibilityState==='visible')syncSystemTypography()},30000);

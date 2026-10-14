@@ -1,6 +1,6 @@
-# Training Engine ONE v3.5.0 RC1R5 — PROFESSIONAL CLOSURE DEVELOPMENT Authoring Contract
+# Training Engine ONE RC1R8 — current AI Course Creator contract
 
-This in-tree package is the development authoring contract generated against the Professional Interaction & Presentation Closure candidate. The machine-readable `CORE_CAPABILITIES.json` remains authoritative. The separately packaged published authoring handoff v1.3 is historical RC4 authority and is intentionally unchanged.
+This in-tree kit is synchronized to the RC1R8 canonical registry, runtime capabilities and course schemas. Read CORE_CAPABILITIES.json completely before authoring. The kit is current for this owner-acceptance candidate; FINAL requires owner acceptance. The separate v1.3 package is historical RC4 evidence. Course schema remains 2.0; core/data schema is 3.2 with journaled workspace extensions.
 
 ## Authority order
 1. `CORE_CAPABILITIES.json`
@@ -16,3 +16,6 @@ Use only capability IDs exposed by `CORE_CAPABILITIES.json`. Courses remain decl
 
 ## Required course output
 Return an importable course package, exact SHA-256, validation report, workflow simulation report when applicable, asset/reference coverage and known limitations.
+
+## RC1R8 operation boundaries
+Course Editors can author their own or assigned drafts and publish only with the per-course publishing grant. New class-code admission requires a registered account and assigned-manager approval. Historic guest learners and sessions are preserved; do not author instructions that promise new anonymous joining. Fonts are centrally chosen from 20 English and 20 Arabic bundled families; current global choices override old per-course font overrides. Course content language remains independent of the interface language.

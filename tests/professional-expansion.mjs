@@ -11,7 +11,7 @@ const ids=CAPABILITY_REGISTRY.activities.map(x=>x.id);
 for(const id of ['prioritization_100','quick_interaction','matching','fill_blanks','sorting','image_interaction','draw_annotate','collaborative_board','interactive_video'])assert.ok(ids.includes(id),id);
 for(const id of ['document','slide_deck','formula','interactive_video'])assert.ok(CAPABILITY_REGISTRY.content_blocks.includes(id),id);
 assert.deepEqual(CAPABILITY_REGISTRY.delivery.modes,['trainer_paced','participant_paced','front_of_room']);
-assert.equal(CAPABILITY_REGISTRY.delivery.offline_response_queue,true);assert.equal(CAPABILITY_REGISTRY.delivery.session_replay,true);assert.equal(CAPABILITY_REGISTRY.delivery.guest_participation,true);
+assert.equal(CAPABILITY_REGISTRY.delivery.offline_response_queue,true);assert.equal(CAPABILITY_REGISTRY.delivery.session_replay,true);assert.equal(CAPABILITY_REGISTRY.delivery.guest_participation,false);
 assert.equal(CAPABILITY_REGISTRY.facilitation.challenge_mode,true);assert.equal(CAPABILITY_REGISTRY.facilitation.co_trainer_moderator,true);assert.equal(CAPABILITY_REGISTRY.facilitation.hide_reveal_explain,true);assert.equal(CAPABILITY_REGISTRY.presentation.pdf_import,true);assert.match(String(CAPABILITY_REGISTRY.presentation.pptx_import),/local_text_extraction/);
 const cap=capabilityContract();assert.deepEqual(cap.interaction_policy.identity_visibility,['public','trainer_only','anonymous']);assert.ok(cap.analytics.advanced.includes('item_discrimination'));assert.ok(cap.analytics.advanced.includes('cohort_comparison'));
 const pa={type:'prioritization_100',content:{options:['A','B','C']},prioritization:{budget:100,require_full_allocation:true,max_per_option:100}};

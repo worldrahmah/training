@@ -49,7 +49,7 @@ const manifest=JSON.parse(fs.readFileSync(path.join(root,'RELEASE_MANIFEST.json'
 Object.assign(manifest,{release_name:RELEASE_IDENTITY.release_name,release_status:RELEASE_IDENTITY.release_status,app_version:RELEASE_IDENTITY.app_version,core_schema_version:RELEASE_IDENTITY.core_schema_version,course_authoring_schema_version:RELEASE_IDENTITY.course_authoring_schema_version,canonical_registry:'registry/activity-component-registry.json',development_authoring_contract:'course-authoring-handoff',published_rc4_authoring_handoff:'packaged-handoffs/TRAINING_ENGINE_ONE_COURSE_AUTHORING_HANDOFF_v1.3.zip'});
 json('RELEASE_MANIFEST.json',manifest);
 const hm=JSON.parse(fs.readFileSync(path.join(root,'course-authoring-handoff/HANDOFF_MANIFEST.json'),'utf8'));
-Object.assign(hm,{version:'professional-closure-development',bound_core:`Training Engine ONE v${RELEASE_IDENTITY.app_version} Professional Interaction & Presentation Closure`,publication_status:'DEVELOPMENT_ONLY_NOT_FINAL_EXTERNAL_HANDOFF',registry:'../registry/activity-component-registry.json'});
+Object.assign(hm,{version:RELEASE_IDENTITY.development_authoring_contract,bound_core:`Training Engine ONE v${RELEASE_IDENTITY.app_version} Professional Workspace`,bound_core_schema:RELEASE_IDENTITY.core_schema_version,publication_status:'CURRENT_OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL',registry:'../registry/activity-component-registry.json'});
 json('course-authoring-handoff/HANDOFF_MANIFEST.json',hm);
 if(check&&out.length){console.error('CONTRACT_DRIFT_DETECTED');for(const f of out)console.error(` - ${f}`);process.exit(1)}
 console.log(out.length?`CONTRACT_SYNC_${write?'UPDATED':'DRIFT'} ${out.length}`:'CONTRACT_SYNC_PASS');

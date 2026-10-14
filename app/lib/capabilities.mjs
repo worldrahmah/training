@@ -30,6 +30,7 @@ export function capabilityContract(){
     interaction_policy:CAPABILITY_REGISTRY.interaction_policy,
     authoring_policy:CAPABILITY_REGISTRY.authoring_policy,
     delivery:CAPABILITY_REGISTRY.delivery,
+    workspace:CAPABILITY_REGISTRY.workspace,
     facilitation:CAPABILITY_REGISTRY.facilitation,
     presentation:CAPABILITY_REGISTRY.presentation,
     authoring:{autosave:true,undo_redo:true,revision_history:true,publish_readiness:true,asset_library:true,asset_search:true,asset_replace:true,asset_used_by_paths:true,dependency_checks:true,reusable_templates:true,workflow_simulation:true,version_compare:true,private_trainer_notes:true,canonical_registry:true,contract_drift_gate:true},

@@ -1,12 +1,12 @@
 {
   "format": "training-engine-one-course-authoring-handoff",
-  "version": "professional-closure-development",
-  "bound_core": "Training Engine ONE v3.5.0-rc.1.7 Professional Interaction & Presentation Closure",
-  "bound_core_schema": "3.1",
+  "version": "rc1r8-registry-synchronized-current-authority",
+  "bound_core": "Training Engine ONE v3.5.0-rc.1.8 Professional Workspace",
+  "bound_core_schema": "3.2",
   "latest_authoring_schema": "2.0",
   "purpose": "External ChatGPT course development against the exact ONE runtime capability contract",
   "read_first": "README_FIRST.md",
   "machine_authority": "CORE_CAPABILITIES.json",
-  "publication_status": "DEVELOPMENT_ONLY_NOT_FINAL_EXTERNAL_HANDOFF",
+  "publication_status": "CURRENT_OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
   "registry": "../registry/activity-component-registry.json"
 }

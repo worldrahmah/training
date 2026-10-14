@@ -12,7 +12,7 @@ ONE supports Word Cloud, moderated/upvoted Q&A, Ideas Board, 100 Points/Prioriti
 Projector uses intentional Dark / Light / High Contrast themes with Course → Class → temporary Live precedence and the same rendering tokens in Builder preview. Local PDF/PPTX import, local formula rendering, pointer/annotation, professional Challenge mode, flexible result views and Hide → Reveal → Explain are available.
 
 ## Delivery and reliability
-Trainer-Paced, Participant-Paced and Front-of-Room modes are available. Participant responses use stable client submission IDs and a browser offline queue for reconnect synchronization. Classes provide read-only Session Replay, optional local guest participation and existing co-Trainer/moderator assignment.
+Trainer-Paced, Participant-Paced and Front-of-Room modes are available. Participant responses use stable client submission IDs and a browser offline queue for reconnect synchronization. Classes provide read-only Session Replay, registered-account class-code requests requiring assigned-manager/Admin approval (historical guest sessions are preserved) and existing co-Trainer/moderator assignment.
 
 ## Analytics
 Live Insights and reports include item difficulty, discrimination, distractors where meaningful, confidence, response timing, skips, same-course cohort comparison and generated improvement findings, in addition to existing course/class/participant/trainer analytics.

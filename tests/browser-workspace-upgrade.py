@@ -1,0 +1,68 @@
+"""RC1R8 owner-reported workflows, offline typography, profiles and report export."""
+import json,os,pathlib,shutil,socket,subprocess,tempfile,time
+from playwright.sync_api import sync_playwright
+ROOT=pathlib.Path(__file__).resolve().parents[1];OUT=pathlib.Path(os.environ.get('ONE_WORKSPACE_UPGRADE_EVIDENCE_DIR',os.environ.get('ONE_BROWSER_EVIDENCE_DIR',str(ROOT/'.test-evidence/workspace-upgrade'))));OUT.mkdir(parents=True,exist_ok=True);TEMP=pathlib.Path(tempfile.mkdtemp(prefix='one-workspace-browser-'))
+with socket.socket() as sock:sock.bind(('127.0.0.1',0));PORT=sock.getsockname()[1]
+BASE=f'http://127.0.0.1:{PORT}';env={**os.environ,'HOST':'127.0.0.1','PORT':str(PORT),**{f'TRAINING_ENGINE_{k}_DIR':str(TEMP/k.lower()) for k in ['DATA','STORAGE','BACKUP','EXPORT']}};log=open(TEMP/'server.log','w');server=subprocess.Popen(['node','--no-warnings','app/server.mjs'],cwd=ROOT,env=env,stdout=log,stderr=log);gates=[]
+try:
+ with sync_playwright() as p:
+  api=p.request.new_context(base_url=BASE)
+  for _ in range(150):
+   try:
+    if api.get('/api/health',timeout=1000).ok:break
+   except Exception:pass
+   time.sleep(.1)
+  def req(url,token=None,data=None,method='GET'):
+   kwargs={'headers':{'X-Session-Token':token} if token else {}}
+   if data is not None:kwargs['data']=data
+   r=api.fetch(url,method=method,**kwargs);assert r.ok,(url,r.status,r.text()[:250]);return r.json()
+  admin=req('/api/login',data={'username':'TRAINER','password':'TRAIN1234'},method='POST');at=admin['token'];learner=req('/api/login',data={'username':'DEMO01','password':'D1001'},method='POST');st=learner['token']
+  editor=req('/api/staff',at,{'username':'UIEDITOR','display_name':'Course Editor UI','staff_role':'course_editor','password':'EditorTest123!'},'POST');et=req('/api/login',data={'username':'UIEDITOR','password':'EditorTest123!'},method='POST')['token']
+  trainer=req('/api/staff',at,{'username':'UITRAINER','display_name':'Class Manager UI','staff_role':'trainer','password':'TrainerTest123!'},'POST');tt=req('/api/login',data={'username':'UITRAINER','password':'TrainerTest123!'},method='POST')['token']
+  authored=req('/api/courses',at,{'title':'Professional Classroom UI'},'POST');course={'format':'training-engine-course','schema_version':'2.0','course':{'id':'ui-upgrade','title':'Professional Classroom UI','version':'1','language':'en','direction':'ltr','modules':[{'id':'m','title':'Purpose and practice','activities':[{'id':'a','type':'presentation','title':'Welcome','content':{'body_md':'Start here.'}}]}]}}
+  req(f'/api/course-versions/{authored["version_id"]}/draft',at,{'content':course,'expected_revision':0},'PUT');req(f'/api/course-versions/{authored["version_id"]}/publish',at,{},'POST');cl=req('/api/classes',at,{'course_version_id':authored['version_id'],'title':'Professional Classroom UI','capacity':10},'POST');cid=cl['id'];req(f'/api/classes/{cid}/trainers',at,{'trainers':[{'user_id':trainer['id'],'assignment_role':'lead'}]},'POST')
+  executable=os.environ.get('ONE_BROWSER_EXECUTABLE') or shutil.which('chromium') or shutil.which('google-chrome');browser=p.chromium.launch(**({'executable_path':executable} if executable else {}),headless=True,args=['--no-sandbox'])
+  errors=[]
+  def context(token,locale='en',theme='light'):
+   c=browser.new_context(viewport={'width':1440,'height':900},reduced_motion='reduce');c.route('https://**/*',lambda route:route.abort());c.add_init_script('const v='+json.dumps({'token':token,'locale':locale,'theme':theme,'origin':BASE})+';if(location.origin===v.origin){sessionStorage.setItem("training_engine_session",v.token);sessionStorage.setItem("training_engine_session_rotated_at",String(Date.now()));localStorage.setItem("training_engine_locale",v.locale);localStorage.setItem("training_engine_theme",v.theme);}');page=c.new_page();page.on('pageerror',lambda error:errors.append(str(error)));return c,page
+  ac,ap=context(at);ap.goto(BASE+'/admin');ap.wait_for_selector('.side');ap.locator('.side [data-nav="classes"]').click();ap.locator(f'[data-action="manage-class"][data-id="{cid}"]').click();ap.wait_for_selector('[data-class-code]');assert ap.locator('[data-class-code]').input_value()==cl['join_code'];ap.keyboard.press('Escape');gates.append('Visible class code')
+  ap.locator('.side [data-nav="staff"]').click();ap.wait_for_selector(f'[data-action="manage-trainer"][data-id="{editor["id"]}"]');ap.locator(f'[data-action="manage-trainer"][data-id="{editor["id"]}"]').click();assert ap.locator('[name=role]').input_value()=='course_editor';ap.locator('[data-confirm]').click();ap.wait_for_timeout(150);assert req('/api/me',et)['user']['staff_role']=='course_editor';ap.locator('.side [data-nav="classes"]').click();gates.append('Managing an Editor preserves its authoring-only role')
+  # Pending admission is requested on the learner surface; manager reviews in a full inbox.
+  sc,sp=context(st);sp.goto(BASE+'/student');sp.wait_for_selector('[data-action="join-class"]');sp.locator('[data-action="join-class"]').click();sp.locator('input[name="code"]').fill(cl['join_code']);sp.locator('[data-confirm]').click();sp.wait_for_selector('.admission-status-card');assert not any(x['id']==cid for x in req('/api/student/dashboard',st)['classes']);sp.screenshot(path=str(OUT/'student-pending-en.png'),full_page=True)
+  tc,tp=context(tt);tp.goto(BASE+'/trainer');tp.wait_for_selector('.side');tp.locator('.side [data-nav="workspace-admissions"]').click();tp.wait_for_selector('[data-decide="approve"]');assert tp.locator('[data-admission-list] a[href*="/profile"]').count()==1;tp.screenshot(path=str(OUT/'trainer-admission-en.png'),full_page=True);tp.locator('[data-decide="approve"]').click();tp.locator('[data-confirm]').click();tp.wait_for_selector('[data-admission-list] .empty');assert any(x['id']==cid for x in req('/api/student/dashboard',st)['classes']);gates.append('Registered pending request → scoped trainer approval → enrollment')
+  # Removed enrollment leaves roster and returns to the add picker.
+  ap.locator(f'[data-action="manage-class"][data-id="{cid}"]').click();ap.wait_for_selector(f'[data-remove-student="{learner["user"]["id"]}"]');ap.once('dialog',lambda dialog:dialog.accept());ap.locator(f'[data-remove-student="{learner["user"]["id"]}"]').click();ap.wait_for_timeout(500);assert ap.locator(f'[data-remove-student="{learner["user"]["id"]}"]').count()==0;ap.locator('#mcAddParticipant').click();ap.wait_for_selector('[data-confirm]');assert learner['user']['display_name'] in ap.get_by_role('dialog').last.inner_text();ap.get_by_role('dialog').last.locator('select').select_option(str(learner['user']['id']));ap.locator('[data-confirm]').last.click();ap.wait_for_selector(f'[data-remove-student="{learner["user"]["id"]}"]');ap.keyboard.press('Escape');assert not ap.locator('#app').evaluate('(e)=>e.inert');gates.append('Remove/re-add from current roster without stale picker; nested dialog restores workspace')
+  ap.locator('.side [data-nav="overview"]').click();ap.locator('.metric-drilldown').first.click();ap.wait_for_selector('[data-discovery-toolbar="record-details"]');ap.locator('[data-discovery-search]').fill('Professional Classroom UI');assert ap.locator('[data-discovery-item]:visible').count()==1;ap.locator('[data-discovery-item]:visible [data-record]').first.click();ap.wait_for_selector('[role=dialog]');ap.keyboard.press('Escape');gates.append('Summary card → searchable records → authorized detail')
+  # Group authoring and reviewed application, including nested modals.
+  ap.locator('.side [data-nav="workspace-groups"]').click();ap.wait_for_selector('[data-new-group]');ap.locator('[data-new-group]').click();ap.locator('[name=group-name]').fill('Learning circle · حلقة التعلم');ap.locator('[name=group-description]').fill('Reusable professional cohort');ap.wait_for_selector(f'[data-member="{learner["user"]["id"]}"]');ap.locator(f'[data-member="{learner["user"]["id"]}"]').check();ap.locator('[data-confirm]').click();ap.wait_for_selector('[data-open-group]');ap.screenshot(path=str(OUT/'admin-groups-en.png'),full_page=True);ap.locator('[data-open-group]').first.click();ap.wait_for_selector('[data-edit-group]');ap.keyboard.press('Escape');gates.append('Named group, description and member selection')
+  # Newly created milestones have working deletion; incomplete drafts explain their blockers.
+  bc,bp=context(at);bp.goto(BASE+f'/builder?course_id={authored["id"]}');bp.wait_for_selector('[data-a=add-module]');old=bp.locator('[data-builder-tree-module]').count();bp.locator('[data-a=add-module]').click();bp.wait_for_timeout(150);assert bp.locator('[data-builder-tree-module]').count()==old+1;last=bp.locator('[data-builder-tree-module]').last;last.locator('[popovertarget]').last.click();last.locator('[data-delete-milestone]').click();bp.locator('[data-confirm]').click();bp.wait_for_timeout(250);assert bp.locator('[data-builder-tree-module]').count()==old
+  bp.locator('[data-a=add-module]').click();bp.locator('[data-builder-tree-module]').last.locator('[popovertarget]').last.click();bp.locator('.one-menu-panel:popover-open [data-workflow]').click();bp.locator('.builder-actions [popovertarget]').click();bp.locator('.one-menu-panel:popover-open [data-a=validate]').click();bp.wait_for_selector('.validation-issue');assert 'How to resolve' in bp.get_by_role('dialog').inner_text();bp.screenshot(path=str(OUT/'builder-blockers-en.png'),full_page=True);bp.keyboard.press('Escape');gates.append('New milestone reviewed deletion and actionable blockers')
+  # Real branded PDF from the Reports workspace.
+  ap.locator('.side [data-nav="reports"]').click();ap.wait_for_selector('[data-pdf-template]');ap.locator('[data-pdf-template]').select_option('class');ap.locator('[data-pdf-resource]').select_option(str(cid));ap.locator('[data-pdf-form] [type=submit]').click();ap.wait_for_selector('[data-download-pdf]');ap.screenshot(path=str(OUT/'report-preview-en.png'),full_page=True)
+  with ap.expect_download(timeout=45000) as download:ap.locator('[data-download-pdf]').click()
+  downloaded=download.value;downloaded.save_as(str(OUT/'class-report-en.pdf'));assert pathlib.Path(downloaded.path()).read_bytes().startswith(b'%PDF-');ap.keyboard.press('Escape');gates.append('Seven-template report workspace with preview and actual PDF download')
+  # Admin font configuration has 20 choices each and actually changes other surfaces offline.
+  ap.locator('.side [data-nav="settings"]').click();ap.wait_for_selector('[data-system-font]');assert ap.locator('[data-system-font=en] option').count()==20;assert ap.locator('[data-system-font=ar] option').count()==20;ap.locator('[data-system-font=en]').select_option('inter');ap.locator('[data-system-font=ar]').select_option('amiri');ap.locator('[data-save-system-fonts]').click();ap.wait_for_timeout(500);assert ap.locator('html').get_attribute('data-font-english')=='inter';gates.append('20 English + 20 Arabic offline global selectors')
+  # Fixed navigation while only the content pane scrolls.
+  ap.locator('.side [data-nav="reports"]').click();ap.wait_for_selector('[data-pdf-template]');before=ap.locator('.side').bounding_box();scroller=ap.locator('.main');assert scroller.count()==1;scroller.evaluate('(e)=>e.scrollTop=500');ap.wait_for_timeout(100);after=ap.locator('.side').bounding_box();assert abs(before['y']-after['y'])<1;assert ap.evaluate('document.scrollingElement.scrollTop')==0;gates.append('Stationary sidebar with independent content scrolling')
+  # Editor profile and authoring isolation, EN/AR new surfaces and 40 font loading cases.
+  ec,ep=context(et);ep.goto(BASE+'/trainer');ep.wait_for_url('**/editor');ep.wait_for_selector('[data-new-course]');assert ep.locator('.side').count()==0;gates.append('Course Editor redirected to authoring-only workspace')
+  font_catalog=json.loads((ROOT/'app/public/font-catalog.json').read_text())
+  for locale in ['en','ar']:
+   for role,url,token in [('admin-settings','/admin',at),('trainer-profile','/profile',tt),('learner-profile','/profile',st),('editor','/editor',et)]:
+    c,page=context(token,locale);page.goto(BASE+url);page.locator('h1,h2').first.wait_for();
+    if role=='admin-settings':page.wait_for_selector('.side');page.locator('.side [data-nav=settings]').click();page.wait_for_selector('[data-system-font]')
+    for width in [1440,390]:
+     page.set_viewport_size({'width':width,'height':900});page.wait_for_timeout(150);assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),(role,locale,width);page.screenshot(path=str(OUT/f'{role}-{locale}-{width}.png'),full_page=True)
+    assert page.locator('html').get_attribute('data-font-english')=='inter';assert page.locator('html').get_attribute('data-font-arabic')=='amiri';c.close()
+  fc,fp=context(at);fp.goto(BASE+'/profile');fp.wait_for_selector('[data-profile-form]')
+  loaded=fp.evaluate('async(catalog)=>{for(const f of catalog.families){const text=f.language==="ar"?"التعلم والمعرفة":"Teaching and learning";await document.fonts.load(`16px "${f.name}"`,text);if(!document.fonts.check(`16px "${f.name}"`,text))throw new Error(f.name)}return catalog.families.length}',font_catalog);assert loaded==40;gates.append('40 families load with network blocked; EN/AR responsive profiles/editor/settings')
+  assert not errors,errors
+  for c in [ac,sc,tc,bc,ec,fc]:c.close()
+  browser.close();api.dispose();(OUT/'result.json').write_text(json.dumps({'status':'PASS','gates':gates,'page_errors':errors},indent=2));print('BROWSER_WORKSPACE_UPGRADE_PASS',len(gates),'gates; EN/AR mobile/desktop, offline fonts and actual state transitions')
+finally:
+ server.terminate()
+ try:server.wait(timeout=5)
+ except subprocess.TimeoutExpired:server.kill();server.wait()
+ log.close();shutil.rmtree(TEMP)

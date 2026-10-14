@@ -1,0 +1,7 @@
+# RC1R8 cloud visual review
+
+Representative screenshots cover English/Arabic management, full profiles, authoring-only Editor, pending learner admission and trainer decisions, groups, actionable Builder diagnostics, branded report preview, settings and mobile layouts. The existing all-workspace suite exercises light/dark/system entry surfaces, collection search, menu anchoring, keyboard, real writes, reconnect, RTL final punctuation and role boundaries. The font matrix verifies 640 actual global selections/layouts across eight surfaces and two languages at desktop/mobile or Projector 16:9.
+
+Representative Arabic PDF pages were rasterized and inspected: company logo/name/contact, localized titles/date, left/right hierarchy, embedded shaped Arabic, readable metrics/chart labels/table headers, footer and page numbers. Independent readers verify all 34 report/font cases, real logos, text bounds and rendering. An initial whole-line ActualText span caused a MuPDF extraction failure; per-run tagged text corrected it, and the complete PDF reader matrix was rerun.
+
+Actual browser findings were repaired before acceptance: missing persistent learner pending status; initial Admin navigation wiring; compact-menu viewport fit; missing Editor role in the account editor. Validated account editing preserves Editor role, and open class duties block an unsafe role conversion. Remaining evidence is bounded by the tested configurations, not every possible authored string/device. Windows/physical Projector and real-data owner acceptance remain open.

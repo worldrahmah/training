@@ -1,3 +1,4 @@
+import {protectWorkspaceUpgrade,migrateWorkspace} from './workspace-migrations.mjs';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import path from 'node:path';
@@ -6,7 +7,8 @@ import { ensureDir, hashPassword, nowIso, safeJsonParse, slugify } from './utils
 import { APP_VERSION, CORE_SCHEMA_VERSION } from './version.mjs';
 
 export class EngineDb {
-  constructor(dbPath){
+  constructor(dbPath,upgradePaths={}){
+    this.upgradePaths=upgradePaths;
     this.dbPath=dbPath;
     ensureDir(path.dirname(dbPath));
     this.open();
@@ -14,6 +16,7 @@ export class EngineDb {
   open(){
     this.db=new DatabaseSync(this.dbPath);
     this.db.exec('PRAGMA foreign_keys=ON; PRAGMA journal_mode=WAL; PRAGMA synchronous=NORMAL;');
+    this.upgradeBackup=protectWorkspaceUpgrade(this.db,{dbPath:this.dbPath,...this.upgradePaths});
     this.initSchema();
   }
   close(){ try{this.db.close();}catch{} }
@@ -344,6 +347,7 @@ CREATE INDEX IF NOT EXISTS idx_enrollments_student ON enrollments(student_id);
 `);
     this.migrateV2();
     this.migrateOne();
+    migrateWorkspace(this.db);
   }
   migrateV2(){
     const cols=(table)=>this.db.prepare(`PRAGMA table_info(${table})`).all().map(r=>r.name);

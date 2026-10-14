@@ -1,9 +1,9 @@
 {
   "format": "training-engine-one-release",
-  "release_name": "TRAINING_ENGINE_ONE_PROFESSIONAL_EXPERIENCE_v3.5.0_RC1R7",
+  "release_name": "TRAINING_ENGINE_ONE_PROFESSIONAL_WORKSPACE_v3.5.0_RC1R8",
   "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
-  "app_version": "3.5.0-rc.1.7",
-  "core_schema_version": "3.1",
+  "app_version": "3.5.0-rc.1.8",
+  "core_schema_version": "3.2",
   "course_authoring_schema_version": "2.0",
   "baseline_core_v2_1_1_sha256": "82a8f0dd04f658429eec7d153319da5953e2bf0f308a43c2293f5947b7c755f5",
   "codex_master_handoff_sha256": "c0221a2b842215e06bd0c864a912a71922d833880a103c015913c723e2be4c52",
@@ -18,7 +18,7 @@
   "source_coverage_record": "docs/HANDOFF_COVERAGE_RECORD.md",
   "stage0_scope": "canonical activity/component registry + contract drift gate + Projector theme/preview foundation",
   "stage0_automated_status": "PASS",
-  "manual_visual_status": "PENDING_SINGLE_CONSOLIDATED_OWNER_ACCEPTANCE",
+  "manual_visual_status": "PENDING_OWNER_WINDOWS_BROWSER_PROJECTOR_ACCEPTANCE",
   "stage0_manual_visual_status": "PASS_OWNER_ACCEPTED_2026-10-12",
   "stage1a_engineering_checkpoint": "docs/STAGE1A_WORD_CLOUD_ENGINEERING_CHECKPOINT.md",
   "stage1a_scope": "Word Cloud canonical vertical slice: Builder + schema + validator + participant + moderation + Projector/results + persistence/restart + reports + backup/restore + EN/AR + tests",
@@ -86,5 +86,12 @@
   "experience_migration_impact": "docs/RC1R7_DATA_AND_RECOVERY_IMPACT.md",
   "experience_test_output": "docs/verification/WORKING_TREE_TEST_OUTPUT.txt",
   "experience_browser_evidence": "docs/verification/workspace/WORKSPACE_RESULT.json",
-  "experience_product_guide": "docs/RC1R7_PRODUCT_GUIDE.md"
+  "experience_product_guide": "docs/RC1R7_PRODUCT_GUIDE.md",
+  "workspace_checkpoint": "docs/RC1R8_WORKSPACE_AND_ACCEPTANCE.md",
+  "workspace_migration_impact": "docs/RC1R8_APPROVED_SCOPE_AND_MIGRATION.md",
+  "workspace_known_limitations": "docs/KNOWN_LIMITATIONS_RC1R8.md",
+  "workspace_product_guide": "docs/RC1R8_PRODUCT_GUIDE.md",
+  "workspace_verification": "docs/verification/rc1r8/WORKING_TREE_RESULT.json",
+  "workspace_source_coverage": "docs/RC1R8_SOURCE_COVERAGE.md",
+  "workspace_owner_acceptance": "docs/RC1R8_OWNER_ACCEPTANCE_CHECKLIST.md"
 }

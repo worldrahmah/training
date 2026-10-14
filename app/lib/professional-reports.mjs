@@ -1,0 +1,103 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {Worker} from 'node:worker_threads';
+import {selectedFontPaths,resolveTypography} from './typography.mjs';
+const fail=(message,status=400)=>{throw Object.assign(new Error(message),{status})};
+const sha=data=>crypto.createHash('sha256').update(data).digest('hex');
+export const REPORT_TEMPLATES=[
+ {id:'class',name:'Class report',ar:'تقرير الصف',resource:'classes'},
+ {id:'learner',name:'Learner report',ar:'تقرير المتعلم',resource:'learners'},
+ {id:'course',name:'Course report',ar:'تقرير الدورة',resource:'courses'},
+ {id:'attendance',name:'Attendance report',ar:'تقرير الحضور',resource:'classes'},
+ {id:'assessment',name:'Assessment report',ar:'تقرير التقييم',resource:'classes'},
+ {id:'group',name:'Participant group report',ar:'تقرير مجموعة المشاركين',resource:'groups'},
+ {id:'trainer',name:'Trainer activity report',ar:'تقرير نشاط المدرب',resource:'trainers'}
+];
+const labels={Class:'الصف',Learner:'المتعلم',Course:'الدورة',Status:'الحالة',Participants:'المشاركون',Responses:'الإجابات',Missions:'المهام',Objectives:'الأهداف',Classes:'الصفوف',Attendance:'الحضور',Present:'حاضر',Late:'متأخر',Absent:'غائب',Excused:'بعذر','Left early':'غادر مبكرًا',Session:'الجلسة',Date:'التاريخ',Activity:'النشاط',Submitted:'تم التسليم','Scored responses':'إجابات مقيمة',Correct:'صحيح',Partial:'جزئي',Incorrect:'غير صحيح','Average recorded points':'متوسط النقاط المسجلة','Recorded points':'النقاط المسجلة','Maximum points':'الحد الأقصى للنقاط','Not revealed':'لم يُكشف بعد',Quiz:'اختبار',Events:'الأحداث','Event type':'نوع الحدث','Learning evidence':'أدلة التعلم','Class summary':'ملخص الصفوف','Attendance records':'سجلات الحضور','Assessment evidence':'أدلة التقييم','Quiz attempts':'محاولات الاختبار','Trainer activity':'نشاط المدرب','No recorded data':'لا توجد بيانات مسجلة','Group members':'أعضاء المجموعة','All recorded dates':'كل التواريخ المسجلة',scheduled:'مجدول',draft:'مسودة',archived:'مؤرشف',active:'نشط',completed:'مكتمل',withdrawn:'منسحب',planned:'مخطط',cancelled:'ملغي',present:'حاضر',late:'متأخر',absent:'غائب',excused:'بعذر',left_early:'غادر مبكرًا'};
+export const reportLabel=(value,language)=>language==='ar'?(labels[value]||value):value;
+function bounds(body){const out={};for(const key of ['from','to']){const value=String(body[key]||'');if(value&&(!/^\d{4}-\d{2}-\d{2}$/.test(value)||!Number.isFinite(Date.parse(value+'T00:00:00Z'))||new Date(value+'T00:00:00Z').toISOString().slice(0,10)!==value))fail('Choose a valid report date.');out[key]=value;}if(out.from&&out.to&&out.from>out.to)fail('The end date must follow the start date.');return out;}
+function dateSql(column,range,params){let sql='';if(range.from){sql+=` AND date(${column})>=?`;params.push(range.from)}if(range.to){sql+=` AND date(${column})<=?`;params.push(range.to)}return sql;}
+function limited(rows){if(rows.length>10000)fail('This report exceeds 10,000 rows. Narrow the date range or select a smaller class.',413);return rows;}
+function scopedClasses(user,c){return user.role==='student'?c.classList().filter(cl=>c.db.prepare('SELECT 1 FROM enrollments WHERE class_id=? AND student_id=?').get(cl.id,user.id)):c.classList(user)}
+function resources(user,c){
+ const {db,isAdminLike,classList,canViewCourse,courseList}=c,admin=isAdminLike(user),editor=user.staff_role==='course_editor';if(editor)fail('Course Editor accounts cannot access reports.',403);
+ const classes=scopedClasses(user,c),ids=classes.map(x=>x.id),scope=ids.length?`e.class_id IN (${ids.map(Number).join(',')})`:'0';
+ const learners=user.role==='student'?[{id:user.id,name:user.display_name}]:db.prepare(`SELECT DISTINCT u.id,u.display_name name FROM users u WHERE u.role='student' AND ${admin?'1':`EXISTS(SELECT 1 FROM enrollments e WHERE e.student_id=u.id AND ${scope})`} ORDER BY u.display_name`).all();
+ return {classes:user.role==='student'?[]:classes.map(x=>({id:x.id,name:x.title})),learners,courses:user.role==='student'?[]:courseList().filter(x=>canViewCourse(user,x.id)).map(x=>({id:x.id,name:x.title})),groups:user.role==='student'?[]:db.prepare(`SELECT id,name FROM workspace_groups WHERE kind='participants' AND ${admin?'1':'owner_id=?'} ORDER BY name`).all(...(admin?[]:[user.id])),trainers:user.role==='student'?[]:admin?db.prepare("SELECT u.id,u.display_name name FROM users u JOIN staff_roles s ON s.user_id=u.id WHERE u.role='trainer' AND s.staff_role<>'course_editor' ORDER BY u.display_name").all():[{id:user.id,name:user.display_name}]};
+}
+function model(body,user,c){
+ const template=REPORT_TEMPLATES.find(x=>x.id===body.template);if(!template)fail('Choose an available report template.');const id=Number(body.resource_id),available=resources(user,c);if(!Number.isSafeInteger(id)||!available[template.resource].some(x=>x.id===id))fail('You do not have access to this report resource.',403);
+ const {db,isAdminLike,classList,engine,STORAGE_DIR}=c,language=body.language==='ar'?'ar':'en',L=value=>reportLabel(value,language),range=bounds(body),visible=scopedClasses(user,c),allClassIds=visible.map(x=>x.id),resource=available[template.resource].find(x=>x.id===id),sections=[],charts=[];
+ let classes=visible,learners=null;
+ if(['class','attendance','assessment'].includes(template.id))classes=visible.filter(x=>x.id===id);
+ if(template.id==='course')classes=visible.filter(x=>Number(x.course_id)===id);
+ if(template.id==='learner'){learners=[id];classes=visible.filter(x=>db.prepare('SELECT 1 FROM enrollments WHERE class_id=? AND student_id=?').get(x.id,id));}
+ if(template.id==='group'){learners=db.prepare('SELECT user_id FROM workspace_group_members WHERE group_id=?').all(id).map(x=>x.user_id);classes=visible.filter(x=>learners.some(sid=>db.prepare('SELECT 1 FROM enrollments WHERE class_id=? AND student_id=?').get(x.id,sid)));}
+ if(template.id==='trainer')classes=visible.filter(x=>db.prepare('SELECT 1 FROM class_trainers WHERE class_id=? AND user_id=?').get(x.id,id));
+ const classIds=classes.map(x=>x.id),scope=classIds.length?`IN (${classIds.map(Number).join(',')})`:'IN (NULL)',studentScope=learners?` AND e.student_id IN (${learners.length?learners.join(','):'NULL'})`:'';
+ const enrollment=limited(db.prepare(`SELECT e.class_id,e.student_id,e.status,u.display_name,cl.title class_title FROM enrollments e JOIN users u ON u.id=e.student_id JOIN classes cl ON cl.id=e.class_id WHERE e.class_id ${scope}${studentScope} ORDER BY cl.title,u.display_name`).all());
+ const responseParams=[],responseDate=dateSql('r.submitted_at',range,responseParams),responseLearners=learners?` AND r.student_id IN (${learners.length?learners.join(','):'NULL'})`:'';
+ const responses=limited(db.prepare(`SELECT r.student_id,r.instance_id,r.score,r.answer_json,r.submitted_at,ai.class_id,ai.title,ai.activity_type,ai.definition_json,ai.revealed_at FROM responses r JOIN activity_instances ai ON ai.id=r.instance_id WHERE ai.class_id ${scope}${responseLearners}${responseDate} ORDER BY ai.class_id,r.id`).all(...responseParams));
+ const missionParams=[],missionDate=dateSql('mp.completed_at',range,missionParams),missionLearners=learners?` AND mp.student_id IN (${learners.length?learners.join(','):'NULL'})`:'';
+ const missions=limited(db.prepare(`SELECT mp.class_id,mp.student_id FROM mission_progress mp WHERE mp.class_id ${scope} AND mp.status='completed'${missionLearners}${missionDate}`).all(...missionParams));
+ const section=(title,columns,rows)=>sections.push({title:L(title),columns:columns.map(L),rows:limited(rows).map(row=>row.map(value=>typeof value==='string'?L(value):value??'—'))});
+ const uniqueLearners=[...new Set(enrollment.map(x=>x.student_id))];
+ const metrics=[{label:L('Classes'),value:classes.length},{label:L('Participants'),value:uniqueLearners.length},{label:L('Responses'),value:responses.length},{label:L('Missions'),value:missions.length}];
+ section('Class summary',['Class','Course','Status','Participants','Responses','Missions'],classes.map(cl=>[cl.title,cl.course_title,cl.lifecycle_status||cl.status,enrollment.filter(x=>x.class_id===cl.id&&x.status!=='withdrawn').length,responses.filter(x=>x.class_id===cl.id).length,missions.filter(x=>x.class_id===cl.id).length]));
+ charts.push({title:L('Responses'),rows:classes.map(cl=>({label:cl.title,value:responses.filter(x=>x.class_id===cl.id).length}))});
+ if(['class','learner','course','group'].includes(template.id))section('Learning evidence',['Learner','Class','Status','Responses','Missions','Recorded points'],enrollment.map(e=>{const own=responses.filter(r=>r.student_id===e.student_id&&r.class_id===e.class_id),scored=own.filter(r=>r.score!==null&&r.revealed_at);return [e.display_name,e.class_title,e.status,own.length,missions.filter(m=>m.student_id===e.student_id&&m.class_id===e.class_id).length,scored.length?Number(scored.reduce((n,r)=>n+r.score,0).toFixed(2)):'—']}));
+ if(['class','learner','attendance'].includes(template.id)){
+  const params=[],dates=dateSql('cs.session_date',range,params),learnerClause=learners?` AND a.student_id IN (${learners.length?learners.join(','):'NULL'})`:'';
+  const records=limited(db.prepare(`SELECT cs.title,cs.session_date,u.display_name,a.status FROM attendance a JOIN class_sessions cs ON cs.id=a.class_session_id JOIN users u ON u.id=a.student_id WHERE cs.class_id ${scope}${learnerClause}${dates} ORDER BY cs.session_date,cs.id,u.display_name`).all(...params));
+  section('Attendance records',['Date','Session','Learner','Status'],records.map(x=>[x.session_date||'—',x.title,x.display_name,x.status]));charts.push({title:L('Attendance'),rows:['present','late','absent','excused','left_early'].map(status=>({label:L(status),value:records.filter(x=>x.status===status).length}))});
+ }
+ if(['class','learner','assessment'].includes(template.id)){
+  const assessed=responses.filter(x=>{let definition;try{definition=JSON.parse(x.definition_json)}catch{return false}return c.isScoredAssessment(definition)}),instances=[...new Set(assessed.map(x=>x.instance_id))];
+  section('Assessment evidence',['Activity','Submitted','Scored responses','Average recorded points','Maximum points','Correct','Partial','Incorrect'],instances.map(instanceId=>{const list=assessed.filter(x=>x.instance_id===instanceId),scored=list.filter(x=>x.score!==null&&x.revealed_at),grades=scored.map(x=>c.assessmentMetric(JSON.parse(x.definition_json),x.answer_json)).filter(Boolean),hidden=list.some(x=>!x.revealed_at),missing=hidden?L('Not revealed'):'—';return [list[0].title,list.length,scored.length,scored.length?Number((scored.reduce((n,x)=>n+x.score,0)/scored.length).toFixed(2)):missing,grades.length?grades[0].max_score:missing,grades.length?grades.filter(x=>x.correct).length:missing,grades.length?grades.filter(x=>!x.correct&&x.percent>0).length:missing,grades.length?grades.filter(x=>x.percent<=0).length:missing]}));
+  const params=[],dates=dateSql('qa.submitted_at',range,params),learnerClause=learners?` AND qa.student_id IN (${learners.length?learners.join(','):'NULL'})`:'';
+  const quizzes=limited(db.prepare(`SELECT q.title,q.status,u.display_name,qa.score,qa.max_score FROM quiz_attempts qa JOIN class_quizzes q ON q.id=qa.quiz_id JOIN users u ON u.id=qa.student_id WHERE q.class_id ${scope} AND qa.submitted_at IS NOT NULL${learnerClause}${dates} ORDER BY q.id,u.display_name`).all(...params));
+  section('Quiz attempts',['Quiz','Learner','Recorded points','Maximum points'],quizzes.map(x=>[x.title,x.display_name,x.status==='closed'?x.score:L('Not revealed'),x.status==='closed'?x.max_score:'—']));
+ }
+ if(template.id==='group')section('Group members',['Learner','Classes','Responses'],available.learners.filter(x=>learners.includes(x.id)).map(x=>[x.name,new Set(enrollment.filter(e=>e.student_id===x.id).map(e=>e.class_id)).size,responses.filter(r=>r.student_id===x.id).length]));
+ if(template.id==='trainer'){
+  const params=[id],dates=dateSql('created_at',range,params),ownScope=isAdminLike(user)?'(class_id IS NULL OR class_id '+scope+')':'class_id '+scope;
+  const events=db.prepare(`SELECT event_type,COUNT(*) n FROM activity_events WHERE user_id=? AND ${ownScope}${dates} GROUP BY event_type ORDER BY n DESC,event_type`).all(...params);
+  section('Trainer activity',['Event type','Events'],events.map(x=>[x.event_type.replaceAll('_',' '),x.n]));charts.push({title:L('Events'),rows:events.map(x=>({label:x.event_type.replaceAll('_',' '),value:x.n}))});
+ }
+ const branding=engine.getSetting('company_branding',engine.getSetting('company',{})),logo=branding.logo_key&&/^[a-f0-9-]+\.(png|jpg)$/.test(branding.logo_key)?path.join(STORAGE_DIR,'branding',branding.logo_key):null;
+ return {version:1,template:template.id,resource_id:id,resource_name:resource.name,class_ids:classIds,language,range,title:language==='ar'?template.ar:template.name,created_at:new Date().toISOString(),organization:{name:String(branding.name||engine.getSetting('company_name','Training Engine ONE')).slice(0,180),contact:String(branding.contact||'').slice(0,350),footer:String(branding.footer||'').slice(0,300),logo:logo&&fs.existsSync(logo)?fs.readFileSync(logo).toString('base64'):null},fonts:resolveTypography(engine.getSetting('typography',{})),metrics,charts,sections,notes:language==='ar'?['النقاط المعروضة هي النقاط المسجلة بعد الكشف؛ وليست نسبًا مئوية موحدة.','يشمل النطاق الزمني الإجابات والمهام والحضور والأحداث. العضوية الحالية والسجل محفوظان.','بيانات الحضور المسجلة فقط؛ عدم تسجيل الحضور لا يعني الغياب.']:['Points are recorded points after reveal, not normalized percentages.','Date filters apply to responses, completed missions, attendance and events. Membership and historical enrollment are retained.','Only recorded attendance is shown; missing attendance is not counted as absence.']};
+}
+let workers=0;const pendingPdfs=new Map();
+function renderPdf(data){if(workers>=2)fail('Two reports are being prepared. Try again shortly.',429);workers++;return new Promise((resolve,reject)=>{const worker=new Worker(new URL('./report-worker.mjs',import.meta.url),{workerData:data}),timer=setTimeout(()=>{worker.terminate();reject(Object.assign(new Error('Report generation timed out. Use a smaller report.'),{status:503}))},45000);worker.once('message',message=>{if(message.error)reject(new Error(message.error));else resolve(Buffer.from(message.bytes))});worker.once('error',reject);worker.once('exit',code=>{clearTimeout(timer);workers--;if(code!==0)reject(new Error('Report preparation failed.'))})});}
+async function sharedPdf(id,data){if(pendingPdfs.has(id))return pendingPdfs.get(id);const pending=renderPdf(data);pendingPdfs.set(id,pending);try{return await pending}finally{setTimeout(()=>pendingPdfs.delete(id),1000)}}
+export async function handleProfessionalReports(req,res,url,c){
+ const p=url.pathname;if(!p.startsWith('/api/workspace/reports')&&!p.startsWith('/api/workspace/branding'))return false;
+ const user=c.requireUser(req,res,url);if(!user)return true;if(user.staff_role==='course_editor')fail('Course Editor accounts cannot access reports.',403);const {db,engine,json,send,readJson,readBuffer,STORAGE_DIR}=c;
+ if(p==='/api/workspace/branding'){
+  if(req.method==='GET'){json(res,200,{ok:true,branding:engine.getSetting('company_branding',{name:engine.getSetting('company_name','Training Engine ONE')})});return true;}
+  if(!c.isAdminLike(user))fail('Administrator access is required.',403);
+  if(req.method==='POST'){const b=await readJson(req),before=engine.getSetting('company_branding',{}),next={...before};for(const [key,max] of [['name',180],['contact',350],['footer',300]])next[key]=String(b[key]??before[key]??'').trim().slice(0,max);if(!next.name)fail('Enter the company name.');engine.transaction(()=>{engine.setSetting('company_branding',next);engine.setSetting('company_name',next.name);engine.setSetting('brand',{...engine.getSetting('brand',{}),name:next.name});engine.log(null,user.id,'report_branding_updated','system',null,{name:next.name});});c.refresh(null,'settings');json(res,200,{ok:true,branding:next});return true;}
+ }
+ if(p==='/api/workspace/branding/logo'){
+  const brand=engine.getSetting('company_branding',{});
+  if(req.method==='GET'){if(!brand.logo_key||!/^[a-f0-9-]+\.(png|jpg)$/.test(brand.logo_key))fail('Company logo not found.',404);const file=path.join(STORAGE_DIR,'branding',brand.logo_key);send(res,200,fs.readFileSync(file),brand.logo_key.endsWith('.png')?'image/png':'image/jpeg',{'Cache-Control':'private, no-store'});return true;}
+  if(!c.isAdminLike(user))fail('Administrator access is required.',403);
+  if(req.method==='PUT'){const bytes=await readBuffer(req,2*1024*1024);const {validateRaster}=await import('./raster-media.mjs'),media=validateRaster(bytes),key=crypto.randomUUID()+'.'+media.extension,dir=path.join(STORAGE_DIR,'branding');fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,key),bytes);try{engine.setSetting('company_branding',{...brand,logo_key:key,logo_sha256:sha(bytes)});}catch(error){fs.rmSync(path.join(dir,key),{force:true});throw error;}if(brand.logo_key&&/^[a-f0-9-]+\.(png|jpg)$/.test(brand.logo_key))fs.rmSync(path.join(dir,brand.logo_key),{force:true});engine.log(null,user.id,'company_logo_updated','system',null,{});json(res,200,{ok:true});return true;}
+  if(req.method==='DELETE'){if(brand.logo_key&&/^[a-f0-9-]+\.(png|jpg)$/.test(brand.logo_key))fs.rmSync(path.join(STORAGE_DIR,'branding',brand.logo_key),{force:true});delete brand.logo_key;delete brand.logo_sha256;engine.setSetting('company_branding',brand);json(res,200,{ok:true});return true;}
+ }
+ if(p==='/api/workspace/reports/catalog'&&req.method==='GET'){json(res,200,{ok:true,templates:REPORT_TEMPLATES.filter(x=>user.role!=='student'||x.id==='learner'),resources:resources(user,c)});return true;}
+ if(p==='/api/workspace/reports/preview'&&req.method==='POST'){
+  const data=model(await readJson(req),user,c),id=crypto.randomUUID(),expires=new Date(Date.now()+3600000).toISOString();db.prepare("DELETE FROM professional_report_snapshots WHERE exported_at IS NULL AND datetime(expires_at)<datetime('now')").run();db.prepare('INSERT INTO professional_report_snapshots(id,owner_id,template,resource_id,data_json,expires_at) VALUES(?,?,?,?,?,?)').run(id,user.id,data.template,data.resource_id,JSON.stringify(data),expires);json(res,200,{ok:true,id,expires_at:expires,report:{...data,organization:{...data.organization,logo:undefined},fonts:undefined,font_paths:undefined}});return true;
+ }
+ if(/^\/api\/workspace\/reports\/[a-f0-9-]+\/pdf$/.test(p)&&req.method==='GET'){
+  const id=p.split('/')[4],row=db.prepare('SELECT * FROM professional_report_snapshots WHERE id=? AND owner_id=?').get(id,user.id);if(!row)fail('Report not found.',404);const data=JSON.parse(row.data_json),available=resources(user,c),template=REPORT_TEMPLATES.find(x=>x.id===row.template);
+  if(!template||!available[template.resource].some(x=>x.id===row.resource_id))fail('Your report access has changed.',403);
+  const currentClasses=new Set(scopedClasses(user,c).map(x=>x.id));if(data.class_ids.some(classId=>!currentClasses.has(classId)))fail('Your class access has changed. Prepare a new report.',403);
+  const folder=path.join(STORAGE_DIR,'professional-reports'),file=path.join(folder,id+'.pdf');let bytes;
+  if(row.exported_at){if(!fs.existsSync(file))fail('The saved report file is missing. Restore its backup or prepare a new report.',409);bytes=fs.readFileSync(file);if(sha(bytes)!==row.file_sha256)fail('Report integrity verification failed.',409);}
+  else{if(Date.parse(row.expires_at)<Date.now())fail('The preview expired. Prepare a new report.',409);data.font_paths=selectedFontPaths({ui:Object.fromEntries(Object.entries(data.fonts).map(([language,font])=>[language,font.id]))});for(const language of ['en','ar'])if(sha(fs.readFileSync(data.font_paths[language]))!==data.fonts[language].sha256)fail('The reviewed font bytes changed. Restore the verified release before exporting.',409);bytes=await sharedPdf(id,data);fs.mkdirSync(folder,{recursive:true});const stage=file+'.'+crypto.randomUUID()+'.tmp';fs.writeFileSync(stage,bytes);fs.renameSync(stage,file);try{engine.transaction(()=>{const accepted=db.prepare('UPDATE professional_report_snapshots SET exported_at=CURRENT_TIMESTAMP,file_sha256=? WHERE id=? AND exported_at IS NULL').run(sha(bytes),id);if(accepted.changes)engine.log(null,user.id,'professional_report_exported','report',id,{template:row.template,resource_id:row.resource_id,sha256:sha(bytes)});});}catch(error){fs.rmSync(file,{force:true});throw error;}}
+  send(res,200,bytes,'application/pdf',{'Content-Disposition':`attachment; filename="ONE-${row.template}-${data.language}-${data.created_at.slice(0,10)}.pdf"`,'Cache-Control':'private, no-store','X-Content-SHA256':sha(bytes)});return true;
+ }
+ fail('Report action not found.',404);
+}

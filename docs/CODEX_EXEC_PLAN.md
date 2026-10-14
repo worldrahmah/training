@@ -1,3 +1,19 @@
+# RC1R8 approved enterprise workspace milestone
+
+Baseline: RC1R7 source/distribution commit 19dbfc36d0fad0175f386d3aaec4129d6e846cdd. Unchanged complete npm test passed (50 commands /49 programs) before modifications; output outside source at /workspace/one-review/rc1r8/BASELINE_TEST_OUTPUT.txt. Owner reports reopen manual acceptance.
+
+Decisions and pre-migration impact: RC1R8_APPROVED_SCOPE_AND_MIGRATION.md. Registered-account-only code admissions confirmed separately. No school features, tenancy or rebuild. Extend the existing declarative authoring registry, scoped local-first runtime and separate role surfaces.
+
+Milestones: (1) enrollment/deletion/diagnostics/layout/drill-down repairs; (2) journaled additive data migrations, Editor isolation/publishing, groups/admission/inbox/profiles/archive/audit/bulk previews; (3) 40 licensed local fonts and seven direct PDF report templates; (4) full working-tree regression/browser/persisted migration and PDF checks; immutable seal/fresh-extract/full retest/publication. Tests: npm test, npm run test:browser plus new operational/migration/report/font/role browser suites; node --check and canonical drift checks. Stop and repair each failed gate.
+
+Acceptance: meaningful create/edit/re-add/approve/reject/archive/restore/export interactions and negative authorization assertions, retained history, every role EN/AR light/dark/system desktop/tablet/mobile, all fonts against long text/control metrics and Arabic shaping, PDF multi-page/logo/fonts/charts. Keep 36 activities/68 result cases, backup/restart/legacy migration evidence. Owner Windows/projector visual acceptance remains the FINAL gate.
+
+Risks: staff CHECK widening, admission uniqueness/capacity/races, group scope leakage, course-editor legacy-route bypass, profile/logo assets in backup, bundled font/PDF dependencies and Arabic text shaping. Preserve baseline artifacts and pre-upgrade data backup; rollback limitations explicit. Source inspection/test ledger will distinguish actual review from inventory. Do not publish PASS with known defects.
+
+Progress: baseline and implementation complete. Stateful operations (including stale/capacity/restore cases), 40-font proof, 34 PDF compatibility cases and three real browser suites pass. Source regression was repaired for the approved guest/admission, withdrawn-roster and configurable-font contracts. Complete working-tree Node/four-browser/PDF/static gates passed. Immutable seal/fresh-extraction/retest and publication are in progress. Owner Windows/Projector acceptance remains pending.
+
+---
+
 # ExecPlan — RC1R7 product experience and operational review
 
 Owner scope: substantially improve the visible interface and deeply review existing feature/tool logic against enterprise operation. Screenshots identify crowded Builder controls, participant navigation, light-theme contrast, Arabic punctuation and confusing staff administration. RC1R6 is the preserved baseline; its complete suite passed again before changes (47 commands / 46 programs). No school-domain/schema expansion is assumed.

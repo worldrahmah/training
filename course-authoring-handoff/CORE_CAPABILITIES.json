@@ -1,11 +1,11 @@
 {
   "format": "training-engine-core-capabilities",
   "app_name": "Training Engine ONE",
-  "app_version": "3.5.0-rc.1.7",
-  "core_schema_version": "3.1",
+  "app_version": "3.5.0-rc.1.8",
+  "core_schema_version": "3.2",
   "latest_authoring_schema": "2.0",
   "registry_format": "training-engine-one-capability-registry",
-  "registry_version": "3.5.0-rc.1.6",
+  "registry_version": "3.5.0-rc.1.8",
   "compatible_course_schemas": [
     "1.0",
     "1.1",
@@ -734,7 +734,64 @@
     ],
     "offline_response_queue": true,
     "session_replay": true,
-    "guest_participation": true
+    "guest_participation": false,
+    "registered_account_admission": "assigned_manager_approval",
+    "historical_guest_sessions": "preserved"
+  },
+  "workspace": {
+    "organization_mode": "single_local_organization",
+    "staff_profiles": [
+      "super_admin",
+      "administrator",
+      "trainer",
+      "assistant",
+      "course_editor"
+    ],
+    "course_editor": "own_or_assigned_drafts_and_per_course_publish",
+    "groups": {
+      "types": [
+        "participants",
+        "staff"
+      ],
+      "multi_membership": true,
+      "class_application": "reviewed_snapshot_without_permission_inheritance"
+    },
+    "admission": {
+      "accounts": "registered_only",
+      "decision": "assigned_manager_or_admin",
+      "pending_content_access": false,
+      "re_enrollment": "resume_preserved_progress"
+    },
+    "reports": {
+      "templates": [
+        "class",
+        "learner",
+        "course",
+        "attendance",
+        "assessment",
+        "group",
+        "trainer"
+      ],
+      "formats": [
+        "pdf"
+      ],
+      "languages": [
+        "en",
+        "ar"
+      ],
+      "preview": "immutable_snapshot",
+      "branding": "centrally_managed",
+      "row_limit": 10000
+    },
+    "typography": {
+      "source": "bundled_local_licensed_catalog",
+      "english_families": 20,
+      "arabic_families": 20,
+      "administrator_selected": true
+    },
+    "profiles": "own_and_authorized_scope",
+    "bulk_changes": "actor_bound_preview_with_stale_detection",
+    "archive": "preserved_history_with_restore"
   },
   "facilitation": {
     "challenge_mode": true,

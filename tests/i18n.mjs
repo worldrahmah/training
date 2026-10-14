@@ -16,7 +16,7 @@ assert.equal(globalThis.document.documentElement.lang,'ar');
 assert.equal(mod.t('Hi, {name}',{name:'حسن'}),'مرحبًا، حسن');
 mod.setLocale('en');
 assert.equal(globalThis.document.documentElement.dir,'ltr');
-const files=['core.js','trainer.js','student.js','admin.js','builder.js','live.js','present.js','preview.html'];
+const files=['core.js','trainer.js','student.js','admin.js','builder.js','live.js','present.js','preview.html','workspace-tools.js','professional-reports.js','profile.js','editor.js','typography-controls.js'];
 const used=new Set();
 for(const f of files){const txt=fs.readFileSync(path.join(root,'app/public',f),'utf8');for(const m of txt.matchAll(/\bt\('([^']+)'/g))used.add(m[1]);}
 const missing=[...used].filter(k=>!mod.hasArabicTranslation(k)).sort();

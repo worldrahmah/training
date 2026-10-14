@@ -1,0 +1,210 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {handleProfessionalReports} from './professional-reports.mjs';
+import {validateRaster} from './raster-media.mjs';
+import {FONT_CATALOG,validateFontSelection} from './typography.mjs';
+const hash=value=>crypto.createHash('sha256').update(value).digest('hex');
+const fail=(message,status=400)=>{throw Object.assign(new Error(message),{status})};
+const integer=value=>{const n=Number(value);if(!Number.isSafeInteger(n)||n<1)fail('Choose an existing record.');return n};
+const bounded=(value,max=200)=>String(value??'').trim().slice(0,max);
+const isEditor=user=>user?.staff_role==='course_editor';
+export function editorRouteAllowed(pathname,method){
+  if(['/api/me','/api/logout','/api/heartbeat','/api/profile','/api/account/password','/api/account/sessions','/api/account/session/rotate','/api/profile/consent-history','/api/public-settings'].includes(pathname))return true;
+  if(pathname==='/api/settings')return method==='GET';
+  if(/^\/api\/profiles\/\d+(\/photo)?$/.test(pathname))return true; // own-record check is mandatory in the handler
+  if(pathname==='/api/typography')return method==='GET';
+  if(pathname==='/api/courses')return ['GET','POST'].includes(method);
+  if(['/api/courses/editable','/api/courses/validate','/api/courses/import'].includes(pathname))return true;
+  if(/^\/api\/courses\/\d+$/.test(pathname))return ['GET','PATCH'].includes(method);
+  return /^\/api\/(course-versions\/\d+\/(content|draft|assets|validate|revisions|compare|simulate|presentation-import|publish|export)(\/.*)?|courses\/\d+\/(drafts|question-banks|prerequisites)|question-banks\/\d+\/items(\/\d+)?|assets\/\d+\/.*|authoring\/templates(\/\d+)?)$/.test(pathname);
+}
+export async function handleWorkspaceApi(req,res,url,c){
+  if(await handleProfessionalReports(req,res,url,c))return true;
+  const p=url.pathname,handled=p.startsWith('/api/workspace/')||p.startsWith('/api/profiles/')||p==='/api/typography'||p==='/api/student/records'||p==='/api/student/join'||p==='/api/student/join-requests'||p==='/api/guest/join'||(/^\/api\/classes\/\d+\/lifecycle$/.test(p)&&req.method==='POST')||(/^\/api\/classes\/\d+\/enroll$/.test(p)&&req.method==='POST')||(/^\/api\/classes\/\d+$/.test(p)&&req.method==='DELETE');
+  if(!handled)return false;
+  const {db,engine,json,send,readJson,readBuffer,refresh,requireUser,isAdminLike,canManageClass,canAdministerClass,canAdministerStudent,getClassRow,courseList,classList,visibleClassIds,prereqStatus,STORAGE_DIR}=c;
+  if(p==='/api/guest/join'){json(res,403,{ok:false,message:'A registered participant account is required to request admission. Sign in, then enter your class code.'});return true;}
+  const user=requireUser(req,res,url);if(!user)return true;
+  const staff=()=>{if(user.role!=='trainer'||isEditor(user))fail('Trainer or administrator access is required.',403)};
+  const admin=()=>{if(!isAdminLike(user))fail('Administrator access is required.',403)};
+  const classManager=id=>{staff();if(!canAdministerClass(user,id)&&!c.hasGrant(user,'class',id,'manage'))fail('You do not have permission to manage this class.',403);const cl=getClassRow(id);if(!cl)fail('Class not found.',404);return cl};
+  const notify=(recipient,title,body,link)=>{db.prepare("INSERT INTO notifications(sender_id,scope_type,scope_id,title,body,link_json) VALUES(?,'user',?,?,?,?)").run(user.id,String(recipient),title,body,JSON.stringify(link));};
+  const groupAccess=(id,write=false)=>{staff();const group=db.prepare('SELECT * FROM workspace_groups WHERE id=?').get(id);if(!group)fail('Group not found.',404);if(!isAdminLike(user)&&Number(group.owner_id)!==Number(user.id))fail('You do not have access to this group.',403);if(write&&group.archived_at)fail('Restore this group before editing it.',409);return group};
+  const visibleStudents=()=>isAdminLike(user)?db.prepare("SELECT id,display_name,username,active FROM users WHERE role='student' ORDER BY display_name").all():db.prepare("SELECT DISTINCT u.id,u.display_name,u.username,u.active FROM users u JOIN enrollments e ON e.student_id=u.id JOIN class_trainers ct ON ct.class_id=e.class_id WHERE ct.user_id=? AND e.status<>'withdrawn' ORDER BY u.display_name").all(user.id);
+  const validateMembers=(group,ids)=>{
+    if(!Array.isArray(ids)||ids.length>2000)fail('Choose a supported list of group members.');const unique=[...new Set(ids.map(integer))];
+    for(const id of unique){const target=db.prepare('SELECT id,role,active FROM users WHERE id=?').get(id);if(!target||!target.active||target.role!==(group.kind==='participants'?'student':'trainer'))fail('Each group member must be an active account of the matching type.');if(!isAdminLike(user)&&(group.kind==='staff'||!canAdministerStudent(user,id)))fail('You do not have permission to manage one of these members.',403);}
+    return unique;
+  };
+  const canViewLearner=id=>user.role==='trainer'&&!isEditor(user)&&db.prepare('SELECT class_id FROM enrollments WHERE student_id=?').all(id).some(row=>canManageClass(user,row.class_id));
+  const canReviewApplicant=id=>user.role==='trainer'&&!isEditor(user)&&db.prepare("SELECT class_id FROM class_join_requests WHERE student_id=? AND status='pending'").all(id).some(row=>canAdministerClass(user,row.class_id)||c.hasGrant(user,'class',row.class_id,'manage'));
+  const archiveSnapshot=(type,id,row)=>db.prepare('INSERT INTO archive_records(entity_type,entity_id,snapshot_json,archived_by) VALUES(?,?,?,?) ON CONFLICT(entity_type,entity_id) DO UPDATE SET snapshot_json=excluded.snapshot_json,archived_by=excluded.archived_by,archived_at=CURRENT_TIMESTAMP,restored_at=NULL').run(type,id,JSON.stringify(row),user.id);
+  const cancelPending=classId=>{for(const row of db.prepare("SELECT id,student_id FROM class_join_requests WHERE class_id=? AND status='pending'").all(classId)){db.prepare("UPDATE class_join_requests SET status='cancelled',revision=revision+1,decided_by=?,decided_at=CURRENT_TIMESTAMP,note='Class closed to admission' WHERE id=?").run(user.id,row.id);notify(row.student_id,'Class admission cancelled','The class is closed to admission.',{type:'admission',class_id:classId,request_id:row.id});}};
+  if(/^\/api\/classes\/\d+\/enroll$/.test(p)&&req.method==='POST'){
+    const classId=integer(p.split('/')[3]),cl=classManager(classId),b=await readJson(req),sid=integer(b.student_id);if(!db.prepare("SELECT id FROM users WHERE id=? AND role='student' AND active=1").get(sid))fail('Participant not found.',404);
+    engine.transaction(()=>{const already=db.prepare("SELECT 1 FROM enrollments WHERE class_id=? AND student_id=? AND status<>'withdrawn'").get(classId,sid),count=db.prepare("SELECT COUNT(*) n FROM enrollments WHERE class_id=? AND status='active'").get(classId).n;if(!already&&count>=cl.capacity)fail('The class is full. Increase capacity before adding another participant.',409);
+      db.prepare("INSERT INTO enrollments(class_id,student_id,status) VALUES(?,?,'active') ON CONFLICT(class_id,student_id) DO UPDATE SET status='active'").run(classId,sid);const pending=db.prepare("SELECT id FROM class_join_requests WHERE class_id=? AND student_id=? AND status='pending'").get(classId,sid);if(pending){db.prepare("UPDATE class_join_requests SET status='approved',decided_at=CURRENT_TIMESTAMP,decided_by=?,revision=revision+1,note='Enrolled by authorized staff' WHERE id=?").run(user.id,pending.id);notify(sid,'Class admission approved',cl.title,{type:'class',class_id:classId});}engine.log(classId,user.id,'participant_enrolled','student',sid,{resumed_existing_progress:true});});refresh(classId,'roster');json(res,200,{ok:true});return true;
+  }
+  if(/^\/api\/classes\/\d+$/.test(p)&&req.method==='DELETE'){
+    const id=integer(p.split('/')[3]),cl=classManager(id);if(cl.status==='active')fail('Finish the live class before archiving it.',409);engine.transaction(()=>{archiveSnapshot('class',id,cl);db.prepare("UPDATE classes SET status='cancelled',updated_at=CURRENT_TIMESTAMP WHERE id=?").run(id);db.prepare("INSERT INTO class_lifecycle(class_id,lifecycle_status) VALUES(?,'archived') ON CONFLICT(class_id) DO UPDATE SET lifecycle_status='archived',updated_at=CURRENT_TIMESTAMP").run(id);cancelPending(id);engine.log(id,user.id,'class_archived','class',id,{});});refresh(id,'classes');json(res,200,{ok:true,archived:true});return true;
+  }
+
+  if(/^\/api\/classes\/\d+\/lifecycle$/.test(p)&&req.method==='POST'){const id=integer(p.split('/')[3]),cl=classManager(id),b=await readJson(req),status=String(b.status||'');if(!['draft','scheduled','active','completed','archived'].includes(status))fail('Choose a valid class status.');if(status==='archived'&&cl.status==='active')fail('Finish the live class before archiving it.',409);engine.transaction(()=>{if(status==='archived')archiveSnapshot('class',id,cl);db.prepare("INSERT INTO class_lifecycle(class_id,lifecycle_status) VALUES(?,?) ON CONFLICT(class_id) DO UPDATE SET lifecycle_status=excluded.lifecycle_status,updated_at=CURRENT_TIMESTAMP").run(id,status);db.prepare('UPDATE classes SET status=?,updated_at=CURRENT_TIMESTAMP WHERE id=?').run(['draft','scheduled'].includes(status)?'planned':status==='archived'?'cancelled':status,id);if(['archived','completed'].includes(status))cancelPending(id);engine.log(id,user.id,'class_status_changed','class',id,{status});});refresh(id,'class_status');json(res,200,{ok:true,status});return true;}
+  const planBulk=payload=>{
+    const operation=payload.operation,rows=[],state={operation};
+    if(['enroll_group','assign_staff_group'].includes(operation)){
+      const groupId=integer(payload.group_id),classId=integer(payload.class_id),group=groupAccess(groupId,true),cl=classManager(classId);if(['cancelled','completed'].includes(cl.status))fail('Choose an open class.',409);
+      if(group.kind!==(operation==='enroll_group'?'participants':'staff'))fail('Choose a group with the matching account type.');
+      const members=db.prepare('SELECT u.id,u.display_name,u.active,sr.staff_role FROM workspace_group_members gm JOIN users u ON u.id=gm.user_id LEFT JOIN staff_roles sr ON sr.user_id=u.id WHERE gm.group_id=? ORDER BY u.id').all(groupId);
+      const existing=operation==='enroll_group'?db.prepare("SELECT student_id id FROM enrollments WHERE class_id=? AND status<>'withdrawn' ORDER BY student_id").all(classId):db.prepare('SELECT user_id id FROM class_trainers WHERE class_id=? ORDER BY user_id').all(classId),already=new Set(existing.map(row=>row.id));
+      const count=db.prepare("SELECT COUNT(*) n FROM enrollments WHERE class_id=? AND status='active'").get(classId).n;
+      Object.assign(state,{groupId,classId,classTitle:cl.title,group:{name:group.name,archived_at:group.archived_at},members,existing,capacity:cl.capacity,status:cl.status,count});
+      for(const member of members){let reason=!member.active?'Account is inactive.':already.has(member.id)?'Already assigned to this class.':operation==='assign_staff_group'&&member.staff_role==='course_editor'?'Course Editors have no classroom role.':operation==='enroll_group'&&!prereqStatus(member.id,cl.course_id).ok?'Course prerequisites are not complete.':'';rows.push({id:member.id,name:member.display_name,action:operation==='enroll_group'?'Enroll participant':'Assign trainer',eligible:!reason,reason});}
+      if(operation==='enroll_group'&&count+rows.filter(row=>row.eligible).length>cl.capacity)fail('The class has insufficient capacity for this group. Increase capacity before previewing.',409);
+    }else if(operation==='admin_bulk'){
+      admin();const type=payload.type,action=payload.action;if(!['archive','activate','deactivate'].includes(action)||!['course','class','participant','staff'].includes(type)||!Array.isArray(payload.ids)||!payload.ids.length||payload.ids.length>500)fail('Choose supported records and a bulk action.');
+      if(['course','class'].includes(type)&&action!=='archive')fail('Only archiving is supported for courses and classes.');
+      const ids=[...new Set(payload.ids.map(integer))],table={course:'courses',class:'classes',participant:'users',staff:'users'}[type],records=ids.map(id=>db.prepare(`SELECT * FROM ${table} WHERE id=?`).get(id));if(records.some(row=>!row))fail('One of these records no longer exists.',409);
+      const superCount=db.prepare("SELECT COUNT(*) n FROM users u JOIN staff_roles sr ON sr.user_id=u.id WHERE u.active=1 AND sr.staff_role='super_admin'").get().n;let removedSuper=0;
+      for(const row of records){if(type==='participant'&&row.role!=='student'||type==='staff'&&row.role!=='trainer')fail('The selected accounts do not match this collection.');const role=type==='staff'?db.prepare('SELECT staff_role FROM staff_roles WHERE user_id=?').get(row.id)?.staff_role:null;let reason='';
+        if(type==='class'&&row.status==='active')reason='Finish the live class before archiving it.';
+        if(action==='deactivate'&&row.id===user.id)reason='You cannot deactivate your current account.';
+        if(type==='staff'&&role==='super_admin'&&user.staff_role!=='super_admin')reason='Only a super administrator can manage this account.';
+        if(!reason&&action==='deactivate'&&role==='super_admin'&&row.active){if(superCount-removedSuper<=1)reason='At least one active super administrator must remain.';else removedSuper++;}
+        rows.push({id:row.id,name:row.title||row.display_name,action:{archive:'Archive',activate:'Activate',deactivate:'Deactivate'}[action],eligible:!reason,reason});
+      }
+      Object.assign(state,{type,action,records:records.map(row=>({id:row.id,title:row.title,display_name:row.display_name,active:row.active,status:row.status,archived_at:row.archived_at})),superCount});
+    }else fail('Choose a supported bulk operation.');
+    return {rows,state,source_sha256:hash(JSON.stringify({state,rows}))};
+  };
+  if(p==='/api/workspace/bulk-preview'&&req.method==='POST'){
+    staff();const payload=await readJson(req),plan=planBulk(payload),token=crypto.randomBytes(24).toString('hex'),expires=new Date(Date.now()+5*60*1000).toISOString();db.prepare("DELETE FROM bulk_operation_previews WHERE applied_at IS NULL AND datetime(expires_at)<datetime('now')").run();db.prepare('INSERT INTO bulk_operation_previews(token,actor_id,operation,payload_json,source_sha256,expires_at) VALUES(?,?,?,?,?,?)').run(token,user.id,payload.operation,JSON.stringify(payload),plan.source_sha256,expires);json(res,200,{ok:true,token,expires_at:expires,rows:plan.rows,context:{class_title:plan.state.classTitle||'',group_name:plan.state.group?.name||''},eligible:plan.rows.filter(row=>row.eligible).length,skipped:plan.rows.filter(row=>!row.eligible).length});return true;
+  }
+  if(p==='/api/workspace/bulk-apply'&&req.method==='POST'){
+    staff();const b=await readJson(req),token=bounded(b.token,100);const result=engine.transaction(()=>{
+      const preview=db.prepare('SELECT * FROM bulk_operation_previews WHERE token=? AND actor_id=?').get(token,user.id);if(!preview)fail('This preview does not belong to your account.',403);if(preview.applied_at)return {already_applied:true};if(Date.parse(preview.expires_at)<Date.now())fail('The preview expired. Review the operation again.',409);
+      const payload=JSON.parse(preview.payload_json),plan=planBulk(payload);if(plan.source_sha256!==preview.source_sha256)fail('Records changed since this preview. Review the updated operation before applying.',409);
+      for(const row of plan.rows.filter(row=>row.eligible)){
+        if(payload.operation==='enroll_group'){db.prepare("INSERT INTO enrollments(class_id,student_id,status) VALUES(?,?,'active') ON CONFLICT(class_id,student_id) DO UPDATE SET status='active'").run(payload.class_id,row.id);const request=db.prepare("SELECT id FROM class_join_requests WHERE class_id=? AND student_id=? AND status='pending'").get(payload.class_id,row.id);if(request){db.prepare("UPDATE class_join_requests SET status='approved',decided_by=?,decided_at=CURRENT_TIMESTAMP,revision=revision+1,note='Enrolled by authorized staff' WHERE id=?").run(user.id,request.id);notify(row.id,'Class admission approved',plan.state.group.name,{type:'class',class_id:payload.class_id});}}
+        else if(payload.operation==='assign_staff_group')db.prepare("INSERT OR IGNORE INTO class_trainers(class_id,user_id,assignment_role) VALUES(?,?,'trainer')").run(payload.class_id,row.id);
+        else if(payload.type==='course'){const old=db.prepare('SELECT * FROM courses WHERE id=?').get(row.id);archiveSnapshot('course',row.id,old);db.prepare('UPDATE courses SET archived_at=CURRENT_TIMESTAMP,updated_at=CURRENT_TIMESTAMP WHERE id=?').run(row.id);}
+        else if(payload.type==='class'){const old=getClassRow(row.id);archiveSnapshot('class',row.id,old);db.prepare("UPDATE classes SET status='cancelled',updated_at=CURRENT_TIMESTAMP WHERE id=?").run(row.id);db.prepare("UPDATE class_lifecycle SET lifecycle_status='archived',updated_at=CURRENT_TIMESTAMP WHERE class_id=?").run(row.id);cancelPending(row.id);}
+        else{const active=payload.action==='activate'?1:0;if(!active){const old=db.prepare('SELECT id,active FROM users WHERE id=?').get(row.id);archiveSnapshot(payload.type,row.id,old);}db.prepare('UPDATE users SET active=?,updated_at=CURRENT_TIMESTAMP WHERE id=?').run(active,row.id);if(!active)db.prepare('DELETE FROM sessions WHERE user_id=?').run(row.id);}
+      }
+      db.prepare('UPDATE bulk_operation_previews SET applied_at=CURRENT_TIMESTAMP WHERE token=?').run(token);engine.log(payload.class_id||null,user.id,'bulk_reviewed_changes_applied',payload.group_id?'group':'system',payload.group_id||null,{operation:payload.operation,type:payload.type,action:payload.action,affected_ids:plan.rows.filter(row=>row.eligible).map(row=>row.id),skipped:plan.rows.filter(row=>!row.eligible).length});return {applied:plan.rows.filter(row=>row.eligible).length,skipped:plan.rows.filter(row=>!row.eligible).length};
+    });refresh(null,'workspace');json(res,200,{ok:true,...result});return true;
+  }
+  if(p==='/api/workspace/archive'&&req.method==='GET'){
+    staff();const records=[];for(const row of courseList().filter(row=>row.archived_at&&c.canViewCourse(user,row.id)))records.push({id:row.id,type:'course',name:row.title});for(const row of classList(user).filter(row=>row.status==='cancelled'||row.lifecycle_status==='archived'))if(isAdminLike(user)||canAdministerClass(user,row.id))records.push({id:row.id,type:'class',name:row.title});for(const row of db.prepare('SELECT * FROM workspace_groups WHERE archived_at IS NOT NULL').all().filter(row=>isAdminLike(user)||row.owner_id===user.id))records.push({id:row.id,type:'group',name:row.name});if(isAdminLike(user))for(const row of db.prepare('SELECT id,role,display_name FROM users WHERE active=0').all())records.push({id:row.id,type:row.role==='student'?'participant':'staff',name:row.display_name});json(res,200,{ok:true,records});return true;
+  }
+  if(p==='/api/workspace/archive/restore'&&req.method==='POST'){
+    staff();const b=await readJson(req),id=integer(b.id),type=b.type;if(!['course','class','participant','staff','group'].includes(type))fail('Choose a supported archived record.');
+    engine.transaction(()=>{
+      if(type==='group'){groupAccess(id);db.prepare('UPDATE workspace_groups SET archived_at=NULL,updated_at=CURRENT_TIMESTAMP WHERE id=?').run(id);}
+      else if(type==='class'){const cl=classManager(id);if(cl.status!=='cancelled'&&cl.lifecycle_status!=='archived')fail('This class is not archived.',409);const prior=JSON.parse(db.prepare("SELECT snapshot_json FROM archive_records WHERE entity_type='class' AND entity_id=?").get(id)?.snapshot_json||'{}'),status=['planned','completed'].includes(prior.status)?prior.status:'planned',lifecycle=['draft','scheduled','completed'].includes(prior.lifecycle_status)?prior.lifecycle_status:'scheduled';db.prepare('UPDATE classes SET status=?,updated_at=CURRENT_TIMESTAMP WHERE id=?').run(status,id);db.prepare('UPDATE class_lifecycle SET lifecycle_status=?,updated_at=CURRENT_TIMESTAMP WHERE class_id=?').run(lifecycle,id);}
+      else if(type==='course'){if(!isAdminLike(user)&&!c.hasGrant(user,'course',id,'delete'))fail('Archival management permission is required.',403);if(!db.prepare('SELECT id FROM courses WHERE id=? AND archived_at IS NOT NULL').get(id))fail('Archived course not found.',404);db.prepare('UPDATE courses SET archived_at=NULL,updated_at=CURRENT_TIMESTAMP WHERE id=?').run(id);}
+      else{admin();if(!db.prepare('SELECT id FROM users WHERE id=? AND active=0 AND role=?').get(id,type==='participant'?'student':'trainer'))fail('Archived account not found.',404);if(type==='staff'&&user.staff_role!=='super_admin'&&db.prepare("SELECT 1 FROM staff_roles WHERE user_id=? AND staff_role='super_admin'").get(id))fail('Only a super administrator can manage a super administrator account.',403);db.prepare('UPDATE users SET active=1,updated_at=CURRENT_TIMESTAMP WHERE id=?').run(id);}
+      db.prepare('UPDATE archive_records SET restored_at=CURRENT_TIMESTAMP WHERE entity_type=? AND entity_id=?').run(type,id);engine.log(type==='class'?id:null,user.id,'record_restored',type,id,{});
+    });refresh(null,'workspace');json(res,200,{ok:true});return true;
+  }
+  if(p==='/api/typography'){
+    if(req.method==='GET'){json(res,200,{ok:true,catalog:FONT_CATALOG,typography:engine.getSetting('typography',{})});return true;}
+    if(req.method==='POST'){admin();const selection=validateFontSelection(await readJson(req)),before=engine.getSetting('typography',{});engine.transaction(()=>{engine.setSetting('typography',selection);engine.log(null,user.id,'typography_updated','system',null,{before,after:selection});});refresh(null,'settings');json(res,200,{ok:true,typography:selection});return true;}
+  }
+  if(p==='/api/student/records'&&req.method==='GET'){
+    if(user.role!=='student')fail('Participant access is required.',403);const kind=url.searchParams.get('kind'),classId=Number(url.searchParams.get('class_id')||0);let rows=[];
+    if(kind==='responses')rows=db.prepare("SELECT cl.id,ai.title name,cl.title detail,CASE WHEN ai.revealed_at IS NULL THEN 'Submitted' ELSE 'Revealed' END status FROM responses r JOIN activity_instances ai ON ai.id=r.instance_id JOIN classes cl ON cl.id=ai.class_id WHERE r.student_id=? AND (?=0 OR cl.id=?) ORDER BY r.id DESC").all(user.id,classId,classId);
+    else if(kind==='missions')rows=db.prepare("SELECT cl.id,cl.title name,cl.title detail,mp.status FROM mission_progress mp JOIN classes cl ON cl.id=mp.class_id WHERE mp.student_id=? AND mp.status='completed' AND (?=0 OR cl.id=?) ORDER BY mp.id DESC").all(user.id,classId,classId);
+    else if(kind==='achievements')rows=db.prepare("SELECT cl.id,a.title name,cl.title detail,'Achieved' status FROM achievements a JOIN classes cl ON cl.id=a.class_id WHERE a.student_id=? AND (?=0 OR cl.id=?) ORDER BY a.id DESC").all(user.id,classId,classId);
+    else if(kind==='objectives')rows=db.prepare("SELECT cl.id,cl.title name,cl.title detail,'Achieved' status FROM objective_progress o JOIN classes cl ON cl.id=o.class_id WHERE o.student_id=? AND o.achieved=1 AND (?=0 OR cl.id=?)").all(user.id,classId,classId);
+    else fail('Choose your learning evidence collection.');json(res,200,{ok:true,rows:rows.map(row=>({...row,type:'class'})),total:rows.length});return true;
+  }
+  if(p==='/api/student/join'&&req.method==='POST'){
+    if(user.role!=='student')fail('Sign in with a participant account.',403);const b=await readJson(req),code=bounded(b.code,12).toUpperCase();
+    const cl=db.prepare("SELECT cl.*,cv.course_id FROM classes cl JOIN course_versions cv ON cv.id=cl.course_version_id WHERE cl.join_code=?").get(code);if(!cl)fail('Class code not found.',404);
+    const enrollment=db.prepare("SELECT * FROM enrollments WHERE class_id=? AND student_id=? AND status<>'withdrawn'").get(cl.id,user.id);
+    if(enrollment){json(res,200,{ok:true,class:getClassRow(cl.id),already_enrolled:true});return true;}
+    if(user.account_kind==='legacy_guest')fail('A registered participant account is required for new class admission requests.',403);
+    if(['completed','cancelled'].includes(cl.status)||db.prepare("SELECT 1 FROM class_lifecycle WHERE class_id=? AND lifecycle_status='archived'").get(cl.id))fail('This class is closed to new admission requests.',409);
+    const prerequisites=prereqStatus(user.id,cl.course_id);if(!prerequisites.ok){json(res,409,{ok:false,code:'PREREQUISITES_NOT_MET',message:'Complete the required course prerequisites before requesting admission.',missing:prerequisites.missing});return true;}
+    const old=db.prepare('SELECT * FROM class_join_requests WHERE class_id=? AND student_id=?').get(cl.id,user.id);
+    if(old?.status==='pending'){json(res,202,{ok:true,pending:true,request:{id:old.id,status:old.status,requested_at:old.requested_at},class:{id:cl.id,title:cl.title}});return true;}
+    const id=engine.transaction(()=>{
+      db.prepare("INSERT INTO class_join_requests(class_id,student_id,status) VALUES(?,?,'pending') ON CONFLICT(class_id,student_id) DO UPDATE SET status='pending',requested_at=CURRENT_TIMESTAMP,decided_at=NULL,decided_by=NULL,note='',revision=class_join_requests.revision+1").run(cl.id,user.id);
+      const row=db.prepare('SELECT id FROM class_join_requests WHERE class_id=? AND student_id=?').get(cl.id,user.id);
+      const recipients=db.prepare("SELECT u.id FROM users u JOIN staff_roles sr ON sr.user_id=u.id WHERE u.active=1 AND sr.staff_role IN ('super_admin','administrator') UNION SELECT u.id FROM users u JOIN class_trainers ct ON ct.user_id=u.id JOIN staff_roles sr ON sr.user_id=u.id WHERE ct.class_id=? AND ct.assignment_role='lead' AND u.active=1 AND sr.staff_role<>'course_editor' UNION SELECT u.id FROM users u JOIN permission_grants pg ON pg.user_id=u.id JOIN staff_roles sr ON sr.user_id=u.id WHERE pg.resource_type='class' AND pg.resource_id IN (?, '*') AND pg.action='manage' AND u.active=1 AND sr.staff_role<>'course_editor'").all(cl.id,String(cl.id));
+      for(const recipient of recipients)notify(recipient.id,'Class admission request',`${user.display_name} requested admission to ${cl.title}.`,{type:'join_request',class_id:cl.id,request_id:row.id});
+      engine.log(cl.id,user.id,'class_admission_requested','join_request',row.id,{previous_status:old?.status||null});return row.id;
+    });refresh(cl.id,'admissions');json(res,202,{ok:true,pending:true,request:{id,status:'pending'},class:{id:cl.id,title:cl.title}});return true;
+  }
+  if(p==='/api/student/join-requests'&&req.method==='GET'){
+    if(user.role!=='student')fail('Participant access is required.',403);const requests=db.prepare('SELECT jr.id,jr.status,jr.requested_at,jr.decided_at,jr.note,cl.title class_title FROM class_join_requests jr JOIN classes cl ON cl.id=jr.class_id WHERE jr.student_id=? ORDER BY jr.requested_at DESC').all(user.id);json(res,200,{ok:true,requests});return true;
+  }
+  if(p==='/api/workspace/admissions'&&req.method==='GET'){
+    staff();const classId=Number(url.searchParams.get('class_id')||0),status=url.searchParams.get('status')||'pending';if(!['pending','approved','rejected','cancelled','all'].includes(status))fail('Choose a supported request status.');if(classId)classManager(classId);
+    const requests=db.prepare('SELECT jr.*,cl.title class_title,u.display_name,u.username FROM class_join_requests jr JOIN classes cl ON cl.id=jr.class_id JOIN users u ON u.id=jr.student_id ORDER BY jr.requested_at DESC,jr.id DESC').all().filter(row=>(!classId||row.class_id===classId)&&(status==='all'||row.status===status)&&(isAdminLike(user)||canAdministerClass(user,row.class_id)||c.hasGrant(user,'class',row.class_id,'manage')));json(res,200,{ok:true,requests});return true;
+  }
+  if(/^\/api\/workspace\/admissions\/\d+$/.test(p)&&req.method==='POST'){
+    staff();const id=integer(p.split('/').pop()),b=await readJson(req);if(!['approve','reject'].includes(b.action))fail('Choose approve or reject.');const result=engine.transaction(()=>{
+      const row=db.prepare('SELECT * FROM class_join_requests WHERE id=?').get(id);if(!row)fail('Admission request not found.',404);const cl=classManager(row.class_id),next=b.action==='approve'?'approved':'rejected';
+      if(row.status===next)return {id,status:next,unchanged:true};if(row.status!=='pending'||Number(b.expected_revision)!==row.revision)fail('This request changed. Refresh before making another decision.',409);
+      if(next==='approved'){
+        if(['completed','cancelled'].includes(cl.status)||cl.lifecycle_status==='archived')fail('This class is closed to admission.',409);
+        const student=db.prepare("SELECT id FROM users WHERE id=? AND active=1 AND role='student'").get(row.student_id);if(!student)fail('This participant account is inactive.',409);
+        if(!prereqStatus(row.student_id,cl.course_id).ok)fail('This participant has unmet course prerequisites.',409);
+        const enrolled=db.prepare("SELECT status FROM enrollments WHERE class_id=? AND student_id=? AND status<>'withdrawn'").get(row.class_id,row.student_id),count=db.prepare("SELECT COUNT(*) n FROM enrollments WHERE class_id=? AND status='active'").get(row.class_id).n;
+        if(!enrolled&&count>=Number(cl.capacity))fail('The class is full. Increase capacity or remove an active enrollment before approving.',409);
+        db.prepare("INSERT INTO enrollments(class_id,student_id,status) VALUES(?,?,'active') ON CONFLICT(class_id,student_id) DO UPDATE SET status='active'").run(row.class_id,row.student_id);
+      }
+      db.prepare('UPDATE class_join_requests SET status=?,decided_at=CURRENT_TIMESTAMP,decided_by=?,note=?,revision=revision+1 WHERE id=?').run(next,user.id,bounded(b.note,1000),id);
+      notify(row.student_id,next==='approved'?'Class admission approved':'Class admission declined',`${cl.title}${b.note?': '+bounded(b.note,1000):''}`,{type:'class',class_id:row.class_id});engine.log(row.class_id,user.id,'class_admission_'+next,'join_request',id,{student_id:row.student_id,note:bounded(b.note,1000)});return {id,status:next,class_id:row.class_id};
+    });refresh(result.class_id||null,'admissions');json(res,200,{ok:true,...result});return true;
+  }
+  if(p==='/api/workspace/groups'){
+    staff();if(req.method==='GET'){const groups=db.prepare('SELECT g.*,u.display_name owner_name,(SELECT COUNT(*) FROM workspace_group_members gm WHERE gm.group_id=g.id) member_count FROM workspace_groups g JOIN users u ON u.id=g.owner_id ORDER BY g.name').all().filter(g=>isAdminLike(user)||g.owner_id===user.id).map(g=>({...g,tags:JSON.parse(g.tags_json),tags_json:undefined}));json(res,200,{ok:true,groups});return true;}
+    if(req.method==='POST'){const b=await readJson(req);if(!['participants','staff'].includes(b.kind)||!bounded(b.name,120))fail('Group type and name are required.');if(b.kind==='staff')admin();const members=validateMembers({kind:b.kind},b.member_ids||[]),tags=Array.isArray(b.tags)?b.tags.map(x=>bounded(x,40)).filter(Boolean).slice(0,20):[];
+      const id=engine.transaction(()=>{const r=db.prepare('INSERT INTO workspace_groups(kind,name,description,tags_json,owner_id) VALUES(?,?,?,?,?)').run(b.kind,bounded(b.name,120),bounded(b.description,2000),JSON.stringify(tags),user.id),id=Number(r.lastInsertRowid);for(const member of members)db.prepare('INSERT INTO workspace_group_members(group_id,user_id,added_by) VALUES(?,?,?)').run(id,member,user.id);engine.log(null,user.id,'group_created','group',id,{name:bounded(b.name),kind:b.kind,members});return id});refresh(null,'groups');json(res,201,{ok:true,id});return true;}
+  }
+  if(/^\/api\/workspace\/groups\/\d+$/.test(p)){
+    const id=integer(p.split('/').pop()),group=groupAccess(id,req.method==='PATCH');
+    if(req.method==='GET'){const members=db.prepare('SELECT u.id,u.display_name,u.username,u.active,gm.added_at FROM workspace_group_members gm JOIN users u ON u.id=gm.user_id WHERE gm.group_id=? ORDER BY u.display_name').all(id);json(res,200,{ok:true,group:{...group,tags:JSON.parse(group.tags_json),tags_json:undefined},members});return true;}
+    if(req.method==='PATCH'){const b=await readJson(req),name=bounded(b.name??group.name,120);if(!name)fail('Group name is required.');const members=b.member_ids===undefined?null:validateMembers(group,b.member_ids),tags=b.tags===undefined?JSON.parse(group.tags_json):Array.isArray(b.tags)?b.tags.map(x=>bounded(x,40)).filter(Boolean).slice(0,20):fail('Group tags must be a list.');
+      engine.transaction(()=>{db.prepare('UPDATE workspace_groups SET name=?,description=?,tags_json=?,updated_at=CURRENT_TIMESTAMP WHERE id=?').run(name,bounded(b.description??group.description,2000),JSON.stringify(tags),id);if(members){db.prepare('DELETE FROM workspace_group_members WHERE group_id=?').run(id);for(const member of members)db.prepare('INSERT INTO workspace_group_members(group_id,user_id,added_by) VALUES(?,?,?)').run(id,member,user.id);}engine.log(null,user.id,'group_updated','group',id,{name,members});});refresh(null,'groups');json(res,200,{ok:true});return true;}
+    if(req.method==='DELETE'){db.prepare('UPDATE workspace_groups SET archived_at=CURRENT_TIMESTAMP,updated_at=CURRENT_TIMESTAMP WHERE id=?').run(id);engine.log(null,user.id,'group_archived','group',id,{});refresh(null,'groups');json(res,200,{ok:true,archived:true});return true;}
+  }
+  if(p==='/api/workspace/group-candidates'&&req.method==='GET'){
+    staff();const kind=url.searchParams.get('kind');if(kind==='staff'){admin();json(res,200,{ok:true,people:db.prepare("SELECT u.id,u.display_name,u.username,u.active,sr.staff_role FROM users u JOIN staff_roles sr ON sr.user_id=u.id WHERE u.role='trainer' ORDER BY u.display_name").all()});}else if(kind==='participants')json(res,200,{ok:true,people:visibleStudents()});else fail('Choose participant or staff groups.');return true;
+  }
+  if(p==='/api/workspace/records'&&req.method==='GET'){
+    staff();const kind=url.searchParams.get('kind'),classId=Number(url.searchParams.get('class_id')||0);if(classId&&!canManageClass(user,classId))fail('You do not have access to this class.',403);let rows=[];
+    if(kind==='courses')rows=courseList().filter(row=>c.canViewCourse(user,row.id)).map(row=>({id:row.id,type:'course',name:row.title,detail:row.latest_version||'',status:row.archived_at?'archived':'active'}));
+    else if(['classes','live_classes'].includes(kind))rows=classList(user).filter(row=>kind!=='live_classes'||row.status==='active').map(row=>({id:row.id,type:'class',name:row.title,detail:row.course_title,status:row.lifecycle_status||row.status}));
+    else if(['students','connected'].includes(kind)){
+      const allowed=visibleClassIds(user),scoped=classId?[classId]:allowed,ids=scoped?.length?scoped.map(Number).join(','):'',scope=scoped===null?'1=1':scoped.length?`e.class_id IN (${ids})`:'1=0';
+      rows=db.prepare(`SELECT DISTINCT u.id,u.display_name name,u.username detail,(SELECT MAX(s.last_seen) FROM sessions s WHERE s.user_id=u.id) last_seen FROM users u WHERE u.role='student' AND u.active=1 AND ${isAdminLike(user)&&!classId&&kind==='students'&&url.searchParams.get('view')!=='trainer'?'1=1':`EXISTS(SELECT 1 FROM enrollments e WHERE e.student_id=u.id AND e.status='active' AND ${scope})`} ORDER BY u.display_name`).all().filter(row=>kind!=='connected'||(row.last_seen&&c.parseStoredTime(row.last_seen)>Date.now()-90000)).map(row=>({...row,type:'participant',status:kind==='connected'?'connected':'active'}));
+    }else if(['responses','missions','objectives','help','working','need_help','finished_states'].includes(kind)){const ids=visibleClassIds(user),scoped=classId?[classId]:ids,scope=scoped===null?'1':scoped.length?`cl.id IN (${scoped.map(Number).join(',')})`:'0';const definitions={responses:{table:'responses x JOIN activity_instances ai ON ai.id=x.instance_id',class:'ai.class_id',name:'ai.title',user:'x.student_id',status:"CASE WHEN ai.revealed_at IS NULL THEN 'Submitted' ELSE 'Revealed' END",condition:'1'},missions:{table:'mission_progress x',class:'x.class_id',name:'cl.title',user:'x.student_id',status:'x.status',condition:"x.status='completed'"},objectives:{table:'objective_progress x',class:'x.class_id',name:'cl.title',user:'x.student_id',status:"'Achieved'",condition:'x.achieved=1'},help:{table:'help_requests x',class:'x.class_id',name:'cl.title',user:'x.student_id',status:'x.status',condition:'1'}};const d=definitions[kind]||{table:'participant_runtime_state x',class:'x.class_id',name:'cl.title',user:'x.student_id',status:'x.status',condition:`x.status='${kind==='finished_states'?'finished':kind}'`};rows=db.prepare(`SELECT cl.id,${d.name} name,u.display_name detail,${d.status} status FROM ${d.table} JOIN classes cl ON cl.id=${d.class} JOIN users u ON u.id=${d.user} WHERE (${scope}) AND ${d.condition} ORDER BY cl.id DESC LIMIT 10000`).all().map(row=>({...row,type:'class'}));
+    }else if(kind==='trainers'){admin();rows=db.prepare("SELECT u.id,u.display_name name,u.username detail,sr.staff_role status FROM users u JOIN staff_roles sr ON sr.user_id=u.id WHERE u.role='trainer' AND u.active=1 ORDER BY u.display_name").all().map(row=>({...row,type:'staff'}));}
+    else fail('Choose a supported record collection.');json(res,200,{ok:true,kind,rows,total:rows.length});return true;
+  }
+  if(/^\/api\/profiles\/\d+$/.test(p)&&req.method==='GET'){
+    const id=integer(p.split('/').pop()),target=db.prepare('SELECT u.id,u.role,u.username,u.display_name,u.email,u.preferred_language,u.created_at,u.active,p.profile_json,sr.staff_role FROM users u LEFT JOIN profiles p ON p.user_id=u.id LEFT JOIN staff_roles sr ON sr.user_id=u.id WHERE u.id=?').get(id);if(!target)fail('Profile not found.',404);
+    const own=user.id===id,full=own||isAdminLike(user)||canAdministerStudent(user,id)||canReviewApplicant(id),permitted=own||isAdminLike(user)||(!isEditor(user)&&target.role==='student'&&(full||canViewLearner(id)));if(!permitted)fail('You do not have access to this profile.',403);
+    let profile=JSON.parse(target.profile_json||'{}');if(!full){profile=Object.fromEntries(['full_name_en','full_name_ar','biography','specialty','learning_goals'].filter(key=>profile[key]).map(key=>[key,profile[key]]));target.email='';}const media=db.prepare('SELECT mime_type,updated_at FROM profile_media WHERE user_id=?').get(id),classes=target.role==='student'?db.prepare('SELECT cl.id,cl.title,e.status enrollment_status,c.title course_title FROM enrollments e JOIN classes cl ON cl.id=e.class_id JOIN course_versions cv ON cv.id=cl.course_version_id JOIN courses c ON c.id=cv.course_id WHERE e.student_id=? ORDER BY cl.created_at DESC').all(id).filter(row=>own||isAdminLike(user)||canManageClass(user,row.id)):isEditor(target)?[]:db.prepare('SELECT cl.id,cl.title,cl.status,c.title course_title FROM class_trainers ct JOIN classes cl ON cl.id=ct.class_id JOIN course_versions cv ON cv.id=cl.course_version_id JOIN courses c ON c.id=cv.course_id WHERE ct.user_id=? ORDER BY cl.created_at DESC').all(id);
+    json(res,200,{ok:true,user:{...target,profile_json:undefined,profile},own,photo:media?{url:`/api/profiles/${id}/photo`,updated_at:media.updated_at}:null,classes});return true;
+  }
+  if(/^\/api\/profiles\/\d+\/photo$/.test(p)){
+    const id=integer(p.split('/')[3]),own=user.id===id;if(!own&&!isAdminLike(user)&&!(req.method==='GET'&&!isEditor(user)&&(canAdministerStudent(user,id)||canReviewApplicant(id))))fail('You do not have access to this profile photo.',403);
+    const folder=path.join(STORAGE_DIR,'profile-media'),safePhotoKey=key=>/^[0-9]+-[a-f0-9-]+\.(png|jpg)$/.test(String(key));
+    if(req.method==='PUT'){
+      const data=await readBuffer(req,2*1024*1024),media=validateRaster(data),key=`${id}-${crypto.randomUUID()}.${media.extension}`,mime=media.mime,dest=path.join(folder,key);fs.mkdirSync(folder,{recursive:true});fs.writeFileSync(dest,data);const old=db.prepare('SELECT asset_key FROM profile_media WHERE user_id=?').get(id);
+      try{db.prepare('INSERT INTO profile_media(user_id,asset_key,mime_type,size_bytes,sha256) VALUES(?,?,?,?,?) ON CONFLICT(user_id) DO UPDATE SET asset_key=excluded.asset_key,mime_type=excluded.mime_type,size_bytes=excluded.size_bytes,sha256=excluded.sha256,updated_at=CURRENT_TIMESTAMP').run(id,key,mime,data.length,hash(data));}catch(error){fs.rmSync(dest,{force:true});throw error}if(old&&safePhotoKey(old.asset_key))fs.rmSync(path.join(folder,old.asset_key),{force:true});engine.log(null,user.id,'profile_photo_updated','user',id,{});refresh(null,'profile');json(res,200,{ok:true});return true;
+    }
+    if(req.method==='GET'){const row=db.prepare('SELECT * FROM profile_media WHERE user_id=?').get(id);if(!row)fail('Profile photo not found.',404);if(!safePhotoKey(row.asset_key))fail('Profile photo integrity verification failed.',409);const bytes=fs.readFileSync(path.join(folder,row.asset_key));if(bytes.length!==row.size_bytes||hash(bytes)!==row.sha256)fail('Profile photo integrity verification failed.',409);send(res,200,bytes,row.mime_type,{'Cache-Control':'private, no-store'});return true;}
+    if(req.method==='DELETE'){const row=db.prepare('SELECT * FROM profile_media WHERE user_id=?').get(id);if(row){db.prepare('DELETE FROM profile_media WHERE user_id=?').run(id);if(safePhotoKey(row.asset_key))fs.rmSync(path.join(folder,row.asset_key),{force:true});}json(res,200,{ok:true});return true;}
+  }
+  if(p==='/api/workspace/audit'&&req.method==='GET'){
+    staff();const ids=visibleClassIds(user)||[],scope=isAdminLike(user)?'1':`e.class_id IN (${ids.length?ids.map(Number).join(','):'NULL'}) OR (e.entity_type='group' AND EXISTS(SELECT 1 FROM workspace_groups g WHERE CAST(g.id AS TEXT)=e.entity_id AND g.owner_id=?)) OR e.user_id=?`;const events=db.prepare(`SELECT e.id,e.class_id,e.entity_type,e.entity_id,e.event_type,e.created_at,u.display_name actor FROM activity_events e LEFT JOIN users u ON u.id=e.user_id WHERE ${scope} ORDER BY e.id DESC LIMIT 2000`).all(...(isAdminLike(user)?[]:[user.id,user.id]));json(res,200,{ok:true,events:events.map(row=>({...row,payload_json:undefined}))});return true;
+  }
+  return false;
+}

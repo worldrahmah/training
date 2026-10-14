@@ -1,3 +1,41 @@
-/* Official Google Fonts variable assets, pinned provenance and OFL licenses in /fonts. */
-@font-face{font-family:Montserrat;font-style:normal;font-weight:100 900;font-display:swap;src:url('/fonts/montserrat-variable.ttf') format('truetype')}
-@font-face{font-family:Cairo;font-style:normal;font-weight:200 1000;font-display:swap;src:url('/fonts/cairo-variable.ttf') format('truetype')}
+/* Pinned, licensed font assets. No external runtime font requests. */
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/montserrat.ttf") format("truetype")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/inter.ttf") format("truetype")}
+@font-face{font-family:"Roboto";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/roboto.ttf") format("truetype")}
+@font-face{font-family:"Open Sans";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/opensans.ttf") format("truetype")}
+@font-face{font-family:"Lato";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/lato.ttf") format("truetype")}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/sourcesans3.ttf") format("truetype")}
+@font-face{font-family:"Nunito";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/nunito.ttf") format("truetype")}
+@font-face{font-family:"Nunito Sans";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/nunitosans.ttf") format("truetype")}
+@font-face{font-family:"PT Sans";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/ptsans.ttf") format("truetype")}
+@font-face{font-family:"Rubik";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/rubik.ttf") format("truetype")}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/manrope.ttf") format("truetype")}
+@font-face{font-family:"Work Sans";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/worksans.ttf") format("truetype")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/dmsans.ttf") format("truetype")}
+@font-face{font-family:"Mulish";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/mulish.ttf") format("truetype")}
+@font-face{font-family:"Figtree";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/figtree.ttf") format("truetype")}
+@font-face{font-family:"Karla";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/karla.ttf") format("truetype")}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/barlow.ttf") format("truetype")}
+@font-face{font-family:"Ubuntu";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/ubuntu.ttf") format("truetype")}
+@font-face{font-family:"Merriweather";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/merriweather.ttf") format("truetype")}
+@font-face{font-family:"Noto Sans";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/notosans.ttf") format("truetype")}
+@font-face{font-family:"Cairo";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/cairo.ttf") format("truetype")}
+@font-face{font-family:"Tajawal";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/tajawal.ttf") format("truetype")}
+@font-face{font-family:"Almarai";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/almarai.ttf") format("truetype")}
+@font-face{font-family:"Noto Sans Arabic";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/notosansarabic.ttf") format("truetype")}
+@font-face{font-family:"Noto Naskh Arabic";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/notonaskharabic.ttf") format("truetype")}
+@font-face{font-family:"Noto Kufi Arabic";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/notokufiarabic.ttf") format("truetype")}
+@font-face{font-family:"IBM Plex Sans Arabic";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/ibmplexsansarabic.ttf") format("truetype")}
+@font-face{font-family:"Amiri";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/amiri.ttf") format("truetype")}
+@font-face{font-family:"Alexandria";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/alexandria.ttf") format("truetype")}
+@font-face{font-family:"Changa";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/changa.ttf") format("truetype")}
+@font-face{font-family:"El Messiri";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/elmessiri.ttf") format("truetype")}
+@font-face{font-family:"Readex Pro";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/readexpro.ttf") format("truetype")}
+@font-face{font-family:"Harmattan";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/harmattan.ttf") format("truetype")}
+@font-face{font-family:"Markazi Text";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/markazitext.ttf") format("truetype")}
+@font-face{font-family:"Lateef";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/lateef.ttf") format("truetype")}
+@font-face{font-family:"Reem Kufi";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/reemkufi.ttf") format("truetype")}
+@font-face{font-family:"Scheherazade New";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/scheherazadenew.ttf") format("truetype")}
+@font-face{font-family:"Aref Ruqaa";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/arefruqaa.ttf") format("truetype")}
+@font-face{font-family:"Lemonada";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/catalog/lemonada.ttf") format("truetype")}
+@font-face{font-family:"Mirza";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/catalog/mirza.ttf") format("truetype")}
