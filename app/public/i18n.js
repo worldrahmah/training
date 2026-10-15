@@ -1,5 +1,7 @@
 const KEY='training_engine_locale';
 const AR={
+'System logo':'شعار النظام',
+'One company identity for all professional PDF reports.':'هوية مؤسسة موحدة للتطبيق وصفحات الدخول وتقارير PDF.',
 'Add staff account':'إضافة حساب موظف',
 
 'Mobile':'الهاتف','Publishing permitted':'مسموح بالنشر','Editing permitted':'مسموح بالتعديل','active':'نشط','completed':'مكتمل','withdrawn':'منسحب','scheduled':'مجدول','archived':'مؤرشف','working':'يعمل','need_help':'يحتاج مساعدة','finished':'منتهٍ','Revealed':'تم الكشف','Achieved':'محقق','Class admission request':'طلب انضمام إلى الصف','Class admission approved':'تمت الموافقة على الانضمام','Class admission rejected':'تم رفض الانضمام','Class admission cancelled':'تم إلغاء طلب الانضمام',
@@ -288,7 +290,6 @@ const AR={
   'Trainer workspace':'مساحة المدرّب','Participant sign in':'دخول المتدرب','Welcome back':'مرحبًا بعودتك','Sign in to continue':'سجّل الدخول للمتابعة',
   'Manage courses, classes and live learning from one place.':'أدر الدورات والصفوف والتدريب المباشر من مكان واحد.',
   'Your classes, activities and progress are saved here.':'صفوفك وأنشطتك وتقدّمك محفوظة هنا.',
-  'Default trainer account: TRAINER / TRAIN1234':'حساب المدرّب الافتراضي: TRAINER / TRAIN1234','Demo account: DEMO01 / D1001':'الحساب التجريبي: DEMO01 / D1001',
   'Username':'اسم المستخدم','Password':'كلمة المرور','Sign in':'تسجيل الدخول','Sign out':'تسجيل الخروج','Appearance':'المظهر','Change appearance':'تغيير المظهر','Language':'اللغة','Change language':'تغيير اللغة',
   'English':'English','Arabic':'العربية','Draft':'مسودة','Scheduled':'مجدول','Completed':'مكتمل','Cancelled':'ملغى','Published':'منشور','Ready':'جاهز','System':'حسب النظام','Light':'فاتح','Dark':'داكن','Save':'حفظ','Cancel':'إلغاء','Close':'إغلاق','Loading…':'جارٍ التحميل…',
   'Use a trainer account for this page.':'استخدم حساب مدرّب لهذه الصفحة.','Use a participant account for this page.':'استخدم حساب متدرب لهذه الصفحة.',

@@ -1,3 +1,26 @@
+# ExecPlan — RC1R9 branding, localization, authoring and security
+
+Baseline: release/rc1r8-test commit db640e1047f210856a7b23d6ff5e469ffd10b89e, app 3.5.0-rc.1.8, core schema 3.2, course schema 2.0; 36 canonical activity IDs and 68 result-view cases. Existing AGENTS.md and .agent/PLANS.md read. Initial unchanged npm test encountered a 5-second startup timeout in backup-restore during concurrent browser load; the isolated test passed, and a serial baseline rerun is recorded. Browser baseline exposed an immediate focus assertion racing requestAnimationFrame after ArrowDown; use Playwright's eventual focus assertion, retain the keyboard requirement.
+
+Architecture: extend shared core UI and canonical registry; reuse existing validated owner logo upload and backup storage. Labels are presentation metadata, never rewritten authored titles/IDs. Production bootstrap uses a private random initial password, explicit disposable QA mode retains test accounts, and legacy known defaults require local password replacement. Preserve database content and existing hashed passwords; no schema change. Strengthen HTTP/request/file boundaries with negative integration tests. Generate a self-contained Course Creator kit from the canonical runtime and registry, with executable validation, examples and milestone checkpoints.
+
+Milestones / validation:
+1. Baseline: HOST=127.0.0.1 npm test; npm run test:browser; inspect failures before edits. Capture logs outside checkout.
+2. Shared logo + 36 bilingual display labels + account/security protections. node tests/rc1r9-security.mjs; node tests/rc1r9-contract.mjs; python tests/browser-rc1r9.py. Preserve all role APIs and classroom behavior except documented security denials.
+3. Six current role/language guides; generated kit covering 36 activities, runtime schemas, content/results, workflows/private cues, assets, importable examples, intake and starting/final prompts. node tools/build-course-creator-kit.mjs --check; npm run contracts:check; import examples through runtime; validate negative examples.
+4. Full Node/four existing browsers/new browser/PDF/static checks. EN/AR, light/dark/system, desktop/tablet/mobile, 16:9 Projector. Migration/restart/backup and certification remain required. Inspect screenshots.
+5. Update release identity, evidence, security audit/limitations/owner acceptance; commit source; seal ZIP, check all hashes/CRC/paths; fresh extract and run same suites. Never alter sealed ZIP. Publish exact tested bytes plus SHA and seal evidence to GitHub.
+
+Data/rollback: no schema migration or destructive reset. Existing users, courses, classes, content, IDs and passwords remain. Startup adds account-control flags only for unchanged known default hashes, invalidating their old sessions; owner changes password locally or administrator resets it. Existing configured file paths preserved. Use verified RC1R8 backups for rollback; protect private bootstrap credentials as local state, never package them. Course schemas 1.0/1.1/2.x and historical definitions remain unchanged.
+
+Risks / non-goals: public LAN HTTP lacks transport encryption; use trusted LAN or owner TLS termination. No claims of formal penetration certification, SSO/MFA, tenant isolation or malware scanning. QA bootstrap opt-in must never be enabled on production state. Course resource access and user uploads require explicit audience/security handling. Owner Windows, LAN and final visual acceptance are pending manual gates. No rebranding of authored course text.
+
+Decision log: scope explicitly authorizes source/test/schema/docs changes and GitHub deliverable; onboarding-only tracked-file protection no longer applies. Use existing checkout, no worktree. No delegated agent work requested or used.
+
+Progress: unchanged serial baseline Node suite passed (all RC1R8 commands). Initial concurrent run failed backup startup timeout; isolated backup and serial full rerun passed. Baseline browser repair suite passed, workspace suite failed immediate focus assertion; same focus requirement now waits for asynchronous UI outcome. Shared logo/36 bilingual labels and security/account groundwork implemented; dedicated tests, complete guides/kit, full gates and seal/publication remain. Owner continuation contract persisted in PROJECT_OPERATING_RULES.md and linked from AGENTS.md; no reset or worktree. Current branch release/rc1r9. Evidence: /tmp/rc1r9-baseline-node-retry.log and /tmp/rc1r9-baseline-browser.log. Runtime Node 24.19.0, Python 3.12.14, Playwright 1.62.0 and system Chromium.
+
+---
+
 # RC1R8 approved enterprise workspace milestone
 
 Baseline: RC1R7 source/distribution commit 19dbfc36d0fad0175f386d3aaec4129d6e846cdd. Unchanged complete npm test passed (50 commands /49 programs) before modifications; output outside source at /workspace/one-review/rc1r8/BASELINE_TEST_OUTPUT.txt. Owner reports reopen manual acceptance.

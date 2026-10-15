@@ -1,3 +1,4 @@
+import {systemLogo} from '/core.js';
 import {esc,t} from '/core.js';
 import {renderContent,renderLiveResults} from '/renderer.js';
 import {normalizeProjectorTheme,resolveProjectorTheme} from '/capability-registry.js';
@@ -31,7 +32,7 @@ export function renderProjectorTimer(c,inst){const seconds=Number(c.seconds||60)
 export function renderProjectorFrame({live,item=live?.item,state=live?.state,theme=null,safeArea=true,preview=false,room='normal'}={}){
   const resolved=normalizeProjectorTheme(theme)||resolveProjectorTheme({course_default:live?.projector?.course_default||live?.course?.branding?.projector_theme,class_override:live?.projector?.class_override,live_override:live?.projector?.live_override});
   const dir=live?.course?.direction||'ltr';
-  const card=live?`<div class="projector-card">${renderProjectorStage(item,state,live)}</div>`:`<div class="projector-card projector-idle"><div class="projector-idle-mark">T</div><h1>${esc(t('Ready when you are'))}</h1><p>${esc(t('Waiting for the trainer to begin this class.'))}</p></div>`;
+  const card=live?`<div class="projector-card">${renderProjectorStage(item,state,live)}</div>`:`<div class="projector-card projector-idle"><div class="projector-idle-mark">${systemLogo()}</div><h1>${esc(t('Ready when you are'))}</h1><p>${esc(t('Waiting for the trainer to begin this class.'))}</p></div>`;
   const tools=live?.state?.payload?.presentation_tools||{},pointer=tools.pointer?.active!==false&&tools.pointer?`<i class="projector-pointer" style="left:${Number(tools.pointer.x||0)}%;top:${Number(tools.pointer.y||0)}%"></i>`:'',annotations=(tools.annotations||[]).map(a=>`<div class="projector-annotation" style="left:${Number(a.x||50)}%;top:${Number(a.y||50)}%">${esc(a.text||'')}</div>`).join('');
-  return `<div class="projector one-projector ${live?'is-live':''} ${preview?'is-preview show-safe-guide':''}" data-projector-theme="${esc(resolved)}" data-room="${esc(room)}"><div class="projector-stage"><main class="${safeArea?'projector-safe-frame':'projector-full-frame'}" dir="${dir}">${card}</main><div class="projector-tools-overlay">${pointer}${annotations}</div></div></div>`;
+  return `<div class="projector one-projector ${live?'is-live':''} ${preview?'is-preview show-safe-guide':''}" data-projector-theme="${esc(resolved)}" data-room="${esc(room)}"><div class="projector-stage"><div class="projector-system-brand">${systemLogo()}</div><main class="${safeArea?'projector-safe-frame':'projector-full-frame'}" dir="${dir}">${card}</main><div class="projector-tools-overlay">${pointer}${annotations}</div></div></div>`;
 }

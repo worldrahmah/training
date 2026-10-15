@@ -36,7 +36,7 @@ try{
   const pkg=fs.readFileSync(path.join(ROOT,'authoring-kit/examples/ENGINE_DEMO_COURSE_v1.0.course.zip'));
   const val=await req('/api/courses/validate',{token:tr.token,method:'POST',body:pkg,headers:{'X-File-Name':encodeURIComponent('ENGINE_DEMO_COURSE_v1.0.course.zip')}});assert.equal(val.ok,true);assert.equal(val.summary.modules,1);line('course package validation');
   const imp=await req('/api/courses/import',{token:tr.token,method:'POST',body:pkg,headers:{'X-File-Name':encodeURIComponent('ENGINE_DEMO_COURSE_v1.0.course.zip')}});assert.ok(imp.version_id);line('transactional course import');
-  const asset=await fetch(`${base}/api/assets/${imp.version_id}/assets/readme.txt`);assert.equal(asset.status,200);assert.match(await asset.text(),/harmless static asset/);line('course asset import/serve');
+  const asset=await fetch(`${base}/api/assets/${imp.version_id}/assets/readme.txt`,{headers:{'X-Session-Token':tr.token}});assert.equal(asset.status,200);assert.match(await asset.text(),/harmless static asset/);line('course asset import/serve');
 
   const classPayload={format:'training-engine-class',schema_version:'1.0',class:{course_slug:'engine-demo-course',course_version:'1.0',title:'Imported Acceptance Class',start_date:'2026-11-10',end_date:'2026-11-10',start_time:'10:00',end_time:'11:00',capacity:4,sessions:[{title:'Session 1',date:'2026-11-10',start_time:'10:00',end_time:'11:00'}]}};
   const ci=await req('/api/classes/import',{token:tr.token,method:'POST',json:classPayload});assert.ok(ci.id);line('class template import');

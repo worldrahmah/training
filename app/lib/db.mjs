@@ -1,3 +1,4 @@
+import {initialAdministrator,protectDefaultAccounts,testAccountsEnabled} from './account-safety.mjs';
 import {protectWorkspaceUpgrade,migrateWorkspace} from './workspace-migrations.mjs';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -707,8 +708,9 @@ CREATE INDEX IF NOT EXISTS idx_transcript_student ON learner_transcript_entries(
     const trainer=this.db.prepare("SELECT id FROM users WHERE role='trainer' ORDER BY id LIMIT 1").get();
     if(!trainer){
       const info=this.db.prepare('INSERT INTO users(username,password_hash,role,display_name,is_demo) VALUES(?,?,?,?,0)')
-        .run('TRAINER',hashPassword('TRAIN1234'),'trainer','Trainer');
+        .run('TRAINER',hashPassword(initialAdministrator(this.dbPath)),'trainer','Trainer');
       this.db.prepare('INSERT OR IGNORE INTO profiles(user_id,profile_json) VALUES(?,?)').run(Number(info.lastInsertRowid),'{}');
+      if(!testAccountsEnabled())this.db.prepare('INSERT INTO account_controls(user_id,must_change_password) VALUES(?,1)').run(Number(info.lastInsertRowid));
     }
     const primaryTrainer=this.db.prepare("SELECT id FROM users WHERE role='trainer' ORDER BY id LIMIT 1").get();
     if(primaryTrainer){ const existing=this.db.prepare('SELECT staff_role FROM staff_roles WHERE user_id=?').get(primaryTrainer.id); if(!existing)this.db.prepare("INSERT INTO staff_roles(user_id,staff_role) VALUES(?, 'super_admin')").run(primaryTrainer.id); else if(existing.staff_role==='administrator')this.db.prepare("UPDATE staff_roles SET staff_role='super_admin',updated_at=CURRENT_TIMESTAMP WHERE user_id=?").run(primaryTrainer.id); }
@@ -717,7 +719,8 @@ CREATE INDEX IF NOT EXISTS idx_transcript_student ON learner_transcript_entries(
     this.db.prepare("INSERT OR IGNORE INTO settings(key,value_json) VALUES('typography',?)").run(JSON.stringify({ui:{ar:'Tahoma, Arial, sans-serif',en:'Inter, Arial, sans-serif'},presentation:{ar:'Tahoma, Arial, sans-serif',en:'Inter, Arial, sans-serif'},title:{ar:'Tahoma, Arial, sans-serif',en:'Inter, Arial, sans-serif'},body:{ar:'Tahoma, Arial, sans-serif',en:'Inter, Arial, sans-serif'}}));
     this.db.prepare("INSERT OR IGNORE INTO settings(key,value_json) VALUES('profile_requirements',?)").run(JSON.stringify({required:['full_name_ar','full_name_en','email','mobile'],optional:['whatsapp','telegram','organization','specialty','job_title','city','country','linkedin','website','interests','learning_goals','profile_photo']}));
     this.db.prepare("INSERT OR IGNORE INTO settings(key,value_json) VALUES('projector_control_key',?)").run(JSON.stringify(crypto.randomBytes(24).toString('hex')));
-    this.seedDemo();
+    if(testAccountsEnabled())this.seedDemo();
+    protectDefaultAccounts(this);
   }
   seedDemo(){
     const exists=this.db.prepare("SELECT COUNT(*) c FROM courses WHERE is_demo=1").get().c;

@@ -38,7 +38,7 @@ export function mimeFromName(name=''){
   return ({'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.md':'text/markdown; charset=utf-8','.txt':'text/plain; charset=utf-8','.csv':'text/csv; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.pdf':'application/pdf','.mp4':'video/mp4','.webm':'video/webm','.mp3':'audio/mpeg','.wav':'audio/wav','.m4a':'audio/mp4','.ogg':'audio/ogg','.docx':'application/vnd.openxmlformats-officedocument.wordprocessingml.document','.xlsx':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','.pptx':'application/vnd.openxmlformats-officedocument.presentationml.presentation','.zip':'application/zip','.ttf':'font/ttf','.woff':'font/woff','.woff2':'font/woff2'})[ext]||'application/octet-stream';
 }
 export function csvEscape(v){
-  const s=v==null?'':String(v);
+  const raw=v==null?'':String(v);const s=/^[\s\uFEFF]*[=+@-]/.test(raw)&&typeof v!=='number'?"'"+raw:raw;
   return /[",\n\r]/.test(s)?`"${s.replace(/"/g,'""')}"`:s;
 }
 export function rowsToCsv(headers,rows){

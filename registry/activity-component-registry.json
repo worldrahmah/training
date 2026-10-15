@@ -1,6 +1,6 @@
 {
   "format": "training-engine-one-capability-registry",
-  "registry_version": "3.5.0-rc.1.8",
+  "registry_version": "3.5.0-rc.1.9",
   "status": "professional-interaction-presentation-closure",
   "projector": {
     "themes": [
@@ -24,7 +24,8 @@
       "scoring": "none",
       "results": [],
       "participant_input": false,
-      "label": "Presentation"
+      "label": "Presentation",
+      "label_ar": "عرض تقديمي"
     },
     {
       "id": "announcement",
@@ -33,7 +34,8 @@
       "scoring": "none",
       "results": [],
       "participant_input": false,
-      "label": "Announcement"
+      "label": "Announcement",
+      "label_ar": "إعلان"
     },
     {
       "id": "poll",
@@ -50,7 +52,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Poll"
+      "label": "Poll",
+      "label_ar": "استطلاع رأي"
     },
     {
       "id": "single_choice",
@@ -67,7 +70,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Single choice"
+      "label": "Single Choice",
+      "label_ar": "اختيار واحد"
     },
     {
       "id": "multiple_choice",
@@ -84,7 +88,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Multiple choice"
+      "label": "Multiple Choice",
+      "label_ar": "اختيارات متعددة"
     },
     {
       "id": "true_false",
@@ -99,7 +104,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "True / false"
+      "label": "True / False",
+      "label_ar": "صح أو خطأ"
     },
     {
       "id": "word_cloud",
@@ -123,7 +129,8 @@
         "hide_reveal": true,
         "local_normalization": true
       },
-      "label": "Word cloud"
+      "label": "Word Cloud",
+      "label_ar": "سحابة كلمات"
     },
     {
       "id": "q_and_a",
@@ -152,7 +159,8 @@
         "hide_reveal": true,
         "result_recall": true
       },
-      "label": "Questions & answers"
+      "label": "Q&A",
+      "label_ar": "أسئلة وأجوبة"
     },
     {
       "id": "ideas_board",
@@ -185,7 +193,8 @@
         "hide_reveal": true,
         "result_recall": true
       },
-      "label": "Ideas board"
+      "label": "Ideas Board",
+      "label_ar": "لوحة الأفكار"
     },
     {
       "id": "prioritization_100",
@@ -207,7 +216,8 @@
         "result_recall": true,
         "analytics": true
       },
-      "label": "100-point prioritization"
+      "label": "100 Points / Prioritization",
+      "label_ar": "توزيع ١٠٠ نقطة وترتيب الأولويات"
     },
     {
       "id": "quick_interaction",
@@ -229,7 +239,8 @@
         "hide_reveal": true,
         "result_recall": true
       },
-      "label": "Quick interaction"
+      "label": "Quick Interaction",
+      "label_ar": "تفاعل سريع"
     },
     {
       "id": "matching",
@@ -245,7 +256,8 @@
         "explanation": true,
         "analytics": true
       },
-      "label": "Matching"
+      "label": "Matching",
+      "label_ar": "مطابقة"
     },
     {
       "id": "fill_blanks",
@@ -261,7 +273,8 @@
         "explanation": true,
         "analytics": true
       },
-      "label": "Fill in the blanks"
+      "label": "Fill in the Blanks",
+      "label_ar": "ملء الفراغات"
     },
     {
       "id": "sorting",
@@ -277,7 +290,8 @@
         "explanation": true,
         "analytics": true
       },
-      "label": "Sorting"
+      "label": "Sorting",
+      "label_ar": "ترتيب العناصر"
     },
     {
       "id": "image_interaction",
@@ -298,7 +312,8 @@
         "drag": true,
         "analytics": true
       },
-      "label": "Image interaction"
+      "label": "Image Interaction",
+      "label_ar": "تفاعل مع صورة"
     },
     {
       "id": "draw_annotate",
@@ -314,7 +329,8 @@
         "annotation": true,
         "background_asset": true
       },
-      "label": "Draw & annotate"
+      "label": "Draw / Annotate",
+      "label_ar": "رسم وتعليق"
     },
     {
       "id": "collaborative_board",
@@ -338,7 +354,8 @@
         "privacy": true,
         "result_recall": true
       },
-      "label": "Collaborative board"
+      "label": "Collaborative Board",
+      "label_ar": "لوحة تعاونية"
     },
     {
       "id": "interactive_video",
@@ -358,7 +375,8 @@
         "timed_checkpoints": true,
         "analytics": true
       },
-      "label": "Interactive video"
+      "label": "Interactive Video",
+      "label_ar": "فيديو تفاعلي"
     },
     {
       "id": "short_answer",
@@ -369,7 +387,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Short answer"
+      "label": "Short Answer",
+      "label_ar": "إجابة قصيرة"
     },
     {
       "id": "long_answer",
@@ -380,7 +399,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Long answer"
+      "label": "Long Answer",
+      "label_ar": "إجابة مطولة"
     },
     {
       "id": "numeric_answer",
@@ -393,7 +413,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Numeric answer"
+      "label": "Numeric Answer",
+      "label_ar": "إجابة رقمية"
     },
     {
       "id": "rating",
@@ -407,7 +428,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Rating"
+      "label": "Rating",
+      "label_ar": "تقدير"
     },
     {
       "id": "reaction",
@@ -422,7 +444,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Reaction"
+      "label": "Reaction",
+      "label_ar": "رد فعل"
     },
     {
       "id": "confidence",
@@ -436,7 +459,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Confidence"
+      "label": "Confidence",
+      "label_ar": "مستوى الثقة"
     },
     {
       "id": "ranking",
@@ -448,7 +472,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Ranking"
+      "label": "Ranking",
+      "label_ar": "ترتيب حسب الأفضلية"
     },
     {
       "id": "timer",
@@ -457,7 +482,8 @@
       "scoring": "none",
       "results": [],
       "participant_input": false,
-      "label": "Timer"
+      "label": "Timer",
+      "label_ar": "مؤقت"
     },
     {
       "id": "reveal",
@@ -466,7 +492,8 @@
       "scoring": "none",
       "results": [],
       "participant_input": false,
-      "label": "Reveal"
+      "label": "Reveal",
+      "label_ar": "كشف المحتوى"
     },
     {
       "id": "team_challenge",
@@ -477,7 +504,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Team challenge"
+      "label": "Team Challenge",
+      "label_ar": "تحدي الفرق"
     },
     {
       "id": "checklist",
@@ -488,7 +516,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Checklist"
+      "label": "Checklist",
+      "label_ar": "قائمة تحقق"
     },
     {
       "id": "url_submission",
@@ -499,7 +528,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Link submission"
+      "label": "URL Submission",
+      "label_ar": "تسليم رابط"
     },
     {
       "id": "file_submission",
@@ -510,7 +540,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "File submission"
+      "label": "File Submission",
+      "label_ar": "تسليم ملف"
     },
     {
       "id": "image_submission",
@@ -521,7 +552,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Image submission"
+      "label": "Image Submission",
+      "label_ar": "تسليم صورة"
     },
     {
       "id": "reflection",
@@ -532,7 +564,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Reflection"
+      "label": "Reflection",
+      "label_ar": "تأمل"
     },
     {
       "id": "self_assessment",
@@ -543,7 +576,8 @@
         "cards"
       ],
       "participant_input": true,
-      "label": "Self assessment"
+      "label": "Self Assessment",
+      "label_ar": "تقييم ذاتي"
     },
     {
       "id": "participant_choice",
@@ -552,7 +586,8 @@
       "scoring": "none",
       "results": [],
       "participant_input": false,
-      "label": "Participant choice"
+      "label": "Participant Choice",
+      "label_ar": "اختيار المشارك"
     },
     {
       "id": "practice_gate",
@@ -561,7 +596,8 @@
       "scoring": "none",
       "results": [],
       "participant_input": false,
-      "label": "Guided practice"
+      "label": "Practice Gate",
+      "label_ar": "بوابة الممارسة"
     }
   ],
   "components": [

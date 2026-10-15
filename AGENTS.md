@@ -15,3 +15,5 @@ Hard rules:
 - For major refactors or multi-hour changes, maintain an ExecPlan as described in .agent/PLANS.md.
 - Run baseline tests before major edits, add tests for every new behavior, and run full regression before release.
 - If a requirement conflicts with an existing behavior, document the conflict and choose the behavior that preserves owner-approved product intent and historical compatibility.
+
+Read and follow [Project operating rules](docs/PROJECT_OPERATING_RULES.md), the owner continuation contract. Maintain current progress, decisions, evidence and remaining gates in docs/CODEX_EXEC_PLAN.md; preserve ongoing local work.

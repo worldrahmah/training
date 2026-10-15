@@ -1,3 +1,4 @@
+import {isKnownDefault,testAccountsEnabled,localPeer} from './lib/account-safety.mjs';
 import {handleWorkspaceApi,editorRouteAllowed} from './lib/workspace-api.mjs';
 import http from 'node:http';
 import net from 'node:net';
@@ -42,6 +43,8 @@ const MAX_SUBMISSION=15*1024*1024;
 
 const SECURITY_HEADERS={
   'X-Content-Type-Options':'nosniff',
+  'X-DNS-Prefetch-Control':'off',
+  'X-Permitted-Cross-Domain-Policies':'none',
   'X-Frame-Options':'SAMEORIGIN',
   'Referrer-Policy':'same-origin',
   'Permissions-Policy':'camera=(), microphone=(), geolocation=()',
@@ -96,7 +99,7 @@ async function readBuffer(req,max=MAX_JSON){
 }
 async function readJson(req,max=MAX_JSON){
   const b=await readBuffer(req,max); if(!b.length) return {};
-  try{return JSON.parse(b.toString('utf8'));}catch{throw Object.assign(new Error('INVALID_JSON'),{status:400});}
+  try{const value=JSON.parse(b.toString('utf8'));if(!value||typeof value!=='object'||Array.isArray(value))throw new Error('Expected an object');return value;}catch{throw Object.assign(new Error('INVALID_JSON'),{status:400});}
 }
 function tokenFrom(req,url=null){
   const h=String(req.headers['x-session-token']||'').trim(); if(h) return h;
@@ -601,10 +604,19 @@ function parseCsv(text){
   const headers=parseLine(lines[0]).map(h=>h.trim().toLowerCase()); return lines.slice(1).map(line=>{const vals=parseLine(line);const o={};headers.forEach((h,i)=>o[h]=(vals[i]??'').trim());return o;});
 }
 
+// Cookies authenticate only passive course resource requests, never API mutations.
+function cookieValue(req,name){const raw=String(req.headers.cookie||'').split(';').map(x=>x.trim()).find(x=>x.startsWith(name+'='));return raw?raw.slice(name.length+1):'';}
+function resourceCookie(name,value,req){return `${name}=${value}; Path=/api/assets; HttpOnly; SameSite=Strict${req.socket.encrypted?'; Secure':''}`;}
+const loginWindows=new Map();
+function allowLogin(req){const now=Date.now(),key=clientIp(req);let item=loginWindows.get(key);if(!item||now-item.at>60000){if(loginWindows.size>=20000)loginWindows.clear();item={at:now,count:0};loginWindows.set(key,item)}return ++item.count<=60;}
+const dummyPasswordHash=hashPassword(crypto.randomBytes(32).toString('hex'));
+function resourceHeaders(filename,mime){const inline=/^(image\/(png|jpeg|webp)|audio\/(mpeg|wav|mp4|ogg)|video\/(mp4|webm)|font\/(ttf|woff2?)|text\/plain)(;|$)/i.test(mime||'');return {'Cache-Control':'private, no-store','Content-Disposition':`${inline?'inline':'attachment'}; filename*=UTF-8''${encodeURIComponent(path.basename(filename))}`,'Content-Security-Policy':"sandbox; default-src 'none'; frame-ancestors 'none'"};}
+
 async function handleApi(req,res,url){
   const p=url.pathname;
   const actor=currentUser(req,url);
-  if(actor?.staff_role==='course_editor'&&!editorRouteAllowed(p,req.method)&&!['/api/login','/api/health','/api/public-settings','/api/system/local-shutdown'].includes(p))return json(res,403,{ok:false,message:'Course Editor accounts can access assigned course authoring and their own profile only.'});
+  if(actor&&req.headers['x-session-token']&&p!=='/api/logout')res.setHeader('Set-Cookie',resourceCookie('one_asset_session',tokenFrom(req,url),req));
+  if(actor?.staff_role==='course_editor'&&!editorRouteAllowed(p,req.method)&&!['/api/login','/api/health','/api/public-settings','/api/system-logo','/api/system/local-shutdown'].includes(p))return json(res,403,{ok:false,message:'Course Editor accounts can access assigned course authoring and their own profile only.'});
   if(await handleWorkspaceApi(req,res,url,{db:db(),engine,json,send,readJson,readBuffer,refresh,requireUser,isAdminLike,canManageClass,canAdministerClass,canAdministerStudent,getClassRow,courseList,classList,visibleClassIds,prereqStatus,hasGrant,canViewCourse,parseStoredTime,isScoredAssessment:activity=>assessmentAnswerKey(activity)!=null&&Number(maxPossibleActivityScore(activity,activity.type))>0,assessmentMetric:(activity,stored)=>{const value=assessmentFeedback(activity,responseValue(safeJsonParse(stored,null)));return value?{correct:value.correct,percent:value.percent,max_score:value.max_score}:null},STORAGE_DIR}))return;
   if(p==='/api/system/local-shutdown'&&req.method==='POST'){
     const peer=req.socket.remoteAddress||'',provided=Buffer.from(String(req.headers['x-one-local-control']||'')),expected=Buffer.from(LOCAL_CONTROL.nonce);
@@ -614,21 +626,31 @@ async function handleApi(req,res,url){
   if(stopping)return json(res,503,{ok:false,message:'Training Engine is shutting down.'});
   if(p==='/api/health') return json(res,200,{ok:true,name:APP_NAME,version:APP_VERSION,core_schema:CORE_SCHEMA_VERSION,port:PORT,server_id:LOCAL_CONTROL.server_id,lan:preferredLanAddress(),addresses:privateLanAddresses(),active_class_id:activeClassId(),active_class_ids:activeClassIds()});
   if(p==='/api/capabilities'&&req.method==='GET') return json(res,200,{ok:true,capabilities:capabilityContract()});
+  if(p==='/api/system-logo'&&req.method==='GET'){
+    const brand=engine.getSetting('company_branding',{}),key=String(brand.logo_key||'');
+    const file=/^[a-f0-9-]+\.(png|jpg)$/.test(key)?path.join(STORAGE_DIR,'branding',key):null;
+    if(file&&fs.existsSync(file))return send(res,200,fs.readFileSync(file),key.endsWith('.png')?'image/png':'image/jpeg',{'Cache-Control':'no-store'});
+    return send(res,200,fs.readFileSync(path.join(PUBLIC,'system-logo.svg')),'image/svg+xml',{'Cache-Control':'no-store'});
+  }
   if(p==='/api/public-settings'&&req.method==='GET') return json(res,200,{ok:true,brand:engine.getSetting('brand',{name:'Training Engine ONE'}),typography:engine.getSetting('typography',{}),profile_requirements:engine.getSetting('profile_requirements',{}),app:{name:APP_NAME,version:APP_VERSION}});
   if(p==='/api/login'&&req.method==='POST'){
-    const body=await readJson(req),username=String(body.username||'').trim(),ip=clientIp(req),pol=securityPolicy();
+    if(!allowLogin(req))return json(res,429,{ok:false,message:'Too many sign-in attempts. Try again later.'},{'Retry-After':'60'});
+    const body=await readJson(req,16384),username=String(body.username||'').trim().toUpperCase(),ip=clientIp(req),pol=securityPolicy();
+    if(!username||username.length>120||String(body.password||'').length>1024)return json(res,400,{ok:false,message:'Enter a valid username and password.'});
     const attempt=db().prepare('SELECT * FROM login_attempts WHERE username=? COLLATE NOCASE').get(username);if(attempt?.blocked_until&&parseStoredTime(attempt.blocked_until)>Date.now())return json(res,429,{ok:false,code:'LOGIN_TEMPORARILY_BLOCKED',message:'Too many failed sign-in attempts. Try again later.'},{'Retry-After':String(Math.max(60,Number(pol.login_block_minutes||15)*60))});
-    const u=db().prepare('SELECT * FROM users WHERE username=? COLLATE NOCASE AND active=1').get(username),good=!!u&&verifyPassword(String(body.password||''),u.password_hash);
+    const u=db().prepare('SELECT * FROM users WHERE username=? COLLATE NOCASE AND active=1').get(username),good=verifyPassword(String(body.password||''),u?.password_hash||dummyPasswordHash)&&!!u;
     if(!good){const limit=Math.max(2,Number(pol.login_failure_limit||5)),count=Number(attempt?.failure_count||0)+1,blocked=count>=limit?new Date(Date.now()+Math.max(1,Number(pol.login_block_minutes||15))*60000).toISOString():null;db().prepare(`INSERT INTO login_attempts(username,failure_count,first_failure_at,last_failure_at,blocked_until) VALUES(?,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?) ON CONFLICT(username) DO UPDATE SET failure_count=?,first_failure_at=COALESCE(login_attempts.first_failure_at,CURRENT_TIMESTAMP),last_failure_at=CURRENT_TIMESTAMP,blocked_until=?`).run(username,blocked,count,blocked);engine.log(null,null,'sign_in_failed','user',null,{username,ip,blocked:!!blocked});return json(res,401,{ok:false,message:'The username or password is incorrect.'});}
+    if(!testAccountsEnabled()&&isKnownDefault(u)&&!localPeer(req))return json(res,403,{ok:false,code:'LOCAL_PASSWORD_SETUP_REQUIRED',message:'The installation owner must replace the initial password locally before network sign-in.'});
     db().prepare('DELETE FROM login_attempts WHERE username=? COLLATE NOCASE').run(username);
     const token=randomToken(),expiry=new Date(Date.now()+Math.max(5,Number(pol.session_idle_minutes||720))*60000).toISOString();
     db().prepare('INSERT INTO sessions(token,user_id,expires_at,device_label,user_agent,ip_address) VALUES(?,?,?,?,?,?)').run(token,u.id,expiry,deviceLabel(req),String(req.headers['user-agent']||'').slice(0,500),ip);
     const maxSessions=Math.max(1,Number(pol.max_sessions_per_user||3)); const extras=db().prepare('SELECT token FROM sessions WHERE user_id=? ORDER BY rowid DESC LIMIT -1 OFFSET ?').all(u.id,maxSessions); for(const x of extras)db().prepare('DELETE FROM sessions WHERE token=?').run(x.token);
     db().prepare('UPDATE users SET last_login_at=CURRENT_TIMESTAMP WHERE id=?').run(u.id); engine.log(null,u.id,'signed_in','user',u.id,{device:deviceLabel(req),ip});
     const sr=u.role==='trainer'?db().prepare('SELECT staff_role FROM staff_roles WHERE user_id=?').get(u.id):null,control=db().prepare('SELECT must_change_password FROM account_controls WHERE user_id=?').get(u.id);
+    res.setHeader('Set-Cookie',resourceCookie('one_asset_session',token,req));
     return json(res,200,{ok:true,token,expires_at:expiry,user:{id:u.id,username:u.username,role:u.role,display_name:u.display_name,staff_role:sr?.staff_role||null,must_change_password:!!control?.must_change_password,...(u.role==='trainer'?{capabilities:userCapabilities({...u,staff_role:sr?.staff_role})}:{})}});
   }
-  if(p==='/api/logout'&&req.method==='POST'){ const token=tokenFrom(req,url),u=currentUser(req,url); if(token) db().prepare('DELETE FROM sessions WHERE token=?').run(token); if(u)engine.log(null,u.id,'signed_out','user',u.id,{}); return json(res,200,{ok:true}); }
+  if(p==='/api/logout'&&req.method==='POST'){ res.setHeader('Set-Cookie',resourceCookie('one_asset_session','',req)+'; Max-Age=0'); const token=tokenFrom(req,url),u=currentUser(req,url); if(token) db().prepare('DELETE FROM sessions WHERE token=?').run(token); if(u)engine.log(null,u.id,'signed_out','user',u.id,{}); return json(res,200,{ok:true}); }
   if(p==='/api/me'){ const u=currentUser(req,url); return json(res,200,{ok:true,user:u}); }
   if(p==='/api/heartbeat'&&req.method==='POST'){ const u=currentUser(req,url); return json(res,200,{ok:!!u}); }
   if(p==='/api/account/password'&&req.method==='POST'){
@@ -1016,6 +1038,7 @@ async function handleApi(req,res,url){
     const live=publicLivePayload(classId,{includeProjectorRecall:pairedProjector||viewer?.role==='trainer'});
     if(live?.results&&viewer?.role!=='trainer')sanitizeLiveResultsForAudience(live);
     if(live?.projector_recall?.results&&viewer?.role!=='trainer'){const recall={state:{phase:'results'},results:live.projector_recall.results};sanitizeLiveResultsForAudience(recall);live.projector_recall.results=recall.results;}
+    if(pairedProjector)res.setHeader('Set-Cookie',resourceCookie('one_projector_pair',pair,req));
     return json(res,200,{ok:true,live:viewer?.role==='trainer'?live:audienceLive(live)});
   }
   if(/^\/api\/live\/\d+\/projector-disconnect$/.test(p)&&req.method==='POST'){const classId=Number(p.split('/')[3]),pair=String(url.searchParams.get('pair')||req.headers['x-projector-pair']||'');if(!pair)return json(res,401,{ok:false,message:'A valid projector pairing is required.'});const h=hashToken(pair),row=db().prepare("SELECT id FROM projector_pairs WHERE class_id=? AND token_hash=? AND revoked_at IS NULL AND datetime(expires_at)>datetime('now')").get(classId,h);if(!row)return json(res,401,{ok:false,message:'Projector pairing is invalid or expired.'});db().prepare('UPDATE projector_pairs SET last_seen=NULL WHERE id=?').run(Number(row.id));return json(res,200,{ok:true,class_id:classId});}
@@ -1168,10 +1191,20 @@ async function handleApi(req,res,url){
     const u=trainer(req,res,url);if(!u)return;const id=Number(p.split('/')[3]),row=db().prepare('SELECT * FROM submissions WHERE id=?').get(id);if(!row)return json(res,404,{ok:false,message:'Submission not found.'});if(!requireClassAccess(u,row.class_id,res))return;const b=await readJson(req),status=['approved','revise','reviewed'].includes(b.status)?b.status:'reviewed',score=b.score==null?null:Number(b.score),max=b.max_score==null?null:Number(b.max_score),feedback=String(b.feedback||'').slice(0,4000),rubric=b.rubric&&typeof b.rubric==='object'?b.rubric:{};db().prepare('UPDATE submissions SET review_status=?,review_score=?,review_max_score=?,review_feedback=?,rubric_json=?,reviewed_by=?,reviewed_at=CURRENT_TIMESTAMP WHERE id=?').run(status,Number.isFinite(score)?score:null,Number.isFinite(max)?max:null,feedback,JSON.stringify(rubric),u.id,id);auditChange(row.class_id,u.id,'submission_reviewed','submission',id,row,{...row,review_status:status,review_score:score,review_max_score:max,review_feedback:feedback},{status});refresh(row.class_id,'submission_review');return json(res,200,{ok:true,submission:db().prepare('SELECT * FROM submissions WHERE id=?').get(id)});
   }
   if(/^\/api\/submissions\/\d+\/file$/.test(p)&&req.method==='GET'){
-    const u=requireUser(req,res,url,['trainer','student']);if(!u)return;const id=Number(p.split('/')[3]),row=db().prepare('SELECT * FROM submissions WHERE id=?').get(id);if(!row||!row.stored_path||!fs.existsSync(row.stored_path))return send(res,404,'Not found');if(u.role==='student'&&row.student_id!==u.id)return json(res,403,{ok:false,message:'You do not have access to this file.'});if(u.role==='trainer'&&!canManageClass(u,row.class_id))return json(res,403,{ok:false,message:'You do not have access to this file.'});return send(res,200,fs.readFileSync(row.stored_path),row.mime_type||'application/octet-stream',{'Content-Disposition':`inline; filename*=UTF-8''${encodeURIComponent(row.original_name||'submission')}`});
+    const u=requireUser(req,res,url,['trainer','student']);if(!u)return;const id=Number(p.split('/')[3]),row=db().prepare('SELECT * FROM submissions WHERE id=?').get(id);if(!row||!row.stored_path||!fs.existsSync(row.stored_path))return send(res,404,'Not found');if(u.role==='student'&&row.student_id!==u.id)return json(res,403,{ok:false,message:'You do not have access to this file.'});if(u.role==='trainer'&&!canManageClass(u,row.class_id))return json(res,403,{ok:false,message:'You do not have access to this file.'});return send(res,200,fs.readFileSync(row.stored_path),row.mime_type||'application/octet-stream',resourceHeaders(row.original_name||'submission',row.mime_type));
   }
   if(/^\/api\/assets\/\d+\/.+/.test(p)&&req.method==='GET'){
-    const parts=p.split('/'),versionId=Number(parts[3]),assetKey=decodeURIComponent(parts.slice(4).join('/')); const row=db().prepare('SELECT * FROM course_assets WHERE course_version_id=? AND asset_key=?').get(versionId,assetKey); if(!row||!fs.existsSync(row.stored_path))return send(res,404,'Not found'); const data=fs.readFileSync(row.stored_path); return send(res,200,data,row.mime_type,{'Content-Disposition':`inline; filename*=UTF-8''${encodeURIComponent(path.basename(assetKey))}`});
+    const parts=p.split('/'),versionId=Number(parts[3]),assetKey=decodeURIComponent(parts.slice(4).join('/'));
+    const cookieToken=cookieValue(req,'one_asset_session'),viewer=currentUser(req,url)||(cookieToken?currentUser({headers:{'x-session-token':cookieToken}},null):null);
+    const version=db().prepare('SELECT course_id FROM course_versions WHERE id=?').get(versionId);
+    let permitted=false;
+    if(viewer&&!viewer.must_change_password&&version){
+      if(viewer.role==='trainer')permitted=canViewCourse(viewer,version.course_id);
+      else permitted=!!db().prepare("SELECT 1 FROM enrollments e JOIN classes cl ON cl.id=e.class_id WHERE e.student_id=? AND e.status IN ('active','completed') AND cl.course_version_id=?").get(viewer.id,versionId);
+    }
+    if(!viewer){const pair=String(req.headers['x-projector-pair']||cookieValue(req,'one_projector_pair')||'');if(pair)permitted=!!db().prepare("SELECT 1 FROM projector_pairs pp JOIN classes cl ON cl.id=pp.class_id WHERE pp.token_hash=? AND pp.revoked_at IS NULL AND datetime(pp.expires_at)>datetime('now') AND cl.course_version_id=?").get(hashToken(pair),versionId);}
+    if(!permitted)return json(res,viewer?403:401,{ok:false,message:'A valid course session or projector pairing is required.'});
+    const row=db().prepare('SELECT * FROM course_assets WHERE course_version_id=? AND asset_key=?').get(versionId,assetKey); if(!row||!fs.existsSync(row.stored_path))return send(res,404,'Not found'); const data=fs.readFileSync(row.stored_path); return send(res,200,data,row.mime_type,resourceHeaders(assetKey,row.mime_type));
   }
   if(p==='/api/reports/export'&&req.method==='GET'){
     const u=trainer(req,res,url); if(!u)return; const kind=String(url.searchParams.get('kind')||'students'),requested=Number(url.searchParams.get('class_id')||0),visible=visibleClassIds(u);
@@ -1402,7 +1435,7 @@ async function handleApi(req,res,url){
     let u=currentUser(req,url);const controlKey=String(url.searchParams.get('control_key')||req.headers['x-projector-control-key']||'');const projectorAuthorized=!u&&controlKey&&controlKey===String(engine.getSetting('projector_control_key',''));if(!u&&!projectorAuthorized)return json(res,401,{ok:false,message:'Trainer control is required.'});const classId=Number(p.split('/')[3]);if(u&&!requireClassAccess(u,classId,res))return;const b=await readJson(req),state=getClassState(classId),content=getCourseContentByClass(classId),modules=content?.course?.modules||[];let mi=Math.max(0,modules.findIndex(m=>String(m.id)===String(state.module_id))),module=modules[mi]||modules[0];if(!module)return json(res,409,{ok:false,message:'This course has no presentation content.'});let items=(module.activities||[]).filter(a=>['presentation','announcement','reveal'].includes(a.type));if(!items.length)items=module.activities||[];let ai=Math.max(0,items.findIndex(a=>String(a.id)===String(state.activity_id)));if(b.activity_id){const idx=items.findIndex(a=>String(a.id)===String(b.activity_id));if(idx>=0)ai=idx}else if(b.direction==='previous')ai=Math.max(0,ai-1);else ai=Math.min(items.length-1,ai+1);const item=items[ai];setClassState(classId,{module_id:module.id,activity_id:item.id,phase:['presentation','announcement','reveal'].includes(item.type)?item.type:'presentation',payload:{slide_index:ai,slide_total:items.length},expected_revision:b.expected_revision},u?.id||null);engine.log(classId,u?.id||null,'projector_navigated','activity',item.id,{slide_index:ai});return json(res,200,{ok:true,item_id:item.id,index:ai,total:items.length});
   }
   if(p==='/api/account/session/rotate'&&req.method==='POST'){
-    const u=requireUser(req,res,url,['trainer','student'],{allowPasswordChange:true});if(!u)return;const old=tokenFrom(req,url),row=db().prepare('SELECT * FROM sessions WHERE token=?').get(old);if(!row)return json(res,401,{ok:false,message:'Session not found.'});const token=randomToken(32),pol=securityPolicy(),expiry=new Date(Date.now()+Number(pol.session_idle_minutes||720)*60000).toISOString();engine.transaction(()=>{db().prepare('INSERT INTO sessions(token,user_id,created_at,last_seen,expires_at,device_label,user_agent,ip_address,rotated_at) VALUES(?,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?,?,?,?,CURRENT_TIMESTAMP)').run(token,row.user_id,expiry,row.device_label||deviceLabel(req),row.user_agent||String(req.headers['user-agent']||''),row.ip_address||clientIp(req));db().prepare('DELETE FROM sessions WHERE token=?').run(old);});engine.log(null,u.id,'session_rotated','session',u.id,{device_label:row.device_label||''});return json(res,200,{ok:true,token,rotated_at:nowIso()});
+    const u=requireUser(req,res,url,['trainer','student'],{allowPasswordChange:true});if(!u)return;const old=tokenFrom(req,url),row=db().prepare('SELECT * FROM sessions WHERE token=?').get(old);if(!row)return json(res,401,{ok:false,message:'Session not found.'});const token=randomToken(32),pol=securityPolicy(),expiry=new Date(Date.now()+Number(pol.session_idle_minutes||720)*60000).toISOString();engine.transaction(()=>{db().prepare('INSERT INTO sessions(token,user_id,created_at,last_seen,expires_at,device_label,user_agent,ip_address,rotated_at) VALUES(?,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?,?,?,?,CURRENT_TIMESTAMP)').run(token,row.user_id,expiry,row.device_label||deviceLabel(req),row.user_agent||String(req.headers['user-agent']||''),row.ip_address||clientIp(req));db().prepare('DELETE FROM sessions WHERE token=?').run(old);});res.setHeader('Set-Cookie',resourceCookie('one_asset_session',token,req));engine.log(null,u.id,'session_rotated','session',u.id,{device_label:row.device_label||''});return json(res,200,{ok:true,token,rotated_at:nowIso()});
   }
   if(/^\/api\/live\/\d+\/replay$/.test(p)&&req.method==='GET'){
     const u=trainer(req,res,url);if(!u)return;const classId=Number(p.split('/')[3]);if(!requireClassAccess(u,classId,res))return;const events=db().prepare(`SELECT ae.id,ae.event_type,ae.entity_type,ae.entity_id,ae.payload_json,ae.created_at,us.display_name user_name FROM activity_events ae LEFT JOIN users us ON us.id=ae.user_id WHERE ae.class_id=? ORDER BY ae.id`).all(classId).map(e=>({...e,payload:safeJsonParse(e.payload_json,{}),payload_json:undefined})),instances=db().prepare(`SELECT id,module_id,activity_id,activity_type,title,status,opened_at,closed_at,revealed_at FROM activity_instances WHERE class_id=? ORDER BY id`).all(classId);return json(res,200,{ok:true,class_id:classId,events,instances});
@@ -1443,7 +1476,8 @@ async function handleApi(req,res,url){
     const u=trainer(req,res,url);if(!u)return;const a=p.split('/'),classId=Number(a[3]),sid=Number(a[5]);if(!requireClassAdministration(u,classId,res))return;const cl=db().prepare(`SELECT cl.*,cv.course_id FROM classes cl JOIN course_versions cv ON cv.id=cl.course_version_id WHERE cl.id=?`).get(classId);if(!cl)return json(res,404,{ok:false,message:'Class not found.'});const pre=prereqStatus(sid,cl.course_id);if(!pre.ok)return json(res,409,{ok:false,code:'PREREQUISITES_NOT_MET',missing:pre.missing});const count=Number(db().prepare("SELECT COUNT(*) c FROM enrollments WHERE class_id=? AND status='active'").get(classId).c);if(count>=Number(cl.capacity||20))return json(res,409,{ok:false,code:'CLASS_FULL',message:'Class capacity has been reached.'});engine.transaction(()=>{db().prepare(`INSERT INTO enrollments(class_id,student_id,status) VALUES(?,?,'active') ON CONFLICT(class_id,student_id) DO UPDATE SET status='active'`).run(classId,sid);db().prepare("UPDATE class_waitlist SET status='enrolled',updated_at=CURRENT_TIMESTAMP WHERE class_id=? AND student_id=?").run(classId,sid);});return json(res,200,{ok:true});
   }
   if(/^\/api\/classes\/\d+\/surveys$/.test(p)){
-    const actor=currentUser(req,url);const classId=Number(p.split('/')[3]);if(!actor)return json(res,401,{ok:false,message:'Please sign in to continue.'});if(actor.role==='trainer'&&!canManageClass(actor,classId))return json(res,403,{ok:false,message:'You do not have access to this class.'});if(actor.role==='student'&&!db().prepare('SELECT 1 FROM enrollments WHERE class_id=? AND student_id=?').get(classId,actor.id))return json(res,403,{ok:false,message:'You are not enrolled in this class.'});if(req.method==='GET'){const rows=actor.role==='student'?db().prepare("SELECT id,class_id,title,definition_json,status,created_at FROM course_surveys WHERE class_id=? AND status='open' ORDER BY id DESC").all(classId):db().prepare('SELECT * FROM course_surveys WHERE class_id=? ORDER BY id DESC').all(classId);return json(res,200,{ok:true,surveys:rows.map(x=>({...x,definition:safeJsonParse(x.definition_json,{}),definition_json:undefined}))});}if(req.method==='POST'){if(actor.role!=='trainer'||!canAdministerClass(actor,classId))return json(res,403,{ok:false,message:'Lead trainer or administrator access is required.'});const b=await readJson(req),title=String(b.title||'Course evaluation').trim(),def=b.definition&&typeof b.definition==='object'?b.definition:{questions:[]};const r=db().prepare('INSERT INTO course_surveys(class_id,title,definition_json,status,created_by) VALUES(?,?,?,?,?)').run(classId,title,JSON.stringify(def),String(b.status||'draft').match(/^(draft|open|closed)$/)?.[0]||'draft',actor.id);return json(res,201,{ok:true,id:Number(r.lastInsertRowid)});}}
+    const actor=currentUser(req,url);
+  if(actor&&req.headers['x-session-token']&&p!=='/api/logout')res.setHeader('Set-Cookie',resourceCookie('one_asset_session',tokenFrom(req,url),req));const classId=Number(p.split('/')[3]);if(!actor)return json(res,401,{ok:false,message:'Please sign in to continue.'});if(actor.role==='trainer'&&!canManageClass(actor,classId))return json(res,403,{ok:false,message:'You do not have access to this class.'});if(actor.role==='student'&&!db().prepare('SELECT 1 FROM enrollments WHERE class_id=? AND student_id=?').get(classId,actor.id))return json(res,403,{ok:false,message:'You are not enrolled in this class.'});if(req.method==='GET'){const rows=actor.role==='student'?db().prepare("SELECT id,class_id,title,definition_json,status,created_at FROM course_surveys WHERE class_id=? AND status='open' ORDER BY id DESC").all(classId):db().prepare('SELECT * FROM course_surveys WHERE class_id=? ORDER BY id DESC').all(classId);return json(res,200,{ok:true,surveys:rows.map(x=>({...x,definition:safeJsonParse(x.definition_json,{}),definition_json:undefined}))});}if(req.method==='POST'){if(actor.role!=='trainer'||!canAdministerClass(actor,classId))return json(res,403,{ok:false,message:'Lead trainer or administrator access is required.'});const b=await readJson(req),title=String(b.title||'Course evaluation').trim(),def=b.definition&&typeof b.definition==='object'?b.definition:{questions:[]};const r=db().prepare('INSERT INTO course_surveys(class_id,title,definition_json,status,created_by) VALUES(?,?,?,?,?)').run(classId,title,JSON.stringify(def),String(b.status||'draft').match(/^(draft|open|closed)$/)?.[0]||'draft',actor.id);return json(res,201,{ok:true,id:Number(r.lastInsertRowid)});}}
   if(/^\/api\/surveys\/\d+\/respond$/.test(p)&&req.method==='POST'){
     const u=student(req,res,url);if(!u)return;const surveyId=Number(p.split('/')[3]),survey=db().prepare("SELECT * FROM course_surveys WHERE id=? AND status='open'").get(surveyId);if(!survey)return json(res,404,{ok:false,message:'Open survey not found.'});if(!db().prepare('SELECT 1 FROM enrollments WHERE class_id=? AND student_id=?').get(survey.class_id,u.id))return json(res,403,{ok:false,message:'You are not enrolled in this class.'});const b=await readJson(req);db().prepare(`INSERT INTO survey_responses(survey_id,student_id,response_json,submitted_at) VALUES(?,?,?,CURRENT_TIMESTAMP) ON CONFLICT(survey_id,student_id) DO UPDATE SET response_json=excluded.response_json,submitted_at=CURRENT_TIMESTAMP`).run(surveyId,u.id,JSON.stringify(b.response||{}));return json(res,200,{ok:true});
   }
@@ -1529,11 +1563,15 @@ function staticPathFor(urlPath){
   const rel=safeRelativePath(urlPath.replace(/^\//,'')); if(!rel)return null; const f=path.join(PUBLIC,rel); return f.startsWith(PUBLIC)?f:null;
 }
 const server=http.createServer(async(req,res)=>{
-  const url=new URL(req.url,`http://${req.headers.host||'localhost'}`);
   try{
+    const url=new URL(req.url,`http://${req.headers.host||'localhost'}`);
+    if(!['GET','HEAD','OPTIONS'].includes(req.method)){
+      const origin=req.headers.origin;
+      if(req.headers['sec-fetch-site']==='cross-site'||(origin&&(!/^https?:\/\//i.test(origin)||new URL(origin).host!==url.host)))return json(res,403,{ok:false,message:'Cross-origin requests are not permitted.'});
+    }
     if(url.pathname.startsWith('/api/')){const handled=await handleApi(req,res,url);if(handled===false)return json(res,404,{ok:false,message:'Not found.'});return;}
     const f=staticPathFor(url.pathname); if(f&&fs.existsSync(f)&&fs.statSync(f).isFile()){const data=fs.readFileSync(f);return send(res,200,data,mimeFromName(f),{'Cache-Control':'no-cache'});} return send(res,404,'Not found');
-  }catch(e){const status=e.status||500;console.error(e);return json(res,status,{ok:false,message:status===500?'Something went wrong. Please try again.':String(e.message||'Request failed.')});}
+  }catch(e){const status=e.status||((e instanceof URIError||e instanceof TypeError)?400:500);if(status>=500)console.error(e);return json(res,status,{ok:false,message:status===500?'Something went wrong. Please try again.':String(e.message||'Request failed.')});}
 });
 function clearLocalControl(){try{const row=safeJsonParse(fs.readFileSync(LOCAL_CONTROL_FILE,'utf8'),{});if(row.server_id===LOCAL_CONTROL.server_id)fs.rmSync(LOCAL_CONTROL_FILE,{force:true})}catch{}}
 function stopOwnServer(){

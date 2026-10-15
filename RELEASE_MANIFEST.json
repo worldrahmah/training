@@ -1,8 +1,8 @@
 {
   "format": "training-engine-one-release",
-  "release_name": "TRAINING_ENGINE_ONE_PROFESSIONAL_WORKSPACE_v3.5.0_RC1R8",
+  "release_name": "TRAINING_ENGINE_ONE_v3.5.0_RC1R9",
   "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
-  "app_version": "3.5.0-rc.1.8",
+  "app_version": "3.5.0-rc.1.9",
   "core_schema_version": "3.2",
   "course_authoring_schema_version": "2.0",
   "baseline_core_v2_1_1_sha256": "82a8f0dd04f658429eec7d153319da5953e2bf0f308a43c2293f5947b7c755f5",
