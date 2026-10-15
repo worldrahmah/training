@@ -22,10 +22,9 @@ function audiences(u,c){
 export async function handleExperienceApi(req,res,url,c){
  if(!['/api/experience/audiences','/api/experience/messages'].includes(url.pathname))return false;
  const u=c.requireUser(req,res,url,['trainer']);if(!u)return true;if(u.staff_role==='course_editor')fail('Classroom messaging access is required.',403);
- const catalog=audiences(u,c);
- if(req.method==='GET'&&url.pathname.endsWith('/audiences')){c.json(res,200,{ok:true,audiences:catalog.map(({recipients,...a})=>a)});return true;}
+ if(req.method==='GET'&&url.pathname.endsWith('/audiences')){const catalog=audiences(u,c);c.json(res,200,{ok:true,audiences:catalog.map(({recipients,...a})=>a)});return true;}
  if(req.method!=='POST'||!url.pathname.endsWith('/messages'))fail('Unsupported message action.',405);
- const b=await c.readJson(req),title=String(b.title||'').trim(),body=String(b.body||'').trim(),requestId=String(b.request_id||'');
+ const b=await c.readJson(req),catalog=audiences(u,c),title=String(b.title||'').trim(),body=String(b.body||'').trim(),requestId=String(b.request_id||'');
  if(!title||title.length>160||!body||body.length>5000)fail('Enter a title up to 160 characters and a message up to 5000 characters.');
  if(!/^[a-zA-Z0-9-]{16,80}$/.test(requestId))fail('A valid send request is required.');
  if(!Array.isArray(b.audiences)||!b.audiences.length||b.audiences.length>100)fail('Choose at least one audience.');

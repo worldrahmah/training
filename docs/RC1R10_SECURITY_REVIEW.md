@@ -9,3 +9,5 @@ Evidence gates: tests/rc1r10-experience.mjs positive and negative state assertio
 Limits: no universal penetration-test claim; no security guarantees for hostile host administrators, broad Admin grants, raw LAN interception, external documents/media or an owner-reverted old runtime ignoring new policies. Physical device and owner classroom acceptance remain unrun. See KNOWN_LIMITATIONS_RC1R10.md and RC1R10_UPGRADE_AND_ROLLBACK.md.
 
 LAN compatibility check: message request identities use getRandomValues rather than secure-context-only randomUUID. The repair browser suite explicitly removes randomUUID to exercise the capability available on ordinary classroom HTTP origins; this does not certify physical LAN latency or transport secrecy.
+
+Delayed-body regressions verify recipient resolution after membership changes and protect team response history when a response arrives before automatic regrouping commits. Enrollment delegates receive admission notifications even when their assignment is not Lead. Unlisted historical resource grants survive permission-dialog saves.
