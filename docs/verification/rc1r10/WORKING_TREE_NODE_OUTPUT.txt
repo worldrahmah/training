@@ -177,7 +177,7 @@ TRAINING_ENGINE_20_PARTICIPANT_REHEARSAL_PASS
 RC1R9_SECURITY_PASS 78 assertions; production bootstrap, populated upgrade, default lockout, resources, roles, sessions, request/file boundaries
 RC1R9_CONTRACT_PASS 329 assertions; 36 bilingual labels, no public demo credentials, portable intake/packaging, three real import/Draft/publication/launch paths
 COURSE_CREATOR_KIT_CHECK_PASS 91 files, 36 activities, EN/AR samples and workflow paths
-RC1R10_EXPERIENCE_PASS 137 assertions
+RC1R10_EXPERIENCE_PASS 157 assertions
 CHECKS_PASS node: 59 commands
 npm notice
 npm notice New major version of npm available! 11.9.0 -> 12.2.0

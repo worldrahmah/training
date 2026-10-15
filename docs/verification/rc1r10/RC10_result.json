@@ -5,7 +5,7 @@
       "workflow": "photo upload/menu sync/team profile/nonblocking return",
       "locale": "en",
       "theme": "light",
-      "return_seconds": 0.218
+      "return_seconds": 0.178
     },
     {
       "workflow": "Trainer inbox/targeted audiences/team edit/session attendance",
@@ -26,7 +26,7 @@
       "workflow": "photo upload/menu sync/team profile/nonblocking return",
       "locale": "ar",
       "theme": "dark",
-      "return_seconds": 0.494
+      "return_seconds": 0.42
     },
     {
       "workflow": "Trainer inbox/targeted audiences/team edit/session attendance",

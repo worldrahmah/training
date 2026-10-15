@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "assertions": 137,
+  "assertions": 157,
   "coverage": [
     "atomic attendance",
     "team ID/history/membership preservation",

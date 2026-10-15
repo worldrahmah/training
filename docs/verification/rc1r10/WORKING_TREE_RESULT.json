@@ -1,9 +1,9 @@
 {
   "status": "PASS_WORKING_TREE",
   "app_version": "3.5.0-rc.1.10",
-  "tested_application_commit": "686a07fd075ccab3ed31067482c8abff4aa4c2e3",
+  "tested_application_commit": "ee7070b5271f35014f440cd54a9d5b9fae3b811e",
   "node_commands": 59,
-  "rc1r10_api_assertions": 137,
+  "rc1r10_api_assertions": 157,
   "browser_suites": 6,
   "browser_detail": {
     "repair_role_locale_visits": 12,
