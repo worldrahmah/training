@@ -22,10 +22,11 @@ const ctx={
   window:{addEventListener:noop},location:{search:'',href:''},sessionStorage:storage(),localStorage:storage(),confirm:()=>true,fetch:async()=>({json:async()=>({}),ok:true}),
   document:{querySelector:(sel)=>sel==='#app'?appEl:(controls.get(sel)||null),querySelectorAll:()=>[],body:{contains:()=>true},createElement:()=>({})},
   initTheme:noop,initLocale:noop,applyTypography:noop,bindLogin:noop,cycleLocale:noop,cycleTheme:noop,langButton:()=>'',loginView:()=>'',modal:noop,setToken:noop,themeIcon:()=>'',toast:noop,
-  api:async()=>({}),t:(x)=>String(x),esc:(x)=>String(x??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'),renderContent:()=>'',projectorContrastCheck:()=>({}),projectorPhaseForItem:()=>'',renderProjectorFrame:()=>'',
+  api:async()=>({}),t:(x,vars={})=>String(x).replace(/\{(\w+)\}/g,(_,k)=>vars[k]??`{${k}}`),esc:(x)=>String(x??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'),renderContent:()=>'',projectorContrastCheck:()=>({}),projectorPhaseForItem:()=>'',renderProjectorFrame:()=>'',
   activityTypes:ACTIVITY_TYPES,blockTypes:CONTENT_BLOCK_TYPES,resultTypes:RESULT_TYPES,workflowTypes:WORKFLOW_NODE_TYPES,PROJECTOR_THEMES,activitySpec
 };
 ctx.activityLabel=id=>activitySpec(id)?.label||'Activity';ctx.systemLogo=()=>'<img class="system-logo">';
+ctx.componentLabel=(id,kind)=>id;
 vm.createContext(ctx);vm.runInContext(source,ctx,{filename:'builder.js'});
 
 const advanced=new Set(['prioritization_100','quick_interaction','matching','fill_blanks','sorting','image_interaction','draw_annotate','collaborative_board','interactive_video']);
@@ -48,9 +49,9 @@ for(const type of ACTIVITY_TYPES){
 ctx.__activity={id:'a1',type:'interactive_video',title:'Switch test',trainer:{cue:''},content:{blocks:[],video_asset:'old.mp4'},interactive_video:{asset:'old.mp4',checkpoints:[]},results_display:'video_checkpoints'};
 vm.runInContext(`state.content={course:{modules:[{id:'m1',activities:[__activity],missions:[],paths:[]}]}};state.selection={kind:'activity',mi:0,ii:0};initializeActivityType(__activity,'matching',activitySpec('matching'));`,ctx);
 assert.equal(ctx.__activity.type,'matching');assert.equal(JSON.stringify(ctx.__activity.matching),JSON.stringify({pairs:[],shuffle:true}));assert.equal('interactive_video' in ctx.__activity,false);assert.equal('video_asset' in ctx.__activity.content,false);
-let html=vm.runInContext('editActivity(__activity)',ctx);assert.ok(html.includes('Matching settings'));assert.ok(!html.includes('Interactive Video settings'));
-vm.runInContext(`initializeActivityType(__activity,'prioritization_100',activitySpec('prioritization_100'));`,ctx);html=vm.runInContext('editActivity(__activity)',ctx);assert.ok(html.includes('100 Points / Prioritization settings'));assert.equal('matching' in ctx.__activity,false);
-vm.runInContext(`initializeActivityType(__activity,'interactive_video',activitySpec('interactive_video'));`,ctx);html=vm.runInContext('editActivity(__activity)',ctx);assert.ok(html.includes('Interactive Video settings'));assert.ok(!html.includes('Matching settings'));
+let html=vm.runInContext('editActivity(__activity)',ctx);assert.ok(html.includes('Matching Settings'));assert.ok(!html.includes('Interactive Video Settings'));
+vm.runInContext(`initializeActivityType(__activity,'prioritization_100',activitySpec('prioritization_100'));`,ctx);html=vm.runInContext('editActivity(__activity)',ctx);assert.ok(html.includes('100 Points / Prioritization Settings'));assert.equal('matching' in ctx.__activity,false);
+vm.runInContext(`initializeActivityType(__activity,'interactive_video',activitySpec('interactive_video'));`,ctx);html=vm.runInContext('editActivity(__activity)',ctx);assert.ok(html.includes('Interactive Video Settings'));assert.ok(!html.includes('Matching Settings'));
 
 
 // Exercise the real type-change handler with a minimal browser-like DOM. This catches
@@ -58,8 +59,8 @@ vm.runInContext(`initializeActivityType(__activity,'interactive_video',activityS
 ctx.__activity={id:'a1',type:'presentation',title:'Live switch',trainer:{cue:''},content:{blocks:[]},results_display:'cards'};
 vm.runInContext(`state.content={course:{modules:[{id:'m1',activities:[__activity],missions:[],paths:[]}]}};state.selection={kind:'activity',mi:0,ii:0};state.tab='edit';state.undo=[];state.redo=[];`,ctx);
 const ctl=(value='')=>({value,addEventListener:noop});controls.set('#actTitle',ctl('Live switch'));controls.set('#actCue',ctl(''));controls.set('#actType',ctl('matching'));controls.set('#actResults',ctl('cards'));
-vm.runInContext('changeActivityType()',ctx);assert.equal(ctx.__activity.type,'matching');assert.ok(appEl.innerHTML.includes('Matching settings'),'changeActivityType must immediately replace settings with Matching settings');
-controls.set('#actType',ctl('interactive_video'));controls.set('#actResults',ctl('assessment'));vm.runInContext('changeActivityType()',ctx);assert.equal(ctx.__activity.type,'interactive_video');assert.ok(appEl.innerHTML.includes('Interactive Video settings'),'second type change must immediately replace settings again');assert.ok(!appEl.innerHTML.includes('Matching settings'),'stale settings must disappear after type change');
+vm.runInContext('changeActivityType()',ctx);assert.equal(ctx.__activity.type,'matching');assert.ok(appEl.innerHTML.includes('Matching Settings'),'changeActivityType must immediately replace settings with Matching Settings');
+controls.set('#actType',ctl('interactive_video'));controls.set('#actResults',ctl('assessment'));vm.runInContext('changeActivityType()',ctx);assert.equal(ctx.__activity.type,'interactive_video');assert.ok(appEl.innerHTML.includes('Interactive Video Settings'),'second type change must immediately replace settings again');assert.ok(!appEl.innerHTML.includes('Matching Settings'),'stale settings must disappear after type change');
 
 vm.runInContext(`state.undo=[];state.redo=[];remember();`,ctx);assert.equal(vm.runInContext('state.undo.length',ctx),1,'remember() must create an undo snapshot');
 console.log(`BUILDER_ACTIVITY_EDITOR_PASS ${ACTIVITY_TYPES.length}/${ACTIVITY_TYPES.length} activity types render a type-appropriate settings panel`);

@@ -844,5 +844,245 @@
     "profiles": "own_and_authorized_scope",
     "bulk_changes": "actor_bound_preview_with_stale_detection",
     "archive": "preserved_history_with_restore"
+  },
+  "display_labels": {
+    "content_blocks": {
+      "hero": {
+        "en": "Hero Scene",
+        "ar": "مشهد افتتاحي"
+      },
+      "text": {
+        "en": "Text",
+        "ar": "نص"
+      },
+      "image": {
+        "en": "Image",
+        "ar": "صورة"
+      },
+      "image_text": {
+        "en": "Image and Text",
+        "ar": "صورة ونص"
+      },
+      "cards": {
+        "en": "Cards",
+        "ar": "بطاقات"
+      },
+      "steps": {
+        "en": "Steps",
+        "ar": "خطوات"
+      },
+      "comparison": {
+        "en": "Comparison",
+        "ar": "مقارنة"
+      },
+      "table": {
+        "en": "Table",
+        "ar": "جدول"
+      },
+      "timeline": {
+        "en": "Timeline",
+        "ar": "خط زمني"
+      },
+      "callout": {
+        "en": "Callout",
+        "ar": "تنبيه توضيحي"
+      },
+      "statistic": {
+        "en": "Statistic",
+        "ar": "مؤشر إحصائي"
+      },
+      "quote": {
+        "en": "Quote",
+        "ar": "اقتباس"
+      },
+      "checklist": {
+        "en": "Checklist",
+        "ar": "قائمة تحقق"
+      },
+      "asset": {
+        "en": "Resource",
+        "ar": "مورد"
+      },
+      "chart": {
+        "en": "Chart",
+        "ar": "رسم بياني"
+      },
+      "video": {
+        "en": "Video",
+        "ar": "فيديو"
+      },
+      "audio": {
+        "en": "Audio",
+        "ar": "صوت"
+      },
+      "divider": {
+        "en": "Divider",
+        "ar": "فاصل"
+      },
+      "spacer": {
+        "en": "Spacing",
+        "ar": "مسافة"
+      },
+      "gallery": {
+        "en": "Gallery",
+        "ar": "معرض صور"
+      },
+      "prompt": {
+        "en": "Prompt",
+        "ar": "موجّه"
+      },
+      "editable_prompt": {
+        "en": "Editable Prompt",
+        "ar": "موجّه قابل للتحرير"
+      },
+      "resource_list": {
+        "en": "Resource List",
+        "ar": "قائمة موارد"
+      },
+      "leaderboard": {
+        "en": "Leaderboard",
+        "ar": "لوحة الترتيب"
+      },
+      "document": {
+        "en": "Document",
+        "ar": "مستند"
+      },
+      "slide_deck": {
+        "en": "Slide Deck",
+        "ar": "شرائح عرض"
+      },
+      "formula": {
+        "en": "Formula",
+        "ar": "صيغة"
+      },
+      "interactive_video": {
+        "en": "Interactive Video",
+        "ar": "فيديو تفاعلي"
+      }
+    },
+    "results": {
+      "bar": {
+        "en": "Bar Chart",
+        "ar": "أعمدة"
+      },
+      "horizontal_bar": {
+        "en": "Horizontal Bars",
+        "ar": "أشرطة أفقية"
+      },
+      "stacked_bar": {
+        "en": "Stacked Bars",
+        "ar": "أشرطة متراكبة"
+      },
+      "donut": {
+        "en": "Donut Chart",
+        "ar": "مخطط حلقي"
+      },
+      "pie": {
+        "en": "Pie Chart",
+        "ar": "مخطط دائري"
+      },
+      "line": {
+        "en": "Line Chart",
+        "ar": "مخطط خطي"
+      },
+      "ranking": {
+        "en": "Ranking",
+        "ar": "ترتيب"
+      },
+      "progress": {
+        "en": "Progress",
+        "ar": "تقدم"
+      },
+      "leaderboard": {
+        "en": "Leaderboard",
+        "ar": "لوحة الترتيب"
+      },
+      "cards": {
+        "en": "Cards",
+        "ar": "بطاقات"
+      },
+      "word_cloud": {
+        "en": "Word Cloud",
+        "ar": "سحابة كلمات"
+      },
+      "qa_board": {
+        "en": "Question Board",
+        "ar": "لوحة الأسئلة"
+      },
+      "ideas_board": {
+        "en": "Ideas Board",
+        "ar": "لوحة الأفكار"
+      },
+      "prioritization": {
+        "en": "Priorities",
+        "ar": "أولويات"
+      },
+      "quick_interaction": {
+        "en": "Quick Interaction",
+        "ar": "تفاعل سريع"
+      },
+      "assessment": {
+        "en": "Assessment",
+        "ar": "تقييم"
+      },
+      "image_heatmap": {
+        "en": "Image Heatmap",
+        "ar": "خريطة تفاعل الصورة"
+      },
+      "drawing_gallery": {
+        "en": "Drawing Gallery",
+        "ar": "معرض الرسومات"
+      },
+      "collaborative_board": {
+        "en": "Collaborative Board",
+        "ar": "لوحة تعاونية"
+      },
+      "video_checkpoints": {
+        "en": "Video Checkpoints",
+        "ar": "نقاط تحقق الفيديو"
+      }
+    },
+    "workflow_nodes": {
+      "trainer_scene": {
+        "en": "Trainer Scene",
+        "ar": "مشهد المدرب"
+      },
+      "class_interaction": {
+        "en": "Class Interaction",
+        "ar": "تفاعل الصف"
+      },
+      "trainer_walkthrough": {
+        "en": "Trainer Walkthrough",
+        "ar": "شرح تطبيقي للمدرب"
+      },
+      "practice_start": {
+        "en": "Start Practice",
+        "ar": "بدء الممارسة"
+      },
+      "participant_choice": {
+        "en": "Participant Choice",
+        "ar": "اختيار المشارك"
+      },
+      "participant_path": {
+        "en": "Participant Path",
+        "ar": "مسار المشارك"
+      },
+      "convergence": {
+        "en": "Convergence",
+        "ar": "التقاء المسارات"
+      },
+      "closing": {
+        "en": "Closing",
+        "ar": "ختام"
+      },
+      "activity": {
+        "en": "Activity",
+        "ar": "نشاط"
+      },
+      "mission": {
+        "en": "Mission",
+        "ar": "مهمة"
+      }
+    }
   }
 }

@@ -1,5 +1,7 @@
 const KEY='training_engine_locale';
 const AR={
+'{activity} Settings':'إعدادات {activity}',
+'Use the presentation content blocks below for this activity.':'استخدم كتل محتوى العرض أدناه لهذا النشاط.',
 'System logo':'شعار النظام',
 'One company identity for all professional PDF reports.':'هوية مؤسسة موحدة للتطبيق وصفحات الدخول وتقارير PDF.',
 'Add staff account':'إضافة حساب موظف',

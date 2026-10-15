@@ -1,5 +1,3 @@
-TRAINING_ENGINE_ONE_PROFESSIONAL_EXPERIENCE_v3.5.0_RC1R7
-OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL
+Training Engine ONE v3.5.0 RC1R9 — OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL
 
-Owner gate: docs/RC1R7_EXPERIENCE_AND_ACCEPTANCE.md.
-Review all role workspaces/menus, light/dark/system, EN/AR, Arabic punctuation, staff ownership, actual Preview/search, saved edits, reconnect recovery, reports and Projector on Windows/classroom hardware. Automated tests do not replace owner acceptance or certify enterprise/school completion.
+Automated Node, browser, PDF and exact sealed-byte results are documented in current verification and companion seal reports. Owner Windows/LAN/real-data/physical Projector/assistive technology and visual classroom acceptance remains required. Follow docs/RC1R9_ACCEPTANCE.md and docs/KNOWN_LIMITATIONS_RC1R9.md. Do not label this FINAL from automated success alone.

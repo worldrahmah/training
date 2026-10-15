@@ -7,7 +7,7 @@
     "1.1",
     "2.0"
   ],
-  "registry_sha256": "be313001227780c261f37937883d88b69789aeaaca9aa3f4b5df8a0f67682536",
+  "registry_sha256": "69c208d2ee3356b2f1998e28288d30ccdfd6337522a4c0a3368b538f46fcb3e1",
   "activity_count": 36,
   "scope": "one milestone at a time",
   "authority": "current canonical registry, schemas, bundled exact runtime validator; historical v1.3 is not authority",
