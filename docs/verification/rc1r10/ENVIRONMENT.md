@@ -1,0 +1,9 @@
+# Reusable environment readiness
+
+Reuse /workspace/training and its current branch; never reset or create a worktree. Read AGENTS.md, PROJECT_OPERATING_RULES.md and CODEX_EXEC_PLAN.md. Confirm git status/branch/log, node --version (tested 24.19.0), python --version (tested 3.12.14). Runtime needs Node >=22.5; bundled dependencies/fonts/PDF do not require npm install.
+
+Start: HOST=0.0.0.0 npm start, or the supplied Windows/Linux launcher. Check GET http://127.0.0.1:3000/api/health and confirm 3.5.0-rc.1.10. A published snapshot does not retain running processes. Preserve existing data/storage/backups/exports and do not set TRAINING_ENGINE_TEST_ACCOUNTS on real state. On a fresh normal install credentials are in the private local bootstrap file; do not print them in logs.
+
+QA: Python Playwright 1.62.0 and system Chromium, PyMuPDF 1.26.6, pypdfium2 5.13, pdfinfo. Install using normal verified package sources only if missing. No disabling signatures/TLS/checksums. npm test runs isolated temporary state with QA fixture accounts; npm run test:browser runs six browser programs. Run the full Node and browser suites serially to avoid startup timeouts under concurrent CPU load. Capture ONE_PDF_EVIDENCE_DIR and run python tests/pdf-render-acceptance.py against the 34 reports. Run python tools/check-syntax.py, npm run contracts:check and node tools/build-course-creator-kit.mjs --check. Set browser evidence variables documented in the living plan. Do not confuse environment/browser provisioning failures with application failures.
+
+No additional checkout, worktree or agent used. GitHub uses the supported existing remote authentication. Environment configuration publication and a new-task restoration/readiness check are separate from successful tests in this current environment and remain unclaimed until actually performed.

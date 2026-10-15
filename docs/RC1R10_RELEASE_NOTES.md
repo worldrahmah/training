@@ -11,7 +11,7 @@ Continues delivered RC1R9 without resetting data. Status: OWNER_ACCEPTANCE_CANDI
 7. Custom Trainer permission choices cover view/edit/publish/archive, class operations and workspace sections. Restriction markers override assignment defaults; legacy behavior remains until customized. Course Editor isolation remains.
 8. Attendance saves explicit per-session statuses/notes, leaves unmarked students unrecorded, validates complete batches and reports real saved counts.
 9. Pointer follows mouse/touch continuously without persistent audit floods. Declarative handwriting supports colors, widths, undo, clear ink/all and restart persistence. Projector receives live motion and saved strokes.
-10. Analytics begins with default scoped cards/charts and accessible tables. Existing PDF/report/chart tools follow. Export chooses dataset/scope and CSV or reviewed PDF.
+10. Analytics begins with default scoped cards/charts and accessible tables. Existing PDF/report/chart tools follow. Export chooses dataset/scope and CSV or reviewed PDF. Course-version response counts and averages no longer multiply rows through the enrollment join.
 
 See the six current EN/AR role guides for exact steps. Earlier branding/account/security protections and historical release ZIPs are preserved. No owner classroom/Windows/physical stylus acceptance is claimed by automated checks.
 

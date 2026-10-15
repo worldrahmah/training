@@ -58,10 +58,12 @@ try:
      page.screenshot(path=str(OUT/f'admin-people-{locale}-desktop.png'),full_page=True)
      page.locator('.side [data-nav="reports"]').click();page.wait_for_selector('[data-chart-dataset]')
      page.locator('[data-chart-dataset]').select_option(label='Course performance' if locale=='en' else 'أداء الدورة')
-     assert page.locator('.report-bar-row').count()>20,'Returned chart rows must not be silently capped'
+     assert page.locator('[data-chart-stage] .report-bar-row').count()>20,'Returned chart rows must not be silently capped'
      assert page.locator('[data-chart-type] option[value="pie"]').get_attribute('disabled') is not None, page.locator('[data-chart-type]').evaluate('(s)=>s.outerHTML');assert page.locator('[data-chart-type] option[value="line"]').get_attribute('disabled') is not None
-     page.locator('[data-chart-filter]').fill('Review course 23');assert page.locator('.report-bar-row').count()==1;page.locator('[data-chart-filter]').fill('')
-     with page.expect_download() as download:page.locator('a[download]').first.click()
+     page.locator('[data-chart-filter]').fill('Review course 23');assert page.locator('[data-chart-stage] .report-bar-row').count()==1;page.locator('[data-chart-filter]').fill('')
+     page.locator('[data-analytics-export]').click()
+     with page.expect_download() as download:page.locator('[data-download-csv]').click()
+     page.get_by_role('dialog').locator('[data-close]').first.click()
      d=download.value;d.save_as(str(OUT/f'admin-export-{locale}.csv'));assert 'Review course 23' in pathlib.Path(d.path()).read_text(encoding='utf-8-sig')
     if name=='trainer':
      page.locator('.side [data-nav="reports"]').click();page.wait_for_selector('[data-chart-dataset]')
@@ -79,7 +81,7 @@ try:
   # Real chart semantic cases including zero totals, ordered data and all table rows.
   c=context(at,'en','dark');page=c.new_page();page.goto(BASE+'/admin');page.wait_for_selector('.side');
   page.evaluate('async()=>{const {mountReportChartWorkspace}=await import("/report-charts.js");const el=document.createElement("section");el.id="chart-fixture";el.className="card report-chart-workspace";document.querySelector("#page").replaceChildren(el);mountReportChartWorkspace(el,[{label:"Ordered",ordered:true,labelKey:"label",rows:[{label:"Day 1",value:0},{label:"Day 2",value:2}],metrics:[{key:"value",label:"Responses"}]},{label:"Distribution",partition:true,labelKey:"label",rows:[{label:"Present",value:0},{label:"Absent",value:0}],metrics:[{key:"value",label:"Attendance",additive:true}]}]);}')
-  page.locator('[data-chart-type]').select_option('line');assert page.locator('.report-chart-svg path').count()==1
+  page.locator('[data-chart-type]').select_option('line');assert page.locator('[data-chart-stage] .report-chart-svg path').count()==1
   page.locator('[data-chart-dataset]').select_option(label='Distribution');page.locator('[data-chart-type]').select_option('pie');assert page.locator('.pie-total').text_content()=='0'
   page.screenshot(path=str(OUT/'chart-dark-zero.png'),full_page=True);c.close()
   # Projector theme variants at a true 16:9 viewport.

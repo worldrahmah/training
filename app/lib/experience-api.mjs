@@ -2,7 +2,7 @@
 import crypto from 'node:crypto';
 const fail=(message,status=400)=>{throw Object.assign(new Error(message),{status})};
 export function notificationVisible(n,u,{db,canManageClass,canViewCourse}){
- if(!n||n.expires_at&&Date.parse(n.expires_at.replace(' ','T')+'Z')<Date.now())return false;
+ if(!n)return false;if(n.expires_at){const value=String(n.expires_at),at=Date.parse(/[zZ]$|[+-]\d\d:\d\d$/.test(value)?value:value.replace(' ','T')+'Z');if(!Number.isFinite(at)||at<Date.now())return false;}
  if(n.scope_type==='system')return true;if(n.scope_type==='user')return String(n.scope_id)===String(u.id);
  if(n.scope_type==='class')return u.role==='trainer'?canManageClass(u,Number(n.scope_id)):!!db.prepare("SELECT 1 FROM enrollments WHERE class_id=? AND student_id=? AND status<>'withdrawn'").get(Number(n.scope_id),u.id);
  if(n.scope_type==='course')return u.role==='trainer'?canViewCourse(u,Number(n.scope_id)):!!db.prepare("SELECT 1 FROM enrollments e JOIN classes cl ON cl.id=e.class_id JOIN course_versions cv ON cv.id=cl.course_version_id WHERE cv.course_id=? AND e.student_id=? AND e.status<>'withdrawn'").get(Number(n.scope_id),u.id);return false;
