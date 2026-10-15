@@ -7,7 +7,7 @@ export const TOKEN_KEY='training_engine_session';
 const ROTATED_KEY='training_engine_session_rotated_at';
 let rotating=null;
 export function getToken(){return sessionStorage.getItem(TOKEN_KEY)||''}
-export function setToken(v){if(v){sessionStorage.setItem(TOKEN_KEY,v);if(!sessionStorage.getItem(ROTATED_KEY))sessionStorage.setItem(ROTATED_KEY,String(Date.now()))}else{sessionStorage.removeItem(TOKEN_KEY);sessionStorage.removeItem(ROTATED_KEY)}}
+export function setToken(v){if(getToken()!==String(v||'')){for(const promise of avatarPhotos.values())promise.then(url=>url&&URL.revokeObjectURL(url));avatarPhotos.clear()}if(v){sessionStorage.setItem(TOKEN_KEY,v);if(!sessionStorage.getItem(ROTATED_KEY))sessionStorage.setItem(ROTATED_KEY,String(Date.now()))}else{sessionStorage.removeItem(TOKEN_KEY);sessionStorage.removeItem(ROTATED_KEY)}}
 async function maybeRotate(path){const token=getToken();if(!token||path==='/api/login'||path==='/api/account/session/rotate')return;const last=Number(sessionStorage.getItem(ROTATED_KEY)||0);if(last&&Date.now()-last<30*60*1000)return;if(rotating)return rotating;rotating=(async()=>{try{const res=await fetch('/api/account/session/rotate',{method:'POST',headers:{'X-Session-Token':token}});if(!res.ok)return;const data=await res.json();if(data?.token){sessionStorage.setItem(TOKEN_KEY,data.token);sessionStorage.setItem(ROTATED_KEY,String(Date.now()))}}finally{rotating=null}})();return rotating}
 export async function api(path,opts={}){
   await maybeRotate(path);
