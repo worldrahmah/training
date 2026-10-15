@@ -1,5 +1,5 @@
 import {SAFE_COURSE_ASSET_EXTENSIONS} from './lib/course-package.mjs';
-import {isKnownDefault,testAccountsEnabled,localPeer} from './lib/account-safety.mjs';
+import {isKnownDefault,testAccountsEnabled,localPasswordSetup} from './lib/account-safety.mjs';
 import {handleWorkspaceApi,editorRouteAllowed} from './lib/workspace-api.mjs';
 import http from 'node:http';
 import net from 'node:net';
@@ -641,7 +641,7 @@ async function handleApi(req,res,url){
     const attempt=db().prepare('SELECT * FROM login_attempts WHERE username=? COLLATE NOCASE').get(username);if(attempt?.blocked_until&&parseStoredTime(attempt.blocked_until)>Date.now())return json(res,429,{ok:false,code:'LOGIN_TEMPORARILY_BLOCKED',message:'Too many failed sign-in attempts. Try again later.'},{'Retry-After':String(Math.max(60,Number(pol.login_block_minutes||15)*60))});
     const u=db().prepare('SELECT * FROM users WHERE username=? COLLATE NOCASE AND active=1').get(username),good=verifyPassword(String(body.password||''),u?.password_hash||dummyPasswordHash)&&!!u;
     if(!good){const limit=Math.max(2,Number(pol.login_failure_limit||5)),count=Number(attempt?.failure_count||0)+1,blocked=count>=limit?new Date(Date.now()+Math.max(1,Number(pol.login_block_minutes||15))*60000).toISOString():null;db().prepare(`INSERT INTO login_attempts(username,failure_count,first_failure_at,last_failure_at,blocked_until) VALUES(?,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?) ON CONFLICT(username) DO UPDATE SET failure_count=?,first_failure_at=COALESCE(login_attempts.first_failure_at,CURRENT_TIMESTAMP),last_failure_at=CURRENT_TIMESTAMP,blocked_until=?`).run(username,blocked,count,blocked);engine.log(null,null,'sign_in_failed','user',null,{username,ip,blocked:!!blocked});return json(res,401,{ok:false,message:'The username or password is incorrect.'});}
-    if(!testAccountsEnabled()&&isKnownDefault(u)&&!localPeer(req))return json(res,403,{ok:false,code:'LOCAL_PASSWORD_SETUP_REQUIRED',message:'The installation owner must replace the initial password locally before network sign-in.'});
+    if(!testAccountsEnabled()&&isKnownDefault(u)&&!localPasswordSetup(req))return json(res,403,{ok:false,code:'LOCAL_PASSWORD_SETUP_REQUIRED',message:'The installation owner must replace the initial password locally before network sign-in.'});
     db().prepare('DELETE FROM login_attempts WHERE username=? COLLATE NOCASE').run(username);
     const token=randomToken(),expiry=new Date(Date.now()+Math.max(5,Number(pol.session_idle_minutes||720))*60000).toISOString();
     db().prepare('INSERT INTO sessions(token,user_id,expires_at,device_label,user_agent,ip_address) VALUES(?,?,?,?,?,?)').run(token,u.id,expiry,deviceLabel(req),String(req.headers['user-agent']||'').slice(0,500),ip);

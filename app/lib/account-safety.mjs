@@ -27,3 +27,8 @@ export function protectDefaultAccounts(engine){
  });
 }
 export function localPeer(req){return ['127.0.0.1','::1','::ffff:127.0.0.1'].includes(req.socket?.remoteAddress)}
+
+export function localPasswordSetup(req){
+ if(!localPeer(req)||['forwarded','x-forwarded-for','x-forwarded-host','x-forwarded-proto'].some(key=>req.headers[key]))return false;
+ try{return ['localhost','127.0.0.1','[::1]'].includes(new URL('http://'+req.headers.host).hostname)}catch{return false}
+}
