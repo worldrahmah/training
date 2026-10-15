@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://training-engine.local/schema/workflow.schema.json",
+  "title": "Training Engine Milestone Workflow v2.0",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "start_node_id": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "trainer_scene",
+              "class_interaction",
+              "trainer_walkthrough",
+              "practice_start",
+              "participant_choice",
+              "participant_path",
+              "convergence",
+              "closing",
+              "activity",
+              "mission"
+            ]
+          },
+          "activity_id": {
+            "type": "string"
+          },
+          "mission_id": {
+            "type": "string"
+          },
+          "path_id": {
+            "type": "string"
+          },
+          "terminal": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "scope": {
+            "enum": [
+              "class",
+              "participant"
+            ]
+          },
+          "condition": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

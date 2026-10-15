@@ -1,0 +1,52 @@
+{
+  "id": "a_interactive_video",
+  "type": "interactive_video",
+  "title": "Interactive Video",
+  "trainer": {
+    "cue": "Facilitate this activity; this cue is private.",
+    "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+    "talking_points": [
+      "Connect the evidence to the objective."
+    ],
+    "expected_answer": "Discuss only after the applicable reveal.",
+    "common_mistakes": [
+      "Do not read private cues aloud."
+    ],
+    "transition": "Close, reveal when appropriate, then move to the next node."
+  },
+  "content": {
+    "question": "Interactive Video",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Interactive Video",
+        "body_md": "Certification content for interactive_video"
+      }
+    ]
+  },
+  "results_display": "video_checkpoints",
+  "interactive_video": {
+    "asset": "assets/video.mp4",
+    "pause_at_checkpoint": true,
+    "checkpoints": [
+      {
+        "id": "c1",
+        "time_seconds": 1,
+        "prompt": "2+2?",
+        "type": "single_choice",
+        "options": [
+          "3",
+          "4"
+        ],
+        "correct_answer": "4"
+      },
+      {
+        "id": "c2",
+        "time_seconds": 2,
+        "prompt": "Confidence?",
+        "type": "confidence"
+      }
+    ]
+  },
+  "explanation": "4 is correct."
+}

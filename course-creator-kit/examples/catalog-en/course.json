@@ -1,0 +1,1516 @@
+{
+  "format": "training-engine-course",
+  "schema_version": "2.0",
+  "course": {
+    "id": "rc1r9-catalog-en",
+    "version": "1.0",
+    "title": "36 Activity Laboratory",
+    "language": "en",
+    "direction": "ltr",
+    "objectives": [
+      "Rehearse interaction, privacy and reveal"
+    ],
+    "modules": [
+      {
+        "id": "m1",
+        "title": "Milestone 1",
+        "duration_minutes": 30,
+        "objectives": [
+          "Apply the components and review evidence"
+        ],
+        "activities": [
+          {
+            "id": "a_presentation",
+            "type": "presentation",
+            "title": "Presentation",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "blocks": [
+                {
+                  "type": "hero",
+                  "title": "Presentation",
+                  "body_md": "Present this."
+                }
+              ]
+            }
+          },
+          {
+            "id": "a_announcement",
+            "type": "announcement",
+            "title": "Announcement",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "blocks": [
+                {
+                  "type": "callout",
+                  "title": "Announcement",
+                  "body_md": "Notice"
+                }
+              ]
+            }
+          },
+          {
+            "id": "a_poll",
+            "type": "poll",
+            "title": "Poll",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "options": [
+                "Yes",
+                "No"
+              ]
+            },
+            "results_display": "bar"
+          },
+          {
+            "id": "a_single_choice",
+            "type": "single_choice",
+            "title": "Single Choice",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "options": [
+                "A",
+                "B",
+                "C"
+              ],
+              "correct_answer": "B"
+            },
+            "results_display": "bar",
+            "explanation": "B is correct."
+          },
+          {
+            "id": "a_multiple_choice",
+            "type": "multiple_choice",
+            "title": "Multiple Choice",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "options": [
+                "A",
+                "B",
+                "C"
+              ],
+              "correct_answers": [
+                "A",
+                "C"
+              ]
+            },
+            "results_display": "bar",
+            "explanation": "A and C are correct."
+          },
+          {
+            "id": "a_true_false",
+            "type": "true_false",
+            "title": "True / False",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "correct_answer": true
+            },
+            "results_display": "bar",
+            "explanation": "The correct answer is True."
+          }
+        ],
+        "missions": [],
+        "paths": [],
+        "workflow": {
+          "start_node_id": "m1_n1",
+          "nodes": [
+            {
+              "id": "m1_n1",
+              "type": "activity",
+              "activity_id": "a_presentation"
+            },
+            {
+              "id": "m1_n2",
+              "type": "activity",
+              "activity_id": "a_announcement"
+            },
+            {
+              "id": "m1_n3",
+              "type": "activity",
+              "activity_id": "a_poll"
+            },
+            {
+              "id": "m1_n4",
+              "type": "activity",
+              "activity_id": "a_single_choice"
+            },
+            {
+              "id": "m1_n5",
+              "type": "activity",
+              "activity_id": "a_multiple_choice"
+            },
+            {
+              "id": "m1_n6",
+              "type": "activity",
+              "activity_id": "a_true_false",
+              "terminal": true
+            }
+          ],
+          "edges": [
+            {
+              "from": "m1_n1",
+              "to": "m1_n2",
+              "scope": "class"
+            },
+            {
+              "from": "m1_n2",
+              "to": "m1_n3",
+              "scope": "class"
+            },
+            {
+              "from": "m1_n3",
+              "to": "m1_n4",
+              "scope": "class"
+            },
+            {
+              "from": "m1_n4",
+              "to": "m1_n5",
+              "scope": "class"
+            },
+            {
+              "from": "m1_n5",
+              "to": "m1_n6",
+              "scope": "class"
+            }
+          ]
+        }
+      },
+      {
+        "id": "m2",
+        "title": "Milestone 2",
+        "duration_minutes": 30,
+        "objectives": [
+          "Apply the components and review evidence"
+        ],
+        "activities": [
+          {
+            "id": "a_word_cloud",
+            "type": "word_cloud",
+            "title": "Word Cloud",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "question": "Word Cloud",
+              "blocks": [
+                {
+                  "type": "text",
+                  "title": "Word Cloud",
+                  "body_md": "Certification content for word_cloud"
+                }
+              ]
+            },
+            "results_display": "word_cloud",
+            "word_cloud": {
+              "max_entries": 3,
+              "max_characters": 32,
+              "allow_phrases": true,
+              "moderation": "off",
+              "identity_visibility": "trainer_only"
+            }
+          },
+          {
+            "id": "a_q_and_a",
+            "type": "q_and_a",
+            "title": "Q&A",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "question": "Q&A",
+              "blocks": [
+                {
+                  "type": "text",
+                  "title": "Q&A",
+                  "body_md": "Certification content for q_and_a"
+                }
+              ]
+            },
+            "results_display": "qa_board",
+            "q_and_a": {
+              "max_questions": 3,
+              "max_characters": 280,
+              "moderation": "off",
+              "identity_visibility": "public",
+              "upvoting": true,
+              "allow_self_upvote": false,
+              "sort": "votes"
+            }
+          },
+          {
+            "id": "a_ideas_board",
+            "type": "ideas_board",
+            "title": "Ideas Board",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "question": "Ideas Board",
+              "blocks": [
+                {
+                  "type": "text",
+                  "title": "Ideas Board",
+                  "body_md": "Certification content for ideas_board"
+                }
+              ]
+            },
+            "results_display": "ideas_board",
+            "ideas_board": {
+              "max_ideas": 4,
+              "max_characters": 180,
+              "moderation": "off",
+              "identity_visibility": "public",
+              "upvoting": true,
+              "allow_self_upvote": false,
+              "sort": "votes",
+              "categories": [
+                "Ideas",
+                "Risks"
+              ]
+            }
+          },
+          {
+            "id": "a_prioritization_100",
+            "type": "prioritization_100",
+            "title": "100 Points / Prioritization",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "options": [
+                "Impact",
+                "Speed",
+                "Cost"
+              ]
+            },
+            "results_display": "prioritization",
+            "prioritization": {
+              "budget": 100,
+              "max_per_option": 100,
+              "require_full_allocation": true
+            }
+          },
+          {
+            "id": "a_quick_interaction",
+            "type": "quick_interaction",
+            "title": "Quick Interaction",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "options": [
+                "Agree",
+                "Unsure",
+                "Disagree"
+              ]
+            },
+            "results_display": "quick_interaction",
+            "quick_interaction": {
+              "preset": "agree",
+              "anonymous": true
+            }
+          },
+          {
+            "id": "a_matching",
+            "type": "matching",
+            "title": "Matching",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "question": "Matching",
+              "blocks": [
+                {
+                  "type": "text",
+                  "title": "Matching",
+                  "body_md": "Certification content for matching"
+                }
+              ]
+            },
+            "results_display": "assessment",
+            "matching": {
+              "pairs": [
+                {
+                  "id": "p1",
+                  "left": "CPU",
+                  "right": "Processor"
+                },
+                {
+                  "id": "p2",
+                  "left": "RAM",
+                  "right": "Memory"
+                }
+              ],
+              "shuffle": true
+            },
+            "explanation": "CPU is Processor; RAM is Memory."
+          }
+        ],
+        "missions": [],
+        "paths": [],
+        "workflow": {
+          "start_node_id": "m2_n1",
+          "nodes": [
+            {
+              "id": "m2_n1",
+              "type": "activity",
+              "activity_id": "a_word_cloud"
+            },
+            {
+              "id": "m2_n2",
+              "type": "activity",
+              "activity_id": "a_q_and_a"
+            },
+            {
+              "id": "m2_n3",
+              "type": "activity",
+              "activity_id": "a_ideas_board"
+            },
+            {
+              "id": "m2_n4",
+              "type": "activity",
+              "activity_id": "a_prioritization_100"
+            },
+            {
+              "id": "m2_n5",
+              "type": "activity",
+              "activity_id": "a_quick_interaction"
+            },
+            {
+              "id": "m2_n6",
+              "type": "activity",
+              "activity_id": "a_matching",
+              "terminal": true
+            }
+          ],
+          "edges": [
+            {
+              "from": "m2_n1",
+              "to": "m2_n2",
+              "scope": "class"
+            },
+            {
+              "from": "m2_n2",
+              "to": "m2_n3",
+              "scope": "class"
+            },
+            {
+              "from": "m2_n3",
+              "to": "m2_n4",
+              "scope": "class"
+            },
+            {
+              "from": "m2_n4",
+              "to": "m2_n5",
+              "scope": "class"
+            },
+            {
+              "from": "m2_n5",
+              "to": "m2_n6",
+              "scope": "class"
+            }
+          ]
+        }
+      },
+      {
+        "id": "m3",
+        "title": "Milestone 3",
+        "duration_minutes": 30,
+        "objectives": [
+          "Apply the components and review evidence"
+        ],
+        "activities": [
+          {
+            "id": "a_fill_blanks",
+            "type": "fill_blanks",
+            "title": "Fill in the Blanks",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "question": "Fill blanks",
+              "blocks": [
+                {
+                  "type": "text",
+                  "title": "Fill blanks",
+                  "body_md": "Certification content for fill_blanks"
+                }
+              ]
+            },
+            "results_display": "assessment",
+            "fill_blanks": {
+              "blanks": [
+                {
+                  "id": "b1",
+                  "label": "AI means",
+                  "answers": [
+                    "Artificial Intelligence"
+                  ]
+                },
+                {
+                  "id": "b2",
+                  "label": "ML means",
+                  "answers": [
+                    "Machine Learning"
+                  ]
+                }
+              ],
+              "case_sensitive": false
+            },
+            "explanation": "AI and ML expansions."
+          },
+          {
+            "id": "a_sorting",
+            "type": "sorting",
+            "title": "Sorting",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "question": "Sorting",
+              "blocks": [
+                {
+                  "type": "text",
+                  "title": "Sorting",
+                  "body_md": "Certification content for sorting"
+                }
+              ]
+            },
+            "results_display": "assessment",
+            "sorting": {
+              "items": [
+                "Plan",
+                "Build",
+                "Test"
+              ],
+              "correct_order": [
+                "Plan",
+                "Build",
+                "Test"
+              ]
+            },
+            "explanation": "Plan, Build, Test."
+          },
+          {
+            "id": "a_image_interaction",
+            "type": "image_interaction",
+            "title": "Image Interaction",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "question": "Image interaction",
+              "blocks": [
+                {
+                  "type": "text",
+                  "title": "Image interaction",
+                  "body_md": "Certification content for image_interaction"
+                }
+              ]
+            },
+            "results_display": "image_heatmap",
+            "image_interaction": {
+              "mode": "label",
+              "asset": "assets/map.png",
+              "max_points": 2,
+              "targets": [
+                {
+                  "id": "n",
+                  "label": "North",
+                  "x": 20,
+                  "y": 20,
+                  "tolerance": 10
+                },
+                {
+                  "id": "s",
+                  "label": "South",
+                  "x": 80,
+                  "y": 80,
+                  "tolerance": 10
+                }
+              ]
+            },
+            "explanation": "North and South."
+          },
+          {
+            "id": "a_draw_annotate",
+            "type": "draw_annotate",
+            "title": "Draw / Annotate",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "question": "Draw annotate",
+              "blocks": [
+                {
+                  "type": "text",
+                  "title": "Draw annotate",
+                  "body_md": "Certification content for draw_annotate"
+                }
+              ]
+            },
+            "results_display": "drawing_gallery",
+            "draw_annotate": {
+              "asset": "assets/map.png",
+              "max_strokes": 20,
+              "allow_text": true
+            }
+          },
+          {
+            "id": "a_collaborative_board",
+            "type": "collaborative_board",
+            "title": "Collaborative Board",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "question": "Collaborative Board",
+              "blocks": [
+                {
+                  "type": "text",
+                  "title": "Collaborative Board",
+                  "body_md": "Certification content for collaborative_board"
+                }
+              ]
+            },
+            "results_display": "collaborative_board",
+            "collaborative_board": {
+              "max_notes": 3,
+              "max_characters": 160,
+              "categories": [
+                "Ideas",
+                "Risks"
+              ],
+              "identity_visibility": "public"
+            }
+          },
+          {
+            "id": "a_interactive_video",
+            "type": "interactive_video",
+            "title": "Interactive Video",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "question": "Interactive Video",
+              "blocks": [
+                {
+                  "type": "text",
+                  "title": "Interactive Video",
+                  "body_md": "Certification content for interactive_video"
+                }
+              ]
+            },
+            "results_display": "video_checkpoints",
+            "interactive_video": {
+              "asset": "assets/video.mp4",
+              "pause_at_checkpoint": true,
+              "checkpoints": [
+                {
+                  "id": "c1",
+                  "time_seconds": 1,
+                  "prompt": "2+2?",
+                  "type": "single_choice",
+                  "options": [
+                    "3",
+                    "4"
+                  ],
+                  "correct_answer": "4"
+                },
+                {
+                  "id": "c2",
+                  "time_seconds": 2,
+                  "prompt": "Confidence?",
+                  "type": "confidence"
+                }
+              ]
+            },
+            "explanation": "4 is correct."
+          }
+        ],
+        "missions": [],
+        "paths": [],
+        "workflow": {
+          "start_node_id": "m3_n1",
+          "nodes": [
+            {
+              "id": "m3_n1",
+              "type": "activity",
+              "activity_id": "a_fill_blanks"
+            },
+            {
+              "id": "m3_n2",
+              "type": "activity",
+              "activity_id": "a_sorting"
+            },
+            {
+              "id": "m3_n3",
+              "type": "activity",
+              "activity_id": "a_image_interaction"
+            },
+            {
+              "id": "m3_n4",
+              "type": "activity",
+              "activity_id": "a_draw_annotate"
+            },
+            {
+              "id": "m3_n5",
+              "type": "activity",
+              "activity_id": "a_collaborative_board"
+            },
+            {
+              "id": "m3_n6",
+              "type": "activity",
+              "activity_id": "a_interactive_video",
+              "terminal": true
+            }
+          ],
+          "edges": [
+            {
+              "from": "m3_n1",
+              "to": "m3_n2",
+              "scope": "class"
+            },
+            {
+              "from": "m3_n2",
+              "to": "m3_n3",
+              "scope": "class"
+            },
+            {
+              "from": "m3_n3",
+              "to": "m3_n4",
+              "scope": "class"
+            },
+            {
+              "from": "m3_n4",
+              "to": "m3_n5",
+              "scope": "class"
+            },
+            {
+              "from": "m3_n5",
+              "to": "m3_n6",
+              "scope": "class"
+            }
+          ]
+        }
+      },
+      {
+        "id": "m4",
+        "title": "Milestone 4",
+        "duration_minutes": 30,
+        "objectives": [
+          "Apply the components and review evidence"
+        ],
+        "activities": [
+          {
+            "id": "a_short_answer",
+            "type": "short_answer",
+            "title": "Short Answer",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "placeholder": "Short answer"
+            },
+            "results_display": "cards"
+          },
+          {
+            "id": "a_long_answer",
+            "type": "long_answer",
+            "title": "Long Answer",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "placeholder": "Long answer"
+            },
+            "results_display": "cards"
+          },
+          {
+            "id": "a_numeric_answer",
+            "type": "numeric_answer",
+            "title": "Numeric Answer",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "correct_answer": 42,
+              "tolerance": 0.5,
+              "min": 0,
+              "max": 100,
+              "step": 1
+            },
+            "results_display": "bar",
+            "explanation": "42 is correct."
+          },
+          {
+            "id": "a_rating",
+            "type": "rating",
+            "title": "Rating",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "min": 1,
+              "max": 5,
+              "step": 1,
+              "min_label": "Low",
+              "max_label": "High"
+            },
+            "results_display": "bar"
+          },
+          {
+            "id": "a_reaction",
+            "type": "reaction",
+            "title": "Reaction",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "options": [
+                "👍",
+                "🤔",
+                "👎"
+              ]
+            },
+            "results_display": "bar"
+          },
+          {
+            "id": "a_confidence",
+            "type": "confidence",
+            "title": "Confidence",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "min": 1,
+              "max": 5,
+              "step": 1,
+              "min_label": "Low",
+              "max_label": "High"
+            },
+            "results_display": "bar"
+          }
+        ],
+        "missions": [],
+        "paths": [],
+        "workflow": {
+          "start_node_id": "m4_n1",
+          "nodes": [
+            {
+              "id": "m4_n1",
+              "type": "activity",
+              "activity_id": "a_short_answer"
+            },
+            {
+              "id": "m4_n2",
+              "type": "activity",
+              "activity_id": "a_long_answer"
+            },
+            {
+              "id": "m4_n3",
+              "type": "activity",
+              "activity_id": "a_numeric_answer"
+            },
+            {
+              "id": "m4_n4",
+              "type": "activity",
+              "activity_id": "a_rating"
+            },
+            {
+              "id": "m4_n5",
+              "type": "activity",
+              "activity_id": "a_reaction"
+            },
+            {
+              "id": "m4_n6",
+              "type": "activity",
+              "activity_id": "a_confidence",
+              "terminal": true
+            }
+          ],
+          "edges": [
+            {
+              "from": "m4_n1",
+              "to": "m4_n2",
+              "scope": "class"
+            },
+            {
+              "from": "m4_n2",
+              "to": "m4_n3",
+              "scope": "class"
+            },
+            {
+              "from": "m4_n3",
+              "to": "m4_n4",
+              "scope": "class"
+            },
+            {
+              "from": "m4_n4",
+              "to": "m4_n5",
+              "scope": "class"
+            },
+            {
+              "from": "m4_n5",
+              "to": "m4_n6",
+              "scope": "class"
+            }
+          ]
+        }
+      },
+      {
+        "id": "m5",
+        "title": "Milestone 5",
+        "duration_minutes": 30,
+        "objectives": [
+          "Apply the components and review evidence"
+        ],
+        "activities": [
+          {
+            "id": "a_ranking",
+            "type": "ranking",
+            "title": "Ranking",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "options": [
+                "First",
+                "Second",
+                "Third"
+              ]
+            },
+            "results_display": "ranking"
+          },
+          {
+            "id": "a_timer",
+            "type": "timer",
+            "title": "Timer",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "seconds": 30
+            }
+          },
+          {
+            "id": "a_reveal",
+            "type": "reveal",
+            "title": "Reveal",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "blocks": [
+                {
+                  "type": "hero",
+                  "title": "Reveal",
+                  "body_md": "Reveal content"
+                }
+              ]
+            }
+          },
+          {
+            "id": "a_team_challenge",
+            "type": "team_challenge",
+            "title": "Team Challenge",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "placeholder": "Team answer"
+            },
+            "results_display": "cards",
+            "response_scope": "team"
+          },
+          {
+            "id": "a_checklist",
+            "type": "checklist",
+            "title": "Checklist",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "items": [
+                "One",
+                "Two",
+                "Three"
+              ]
+            },
+            "results_display": "cards"
+          },
+          {
+            "id": "a_url_submission",
+            "type": "url_submission",
+            "title": "URL Submission",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "body_md": "Submit a URL"
+            },
+            "results_display": "cards"
+          }
+        ],
+        "missions": [],
+        "paths": [],
+        "workflow": {
+          "start_node_id": "m5_n1",
+          "nodes": [
+            {
+              "id": "m5_n1",
+              "type": "activity",
+              "activity_id": "a_ranking"
+            },
+            {
+              "id": "m5_n2",
+              "type": "activity",
+              "activity_id": "a_timer"
+            },
+            {
+              "id": "m5_n3",
+              "type": "activity",
+              "activity_id": "a_reveal"
+            },
+            {
+              "id": "m5_n4",
+              "type": "activity",
+              "activity_id": "a_team_challenge"
+            },
+            {
+              "id": "m5_n5",
+              "type": "activity",
+              "activity_id": "a_checklist"
+            },
+            {
+              "id": "m5_n6",
+              "type": "activity",
+              "activity_id": "a_url_submission",
+              "terminal": true
+            }
+          ],
+          "edges": [
+            {
+              "from": "m5_n1",
+              "to": "m5_n2",
+              "scope": "class"
+            },
+            {
+              "from": "m5_n2",
+              "to": "m5_n3",
+              "scope": "class"
+            },
+            {
+              "from": "m5_n3",
+              "to": "m5_n4",
+              "scope": "class"
+            },
+            {
+              "from": "m5_n4",
+              "to": "m5_n5",
+              "scope": "class"
+            },
+            {
+              "from": "m5_n5",
+              "to": "m5_n6",
+              "scope": "class"
+            }
+          ]
+        }
+      },
+      {
+        "id": "m6",
+        "title": "Milestone 6",
+        "duration_minutes": 30,
+        "objectives": [
+          "Apply the components and review evidence"
+        ],
+        "activities": [
+          {
+            "id": "a_file_submission",
+            "type": "file_submission",
+            "title": "File Submission",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "body_md": "Submit a file"
+            },
+            "results_display": "cards"
+          },
+          {
+            "id": "a_image_submission",
+            "type": "image_submission",
+            "title": "Image Submission",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "body_md": "Submit an image"
+            },
+            "results_display": "cards"
+          },
+          {
+            "id": "a_reflection",
+            "type": "reflection",
+            "title": "Reflection",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "placeholder": "Reflect"
+            },
+            "results_display": "cards"
+          },
+          {
+            "id": "a_self_assessment",
+            "type": "self_assessment",
+            "title": "Self Assessment",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "placeholder": "Assess yourself"
+            },
+            "results_display": "cards"
+          },
+          {
+            "id": "a_participant_choice",
+            "type": "participant_choice",
+            "title": "Participant Choice",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "blocks": [
+                {
+                  "type": "callout",
+                  "title": "Choose",
+                  "body_md": "Choose your path."
+                }
+              ]
+            }
+          },
+          {
+            "id": "a_practice_gate",
+            "type": "practice_gate",
+            "title": "Practice Gate",
+            "trainer": {
+              "cue": "Facilitate this activity; this cue is private.",
+              "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+              "talking_points": [
+                "Connect the evidence to the objective."
+              ],
+              "expected_answer": "Discuss only after the applicable reveal.",
+              "common_mistakes": [
+                "Do not read private cues aloud."
+              ],
+              "transition": "Close, reveal when appropriate, then move to the next node."
+            },
+            "content": {
+              "blocks": [
+                {
+                  "type": "callout",
+                  "title": "Practice",
+                  "body_md": "Practice checkpoint."
+                }
+              ]
+            }
+          }
+        ],
+        "missions": [],
+        "paths": [],
+        "workflow": {
+          "start_node_id": "m6_n1",
+          "nodes": [
+            {
+              "id": "m6_n1",
+              "type": "activity",
+              "activity_id": "a_file_submission"
+            },
+            {
+              "id": "m6_n2",
+              "type": "activity",
+              "activity_id": "a_image_submission"
+            },
+            {
+              "id": "m6_n3",
+              "type": "activity",
+              "activity_id": "a_reflection"
+            },
+            {
+              "id": "m6_n4",
+              "type": "activity",
+              "activity_id": "a_self_assessment"
+            },
+            {
+              "id": "m6_n5",
+              "type": "activity",
+              "activity_id": "a_participant_choice"
+            },
+            {
+              "id": "m6_n6",
+              "type": "activity",
+              "activity_id": "a_practice_gate",
+              "terminal": true
+            }
+          ],
+          "edges": [
+            {
+              "from": "m6_n1",
+              "to": "m6_n2",
+              "scope": "class"
+            },
+            {
+              "from": "m6_n2",
+              "to": "m6_n3",
+              "scope": "class"
+            },
+            {
+              "from": "m6_n3",
+              "to": "m6_n4",
+              "scope": "class"
+            },
+            {
+              "from": "m6_n4",
+              "to": "m6_n5",
+              "scope": "class"
+            },
+            {
+              "from": "m6_n5",
+              "to": "m6_n6",
+              "scope": "class"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

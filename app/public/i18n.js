@@ -221,7 +221,7 @@ const AR={
   'No approved questions yet.':'لا توجد أسئلة معتمدة بعد.',
   'Q&A':'الأسئلة والأجوبة',
   '{n} questions':'{n} أسئلة',
-  'Brainstorm / Ideas Board settings':'إعدادات العصف الذهني / لوحة الأفكار',
+  'Ideas Board settings':'إعدادات العصف الذهني / لوحة الأفكار',
   'What ideas should we explore?':'ما الأفكار التي ينبغي أن نستكشفها؟',
   'Maximum ideas per participant':'الحد الأقصى للأفكار لكل متدرب',
   'Maximum characters per idea':'الحد الأقصى للأحرف لكل فكرة',

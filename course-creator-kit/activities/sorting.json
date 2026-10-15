@@ -1,0 +1,41 @@
+{
+  "id": "a_sorting",
+  "type": "sorting",
+  "title": "Sorting",
+  "trainer": {
+    "cue": "Facilitate this activity; this cue is private.",
+    "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+    "talking_points": [
+      "Connect the evidence to the objective."
+    ],
+    "expected_answer": "Discuss only after the applicable reveal.",
+    "common_mistakes": [
+      "Do not read private cues aloud."
+    ],
+    "transition": "Close, reveal when appropriate, then move to the next node."
+  },
+  "content": {
+    "question": "Sorting",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Sorting",
+        "body_md": "Certification content for sorting"
+      }
+    ]
+  },
+  "results_display": "assessment",
+  "sorting": {
+    "items": [
+      "Plan",
+      "Build",
+      "Test"
+    ],
+    "correct_order": [
+      "Plan",
+      "Build",
+      "Test"
+    ]
+  },
+  "explanation": "Plan, Build, Test."
+}

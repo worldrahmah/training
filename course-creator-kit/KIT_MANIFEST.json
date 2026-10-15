@@ -1,0 +1,15 @@
+{
+  "format": "training-engine-one-course-creator",
+  "version": "3.5.0-rc.1.9",
+  "core_schema": "3.2",
+  "course_schemas": [
+    "1.0",
+    "1.1",
+    "2.0"
+  ],
+  "registry_sha256": "be313001227780c261f37937883d88b69789aeaaca9aa3f4b5df8a0f67682536",
+  "activity_count": 36,
+  "scope": "one milestone at a time",
+  "authority": "current canonical registry, schemas, bundled exact runtime validator; historical v1.3 is not authority",
+  "validation_boundary": "Schemas are descriptive; runtime import validation is authoritative. AI output requires independent review and rehearsal."
+}

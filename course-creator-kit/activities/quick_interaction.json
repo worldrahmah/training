@@ -1,0 +1,29 @@
+{
+  "id": "a_quick_interaction",
+  "type": "quick_interaction",
+  "title": "Quick Interaction",
+  "trainer": {
+    "cue": "Facilitate this activity; this cue is private.",
+    "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+    "talking_points": [
+      "Connect the evidence to the objective."
+    ],
+    "expected_answer": "Discuss only after the applicable reveal.",
+    "common_mistakes": [
+      "Do not read private cues aloud."
+    ],
+    "transition": "Close, reveal when appropriate, then move to the next node."
+  },
+  "content": {
+    "options": [
+      "Agree",
+      "Unsure",
+      "Disagree"
+    ]
+  },
+  "results_display": "quick_interaction",
+  "quick_interaction": {
+    "preset": "agree",
+    "anonymous": true
+  }
+}

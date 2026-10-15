@@ -1,0 +1,35 @@
+{
+  "id": "a_word_cloud",
+  "type": "word_cloud",
+  "title": "Word Cloud",
+  "trainer": {
+    "cue": "Facilitate this activity; this cue is private.",
+    "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+    "talking_points": [
+      "Connect the evidence to the objective."
+    ],
+    "expected_answer": "Discuss only after the applicable reveal.",
+    "common_mistakes": [
+      "Do not read private cues aloud."
+    ],
+    "transition": "Close, reveal when appropriate, then move to the next node."
+  },
+  "content": {
+    "question": "Word Cloud",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Word Cloud",
+        "body_md": "Certification content for word_cloud"
+      }
+    ]
+  },
+  "results_display": "word_cloud",
+  "word_cloud": {
+    "max_entries": 3,
+    "max_characters": 32,
+    "allow_phrases": true,
+    "moderation": "off",
+    "identity_visibility": "trainer_only"
+  }
+}

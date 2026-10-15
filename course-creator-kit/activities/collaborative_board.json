@@ -1,0 +1,37 @@
+{
+  "id": "a_collaborative_board",
+  "type": "collaborative_board",
+  "title": "Collaborative Board",
+  "trainer": {
+    "cue": "Facilitate this activity; this cue is private.",
+    "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+    "talking_points": [
+      "Connect the evidence to the objective."
+    ],
+    "expected_answer": "Discuss only after the applicable reveal.",
+    "common_mistakes": [
+      "Do not read private cues aloud."
+    ],
+    "transition": "Close, reveal when appropriate, then move to the next node."
+  },
+  "content": {
+    "question": "Collaborative Board",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Collaborative Board",
+        "body_md": "Certification content for collaborative_board"
+      }
+    ]
+  },
+  "results_display": "collaborative_board",
+  "collaborative_board": {
+    "max_notes": 3,
+    "max_characters": 160,
+    "categories": [
+      "Ideas",
+      "Risks"
+    ],
+    "identity_visibility": "public"
+  }
+}

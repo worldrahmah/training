@@ -1,0 +1,25 @@
+{
+  "id": "a_rating",
+  "type": "rating",
+  "title": "Rating",
+  "trainer": {
+    "cue": "Facilitate this activity; this cue is private.",
+    "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+    "talking_points": [
+      "Connect the evidence to the objective."
+    ],
+    "expected_answer": "Discuss only after the applicable reveal.",
+    "common_mistakes": [
+      "Do not read private cues aloud."
+    ],
+    "transition": "Close, reveal when appropriate, then move to the next node."
+  },
+  "content": {
+    "min": 1,
+    "max": 5,
+    "step": 1,
+    "min_label": "Low",
+    "max_label": "High"
+  },
+  "results_display": "bar"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "a_image_interaction",
+  "type": "image_interaction",
+  "title": "Image Interaction",
+  "trainer": {
+    "cue": "Facilitate this activity; this cue is private.",
+    "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+    "talking_points": [
+      "Connect the evidence to the objective."
+    ],
+    "expected_answer": "Discuss only after the applicable reveal.",
+    "common_mistakes": [
+      "Do not read private cues aloud."
+    ],
+    "transition": "Close, reveal when appropriate, then move to the next node."
+  },
+  "content": {
+    "question": "Image interaction",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Image interaction",
+        "body_md": "Certification content for image_interaction"
+      }
+    ]
+  },
+  "results_display": "image_heatmap",
+  "image_interaction": {
+    "mode": "label",
+    "asset": "assets/map.png",
+    "max_points": 2,
+    "targets": [
+      {
+        "id": "n",
+        "label": "North",
+        "x": 20,
+        "y": 20,
+        "tolerance": 10
+      },
+      {
+        "id": "s",
+        "label": "South",
+        "x": 80,
+        "y": 80,
+        "tolerance": 10
+      }
+    ]
+  },
+  "explanation": "North and South."
+}

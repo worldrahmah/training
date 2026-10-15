@@ -1,0 +1,44 @@
+{
+  "id": "a_matching",
+  "type": "matching",
+  "title": "Matching",
+  "trainer": {
+    "cue": "Facilitate this activity; this cue is private.",
+    "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+    "talking_points": [
+      "Connect the evidence to the objective."
+    ],
+    "expected_answer": "Discuss only after the applicable reveal.",
+    "common_mistakes": [
+      "Do not read private cues aloud."
+    ],
+    "transition": "Close, reveal when appropriate, then move to the next node."
+  },
+  "content": {
+    "question": "Matching",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Matching",
+        "body_md": "Certification content for matching"
+      }
+    ]
+  },
+  "results_display": "assessment",
+  "matching": {
+    "pairs": [
+      {
+        "id": "p1",
+        "left": "CPU",
+        "right": "Processor"
+      },
+      {
+        "id": "p2",
+        "left": "RAM",
+        "right": "Memory"
+      }
+    ],
+    "shuffle": true
+  },
+  "explanation": "CPU is Processor; RAM is Memory."
+}

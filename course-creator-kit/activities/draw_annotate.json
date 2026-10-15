@@ -1,0 +1,33 @@
+{
+  "id": "a_draw_annotate",
+  "type": "draw_annotate",
+  "title": "Draw / Annotate",
+  "trainer": {
+    "cue": "Facilitate this activity; this cue is private.",
+    "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+    "talking_points": [
+      "Connect the evidence to the objective."
+    ],
+    "expected_answer": "Discuss only after the applicable reveal.",
+    "common_mistakes": [
+      "Do not read private cues aloud."
+    ],
+    "transition": "Close, reveal when appropriate, then move to the next node."
+  },
+  "content": {
+    "question": "Draw annotate",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Draw annotate",
+        "body_md": "Certification content for draw_annotate"
+      }
+    ]
+  },
+  "results_display": "drawing_gallery",
+  "draw_annotate": {
+    "asset": "assets/map.png",
+    "max_strokes": 20,
+    "allow_text": true
+  }
+}

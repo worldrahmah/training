@@ -1,0 +1,848 @@
+{
+  "format": "training-engine-one-capability-registry",
+  "registry_version": "3.5.0-rc.1.9",
+  "status": "professional-interaction-presentation-closure",
+  "projector": {
+    "themes": [
+      "dark",
+      "light",
+      "high_contrast"
+    ],
+    "default_theme": "dark",
+    "precedence": [
+      "course_default",
+      "class_override",
+      "live_override"
+    ],
+    "primary_surface": "intentional_presentation"
+  },
+  "activities": [
+    {
+      "id": "presentation",
+      "response_model": "none",
+      "aggregation": "none",
+      "scoring": "none",
+      "results": [],
+      "participant_input": false,
+      "label": "Presentation",
+      "label_ar": "عرض تقديمي"
+    },
+    {
+      "id": "announcement",
+      "response_model": "none",
+      "aggregation": "none",
+      "scoring": "none",
+      "results": [],
+      "participant_input": false,
+      "label": "Announcement",
+      "label_ar": "إعلان"
+    },
+    {
+      "id": "poll",
+      "response_model": "single_choice",
+      "aggregation": "counts",
+      "scoring": "participation",
+      "results": [
+        "bar",
+        "horizontal_bar",
+        "stacked_bar",
+        "donut",
+        "pie",
+        "ranking",
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Poll",
+      "label_ar": "استطلاع رأي"
+    },
+    {
+      "id": "single_choice",
+      "response_model": "single_choice",
+      "aggregation": "counts",
+      "scoring": "exact_or_participation",
+      "results": [
+        "bar",
+        "horizontal_bar",
+        "stacked_bar",
+        "donut",
+        "pie",
+        "ranking",
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Single Choice",
+      "label_ar": "اختيار واحد"
+    },
+    {
+      "id": "multiple_choice",
+      "response_model": "multiple_choice",
+      "aggregation": "counts",
+      "scoring": "exact_or_participation",
+      "results": [
+        "bar",
+        "horizontal_bar",
+        "stacked_bar",
+        "donut",
+        "pie",
+        "ranking",
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Multiple Choice",
+      "label_ar": "اختيارات متعددة"
+    },
+    {
+      "id": "true_false",
+      "response_model": "true_false",
+      "aggregation": "counts",
+      "scoring": "exact_or_participation",
+      "results": [
+        "bar",
+        "horizontal_bar",
+        "donut",
+        "pie",
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "True / False",
+      "label_ar": "صح أو خطأ"
+    },
+    {
+      "id": "word_cloud",
+      "response_model": "word_list",
+      "aggregation": "word_cloud",
+      "scoring": "participation",
+      "results": [
+        "word_cloud"
+      ],
+      "participant_input": true,
+      "defaults": {
+        "max_entries": 3,
+        "max_characters": 32,
+        "allow_phrases": true,
+        "moderation": "off",
+        "identity_visibility": "trainer_only"
+      },
+      "features": {
+        "moderation": true,
+        "privacy": true,
+        "hide_reveal": true,
+        "local_normalization": true
+      },
+      "label": "Word Cloud",
+      "label_ar": "سحابة كلمات"
+    },
+    {
+      "id": "q_and_a",
+      "response_model": "qa_board",
+      "aggregation": "qa_board",
+      "scoring": "participation",
+      "results": [
+        "qa_board"
+      ],
+      "participant_input": true,
+      "defaults": {
+        "max_questions": 3,
+        "max_characters": 280,
+        "moderation": "pre",
+        "identity_visibility": "trainer_only",
+        "upvoting": true,
+        "allow_self_upvote": false,
+        "sort": "votes"
+      },
+      "features": {
+        "moderation": true,
+        "privacy": true,
+        "upvoting": true,
+        "pinning": true,
+        "answered_state": true,
+        "hide_reveal": true,
+        "result_recall": true
+      },
+      "label": "Q&A",
+      "label_ar": "أسئلة وأجوبة"
+    },
+    {
+      "id": "ideas_board",
+      "response_model": "idea_board",
+      "aggregation": "ideas_board",
+      "scoring": "participation",
+      "results": [
+        "ideas_board"
+      ],
+      "participant_input": true,
+      "defaults": {
+        "max_ideas": 5,
+        "max_characters": 240,
+        "moderation": "pre",
+        "identity_visibility": "trainer_only",
+        "upvoting": true,
+        "allow_self_upvote": false,
+        "sort": "votes",
+        "categories": [
+          "Ideas"
+        ]
+      },
+      "features": {
+        "moderation": true,
+        "privacy": true,
+        "upvoting": true,
+        "pinning": true,
+        "merging": true,
+        "categories": true,
+        "hide_reveal": true,
+        "result_recall": true
+      },
+      "label": "Ideas Board",
+      "label_ar": "لوحة الأفكار"
+    },
+    {
+      "id": "prioritization_100",
+      "response_model": "point_allocation",
+      "aggregation": "point_allocation",
+      "scoring": "participation",
+      "results": [
+        "prioritization"
+      ],
+      "participant_input": true,
+      "defaults": {
+        "budget": 100,
+        "require_full_allocation": true,
+        "max_per_option": 100
+      },
+      "features": {
+        "edit_before_close": true,
+        "hide_reveal": true,
+        "result_recall": true,
+        "analytics": true
+      },
+      "label": "100 Points / Prioritization",
+      "label_ar": "توزيع ١٠٠ نقطة وترتيب الأولويات"
+    },
+    {
+      "id": "quick_interaction",
+      "response_model": "quick_choice",
+      "aggregation": "counts",
+      "scoring": "participation",
+      "results": [
+        "quick_interaction",
+        "horizontal_bar",
+        "donut"
+      ],
+      "participant_input": true,
+      "defaults": {
+        "preset": "understand",
+        "anonymous": true
+      },
+      "features": {
+        "rapid_response": true,
+        "hide_reveal": true,
+        "result_recall": true
+      },
+      "label": "Quick Interaction",
+      "label_ar": "تفاعل سريع"
+    },
+    {
+      "id": "matching",
+      "response_model": "matching",
+      "aggregation": "assessment",
+      "scoring": "exact",
+      "results": [
+        "assessment"
+      ],
+      "participant_input": true,
+      "features": {
+        "shuffle": true,
+        "explanation": true,
+        "analytics": true
+      },
+      "label": "Matching",
+      "label_ar": "مطابقة"
+    },
+    {
+      "id": "fill_blanks",
+      "response_model": "fill_blanks",
+      "aggregation": "assessment",
+      "scoring": "exact",
+      "results": [
+        "assessment"
+      ],
+      "participant_input": true,
+      "features": {
+        "multiple_accepted_answers": true,
+        "explanation": true,
+        "analytics": true
+      },
+      "label": "Fill in the Blanks",
+      "label_ar": "ملء الفراغات"
+    },
+    {
+      "id": "sorting",
+      "response_model": "sorting",
+      "aggregation": "assessment",
+      "scoring": "exact",
+      "results": [
+        "assessment"
+      ],
+      "participant_input": true,
+      "features": {
+        "shuffle": true,
+        "explanation": true,
+        "analytics": true
+      },
+      "label": "Sorting",
+      "label_ar": "ترتيب العناصر"
+    },
+    {
+      "id": "image_interaction",
+      "response_model": "image_interaction",
+      "aggregation": "image_interaction",
+      "scoring": "exact_or_participation",
+      "results": [
+        "image_heatmap"
+      ],
+      "participant_input": true,
+      "defaults": {
+        "mode": "pin"
+      },
+      "features": {
+        "pin": true,
+        "find": true,
+        "label": true,
+        "drag": true,
+        "analytics": true
+      },
+      "label": "Image Interaction",
+      "label_ar": "تفاعل مع صورة"
+    },
+    {
+      "id": "draw_annotate",
+      "response_model": "drawing",
+      "aggregation": "drawing_gallery",
+      "scoring": "participation",
+      "results": [
+        "drawing_gallery"
+      ],
+      "participant_input": true,
+      "features": {
+        "drawing": true,
+        "annotation": true,
+        "background_asset": true
+      },
+      "label": "Draw / Annotate",
+      "label_ar": "رسم وتعليق"
+    },
+    {
+      "id": "collaborative_board",
+      "response_model": "collab_board",
+      "aggregation": "collaborative_board",
+      "scoring": "participation",
+      "results": [
+        "collaborative_board"
+      ],
+      "participant_input": true,
+      "defaults": {
+        "max_notes": 5,
+        "max_characters": 240,
+        "categories": [
+          "Board"
+        ],
+        "identity_visibility": "trainer_only"
+      },
+      "features": {
+        "categories": true,
+        "privacy": true,
+        "result_recall": true
+      },
+      "label": "Collaborative Board",
+      "label_ar": "لوحة تعاونية"
+    },
+    {
+      "id": "interactive_video",
+      "response_model": "video_checkpoints",
+      "aggregation": "assessment",
+      "scoring": "exact_or_participation",
+      "results": [
+        "video_checkpoints",
+        "assessment"
+      ],
+      "participant_input": true,
+      "defaults": {
+        "pause_at_checkpoint": true
+      },
+      "features": {
+        "local_video": true,
+        "timed_checkpoints": true,
+        "analytics": true
+      },
+      "label": "Interactive Video",
+      "label_ar": "فيديو تفاعلي"
+    },
+    {
+      "id": "short_answer",
+      "response_model": "text",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "results": [
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Short Answer",
+      "label_ar": "إجابة قصيرة"
+    },
+    {
+      "id": "long_answer",
+      "response_model": "long_text",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "results": [
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Long Answer",
+      "label_ar": "إجابة مطولة"
+    },
+    {
+      "id": "numeric_answer",
+      "response_model": "number",
+      "aggregation": "numeric",
+      "scoring": "exact_or_participation",
+      "results": [
+        "bar",
+        "line",
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Numeric Answer",
+      "label_ar": "إجابة رقمية"
+    },
+    {
+      "id": "rating",
+      "response_model": "scale",
+      "aggregation": "numeric",
+      "scoring": "participation",
+      "results": [
+        "bar",
+        "line",
+        "progress",
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Rating",
+      "label_ar": "تقدير"
+    },
+    {
+      "id": "reaction",
+      "response_model": "single_choice",
+      "aggregation": "counts",
+      "scoring": "participation",
+      "results": [
+        "bar",
+        "horizontal_bar",
+        "donut",
+        "pie",
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Reaction",
+      "label_ar": "رد فعل"
+    },
+    {
+      "id": "confidence",
+      "response_model": "scale",
+      "aggregation": "numeric",
+      "scoring": "participation",
+      "results": [
+        "bar",
+        "line",
+        "progress",
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Confidence",
+      "label_ar": "مستوى الثقة"
+    },
+    {
+      "id": "ranking",
+      "response_model": "ranking",
+      "aggregation": "ranking",
+      "scoring": "participation",
+      "results": [
+        "ranking",
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Ranking",
+      "label_ar": "ترتيب حسب الأفضلية"
+    },
+    {
+      "id": "timer",
+      "response_model": "none",
+      "aggregation": "none",
+      "scoring": "none",
+      "results": [],
+      "participant_input": false,
+      "label": "Timer",
+      "label_ar": "مؤقت"
+    },
+    {
+      "id": "reveal",
+      "response_model": "none",
+      "aggregation": "none",
+      "scoring": "none",
+      "results": [],
+      "participant_input": false,
+      "label": "Reveal",
+      "label_ar": "كشف المحتوى"
+    },
+    {
+      "id": "team_challenge",
+      "response_model": "long_text",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "results": [
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Team Challenge",
+      "label_ar": "تحدي الفرق"
+    },
+    {
+      "id": "checklist",
+      "response_model": "checklist",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "results": [
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Checklist",
+      "label_ar": "قائمة تحقق"
+    },
+    {
+      "id": "url_submission",
+      "response_model": "url",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "results": [
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "URL Submission",
+      "label_ar": "تسليم رابط"
+    },
+    {
+      "id": "file_submission",
+      "response_model": "file",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "results": [
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "File Submission",
+      "label_ar": "تسليم ملف"
+    },
+    {
+      "id": "image_submission",
+      "response_model": "image",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "results": [
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Image Submission",
+      "label_ar": "تسليم صورة"
+    },
+    {
+      "id": "reflection",
+      "response_model": "long_text",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "results": [
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Reflection",
+      "label_ar": "تأمل"
+    },
+    {
+      "id": "self_assessment",
+      "response_model": "long_text",
+      "aggregation": "answer_wall",
+      "scoring": "participation",
+      "results": [
+        "cards"
+      ],
+      "participant_input": true,
+      "label": "Self Assessment",
+      "label_ar": "تقييم ذاتي"
+    },
+    {
+      "id": "participant_choice",
+      "response_model": "none",
+      "aggregation": "none",
+      "scoring": "none",
+      "results": [],
+      "participant_input": false,
+      "label": "Participant Choice",
+      "label_ar": "اختيار المشارك"
+    },
+    {
+      "id": "practice_gate",
+      "response_model": "none",
+      "aggregation": "none",
+      "scoring": "none",
+      "results": [],
+      "participant_input": false,
+      "label": "Practice Gate",
+      "label_ar": "بوابة الممارسة"
+    }
+  ],
+  "components": [
+    {
+      "id": "mission",
+      "kind": "guided_submission",
+      "runtime_model": "module.missions",
+      "ordinary_activity": false
+    },
+    {
+      "id": "participant_path",
+      "kind": "guided_path",
+      "runtime_model": "module.paths",
+      "ordinary_activity": false
+    }
+  ],
+  "content_blocks": [
+    "hero",
+    "text",
+    "image",
+    "image_text",
+    "cards",
+    "steps",
+    "comparison",
+    "table",
+    "timeline",
+    "callout",
+    "statistic",
+    "quote",
+    "checklist",
+    "asset",
+    "chart",
+    "video",
+    "audio",
+    "divider",
+    "spacer",
+    "gallery",
+    "prompt",
+    "editable_prompt",
+    "resource_list",
+    "leaderboard",
+    "document",
+    "slide_deck",
+    "formula",
+    "interactive_video"
+  ],
+  "results": [
+    "bar",
+    "horizontal_bar",
+    "stacked_bar",
+    "donut",
+    "pie",
+    "line",
+    "ranking",
+    "progress",
+    "leaderboard",
+    "cards",
+    "word_cloud",
+    "qa_board",
+    "ideas_board",
+    "prioritization",
+    "quick_interaction",
+    "assessment",
+    "image_heatmap",
+    "drawing_gallery",
+    "collaborative_board",
+    "video_checkpoints"
+  ],
+  "charts": [
+    "bar",
+    "horizontal_bar",
+    "stacked_bar",
+    "donut",
+    "pie",
+    "line",
+    "ranking",
+    "progress"
+  ],
+  "workflow_nodes": [
+    "trainer_scene",
+    "class_interaction",
+    "trainer_walkthrough",
+    "practice_start",
+    "participant_choice",
+    "participant_path",
+    "convergence",
+    "closing",
+    "activity",
+    "mission"
+  ],
+  "submissions": [
+    "text",
+    "url",
+    "file",
+    "image",
+    "none"
+  ],
+  "completion_types": [
+    "acknowledge",
+    "text",
+    "url",
+    "file",
+    "image",
+    "checklist",
+    "external",
+    "none"
+  ],
+  "attendance_states": [
+    "present",
+    "late",
+    "absent",
+    "excused",
+    "left_early"
+  ],
+  "surfaces": [
+    "super_admin",
+    "trainer_management",
+    "trainer_live",
+    "participant",
+    "projector",
+    "course_builder"
+  ],
+  "delivery": {
+    "modes": [
+      "trainer_paced",
+      "participant_paced",
+      "front_of_room"
+    ],
+    "offline_response_queue": true,
+    "session_replay": true,
+    "guest_participation": false,
+    "registered_account_admission": "assigned_manager_approval",
+    "historical_guest_sessions": "preserved"
+  },
+  "facilitation": {
+    "challenge_mode": true,
+    "co_trainer_moderator": true,
+    "result_views": true,
+    "hide_reveal_explain": true,
+    "projector_pointer": true,
+    "projector_annotation": true
+  },
+  "presentation": {
+    "pdf_import": true,
+    "pptx_import": "local_text_extraction_with_original_asset",
+    "interactive_video": true,
+    "local_formula": true,
+    "projector_pointer": true,
+    "projector_annotation": true
+  },
+  "analytics_expansion": [
+    "item_difficulty",
+    "item_discrimination",
+    "distractors",
+    "confidence",
+    "timing",
+    "skips",
+    "cohort_comparison",
+    "course_improvement_findings"
+  ],
+  "interaction_policy": {
+    "moderation_modes": [
+      "off",
+      "pre"
+    ],
+    "identity_visibility": [
+      "public",
+      "trainer_only",
+      "anonymous"
+    ],
+    "audience_results_lifecycle": [
+      "hidden_until_reveal",
+      "results",
+      "explain"
+    ],
+    "anonymous_report_redaction": true,
+    "moderation_server_authoritative": true,
+    "idempotent_retry_required": true
+  },
+  "authoring_policy": {
+    "private_trainer_fields": [
+      "cue",
+      "explanation",
+      "talking_points",
+      "expected_answer",
+      "common_mistakes",
+      "transition"
+    ],
+    "public_explanation_field": "explanation",
+    "audience_solutions": "hidden_until_reveal",
+    "response_acknowledgement": "submitted_without_score"
+  },
+  "workspace": {
+    "organization_mode": "single_local_organization",
+    "staff_profiles": [
+      "super_admin",
+      "administrator",
+      "trainer",
+      "assistant",
+      "course_editor"
+    ],
+    "course_editor": "own_or_assigned_drafts_and_per_course_publish",
+    "groups": {
+      "types": [
+        "participants",
+        "staff"
+      ],
+      "multi_membership": true,
+      "class_application": "reviewed_snapshot_without_permission_inheritance"
+    },
+    "admission": {
+      "accounts": "registered_only",
+      "decision": "assigned_manager_or_admin",
+      "pending_content_access": false,
+      "re_enrollment": "resume_preserved_progress"
+    },
+    "reports": {
+      "templates": [
+        "class",
+        "learner",
+        "course",
+        "attendance",
+        "assessment",
+        "group",
+        "trainer"
+      ],
+      "formats": [
+        "pdf"
+      ],
+      "languages": [
+        "en",
+        "ar"
+      ],
+      "preview": "immutable_snapshot",
+      "branding": "centrally_managed",
+      "row_limit": 10000
+    },
+    "typography": {
+      "source": "bundled_local_licensed_catalog",
+      "english_families": 20,
+      "arabic_families": 20,
+      "administrator_selected": true
+    },
+    "profiles": "own_and_authorized_scope",
+    "bulk_changes": "actor_bound_preview_with_stale_detection",
+    "archive": "preserved_history_with_restore"
+  }
+}

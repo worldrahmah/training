@@ -1,0 +1,14 @@
+{
+  "name": "training-engine-one-course-creator",
+  "version": "3.5.0-rc.1.9",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.5"
+  },
+  "scripts": {
+    "validate": "node tools/validate-course.mjs",
+    "package": "node tools/package-course.mjs",
+    "intake": "node tools/intake-wizard.mjs"
+  }
+}

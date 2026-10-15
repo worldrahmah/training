@@ -1,0 +1,41 @@
+{
+  "id": "a_ideas_board",
+  "type": "ideas_board",
+  "title": "Ideas Board",
+  "trainer": {
+    "cue": "Facilitate this activity; this cue is private.",
+    "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+    "talking_points": [
+      "Connect the evidence to the objective."
+    ],
+    "expected_answer": "Discuss only after the applicable reveal.",
+    "common_mistakes": [
+      "Do not read private cues aloud."
+    ],
+    "transition": "Close, reveal when appropriate, then move to the next node."
+  },
+  "content": {
+    "question": "Ideas Board",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Ideas Board",
+        "body_md": "Certification content for ideas_board"
+      }
+    ]
+  },
+  "results_display": "ideas_board",
+  "ideas_board": {
+    "max_ideas": 4,
+    "max_characters": 180,
+    "moderation": "off",
+    "identity_visibility": "public",
+    "upvoting": true,
+    "allow_self_upvote": false,
+    "sort": "votes",
+    "categories": [
+      "Ideas",
+      "Risks"
+    ]
+  }
+}

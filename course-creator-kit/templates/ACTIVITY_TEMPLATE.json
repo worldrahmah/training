@@ -1,0 +1,26 @@
+{
+  "id": "activity-id",
+  "type": "single_choice",
+  "title": "Human-facing activity title",
+  "objective_ids": ["objective-1"],
+  "response_scope": "individual",
+  "content": {
+    "hero_word": "Explore",
+    "question": "Human-facing question",
+    "options": ["Option A", "Option B", "Option C"],
+    "blocks": [
+      {
+        "type": "image_text",
+        "asset": "asset://assets/example.webp",
+        "alt": "Meaningful description of the image",
+        "heading": "Optional presentation heading",
+        "body_md": "Safe **Markdown** content."
+      }
+    ]
+  },
+  "results_display": "horizontal_bar",
+  "completion_gate": {"minimum_response_rate": 0.75},
+  "trainer": {"cue": "Private note visible only to the trainer."},
+  "score": {"participation": 1, "correct": 5},
+  "flow": {"next_activity_id": "next-activity-id"}
+}

@@ -25,6 +25,7 @@ const ctx={
   api:async()=>({}),t:(x)=>String(x),esc:(x)=>String(x??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'),renderContent:()=>'',projectorContrastCheck:()=>({}),projectorPhaseForItem:()=>'',renderProjectorFrame:()=>'',
   activityTypes:ACTIVITY_TYPES,blockTypes:CONTENT_BLOCK_TYPES,resultTypes:RESULT_TYPES,workflowTypes:WORKFLOW_NODE_TYPES,PROJECTOR_THEMES,activitySpec
 };
+ctx.activityLabel=id=>activitySpec(id)?.label||'Activity';ctx.systemLogo=()=>'<img class="system-logo">';
 vm.createContext(ctx);vm.runInContext(source,ctx,{filename:'builder.js'});
 
 const advanced=new Set(['prioritization_100','quick_interaction','matching','fill_blanks','sorting','image_interaction','draw_annotate','collaborative_board','interactive_video']);

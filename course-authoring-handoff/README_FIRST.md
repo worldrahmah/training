@@ -1,3 +1,5 @@
+> RC1R9 current authoring entry point: [generated Course Creator kit](../course-creator-kit/README.md). The external v1.3 archives are historical evidence only. This retained synchronized handoff is compatibility material; use the current kit for new milestone authoring.
+
 # Training Engine ONE RC1R8 — current AI Course Creator contract
 
 This in-tree kit is synchronized to the RC1R8 canonical registry, runtime capabilities and course schemas. Read CORE_CAPABILITIES.json completely before authoring. The kit is current for this owner-acceptance candidate; FINAL requires owner acceptance. The separate v1.3 package is historical RC4 evidence. Course schema remains 2.0; core/data schema is 3.2 with journaled workspace extensions.

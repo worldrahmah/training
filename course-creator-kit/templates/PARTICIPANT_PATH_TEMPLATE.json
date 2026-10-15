@@ -1,0 +1,19 @@
+{
+  "id": "path_example",
+  "title": "Participant path",
+  "goal": "What the participant will accomplish",
+  "objective_ids": [],
+  "internet_required": false,
+  "offline_fallback": {},
+  "steps": [
+    {
+      "id": "step_1",
+      "title": "First step",
+      "body_md": "Instructions for the participant.",
+      "content": {"blocks": []},
+      "completion": {"type": "acknowledge"}
+    }
+  ],
+  "score": {},
+  "achievement": null
+}

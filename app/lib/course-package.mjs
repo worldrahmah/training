@@ -1,3 +1,4 @@
+export const SAFE_COURSE_ASSET_EXTENSIONS=Object.freeze(['.png','.jpg','.jpeg','.webp','.svg','.pdf','.txt','.csv','.docx','.xlsx','.pptx','.mp4','.webm','.mp3','.wav','.m4a','.ogg']);
 import {readZipEntries} from './zip.mjs';
 import path from 'node:path';
 import { sha256, safeRelativePath, safeJsonParse, mimeFromName } from './utils.mjs';
@@ -261,9 +262,19 @@ function objectiveIdSet(course){
   for(const o of Array.isArray(course.objectives)?course.objectives:[]){ const id=typeof o==='string'?o:o?.id; if(id)set.add(String(id)); }
   return set;
 }
+// Course data is declarative. Text examples remain inert; executable fields are invalid.
+function validateDeclarative(value,errors,depth=0){
+ if(depth>64){errors.push('Course nesting exceeds the supported depth.');return;}
+ if(!value||typeof value!=='object')return;
+ for(const [key,child] of Object.entries(value)){
+  if(/^(script|javascript|html|css|sql|server_code|credentials|api_key|password|access_token|private_key|onclick|onload|onerror)$/i.test(key)){errors.push('Executable code and credential fields are not permitted in courses.');continue;}
+  validateDeclarative(child,errors,depth+1);
+ }
+}
 export function validateCourseObject(input){
   const errors=[],warnings=[],seenIds=new Set();
   if(!input || typeof input!=='object') return {ok:false,errors:['Course file is not valid JSON object.'],warnings,course:null,summary:null};
+  validateDeclarative(input,errors);
   if(input.format!=='training-engine-course') errors.push("format must be 'training-engine-course'.");
   if(!['1.0','1.1','2.0'].includes(String(input.schema_version||''))) errors.push("schema_version must be '1.0', '1.1' or '2.0'.");
   const c=input.course;
@@ -372,7 +383,7 @@ export function parseCoursePackage(buffer, filename='course.json'){
   }
   const assets=[];
   if(entries.size){
-    const safeAssetExt=new Set(['.png','.jpg','.jpeg','.webp','.svg','.pdf','.txt','.csv','.docx','.xlsx','.pptx','.mp4','.webm','.mp3','.wav','.m4a','.ogg']);
+    const safeAssetExt=new Set(SAFE_COURSE_ASSET_EXTENSIONS);
     for(const [p,b] of entries){
       if(p==='manifest.json'||p===manifest.course_file||p.endsWith('.json')||p.endsWith('.md')) continue;
       const ext=path.extname(p).toLowerCase();

@@ -1,0 +1,26 @@
+{
+  "id": "a_participant_choice",
+  "type": "participant_choice",
+  "title": "Participant Choice",
+  "trainer": {
+    "cue": "Facilitate this activity; this cue is private.",
+    "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+    "talking_points": [
+      "Connect the evidence to the objective."
+    ],
+    "expected_answer": "Discuss only after the applicable reveal.",
+    "common_mistakes": [
+      "Do not read private cues aloud."
+    ],
+    "transition": "Close, reveal when appropriate, then move to the next node."
+  },
+  "content": {
+    "blocks": [
+      {
+        "type": "callout",
+        "title": "Choose",
+        "body_md": "Choose your path."
+      }
+    ]
+  }
+}

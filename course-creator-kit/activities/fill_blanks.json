@@ -1,0 +1,48 @@
+{
+  "id": "a_fill_blanks",
+  "type": "fill_blanks",
+  "title": "Fill in the Blanks",
+  "trainer": {
+    "cue": "Facilitate this activity; this cue is private.",
+    "explanation": "Private debrief planning; public feedback belongs in activity.explanation.",
+    "talking_points": [
+      "Connect the evidence to the objective."
+    ],
+    "expected_answer": "Discuss only after the applicable reveal.",
+    "common_mistakes": [
+      "Do not read private cues aloud."
+    ],
+    "transition": "Close, reveal when appropriate, then move to the next node."
+  },
+  "content": {
+    "question": "Fill blanks",
+    "blocks": [
+      {
+        "type": "text",
+        "title": "Fill blanks",
+        "body_md": "Certification content for fill_blanks"
+      }
+    ]
+  },
+  "results_display": "assessment",
+  "fill_blanks": {
+    "blanks": [
+      {
+        "id": "b1",
+        "label": "AI means",
+        "answers": [
+          "Artificial Intelligence"
+        ]
+      },
+      {
+        "id": "b2",
+        "label": "ML means",
+        "answers": [
+          "Machine Learning"
+        ]
+      }
+    ],
+    "case_sensitive": false
+  },
+  "explanation": "AI and ML expansions."
+}
