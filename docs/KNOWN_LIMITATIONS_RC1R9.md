@@ -14,3 +14,5 @@ Owner-acceptance candidate based on accepted RC1R8. Read RC1R9_SECURITY_REVIEW.m
 10. Security review is targeted and evidence-based, not formal third-party penetration certification, a full vendor supply-chain audit, a tamper-proof external audit service or distributed abuse/DDoS protection. See the detailed review for session, lockout, public metadata and backup caveats.
 
 تظل اختبارات الأجهزة والشبكة والبيانات الفعلية والقبول البصري من صاحب النظام معلقة. التشغيل يفترض شبكة موثوقة أو TLS يديره المالك. لا ضمان لأمان كل ملف أو صحة كل دورة مولدة، ولا دعم لبرمجيات تنفيذية داخل الدورات. الأدلة الحالية وحزمة التأليف الحالية هي مرجع الاستخدام الجديد، وتبقى المواد القديمة تاريخية. التراجع يتطلب نسخة سابقة متحققة مع قرار واضح بشأن التغييرات اللاحقة.
+
+Portable encrypted backup limits: 200 MiB upload and 512 MiB expanded JSON. Larger installations use the existing verified filesystem database+storage backup/restore workflow. Oversized portable export/import is rejected explicitly, without replacing live state.

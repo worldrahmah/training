@@ -1,0 +1,15 @@
+
+> training-engine-one@3.5.0-rc.1.9 test:browser
+> node tools/run-checks.mjs browser
+
+BROWSER_REPAIR_PASS 12 role/locale visits; desktop/tablet/mobile, offline fonts, keyboard, export, matching, charts, Projector themes
+BROWSER_WORKSPACE_PASS 107 recorded screen/view checks; contrast, menus, actual writes, onboarding, RTL punctuation, calendar, role boundaries
+BROWSER_WORKSPACE_UPGRADE_PASS 12 gates; EN/AR mobile/desktop, offline fonts and actual state transitions
+FONT_MATRIX_BROWSER_PASS 640 actual global-font layout cases across 8 surfaces, EN/AR and mobile/desktop or 16:9
+RC1R9_BROWSER_PASS 52 visits; all entry screens EN/AR themes widths, 36 bilingual labels/stable IDs/authored text, owner logo on role surfaces
+CHECKS_PASS browser: 5 commands
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

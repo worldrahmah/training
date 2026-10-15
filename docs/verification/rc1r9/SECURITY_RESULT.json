@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "checks": 78,
+  "production_bootstrap": "random private file + mandatory password change",
+  "legacy": "users and hashes preserved; known defaults local-only and sessions revoked",
+  "boundaries": [
+    "authorization",
+    "resource cookies",
+    "session rotation",
+    "cross-origin writes",
+    "login lockout",
+    "bounded JSON",
+    "declarative course data",
+    "inert attachment downloads",
+    "CSV formula escaping",
+    "validated shared logo"
+  ]
+}

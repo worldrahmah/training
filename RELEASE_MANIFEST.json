@@ -7,12 +7,12 @@
   "course_authoring_schema_version": "2.0",
   "baseline_core_v2_1_1_sha256": "82a8f0dd04f658429eec7d153319da5953e2bf0f308a43c2293f5947b7c755f5",
   "codex_master_handoff_sha256": "c0221a2b842215e06bd0c864a912a71922d833880a103c015913c723e2be4c52",
-  "external_course_authoring_handoff": "packaged-handoffs/TRAINING_ENGINE_ONE_COURSE_AUTHORING_HANDOFF_v1.3.zip",
-  "manual_gate": "docs/ONE_VISUAL_ACCEPTANCE.md",
-  "test_output": "docs/ONE_COMPLETE_AUTOMATED_TEST_OUTPUT.txt",
+  "external_course_authoring_handoff": "course-creator-kit",
+  "manual_gate": "docs/RC1R9_ACCEPTANCE.md",
+  "test_output": "docs/verification/rc1r9/WORKING_TREE_NODE_OUTPUT.txt",
   "deep_ui_design": "docs/ONE_DEEP_EXPERIENCE_DESIGN.md",
   "canonical_registry": "registry/activity-component-registry.json",
-  "development_authoring_contract": "course-authoring-handoff",
+  "development_authoring_contract": "course-creator-kit",
   "published_rc4_authoring_handoff": "packaged-handoffs/TRAINING_ENGINE_ONE_COURSE_AUTHORING_HANDOFF_v1.3.zip",
   "stage0_engineering_checkpoint": "docs/STAGE0_ENGINEERING_CHECKPOINT.md",
   "source_coverage_record": "docs/HANDOFF_COVERAGE_RECORD.md",
@@ -93,5 +93,23 @@
   "workspace_product_guide": "docs/RC1R8_PRODUCT_GUIDE.md",
   "workspace_verification": "docs/verification/rc1r8/WORKING_TREE_RESULT.json",
   "workspace_source_coverage": "docs/RC1R8_SOURCE_COVERAGE.md",
-  "workspace_owner_acceptance": "docs/RC1R8_OWNER_ACCEPTANCE_CHECKLIST.md"
+  "workspace_owner_acceptance": "docs/RC1R8_OWNER_ACCEPTANCE_CHECKLIST.md",
+  "historical_external_authoring_handoff": "packaged-handoffs/TRAINING_ENGINE_ONE_COURSE_AUTHORING_HANDOFF_v1.3.zip",
+  "current_user_guides": "docs/guides/README.md",
+  "security_review": "docs/RC1R9_SECURITY_REVIEW.md",
+  "known_limitations": "docs/KNOWN_LIMITATIONS_RC1R9.md",
+  "accepted_engineering_baseline": {
+    "branch": "release/rc1r8-test",
+    "commit": "db640e1047f210856a7b23d6ff5e469ffd10b89e"
+  },
+  "rc1r9_scope": [
+    "shared owner logo",
+    "36 bilingual activity names and authoring labels",
+    "six role/language guides",
+    "generated current Course Creator kit",
+    "default-account/session/resource/import/backup security",
+    "Draft asset preservation"
+  ],
+  "rc1r9_automated_status": "PASS_WORKING_TREE_PENDING_EXACT_ZIP_RETEST",
+  "rc1r9_manual_status": "PENDING_OWNER_WINDOWS_LAN_CLASSROOM_VISUAL_ACCEPTANCE"
 }

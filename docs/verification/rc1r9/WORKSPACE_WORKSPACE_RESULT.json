@@ -1,0 +1,2121 @@
+{
+  "status": "PASS",
+  "visits": [
+    {
+      "view": "entry-admin-en-light-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-trainer-en-light-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-student-en-light-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-builder-en-light-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-admin-en-dark-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-trainer-en-dark-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-student-en-dark-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-builder-en-dark-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-admin-en-system-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-trainer-en-system-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-student-en-system-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-builder-en-system-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-admin-en-system-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-trainer-en-system-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-student-en-system-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-builder-en-system-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-admin-ar-light-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-trainer-ar-light-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-student-ar-light-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-builder-ar-light-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-admin-ar-dark-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-trainer-ar-dark-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-student-ar-dark-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-builder-ar-dark-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-admin-ar-system-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-trainer-ar-system-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-student-ar-system-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-builder-ar-system-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-admin-ar-system-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-trainer-ar-system-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-student-ar-system-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "entry-builder-ar-system-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-overview-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-live-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-courses-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-classes-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-staff-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-people-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-reports-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-messages-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-settings-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-home-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-courses-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-classes-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-students-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-reports-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-settings-en-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-overview-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-live-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-courses-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-classes-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-staff-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-people-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-reports-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-messages-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-settings-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-home-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-courses-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-classes-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-students-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-reports-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-settings-en-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-overview-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-live-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-courses-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-classes-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-staff-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-people-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-reports-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-messages-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-settings-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-home-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-courses-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-classes-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-students-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-reports-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-settings-ar-light",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-overview-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-live-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-courses-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-classes-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-staff-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-people-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-reports-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-messages-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-settings-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-home-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-courses-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-classes-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-students-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-reports-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "trainer-settings-ar-dark",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "admin-created-staff",
+      "widths": [
+        1440
+      ]
+    },
+    {
+      "view": "password-onboarding-complete",
+      "widths": [
+        1440
+      ]
+    },
+    {
+      "view": "builder-flow-en-light",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "view": "builder-flow-en-dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "view": "builder-flow-ar-light",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "view": "builder-flow-ar-dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "view": "response-recovery",
+      "widths": [
+        1440,
+        390
+      ]
+    },
+    {
+      "view": "student-waiting-en-light",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "view": "student-waiting-en-dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "view": "student-waiting-ar-light",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "view": "student-waiting-ar-dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "view": "live-console-en-light",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "view": "live-console-en-dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "view": "live-console-ar-light",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "view": "live-console-ar-dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    }
+  ],
+  "contrast": [
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 6,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 6,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 6,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 6,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 6,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 6,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 6,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 6,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 9,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 5,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 11,
+      "failures": []
+    },
+    {
+      "checked": 7,
+      "skipped": 11,
+      "failures": []
+    },
+    {
+      "checked": 10,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 6,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 92,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 88,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 37,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 33,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 39,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 35,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 76,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 72,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 424,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 420,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 7,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 32,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 28,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 20,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 16,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 12,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 14,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 10,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 22,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 18,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 78,
+      "skipped": 3,
+      "failures": []
+    },
+    {
+      "checked": 74,
+      "skipped": 3,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 17,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 11,
+      "failures": []
+    },
+    {
+      "checked": 7,
+      "skipped": 11,
+      "failures": []
+    },
+    {
+      "checked": 10,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 6,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 92,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 88,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 37,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 33,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 39,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 35,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 76,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 72,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 424,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 420,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 7,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 32,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 28,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 20,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 16,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 12,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 14,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 10,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 22,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 18,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 78,
+      "skipped": 3,
+      "failures": []
+    },
+    {
+      "checked": 74,
+      "skipped": 3,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 17,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 11,
+      "failures": []
+    },
+    {
+      "checked": 7,
+      "skipped": 11,
+      "failures": []
+    },
+    {
+      "checked": 10,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 6,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 92,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 88,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 37,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 33,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 39,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 35,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 76,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 72,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 424,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 420,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 7,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 32,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 28,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 20,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 16,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 12,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 14,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 10,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 22,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 18,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 78,
+      "skipped": 3,
+      "failures": []
+    },
+    {
+      "checked": 74,
+      "skipped": 3,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 17,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 11,
+      "failures": []
+    },
+    {
+      "checked": 7,
+      "skipped": 11,
+      "failures": []
+    },
+    {
+      "checked": 10,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 6,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 92,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 88,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 37,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 33,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 39,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 35,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 76,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 72,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 424,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 420,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 7,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 32,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 28,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 20,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 16,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 12,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 8,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 14,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 10,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 22,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 18,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 78,
+      "skipped": 3,
+      "failures": []
+    },
+    {
+      "checked": 74,
+      "skipped": 3,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 17,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 44,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 20,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 15,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 15,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 14,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 19,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 15,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 15,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 14,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 19,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 15,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 15,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 14,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 19,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 15,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 15,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 14,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 19,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 19,
+      "skipped": 18,
+      "failures": []
+    },
+    {
+      "checked": 19,
+      "skipped": 18,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 11,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 17,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 33,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 33,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 33,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 21,
+      "skipped": 0,
+      "failures": []
+    },
+    {
+      "checked": 33,
+      "skipped": 0,
+      "failures": []
+    }
+  ],
+  "checks": [
+    "32 entry/theme/locale variants",
+    "all Admin/Trainer navigation views EN/AR light/dark",
+    "actual Admin staff creation",
+    "mandatory password onboarding",
+    "ordinary-trainer boundaries",
+    "Builder menu actions and persisted content",
+    "Arabic final-dot glyph order in LTR course",
+    "authenticated calendar download",
+    "computed Cairo after locale switch",
+    "Live disclosure tools",
+    "authorized course preview",
+    "input preservation and offline replay/ownership/rejection retention"
+  ],
+  "page_errors": []
+}

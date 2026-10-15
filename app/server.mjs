@@ -1,3 +1,4 @@
+import {decryptBackupBundle,MAX_BACKUP_EXPANDED_BYTES} from './lib/backup-bundle.mjs';
 import {SAFE_COURSE_ASSET_EXTENSIONS} from './lib/course-package.mjs';
 import {isKnownDefault,testAccountsEnabled,localPasswordSetup} from './lib/account-safety.mjs';
 import {handleWorkspaceApi,editorRouteAllowed} from './lib/workspace-api.mjs';
@@ -573,12 +574,12 @@ function encryptedBackupBundle(name,passphrase){
   const verified=verifyBackup(name);if(!verified.ok)throw Object.assign(new Error('Backup verification failed.'),{status:422});
   const dir=path.join(BACKUP_DIR,verified.name),files=recursiveFiles(dir).map(rel=>({path:rel,data:fs.readFileSync(path.join(dir,rel)).toString('base64')}));
   const payload=Buffer.from(JSON.stringify({format:'training-engine-encrypted-backup',version:1,backup_name:verified.name,created_at:nowIso(),files}));
+  if(payload.length>MAX_BACKUP_EXPANDED_BYTES)throw Object.assign(new Error('Portable backup exceeds the 512 MiB expanded limit. Use a verified filesystem backup.'),{status:413});
   const compressed=zlib.gzipSync(payload,{level:9}),salt=crypto.randomBytes(16),iv=crypto.randomBytes(12),key=crypto.scryptSync(String(passphrase),salt,32),cipher=crypto.createCipheriv('aes-256-gcm',key,iv),ciphertext=Buffer.concat([cipher.update(compressed),cipher.final()]),tag=cipher.getAuthTag();
   const header=Buffer.from(JSON.stringify({format:'TEBACKUP1',kdf:'scrypt',cipher:'aes-256-gcm',salt:salt.toString('base64'),iv:iv.toString('base64'),tag:tag.toString('base64'),backup_name:verified.name})+'\n');
-  return Buffer.concat([header,ciphertext]);
+  const bundle=Buffer.concat([header,ciphertext]);if(bundle.length>200*1024*1024)throw Object.assign(new Error('Portable backup exceeds the 200 MiB upload limit. Use a verified filesystem backup.'),{status:413});return bundle;
 }
-function decryptBackupBundle(buf,passphrase){
-  const split=buf.indexOf(10);if(split<0)throw Object.assign(new Error('Invalid encrypted backup format.'),{status:400});let head;try{head=JSON.parse(buf.subarray(0,split).toString('utf8'))}catch{throw Object.assign(new Error('Invalid encrypted backup header.'),{status:400})}if(head.format!=='TEBACKUP1')throw Object.assign(new Error('Unsupported encrypted backup format.'),{status:400});try{const salt=Buffer.from(head.salt,'base64'),iv=Buffer.from(head.iv,'base64'),tag=Buffer.from(head.tag,'base64'),key=crypto.scryptSync(String(passphrase),salt,32),dec=crypto.createDecipheriv('aes-256-gcm',key,iv);dec.setAuthTag(tag);const plain=zlib.gunzipSync(Buffer.concat([dec.update(buf.subarray(split+1)),dec.final()])),payload=JSON.parse(plain.toString('utf8'));if(payload.format!=='training-engine-encrypted-backup'||!Array.isArray(payload.files))throw new Error('payload');for(const f of payload.files){const safe=safeRelativePath(String(f.path||''));if(!safe||safe!==f.path)throw new Error('unsafe path')}return payload}catch(e){throw Object.assign(new Error('Encrypted backup could not be decrypted or is corrupt.'),{status:422})}}
+
 function transcriptFor(studentId){
   const rows=db().prepare(`SELECT e.class_id,e.status enrollment_status,cl.title class_title,cl.status class_status,cl.course_version_id,cv.course_id,cv.version,c.title course_title,
     COALESCE((SELECT COUNT(*) FROM class_workflow_progress wp WHERE wp.class_id=cl.id AND wp.status='completed'),0) completed_nodes,

@@ -1,6 +1,7 @@
 {
   "node": [
     "node tests/workspace-authoring-fonts.mjs",
+    "node tests/backup-bundle-security.mjs",
     "node tests/workspace-migrations.mjs",
     "node tests/workspace-operations.mjs",
     "node tests/professional-pdf-reports.mjs",

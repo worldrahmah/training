@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "gates": [
+    "Visible class code",
+    "Managing an Editor preserves its authoring-only role",
+    "Registered pending request \u2192 scoped trainer approval \u2192 enrollment",
+    "Remove/re-add from current roster without stale picker; nested dialog restores workspace",
+    "Summary card \u2192 searchable records \u2192 authorized detail",
+    "Named group, description and member selection",
+    "New milestone reviewed deletion and actionable blockers",
+    "Seven-template report workspace with preview and actual PDF download",
+    "20 English + 20 Arabic offline global selectors",
+    "Stationary sidebar with independent content scrolling",
+    "Course Editor redirected to authoring-only workspace",
+    "40 families load with network blocked; EN/AR responsive profiles/editor/settings"
+  ],
+  "page_errors": []
+}

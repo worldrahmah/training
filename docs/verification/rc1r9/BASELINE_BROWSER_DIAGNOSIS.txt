@@ -1,0 +1,15 @@
+
+> training-engine-one@3.5.0-rc.1.8 test:browser
+> python tests/browser-repair.py && python tests/browser-workspace.py && python tests/browser-workspace-upgrade.py && python tests/browser-font-matrix.py
+
+BROWSER_REPAIR_PASS 12 role/locale visits; desktop/tablet/mobile, offline fonts, keyboard, export, matching, charts, Projector themes
+Traceback (most recent call last):
+  File "/workspace/training/tests/browser-workspace.py", line 63, in <module>
+    menu=page.locator('.login-card-head .one-menu-trigger');menu.click();panel=page.locator('.one-menu-panel:popover-open');panel.wait_for();assert menu.get_attribute('aria-expanded')=='true';assert panel.locator('#loginLang').is_visible();assert panel.locator('#loginTheme').is_visible();bounds(panel);contrast(page);page.screenshot(path=str(OUT/f'entry-menu-{surface}-{locale}-{theme}-{system}.png'));page.keyboard.press('Escape');assert menu.get_attribute('aria-expanded')=='false';assert menu.evaluate('(b)=>b===document.activeElement');menu.press('ArrowDown');assert page.locator('#loginLang').evaluate('(b)=>b===document.activeElement');page.keyboard.press('Escape');c.close()
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

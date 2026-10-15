@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';import crypto from 'node:crypto';import zlib from 'node:zlib';
+import {decryptBackupBundle} from '../app/lib/backup-bundle.mjs';
+const pass='Fixture-Backup-Passphrase!';
+function encrypted(payload){const salt=crypto.randomBytes(16),iv=crypto.randomBytes(12),cipher=crypto.createCipheriv('aes-256-gcm',crypto.scryptSync(pass,salt,32),iv),compressed=zlib.gzipSync(Buffer.from(JSON.stringify(payload))),data=Buffer.concat([cipher.update(compressed),cipher.final()]),header={format:'TEBACKUP1',salt:salt.toString('base64'),iv:iv.toString('base64'),tag:cipher.getAuthTag().toString('base64')};return Buffer.concat([Buffer.from(JSON.stringify(header)+'\n'),data]);}
+const valid={format:'training-engine-encrypted-backup',files:[{path:'training-engine.sqlite',data:Buffer.from('fixture only').toString('base64')},{path:'storage/retained.txt',data:Buffer.from('retained').toString('base64')}]};
+assert.deepEqual(decryptBackupBundle(encrypted(valid),pass),valid);
+const cases=[{...valid,files:[...valid.files,valid.files[0]]},{...valid,files:[...valid.files,{path:'STORAGE/retained.txt',data:''}]},{...valid,files:[{path:'../escape',data:''}]},{...valid,files:[{path:'storage',data:''},{path:'storage/x',data:''}]},{...valid,files:[{path:'storage/x',data:'not base64!!'}]},{...valid,files:[]},{...valid,files:[null]},{format:'other',files:valid.files}];
+for(const item of cases)assert.throws(()=>decryptBackupBundle(encrypted(item),pass),e=>e.status===422);
+assert.throws(()=>decryptBackupBundle(encrypted({...valid,extra:'x'.repeat(4096)}),pass,{maxExpandedBytes:1024}),e=>e.status===422,'bounded expansion');
+const good=encrypted(valid),tampered=Buffer.from(good);tampered[tampered.length-1]^=1;assert.throws(()=>decryptBackupBundle(tampered,pass),e=>e.status===422);assert.throws(()=>decryptBackupBundle(good,'WrongPassphrase'),e=>e.status===422);assert.throws(()=>decryptBackupBundle(Buffer.from('{}\ninvalid'),pass),e=>e.status===422);assert.throws(()=>decryptBackupBundle(Buffer.from('x'.repeat(4097)+'\n'),pass),e=>e.status===422);
+console.log('BACKUP_BUNDLE_SECURITY_PASS 14 scenarios; authenticated encryption, bounded expansion, metadata, path/case/duplicate/file-directory and base64 rejection');

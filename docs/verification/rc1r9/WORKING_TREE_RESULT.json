@@ -1,0 +1,32 @@
+{
+  "status": "PASS_WORKING_TREE",
+  "version": "3.5.0-rc.1.9",
+  "node_commands": 58,
+  "browser_suites": 5,
+  "browser_coverage": {
+    "repair_role_locale_visits": 12,
+    "workspace_view_checks": 107,
+    "workspace_upgrade_gates": 12,
+    "font_layout_cases": 640,
+    "rc1r9_visits": 52
+  },
+  "activity_types": 36,
+  "defined_result_view_cases": 68,
+  "security_assertions": 78,
+  "backup_bundle_scenarios": 14,
+  "kit_assertions": 326,
+  "kit_generated_files": 91,
+  "actual_sample_import_draft_validate_simulate_publish_launch_paths": 3,
+  "pdf_reader_reports": 34,
+  "syntax": {
+    "status": "PASS",
+    "syntax_files": 122,
+    "scope": "app excluding unchanged vendored bundle, tools and tests"
+  },
+  "required_failed": 0,
+  "required_skipped": 0,
+  "required_unrun": 0,
+  "manual_owner_windows_lan_physical_projector_visual_acceptance": "PENDING",
+  "exact_zip_retest": "PENDING_COMPANION_SEAL_REPORT",
+  "baseline": "Unchanged serial RC1R8 Node suite passed; initial concurrent timeout and browser focus race retained with diagnosis. All required current gates pass."
+}
