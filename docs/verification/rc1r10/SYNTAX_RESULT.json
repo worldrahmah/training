@@ -1,0 +1,5 @@
+{
+  "status": "PASS",
+  "syntax_files": 128,
+  "scope": "app excluding unchanged vendored bundle, tools and tests"
+}

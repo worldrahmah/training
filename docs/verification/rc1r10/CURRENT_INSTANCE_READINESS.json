@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "startup": "normal production mode without QA flag",
+  "checks": [
+    {
+      "path": "/api/health",
+      "status": 200,
+      "version": "3.5.0-rc.1.10"
+    },
+    {
+      "path": "/trainer",
+      "status": 200
+    },
+    {
+      "path": "/student",
+      "status": 200
+    },
+    {
+      "path": "/present",
+      "status": 200
+    }
+  ],
+  "snapshot_process_survival": "not assumed",
+  "fresh_task_restoration": "UNVERIFIED"
+}

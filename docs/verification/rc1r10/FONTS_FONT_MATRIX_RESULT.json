@@ -1,0 +1,5126 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "en",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1600,
+      "status": "PASS"
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1280,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "montserrat",
+      "arabic": "cairo",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "inter",
+      "arabic": "tajawal",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "roboto",
+      "arabic": "almarai",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "opensans",
+      "arabic": "notosansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "lato",
+      "arabic": "notonaskharabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "sourcesans3",
+      "arabic": "notokufiarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "nunito",
+      "arabic": "ibmplexsansarabic",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "nunitosans",
+      "arabic": "amiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "ptsans",
+      "arabic": "alexandria",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "rubik",
+      "arabic": "changa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "manrope",
+      "arabic": "elmessiri",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "worksans",
+      "arabic": "readexpro",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "dmsans",
+      "arabic": "harmattan",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "mulish",
+      "arabic": "markazitext",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "figtree",
+      "arabic": "lateef",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "karla",
+      "arabic": "reemkufi",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "barlow",
+      "arabic": "scheherazadenew",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "ubuntu",
+      "arabic": "arefruqaa",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "merriweather",
+      "arabic": "lemonada",
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "english": "notosans",
+      "arabic": "mirza",
+      "width": 390,
+      "status": "PASS"
+    }
+  ],
+  "page_errors": []
+}

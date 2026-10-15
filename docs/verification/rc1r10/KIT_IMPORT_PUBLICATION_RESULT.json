@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "assertions": 329,
+  "samples": [
+    {
+      "sample": "catalog-en",
+      "activities": 36,
+      "import": "PASS",
+      "draft_validation": "PASS",
+      "simulation": "PASS",
+      "publication": "PASS",
+      "class_launch": "PASS",
+      "paired_projector_privacy": "PASS"
+    },
+    {
+      "sample": "catalog-ar",
+      "activities": 36,
+      "import": "PASS",
+      "draft_validation": "PASS",
+      "simulation": "PASS",
+      "publication": "PASS",
+      "class_launch": "PASS",
+      "paired_projector_privacy": "PASS"
+    },
+    {
+      "sample": "workflow-paths",
+      "activities": 1,
+      "import": "PASS",
+      "draft_validation": "PASS",
+      "simulation": "PASS",
+      "publication": "PASS",
+      "class_launch": "PASS",
+      "paired_projector_privacy": "PASS"
+    }
+  ]
+}

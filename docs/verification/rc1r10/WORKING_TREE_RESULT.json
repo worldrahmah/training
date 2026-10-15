@@ -1,0 +1,29 @@
+{
+  "status": "PASS_WORKING_TREE",
+  "app_version": "3.5.0-rc.1.10",
+  "tested_application_commit": "686a07fd075ccab3ed31067482c8abff4aa4c2e3",
+  "node_commands": 59,
+  "rc1r10_api_assertions": 137,
+  "browser_suites": 6,
+  "browser_detail": {
+    "repair_role_locale_visits": 12,
+    "workspace_checks": 107,
+    "upgrade_gates": 12,
+    "font_layout_cases": 640,
+    "rc1r9_visits": 52,
+    "rc1r10_workflow_groups": 7
+  },
+  "lan_capability_recheck": "PASS with randomUUID unavailable",
+  "pdf_reports": 34,
+  "pdf_readers": [
+    "pdfinfo",
+    "MuPDF",
+    "PDFium"
+  ],
+  "syntax_files": 128,
+  "activities": 36,
+  "result_view_cases": 68,
+  "schema_change": false,
+  "manual_acceptance": "PENDING_OWNER_WINDOWS_CLASSROOM_VISUAL_TOUCH_AND_SCREEN_READER",
+  "sealed_bytes": "PENDING_FRESH_EXTRACTION_AND_FULL_RETEST"
+}
