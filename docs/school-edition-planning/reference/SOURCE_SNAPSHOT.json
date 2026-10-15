@@ -1,0 +1,68 @@
+{
+  "purpose": "Frozen current-engine references for a school-edition planning conversation; not school implementation schemas",
+  "snapshot_date": "2026-10-15",
+  "repository": "worldrahmah/training",
+  "branch": "release/rc1r10-test",
+  "inspected_commit": "0197a9144631e90e8972119be52a388482f1b591",
+  "sealed_source_commit": "bd1999eed31c0909b7cd21b4d7c4e8d28fa535bb",
+  "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
+  "new_school_features_implemented": false,
+  "release_test_results_are_historical": true,
+  "sources": [
+    {
+      "snapshot": "reference/activity-component-registry.json",
+      "repository_source": "registry/activity-component-registry.json",
+      "sha256": "88216db82f1ed40e4e65793acafd90a5ce14ef23ac885697c4b49d3a43c3ec04"
+    },
+    {
+      "snapshot": "reference/CURRENT_CAPABILITIES.json",
+      "repository_source": "course-creator-kit/CURRENT_CAPABILITIES.json",
+      "sha256": "e5fdd9fc83881601aa294e9d7f97eb07b7ba7c1dfe0390d1ee2d59867d4056a1"
+    },
+    {
+      "snapshot": "reference/RC1R10_SEAL_RESULT.json",
+      "repository_source": "releases/rc1r10/SEAL_RESULT.json",
+      "sha256": "44f207516ebff6f6954909623ef9c5c27d15d115313a8ce5541d18d500993e5c"
+    },
+    {
+      "snapshot": "reference/version.json",
+      "repository_source": "release/version.json",
+      "sha256": "11b350d4edabc60203286017386f8c96122de271d108d8a10c9267985999902f"
+    },
+    {
+      "snapshot": "reference/schemas/activity.schema.json",
+      "repository_source": "authoring-kit/schemas/activity.schema.json",
+      "sha256": "b43ce35e0cdb72758caf411a84d6313c42370ca2b1e9974113f40dc70b06f0c0"
+    },
+    {
+      "snapshot": "reference/schemas/class.schema.json",
+      "repository_source": "authoring-kit/schemas/class.schema.json",
+      "sha256": "9b5948057458c430314331acf42fe099b215f17978eb7bde5051a6244060e230"
+    },
+    {
+      "snapshot": "reference/schemas/course.schema.json",
+      "repository_source": "authoring-kit/schemas/course.schema.json",
+      "sha256": "8c5b639af64ece103436bf8ee7ac670b2fa1f70be37aa5a85c46ef243899dc7e"
+    },
+    {
+      "snapshot": "reference/schemas/mission.schema.json",
+      "repository_source": "authoring-kit/schemas/mission.schema.json",
+      "sha256": "b1edab995ab9b4eb97979ecc24c796c47f28a55122e042120edc31e20b3bd712"
+    },
+    {
+      "snapshot": "reference/schemas/module.schema.json",
+      "repository_source": "authoring-kit/schemas/module.schema.json",
+      "sha256": "baf473084b884667ad117a508c88b07a07a79502cff1239d5b21e9e33719ba59"
+    },
+    {
+      "snapshot": "reference/schemas/participant-path.schema.json",
+      "repository_source": "authoring-kit/schemas/participant-path.schema.json",
+      "sha256": "37f20228310f0c7f6bc99746aa5d613b6b254e0192cbb9a7507dfd402c6a8a83"
+    },
+    {
+      "snapshot": "reference/schemas/workflow.schema.json",
+      "repository_source": "authoring-kit/schemas/workflow.schema.json",
+      "sha256": "41758459a89be7a670e6ae52d748837cadd76ced1ac41bd3390da6243b4294a9"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS_PLANNING_HANDOFF_VERIFICATION",
+  "baseline_commit": "0197a9144631e90e8972119be52a388482f1b591",
+  "archive": "SCHOOL_EDITION_PLANNING_FROM_RC1R10.zip",
+  "sha256": "4478f8c503c96b639803debb158fd8abe6158dfcb5a214243d2d62496cf0533f",
+  "bytes": 41977,
+  "files": 17,
+  "source_snapshot_hashes": 11,
+  "activity_rows": 36,
+  "json_parsing": "PASS",
+  "source_snapshot_byte_comparison": "PASS",
+  "activity_catalog_table": "PASS",
+  "markdown_relative_links": "PASS",
+  "zip_crc_safe_unique_paths": "PASS",
+  "fresh_extracted_manifest_and_byte_comparison": "PASS",
+  "runtime_changed": false,
+  "school_features_implemented": false,
+  "release_regression_rerun": false,
+  "release_evidence": "Existing RC1R10 results are historical; this is a documentation-only planning handoff."
+}

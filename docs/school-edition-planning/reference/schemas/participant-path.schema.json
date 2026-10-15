@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://training-engine.local/schema/participant-path.schema.json",
+  "title": "Training Engine Participant Path v2.0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "title",
+    "steps"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "goal": {
+      "type": "string"
+    },
+    "objective_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "title"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "body_md": {
+            "type": "string"
+          },
+          "content": {
+            "type": "object"
+          },
+          "completion": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "acknowledge",
+                  "text",
+                  "url",
+                  "file",
+                  "image",
+                  "checklist",
+                  "external",
+                  "none"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "score": {
+      "type": "object"
+    },
+    "achievement": {
+      "type": "object"
+    },
+    "internet_required": {
+      "type": "boolean"
+    },
+    "offline_fallback": {
+      "type": "object"
+    }
+  }
+}

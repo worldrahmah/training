@@ -1,3 +1,13 @@
+# School edition discovery handoff — 2026-10-15
+
+Owner request: supply the current RC1R10 blueprint and a professional prompt for a separate planning chat, then bring its proposed school blueprint back here. This authorizes planning artifacts, not school runtime implementation. Inspected clean checkout release/rc1r10-test at 0197a9144631e90e8972119be52a388482f1b591, existing AGENTS/policies/plan, release identity, canonical registry/capabilities, schemas, persistence/runtime, role guides and seal evidence. Preserve all application code, historical data and sealed RC1R10 artifacts.
+
+Delivered planning documents under docs/school-edition-planning/: current-system blueprint with all 36 activity IDs/EN/AR labels; explicitly proposed school blueprint covering academic model, role journeys, gaps, safe migration, roadmap and acceptance; copy-ready discovery/design prompt and return-to-engineering contract; portable frozen registry/capability/schema/seal snapshots with source hashes. Important unresolved owner decision: school-age pupils before university versus university undergraduates. Single-school school-age model is a labeled provisional example, not approved architecture. Separate edition versus shared mode, jurisdiction/curriculum, guardians, deployment/scale and official grading remain discovery decisions.
+
+Validation for this documentation-only handoff: PASS for 11 snapshot hashes/bytes against canonical source, all 36 activity rows, JSON parsing, relative Markdown links, handoff checksum manifest, ZIP CRC/safe unique paths and fresh-extracted content hashes (17 files). Download and machine-readable verification are under releases/planning/. Existing 59-command/six-browser/34-PDF RC1R10 passes are historical cited evidence, not a new school verification run. No database/schema/application/version change, no worktree/reset, no new release acceptance claim. Next engineering action awaits owner-returned planning decisions; do not infer implementation authorization from the draft.
+
+---
+
 # ExecPlan — RC1R10 owner workflow repairs
 
 Baseline: accepted RC1R9 candidate 2d326266d589ede1ffe08aed7a9092a95b253657 on release/rc1r9-test. Existing work preserved; branch release/rc1r10-test created in the same checkout. Unchanged full npm test passed before edits (log /tmp/rc1r10-baseline.log). Read AGENTS.md, PROJECT_OPERATING_RULES.md and prior plans. Node 24.19.0 / Python 3.12.14. Preserve 36 activities, 68 result cases, all historical data and RC1R9 artifacts.
