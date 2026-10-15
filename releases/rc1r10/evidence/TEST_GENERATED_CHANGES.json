@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "only_expected_certification_reports_changed": true,
+  "changes": [
+    {
+      "path": "docs/ACTIVITY_CERTIFICATION_MATRIX.json",
+      "original_sha256": "a739e8d7cae33823e931b2a5a0ae2cb21c94710a5ca94746b067feac0260ed2c",
+      "test_generated_sha256": "19bb93127c1de0d43f55d49ba7600e2de3b7c630ba5bf90110e65ed4380f3a2f"
+    },
+    {
+      "path": "docs/ACTIVITY_CERTIFICATION_MATRIX.md",
+      "original_sha256": "bdcecd2bfe5620e6d99802ce02e7afa8eb966a218e452bdf5c4f4697fb5328aa",
+      "test_generated_sha256": "8fbc3adf3d5acf271e3d25d73ec448dfe8b36a70bc4e42200584ffb6078e8033"
+    },
+    {
+      "path": "docs/ACTIVITY_CERTIFICATION_RUNTIME_RESULT.json",
+      "original_sha256": "69147ba1b6295ab542cbc51d2e26eff0167b9c590c359af082a6e4bfae302a1c",
+      "test_generated_sha256": "8cdbe483f542dd58e2e9b16dfea123fec608522e7ad0628a2bb8a290b31acbe4"
+    },
+    {
+      "path": "docs/ACTIVITY_SURFACE_COVERAGE.json",
+      "original_sha256": "b2be534eb371c9f25be0023a152dce20d03108fc6ca4850cdcb574bdbb5fba0d",
+      "test_generated_sha256": "551d096e615613dfb74d5f2c52555797eefa34cefae932c733b9c711024a1768"
+    }
+  ],
+  "original_extracted_bytes_restored": true,
+  "post_restore_manifest_entries_checked": 1256,
+  "archive_modified": false
+}

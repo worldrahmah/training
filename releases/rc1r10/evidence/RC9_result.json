@@ -1,0 +1,580 @@
+{
+  "status": "PASS",
+  "visits": 52,
+  "checks": [
+    {
+      "surface": "admin sign-in",
+      "locale": "en",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "trainer sign-in",
+      "locale": "en",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "student sign-in",
+      "locale": "en",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "editor sign-in",
+      "locale": "en",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "profile sign-in",
+      "locale": "en",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "builder sign-in",
+      "locale": "en",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "preview sign-in",
+      "locale": "en",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "admin sign-in",
+      "locale": "en",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "trainer sign-in",
+      "locale": "en",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "student sign-in",
+      "locale": "en",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "editor sign-in",
+      "locale": "en",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "profile sign-in",
+      "locale": "en",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "builder sign-in",
+      "locale": "en",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "preview sign-in",
+      "locale": "en",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "admin sign-in",
+      "locale": "en",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "trainer sign-in",
+      "locale": "en",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "student sign-in",
+      "locale": "en",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "editor sign-in",
+      "locale": "en",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "profile sign-in",
+      "locale": "en",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "builder sign-in",
+      "locale": "en",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "preview sign-in",
+      "locale": "en",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "admin sign-in",
+      "locale": "ar",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "trainer sign-in",
+      "locale": "ar",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "student sign-in",
+      "locale": "ar",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "editor sign-in",
+      "locale": "ar",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "profile sign-in",
+      "locale": "ar",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "builder sign-in",
+      "locale": "ar",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "preview sign-in",
+      "locale": "ar",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "admin sign-in",
+      "locale": "ar",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "trainer sign-in",
+      "locale": "ar",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "student sign-in",
+      "locale": "ar",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "editor sign-in",
+      "locale": "ar",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "profile sign-in",
+      "locale": "ar",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "builder sign-in",
+      "locale": "ar",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "preview sign-in",
+      "locale": "ar",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "admin sign-in",
+      "locale": "ar",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "trainer sign-in",
+      "locale": "ar",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "student sign-in",
+      "locale": "ar",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "editor sign-in",
+      "locale": "ar",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "profile sign-in",
+      "locale": "ar",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "builder sign-in",
+      "locale": "ar",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "preview sign-in",
+      "locale": "ar",
+      "theme": "system",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "logo": "PASS",
+      "no_demo_credentials": "PASS"
+    },
+    {
+      "surface": "Builder",
+      "locale": "en",
+      "activity_labels": 36,
+      "stable_ids": "PASS",
+      "authored_text_preserved": "PASS"
+    },
+    {
+      "surface": "Builder",
+      "locale": "ar",
+      "activity_labels": 36,
+      "stable_ids": "PASS",
+      "authored_text_preserved": "PASS"
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "theme": "dark",
+      "owner_logo": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "theme": "dark",
+      "owner_logo": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "theme": "dark",
+      "owner_logo": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "editor",
+      "locale": "ar",
+      "theme": "dark",
+      "owner_logo": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "profile",
+      "locale": "ar",
+      "theme": "dark",
+      "owner_logo": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "preview",
+      "locale": "ar",
+      "theme": "dark",
+      "owner_logo": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "theme": "dark",
+      "owner_logo": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "theme": "dark",
+      "owner_logo": "PASS",
+      "page_errors": []
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "status": "PASS_EXACT_ZIP_VERIFICATION",
+  "release": "3.5.0-rc.1.10",
+  "source_commit": "bd1999eed31c0909b7cd21b4d7c4e8d28fa535bb",
+  "archive": "TRAINING_ENGINE_ONE_v3.5.0_RC1R10.zip",
+  "sha256": "503fd00ef6f89a6c7f6205b6cd1c4ec6754573db44147cbc2ab9a037ec61d105",
+  "bytes": 57331320,
+  "files": 1133,
+  "manifest_checks": 1256,
+  "working_tree_and_fresh_node_commands": 59,
+  "rc1r10_api_assertions": 157,
+  "working_tree_and_fresh_browser_suites": 6,
+  "font_layout_cases": 640,
+  "pdf_reports": 34,
+  "syntax_files": 128,
+  "canonical_activities": 36,
+  "result_view_cases": 68,
+  "kit_files": 91,
+  "archive_immutable": true,
+  "crc_safe_unique_paths_checksums": "PASS",
+  "remaining_manual_gates": [
+    "owner Windows/classroom LAN/physical touch/stylus/screens/visual/accessibility acceptance",
+    "independent cloud publication/fresh-task restoration"
+  ],
+  "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL"
+}

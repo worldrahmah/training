@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "archive": "TRAINING_ENGINE_ONE_AI_COURSE_CREATOR_RC1R10.zip",
+  "sha256": "0d0a5b680ee5d7514176623cca79f01bb84d7756ef890aef82156358bd5430d8",
+  "files": 91,
+  "crc_safe_unique_paths_manifest": "PASS",
+  "fresh_extract": "/tmp/rc10-standalone-kit"
+}

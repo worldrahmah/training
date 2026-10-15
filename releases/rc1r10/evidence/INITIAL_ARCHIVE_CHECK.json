@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "archive": "TRAINING_ENGINE_ONE_v3.5.0_RC1R10.zip",
+  "sha256": "503fd00ef6f89a6c7f6205b6cd1c4ec6754573db44147cbc2ab9a037ec61d105",
+  "files": 1133,
+  "checksum_entries": 1256,
+  "crc": "PASS",
+  "safe_paths": "PASS",
+  "unique_paths": "PASS",
+  "symlinks": "none",
+  "private_runtime_state": "none",
+  "extraction": "/tmp/rc10-v2-fresh"
+}

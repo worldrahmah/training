@@ -1,0 +1,8 @@
+{
+  "archive": "/tmp/rc10-seal-v2/TRAINING_ENGINE_ONE_v3.5.0_RC1R10.zip",
+  "stage": "/tmp/rc10-seal-v2/TRAINING_ENGINE_ONE_v3.5.0_RC1R10_source",
+  "files": 1133,
+  "sha256": "503fd00ef6f89a6c7f6205b6cd1c4ec6754573db44147cbc2ab9a037ec61d105",
+  "source_commit": "bd1999eed31c0909b7cd21b4d7c4e8d28fa535bb",
+  "status": "SEALED_PENDING_FRESH_EXTRACTION_TESTS"
+}

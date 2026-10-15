@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "assertions": 157,
+  "coverage": [
+    "atomic attendance",
+    "team ID/history/membership preservation",
+    "profile membership",
+    "scoped audiences/deduplication/idempotent retries",
+    "private read receipts",
+    "custom view/control/edit/delete permissions",
+    "bounded declarative ink",
+    "pointer coordinates",
+    "restart/persistent ink"
+  ]
+}

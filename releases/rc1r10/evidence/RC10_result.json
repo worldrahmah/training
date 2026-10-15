@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "workflow": "photo upload/menu sync/team profile/nonblocking return",
+      "locale": "en",
+      "theme": "light",
+      "return_seconds": 0.196
+    },
+    {
+      "workflow": "Trainer inbox/targeted audiences/team edit/session attendance",
+      "locale": "en",
+      "theme": "light"
+    },
+    {
+      "workflow": "default analytics/order/CSV content/PDF choice/responsive",
+      "locale": "en",
+      "theme": "light",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "workflow": "photo upload/menu sync/team profile/nonblocking return",
+      "locale": "ar",
+      "theme": "dark",
+      "return_seconds": 0.307
+    },
+    {
+      "workflow": "Trainer inbox/targeted audiences/team edit/session attendance",
+      "locale": "ar",
+      "theme": "dark"
+    },
+    {
+      "workflow": "default analytics/order/CSV content/PDF choice/responsive",
+      "locale": "ar",
+      "theme": "dark",
+      "widths": [
+        1440,
+        768,
+        390
+      ]
+    },
+    {
+      "workflow": "continuous pointer/mouse handwriting/touch drag/color/width/undo/clear/paired Projector",
+      "status": "PASS"
+    }
+  ]
+}
