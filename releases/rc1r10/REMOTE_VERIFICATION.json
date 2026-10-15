@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "remote_commit": "86cce3148a93679ea9d3bffd03a6f17610ad680a",
+  "artifacts": [
+    {
+      "file": "TRAINING_ENGINE_ONE_v3.5.0_RC1R10.zip",
+      "bytes": 57331320,
+      "sha256": "503fd00ef6f89a6c7f6205b6cd1c4ec6754573db44147cbc2ab9a037ec61d105"
+    },
+    {
+      "file": "TRAINING_ENGINE_ONE_AI_COURSE_CREATOR_RC1R10.zip",
+      "bytes": 109441,
+      "sha256": "0d0a5b680ee5d7514176623cca79f01bb84d7756ef890aef82156358bd5430d8"
+    }
+  ]
+}
