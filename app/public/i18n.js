@@ -1,5 +1,6 @@
 const KEY='training_engine_locale';
 const AR={
+'Existing grants for resources outside this list are preserved.':'تُحفظ المنح الحالية للموارد غير المدرجة في هذه القائمة.',
 "Your assigned permissions do not allow this workspace action.":"لا تسمح صلاحياتك المسندة بهذا الإجراء في مساحة العمل.",
 "Your assigned permissions do not allow this class action.":"لا تسمح صلاحياتك المسندة بهذا الإجراء في الصف.",
 "Your assigned permissions do not allow this course action.":"لا تسمح صلاحياتك المسندة بهذا الإجراء في الدورة.",
