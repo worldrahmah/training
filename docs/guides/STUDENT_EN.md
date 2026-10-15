@@ -1,4 +1,4 @@
-# Student / Participant usage guide — RC1R9
+# Student / Participant usage guide — RC1R10
 
 ## Get an account and sign in
 
@@ -37,3 +37,19 @@ Review learning history, class schedule/calendar, mission feedback, achievements
 ## Problems and safe departure
 
 If you cannot join, confirm account, code, approval and capacity with the Trainer. If a response fails, read the error, check saved state/queue and retry only when appropriate. If the host is unavailable, keep your work and wait for reconnection; Internet access will not replace the classroom server. Expired sessions require sign-in. Unexpectedly visible private answers or another person's details should be reported immediately to the Trainer. Sign out on shared devices and close downloaded personal reports when finished.
+
+## Current workspace repairs (RC1R10)
+
+Your saved profile photo appears in the account menu and workspace identity. Change photo in My profile accepts validated PNG/JPEG up to 2 MiB. Returning to the Student workspace shows the main class/task before optional transcript, inbox and learning tools finish. Network or server failure can still delay the main task; this is not a guarantee of a fixed loading time.
+
+Admission requests: a registered Student signs in, chooses Join class, enters the class code and sees Pending. A Trainer with enrollment/admission permission opens Admission requests (or the class admission panel), reviews identity/capacity/prerequisites and approves or declines. Admin may intervene. Approval creates/restores enrollment without erasing history. A request alone never enrolls someone. The bell provides notifications; mark individual messages read after reviewing them. Notifications are in-app, not email or operating-system push.
+
+Messages: use the bell → New message (Admin also has Messages). Select one or more available audiences: Trainers, Participants, class, class Trainers/Participants, reusable groups or classroom teams. Admin can select System. Labels include recipient counts. The server resolves active recipients when sending, rejects inaccessible audiences, deduplicates overlaps and protects retries using the send request. A group changed later does not redirect an already sent message. Empty/inaccessible audiences are not offered. A Trainer's role audiences cover their authorized classes, not every account in the installation.
+
+Teams: Classes → open class → Manage teams. Create, rename and select members. Selecting someone from another team moves them within this class; each belongs to at most one team per class. Student My profile → Learning history shows the class team and member names. Team edits retain the team identity and historical responses. Deletion and automatic regeneration are blocked when recorded team responses exist; rename or edit members instead. Empty teams without response history can be deleted. Reusable groups are separate from classroom teams.
+
+Attendance: Classes → open class → Attendance. Add a class session first if needed. Select its session, choose Present, Late, Absent, Excused or Left early and an optional note, then Save attendance. Mark all present is an explicit shortcut. Unmarked people stay Not recorded. Changing session retains unsaved choices within the open dialog. Only changed records save; the result reports the actual count. Attendance is not inferred from login, connectivity or response submission. A multi-session save uses a separate atomic batch per session; if a later session fails, earlier saved sessions remain saved and retry sends remaining changes.
+
+Classroom tools → Pointer: move continuously with mouse or touch; arrow keys move a focused Pointer pad and Escape hides the pointer. Select Pen, a contrasting color and width, then drag to write. Text annotation prompts for text at the chosen position. Undo stroke removes the last saved stroke; Clear ink preserves text; Clear all annotations removes ink, text and pointer. Drawing and text stay across slides/restarts until cleared; pointer movement is transient and expires after inactivity. The pad is a normalized control surface mapped to the whole Projector stage, not a handwriting recognition or screen-sharing service. Closing it does not erase ink. Limits: 200 strokes, 500 points per stroke, 20,000 points total, 20 text annotations. Check color contrast against your Projector scene. No pressure sensitivity, OCR, multi-user ink merging or pixel eraser is claimed.
+
+Analytics opens with real scoped summary cards and default response/attendance/completion charts, followed by PDF reports, Chart builder and detailed sections. Tables accompany default charts. Export opens a chooser: select a CSV dataset/class scope or PDF template, authorized subject, language and dates; review the PDF before download. Course/Trainer CSV summaries cover full authorized scope; the class filter applies to class/participant/response/history datasets. Empty charts say No recorded data and do not invent scores.

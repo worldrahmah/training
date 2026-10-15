@@ -1,6 +1,6 @@
 # Current activity catalog / كتالوج الأنشطة الحالي
 
-Generated from the RC1R9 canonical registry and executable examples; IDs are fixed. UI labels are separate from authored course content. These are runtime capabilities, not promises of every learning design. Treat unmet needs as CORE CAPABILITY GAP. The complete regression certifies 36 activities and 68 defined result-view cases; the bound registry lists all allowed result bindings.
+Generated from the current canonical registry and executable examples; IDs are fixed. UI labels are separate from authored course content. These are runtime capabilities, not promises of every learning design. Treat unmet needs as CORE CAPABILITY GAP. The complete regression certifies 36 activities and 68 defined result-view cases; the bound registry lists all allowed result bindings.
 
 ## Presentation / عرض تقديمي
 

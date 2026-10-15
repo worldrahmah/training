@@ -1,11 +1,11 @@
 {
   "format": "training-engine-core-capabilities",
   "app_name": "Training Engine ONE",
-  "app_version": "3.5.0-rc.1.9",
+  "app_version": "3.5.0-rc.1.10",
   "core_schema_version": "3.2",
   "latest_authoring_schema": "2.0",
   "registry_format": "training-engine-one-capability-registry",
-  "registry_version": "3.5.0-rc.1.9",
+  "registry_version": "3.5.0-rc.1.10",
   "compatible_course_schemas": [
     "1.0",
     "1.1",

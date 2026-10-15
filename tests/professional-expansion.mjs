@@ -25,6 +25,6 @@ const pdf=presentationBlockFromUpload({name:'deck.pdf',mime:'application/pdf',as
 const builder=fs.readFileSync(path.join(ROOT,'app/public/builder.js'),'utf8'),student=fs.readFileSync(path.join(ROOT,'app/public/student.js'),'utf8'),live=fs.readFileSync(path.join(ROOT,'app/public/live.js'),'utf8'),renderer=fs.readFileSync(path.join(ROOT,'app/public/renderer.js'),'utf8');
 for(const term of ['Import PDF/PPTX','prioritization_100','collaborative_board','interactive_video','Professional Challenge mode'])assert.ok(builder.includes(term),term);
 for(const term of ['training_engine_response_queue_v1','participant_paced','front_of_room','data-image-drag-label','data-drawing-canvas'])assert.ok(student.includes(term),term);
-for(const term of ['Session Replay','Result view','Pointer & annotations','Delivery mode'])assert.ok(live.includes(term),term);
+for(const term of ['Session Replay','Result view','Pointer & annotations','Delivery mode'])assert.ok((live+fs.readFileSync(path.join(ROOT,'app/public/classroom-tools.js'),'utf8')).includes(term),term);
 for(const term of ['basicFormulaHtml','renderImageHeatmap','renderDrawingGallery','renderCollaborativeBoard'])assert.ok(renderer.includes(term),term);
 console.log('PROFESSIONAL_EXPANSION_CONTRACT_PASS');

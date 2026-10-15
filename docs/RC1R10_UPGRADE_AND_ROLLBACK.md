@@ -1,0 +1,13 @@
+# RC1R10 upgrade and rollback / الترقية والتراجع
+
+No database schema change or manual SQLite editing. This repair uses existing permission rows, team membership, profile media, notifications, attendance and bounded declarative classroom-state JSON. Startup retains versioned historical migrations and populated-database regression tests. New custom permission actions are inert until an Admin saves them; no existing assignment is rewritten. Course IDs, sample course IDs, canonical IDs and published versions remain unchanged.
+
+1. Stop writes and make/verify a complete database + storage backup using the current application. Keep it outside the new source directory.
+2. Stop the old server using the supported launcher/control. Extract the new verified ZIP into a new application directory. Preserve the existing data/storage/backups/exports paths or copy the complete stopped state, including media/assets, as described in the RC1R9 upgrade guide. Never run two servers against one SQLite file.
+3. Start normally with Node 22.5+. Do not enable TRAINING_ENGINE_TEST_ACCOUNTS on real data. Verify /api/health reports 3.5.0-rc.1.10, existing sign-in, populated courses, roster, history, photos, backups and 36 activity support. No npm installation or Internet is required for bundled classroom operation.
+4. Review custom permissions with disposable Trainer accounts before applying to staff. Reload workspaces after permission changes; server denials apply immediately.
+5. Test pointer/ink against a paired Projector and actual LAN/touch device. Saved ink stays across slide changes and restarts until cleared. Protect exports/private data.
+
+Rollback application bytes to the verified RC1R9 package only after stopping RC1R10 and preserving a fresh RC1R10 backup. Old code does not enforce the new `restrict`/fine-grained grants, and cannot display new handwriting strokes: remove/revert custom policies with RC1R10 or treat a rollback as restoring earlier broader permissions. Do not silently roll back a restricted production installation to code that ignores its restrictions. Restore the pre-upgrade backup only after owner review of all post-upgrade changes; restoring replaces state and can lose newer work. Do not mix one database with another storage snapshot.
+
+لا يلزم تغيير مخطط قاعدة البيانات أو تحريرها يدويًا. احتفظ بنسخة كاملة متحقق منها، وأوقف المضيف قبل تبديل الملفات، واحفظ كل مسارات البيانات والتخزين. لا تشغّل وضع حسابات الاختبار على بيانات المؤسسة. يتجاهل الكود الأقدم قيود الصلاحيات التفصيلية الجديدة؛ لذا راجع هذه القيود قبل التراجع ولا تعرض المستخدمين لصلاحيات أوسع دون قصد. استعادة نسخة قديمة تستبدل الحالة وقد تفقد العمل اللاحق.

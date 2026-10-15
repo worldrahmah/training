@@ -1,3 +1,21 @@
+# ExecPlan — RC1R10 owner workflow repairs
+
+Baseline: accepted RC1R9 candidate 2d326266d589ede1ffe08aed7a9092a95b253657 on release/rc1r9-test. Existing work preserved; branch release/rc1r10-test created in the same checkout. Unchanged full npm test passed before edits (log /tmp/rc1r10-baseline.log). Read AGENTS.md, PROJECT_OPERATING_RULES.md and prior plans. Node 24.19.0 / Python 3.12.14. Preserve 36 activities, 68 result cases, all historical data and RC1R9 artifacts.
+
+Scope: ten owner repairs: synchronized profile/menu photos; clear registered-account class admission; responsive Student workspace return; Trainer inbox; scoped role/class/group/team audiences; editable stable-ID teams and Student profile membership; explicit Trainer view/edit/delete permissions; truthful session attendance; continuous mouse/touch pointer and persistent colored handwriting; default analytics overview and export chooser.
+
+Architecture/data impact: evolve shared UI and existing server APIs. Reuse profile_media, notifications, team membership, permission_grants, attendance and class-state declarative JSON. No schema change planned; no database reset. Granular restrictions are opt-in so legacy assignments continue to work. Team edits retain IDs and historical responses. Unrecorded attendance never implies present. Pointer motion is transient while ink is bounded declarative persisted data. No executable course content. Engine/course language independence preserved.
+
+Milestones: (1) reproduce/inspect and unchanged baseline; (2) shared avatar, nonblocking profile/Student boot, inbox/audiences, teams and admission/attendance explanations; (3) server-enforced granular permissions, continuous pointer/ink, analytics overview/export; (4) new meaningful API/browser negative and positive tests plus complete existing Node/browser/PDF/contract/static gates; (5) guides/limitations/owner checklist, version/kit regeneration, commit, immutable seal, fresh extraction/checksum/CRC/path validation, complete repeated gates, GitHub download and SHA-256.
+
+Acceptance: EN/AR RTL, light/dark, desktop/tablet/phone and Projector; actual upload/save/read, teams move/rename, targeted send with deduplication/denial, role permission denials without partial changes, attendance persistence, pointer drag/touch/ink/undo/clear, analytics export content. Existing migration/restart/backup/scoring/reveal/certification tests remain required. Exact commands and evidence will be recorded below. Windows/classroom visual acceptance remains an owner gate, not claimed by automation.
+
+Risks/decisions: broader permissions must preserve Course Editor isolation and fail closed on the server; messages must not leak audience membership; optional reports cannot block navigation; transient pointer traffic must not flood audit/history; group and team changes must preserve history. Roll back application bytes using verified prior package and pre-upgrade backup; do not restore an old backup over new data without owner review. No schema migration expected. No additional worktree or agents.
+
+Progress: unchanged baseline passed; ten repairs implemented. Dedicated API and Chromium owner workflows pass, including paired Projector mouse/touch ink and nonblocking Student first paint. Broader permission/rollback documentation and six guides updated; current kit regenerated without changing accepted sample course IDs. Initial concurrent full run hit a startup timeout in Projector presence; isolated rerun passed. Full serial final regression, all browser/PDF gates, immutable seal/fresh extraction/full retest and GitHub publication remain. No owner question blocks these repairs. Preserve all prior evidence below.
+
+---
+
 # ExecPlan — RC1R9 branding, localization, authoring and security
 
 Baseline: release/rc1r8-test commit db640e1047f210856a7b23d6ff5e469ffd10b89e, app 3.5.0-rc.1.8, core schema 3.2, course schema 2.0; 36 canonical activity IDs and 68 result-view cases. Existing AGENTS.md and .agent/PLANS.md read. Initial unchanged npm test encountered a 5-second startup timeout in backup-restore during concurrent browser load; the isolated test passed, and a serial baseline rerun is recorded. Browser baseline exposed an immediate focus assertion racing requestAnimationFrame after ArrowDown; use Playwright's eventual focus assertion, retain the keyboard requirement.

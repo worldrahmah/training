@@ -1,5 +1,5 @@
 import {api,applyTypography,esc,eventSource,initLocale,initTheme,t} from '/core.js';
-import {formatProjectorTime,renderProjectorFrame} from '/projector.js';
+import {formatProjectorTime,renderProjectorFrame,updatePointer} from '/projector.js';
 initTheme();initLocale();
 const app=document.querySelector('#app'),params=new URLSearchParams(location.search),classId=Number(params.get('class_id')||0),pair=params.get('pair')||'',legacyControl=params.get('control_key')||'';
 let live=null,settings={},timerId=null;
@@ -10,4 +10,4 @@ function bindTimer(){const timer=document.querySelector('[data-timer]');if(timer
 // Legacy keyboard control is kept only for old paired URLs; ONE's normal projector is display-only.
 async function legacyNavigate(direction){if(!legacyControl||!live?.class?.id)return;await api(`/api/live/${live.class.id}/navigate?control_key=${encodeURIComponent(legacyControl)}`,{method:'POST',json:{direction}}).catch(()=>{})}
 window.addEventListener('keydown',e=>{if(!legacyControl)return;if(['ArrowRight','PageDown'].includes(e.key))legacyNavigate('next');if(['ArrowLeft','PageUp'].includes(e.key))legacyNavigate('previous')});
-window.addEventListener('pagehide',()=>{if(classId&&pair)navigator.sendBeacon?.(`/api/live/${classId}/projector-disconnect?pair=${encodeURIComponent(pair)}`)});eventSource(e=>{if(!e.class_id||!classId||Number(e.class_id)===classId)refresh()});setInterval(refresh,15000);refresh();
+window.addEventListener('pagehide',()=>{if(classId&&pair)navigator.sendBeacon?.(`/api/live/${classId}/projector-disconnect?pair=${encodeURIComponent(pair)}`)});eventSource(e=>{if(!e.class_id||!classId||Number(e.class_id)===classId)refresh()},{classId,pair,onPointer:e=>{if(Number(e.class_id)===Number(live?.class?.id||classId)){if(live){live.state.payload.presentation_tools||={};live.state.payload.presentation_tools.pointer=e.pointer}updatePointer(e.pointer)}}});setInterval(refresh,15000);refresh();

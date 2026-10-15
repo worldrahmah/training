@@ -1,13 +1,13 @@
 {
   "format": "training-engine-one-course-creator",
-  "version": "3.5.0-rc.1.9",
+  "version": "3.5.0-rc.1.10",
   "core_schema": "3.2",
   "course_schemas": [
     "1.0",
     "1.1",
     "2.0"
   ],
-  "registry_sha256": "69c208d2ee3356b2f1998e28288d30ccdfd6337522a4c0a3368b538f46fcb3e1",
+  "registry_sha256": "88216db82f1ed40e4e65793acafd90a5ce14ef23ac885697c4b49d3a43c3ec04",
   "activity_count": 36,
   "scope": "one milestone at a time",
   "authority": "current canonical registry, schemas, bundled exact runtime validator; historical v1.3 is not authority",

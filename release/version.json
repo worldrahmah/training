@@ -1,11 +1,11 @@
 {
   "app_name": "Training Engine ONE",
-  "app_version": "3.5.0-rc.1.9",
-  "release_name": "TRAINING_ENGINE_ONE_v3.5.0_RC1R9",
+  "app_version": "3.5.0-rc.1.10",
+  "release_name": "TRAINING_ENGINE_ONE_v3.5.0_RC1R10",
   "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
   "core_schema_version": "3.2",
   "course_authoring_schema_version": "2.0",
   "published_authoring_handoff_version": "1.3",
-  "development_authoring_contract": "rc1r9-current-canonical-course-creator",
-  "release_token": "TRAINING_ENGINE_ONE_BRANDING_AUTHORING_SECURITY"
+  "development_authoring_contract": "rc1r10-current-canonical-course-creator",
+  "release_token": "TRAINING_ENGINE_ONE_CLASSROOM_WORKFLOW_REPAIRS"
 }

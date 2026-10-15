@@ -1,6 +1,6 @@
-# Training Engine ONE RC1R9 — AI Course Creator / منشئ الدورات بالذكاء الاصطناعي
+# Training Engine ONE RC1R10 — AI Course Creator / منشئ الدورات بالذكاء الاصطناعي
 
-This portable kit is generated from the current canonical registry, RC1R9 runtime validator and schemas. It supersedes historical v1.3 guidance for new work. No Internet connection, npm installation, AI service subscription or application database is needed to author/validate/package locally. Node 22.5+ is required. Classroom delivery still uses the full Training Engine application.
+This portable kit is generated from the current canonical registry, RC1R10 runtime validator and schemas. It supersedes historical v1.3 guidance for new work. No Internet connection, npm installation, AI service subscription or application database is needed to author/validate/package locally. Node 22.5+ is required. Classroom delivery still uses the full Training Engine application.
 
 1. Read AUTHORING_CONTRACT.md and CURRENT_CAPABILITIES.json. The registry is the exact catalog; ACTIVITY_CATALOG.md and activities/*.json cover all 36 types.
 2. Run `node tools/intake-wizard.mjs my-course-intake`, or answer GUIDED_INTAKE.md with the course owner. Never enter secrets.
