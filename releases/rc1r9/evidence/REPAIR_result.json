@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "role_locale_visits": 12,
+  "surfaces": [
+    {
+      "surface": "admin",
+      "locale": "en",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "offline_fonts": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "trainer",
+      "locale": "en",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "offline_fonts": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "builder",
+      "locale": "en",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "offline_fonts": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "live",
+      "locale": "en",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "offline_fonts": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "student",
+      "locale": "en",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "offline_fonts": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "projector",
+      "locale": "en",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "offline_fonts": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "admin",
+      "locale": "ar",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "offline_fonts": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "trainer",
+      "locale": "ar",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "offline_fonts": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "builder",
+      "locale": "ar",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "offline_fonts": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "live",
+      "locale": "ar",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "offline_fonts": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "student",
+      "locale": "ar",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "offline_fonts": "PASS",
+      "page_errors": []
+    },
+    {
+      "surface": "projector",
+      "locale": "ar",
+      "widths": [
+        1440,
+        768,
+        390
+      ],
+      "offline_fonts": "PASS",
+      "page_errors": []
+    }
+  ],
+  "gates": [
+    "Admin Participants search/reset",
+    "dialog keyboard/focus return",
+    "authenticated CSV export",
+    "26-row charts/filter/compatibility",
+    "real matching submission without solution mapping",
+    "offline Montserrat/Cairo",
+    "EN/AR desktop/tablet/mobile",
+    "dark chart zero totals",
+    "Projector 16:9 three themes"
+  ]
+}

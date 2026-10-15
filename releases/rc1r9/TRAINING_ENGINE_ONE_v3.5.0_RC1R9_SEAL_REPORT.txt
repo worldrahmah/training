@@ -1,0 +1,20 @@
+Training Engine ONE v3.5.0 RC1R9 — exact-byte seal report
+Status: PASS_EXACT_SEALED_BYTES; OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL
+
+Application: TRAINING_ENGINE_ONE_v3.5.0_RC1R9.zip
+Bytes: 55175197
+SHA-256: a952cf0ead7176b39a0ba49eb74c91fadfa7a7a6e7f8bacecfd8646a6c3efafa
+Source commit: 2a482ab821ed5f967fe65ba9eeefcec12350703d
+Accepted RC1R8 baseline: db640e1047f210856a7b23d6ff5e469ffd10b89e
+
+The immutable ZIP was freshly extracted to a new directory. CRC, safe/unique/case-unique paths, symlink/private-state exclusion and 1175 current checksum entries passed. All 58 Node commands and all five browser suites passed from the extracted source, followed by 34 actual PDF-reader checks, 122 syntax-file checks and canonical/kit drift validation. Required failed/skipped/unrun automated gates: zero. The 36 activities and 68 defined result-view cases remain covered; security 78 assertions, backup decoder 14 scenarios, kit/labels/import/publication 326 assertions and three real sample import/Draft/simulation/publication/launch paths passed. Browser coverage: 12 repair role/locale visits, 107 workspace checks, 12 workspace-upgrade gates, 640 font-layout cases and 52 RC1R9 visits.
+
+Four certification reports regenerate timestamps/results during tests. Their exact new outputs are retained under evidence/post-test-certification. Extracted original reports were restored after test completion and every current manifest verified again. No runtime source changed. The ZIP was never rewritten; its hash still matches. Full command output and machine results are in evidence/.
+
+The portable Course Creator ZIP was independently CRC/path/checksum verified, freshly extracted and its three sample validators and packager executed. Its SHA-256 is c4e733262b303a9a1d2f8b73389e244424be70156867c46929611861f617f163.
+
+The full application includes source/runtime, historical migrations/fixtures, bundled fonts/PDF dependencies, six role guides, current Course Creator kit, working-tree evidence, threat model/repairs, limitations, upgrade/rollback guidance and owner checklist. Historical v1.3 material is evidence only. This companion report is outside the immutable archive because an archive cannot contain its own final hash or results produced after sealing.
+
+Manual owner Windows/LAN/real-data/physical Projector/accessibility/classroom visual acceptance remains pending. Linux/Chromium automation is not FINAL approval or proof of every vulnerability's absence. See docs/RC1R9_ACCEPTANCE.md, docs/KNOWN_LIMITATIONS_RC1R9.md and docs/RC1R9_SECURITY_REVIEW.md. Core schema remains 3.2; no database reset/new migration. Production bootstrap/default account and portable backup limits are documented.
+
+Current cloud-instance startup passed independently; saved configuration does not prove publication or fresh-task restoration.

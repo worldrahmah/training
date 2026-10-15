@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "generated_by_tests": [
+    "docs/ACTIVITY_CERTIFICATION_MATRIX.json",
+    "docs/ACTIVITY_CERTIFICATION_MATRIX.md",
+    "docs/ACTIVITY_CERTIFICATION_RUNTIME_RESULT.json",
+    "docs/ACTIVITY_SURFACE_COVERAGE.json"
+  ],
+  "runtime_source_modified": false
+}

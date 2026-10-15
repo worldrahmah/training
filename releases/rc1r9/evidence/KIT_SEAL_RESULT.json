@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "archive": "TRAINING_ENGINE_ONE_COURSE_CREATOR_RC1R9.zip",
+  "sha256": "c4e733262b303a9a1d2f8b73389e244424be70156867c46929611861f617f163",
+  "bytes": 108940,
+  "crc_paths_duplicates_checksums": "PASS",
+  "fresh_extraction": "PASS",
+  "portable_validators": 3,
+  "portable_packager": "PASS",
+  "source": "exact application ZIP course-creator-kit/"
+}

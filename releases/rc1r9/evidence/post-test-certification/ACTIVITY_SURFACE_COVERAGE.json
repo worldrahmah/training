@@ -1,0 +1,527 @@
+{
+  "generated_at": "2026-10-15T05:32:37.631Z",
+  "activity_count": 36,
+  "response_models": [
+    "none",
+    "single_choice",
+    "multiple_choice",
+    "true_false",
+    "word_list",
+    "qa_board",
+    "idea_board",
+    "point_allocation",
+    "quick_choice",
+    "matching",
+    "fill_blanks",
+    "sorting",
+    "image_interaction",
+    "drawing",
+    "collab_board",
+    "video_checkpoints",
+    "text",
+    "long_text",
+    "number",
+    "scale",
+    "ranking",
+    "checklist",
+    "url",
+    "file",
+    "image"
+  ],
+  "rows": [
+    {
+      "type": "presentation",
+      "response_model": "none",
+      "participant_input": false,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": "n/a",
+      "result_views": []
+    },
+    {
+      "type": "announcement",
+      "response_model": "none",
+      "participant_input": false,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": "n/a",
+      "result_views": []
+    },
+    {
+      "type": "poll",
+      "response_model": "single_choice",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "bar",
+        "horizontal_bar",
+        "stacked_bar",
+        "donut",
+        "pie",
+        "ranking",
+        "cards"
+      ]
+    },
+    {
+      "type": "single_choice",
+      "response_model": "single_choice",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "bar",
+        "horizontal_bar",
+        "stacked_bar",
+        "donut",
+        "pie",
+        "ranking",
+        "cards"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "response_model": "multiple_choice",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "bar",
+        "horizontal_bar",
+        "stacked_bar",
+        "donut",
+        "pie",
+        "ranking",
+        "cards"
+      ]
+    },
+    {
+      "type": "true_false",
+      "response_model": "true_false",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "bar",
+        "horizontal_bar",
+        "donut",
+        "pie",
+        "cards"
+      ]
+    },
+    {
+      "type": "word_cloud",
+      "response_model": "word_list",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "word_cloud"
+      ]
+    },
+    {
+      "type": "q_and_a",
+      "response_model": "qa_board",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "qa_board"
+      ]
+    },
+    {
+      "type": "ideas_board",
+      "response_model": "idea_board",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "ideas_board"
+      ]
+    },
+    {
+      "type": "prioritization_100",
+      "response_model": "point_allocation",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "prioritization"
+      ]
+    },
+    {
+      "type": "quick_interaction",
+      "response_model": "quick_choice",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "quick_interaction",
+        "horizontal_bar",
+        "donut"
+      ]
+    },
+    {
+      "type": "matching",
+      "response_model": "matching",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "assessment"
+      ]
+    },
+    {
+      "type": "fill_blanks",
+      "response_model": "fill_blanks",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "assessment"
+      ]
+    },
+    {
+      "type": "sorting",
+      "response_model": "sorting",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "assessment"
+      ]
+    },
+    {
+      "type": "image_interaction",
+      "response_model": "image_interaction",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "image_heatmap"
+      ]
+    },
+    {
+      "type": "draw_annotate",
+      "response_model": "drawing",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "drawing_gallery"
+      ]
+    },
+    {
+      "type": "collaborative_board",
+      "response_model": "collab_board",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "collaborative_board"
+      ]
+    },
+    {
+      "type": "interactive_video",
+      "response_model": "video_checkpoints",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "video_checkpoints",
+        "assessment"
+      ]
+    },
+    {
+      "type": "short_answer",
+      "response_model": "text",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "cards"
+      ]
+    },
+    {
+      "type": "long_answer",
+      "response_model": "long_text",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "cards"
+      ]
+    },
+    {
+      "type": "numeric_answer",
+      "response_model": "number",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "bar",
+        "line",
+        "cards"
+      ]
+    },
+    {
+      "type": "rating",
+      "response_model": "scale",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "bar",
+        "line",
+        "progress",
+        "cards"
+      ]
+    },
+    {
+      "type": "reaction",
+      "response_model": "single_choice",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "bar",
+        "horizontal_bar",
+        "donut",
+        "pie",
+        "cards"
+      ]
+    },
+    {
+      "type": "confidence",
+      "response_model": "scale",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "bar",
+        "line",
+        "progress",
+        "cards"
+      ]
+    },
+    {
+      "type": "ranking",
+      "response_model": "ranking",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "ranking",
+        "cards"
+      ]
+    },
+    {
+      "type": "timer",
+      "response_model": "none",
+      "participant_input": false,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": "n/a",
+      "result_views": []
+    },
+    {
+      "type": "reveal",
+      "response_model": "none",
+      "participant_input": false,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": "n/a",
+      "result_views": []
+    },
+    {
+      "type": "team_challenge",
+      "response_model": "long_text",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "cards"
+      ]
+    },
+    {
+      "type": "checklist",
+      "response_model": "checklist",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "cards"
+      ]
+    },
+    {
+      "type": "url_submission",
+      "response_model": "url",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "cards"
+      ]
+    },
+    {
+      "type": "file_submission",
+      "response_model": "file",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "cards"
+      ]
+    },
+    {
+      "type": "image_submission",
+      "response_model": "image",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "cards"
+      ]
+    },
+    {
+      "type": "reflection",
+      "response_model": "long_text",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "cards"
+      ]
+    },
+    {
+      "type": "self_assessment",
+      "response_model": "long_text",
+      "participant_input": true,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": true,
+      "result_views": [
+        "cards"
+      ]
+    },
+    {
+      "type": "participant_choice",
+      "response_model": "none",
+      "participant_input": false,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": "n/a",
+      "result_views": []
+    },
+    {
+      "type": "practice_gate",
+      "response_model": "none",
+      "participant_input": false,
+      "student_surface": true,
+      "trainer_surface": true,
+      "projector_surface": true,
+      "admin_surface": true,
+      "shared_results": "n/a",
+      "result_views": []
+    }
+  ]
+}

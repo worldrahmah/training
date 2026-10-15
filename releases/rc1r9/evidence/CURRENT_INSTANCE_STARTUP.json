@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "version": "3.5.0-rc.1.9",
+  "production_start": "npm start without QA fixture mode",
+  "health": "PASS",
+  "entry_pages": 4,
+  "shared_logo": "PASS",
+  "credential_values": "not printed",
+  "private_runtime_state": "outside distribution"
+}

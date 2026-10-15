@@ -1,0 +1,278 @@
+{
+  "status": "PASS",
+  "mupdf_version": "1.26.6",
+  "reports": [
+    {
+      "file": "assessment-ar.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "assessment-en.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "attendance-ar.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "attendance-en.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "class-ar.pdf",
+      "pages": 3,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "class-en.pdf",
+      "pages": 3,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "course-ar.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "course-en.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-barlow-scheherazadenew.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-dmsans-harmattan.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-figtree-lateef.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-inter-tajawal.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-karla-reemkufi.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-lato-notonaskharabic.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-manrope-elmessiri.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-merriweather-lemonada.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-montserrat-cairo.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-mulish-markazitext.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-notosans-mirza.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-nunito-ibmplexsansarabic.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-nunitosans-amiri.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-opensans-notosansarabic.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-ptsans-alexandria.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-roboto-almarai.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-rubik-changa.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-sourcesans3-notokufiarabic.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-ubuntu-arefruqaa.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "font-worksans-readexpro.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "group-ar.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "group-en.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "learner-ar.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "learner-en.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "trainer-ar.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    },
+    {
+      "file": "trainer-en.pdf",
+      "pages": 2,
+      "pdfinfo": "PASS",
+      "mupdf_text": "PASS",
+      "pdfium_render": "PASS",
+      "off_page_text": 0
+    }
+  ]
+}

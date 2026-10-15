@@ -1,0 +1,61 @@
+{
+  "status": "PASS_EXACT_SEALED_BYTES",
+  "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
+  "app_version": "3.5.0-rc.1.9",
+  "source_commit": "2a482ab821ed5f967fe65ba9eeefcec12350703d",
+  "accepted_baseline_commit": "db640e1047f210856a7b23d6ff5e469ffd10b89e",
+  "archive": "TRAINING_ENGINE_ONE_v3.5.0_RC1R9.zip",
+  "archive_bytes": 55175197,
+  "sha256": "a952cf0ead7176b39a0ba49eb74c91fadfa7a7a6e7f8bacecfd8646a6c3efafa",
+  "files": 1052,
+  "checksum_entries_verified_before_and_after": 1175,
+  "crc_safe_unique_paths": "PASS",
+  "symlinks_private_runtime_state": "none",
+  "working_tree": {
+    "node_commands": 58,
+    "browser_suites": 5,
+    "pdf_reader_reports": 34,
+    "status": "PASS"
+  },
+  "fresh_extraction": {
+    "node_commands": 58,
+    "browser_suites": 5,
+    "pdf_reader_reports": 34,
+    "syntax_files": 122,
+    "activity_types": 36,
+    "defined_result_view_cases": 68,
+    "security_assertions": 78,
+    "backup_bundle_security_scenarios": 14,
+    "kit_assertions": 326,
+    "sample_import_draft_validation_simulation_publication_launch_paths": 3,
+    "required_failed": 0,
+    "required_skipped": 0,
+    "required_unrun": 0,
+    "status": "PASS"
+  },
+  "browser_coverage": {
+    "repair_role_locale_visits": 12,
+    "workspace_view_checks": 107,
+    "upgrade_gates": 12,
+    "font_layout_cases": 640,
+    "rc1r9_visits": 52
+  },
+  "generated_outputs": "Only four certification reports changed during Node tests. Exact generated results are retained here; extracted originals were restored after testing and every manifest reverified. No runtime source changed. Sealed ZIP unchanged.",
+  "standalone_course_creator": {
+    "status": "PASS",
+    "archive": "TRAINING_ENGINE_ONE_COURSE_CREATOR_RC1R9.zip",
+    "sha256": "c4e733262b303a9a1d2f8b73389e244424be70156867c46929611861f617f163",
+    "bytes": 108940,
+    "crc_paths_duplicates_checksums": "PASS",
+    "fresh_extraction": "PASS",
+    "portable_validators": 3,
+    "portable_packager": "PASS",
+    "source": "exact application ZIP course-creator-kit/"
+  },
+  "manual_owner_acceptance": "PENDING Windows, real LAN/data/physical Projector, assistive technology and classroom visual acceptance",
+  "security_boundary": "Targeted threat-model review/tests; not universal vulnerability protection or third-party penetration certification",
+  "known_limits": "docs/KNOWN_LIMITATIONS_RC1R9.md and docs/RC1R9_SECURITY_REVIEW.md inside application ZIP",
+  "upgrade_rollback": "docs/RC1R9_UPGRADE_AND_ROLLBACK.md inside application ZIP",
+  "current_instance": "Production-mode startup health/pages/logo passed separately; snapshot/fresh-task restoration not claimed",
+  "evidence_directory": "evidence/"
+}
