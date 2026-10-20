@@ -1,7 +1,7 @@
 {
   "format": "training-engine-core-capabilities",
   "app_name": "Training Engine ONE",
-  "app_version": "3.5.0-rc.1.10",
+  "app_version": "3.5.0-rc.1.11",
   "core_schema_version": "3.2",
   "latest_authoring_schema": "2.0",
   "registry_format": "training-engine-one-capability-registry",
@@ -653,6 +653,201 @@
     "excused",
     "left_early"
   ],
+  "guided_experience": {
+    "canonical_step_content": "content.blocks",
+    "legacy_step_blocks": true,
+    "shared_runtime_creator_renderer": true,
+    "prompt_copy": true,
+    "editable_prompt_resume": true,
+    "step_evidence": [
+      "none",
+      "acknowledge",
+      "external",
+      "text",
+      "url",
+      "checklist"
+    ],
+    "embedded_individual_activity_types": [
+      "single_choice",
+      "multiple_choice",
+      "rating",
+      "confidence",
+      "reaction",
+      "short_answer",
+      "long_answer",
+      "numeric_answer",
+      "checklist",
+      "reflection",
+      "self_assessment",
+      "true_false"
+    ],
+    "response_storage": "canonical activity_instances/responses",
+    "conditional_visibility": {
+      "operators": [
+        "path_id",
+        "equals",
+        "lt"
+      ],
+      "scope": "selected path and saved canonical responses"
+    },
+    "variables": {
+      "scopes": [
+        "module.variables",
+        "path.variables"
+      ],
+      "builtins": [
+        "selected_path",
+        "path_goal"
+      ],
+      "expressions": false
+    },
+    "shared_steps": "module.step_templates referenced by step.use_template with stable step.id and optional overrides",
+    "bounded_repetition": false,
+    "guided_offline_queue": false,
+    "preview_state": "temporary in-memory; no production progress writes",
+    "surface_support": {
+      "hero": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "text": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "image": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "image_text": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "cards": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "steps": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "comparison": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "table": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "timeline": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "callout": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "statistic": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "quote": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "checklist": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "asset": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "chart": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "video": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "audio": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "divider": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "spacer": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "gallery": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "prompt": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "editable_prompt": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "resource_list": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "leaderboard": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "document": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "slide_deck": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "formula": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      },
+      "interactive_video": {
+        "participant_path": "display",
+        "creator_preview": "same renderer",
+        "interactive_response": "activity reference required"
+      }
+    }
+  },
   "workflow": {
     "explicit_graph_validation": true,
     "transition_simulation": true,

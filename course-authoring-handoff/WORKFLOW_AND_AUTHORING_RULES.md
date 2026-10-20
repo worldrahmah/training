@@ -1,3 +1,7 @@
+# RC1R11 guided contract update
+
+Current Core: 3.5.0-rc.1.11, core schema 3.2, authoring schema 2.0. Use the current generated Creator kit and canonical validator. See [Guided experience](GUIDED_EXPERIENCE.md) and [Gap matrix](CREATOR_GAP_MATRIX.md) for actual supported behavior and explicit limitations; do not promise completion of the whole master closure. Historical text below remains reference only where consistent with that contract.
+
 # Training Engine ONE — Workflow and Authoring Rules
 
 ## One canonical model

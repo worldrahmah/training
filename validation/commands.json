@@ -58,7 +58,9 @@
     "node tests/rc1r9-security.mjs",
     "node tests/rc1r9-contract.mjs",
     "node tools/build-course-creator-kit.mjs --check",
-    "node tests/rc1r10-experience.mjs"
+    "node tests/rc1r10-experience.mjs",
+    "node tests/guided-contract.mjs",
+    "node tests/rc1r11-guided.mjs"
   ],
   "browser": [
     "python tests/browser-repair.py",
@@ -66,6 +68,7 @@
     "python tests/browser-workspace-upgrade.py",
     "python tests/browser-font-matrix.py",
     "python tests/browser-rc1r9.py",
-    "python tests/browser-rc1r10.py"
+    "python tests/browser-rc1r10.py",
+    "python tests/browser-rc1r11.py"
   ]
 }

@@ -1,3 +1,5 @@
+import {expandPath} from '../public/guided-model.js';
+import {validateGuidedPaths} from './guided-validation.mjs';
 export const SAFE_COURSE_ASSET_EXTENSIONS=Object.freeze(['.png','.jpg','.jpeg','.webp','.svg','.pdf','.txt','.csv','.docx','.xlsx','.pptx','.mp4','.webm','.mp3','.wav','.m4a','.ogg']);
 import {readZipEntries} from './zip.mjs';
 import path from 'node:path';
@@ -221,7 +223,7 @@ function normalizeModule(module, errors, warnings, seenIds){
     if(!String(m?.title||'').trim()) errors.push(`Mission ${mid||'(unknown)'} requires a title.`);
     if(!Array.isArray(m?.steps)||!m.steps.length) warnings.push(`Mission ${mid||'(unknown)'} has no guided steps.`);
   }
-  const paths=Array.isArray(module.paths)?module.paths:[];
+  const paths=(Array.isArray(module.paths)?module.paths:[]).map(path=>{if(!Array.isArray(path.steps))errors.push(`Module ${id}: participant path ${path.id} steps must be an array.`);for(const step of Array.isArray(path.steps)?path.steps:[])if(step?.use_template&&(!module.step_templates||!Object.hasOwn(module.step_templates,step.use_template)))errors.push(`Module ${id}: missing shared step template ${step.use_template}.`);return expandPath(module,path)});
   for(const pathDef of paths){
     const pid=String(pathDef?.id||'').trim();
     if(!pid) errors.push(`Module ${id}: every participant path requires an id.`);
@@ -233,6 +235,7 @@ function normalizeModule(module, errors, warnings, seenIds){
       if(step?.completion?.type && !COMPLETION_TYPES.includes(String(step.completion.type))) errors.push(`Participant path ${pid}: step ${si+1} uses unsupported completion type ${step.completion.type}.`);
     }
   }
+  validateGuidedPaths({...module,id,activities,paths},seenIds,errors,warnings);
   const workflow=module.workflow&&typeof module.workflow==='object'?module.workflow:null;
   if(workflow){
     const nodes=Array.isArray(workflow.nodes)?workflow.nodes:[],edges=Array.isArray(workflow.edges)?workflow.edges:[];

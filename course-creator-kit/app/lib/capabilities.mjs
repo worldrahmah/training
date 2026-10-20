@@ -25,6 +25,7 @@ export function capabilityContract(){
     submissions:SUBMISSION_TYPES,
     completion_types:COMPLETION_TYPES,
     attendance:ATTENDANCE_STATES,
+    guided_experience:CAPABILITY_REGISTRY.guided_experience,
     workflow:{explicit_graph_validation:true,transition_simulation:true,class_branching:true,participant_branching:true,convergence:true,terminal_nodes:true,persisted_progress:true,resume:true,skip_override_audited:true},
     live:{multiple_simultaneous_classes:true,dedicated_trainer_console:true,help_queue:true,participant_progress:true,class_timeline:true,projector_pairing:true,short_join_codes:true,classroom_health:true,private_presenter_notes:true,projector_modes:['welcome','focus','break','countdown','celebration','blackout','course'],projector_themes:PROJECTOR_THEMES,projector_theme_precedence:CAPABILITY_REGISTRY.projector.precedence},
     interaction_policy:CAPABILITY_REGISTRY.interaction_policy,

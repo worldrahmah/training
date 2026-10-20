@@ -1,0 +1,8 @@
+FONT_MATRIX_BROWSER_PASS 640 actual global-font layout cases across 8 surfaces, EN/AR and mobile/desktop or 16:9
+RC1R9_BROWSER_PASS 52 visits; all entry screens EN/AR themes widths, 36 bilingual labels/stable IDs/authored text, owner logo on role surfaces
+RC1R10_BROWSER_PASS 7 workflow groups
+GUIDED_BROWSER_GROUP_PASS en 0 1440
+GUIDED_BROWSER_GROUP_PASS en 1 390
+GUIDED_BROWSER_GROUP_PASS ar 0 390
+GUIDED_BROWSER_GROUP_PASS ar 1 768
+RC1R11_BROWSER_PASS 8 groups

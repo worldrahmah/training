@@ -108,6 +108,8 @@ try:
     if locale=='ar':
      para=page.locator('.student-hero p');assert para.get_attribute('dir')=='auto';assert para.evaluate('(p)=>getComputedStyle(p).direction')=='rtl';positions=para.evaluate('''p=>{const node=p.firstChild,s=node.textContent;const dot=document.createRange(),last=document.createRange();dot.setStart(node,s.length-1);dot.setEnd(node,s.length);last.setStart(node,s.length-2);last.setEnd(node,s.length-1);return {dot:dot.getBoundingClientRect().x,last:last.getBoundingClientRect().x,text:s}}''');assert positions['text'].endswith('.');assert positions['dot']<positions['last'],positions
     page.locator('.student-top .one-menu-trigger').click();bounds(page.locator('.one-menu-panel:popover-open'));contrast(page);page.screenshot(path=str(OUT/f'student-account-menu-{locale}-{theme}.png'));page.keyboard.press('Escape');
+    section=page.locator('.student-disclosure').filter(has=page.locator('.learning-card')).first
+    if section.count() and section.get_attribute('open') is None:section.locator('summary').click()
     with page.expect_download() as download:page.locator('.learning-card a').first.click()
     file=download.value;file.save_as(str(OUT/f'calendar-{locale}-{theme}.ics'));assert 'BEGIN:VCALENDAR' in pathlib.Path(file.path()).read_text();c.close()
   # Locale switching changes actual computed typography, not just font availability.

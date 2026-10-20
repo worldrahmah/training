@@ -50,6 +50,22 @@
     },
     "workflow": {
       "$ref": "workflow.schema.json"
+    },
+    "step_templates": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "variables": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "string",
+          "number",
+          "boolean"
+        ]
+      }
     }
   }
 }

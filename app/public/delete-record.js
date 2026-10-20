@@ -1,0 +1,2 @@
+import {api,esc,modal,t,toast} from '/core.js';
+export function deleteRecord(type,id,onDeleted){return modal(t(type==='course'?'Delete course':'Delete class'),`<p>${esc(t('Move to archive? History and responses will be preserved. You can restore this record from Archive & restore.'))}</p>`,{confirmText:t(type==='course'?'Delete course':'Delete class'),onConfirm:async()=>{await api(`/api/${type==='course'?'courses':'classes'}/${Number(id)}`,{method:'DELETE'});toast(t('Deleted. You can restore it from Archive & restore.'),'success');await onDeleted()}})}

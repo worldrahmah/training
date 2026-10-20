@@ -1,0 +1,2 @@
+BROWSER_REPAIR_PASS 12 role/locale visits; desktop/tablet/mobile, offline fonts, keyboard, export, matching, charts, Projector themes
+BROWSER_WORKSPACE_PASS 107 recorded screen/view checks; contrast, menus, actual writes, onboarding, RTL punctuation, calendar, role boundaries

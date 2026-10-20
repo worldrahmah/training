@@ -16,7 +16,7 @@ assert.match(student,/renderLiveResults/,'Participant: shared result renderer');
 // Server endpoints underpin the four role surfaces used by every runtime row.
 assert.match(server,/\/api\/student\/dashboard/,'Student dashboard endpoint');assert.match(server,/api\\\/admin\\\/live/,'Admin live endpoint');assert.match(server,/api\\\/classes/,'Class/report endpoints');assert.match(server,/api\\\/live/,'Live endpoints');
 // Execute the shared result renderer with every result-shape family used by the canonical registry.
-let src=rendererSrc.replace(/^import .*?;\n/m,'').replaceAll('export function ','function ').replaceAll('export const ','const ');src+='\n;globalThis.__R={renderLiveResults,renderAssessmentMeta,renderWordCloud,renderQaBoard,renderIdeasBoard};';
+let src=rendererSrc.replace(/^import .*?;\n/m,'').replaceAll('export async function ','async function ').replaceAll('export function ','function ').replaceAll('export const ','const ');src+='\n;globalThis.__R={renderLiveResults,renderAssessmentMeta,renderWordCloud,renderQaBoard,renderIdeasBoard};';
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),t=(x,v={})=>String(x).replace(/\{(\w+)\}/g,(_,k)=>v[k]??`{${k}}`),ctx={esc,t,md:x=>esc(x),URL,console};vm.createContext(ctx);vm.runInContext(src,ctx);const R=ctx.__R;
 const noData=R.renderLiveResults({summary:{total:0,assessment:[],average_percent:0,assessment_meta:{scored:true,responses:0}}},'assessment');assert.match(noData,/No responses yet/);assert.ok(!noData.includes('0%'),'Empty assessments must not assert zero accuracy');
 const shapes={

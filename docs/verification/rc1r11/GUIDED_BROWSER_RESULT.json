@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "locale": "en",
+      "branch": 0,
+      "width": 1440,
+      "status": "PASS"
+    },
+    {
+      "locale": "en",
+      "branch": 1,
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "locale": "ar",
+      "branch": 0,
+      "width": 390,
+      "status": "PASS"
+    },
+    {
+      "locale": "ar",
+      "branch": 1,
+      "width": 768,
+      "status": "PASS"
+    },
+    {
+      "creator_shared_renderer": "PASS"
+    },
+    {
+      "creator_visual_step_save": "PASS"
+    },
+    {
+      "guided_report_export": "PASS"
+    },
+    {
+      "delete_class_confirmation": "PASS"
+    }
+  ]
+}

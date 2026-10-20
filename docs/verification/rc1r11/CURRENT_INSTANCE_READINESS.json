@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "mode": "normal production startup; QA accounts flag not enabled",
+  "version": "3.5.0-rc.1.11",
+  "core_schema": "3.2",
+  "checks": [
+    {
+      "path": "/admin",
+      "status": 200
+    },
+    {
+      "path": "/trainer",
+      "status": 200
+    },
+    {
+      "path": "/student",
+      "status": 200
+    },
+    {
+      "path": "/builder",
+      "status": 200
+    },
+    {
+      "path": "/present",
+      "status": 200
+    }
+  ]
+}

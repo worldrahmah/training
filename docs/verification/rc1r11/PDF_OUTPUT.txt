@@ -1,0 +1,2 @@
+PROFESSIONAL_PDF_REPORTS_PASS 253 assertions; seven templates × EN/AR, all 40 fonts, actual logo/photo upload, immutable retry, own-learner and editor isolation, reveal safety, invalid dates/media and PDF/photo/branding backup restore
+PDF_RENDER_ACCEPTANCE_PASS 34 reports with actual logo, embedded-font text and reader rendering
