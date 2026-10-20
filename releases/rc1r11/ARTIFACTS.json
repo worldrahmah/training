@@ -1,0 +1,41 @@
+{
+  "release_status": "DEVELOPMENT_BUILD_NOT_FINAL",
+  "source_commit": "7728bd70e8ec623a7b9227205f4f53252c3c7f09",
+  "artifacts": [
+    {
+      "file": "COURSE_CREATOR_CAPABILITY_TEST.course.zip",
+      "bytes": 149592,
+      "sha256": "c7282c5bbd03df579baf7a9c6f11425c37c2a2f8382a6b5784aaa2e824adf18f"
+    },
+    {
+      "file": "M1_GUIDED_ACCEPTANCE.course.zip",
+      "bytes": 70240,
+      "sha256": "fec8e12ef203d345b4d8370a7ec3a44bbf7b35d49210c429f3fe6e97c731881c"
+    },
+    {
+      "file": "M1_GUIDED_ACCEPTANCE_EN.course.zip",
+      "bytes": 50509,
+      "sha256": "59a08245b1a857a9e2c4c4a0e285393c70245ebcc611998ac7f5ba9da56d5f58"
+    },
+    {
+      "file": "TRAINING_ENGINE_ONE_COURSE_AUTHORING_HANDOFF_RC1R11.zip",
+      "bytes": 228321,
+      "sha256": "ab808f648c3ea1418677a3cea81155deda10747e9b267e13333c1cf84678c411"
+    },
+    {
+      "file": "TRAINING_ENGINE_ONE_COURSE_CREATOR_KIT_RC1R11.zip",
+      "bytes": 142579,
+      "sha256": "7c0abc8279481d4da9da50f59ac99e6e87eb0a026e5f038f61bc2f912994059d"
+    },
+    {
+      "file": "TRAINING_ENGINE_ONE_RC1R11_REPORTS.zip",
+      "bytes": 6720723,
+      "sha256": "4fcdc2478c62c25b9751695bff186f163703d3611fc606ae93431f8b8e497558"
+    },
+    {
+      "file": "TRAINING_ENGINE_ONE_v3.5.0_RC1R11.zip",
+      "bytes": 59332781,
+      "sha256": "d9e0c0ba04c24973e5d2bdc81b3ac9be108fc4fa3cd3b1cb978d078a95f9a102"
+    }
+  ]
+}

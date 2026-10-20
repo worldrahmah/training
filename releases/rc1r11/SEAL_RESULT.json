@@ -1,0 +1,61 @@
+{
+  "status": "PASS_EXACT_BYTE_AUTOMATED_GATES",
+  "release_status": "DEVELOPMENT_BUILD_NOT_FINAL",
+  "version": "3.5.0-rc.1.11",
+  "core_schema": "3.2",
+  "course_schema": "2.0",
+  "source_commit": "7728bd70e8ec623a7b9227205f4f53252c3c7f09",
+  "baseline_source_commit": "8a55bde1b93d67e84116135cbbef304986915307",
+  "baseline_rc1r10_zip_sha256": "503fd00ef6f89a6c7f6205b6cd1c4ec6754573db44147cbc2ab9a037ec61d105",
+  "verification_utc": "2026-10-20T07:57:46.414568+00:00",
+  "node_programs": 62,
+  "browser_programs": 7,
+  "guided_contract_assertions": 39,
+  "guided_api_assertions": 126,
+  "export_assertions": 34,
+  "guided_browser_groups": 12,
+  "font_layout_cases": 640,
+  "pdf_reader_documents": 34,
+  "syntax_files": 141,
+  "immutable_archive_files": 1214,
+  "portable_kit_files": 101,
+  "portable_sample_validations": 12,
+  "artifacts_excluding_this_report_zip": [
+    {
+      "file": "COURSE_CREATOR_CAPABILITY_TEST.course.zip",
+      "bytes": 149592,
+      "sha256": "c7282c5bbd03df579baf7a9c6f11425c37c2a2f8382a6b5784aaa2e824adf18f"
+    },
+    {
+      "file": "M1_GUIDED_ACCEPTANCE.course.zip",
+      "bytes": 70240,
+      "sha256": "fec8e12ef203d345b4d8370a7ec3a44bbf7b35d49210c429f3fe6e97c731881c"
+    },
+    {
+      "file": "M1_GUIDED_ACCEPTANCE_EN.course.zip",
+      "bytes": 50509,
+      "sha256": "59a08245b1a857a9e2c4c4a0e285393c70245ebcc611998ac7f5ba9da56d5f58"
+    },
+    {
+      "file": "TRAINING_ENGINE_ONE_COURSE_AUTHORING_HANDOFF_RC1R11.zip",
+      "bytes": 228321,
+      "sha256": "ab808f648c3ea1418677a3cea81155deda10747e9b267e13333c1cf84678c411"
+    },
+    {
+      "file": "TRAINING_ENGINE_ONE_COURSE_CREATOR_KIT_RC1R11.zip",
+      "bytes": 142579,
+      "sha256": "7c0abc8279481d4da9da50f59ac99e6e87eb0a026e5f038f61bc2f912994059d"
+    },
+    {
+      "file": "TRAINING_ENGINE_ONE_v3.5.0_RC1R11.zip",
+      "bytes": 59332781,
+      "sha256": "d9e0c0ba04c24973e5d2bdc81b3ac9be108fc4fa3cd3b1cb978d078a95f9a102"
+    }
+  ],
+  "whole_master_creator_closure": "INCOMPLETE_SEE_GAP_MATRIX",
+  "owner_windows_lan_classroom_assistive_acceptance": "UNRUN",
+  "environment_publication": "NOT_PERFORMED",
+  "fresh_task_environment_restoration": "UNVERIFIED",
+  "data_schema_migration": "NONE",
+  "data_reset": false
+}
