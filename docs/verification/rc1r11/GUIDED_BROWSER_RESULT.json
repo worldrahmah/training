@@ -26,10 +26,13 @@
       "status": "PASS"
     },
     {
+      "legacy_mission_practice_file_and_empty": "PASS"
+    },
+    {
       "creator_shared_renderer": "PASS"
     },
     {
-      "creator_visual_step_save": "PASS"
+      "creator_visual_step_save_lan_safe_ids": "PASS"
     },
     {
       "creator_package_export": "PASS"

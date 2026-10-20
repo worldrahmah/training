@@ -10,3 +10,7 @@ export function completionReady(step,evidence={},responses={}){if(step.optional)
 export function guidedVariables(module,path){return {...module.variables,...path.variables,selected_path:path.id,path_goal:path.goal||''}}
 // A reference has its own stable analytics identity; template changes flow through each use.
 export function expandPath(module,path){return {...path,steps:(Array.isArray(path.steps)?path.steps:[]).map(raw=>{const step=raw||{};return step.use_template?{...(module.step_templates&&Object.hasOwn(module.step_templates,step.use_template)?module.step_templates[step.use_template]:{}),...(step.overrides||{}),id:step.id,use_template:step.use_template,overrides:step.overrides||{}}:step})}}
+// Older practice could use missions and declared file/image completion outside the wizard.
+// Preserve its existing navigation; new checked guided paths reject unsupported inline uploads.
+export function pathCompletionStep(path,step){const legacy=!path.guided&&!(path.steps||[]).some(s=>interactionIds(s).length);return legacy&&['file','image'].includes(step.completion?.type)?{...step,completion:{type:'none'}}:step}
+export function practicePath(path){return path&&!path.guided&&(!Array.isArray(path.steps)||!path.steps.length)?{...path,steps:[{id:String(path.id)+'-complete',title:path.title||'Personal practice',body_md:path.goal||'',completion:{type:'none'}}]}:path}

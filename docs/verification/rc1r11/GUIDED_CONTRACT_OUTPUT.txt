@@ -1,0 +1,1 @@
+GUIDED_CONTRACT_PASS 39 negative and positive contracts

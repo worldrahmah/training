@@ -178,7 +178,7 @@ RC1R9_SECURITY_PASS 78 assertions; production bootstrap, populated upgrade, defa
 RC1R9_CONTRACT_PASS 343 assertions; 36 bilingual labels, no public demo credentials, portable intake/packaging, three real import/Draft/publication/launch paths
 COURSE_CREATOR_KIT_CHECK_PASS 101 files, 36 activities, EN/AR samples and workflow paths
 RC1R10_EXPERIENCE_PASS 157 assertions
-GUIDED_CONTRACT_PASS 32 negative and positive contracts
+GUIDED_CONTRACT_PASS 35 negative and positive contracts
 RC1R11_GUIDED_PASS 111 assertions: validation, evidence, branch lock, revision, canonical responses, privacy, archive/restore history
 COURSE_EXPORT_PASS 34 assertions: invalid Draft blocked, checksummed assets, permission denial, immutable source, actual Draft → publish → export ZIP → second-server import → Participant runtime
 CHECKS_PASS node: 62 commands

@@ -3,13 +3,13 @@ import {guidedReport} from './lib/guided-report.mjs';
 function guidedResponses(classId,studentId,moduleId,pathId){return Object.fromEntries(db().prepare("SELECT ai.activity_id,r.answer_json FROM responses r JOIN activity_instances ai ON ai.id=r.instance_id WHERE ai.class_id=? AND r.student_id=? AND ai.module_id=? AND json_extract(ai.definition_json,'$.guided_path_id')=? ORDER BY r.id").all(classId,studentId,moduleId,pathId).map(row=>[row.activity_id,safeJsonParse(row.answer_json,{})]));}
 function validateGuidedWrite(classId,userId,b){
  const current=getClassState(classId),currentModule=findModule(getCourseContentByClass(classId),current.module_id),guidedOpen=current.phase==='practice'&&currentModule?.paths?.some(p=>p.guided===true||p.steps?.some(st=>interactionIds(st).length));if(guidedOpen&&(String(b.module_id)!==String(current.module_id)||!currentModule.paths.some(p=>String(p.id)===String(b.path_id))))throw Object.assign(new Error('Choose an available participant path in the running class.'),{status:409});
- const module=findModule(getCourseContentByClass(classId),b.module_id),pathDef=module?.paths?.find(x=>String(x.id)===String(b.path_id));
+ const module=findModule(getCourseContentByClass(classId),b.module_id),pathDef=practicePath(module?.paths?.find(x=>String(x.id)===String(b.path_id))||(!module?.paths?.length?module?.missions?.find(x=>String(x.id)===String(b.path_id)):null));
  if(!pathDef){if(b.guided_action)throw Object.assign(new Error('Choose an available participant path.'),{status:400});return;} // Preserve legacy mission/paced progress contracts.
+ const strict=pathDef.guided===true||pathDef.steps.some(st=>interactionIds(st).length);
+ if(!strict&&!b.guided_action)return;
  const previous=db().prepare('SELECT * FROM participant_runtime_state WHERE class_id=? AND student_id=?').get(classId,userId),live=getClassState(classId),fail=message=>{throw Object.assign(new Error(message),{status:409})};
  if(getClassRow(classId)?.status!=='active'||live.phase!=='practice'||String(live.module_id)!==String(b.module_id))fail('Personal practice is not open.');
  if(previous?.module_id===b.module_id&&previous.path_id&&previous.path_id!==b.path_id)fail('Your selected path cannot be changed during this practice.');
- const strict=pathDef.guided===true||pathDef.steps.some(st=>interactionIds(st).length);
- if(!strict&&!b.guided_action)return;
  const action=b.guided_action;if(!['choose','save','next','back','finish'].includes(action))fail('Use the guided step controls to save progress.');
  const prior=previous?.module_id===b.module_id&&previous.path_id===b.path_id?previous:null,index=Number(prior?.step_index||0),step=pathDef.steps[index],key=stepKey(step,index),progress=safeJsonParse(prior?.progress_json,{}),responses=guidedResponses(classId,userId,b.module_id,b.path_id);
  if(prior?.status==='finished')fail('This path is already complete.');if(!prior&&action!=='choose')fail('Choose a path before continuing.');if(prior&&action==='choose')fail('Your selected path is already saved.');
@@ -18,7 +18,7 @@ function validateGuidedWrite(classId,userId,b){
   const evidence=b.step_data?.evidence||{},prompts=b.step_data?.prompts||{};if(JSON.stringify({evidence,prompts}).length>120000)fail('This step response is too long.');
   const allowedPrompts=new Set(stepBlocks(step).map((block,i)=>String(block.id||i)));allowedPrompts.add('legacy-prompt');if(Object.entries(prompts).some(([id,value])=>!allowedPrompts.has(id)||typeof value!=='string'||value.length>20000))fail('Choose a valid prompt to edit.');
   const safeEvidence={acknowledged:evidence.acknowledged===true,text:typeof evidence.text==='string'?evidence.text.slice(0,20000):'',checked:Array.isArray(evidence.checked)?evidence.checked.filter(Number.isInteger):[]};
-  progress.steps??={};const visible=conditionMatches(step.when,{pathId:pathDef.id,responses}),ready=!visible||completionReady(step,safeEvidence,responses);
+  progress.steps=Object.assign(Object.create(null),progress.steps||{});const visible=conditionMatches(step.when,{pathId:pathDef.id,responses}),ready=!visible||completionReady(pathCompletionStep(pathDef,step),safeEvidence,responses);
   progress.steps[key]={entered_at:nowIso(),...progress.steps[key],evidence:safeEvidence,prompts,updated_at:nowIso()};
   if(['next','finish'].includes(action)&&!ready)fail('Complete the required evidence before continuing.');
   if(action==='next'||action==='finish')progress.steps[key].completed_at??=nowIso();
@@ -29,7 +29,7 @@ function validateGuidedWrite(classId,userId,b){
  b.progress.steps[stepKey(pathDef.steps[b.step_index],b.step_index)]??={entered_at:nowIso()};
  b.step_total=pathDef.steps.length;b.activity_id=pathDef.steps[b.step_index]?.id||null;
 }
-import {completionReady,interactionIds,stepKey,stepBlocks,conditionMatches,GUIDED_INTERACTIONS} from './public/guided-model.js';
+import {completionReady,interactionIds,stepKey,stepBlocks,conditionMatches,GUIDED_INTERACTIONS,pathCompletionStep,practicePath} from './public/guided-model.js';
 import {handleExperienceApi,notificationVisible} from './lib/experience-api.mjs';
 import {decryptBackupBundle,MAX_BACKUP_EXPANDED_BYTES} from './lib/backup-bundle.mjs';
 import {SAFE_COURSE_ASSET_EXTENSIONS} from './lib/course-package.mjs';

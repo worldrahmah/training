@@ -6,7 +6,7 @@ Status: DEVELOPMENT_BUILD_NOT_FINAL. The supported incremental changes pass the 
 |---|---|
 | Unchanged RC1R10 baseline | PASS: complete 59-command Node runner |
 | RC1R11 full Node runner | PASS: 62 commands, including populated legacy migration, backup/restore, restart, roles, 36 activities / 68 result-view cases and 20-participant rehearsal |
-| New declarative contracts | PASS: 32 positive/negative cases, including malformed content/references, missing context/templates and prototype-key safety |
+| New declarative contracts | PASS: 39 positive/negative cases, including malformed content/references, missing context/templates and prototype-key safety |
 | New guided API | PASS: 111 assertions, all 12 embedded types, canonical separate storage, retries, evidence, branch locking, revision conflict, privacy, scoped reports, deletion denial/history/restore/idempotence |
 | Course package export | PASS: 34 assertions, invalid Draft blocked, checksummed asset/missing/tampered cases, private export permission checks, immutable published source, actual Draft → publish → ZIP export → second-server import → Participant path |
 | Existing repair browser program | PASS: 12 role/locale visits, offline fonts, actual submission/export/charts/keyboard/Projector themes |
@@ -15,7 +15,7 @@ Status: DEVELOPMENT_BUILD_NOT_FINAL. The supported incremental changes pass the 
 | Font browser program | PASS: 640 layout cases across eight surfaces, EN/AR and representative widths |
 | RC1R9 browser program | PASS: 52 role/locale/theme/layout visits |
 | RC1R10 browser program | PASS: seven workflow groups |
-| RC1R11 browser program | PASS: nine groups; A/B routes, EN/AR, 390/768/1440, long prompt scrolling, exact-text copy, edit/reset/resume, ten separate evaluation responses, focus dashboard/disclosures/keyboard, exact shared preview, real visual step/Draft save, scoped report CSV and confirmed deletion |
+| RC1R11 browser program | PASS: ten groups; A/B routes, EN/AR, 390/768/1440, long prompt scrolling, exact-text copy, edit/reset/resume, ten separate evaluation responses, focus dashboard/disclosures/keyboard, exact shared preview, real visual step/Draft save with randomUUID unavailable, real ZIP download, legacy mission/file/empty-step compatibility, scoped report CSV and confirmed deletion |
 | PDF readers | PASS: 34 generated documents checked independently with PDFium, MuPDF and pdfinfo |
 | Static syntax | PASS: 141 app/tool/test files (unchanged vendored bundle excluded) |
 | Canonical/generated contracts and portable kit | PASS: contract drift check; 101 generated kit files and six importable samples |

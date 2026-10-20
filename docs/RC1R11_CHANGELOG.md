@@ -4,6 +4,7 @@ Incremental development build derived from the verified RC1R10 source and sealed
 
 - Reuse the canonical content renderer in Participant guided steps and Creator's executable preview.
 - Add accessible prompt cards, exact-text copy with fallback/localized feedback, long-text scrolling, editable prompts, reset and resume.
+- Preserve mission-only practice, legacy upload-completion declarations and simple missions without steps. Use LAN-compatible cryptographic ID generation.
 - Add checked guided progress, stable IDs, branch lock, completion evidence, optional/conditional content and safe context/shared-step definitions.
 - Store 12 types of individual embedded question through existing normalization/scoring/response tables, including grouped evaluations.
 - Add validated course-package export in Builder Tools, checksummed asset integrity checks, and a verified second-server import/runtime round trip.
