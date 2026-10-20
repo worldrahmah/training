@@ -119,5 +119,11 @@
   "workspace_schema": "5",
   "current_operational_review": "docs/RC1R13_OPERATIONAL_REVIEW.md",
   "source_validation": "PASS_65_NODE_10_BROWSER_153_SYNTAX_104_KIT_34_PDF",
-  "exact_zip_verification": "Pending separate companion receipt; never inferred from source tests."
+  "exact_zip_verification": {
+    "status": "PASS",
+    "sha256": "2f4f97d28b367c995cefdd79a55f07f5c6264970cd580c62facb61e3505c71e5",
+    "source_commit": "2ce33553d1becd528a2228cd16040260899abd50",
+    "files": 1296,
+    "receipt": "releases/rc1r13/SEAL_RESULT.json"
+  }
 }

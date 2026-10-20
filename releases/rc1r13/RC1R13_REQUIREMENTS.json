@@ -1,0 +1,855 @@
+{
+  "owner_specification_sha256": "d36dcaa57fb337c9f079945acee6e3cc8b209b0ebfe28c5e8492ced0dbf023dd",
+  "numbered_sections": 91,
+  "engineering_status": "IMPLEMENTED_VERIFIED",
+  "scope": "All mandatory requirements; section 23 does not require introducing a repetition DSL; no arbitrary loops are allowed. Twelve prioritized embedded types are implemented; specialized/team/media responses use their canonical existing dedicated activities with truthful surface metadata.",
+  "sections": [
+    {
+      "section": 0,
+      "title": "FIRST: IDENTIFY THE TRUE CURRENT BASELINE",
+      "requirement_sha256": "769802b6db7a15288a7180e906d33e627e4cd401dfc0b30739b24fb848c36d46",
+      "implementation": "Existing canonical engine, exact preserved RC1R11 baseline and registry",
+      "files": "CODEX_EXEC_PLAN.md; registry/activity-component-registry.json",
+      "evidence": "unchanged 62-command baseline; inherited certification/contracts",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 1,
+      "title": "PRIMARY OBJECTIVE",
+      "requirement_sha256": "d13ed72f17351fd94897ec11ea96994feef1e2cfceaed4a67df79ae4851365ed",
+      "implementation": "Existing canonical engine, exact preserved RC1R11 baseline and registry",
+      "files": "CODEX_EXEC_PLAN.md; registry/activity-component-registry.json",
+      "evidence": "unchanged 62-command baseline; inherited certification/contracts",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 2,
+      "title": "WHY THIS CLOSURE IS REQUIRED",
+      "requirement_sha256": "a955f9aadf2cc101aa4d416f69480652654c86aee546cbf8ef1556f20da69cf8",
+      "implementation": "Existing canonical engine, exact preserved RC1R11 baseline and registry",
+      "files": "CODEX_EXEC_PLAN.md; registry/activity-component-registry.json",
+      "evidence": "unchanged 62-command baseline; inherited certification/contracts",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 3,
+      "title": "NON-NEGOTIABLE ARCHITECTURE RULES",
+      "requirement_sha256": "abe90416c790e89dea16b8dc0e73512d4412b84201ddfb3fe3d0ac2afb4ef136",
+      "implementation": "Existing canonical engine, exact preserved RC1R11 baseline and registry",
+      "files": "CODEX_EXEC_PLAN.md; registry/activity-component-registry.json",
+      "evidence": "unchanged 62-command baseline; inherited certification/contracts",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 4,
+      "title": "CURRENT CAPABILITY REGISTRY MUST REMAIN AUTHORITATIVE",
+      "requirement_sha256": "9a5e250977feeea0481a9bc149f9a31b9bf46ad8cd9adec4c91d9176ab4feb32",
+      "implementation": "Existing canonical engine, exact preserved RC1R11 baseline and registry",
+      "files": "CODEX_EXEC_PLAN.md; registry/activity-component-registry.json",
+      "evidence": "unchanged 62-command baseline; inherited certification/contracts",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 5,
+      "title": "P0: UNIVERSAL PARTICIPANT STEP RENDERER",
+      "requirement_sha256": "e6ea8847412323762c30cd68ad39dd720a2d5b8c89c74354a222d1204b14078a",
+      "implementation": "Shared prompt/content renderer, copy/edit/reset/scroll/resume",
+      "files": "app/public/renderer.js; app/public/guided.js",
+      "evidence": "browser-m1-closure.py; browser-rc1r11.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 6,
+      "title": "P0: PROFESSIONAL PROMPT COMPONENT",
+      "requirement_sha256": "d7c10a98b0e1bbf618cdef080a060f468fc2427108652eb15e8263aa729d5cb4",
+      "implementation": "Shared prompt/content renderer, copy/edit/reset/scroll/resume",
+      "files": "app/public/renderer.js; app/public/guided.js",
+      "evidence": "browser-m1-closure.py; browser-rc1r11.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 7,
+      "title": "COPY BEHAVIOR",
+      "requirement_sha256": "3ebe5020ddeab5d8d954c47e6ebfb91686dc93024038ebee275d13289494de90",
+      "implementation": "Shared prompt/content renderer, copy/edit/reset/scroll/resume",
+      "files": "app/public/renderer.js; app/public/guided.js",
+      "evidence": "browser-m1-closure.py; browser-rc1r11.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 8,
+      "title": "LONG PROMPT SCROLLING",
+      "requirement_sha256": "bb14b170a808cc71ff9ce43e0e644e0956c8d6029838f5eae9f95cd0577cfd6e",
+      "implementation": "Shared prompt/content renderer, copy/edit/reset/scroll/resume",
+      "files": "app/public/renderer.js; app/public/guided.js",
+      "evidence": "browser-m1-closure.py; browser-rc1r11.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 9,
+      "title": "EDITABLE PROMPT",
+      "requirement_sha256": "58c804011a1066cfc251667a30526c52719e61bf667d41c8864ee8ee59d192d4",
+      "implementation": "Shared prompt/content renderer, copy/edit/reset/scroll/resume",
+      "files": "app/public/renderer.js; app/public/guided.js",
+      "evidence": "browser-m1-closure.py; browser-rc1r11.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 10,
+      "title": "P0: PROFESSIONAL PARTICIPANT CHOICE",
+      "requirement_sha256": "bc7e7a756d1ee56bca243bd471b36a2d59d22a0e6f46f2c6e4043dc8f5c1221f",
+      "implementation": "Choice cards, locked branch, graph and route validation",
+      "files": "guided.js; authoring-model.js; course-package.mjs",
+      "evidence": "creator-closure.mjs; rc1r11-guided.mjs; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 11,
+      "title": "PARTICIPANT CHOICE MUST ACTUALLY CONTROL BRANCHING",
+      "requirement_sha256": "d485dabe1951a54f49bda8393be5e10f4e558fda3b70a9e63f88b47bef8382ae",
+      "implementation": "Choice cards, locked branch, graph and route validation",
+      "files": "guided.js; authoring-model.js; course-package.mjs",
+      "evidence": "creator-closure.mjs; rc1r11-guided.mjs; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 12,
+      "title": "P0: PARTICIPANT-PATH BRANCH VALIDATION",
+      "requirement_sha256": "e7839e8fb0eb71a67f9eefccd04dc2bb36a04cd1027e967604ab3a69b5451c9e",
+      "implementation": "Choice cards, locked branch, graph and route validation",
+      "files": "guided.js; authoring-model.js; course-package.mjs",
+      "evidence": "creator-closure.mjs; rc1r11-guided.mjs; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 13,
+      "title": "P0: INTERACTIVE COMPONENTS INSIDE GUIDED STEPS",
+      "requirement_sha256": "8eaba0ee64ee5cb580cb92f8e9d7466e8382c933d48a54db401a74c6b41f2b9d",
+      "implementation": "Canonical individual questions, grouped evaluation, IDs and persistence",
+      "files": "guided-model.js; guided.js; app/server.mjs",
+      "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 14,
+      "title": "PREFERRED MODEL FOR EMBEDDED STEP INTERACTIONS",
+      "requirement_sha256": "b9544427720be3ca022821924d35b95657430950c543012ba8ec918cfcf17a79",
+      "implementation": "Canonical individual questions, grouped evaluation, IDs and persistence",
+      "files": "guided-model.js; guided.js; app/server.mjs",
+      "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 15,
+      "title": "P0: GUIDED EVALUATION EXPERIENCE",
+      "requirement_sha256": "0a0e8477f165fbf7cd9aab780a826005be9867d39fb4391ee95bf0e39e4aa3f9",
+      "implementation": "Canonical individual questions, grouped evaluation, IDs and persistence",
+      "files": "guided-model.js; guided.js; app/server.mjs",
+      "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 16,
+      "title": "P0: UNIQUE ID SAFETY",
+      "requirement_sha256": "af66c7ea503d6aba29218c27d95bb69936545419c0293e918e9922499a4ba62e",
+      "implementation": "Canonical individual questions, grouped evaluation, IDs and persistence",
+      "files": "guided-model.js; guided.js; app/server.mjs",
+      "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 17,
+      "title": "P0: RESUME / PERSISTENCE",
+      "requirement_sha256": "d3a4af0d3d39c9d83f2b973b0b5020980184f8583eee41f5b61453d3152b6812",
+      "implementation": "Canonical individual questions, grouped evaluation, IDs and persistence",
+      "files": "guided-model.js; guided.js; app/server.mjs",
+      "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 18,
+      "title": "PROFESSIONAL WIZARD NAVIGATION",
+      "requirement_sha256": "70b5cbba045badb1ff837d33da7751f24c571ec1aef3ca88e107f224340ce519",
+      "implementation": "Evidence navigation, optional/conditional/shared steps and context",
+      "files": "guided-model.js; block-authoring.js; builder.js",
+      "evidence": "creator-closure.mjs; browser-creator-closure.py; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 19,
+      "title": "OPTIONAL STEPS",
+      "requirement_sha256": "6e5220fde5a358f626f573bf636a35d933d3312a6c4e9978a618fccaa953ca2a",
+      "implementation": "Evidence navigation, optional/conditional/shared steps and context",
+      "files": "guided-model.js; block-authoring.js; builder.js",
+      "evidence": "creator-closure.mjs; browser-creator-closure.py; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 20,
+      "title": "CONDITIONAL STEPS / CONDITIONAL BLOCKS",
+      "requirement_sha256": "89323c008ef4344bcb4ae828b9afce26d8ed39e03de561a221a2f7996b06ddc4",
+      "implementation": "Evidence navigation, optional/conditional/shared steps and context",
+      "files": "guided-model.js; block-authoring.js; builder.js",
+      "evidence": "creator-closure.mjs; browser-creator-closure.py; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 21,
+      "title": "SHARED / REUSABLE STEPS",
+      "requirement_sha256": "b1dfa280465a1d33d650c41e356ce2a2dde6a3ee1eeb609503594919e96adbdc",
+      "implementation": "Evidence navigation, optional/conditional/shared steps and context",
+      "files": "guided-model.js; block-authoring.js; builder.js",
+      "evidence": "creator-closure.mjs; browser-creator-closure.py; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 22,
+      "title": "VARIABLES / PATH CONTEXT",
+      "requirement_sha256": "b9b3116d65c7d48d3a9effb370c56f1a79146c72f5836cfd0cb4812439dcdead",
+      "implementation": "Evidence navigation, optional/conditional/shared steps and context",
+      "files": "guided-model.js; block-authoring.js; builder.js",
+      "evidence": "creator-closure.mjs; browser-creator-closure.py; browser-m1-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 23,
+      "title": "REPEAT / LOOP PATTERNS",
+      "requirement_sha256": "371091e01d66840a0073c9d8df531cf62928d2403799ad88f0b6607c61814665",
+      "implementation": "No unrestricted loops; optional new repetition DSL not introduced. Explicit finite steps retain IDs and resume.",
+      "files": "authoring-model.js; guided-model.js",
+      "evidence": "creator-closure.mjs cycle/safety-limit checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 24,
+      "title": "PROFESSIONAL RESOURCE RENDERING",
+      "requirement_sha256": "1dd5b99da6f116f92cda536ede7e0f967cb84e3ff1b8e88b3659f63133048304",
+      "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
+      "files": "renderer.js; guided.js; builder.js",
+      "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 25,
+      "title": "EXTERNAL TOOL EXPERIENCE",
+      "requirement_sha256": "57f0a1d95d61b9cc3eb35a8799d6662717c4dada0d027426421d7f77128c5f4a",
+      "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
+      "files": "renderer.js; guided.js; builder.js",
+      "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 26,
+      "title": "COMPLETION EVIDENCE",
+      "requirement_sha256": "71a673f4163664d40dfb1afcf9dc68ee9b778ad4a019091e2f945259ee716859",
+      "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
+      "files": "renderer.js; guided.js; builder.js",
+      "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 27,
+      "title": "P0: CREATOR PREVIEW MUST USE THE REAL RUNTIME RENDERER",
+      "requirement_sha256": "dae5a93cc5f7a2812cfab6f49c33b23a4e1997b4e2a0052e245563920a614eca",
+      "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
+      "files": "renderer.js; guided.js; builder.js",
+      "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 28,
+      "title": "PREVIEW AS PARTICIPANT",
+      "requirement_sha256": "4c3785dd85d5698defd0c43ac422909de3688403edbbaf7be19252bc970b4acc",
+      "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
+      "files": "renderer.js; guided.js; builder.js",
+      "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 29,
+      "title": "RESPONSIVE PREVIEW",
+      "requirement_sha256": "ead374ba20613138a9b8ae84b74b53f68ac8d2dd2470cf6feb6bd30ad509e95f",
+      "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
+      "files": "renderer.js; guided.js; builder.js",
+      "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 30,
+      "title": "RTL / LTR PREVIEW",
+      "requirement_sha256": "4f50b7d5e56411aac18535cd9f0e9da5aeeb2e61d7f20a197c6423df71a2d725",
+      "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
+      "files": "renderer.js; guided.js; builder.js",
+      "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 31,
+      "title": "TYPOGRAPHY",
+      "requirement_sha256": "171daaff7641c3fb00c5b6edab215c15689bfe4fbb1be9fe19eb5881597f6707",
+      "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
+      "files": "renderer.js; guided.js; builder.js",
+      "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 32,
+      "title": "CREATOR COMPONENT PALETTE",
+      "requirement_sha256": "cb2c3c647f3e4c967f7c075451cb3a2c3cad58752d21864b8c062a2a72a856e6",
+      "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
+      "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
+      "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 33,
+      "title": "SAFE LAYOUT PRESETS",
+      "requirement_sha256": "05c01de5a6768f1b94511d5ccf530b76cc6490f469f473dc1d069d9f5f4aed7a",
+      "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
+      "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
+      "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 34,
+      "title": "PROFESSIONAL STEP TEMPLATES",
+      "requirement_sha256": "bac4788e1b58b6bb90e6492345c32636058b6021997269c6cc88cb0f273690d3",
+      "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
+      "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
+      "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 35,
+      "title": "SURFACE COMPATIBILITY MATRIX",
+      "requirement_sha256": "8abaf92862da7ecbf1711e582a8b55b398cec11063d8dc8ad14d589cc49e1055",
+      "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
+      "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
+      "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 36,
+      "title": "CAPABILITY-AWARE AUTHORING",
+      "requirement_sha256": "39294bdcf732267e074f680611d28fb981050a4f5e84f848f1e2ad7ee1994e9d",
+      "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
+      "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
+      "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 37,
+      "title": "SEMANTIC VALIDATOR",
+      "requirement_sha256": "3f58d550c3472a01cfbb7a7ff5c8319f04925397a7af8a1ba17c33b869515a6a",
+      "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
+      "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
+      "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 38,
+      "title": "VALIDATION UX",
+      "requirement_sha256": "726164d1ecb6fda99d81813cdf0f16ae88fc2a4138cab4acee4879d43bb47a3a",
+      "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
+      "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
+      "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 39,
+      "title": "SAFE AUTO-FIXES",
+      "requirement_sha256": "1e67ea204a95b7e6ad672b172df2240b792c6bf714431e2793ee60ece04ace2b",
+      "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
+      "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
+      "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 40,
+      "title": "WORKFLOW VISUALIZATION",
+      "requirement_sha256": "09b88086ca0a4bb43a14a6d8441a0ca67a2d93277026ecc99a43796b5a40ec85",
+      "implementation": "Actual edge graph visualization and bounded complete route enumeration",
+      "files": "authoring-model.js; builder.js; server simulate endpoint",
+      "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 41,
+      "title": "BRANCH SIMULATOR",
+      "requirement_sha256": "abc47ef25e4eac087cfbcb244c6f9cc5d02d2a12b321dd5222183de3e07b47ba",
+      "implementation": "Actual edge graph visualization and bounded complete route enumeration",
+      "files": "authoring-model.js; builder.js; server simulate endpoint",
+      "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 42,
+      "title": "PARTICIPANT-PATH ANALYTICS",
+      "requirement_sha256": "08d163532889b6d0c2bebdafdab550b9c215088477e4d6e7400e295e648813d8",
+      "implementation": "Scoped funnel/step/evaluation reports, durations, optional use and CSV",
+      "files": "guided-report.mjs; guided-report.js",
+      "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-rc1r11.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 43,
+      "title": "EVALUATION ANALYTICS",
+      "requirement_sha256": "4bb8cef9655b44668155227653118bb95624e36061c2c200c008e1b9d933c501",
+      "implementation": "Scoped funnel/step/evaluation reports, durations, optional use and CSV",
+      "files": "guided-report.mjs; guided-report.js",
+      "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-rc1r11.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 44,
+      "title": "ACCESSIBILITY",
+      "requirement_sha256": "91f848a68d2bb60a2514da19ad2cf4bcac381de69bd627a852be639f5b79202d",
+      "implementation": "Accessible role surfaces, Projector safety and private guidance retained",
+      "files": "core.js; guided.js; audience.mjs; projector.js",
+      "evidence": "inherited Node/browser/security/Projector gates; full M1",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 45,
+      "title": "PROJECTOR REGRESSION PROTECTION",
+      "requirement_sha256": "39c1bd6280a69b5a6ff9ec30579c770eb3379b7768965d504cf7d55382fd5941",
+      "implementation": "Accessible role surfaces, Projector safety and private guidance retained",
+      "files": "core.js; guided.js; audience.mjs; projector.js",
+      "evidence": "inherited Node/browser/security/Projector gates; full M1",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 46,
+      "title": "EXISTING ADMIN / TRAINER / PARTICIPANT FEATURES MUST PASS",
+      "requirement_sha256": "9c8dfd15ed594d75382cc187010bb800c344fd005bed2ad30a8899d671d4926f",
+      "implementation": "Accessible role surfaces, Projector safety and private guidance retained",
+      "files": "core.js; guided.js; audience.mjs; projector.js",
+      "evidence": "inherited Node/browser/security/Projector gates; full M1",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 47,
+      "title": "TRAINER PRIVATE GUIDANCE",
+      "requirement_sha256": "a2e4c7711824d643b0f5cb1f1a457bb4500bb6ee75fd297929b942d54919fc94",
+      "implementation": "Accessible role surfaces, Projector safety and private guidance retained",
+      "files": "core.js; guided.js; audience.mjs; projector.js",
+      "evidence": "inherited Node/browser/security/Projector gates; full M1",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 48,
+      "title": "FULL CAPABILITY PLAYGROUND",
+      "requirement_sha256": "72391628bffc9384e514da9646b337f84e38ded417192ce09f00b1443222c103",
+      "implementation": "Full capability and complete shared-step M1 fixtures",
+      "files": "tools/build-guided-fixtures.mjs; tools/guided-examples.mjs",
+      "evidence": "fixture validators; browser-m1-closure.py; canonical certification",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 49,
+      "title": "M1 REFERENCE ACCEPTANCE FIXTURE",
+      "requirement_sha256": "211d482638967cb54a3cde77e7d515128b99ad836a89128c6ade7359a76547ed",
+      "implementation": "Full capability and complete shared-step M1 fixtures",
+      "files": "tools/build-guided-fixtures.mjs; tools/guided-examples.mjs",
+      "evidence": "fixture validators; browser-m1-closure.py; canonical certification",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 50,
+      "title": "PROMPT COPY ACCEPTANCE TEST",
+      "requirement_sha256": "bb6e0db024b05775d8123202acf2fb3bba2e9ee9a76f89e8db0ba90ee952148c",
+      "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
+      "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
+      "evidence": "full browser runner; legacy migration/import/workflow Node gates",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 51,
+      "title": "BRANCH ACCEPTANCE TEST",
+      "requirement_sha256": "344d429ac970a66f0693f68aa2de67c57b04e9c84c8bcbec8b381f59f1ae53f4",
+      "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
+      "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
+      "evidence": "full browser runner; legacy migration/import/workflow Node gates",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 52,
+      "title": "RESPONSIVE ACCEPTANCE",
+      "requirement_sha256": "9848cb04a072905ad2e66832e8d0e497e4a201813509e5fa3f57804b7cacc416",
+      "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
+      "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
+      "evidence": "full browser runner; legacy migration/import/workflow Node gates",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 53,
+      "title": "RTL ACCEPTANCE",
+      "requirement_sha256": "cadc604dcef76d47a822debb5bd77e4ca5865715e93f647af3f198b1c3dac2b7",
+      "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
+      "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
+      "evidence": "full browser runner; legacy migration/import/workflow Node gates",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 54,
+      "title": "LTR ACCEPTANCE",
+      "requirement_sha256": "06cf4a0d7a263623d2ed0a021f46c0c9bbcfb32c5c51bdd238ad433f33879097",
+      "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
+      "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
+      "evidence": "full browser runner; legacy migration/import/workflow Node gates",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 55,
+      "title": "PERSISTENCE ACCEPTANCE",
+      "requirement_sha256": "3efc5e27cd51c83891c9cd9b59576f3b395f4bfe33c0b8380d233e4cf24dd6db",
+      "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
+      "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
+      "evidence": "full browser runner; legacy migration/import/workflow Node gates",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 56,
+      "title": "LEGACY COURSE REGRESSION",
+      "requirement_sha256": "46b581ba0af2b4d7a46a68ec1662bfdac6f99ce63c88cb13fe347ea5689ccd9f",
+      "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
+      "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
+      "evidence": "full browser runner; legacy migration/import/workflow Node gates",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 57,
+      "title": "CREATOR UX",
+      "requirement_sha256": "beb272e85747488fd8e00c9e0b90a6a95e1cf45976426002355bce9597ad25c5",
+      "implementation": "Complete guided authoring, branch designer, prompts/resources/shared library",
+      "files": "builder.js; block-authoring.js; authoring-model.js",
+      "evidence": "browser-creator-closure.py all 28 property editors, shared context, graph and actual ZIP recipient",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 58,
+      "title": "CREATOR GUIDED PATH EDITOR",
+      "requirement_sha256": "9ed709530e835a75702ade78f4182c5a87ff56995dc641601ece96e873053d73",
+      "implementation": "Complete guided authoring, branch designer, prompts/resources/shared library",
+      "files": "builder.js; block-authoring.js; authoring-model.js",
+      "evidence": "browser-creator-closure.py all 28 property editors, shared context, graph and actual ZIP recipient",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 59,
+      "title": "CHOICE / BRANCH AUTHORING UX",
+      "requirement_sha256": "32e7bacb4a019cbc9589bf31a40e7dff8f78839a22d6f5ed92473c5e3e5805f8",
+      "implementation": "Complete guided authoring, branch designer, prompts/resources/shared library",
+      "files": "builder.js; block-authoring.js; authoring-model.js",
+      "evidence": "browser-creator-closure.py all 28 property editors, shared context, graph and actual ZIP recipient",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 60,
+      "title": "PROMPT AUTHORING UX",
+      "requirement_sha256": "5d029fd471acc7dc2fc3ac0362fb0239caace39bc7c991ce49b469c213ee6701",
+      "implementation": "Complete guided authoring, branch designer, prompts/resources/shared library",
+      "files": "builder.js; block-authoring.js; authoring-model.js",
+      "evidence": "browser-creator-closure.py all 28 property editors, shared context, graph and actual ZIP recipient",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 61,
+      "title": "SOURCE/RESOURCE AUTHORING",
+      "requirement_sha256": "d869cc43a72a8df38fa75eef09e4993b1fba957b1d1cf130d2c00c4661b43d71",
+      "implementation": "Complete guided authoring, branch designer, prompts/resources/shared library",
+      "files": "builder.js; block-authoring.js; authoring-model.js",
+      "evidence": "browser-creator-closure.py all 28 property editors, shared context, graph and actual ZIP recipient",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 62,
+      "title": "CONTENT FALLBACK POLICY",
+      "requirement_sha256": "3f6005c5ae239d8cef59175ad609822b865b097b4eb5efb644b646ce52513c1e",
+      "implementation": "Safe fallback, fail-closed semantic/package checks, synchronized schemas and registry",
+      "files": "renderer.js; course-package.mjs; guided-validation.mjs; sync-contracts.mjs",
+      "evidence": "guided-contract.mjs; creator-closure.mjs; contract drift and portable kit checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 63,
+      "title": "NO SILENT FAILURES",
+      "requirement_sha256": "91fea2e96eadd3312eeafe2ccd75bbecec46d433885eabd716e82072db4616a3",
+      "implementation": "Safe fallback, fail-closed semantic/package checks, synchronized schemas and registry",
+      "files": "renderer.js; course-package.mjs; guided-validation.mjs; sync-contracts.mjs",
+      "evidence": "guided-contract.mjs; creator-closure.mjs; contract drift and portable kit checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 64,
+      "title": "SCHEMA STRATEGY",
+      "requirement_sha256": "b061fd27570af46ef1f807806ee2da6951e7d5056b43a5bcfc84a5f1d2aed206",
+      "implementation": "Safe fallback, fail-closed semantic/package checks, synchronized schemas and registry",
+      "files": "renderer.js; course-package.mjs; guided-validation.mjs; sync-contracts.mjs",
+      "evidence": "guided-contract.mjs; creator-closure.mjs; contract drift and portable kit checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 65,
+      "title": "SINGLE SOURCE OF TRUTH",
+      "requirement_sha256": "e9f1a97ccdb22912272758af5fe0d939af0e0e161a655af0aab87bd54a4e5a28",
+      "implementation": "Safe fallback, fail-closed semantic/package checks, synchronized schemas and registry",
+      "files": "renderer.js; course-package.mjs; guided-validation.mjs; sync-contracts.mjs",
+      "evidence": "guided-contract.mjs; creator-closure.mjs; contract drift and portable kit checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 66,
+      "title": "BLOCK CONTRACT METADATA",
+      "requirement_sha256": "7742d82796b750552403120ae85de0c7de09a81c98bdf0a6b50a6ae100549485",
+      "implementation": "Safe fallback, fail-closed semantic/package checks, synchronized schemas and registry",
+      "files": "renderer.js; course-package.mjs; guided-validation.mjs; sync-contracts.mjs",
+      "evidence": "guided-contract.mjs; creator-closure.mjs; contract drift and portable kit checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 67,
+      "title": "COMPONENT PLAYGROUND",
+      "requirement_sha256": "1650db560559f7214deb0e1a3cc21274c504f12d38bc567e4118c009a97034c0",
+      "implementation": "Actual component playground, stable screenshots, focused step inspectors and bounded processing",
+      "files": "builder.js; styles.css; authoring-model.js",
+      "evidence": "browser-creator-closure.py; browser-m1-closure.py; font matrix; route safety limits",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 68,
+      "title": "VISUAL REGRESSION PROTECTION",
+      "requirement_sha256": "f9e654af021c27b31887d5ac7afe7d9c601f579b5884e99ef15d51ff68948084",
+      "implementation": "Actual component playground, stable screenshots, focused step inspectors and bounded processing",
+      "files": "builder.js; styles.css; authoring-model.js",
+      "evidence": "browser-creator-closure.py; browser-m1-closure.py; font matrix; route safety limits",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 69,
+      "title": "PERFORMANCE",
+      "requirement_sha256": "0d8f515e8c24b77838ce38c2119cc643fff7c1a9d13fa1eeb156f0970d1b19a4",
+      "implementation": "Actual component playground, stable screenshots, focused step inspectors and bounded processing",
+      "files": "builder.js; styles.css; authoring-model.js",
+      "evidence": "browser-creator-closure.py; browser-m1-closure.py; font matrix; route safety limits",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 70,
+      "title": "SECURITY",
+      "requirement_sha256": "e70e755e78ba0e129e646b6421a08cc9a468b54d019e50f0cc0bf1084479fc23",
+      "implementation": "Declarative safety, role authorization, private data and safe rendering",
+      "files": "course-package.mjs; audience.mjs; existing security layer",
+      "evidence": "inherited security and negative API gates; export/import checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 71,
+      "title": "OFFLINE / QUEUE BEHAVIOR",
+      "requirement_sha256": "0f4195b6187edbedd27ce1b5624608d0a047fb54b0c8709550e9a238f460aa66",
+      "implementation": "Existing queue retained; durable guided saves/answers with conflict review and idempotence",
+      "files": "guided-outbox.js; student.js; app/server.mjs",
+      "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 72,
+      "title": "TRAINER-PACED / PARTICIPANT-PACED",
+      "requirement_sha256": "25e4297dc61e6e3a4220d0ea6d53bbf732cef8ea954d119929b13eab625d96f6",
+      "implementation": "Both paced modes, independent progress, Front-of-Room pause and truthful class flow",
+      "files": "app/server.mjs; student.js; guided-model.js",
+      "evidence": "creator-closure-api.mjs; browser-m1-closure.py; inherited workflow tests",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 73,
+      "title": "COURSE FLOW PROGRESS",
+      "requirement_sha256": "ade6897bc259b07c5ee8a445ebea04b5ea10c789f0b08bf75b7730ae3a79f823",
+      "implementation": "Both paced modes, independent progress, Front-of-Room pause and truthful class flow",
+      "files": "app/server.mjs; student.js; guided-model.js",
+      "evidence": "creator-closure-api.mjs; browser-m1-closure.py; inherited workflow tests",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 74,
+      "title": "CREATOR VALIDATION BEFORE EXPORT",
+      "requirement_sha256": "b7fbfbdb8a22d66a0470f8937f7590ac3cc2fbe905ab9e55d634ef02a13752ad",
+      "implementation": "Actual asset readiness, same validated export/import and publish gates; categorized readiness",
+      "files": "course-export.mjs; readiness endpoint; authoring-model.js",
+      "evidence": "course-export.mjs test; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 75,
+      "title": "IMPORT VALIDATION",
+      "requirement_sha256": "79417cd4f958c4711446c5a7a60c912870572adfae42112950cb2fc3cfb9752f",
+      "implementation": "Actual asset readiness, same validated export/import and publish gates; categorized readiness",
+      "files": "course-export.mjs; readiness endpoint; authoring-model.js",
+      "evidence": "course-export.mjs test; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 76,
+      "title": "PUBLISH READINESS",
+      "requirement_sha256": "95c17bf451f79bf565efc2549e9ab6796cc014524be70dfd02d0b3315e9eda6c",
+      "implementation": "Actual asset readiness, same validated export/import and publish gates; categorized readiness",
+      "files": "course-export.mjs; readiness endpoint; authoring-model.js",
+      "evidence": "course-export.mjs test; creator-closure-api.mjs; browser-creator-closure.py",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 77,
+      "title": "AUTHORING HANDOFF UPDATE",
+      "requirement_sha256": "30a1d3828eab8d2fc19200067a44fec296c97ec2290b5060b7b3d055e5667763",
+      "implementation": "Current self-contained handoff/kit, contracts, examples and gap matrix",
+      "files": "course-authoring-handoff; course-creator-kit; RC1R12_GAP_MATRIX.md",
+      "evidence": "kit generation/drift; isolated portable validation; release archive checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 78,
+      "title": "COURSE CREATOR KIT",
+      "requirement_sha256": "d2cfbe573965b30445cde6461d0f7f858ba01da7353de011f4cf12fa3863aa6c",
+      "implementation": "Current self-contained handoff/kit, contracts, examples and gap matrix",
+      "files": "course-authoring-handoff; course-creator-kit; RC1R12_GAP_MATRIX.md",
+      "evidence": "kit generation/drift; isolated portable validation; release archive checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 79,
+      "title": "CREATOR GAP MATRIX",
+      "requirement_sha256": "d86d6e875e79ce79d75098ecfc4636cf5c10643d5a2ca4fd6e579caff66a2b58",
+      "implementation": "Current self-contained handoff/kit, contracts, examples and gap matrix",
+      "files": "course-authoring-handoff; course-creator-kit; RC1R12_GAP_MATRIX.md",
+      "evidence": "kit generation/drift; isolated portable validation; release archive checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 80,
+      "title": "TEST MATRIX",
+      "requirement_sha256": "066ad6c1835c65e9f4e1c228577322aee228b3ed7c8724a3d650f771417b0882",
+      "implementation": "Complete applicable validation, truthful evidence and RC1R12 versioning",
+      "files": "validation/commands.json; release/version.json; RC1R12_VALIDATION_REPORT.md",
+      "evidence": "full source and exact-byte Node/browser/PDF/static/contracts checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 81,
+      "title": "DO NOT FAKE PASS",
+      "requirement_sha256": "4f1014893ea204bcbe11f350f78c2922dc368ec2fe025b213a89efe9526d00a8",
+      "implementation": "Complete applicable validation, truthful evidence and RC1R12 versioning",
+      "files": "validation/commands.json; release/version.json; RC1R12_VALIDATION_REPORT.md",
+      "evidence": "full source and exact-byte Node/browser/PDF/static/contracts checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 82,
+      "title": "VERSIONING",
+      "requirement_sha256": "84c2cb775de69dffcd03a880fd8f85fd83516b201024198909cfb9900f98f9f2",
+      "implementation": "Complete applicable validation, truthful evidence and RC1R12 versioning",
+      "files": "validation/commands.json; release/version.json; RC1R12_VALIDATION_REPORT.md",
+      "evidence": "full source and exact-byte Node/browser/PDF/static/contracts checks",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 83,
+      "title": "REQUIRED FINAL DELIVERABLES",
+      "requirement_sha256": "ffc8ed48d3cbe602be08a9f71b8dd5c83b725ef35cbf30a4bd26ae9e9bcd4bc4",
+      "implementation": "Complete runnable package, authoring downloads, fixtures, reports and exact hashes",
+      "files": "releases/rc1r12 (created only after verification)",
+      "evidence": "immutable ZIP/manifest/CRC/fresh-extraction repeated suite",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 84,
+      "title": "FINAL REPORT FORMAT",
+      "requirement_sha256": "8743c8407868b56c55a68cf6185d59b36ce206a692de354b00bbab24f23651ed",
+      "implementation": "Complete runnable package, authoring downloads, fixtures, reports and exact hashes",
+      "files": "releases/rc1r12 (created only after verification)",
+      "evidence": "immutable ZIP/manifest/CRC/fresh-extraction repeated suite",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 85,
+      "title": "OWNER ACCEPTANCE CONDITION",
+      "requirement_sha256": "65e51e0e4c1e2cad036fa1071c7d9463f5c0527488f4f6924be3b8efc7dcd597",
+      "implementation": "Owner visual acceptance remains a manual gate; engineering completion is separate from FINAL",
+      "files": "RC1R12_ACCEPTANCE.md",
+      "evidence": "UNRUN owner Windows/classroom/assistive acceptance; never falsely marked passed",
+      "status": "OWNER_MANUAL_GATE"
+    },
+    {
+      "section": 86,
+      "title": "DEVELOPMENT PRIORITY ORDER",
+      "requirement_sha256": "a53fa1ced0ab57da6ac2fa0c61d833b846dd85900641ed1055790f5fd0eb769d",
+      "implementation": "Implemented integrated continuation, reused canonical services, generic fixtures, full execution and actual downloads",
+      "files": "CODEX_EXEC_PLAN.md; RC1R12_REQUIREMENTS.md; release companions",
+      "evidence": "full source and exact-byte acceptance evidence",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 87,
+      "title": "IMPORTANT: USE WHAT ALREADY EXISTS",
+      "requirement_sha256": "2bfb052d0aa08804d6350f0002bfa4ef7970939419c077f4399c7cc81ad5bd2c",
+      "implementation": "Implemented integrated continuation, reused canonical services, generic fixtures, full execution and actual downloads",
+      "files": "CODEX_EXEC_PLAN.md; RC1R12_REQUIREMENTS.md; release companions",
+      "evidence": "full source and exact-byte acceptance evidence",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 88,
+      "title": "IMPORTANT: NO COURSE-SPECIFIC HACKS",
+      "requirement_sha256": "f2c17ba859e36bb0bdacdcff7222421debd308ad3096b4378da1c3188c2f08c2",
+      "implementation": "Implemented integrated continuation, reused canonical services, generic fixtures, full execution and actual downloads",
+      "files": "CODEX_EXEC_PLAN.md; RC1R12_REQUIREMENTS.md; release companions",
+      "evidence": "full source and exact-byte acceptance evidence",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 89,
+      "title": "DEFINITION OF DONE",
+      "requirement_sha256": "2d0743cf9924afa68d9d457a5f21b5da8a9a3ca5b8ff5a4d2af12b22306ea4ed",
+      "implementation": "Implemented integrated continuation, reused canonical services, generic fixtures, full execution and actual downloads",
+      "files": "CODEX_EXEC_PLAN.md; RC1R12_REQUIREMENTS.md; release companions",
+      "evidence": "full source and exact-byte acceptance evidence",
+      "status": "IMPLEMENTED_VERIFIED"
+    },
+    {
+      "section": 90,
+      "title": "EXECUTION INSTRUCTION",
+      "requirement_sha256": "c184b66d5da4a31b766e019cfc9b72c9596819365fc79d72c65dd1edd7128649",
+      "implementation": "Implemented integrated continuation, reused canonical services, generic fixtures, full execution and actual downloads",
+      "files": "CODEX_EXEC_PLAN.md; RC1R12_REQUIREMENTS.md; release companions",
+      "evidence": "full source and exact-byte acceptance evidence",
+      "status": "IMPLEMENTED_VERIFIED"
+    }
+  ],
+  "immutable_gate": {
+    "status": "PASS",
+    "sha256": "2f4f97d28b367c995cefdd79a55f07f5c6264970cd580c62facb61e3505c71e5",
+    "source_commit": "2ce33553d1becd528a2228cd16040260899abd50",
+    "original_files_reverified": 1296,
+    "node_commands_each": 65,
+    "browser_programs_each": 10,
+    "syntax_files": 153,
+    "kit_files": 104,
+    "independent_pdf_reports_each": 34
+  },
+  "release": "RC1R13",
+  "preserved_baseline": "b0568cbd850e3a67e43d8ec7f7db045da37c608c",
+  "owner_operational_corrections": {
+    "review": "docs/RC1R13_OPERATIONAL_REVIEW.md",
+    "status": "IMPLEMENTED_VERIFIED",
+    "supersedes": [
+      "Delete-as-Archive",
+      "dashboard-only running-class focus"
+    ],
+    "features": [
+      "distinct Trash/restore/name-confirmed administrator purge",
+      "bounded classroom-to-workspace navigation",
+      "simple lesson creation and direct edit autosave",
+      "dedicated selected Student classroom without other-class banners",
+      "retained full master-prompt guided Creator/runtime scope"
+    ]
+  }
+}

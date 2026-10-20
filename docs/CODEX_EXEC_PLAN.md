@@ -174,3 +174,9 @@ RC1R13 focused gates now pass: operational API92 assertions; six complete operat
 ### RC1R13 complete source verification PASS
 
 All 65 Node commands, 10 browser programs, 153 syntax files, canonical synchronization, 104-file kit drift and independent readers for 34 PDF reports pass. New operational API 92 assertions and six browser journeys pass; exact local return timing is in docs/verification/rc1r13/SOURCE_OPERATIONAL_RESULT.json. Full original master-prompt implementation remains under regression. Normal startup version 13 preserves existing data with QA mode disabled. Source is ready to commit/seal; full exact-extraction repetition remains mandatory before delivery. Earlier failed runs are retained and superseded; no protection waived.
+
+### RC1R13 exact immutable release PASS
+
+Final immutable-extraction receipt: PASS. The exact sealed application repeats all 65 Node commands, 10 browser programs, 153 syntax files, canonical/104-file kit drift and independent PDF readers for 34 reports. All 1296 original files and every manifest entry reverify after preserving the four generated certification reports. Application ZIP SHA-256 remains `2f4f97d28b367c995cefdd79a55f07f5c6264970cd580c62facb61e3505c71e5`. Source commit: 2ce33553d1becd528a2228cd16040260899abd50. The companion contains actual logs/screenshots and post-test integrity JSON. Normal startup version 13 passes eight HTML routes and unauthenticated export 401 with existing data retained and QA mode disabled.
+
+Standalone companion packaging and remote artifact verification finish delivery. Owner Windows/LAN/classroom/assistive acceptance and fresh cloud publication/restoration remain separate unrun gates. No mandatory engineering feature is deferred.
