@@ -43,7 +43,14 @@ export const WORKSPACE_MIGRATIONS=[{
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,expires_at TEXT NOT NULL,exported_at TEXT,file_sha256 TEXT,
   FOREIGN KEY(owner_id) REFERENCES users(id));
   CREATE INDEX idx_professional_reports_owner ON professional_report_snapshots(owner_id,created_at);
-  INSERT INTO schema_meta(key,value) VALUES('workspace_schema','4') ON CONFLICT(key) DO UPDATE SET value=excluded.value;`}];
+  INSERT INTO schema_meta(key,value) VALUES('workspace_schema','4') ON CONFLICT(key) DO UPDATE SET value=excluded.value;`},{version:'one-workspace-0005',sql:`CREATE TABLE trash_records (
+  entity_type TEXT NOT NULL CHECK(entity_type IN ('course','class')),entity_id INTEGER NOT NULL,snapshot_json TEXT NOT NULL,deleted_by INTEGER,deleted_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY(entity_type,entity_id),FOREIGN KEY(deleted_by) REFERENCES users(id) ON DELETE SET NULL);
+  CREATE INDEX idx_trash_records_deleted ON trash_records(deleted_at);
+  CREATE INDEX IF NOT EXISTS idx_course_versions_course ON course_versions(course_id,id);
+  CREATE INDEX IF NOT EXISTS idx_classes_course_version ON classes(course_version_id);
+  CREATE INDEX IF NOT EXISTS idx_class_trainers_user_class ON class_trainers(user_id,class_id);
+  INSERT INTO schema_meta(key,value) VALUES('workspace_schema','5') ON CONFLICT(key) DO UPDATE SET value=excluded.value;`}];
 export function workspaceMigrationPending(db){
   if(!db.prepare("SELECT 1 FROM sqlite_master WHERE type='table' AND name='schema_migrations'").get())return true;
   return WORKSPACE_MIGRATIONS.some(m=>!db.prepare('SELECT 1 FROM schema_migrations WHERE version=?').get(m.version));

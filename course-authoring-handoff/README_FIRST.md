@@ -1,10 +1,16 @@
-# Current RC1R12 authoring boundary
+# RC1R13 operational Creator and classroom update
 
-Training Engine ONE 3.5.0-rc.1.12. Read GUIDED_EXPERIENCE.md and CREATOR_GAP_MATRIX.md first; they supersede older guided limitations below. Current canonical schemas, registry and portable validator are authoritative. The standalone handoff includes the entire current course-creator-kit; use its validator and six samples without npm installation. No mandatory master-prompt engineering feature is deferred. Owner classroom/Windows/assistive acceptance is a separate unrun gate.
+Current Core 3.5.0-rc.1.13 / core schema 3.2 / course schema 2.0 / additive workspace schema 5. The complete guided contract below is retained. Course Builder now offers Add lesson: teaching content, practical task and reflection produce ordinary canonical presentation/practice/convergence/closing nodes. Direct editing autosaves; optional settings are under Advanced settings; an outline keeps navigation visible. The pure app/public/creator-start.js helper is included in the portable kit and uses the same graph model. It is an authoring convenience, not a new course type. Preview, validator, export and runtime share the canonical model; no per-course Core change is needed.
 
-# Training Engine ONE RC1R12 — current AI Course Creator contract
+Participant delivery opens /student/class?class_id=... with one selected class and side/bottom learning navigation; /student?workspace=1 returns to the ordinary learning workspace. Course/class Delete uses distinct Trash. Intentional Archive remains separate. Trash restoration retains state/history; permanent deletion is a separate administrator-confirmed action with dependency guards. Old ambiguous archives remain Archive with Move to Trash.
 
-This in-tree kit is synchronized to the RC1R12 canonical registry, runtime capabilities and course schemas. Read CORE_CAPABILITIES.json completely before authoring. The kit is current for this owner-acceptance candidate; FINAL requires owner acceptance. The separate v1.3 package is historical RC4 evidence. Course schema remains 2.0; core/data schema is 3.2 with journaled workspace extensions.
+# Current RC1R13 authoring boundary
+
+Training Engine ONE 3.5.0-rc.1.13. Read GUIDED_EXPERIENCE.md and CREATOR_GAP_MATRIX.md first; they supersede older guided limitations below. Current canonical schemas, registry and portable validator are authoritative. The standalone handoff includes the entire current course-creator-kit; use its validator and six samples without npm installation. No mandatory master-prompt engineering feature is deferred. Owner classroom/Windows/assistive acceptance is a separate unrun gate.
+
+# Training Engine ONE RC1R13 — current AI Course Creator contract
+
+This in-tree kit is synchronized to the RC1R13 canonical registry, runtime capabilities and course schemas. Read CORE_CAPABILITIES.json completely before authoring. The kit is current for this owner-acceptance candidate; FINAL requires owner acceptance. The separate v1.3 package is historical RC4 evidence. Course schema remains 2.0; core/data schema is 3.2 with journaled workspace extensions.
 
 ## Authority order
 1. `CORE_CAPABILITIES.json`

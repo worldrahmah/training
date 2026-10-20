@@ -16,10 +16,10 @@ assert.equal(globalThis.document.documentElement.lang,'ar');
 assert.equal(mod.t('Hi, {name}',{name:'حسن'}),'مرحبًا، حسن');
 mod.setLocale('en');
 assert.equal(globalThis.document.documentElement.dir,'ltr');
-const files=['core.js','trainer.js','student.js','admin.js','builder.js','live.js','present.js','preview.html','workspace-tools.js','professional-reports.js','profile.js','editor.js','typography-controls.js','guided.js','guided-report.js','block-authoring.js'];
+const files=['core.js','trainer.js','student.js','admin.js','builder.js','live.js','present.js','preview.html','workspace-tools.js','professional-reports.js','profile.js','editor.js','typography-controls.js','guided.js','guided-report.js','block-authoring.js','creator-start.js','delete-record.js'];
 const used=new Set();
 for(const f of files){const txt=fs.readFileSync(path.join(root,'app/public',f),'utf8');for(const m of txt.matchAll(/\bt\('([^']+)'/g))used.add(m[1]);}
 const registry=JSON.parse(fs.readFileSync(path.join(root,'registry/activity-component-registry.json'),'utf8'));function inspectProperties(properties){for(const [key,spec] of Object.entries(properties)){used.add(spec.label);if(spec.kind==='select'&&key!=='chart_type')for(const option of spec.options)used.add(option);if(spec.properties)inspectProperties(spec.properties)}}for(const spec of Object.values(registry.block_contracts||{}))inspectProperties(spec.properties);
 const missing=[...used].filter(k=>!mod.hasArabicTranslation(k)).sort();
 assert.deepEqual(missing,[],`Missing Arabic UI translations: ${missing.join(', ')}`);
-console.log('I18N_AR_EN_PASS');
+assert.equal(mod.tForLocale('Your practice','ar'),'تطبيقك العملي');assert.equal(mod.getLocale(),'en');console.log('I18N_AR_EN_PASS');

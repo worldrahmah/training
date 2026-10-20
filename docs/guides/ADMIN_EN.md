@@ -68,3 +68,11 @@ Saving the dialog preserves existing grants for resources not represented in its
 ## RC1R12 guided experience update
 
 The current build retains all existing administration and adds complete guided authoring/runtime acceptance. During a running class the Participant sees the class hero/current task first; personal learning/history/tools stay behind expandable arrows. Course/class Delete is recoverable and preserves history; active classes are protected. Use Reports → Guided learning report for path/drop-off/step timing/optional use/evaluation data and CSV within your authorized scope. Publication/export now verify actual assets as well as semantic readiness. Use the current RC1R12 acceptance and upgrade guides before an installation upgrade.
+
+## RC1R13 operational update
+
+Delete moves courses/classes to the separate Trash. Restore retains original state/history. Only an administrator can permanently delete a trashed item after typing its exact name and reviewing the impact. Courses with classes cannot be purged until those classes are explicitly purged. Intentional Archive remains separate; old archived items have Move to Trash.
+
+Participants open a dedicated selected-class page with the large hero/current task. Other learning is side navigation or below on mobile. My workspace returns to the class list and learning record; an ended class never silently switches to another running class.
+
+In Builder, use Add lesson: name, teaching content, task and reflection. Ordinary presentation/practice/closing nodes are connected automatically. Direct edits save without a separate Apply action. Navigate through Course outline; open Advanced settings when needed, then Preview, Review and publish/export. Trainer workspace return no longer waits for unrelated course/people/report lists.

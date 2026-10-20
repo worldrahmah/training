@@ -15,7 +15,7 @@ assert.match(original,/initializeActivityType\(a,type,spec\)/,'Activity type tra
 const source=original.replace(/^import .*$/gm,'').replace(/\nboot\(\);\s*$/,'\n');
 const noop=()=>{};
 const storage=()=>{const m=new Map();return {getItem:k=>m.get(k)||'',setItem:(k,v)=>m.set(k,String(v)),removeItem:k=>m.delete(k)}};
-const controls=new Map(),appEl={innerHTML:'',onclickCaptureBound:true,addEventListener:noop};
+const controls=new Map(),appEl={innerHTML:'',dataset:{},onclickCaptureBound:true,addEventListener:noop};
 const ctx={
   actionMenu:()=>'',appearanceActions:()=>'',uiIcon:()=>'',
   console,structuredClone,setTimeout,clearTimeout,URLSearchParams,FormData,Blob,Date,Math,JSON,Number,String,Boolean,Array,Object,Map,Set,Promise,Error,

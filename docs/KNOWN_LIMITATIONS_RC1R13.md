@@ -1,0 +1,5 @@
+# RC1R13 acceptance boundaries
+
+No known failing mandatory engineering check may be carried into the delivered package. The release is an OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL until actual owner Windows/LAN/classroom/visual/assistive acceptance. Optional external tools need their own connectivity. Guided outbox preserves applicable disconnected edits/answers; uploads, fresh page loads and confirmed navigation require the local server. Existing canonical specialized/team/media activity surfaces remain supported; no unrestricted course scripting or loop engine is introduced.
+
+Trash preserves historical data until an explicit administrator-confirmed permanent deletion. Old Archive records cannot be automatically classified as former Delete versus intentional Archive; they remain recoverable with Move to Trash. A referenced course cannot be purged until its classes are explicitly purged. File cleanup errors are reported as pending instead of concealing them. Local performance measurements are regression evidence, not a promise for every device/network. Environment draft saving is distinct from publication and a fresh-task restore.

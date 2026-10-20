@@ -63,7 +63,7 @@ try:
    ctx.close();checks.append({'language':language,'branch':branch,'width':width,'mode':mode,'theme':theme,'ui_locale':ui_locale,'status':'PASS'});print('FULL_M1_ROUTE_PASS',language,branch,width,mode,flush=True)
   before_revision=req(f'/api/student/runtime/{cid}',token)['state']['revision'];before_report=req('/api/reports/guided',at)
   for branch in [0,1]:
-   ctx=context(at,'en',1440);page=ctx.new_page();page.goto(base+'/builder?course_id='+str(imp['course_id']));page.locator('[data-tab=preview]').click();page.locator('#previewMode').select_option('participant');page.locator('[data-guided-path]').nth(branch).click();path=mod['paths'][branch]
+   ctx=context(at,'en',1440);page=ctx.new_page();page.goto(base+'/builder?course_id='+str(imp['course_id']));page.locator('.builder-tabs [data-tab=preview]').click();page.locator('#previewMode').select_option('participant');page.locator('[data-guided-path]').nth(branch).click();path=mod['paths'][branch]
    for index,reference in enumerate(path['steps']):
     key=reference['id'];step=mod['step_templates'][reference['use_template']];expect(page.locator('[data-guided-step]')).to_have_attribute('data-guided-step',key)
     if reference['use_template']=='ask':

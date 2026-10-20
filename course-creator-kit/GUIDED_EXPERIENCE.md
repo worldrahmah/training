@@ -1,6 +1,12 @@
-# Guided Creator and Participant contract — RC1R12
+# RC1R13 operational Creator and classroom update
 
-Core 3.5.0-rc.1.12, SQLite schema 3.2, course schemas 1.0/1.1/2.0. This completes the mandatory engineering scope of the attached 90-section master prompt while retaining RC1R11's focused running-class dashboard and recoverable class/course deletion. Automated release verification is attested in the current validation/seal report; owner Windows/classroom/assistive acceptance remains a separate manual gate.
+Current Core 3.5.0-rc.1.13 / core schema 3.2 / course schema 2.0 / additive workspace schema 5. The complete guided contract below is retained. Course Builder now offers Add lesson: teaching content, practical task and reflection produce ordinary canonical presentation/practice/convergence/closing nodes. Direct editing autosaves; optional settings are under Advanced settings; an outline keeps navigation visible. The pure app/public/creator-start.js helper is included in the portable kit and uses the same graph model. It is an authoring convenience, not a new course type. Preview, validator, export and runtime share the canonical model; no per-course Core change is needed.
+
+Participant delivery opens /student/class?class_id=... with one selected class and side/bottom learning navigation; /student?workspace=1 returns to the ordinary learning workspace. Course/class Delete uses distinct Trash. Intentional Archive remains separate. Trash restoration retains state/history; permanent deletion is a separate administrator-confirmed action with dependency guards. Old ambiguous archives remain Archive with Move to Trash.
+
+# Guided Creator and Participant contract — RC1R13
+
+Core 3.5.0-rc.1.13, SQLite schema 3.2, course schemas 1.0/1.1/2.0. This completes the mandatory engineering scope of the attached 90-section master prompt while retaining RC1R11's focused running-class dashboard and recoverable class/course deletion. Automated release verification is attested in the current validation/seal report; owner Windows/classroom/assistive acceptance remains a separate manual gate.
 
 ## One model and renderer
 

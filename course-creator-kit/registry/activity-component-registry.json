@@ -1,6 +1,6 @@
 {
   "format": "training-engine-one-capability-registry",
-  "registry_version": "3.5.0-rc.1.12",
+  "registry_version": "3.5.0-rc.1.13",
   "status": "guided-experience-professional-closure",
   "projector": {
     "themes": [
@@ -788,7 +788,9 @@
     ],
     "public_explanation_field": "explanation",
     "audience_solutions": "hidden_until_reveal",
-    "response_acknowledgement": "submitted_without_score"
+    "response_acknowledgement": "submitted_without_score",
+    "beginner_lesson_starter": true,
+    "direct_edit_autosave": true
   },
   "workspace": {
     "organization_mode": "single_local_organization",
@@ -843,7 +845,20 @@
     },
     "profiles": "own_and_authorized_scope",
     "bulk_changes": "actor_bound_preview_with_stale_detection",
-    "archive": "preserved_history_with_restore"
+    "archive": "preserved_history_with_restore",
+    "trash": {
+      "separate_from_archive": true,
+      "restore_original_lifecycle": true,
+      "permanent_delete": "administrator_confirmed_name_from_trash",
+      "course_purge": "blocked_while_any_class_references_a_version",
+      "history": "retained_until_explicit_permanent_delete"
+    },
+    "student_classroom": {
+      "route": "/student/class?class_id=…",
+      "selected_class_only": true,
+      "workspace_route": "/student?workspace=1",
+      "secondary_learning": "side_navigation_or_below_on_mobile"
+    }
   },
   "display_labels": {
     "content_blocks": {

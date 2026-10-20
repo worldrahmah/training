@@ -63,7 +63,8 @@
     "node tests/rc1r11-guided.mjs",
     "node tests/course-export.mjs",
     "node tests/creator-closure.mjs",
-    "node tests/creator-closure-api.mjs"
+    "node tests/creator-closure-api.mjs",
+    "node tests/operational-workspace.mjs"
   ],
   "browser": [
     "python tests/browser-repair.py",
@@ -74,6 +75,7 @@
     "python tests/browser-rc1r10.py",
     "python tests/browser-rc1r11.py",
     "python tests/browser-creator-closure.py",
-    "python tests/browser-m1-closure.py"
+    "python tests/browser-m1-closure.py",
+    "python tests/browser-operational.py"
   ]
 }

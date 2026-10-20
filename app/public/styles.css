@@ -390,3 +390,39 @@ img,svg,video,canvas{max-width:100%}
 
 /* Authored content direction and typography stay independent of Engine UI language. */
 .guided-activity[dir=rtl]{--guided-copy-font:var(--font-arabic)}.guided-activity[dir=ltr]{--guided-copy-font:var(--font-latin)}.guided-activity .content-stack,.guided-activity>.rich,.guided-activity .live-panel-head>div,.guided-activity .guided-choice,.guided-interaction>h3,.guided-interaction>fieldset{--font-ui:var(--guided-copy-font);--font-title:var(--guided-copy-font);font-family:var(--guided-copy-font)}.content-local-direction[dir=rtl]{--font-ui:var(--font-arabic);--font-title:var(--font-arabic)}.content-local-direction[dir=ltr]{--font-ui:var(--font-latin);--font-title:var(--font-latin)}.guided-activity .form-actions,.guided-activity .resource-card>.btn,.guided-activity .guided-choice .badge{--font-ui:var(--font-body);font-family:var(--font-body)}
+
+/* A running class is an independent learning surface. */
+.student-classroom-layout{display:grid;grid-template-columns:minmax(0,1fr) 236px;gap:28px;max-width:1600px;margin:0 auto;padding:28px 32px 64px;align-items:start}
+.student-classroom-layout>.student-main{width:100%;max-width:none;padding:0;margin:0;min-width:0}
+.student-classroom-page .student-hero{min-height:250px;margin-bottom:28px}
+.student-classroom-page .current-class-task{margin-bottom:0}
+.student-classroom-rail{position:sticky;top:24px;display:grid;gap:12px;min-width:0;padding-top:8px}
+.student-classroom-rail>.btn{justify-content:flex-start}
+.student-classroom-rail .student-disclosure{margin:0;box-shadow:none}
+.student-classroom-rail .student-disclosure summary{padding:16px}
+.student-classroom-rail .student-disclosure-body{padding:0 14px 14px}
+.student-classroom-page .guided-activity{max-width:none}
+.builder-guide{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:20px}
+.builder-guide h2{font-size:var(--font-size-h3,1.25rem);margin:0 0 6px}
+.builder-guide p{margin:0;color:var(--muted)}
+.builder-starter{max-width:900px;margin:0 auto;padding:32px}
+.builder-starter>.form-grid{margin:24px 0}
+.builder-edit-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:24px;align-items:start}
+.builder-editor-stage{min-width:0}
+.builder-outline{position:sticky;top:18px;max-height:calc(100vh - 40px);overflow:auto}
+.builder-outline summary{cursor:pointer;font-weight:750;padding:4px 0 12px}
+.builder-outline nav{display:grid;gap:5px;margin:12px 0}
+.builder-outline nav button{text-align:start;overflow-wrap:anywhere;border:0;border-radius:9px;background:transparent;color:var(--text);padding:10px 12px;cursor:pointer;min-height:44px;font:inherit}
+.builder-outline nav button.active{background:var(--accent-soft,var(--surface-2));color:var(--accent)}
+.builder-outline nav .outline-milestone{font-weight:750;border-block-end:1px solid var(--line);margin-top:10px}
+.builder-editor-stage .form-actions>[data-a^="apply-"]{background:var(--surface);color:var(--text);border:1px solid var(--line)}
+@media(min-width:1200px){.student-classroom-layout{grid-template-columns:minmax(0,1fr) 250px;gap:36px;padding-inline:48px}.student-classroom-page .student-hero{min-height:300px}.student-classroom-page .guided-activity{padding:32px 40px}}
+@media(max-width:899px){.student-classroom-layout{grid-template-columns:minmax(0,1fr);padding:20px 16px 48px;gap:28px}.student-classroom-rail{position:static;grid-template-columns:repeat(2,minmax(0,1fr));border-block-start:1px solid var(--line);padding-top:24px}.student-classroom-rail>.eyebrow{grid-column:1/-1}.student-classroom-page .student-hero{min-height:220px}.builder-edit-layout{grid-template-columns:minmax(0,1fr)}.builder-outline{position:static;max-height:none}.builder-guide{display:grid;gap:14px}.builder-starter{padding:22px}.student-classroom-page .student-top{gap:10px}.student-classroom-page .student-top .brand>span{display:none}}
+@media(max-width:430px){.student-classroom-rail{grid-template-columns:minmax(0,1fr)}.student-classroom-page .student-hero{min-height:240px}.student-classroom-layout{padding-inline:12px}.student-classroom-page .guided-activity{padding:20px 16px}}
+.builder-advanced{margin-top:20px;padding:18px 22px}
+.builder-advanced>summary{cursor:pointer;font-weight:700;min-height:32px}
+.builder-advanced:not([open])>summary{margin:0}
+.builder-advanced>section.card.flat{box-shadow:none;margin-block:16px 0}
+.builder-outline .active{outline-offset:2px}
+/* Announcements never cover navigation or Save controls with an input target. */
+.toast-wrap,.toast{pointer-events:none}

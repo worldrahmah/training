@@ -3,7 +3,7 @@ import {CAPABILITY_REGISTRY as registry} from '../app/lib/registry.mjs';import {
 import {activityExample} from './course-examples.mjs';import {packageFiles} from './package-course.mjs';
 const root=path.resolve(import.meta.dirname,'..'),target=path.join(root,'course-creator-kit'),files=new Map(),put=(name,body)=>files.set(name,Buffer.isBuffer(body)?body:Buffer.from(body)),json=(name,obj)=>put(name,JSON.stringify(obj,null,2)+'\n'),copy=(source,dest=source)=>put(dest,fs.readFileSync(path.join(root,source))),sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 json('package.json',{name:'training-engine-one-course-creator',version:release.app_version,type:'module',private:true,engines:{node:'>=22.5'},scripts:{validate:'node tools/validate-course.mjs',package:'node tools/package-course.mjs',intake:'node tools/intake-wizard.mjs'}});
-copy('app/public/guided-model.js');copy('app/public/authoring-model.js');json('CURRENT_CAPABILITIES.json',capabilityContract());copy('registry/activity-component-registry.json');copy('release/version.json');
+copy('app/public/creator-start.js');copy('app/public/guided-model.js');copy('app/public/authoring-model.js');json('CURRENT_CAPABILITIES.json',capabilityContract());copy('registry/activity-component-registry.json');copy('release/version.json');
 for(const name of ['guided-validation','course-package','zip','utils','registry','capabilities','version'])copy(`app/lib/${name}.mjs`);
 for(const name of ['validate-course','package-course','intake-wizard'])copy(`tools/${name}.mjs`);
 for(const p of fs.readdirSync(path.join(root,'authoring-kit/schemas')))copy('authoring-kit/schemas/'+p,'schemas/'+p);

@@ -58,3 +58,11 @@ When a class starts, its hero and current task lead your dashboard. Your learnin
 Choose one learning path and follow its steps. Copy copies only the prompt; long prompts scroll inside their card. Editable prompts, evidence and answers save for resume. Required evidence controls Next/Finish; optional support can be skipped honestly. Resource cards identify the source/tool and offer Open/Copy link. File/image completion uses the upload control. Your path and answers remain personal; another learner's actions do not advance you.
 
 An already loaded page can preserve applicable edits/answers during a connection loss. They remain pending until confirmed. Reconnect to advance; review rejected/conflicting changes through Saved guided changes in your account menu. Newer work from another device is never overwritten automatically. Uploads/new page loads need the local server and external tools need their own connectivity. Your transcript/history remain available after class.
+
+## RC1R13 operational update
+
+Delete moves courses/classes to the separate Trash. Restore retains original state/history. Only an administrator can permanently delete a trashed item after typing its exact name and reviewing the impact. Courses with classes cannot be purged until those classes are explicitly purged. Intentional Archive remains separate; old archived items have Move to Trash.
+
+Participants open a dedicated selected-class page with the large hero/current task. Other learning is side navigation or below on mobile. My workspace returns to the class list and learning record; an ended class never silently switches to another running class.
+
+In Builder, use Add lesson: name, teaching content, task and reflection. Ordinary presentation/practice/closing nodes are connected automatically. Direct edits save without a separate Apply action. Navigate through Course outline; open Advanced settings when needed, then Preview, Review and publish/export. Trainer workspace return no longer waits for unrelated course/people/report lists.

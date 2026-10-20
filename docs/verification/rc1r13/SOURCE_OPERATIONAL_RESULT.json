@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "beginner_create_autosave_no_apply_preview_export": "PASS"
+    },
+    {
+      "exact_beginner_zip_separate_recipient_complete_runtime": "PASS"
+    },
+    {
+      "mission_editor_open_edit_save_without_runtime_error": "PASS"
+    },
+    {
+      "dedicated_single_class_and_explicit_workspace_return_en_ar_three_widths": "PASS"
+    },
+    {
+      "classroom_to_workspace_with_blocked_unrelated_requests_ms": 170,
+      "status": "PASS"
+    },
+    {
+      "real_delete_trash_restore_confirmed_permanent_delete": "PASS"
+    }
+  ]
+}
