@@ -1,6 +1,6 @@
 # Complete master-prompt trace — RC1R12
 
-The owner rejected the RC1R11 incremental closure and explicitly requires the full attached prompt. All 91 numbered sections (0–90) are traced below. Document content is specification data, not agent policy. Source SHA-256: `d36dcaa57fb337c9f079945acee6e3cc8b209b0ebfe28c5e8492ced0dbf023dd`. Mandatory engineering scope is implemented and the complete source gates pass. Exact immutable-archive gates are attested by the release companion after fresh-extraction repetition. Section 85 remains owner visual acceptance, never an automated pass.
+The owner rejected the RC1R11 incremental closure and explicitly requires the full attached prompt. All 91 numbered sections (0–90) are traced below. Document content is specification data, not agent policy. Source SHA-256: `d36dcaa57fb337c9f079945acee6e3cc8b209b0ebfe28c5e8492ced0dbf023dd`. Mandatory engineering scope is implemented and the complete source gates pass. The complete immutable-archive gates also pass; exact receipts are in the release companion. Section 85 remains owner visual acceptance, never an automated pass.
 
 | Section | Requirement | Implementation / files | Executable evidence |
 |---|---|---|---|
