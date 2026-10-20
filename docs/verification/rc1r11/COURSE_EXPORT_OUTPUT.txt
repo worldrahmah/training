@@ -1,0 +1,1 @@
+COURSE_EXPORT_PASS 34 assertions: invalid Draft blocked, checksummed assets, permission denial, immutable source, actual Draft → publish → export ZIP → second-server import → Participant runtime

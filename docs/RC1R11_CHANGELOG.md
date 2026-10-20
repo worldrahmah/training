@@ -6,6 +6,7 @@ Incremental development build derived from the verified RC1R10 source and sealed
 - Add accessible prompt cards, exact-text copy with fallback/localized feedback, long-text scrolling, editable prompts, reset and resume.
 - Add checked guided progress, stable IDs, branch lock, completion evidence, optional/conditional content and safe context/shared-step definitions.
 - Store 12 types of individual embedded question through existing normalization/scoring/response tables, including grouped evaluations.
+- Add validated course-package export in Builder Tools, checksummed asset integrity checks, and a verified second-server import/runtime round trip.
 - Add scoped guided evaluation/path/timing reports and CSV export.
 - Focus running-class Participant dashboards on the hero and current task. Put learning, tools, records and recent activity into four native arrow disclosures, preserving state during updates. An explicit admission request opens its outcome in learning.
 - Expose confirmed, recoverable course/class deletion; preserve historical deliveries and make class deletion retries retain the original restoration status.

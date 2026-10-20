@@ -60,7 +60,8 @@
     "node tools/build-course-creator-kit.mjs --check",
     "node tests/rc1r10-experience.mjs",
     "node tests/guided-contract.mjs",
-    "node tests/rc1r11-guided.mjs"
+    "node tests/rc1r11-guided.mjs",
+    "node tests/course-export.mjs"
   ],
   "browser": [
     "python tests/browser-repair.py",

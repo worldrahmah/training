@@ -1278,6 +1278,7 @@
         "creator_preview": "same renderer",
         "interactive_response": "activity reference required"
       }
-    }
+    },
+    "creator_package_export": true
   }
 }

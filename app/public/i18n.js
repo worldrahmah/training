@@ -1,5 +1,10 @@
 const KEY='training_engine_locale';
 const AR={
+'Export course package':'تصدير حزمة الدورة',
+'Course export failed.':'تعذر تصدير الدورة.',
+'Course package exported.':'تم تصدير حزمة الدورة.',
+'You do not have permission to export this course.':'ليست لديك صلاحية تصدير هذه الدورة.',
+
 'Desktop':'حاسوب',
 'Tablet':'جهاز لوحي',
 'Phone':'هاتف',

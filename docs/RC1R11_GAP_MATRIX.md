@@ -8,6 +8,7 @@ Baseline: RC1R10. Evidence: full Node/browser/static/contract results and focuse
 | Canonical guided content.blocks | Ignored | Repaired | Shared content renderer | Same guided renderer | Known block/asset/chart checks | API + browser |
 | Prompt/static/editable/copy/scroll/RTL | Partial/disconnected | Repaired | Shared prompt cards | Same renderer; helper text | Prompt text/context checks | Browser exact text, resume/reset/scroll |
 | Participant path cards and branch lock | Basic, unchecked writes | Improved | One choice, one selected path | Executable per-path preview | Server references/revision/evidence | A/B browser and negative API |
+| Validated course-package export | Missing Builder control | Implemented | Checksummed canonical ZIP with assets | Tools export action after save | Same import/semantic/package validator; asset integrity and permission checks | 34 API/round-trip gates + actual browser download |
 | Embedded questions / grouped evaluation | Missing | Implemented | 12 canonical individual types; separate response rows | Reference existing module questions | Supported reference/type/team checks | Ten-question evaluation/browser/API |
 | Step evidence and resume | Unchecked position | Implemented | Server-derived navigation, persisted evidence/edits | Same controls in temporary preview | Completion/reference checks | Forgery/revision/required evidence tests |
 | Optional steps and response/path visibility | Partial | Improved | Safe when/skip | Optional/step response inspector | Restricted comparisons | Pure conditions + API |

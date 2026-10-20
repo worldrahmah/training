@@ -44,3 +44,14 @@ export function readZipEntries(input,{maxEntries=4096,maxEntryBytes=32*1024*1024
   for(const name of out.keys()){const parts=name.split('/');parts.pop();while(parts.length){if(out.has(parts.join('/')))throw new Error('ZIP_FILE_DIRECTORY_CONFLICT');parts.pop()}}
   return out;
 }
+
+export function zipFiles(input){
+ const local=[],central=[];let offset=0;
+ for(const [name,bytes] of [...input].sort(([a],[b])=>a.localeCompare(b))){
+  const n=Buffer.from(name),data=Buffer.from(bytes),crc=crc32(data),h=Buffer.alloc(30),c=Buffer.alloc(46);
+  h.writeUInt32LE(0x04034b50);h.writeUInt16LE(20,4);h.writeUInt16LE(0x800,6);h.writeUInt16LE(33,12);h.writeUInt32LE(crc,14);h.writeUInt32LE(data.length,18);h.writeUInt32LE(data.length,22);h.writeUInt16LE(n.length,26);
+  c.writeUInt32LE(0x02014b50);c.writeUInt16LE(20,4);c.writeUInt16LE(20,6);c.writeUInt16LE(0x800,8);c.writeUInt16LE(33,14);c.writeUInt32LE(crc,16);c.writeUInt32LE(data.length,20);c.writeUInt32LE(data.length,24);c.writeUInt16LE(n.length,28);c.writeUInt32LE(offset,42);
+  local.push(h,n,data);central.push(c,n);offset+=h.length+n.length+data.length;
+ }
+ const directory=Buffer.concat(central),end=Buffer.alloc(22);end.writeUInt32LE(0x06054b50);end.writeUInt16LE(input.size,8);end.writeUInt16LE(input.size,10);end.writeUInt32LE(directory.length,12);end.writeUInt32LE(offset,16);return Buffer.concat([...local,directory,end]);
+}

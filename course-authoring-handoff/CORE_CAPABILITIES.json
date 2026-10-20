@@ -846,7 +846,8 @@
         "creator_preview": "same renderer",
         "interactive_response": "activity reference required"
       }
-    }
+    },
+    "creator_package_export": true
   },
   "workflow": {
     "explicit_graph_validation": true,
@@ -1005,6 +1006,7 @@
     "projector_annotation": true
   },
   "authoring": {
+    "validated_course_package_export": true,
     "autosave": true,
     "undo_redo": true,
     "revision_history": true,

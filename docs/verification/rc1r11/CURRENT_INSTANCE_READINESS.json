@@ -1,8 +1,9 @@
 {
   "status": "PASS",
-  "mode": "normal production startup; QA accounts flag not enabled",
+  "mode": "normal startup; QA accounts flag not enabled",
   "version": "3.5.0-rc.1.11",
   "core_schema": "3.2",
+  "export_auth_guard_status": 401,
   "checks": [
     {
       "path": "/admin",

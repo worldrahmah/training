@@ -1,15 +1,5 @@
 import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {pathToFileURL} from 'node:url';
-import {crc32} from '../app/lib/zip.mjs';import {parseCoursePackage} from '../app/lib/course-package.mjs';
-export function zipFiles(input){
- const local=[],central=[];let offset=0;
- for(const [name,bytes] of [...input].sort(([a],[b])=>a.localeCompare(b))){
-  const n=Buffer.from(name),data=Buffer.from(bytes),crc=crc32(data),h=Buffer.alloc(30),c=Buffer.alloc(46);
-  h.writeUInt32LE(0x04034b50);h.writeUInt16LE(20,4);h.writeUInt16LE(0x800,6);h.writeUInt16LE(33,12);h.writeUInt32LE(crc,14);h.writeUInt32LE(data.length,18);h.writeUInt32LE(data.length,22);h.writeUInt16LE(n.length,26);
-  c.writeUInt32LE(0x02014b50);c.writeUInt16LE(20,4);c.writeUInt16LE(20,6);c.writeUInt16LE(0x800,8);c.writeUInt16LE(33,14);c.writeUInt32LE(crc,16);c.writeUInt32LE(data.length,20);c.writeUInt32LE(data.length,24);c.writeUInt16LE(n.length,28);c.writeUInt32LE(offset,42);
-  local.push(h,n,data);central.push(c,n);offset+=h.length+n.length+data.length;
- }
- const directory=Buffer.concat(central),end=Buffer.alloc(22);end.writeUInt32LE(0x06054b50);end.writeUInt16LE(input.size,8);end.writeUInt16LE(input.size,10);end.writeUInt32LE(directory.length,12);end.writeUInt32LE(offset,16);return Buffer.concat([...local,directory,end]);
-}
+import {zipFiles} from '../app/lib/zip.mjs';export {zipFiles} from '../app/lib/zip.mjs';import {parseCoursePackage} from '../app/lib/course-package.mjs';
 export function packageFiles(files){
  const manifest={format:'training-engine-course-package',schema_version:'2.0',course_file:'course.json',files:[...files].sort(([a],[b])=>a.localeCompare(b)).map(([name,bytes])=>({path:name,sha256:crypto.createHash('sha256').update(bytes).digest('hex')}))};
  const zip=zipFiles(new Map([...files,['manifest.json',Buffer.from(JSON.stringify(manifest,null,2)+'\n')]]));

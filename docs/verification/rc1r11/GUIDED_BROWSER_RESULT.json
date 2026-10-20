@@ -32,6 +32,9 @@
       "creator_visual_step_save": "PASS"
     },
     {
+      "creator_package_export": "PASS"
+    },
+    {
       "guided_report_export": "PASS"
     },
     {
