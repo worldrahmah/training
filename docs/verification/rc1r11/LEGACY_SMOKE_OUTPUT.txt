@@ -1,0 +1,27 @@
+PASS server starts
+PASS /trainer loads
+PASS /student loads
+PASS /present loads
+PASS trainer login
+PASS student login
+PASS trainer dashboard
+PASS student dashboard + enrollment
+PASS launch generic poll
+PASS student response persisted
+PASS close and reveal results
+PASS clear live state
+PASS trainer history
+PASS backup create/list
+PASS course package validation
+PASS transactional course import
+PASS course asset import/serve
+PASS class template import
+PASS CSV roster import
+PASS team assignment
+PASS imported participant login
+PASS team-scoped response
+PASS mission completion + achievement
+PASS safe demo removal preserves real data
+PASS CSV export
+
+SMOKE_TEST_PASS

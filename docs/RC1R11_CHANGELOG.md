@@ -10,6 +10,7 @@ Incremental development build derived from the verified RC1R10 source and sealed
 - Add validated course-package export in Builder Tools, checksummed asset integrity checks, and a verified second-server import/runtime round trip.
 - Add scoped guided evaluation/path/timing reports and CSV export.
 - Focus running-class Participant dashboards on the hero and current task. Put learning, tools, records and recent activity into four native arrow disclosures, preserving state during updates. An explicit admission request opens its outcome in learning.
+- Preserve legacy active-context API fields while exposing running-class metadata for the focused UI. Return to the normal dashboard after delivery ends; enforce read-only personal responses in Front-of-Room mode.
 - Expose confirmed, recoverable course/class deletion; preserve historical deliveries and make class deletion retries retain the original restoration status.
 - Update schemas/capability contract, portable Creator kit, handoff, M1 EN/AR fixtures, all-activity/block playground, focused tests and release documentation.
 

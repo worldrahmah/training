@@ -1,1 +1,1 @@
-RC1R11_GUIDED_PASS 111 assertions: validation, evidence, branch lock, revision, canonical responses, privacy, archive/restore history
+RC1R11_GUIDED_PASS 126 assertions: validation, evidence, branch lock, revision, canonical responses, privacy, archive/restore history
