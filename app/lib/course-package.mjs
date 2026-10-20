@@ -1,5 +1,6 @@
+import {simulateRoutes} from '../public/authoring-model.js';
 import {expandPath} from '../public/guided-model.js';
-import {validateGuidedPaths} from './guided-validation.mjs';
+import {validateGuidedPaths,validateContentShape} from './guided-validation.mjs';
 export const SAFE_COURSE_ASSET_EXTENSIONS=Object.freeze(['.png','.jpg','.jpeg','.webp','.svg','.pdf','.txt','.csv','.docx','.xlsx','.pptx','.mp4','.webm','.mp3','.wav','.m4a','.ogg']);
 import {readZipEntries} from './zip.mjs';
 import path from 'node:path';
@@ -121,9 +122,9 @@ function normalizeModule(module, errors, warnings, seenIds){
     const blocks=Array.isArray(a?.content?.blocks)?a.content.blocks:[];
     const blockTypes=new Set(CONTENT_BLOCK_TYPES);
     for(const [bi,block] of blocks.entries()){
-      const bt=String(block?.type||'');
+      const bt=String(block?.type||'');validateContentShape(block,`Activity ${aid} → Block ${bi+1}`,errors);
       if(!blockTypes.has(bt)) errors.push(`Activity ${aid}: content block ${bi+1} uses unsupported type: ${bt||'(missing)'}.`);
-      if(['image','image_text','asset','video','audio','document','slide_deck','interactive_video'].includes(bt) && !String(block?.asset||block?.src||'').trim()) errors.push(`Activity ${aid}: ${bt} block ${bi+1} requires an asset or src.`);
+      if(['image','image_text','asset','video','audio','document','slide_deck','interactive_video'].includes(bt) && !String(block?.asset||block?.src||'').trim() && !(bt==='slide_deck'&&Array.isArray(block.slides)&&block.slides.length)) errors.push(`Activity ${aid}: ${bt} block ${bi+1} requires an asset or src.`);
       if(bt==='chart'){
         const ct=String(block?.chart_type||'bar');
         if(!CHART_TYPES.includes(ct)) errors.push(`Activity ${aid}: chart block ${bi+1} uses unsupported chart type: ${ct}.`);
@@ -242,7 +243,7 @@ function normalizeModule(module, errors, warnings, seenIds){
     const nodeIds=new Set(); const nodeTypes=new Set(WORKFLOW_NODE_TYPES);
     for(const n of nodes){const nid=String(n?.id||'').trim();if(!nid)errors.push(`Module ${id}: every workflow node requires an id.`);else if(nodeIds.has(nid))errors.push(`Module ${id}: duplicate workflow node ${nid}.`);else nodeIds.add(nid);if(n?.type&&!nodeTypes.has(String(n.type)))errors.push(`Module ${id}: workflow node ${nid||'(unknown)'} uses unsupported type ${n.type}.`);}
     for(const e of edges){if(!nodeIds.has(String(e?.from||'')))errors.push(`Module ${id}: workflow edge has missing source ${e?.from}.`);if(!nodeIds.has(String(e?.to||'')))errors.push(`Module ${id}: workflow edge has missing destination ${e?.to}.`);if(e?.scope&&!['class','participant'].includes(String(e.scope)))errors.push(`Module ${id}: workflow edge scope must be class or participant.`);if(e?.condition!=null&&(typeof e.condition!=='object'||Array.isArray(e.condition)))errors.push(`Module ${id}: workflow edge ${e?.from||'?'} -> ${e?.to||'?'} condition must be an object.`);}
-    validateExplicitWorkflow(id,workflow,{activities,missions,paths},errors,warnings);
+    validateExplicitWorkflow(id,workflow,{activities,missions,paths},errors,warnings);if(paths.some(p=>p.guided===true)){const simulation=simulateRoutes({...module,workflow});for(const message of simulation.errors)errors.push(`Module ${id} → Workflow: ${message}`);}
   }
   return {...module,id,title,activities,missions,paths,workflow};
 }

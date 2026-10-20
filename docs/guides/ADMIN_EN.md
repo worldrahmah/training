@@ -63,3 +63,8 @@ Select Use only these permissions to override implicit assignment rights for a r
 Course grants govern course management/authoring. An authorized class continues delivering its published course content and scoped class reports even if course management is hidden. Report View includes preparing and downloading a reviewed PDF; it does not permit changing source learning records.
 
 Saving the dialog preserves existing grants for resources not represented in its controls (for example historical individual participant grants or archived courses). Listed unchecked grants are removed. Explicit grants outside a class policy can still grant their own resource access; review them through the supported permissions API when needed, never by editing SQLite.
+
+
+## RC1R12 guided experience update
+
+The current build retains all existing administration and adds complete guided authoring/runtime acceptance. During a running class the Participant sees the class hero/current task first; personal learning/history/tools stay behind expandable arrows. Course/class Delete is recoverable and preserves history; active classes are protected. Use Reports → Guided learning report for path/drop-off/step timing/optional use/evaluation data and CSV within your authorized scope. Publication/export now verify actual assets as well as semantic readiness. Use the current RC1R12 acceptance and upgrade guides before an installation upgrade.

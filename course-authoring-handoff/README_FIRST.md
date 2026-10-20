@@ -1,12 +1,10 @@
-# RC1R11 guided contract update
+# Current RC1R12 authoring boundary
 
-Current Core: 3.5.0-rc.1.11, core schema 3.2, authoring schema 2.0. Use the current generated Creator kit and canonical validator. See [Guided experience](GUIDED_EXPERIENCE.md) and [Gap matrix](CREATOR_GAP_MATRIX.md) for actual supported behavior and explicit limitations; do not promise completion of the whole master closure. Historical text below remains reference only where consistent with that contract.
+Training Engine ONE 3.5.0-rc.1.12. Read GUIDED_EXPERIENCE.md and CREATOR_GAP_MATRIX.md first; they supersede older guided limitations below. Current canonical schemas, registry and portable validator are authoritative. The standalone handoff includes the entire current course-creator-kit; use its validator and six samples without npm installation. No mandatory master-prompt engineering feature is deferred. Owner classroom/Windows/assistive acceptance is a separate unrun gate.
 
-> RC1R9 current authoring entry point: [generated Course Creator kit](../course-creator-kit/README.md). The external v1.3 archives are historical evidence only. This retained synchronized handoff is compatibility material; use the current kit for new milestone authoring.
+# Training Engine ONE RC1R12 — current AI Course Creator contract
 
-# Training Engine ONE RC1R8 — current AI Course Creator contract
-
-This in-tree kit is synchronized to the RC1R8 canonical registry, runtime capabilities and course schemas. Read CORE_CAPABILITIES.json completely before authoring. The kit is current for this owner-acceptance candidate; FINAL requires owner acceptance. The separate v1.3 package is historical RC4 evidence. Course schema remains 2.0; core/data schema is 3.2 with journaled workspace extensions.
+This in-tree kit is synchronized to the RC1R12 canonical registry, runtime capabilities and course schemas. Read CORE_CAPABILITIES.json completely before authoring. The kit is current for this owner-acceptance candidate; FINAL requires owner acceptance. The separate v1.3 package is historical RC4 evidence. Course schema remains 2.0; core/data schema is 3.2 with journaled workspace extensions.
 
 ## Authority order
 1. `CORE_CAPABILITIES.json`

@@ -49,3 +49,12 @@ My profile → Learning history lists your team under each class, including memb
 The Trainer can move a live Projector pointer and add colored handwriting/text. These are presentation aids, not Student response submissions or automatic grading. They persist until the Trainer clears them. Continue submitting your own task through its activity control.
 
 Your profile provides your authorized learner PDF report. Choose its language/dates, preview then download and protect it as private data. Installation-wide analytics and export choices belong to authorized staff. Check the current class, response acknowledgement and personal history when troubleshooting; do not treat a visible page as proof that a write saved.
+
+
+## Your running class and saved work
+
+When a class starts, its hero and current task lead your dashboard. Your learning, Learning tools, Learning record and Recent activity begin closed; use the arrow or keyboard to open them. Your open-section choices survive ordinary refreshes. The normal dashboard returns after delivery ends.
+
+Choose one learning path and follow its steps. Copy copies only the prompt; long prompts scroll inside their card. Editable prompts, evidence and answers save for resume. Required evidence controls Next/Finish; optional support can be skipped honestly. Resource cards identify the source/tool and offer Open/Copy link. File/image completion uses the upload control. Your path and answers remain personal; another learner's actions do not advance you.
+
+An already loaded page can preserve applicable edits/answers during a connection loss. They remain pending until confirmed. Reconnect to advance; review rejected/conflicting changes through Saved guided changes in your account menu. Newer work from another device is never overwritten automatically. Uploads/new page loads need the local server and external tools need their own connectivity. Your transcript/history remain available after class.

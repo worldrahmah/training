@@ -1,0 +1,5 @@
+# RC1R12 acceptance boundaries
+
+All mandatory engineering sections of the attached master prompt are implemented and traced. Read the validation/seal report for completed automated gates. Owner Windows/LAN/touch/room-scale/screen-reader visual acceptance and fresh cloud-task restoration are unrun, and FINAL is not claimed automatically.
+
+Twelve priority individual response types embed in guided steps. Specialized team/media interactions use existing dedicated activity surfaces; a display content block does not create response semantics. No new unrestricted/repeat DSL is introduced; finite steps retain explicit stable identities. Applicable edits/answers queue on an already loaded page, while uploads, new page loads and confirmed navigation require the local server. External tools need their own connectivity. Simulator limits fail closed with an explanation. Timing is wall time including pauses. Test courses are regression fixtures, not accepted subject curricula or a guarantee of error-free future AI content.

@@ -1,3 +1,7 @@
+# Current RC1R12 guided authoring
+
+Read GUIDED_EXPERIENCE.md and CREATOR_GAP_MATRIX.md. These current contracts supersede historical guided limitations. The same canonical validator runs in Core, export/import/publication and this self-contained kit. Use complete shared-step M1 samples and the capability fixture, then independently rehearse the actual authored course.
+
 # Milestone checkpoint / نقطة مراجعة المحطة
 
 Record course/version, milestone ID, accepted objective/evidence/timing, canonical activity/path/node IDs, exact package SHA-256, validator/import/Draft validation/publication results, role rehearsal, failed/skipped/unrun checks, accessibility/asset rights and owner decision. Keep accepted IDs unchanged. A checklist is a review aid, not evidence that a check ran.

@@ -1,3 +1,7 @@
+# Current RC1R12 authoring boundary
+
+Training Engine ONE 3.5.0-rc.1.12. Read GUIDED_EXPERIENCE.md and CREATOR_GAP_MATRIX.md first; they supersede older guided limitations below. Current canonical schemas, registry and portable validator are authoritative. The standalone handoff includes the entire current course-creator-kit; use its validator and six samples without npm installation. No mandatory master-prompt engineering feature is deferred. Owner classroom/Windows/assistive acceptance is a separate unrun gate.
+
 # MASTER PROMPT — Build a Course for Training Engine ONE
 
 I am building a course for **Training Engine ONE v3.4.0 RC3 Stage 1C Brainstorm / Ideas Board development checkpoint**.

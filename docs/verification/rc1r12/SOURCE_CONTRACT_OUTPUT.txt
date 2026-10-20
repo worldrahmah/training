@@ -1,0 +1,5 @@
+
+> training-engine-one@3.5.0-rc.1.12 contracts:check
+> node tools/sync-contracts.mjs --check
+
+CONTRACT_SYNC_PASS

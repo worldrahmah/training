@@ -1,6 +1,10 @@
-# Training Engine ONE RC1R10 — AI Course Creator / منشئ الدورات بالذكاء الاصطناعي
+# Current RC1R12 guided authoring
 
-This portable kit is generated from the current canonical registry, RC1R10 runtime validator and schemas. It supersedes historical v1.3 guidance for new work. No Internet connection, npm installation, AI service subscription or application database is needed to author/validate/package locally. Node 22.5+ is required. Classroom delivery still uses the full Training Engine application.
+Read GUIDED_EXPERIENCE.md and CREATOR_GAP_MATRIX.md. These current contracts supersede historical guided limitations. The same canonical validator runs in Core, export/import/publication and this self-contained kit. Use complete shared-step M1 samples and the capability fixture, then independently rehearse the actual authored course.
+
+# Training Engine ONE RC1R12 — AI Course Creator / منشئ الدورات بالذكاء الاصطناعي
+
+This portable kit is generated from the current canonical registry, RC1R12 runtime validator and schemas. It supersedes historical v1.3 guidance for new work. No Internet connection, npm installation, AI service subscription or application database is needed to author/validate/package locally. Node 22.5+ is required. Classroom delivery still uses the full Training Engine application.
 
 1. Read AUTHORING_CONTRACT.md and CURRENT_CAPABILITIES.json. The registry is the exact catalog; ACTIVITY_CATALOG.md and activities/*.json cover all 36 types.
 2. Run `node tools/intake-wizard.mjs my-course-intake`, or answer GUIDED_INTAKE.md with the course owner. Never enter secrets.

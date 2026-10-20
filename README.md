@@ -1,24 +1,17 @@
-# RC1R11 — incremental development build
+# Training Engine ONE v3.5.0 RC1R12
 
-Status: DEVELOPMENT_BUILD_NOT_FINAL. This build implements and tests the guided runtime/dashboard/deletion changes described in docs/RC1R11_GUIDED_EXPERIENCE.md. Advanced master-prompt gaps remain explicitly listed in docs/RC1R11_GAP_MATRIX.md; the full master closure is not declared complete.
+Full Core Creator and Participant Guided Experience implementation continuing preserved RC1R11. Full source checks pass; exact-archive results are attested in the release companion. This is an owner-acceptance candidate. All mandatory sections of the attached master prompt are traced in [requirements](docs/RC1R12_REQUIREMENTS.md); current capabilities/boundaries are in the [closure matrix](docs/RC1R12_GAP_MATRIX.md) and [guided contract](docs/RC1R12_GUIDED_EXPERIENCE.md). The RC1R11 incomplete matrix is historical.
 
-# Training Engine ONE v3.5.0 RC1R11
+Run with Node 22.5+: Windows `START_TRAINING_ENGINE.bat`, Linux/macOS `bash START_TRAINING_ENGINE.sh`, or `npm start`. Built-in runtime dependencies, PDF support and local fonts are bundled; no npm installation/build, cloud service or external credentials are required. Existing configured SQLite/storage/backups are preserved. On a fresh normal installation, use the private local bootstrap password file and complete the existing password-change flow; do not enable disposable QA accounts on production data.
 
-Status: **OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL**. Continues the delivered RC1R9 candidate and accepted RC1R8 (`db640e1047f210856a7b23d6ff5e469ffd10b89e`) with synchronized profile photos, responsive Student return, Trainer notifications, scoped messaging, manageable teams, granular permissions, truthful attendance, mouse/touch handwriting and default analytics/export choices. Retains shared owner branding, bilingual activity labels, six updated role guides, the generated Course Creator kit and security repairs. Preserves local-first delivery, core schema 3.2, historical data and the 36-activity/68-result certification contract.
+- [Complete current English/Arabic role guides](docs/guides/README.md)
+- [Current portable Creator kit](course-creator-kit/README.md), [authoring contract](course-creator-kit/AUTHORING_CONTRACT.md), [36-activity catalog](course-creator-kit/ACTIVITY_CATALOG.md)
+- [Upgrade and rollback](docs/RC1R12_UPGRADE_AND_ROLLBACK.md), [security/data review](docs/RC1R12_SECURITY_REVIEW.md)
+- [Owner acceptance](docs/RC1R12_ACCEPTANCE.md), [honest acceptance boundaries](docs/KNOWN_LIMITATIONS_RC1R12.md)
+- [Validation report](docs/RC1R12_VALIDATION_REPORT.md), [living ExecPlan](docs/CODEX_EXEC_PLAN.md)
 
-Run with Node 22.5+: Windows `START_TRAINING_ENGINE.bat`, Linux/macOS `bash START_TRAINING_ENGINE.sh`, or `npm start`. Application dependencies/fonts/PDF runtime are bundled. No npm install or cloud service is required. On a new production install read the private local `data/INITIAL_ADMIN_PASSWORD.txt`, sign in as the initial administrator, change the random password, then securely delete that file. No demo accounts are created in normal production startup. Existing users/data are retained; follow the upgrade guide for legacy default passwords. Do not enable QA fixture mode on production state.
+`npm test` runs 64 Node commands; `npm run test:browser` runs nine Playwright/Chromium programs. Generated test reports should be captured from a disposable source copy so owner/user files are never reset. `node tools/sync-contracts.mjs --check` and `node tools/build-course-creator-kit.mjs --check` check canonical drift. See the release companion seal report for exact ZIP SHA-256 and fresh-extraction results.
 
-- [Current English and Arabic role guides](docs/guides/README.md)
-- [Current generated AI Course Creator kit](course-creator-kit/README.md), [guided intake](course-creator-kit/GUIDED_INTAKE.md), [36-activity catalog](course-creator-kit/ACTIVITY_CATALOG.md)
-- [Owner logo replacement](docs/RC1R9_BRANDING.md)
-- [Upgrade and rollback](docs/RC1R11_UPGRADE_AND_ROLLBACK.md)
-- [Security review and honest limits](docs/RC1R11_SECURITY_REVIEW.md)
-- [Separate disposable QA accounts](docs/RC1R9_TEST_ACCOUNTS.md)
-- [Owner acceptance checklist](docs/RC1R11_ACCEPTANCE.md), [release limitations](docs/KNOWN_LIMITATIONS_RC1R11.md)
-- [Project operating rules](docs/PROJECT_OPERATING_RULES.md), [living ExecPlan](docs/CODEX_EXEC_PLAN.md)
+The running-class dashboard focuses on the class hero/current task and keeps learning/tools/transcript/recent activity in closed sections. Authorized course/class deletion preserves history and restoration. New Creator controls, shared templates/variables/conditions, complete route analysis, evidence/uploads, reliable retry, reporting and both guided delivery modes build on one canonical engine with no schema reset. Published course versions remain immutable.
 
-Verify with `npm test` and `npm run test:browser` (Python Playwright 1.62.0 and Chromium are QA tools, not classroom dependencies). `node tools/build-course-creator-kit.mjs --check` verifies generated contract consistency. See docs/verification/rc1r9 for working-tree evidence and the companion seal report for immutable exact-ZIP fresh-extraction results/SHA-256. Historical v1.3 external authoring archives are retained as evidence; new courses use the current kit. Published course versions are immutable; build one milestone at a time and independently review generated courses.
-
-الإصدار مرشح لقبول صاحب النظام، وليس نهائيًا. يتضمن أدلة عربية وإنجليزية للمسؤول والمدرب والمشارك وحزمة تأليف حالية وشعارًا موحدًا وإصلاحات أمان مختبرة، مع حفظ البيانات والتوافق. التشغيل محلي دون خدمات سحابية. اقرأ كلمة المسؤول الأولية من الملف الخاص على المضيف وغيّرها، ولا تفعّل وضع الاختبار على بيانات المؤسسة. راجع دليل الترقية والحدود وقائمة القبول قبل التقديم الحقيقي.
-
-RC1R11 adds one shared Participant/Creator guided renderer, prompt copy/edit/resume, individual canonical embedded questions/evaluations, explicit step evidence, safe conditions/context/shared-step definitions, scoped guided reports, visible recoverable class/course deletion, and a focused running-class dashboard with collapsed learning/history sections. See docs/RC1R11_GUIDED_EXPERIENCE.md and docs/RC1R11_GAP_MATRIX.md for the exact supported contract and remaining limits.
+هذا إصدار تنفيذ كامل لمتطلبات منشئ الدورات وتجربة المشارك الموجهة. تبقى المصادقة البصرية على أجهزة صاحب النظام خطوة مستقلة، ولا يُعلن الإصدار نهائيًا آليًا. التشغيل محلي مع حفظ البيانات، وتبقى لغة المحتوى مستقلة عن لغة الواجهة. راجع دليل التأليف والتحديث والقبول والأدلة الحالية.

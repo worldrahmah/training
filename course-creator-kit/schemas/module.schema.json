@@ -54,7 +54,162 @@
     "step_templates": {
       "type": "object",
       "additionalProperties": {
-        "type": "object"
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "body_md": {
+            "type": "string"
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "blocks": {
+                "type": "array",
+                "items": {
+                  "$ref": "./content-block.schema.json"
+                }
+              }
+            }
+          },
+          "completion": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "acknowledge",
+                  "text",
+                  "url",
+                  "file",
+                  "image",
+                  "checklist",
+                  "external",
+                  "none"
+                ]
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "optional": {
+            "type": "boolean"
+          },
+          "use_template": {
+            "type": "string"
+          },
+          "overrides": {
+            "type": "object"
+          },
+          "interaction": {
+            "type": "object",
+            "required": [
+              "activity_id"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "activity_id": {
+                "type": "string"
+              }
+            }
+          },
+          "interactions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "activity_id"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "activity_id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "when": {
+            "type": "object",
+            "additionalProperties": false,
+            "oneOf": [
+              {
+                "required": [
+                  "path_id"
+                ],
+                "properties": {
+                  "path_id": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "required": [
+                  "activity_id",
+                  "equals"
+                ],
+                "properties": {
+                  "activity_id": {
+                    "type": "string"
+                  },
+                  "equals": {}
+                },
+                "additionalProperties": false
+              },
+              {
+                "required": [
+                  "activity_id",
+                  "lt"
+                ],
+                "properties": {
+                  "activity_id": {
+                    "type": "string"
+                  },
+                  "lt": {
+                    "type": "number"
+                  }
+                },
+                "additionalProperties": false
+              }
+            ],
+            "properties": {
+              "path_id": {
+                "type": "string"
+              },
+              "activity_id": {
+                "type": "string"
+              },
+              "equals": {},
+              "lt": {
+                "type": "number"
+              }
+            }
+          },
+          "layout": {
+            "enum": [
+              "standard",
+              "focused",
+              "compact",
+              "wide",
+              "centered",
+              "instruction",
+              "prompt_task",
+              "choice",
+              "assessment",
+              "reflection"
+            ]
+          }
+        },
+        "required": [
+          "title"
+        ]
       }
     },
     "variables": {

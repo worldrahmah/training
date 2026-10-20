@@ -17,7 +17,7 @@ export function describeCourseIssues(content,errors=[],warnings=[]){
     for(let mi=0;mi<modules.length;mi++){
       const module=modules[mi];if(message.startsWith(`Module ${module.id}:`)||message.includes(`Module ${module.id} `)){selection={kind:/workflow|node|transition|terminal|branch|convergence/i.test(message)?'workflow':'module',mi};location=module.title||'Milestone';}
       for(const [collection,kind] of [['activities','activity'],['missions','mission'],['paths','path']])for(let ii=0;ii<(module[collection]||[]).length;ii++){
-        const item=module[collection][ii];if(new RegExp(`^(Activity|Mission|Path) ${String(item.id).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}(:|\\s)`).test(message)){selection={kind,mi,ii};location=`${module.title||'Milestone'} / ${item.title||kind}`;}
+        const item=module[collection][ii];if(message.includes(`Participant path ${item.id}`)||new RegExp(`^(Activity|Mission|Path) ${String(item.id).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}(:|\\s)`).test(message)){selection={kind,mi,ii};location=`${module.title||'Milestone'} / ${item.title||kind}`;}
       }
     }
     const rules=[
@@ -34,6 +34,7 @@ export function describeCourseIssues(content,errors=[],warnings=[]){
     ];
     const rule=rules.find(([pattern])=>pattern.test(message));
     let detail=message;for(const module of modules){detail=detail.replaceAll(`Module ${module.id}`,`Milestone “${module.title||'Untitled'}”`);for(const k of ['activities','missions','paths'])for(const item of module[k]||[]){const escaped=String(item.id).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');detail=detail.replace(new RegExp(`(Activity|activity|Mission|mission|participant path|Path|path) ${escaped}(?=[\\s:.,]|$)`,'g'),(_,label)=>`${label} “${item.title||k}”`)}}
+    for(const module of modules)for(const path of module.paths||[])for(const step of path.steps||[])detail=detail.replaceAll(`Step ${step.id}`,`Step “${step.title||'Shared step'}”`);
     for(const [key,label] of Object.entries({start_node_id:'start node',activity_id:'activity',mission_id:'mission',path_id:'participant path',terminal:'terminal',results_display:'result view'}))detail=detail.replaceAll(key,label);
     return {severity,location,selection,detail,cause:rule?.[1]||'Validation found an incompatible configuration.',fix:rule?.[2]||'Review the detailed validation message, correct the indicated configuration and validate again.',cause_ar:rule?.[3]||'وجد التحقق إعدادًا غير متوافق.',fix_ar:rule?.[4]||'راجع تفاصيل التحقق وصحح الإعداد المشار إليه ثم تحقق مرة أخرى.'};
   });

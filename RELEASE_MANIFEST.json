@@ -1,15 +1,15 @@
 {
   "format": "training-engine-one-release",
-  "release_name": "TRAINING_ENGINE_ONE_v3.5.0_RC1R11",
-  "release_status": "DEVELOPMENT_BUILD_NOT_FINAL",
-  "app_version": "3.5.0-rc.1.11",
+  "release_name": "TRAINING_ENGINE_ONE_v3.5.0_RC1R12",
+  "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
+  "app_version": "3.5.0-rc.1.12",
   "core_schema_version": "3.2",
   "course_authoring_schema_version": "2.0",
   "baseline_core_v2_1_1_sha256": "82a8f0dd04f658429eec7d153319da5953e2bf0f308a43c2293f5947b7c755f5",
   "codex_master_handoff_sha256": "c0221a2b842215e06bd0c864a912a71922d833880a103c015913c723e2be4c52",
   "external_course_authoring_handoff": "course-creator-kit",
-  "manual_gate": "docs/RC1R10_ACCEPTANCE.md",
-  "test_output": "docs/verification/rc1r10/WORKING_TREE_NODE_OUTPUT.txt",
+  "manual_gate": "docs/RC1R12_ACCEPTANCE.md",
+  "test_output": "docs/verification/rc1r12/SOURCE_NODE_OUTPUT.txt",
   "deep_ui_design": "docs/ONE_DEEP_EXPERIENCE_DESIGN.md",
   "canonical_registry": "registry/activity-component-registry.json",
   "development_authoring_contract": "course-creator-kit",
@@ -96,8 +96,8 @@
   "workspace_owner_acceptance": "docs/RC1R8_OWNER_ACCEPTANCE_CHECKLIST.md",
   "historical_external_authoring_handoff": "packaged-handoffs/TRAINING_ENGINE_ONE_COURSE_AUTHORING_HANDOFF_v1.3.zip",
   "current_user_guides": "docs/guides/README.md",
-  "security_review": "docs/RC1R9_SECURITY_REVIEW.md",
-  "known_limitations": "docs/KNOWN_LIMITATIONS_RC1R9.md",
+  "security_review": "docs/RC1R12_SECURITY_REVIEW.md",
+  "known_limitations": "docs/KNOWN_LIMITATIONS_RC1R12.md",
   "accepted_engineering_baseline": {
     "branch": "release/rc1r8-test",
     "commit": "db640e1047f210856a7b23d6ff5e469ffd10b89e"
@@ -111,5 +111,9 @@
     "Draft asset preservation"
   ],
   "rc1r9_automated_status": "PASS_WORKING_TREE_PENDING_EXACT_ZIP_RETEST",
-  "rc1r9_manual_status": "PENDING_OWNER_WINDOWS_LAN_CLASSROOM_VISUAL_ACCEPTANCE"
+  "rc1r9_manual_status": "PENDING_OWNER_WINDOWS_LAN_CLASSROOM_VISUAL_ACCEPTANCE",
+  "current_requirements_trace": "docs/RC1R12_REQUIREMENTS.json",
+  "current_browser_evidence": "docs/verification/rc1r12/SOURCE_BROWSER_OUTPUT.txt",
+  "current_scope": "Full mandatory Core Creator and Participant Guided Experience closure; running-class focus and recoverable deletion retained",
+  "preserved_continuation_baseline": "925dab16f2ffcbd8bed44aa334641843e120b45d"
 }

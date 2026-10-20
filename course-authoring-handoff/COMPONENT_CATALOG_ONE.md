@@ -1,6 +1,6 @@
-# RC1R11 guided contract update
+# Current RC1R12 authoring boundary
 
-Current Core: 3.5.0-rc.1.11, core schema 3.2, authoring schema 2.0. Use the current generated Creator kit and canonical validator. See [Guided experience](GUIDED_EXPERIENCE.md) and [Gap matrix](CREATOR_GAP_MATRIX.md) for actual supported behavior and explicit limitations; do not promise completion of the whole master closure. Historical text below remains reference only where consistent with that contract.
+Training Engine ONE 3.5.0-rc.1.12. Read GUIDED_EXPERIENCE.md and CREATOR_GAP_MATRIX.md first; they supersede older guided limitations below. Current canonical schemas, registry and portable validator are authoritative. The standalone handoff includes the entire current course-creator-kit; use its validator and six samples without npm installation. No mandatory master-prompt engineering feature is deferred. Owner classroom/Windows/assistive acceptance is a separate unrun gate.
 
 # Training Engine ONE — Professional Closure Component Catalog
 

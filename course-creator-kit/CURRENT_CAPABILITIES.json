@@ -1,11 +1,11 @@
 {
   "format": "training-engine-core-capabilities",
   "app_name": "Training Engine ONE",
-  "app_version": "3.5.0-rc.1.11",
+  "app_version": "3.5.0-rc.1.12",
   "core_schema_version": "3.2",
   "latest_authoring_schema": "2.0",
   "registry_format": "training-engine-one-capability-registry",
-  "registry_version": "3.5.0-rc.1.10",
+  "registry_version": "3.5.0-rc.1.12",
   "compatible_course_schemas": [
     "1.0",
     "1.1",
@@ -665,7 +665,9 @@
       "external",
       "text",
       "url",
-      "checklist"
+      "checklist",
+      "file",
+      "image"
     ],
     "embedded_individual_activity_types": [
       "single_choice",
@@ -688,7 +690,7 @@
         "equals",
         "lt"
       ],
-      "scope": "selected path and saved canonical responses"
+      "scope": "selected path and earlier saved guided individual answers; blocks may also use the current saved question"
     },
     "variables": {
       "scopes": [
@@ -697,13 +699,20 @@
       ],
       "builtins": [
         "selected_path",
+        "selected_path_title",
         "path_goal"
       ],
       "expressions": false
     },
     "shared_steps": "module.step_templates referenced by step.use_template with stable step.id and optional overrides",
     "bounded_repetition": false,
-    "guided_offline_queue": false,
+    "guided_offline_queue": {
+      "responses": true,
+      "edits_and_evidence": true,
+      "navigation": "server-confirmed only",
+      "retry": "idempotent request receipts; optimistic revision conflicts retained for review",
+      "uploads": "connection required"
+    },
     "preview_state": "temporary in-memory; no production progress writes",
     "surface_support": {
       "hero": {
@@ -847,7 +856,1296 @@
         "interactive_response": "activity reference required"
       }
     },
-    "creator_package_export": true
+    "creator_package_export": true,
+    "layout_presets": [
+      "standard",
+      "focused",
+      "compact",
+      "wide",
+      "centered",
+      "instruction",
+      "prompt_task",
+      "choice",
+      "assessment",
+      "reflection"
+    ],
+    "step_templates": [
+      "instruction",
+      "tool_setup",
+      "prompt_task",
+      "source_review",
+      "choice",
+      "verify",
+      "reflection",
+      "assessment",
+      "evaluation",
+      "completion"
+    ],
+    "visual_property_editors": true,
+    "visual_variables": true,
+    "visual_shared_steps": true,
+    "visual_conditions": true,
+    "branch_designer": true,
+    "route_enumeration": true,
+    "mechanical_id_repair": true,
+    "participant_paced_guided_paths": true
+  },
+  "block_contracts": {
+    "hero": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "body_md": {
+          "label": "Instructions",
+          "kind": "markdown"
+        },
+        "asset": {
+          "label": "Local asset",
+          "kind": "text"
+        },
+        "src": {
+          "label": "Web address",
+          "kind": "text"
+        },
+        "alt": {
+          "label": "Alternative text",
+          "kind": "text"
+        },
+        "caption": {
+          "label": "Caption",
+          "kind": "text"
+        },
+        "eyebrow": {
+          "label": "Eyebrow",
+          "kind": "text"
+        },
+        "align": {
+          "label": "Alignment",
+          "kind": "select",
+          "options": [
+            "start",
+            "center"
+          ]
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "text": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "body_md": {
+          "label": "Instructions",
+          "kind": "markdown"
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "image": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "asset": {
+          "label": "Local asset",
+          "kind": "text"
+        },
+        "src": {
+          "label": "Web address",
+          "kind": "text"
+        },
+        "alt": {
+          "label": "Alternative text",
+          "kind": "text"
+        },
+        "caption": {
+          "label": "Caption",
+          "kind": "text"
+        },
+        "fit": {
+          "label": "Image fit",
+          "kind": "select",
+          "options": [
+            "cover",
+            "contain"
+          ]
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "image_text": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "body_md": {
+          "label": "Instructions",
+          "kind": "markdown"
+        },
+        "asset": {
+          "label": "Local asset",
+          "kind": "text"
+        },
+        "src": {
+          "label": "Web address",
+          "kind": "text"
+        },
+        "alt": {
+          "label": "Alternative text",
+          "kind": "text"
+        },
+        "caption": {
+          "label": "Caption",
+          "kind": "text"
+        },
+        "image_side": {
+          "label": "Image position",
+          "kind": "select",
+          "options": [
+            "left",
+            "right"
+          ]
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "cards": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "items": {
+          "label": "Cards",
+          "kind": "list",
+          "properties": {
+            "title": {
+              "label": "Title",
+              "kind": "text"
+            },
+            "body_md": {
+              "label": "Description",
+              "kind": "markdown"
+            },
+            "icon": {
+              "label": "Icon",
+              "kind": "text"
+            }
+          }
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "steps": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "items": {
+          "label": "Steps",
+          "kind": "list",
+          "properties": {
+            "title": {
+              "label": "Title",
+              "kind": "text"
+            },
+            "body_md": {
+              "label": "Description",
+              "kind": "markdown"
+            }
+          }
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "comparison": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "columns": {
+          "label": "Columns",
+          "kind": "list",
+          "properties": {
+            "title": {
+              "label": "Title",
+              "kind": "text"
+            },
+            "body_md": {
+              "label": "Description",
+              "kind": "markdown"
+            },
+            "label": {
+              "label": "Label",
+              "kind": "text"
+            }
+          }
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "table": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      },
+      "structured_fields": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "array"
+              },
+              {
+                "type": "object"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "timeline": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "items": {
+          "label": "Timeline items",
+          "kind": "list",
+          "properties": {
+            "title": {
+              "label": "Title",
+              "kind": "text"
+            },
+            "body_md": {
+              "label": "Description",
+              "kind": "markdown"
+            },
+            "label": {
+              "label": "Time or label",
+              "kind": "text"
+            }
+          }
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "callout": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "body_md": {
+          "label": "Instructions",
+          "kind": "markdown"
+        },
+        "tone": {
+          "label": "Emphasis",
+          "kind": "select",
+          "options": [
+            "info",
+            "success",
+            "warning"
+          ]
+        },
+        "icon": {
+          "label": "Icon",
+          "kind": "text"
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "statistic": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "value": {
+          "label": "Value",
+          "kind": "text"
+        },
+        "label": {
+          "label": "Label",
+          "kind": "text"
+        },
+        "body_md": {
+          "label": "Description",
+          "kind": "markdown"
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "quote": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "quote": {
+          "label": "Quote",
+          "kind": "markdown"
+        },
+        "by": {
+          "label": "Attribution",
+          "kind": "text"
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "checklist": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "items": {
+          "label": "Checklist items",
+          "kind": "list",
+          "properties": {
+            "title": {
+              "label": "Title",
+              "kind": "text"
+            },
+            "body_md": {
+              "label": "Description",
+              "kind": "markdown"
+            }
+          }
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "asset": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "label": {
+          "label": "Label",
+          "kind": "text"
+        },
+        "description": {
+          "label": "Description",
+          "kind": "text"
+        },
+        "asset": {
+          "label": "Local asset",
+          "kind": "text"
+        },
+        "src": {
+          "label": "Web address",
+          "kind": "text"
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "chart": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "chart_type": {
+          "label": "Chart type",
+          "kind": "select",
+          "options": [
+            "bar",
+            "horizontal_bar",
+            "stacked_bar",
+            "donut",
+            "pie",
+            "line",
+            "ranking",
+            "progress"
+          ]
+        },
+        "max": {
+          "label": "Maximum",
+          "kind": "number"
+        },
+        "suffix": {
+          "label": "Suffix",
+          "kind": "text"
+        },
+        "data": {
+          "label": "Chart data",
+          "kind": "list",
+          "properties": {
+            "label": {
+              "label": "Label",
+              "kind": "text"
+            },
+            "value": {
+              "label": "Value",
+              "kind": "number"
+            },
+            "segments": {
+              "label": "Segments",
+              "kind": "list",
+              "properties": {
+                "label": {
+                  "label": "Label",
+                  "kind": "text"
+                },
+                "value": {
+                  "label": "Value",
+                  "kind": "number"
+                }
+              }
+            }
+          }
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "video": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "asset": {
+          "label": "Local asset",
+          "kind": "text"
+        },
+        "src": {
+          "label": "Web address",
+          "kind": "text"
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "audio": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "asset": {
+          "label": "Local asset",
+          "kind": "text"
+        },
+        "src": {
+          "label": "Web address",
+          "kind": "text"
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "divider": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "spacer": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "size": {
+          "label": "Spacing",
+          "kind": "number",
+          "min": 8,
+          "max": 80
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "gallery": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "items": {
+          "label": "Images",
+          "kind": "list",
+          "properties": {
+            "asset": {
+              "label": "Local asset",
+              "kind": "text"
+            },
+            "src": {
+              "label": "Web address",
+              "kind": "text"
+            },
+            "alt": {
+              "label": "Alternative text",
+              "kind": "text"
+            },
+            "caption": {
+              "label": "Caption",
+              "kind": "text"
+            }
+          }
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "prompt": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": true,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "helper_text": {
+          "label": "Supporting text",
+          "kind": "text"
+        },
+        "prompt": {
+          "label": "Prompt text",
+          "kind": "markdown"
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "editable_prompt": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": true,
+      "copy": true,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "helper_text": {
+          "label": "Supporting text",
+          "kind": "text"
+        },
+        "template": {
+          "label": "Starting prompt",
+          "kind": "markdown"
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "resource_list": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": true,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "items": {
+          "label": "Resources",
+          "kind": "list",
+          "properties": {
+            "title": {
+              "label": "Title",
+              "kind": "text"
+            },
+            "organization": {
+              "label": "Organization",
+              "kind": "text"
+            },
+            "resource_type": {
+              "label": "Resource type",
+              "kind": "select",
+              "options": [
+                "web",
+                "pdf",
+                "document",
+                "tool"
+              ]
+            },
+            "url": {
+              "label": "Web address",
+              "kind": "text"
+            },
+            "asset": {
+              "label": "Local asset",
+              "kind": "text"
+            },
+            "description": {
+              "label": "Description",
+              "kind": "text"
+            },
+            "return_instruction": {
+              "label": "Return instruction",
+              "kind": "text"
+            }
+          }
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "leaderboard": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "items": {
+          "label": "Rows",
+          "kind": "list",
+          "properties": {
+            "label": {
+              "label": "Label",
+              "kind": "text"
+            },
+            "value": {
+              "label": "Value",
+              "kind": "number"
+            }
+          }
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "document": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "asset": {
+          "label": "Local asset",
+          "kind": "text"
+        },
+        "src": {
+          "label": "Web address",
+          "kind": "text"
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "slide_deck": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "asset": {
+          "label": "Local asset",
+          "kind": "text"
+        },
+        "src": {
+          "label": "Web address",
+          "kind": "text"
+        },
+        "slides": {
+          "label": "Slides",
+          "kind": "list",
+          "properties": {
+            "title": {
+              "label": "Title",
+              "kind": "text"
+            },
+            "body": {
+              "label": "Slide content",
+              "kind": "markdown"
+            },
+            "image": {
+              "label": "Image address",
+              "kind": "text"
+            },
+            "image_alt": {
+              "kind": "text",
+              "label": "Alternative text"
+            }
+          }
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "formula": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "none",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "formula": {
+          "label": "Formula",
+          "kind": "markdown"
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "interactive_video": {
+      "surfaces": {
+        "participant_path": "display",
+        "participant_activity": "display",
+        "trainer": "display",
+        "projector": "display",
+        "creator_preview": "shared_renderer"
+      },
+      "interactive": false,
+      "copy": false,
+      "rtl": true,
+      "response": "canonical_activity_reference",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "kind": "text"
+        },
+        "asset": {
+          "label": "Local asset",
+          "kind": "text"
+        },
+        "src": {
+          "label": "Web address",
+          "kind": "text"
+        },
+        "checkpoints": {
+          "label": "Checkpoints",
+          "kind": "list",
+          "properties": {
+            "time_seconds": {
+              "label": "Time in seconds",
+              "kind": "number"
+            },
+            "prompt": {
+              "label": "Question",
+              "kind": "text"
+            }
+          }
+        },
+        "direction": {
+          "label": "Content direction",
+          "kind": "select",
+          "options": [
+            "inherit",
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    }
   },
   "workflow": {
     "explicit_graph_validation": true,

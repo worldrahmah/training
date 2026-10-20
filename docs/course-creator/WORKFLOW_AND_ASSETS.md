@@ -1,3 +1,7 @@
+# Current RC1R12 guided authoring
+
+Read GUIDED_EXPERIENCE.md and CREATOR_GAP_MATRIX.md. These current contracts supersede historical guided limitations. The same canonical validator runs in Core, export/import/publication and this self-contained kit. Use complete shared-step M1 samples and the capability fixture, then independently rehearse the actual authored course.
+
 # Workflow and assets / المسارات والأصول
 
 If a milestone has no explicit workflow, the supported legacy linear sequence applies. If you add workflow, supply start_node_id, a nonempty nodes array and edges. Nodes have stable id, an exact registry workflow type, and valid activity_id, mission_id or path_id where required. References must resolve inside that milestone. Every required node is reachable from start; ends must be explicitly terminal; conditional branches must have valid destinations, scope and supported condition objects. Do not invent a transition because a node lacks an edge. Model personal branches with participant-scope edges and convergence back into the class flow as the runtime supports. Validate ambiguous, cyclic/unreachable and missing-terminal cases with the executable validator and simulate in Builder. Rehearse Trainer completion, personal completion and reconvergence. The workflow-paths sample is a concrete supported example; it is not a universal branching engine.
