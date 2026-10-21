@@ -10,207 +10,213 @@
     {
       "section": 1,
       "requirement": "Read RC1R14 authoritative handoff",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 2,
       "requirement": "Reproduce actual false offline save",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 3,
       "requirement": "Repair Core without course weakening",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 4,
       "requirement": "Use exact official fixtures and trace",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 5,
       "requirement": "Trace UI to transaction to confirmation",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 6,
       "requirement": "Correct online/offline detection",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 7,
       "requirement": "Audit durable outbox lifecycle",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 8,
       "requirement": "Idempotent retry and lost acknowledgement",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 9,
       "requirement": "All declared completion/evidence modes",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 10,
       "requirement": "All twelve embedded interactions",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 11,
       "requirement": "Ten-question grouped evaluation",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 12,
       "requirement": "Variables/shared concrete identities",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 13,
       "requirement": "Branches/remediation/convergence",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 14,
       "requirement": "Refresh/resume matrix",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 15,
       "requirement": "Multi-tab/device conflict safety",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 16,
       "requirement": "Participant authorization negatives",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 17,
       "requirement": "Database integrity",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 18,
       "requirement": "Failure taxonomy",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 19,
       "requirement": "Deterministic quiet UI states",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 20,
       "requirement": "Accurate saved-change review",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 21,
       "requirement": "Arabic official fixture full routes",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 22,
       "requirement": "English official fixture full routes",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 23,
       "requirement": "Preview/live canonical renderer boundary",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 24,
       "requirement": "Canonical M2 technical pattern",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 25,
       "requirement": "Actual offline/reconnect",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 26,
       "requirement": "Automated regression suites",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 27,
       "requirement": "No persistence/evidence bypass acceptance",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 28,
       "requirement": "Machine/human certification matrices",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 29,
       "requirement": "Development diagnostics without secrets",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 30,
       "requirement": "New version with RC14 rollback",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 31,
       "requirement": "Regenerated current authoritative handoff",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 32,
       "requirement": "Complete packages/hashes/reports",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 33,
       "requirement": "Precise proven root cause",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     },
     {
       "section": 34,
       "requirement": "Full engineering acceptance before delivery",
-      "status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT",
+      "status": "IMPLEMENTED_VERIFIED",
       "evidence": "docs/verification/rc1r16 and RC1R16_ROOT_CAUSE.md"
     }
   ],
-  "engineering_status": "SOURCE_VERIFIED_PENDING_IMMUTABLE_REPEAT"
+  "engineering_status": "IMPLEMENTED_VERIFIED",
+  "immutable_gate": {
+    "status": "PASS",
+    "sha256": "d7b9fdf5bb49bbcca4f57f948abb228ed43b95160d160520317f236a059ca3f3",
+    "source_commit": "ac1a976a846a1888bf2ab8fa4614dba3193f492a",
+    "original_files": 1454
+  }
 }
