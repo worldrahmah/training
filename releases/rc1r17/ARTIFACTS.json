@@ -1,0 +1,42 @@
+[
+  {
+    "file": "COURSE_CREATOR_CAPABILITY_TEST.course.zip",
+    "sha256": "a302782f06553cbd5cb2e1697702a251f12bcafaa51a225afa96acbdced86146",
+    "bytes": 170176
+  },
+  {
+    "file": "GUIDED_PERSISTENCE_ACCEPTANCE.course.zip",
+    "sha256": "1962773962dfe7df8d35de179921a7643b5c140472bd7bce81bdfa41afe45f80",
+    "bytes": 25688
+  },
+  {
+    "file": "M1_GUIDED_ACCEPTANCE.course.zip",
+    "sha256": "c8d17223208f17b7db35a1a317a8b4053b3c26f51a5b1850b7b8133a59879bd0",
+    "bytes": 33437
+  },
+  {
+    "file": "M1_GUIDED_ACCEPTANCE_EN.course.zip",
+    "sha256": "6b7a6e340eab2fbfef4f1a2bc9b505315a00f510c6ac259e42eaaf1546c35a68",
+    "bytes": 31227
+  },
+  {
+    "file": "TRAINING_ENGINE_ONE_COURSE_AUTHORING_HANDOFF_RC1R17.zip",
+    "sha256": "1277dbc1325933db768fdaf57eba32dd9ce917a9275d633a6e2155eafd2b132d",
+    "bytes": 9102578
+  },
+  {
+    "file": "TRAINING_ENGINE_ONE_COURSE_CREATOR_KIT_RC1R17.zip",
+    "sha256": "c68edd3276e33a167821f62f36e302a311ceb44ff99ff5e1460b982d6ed0da81",
+    "bytes": 182134
+  },
+  {
+    "file": "TRAINING_ENGINE_ONE_RC1R17_REPORTS.zip",
+    "sha256": "6be5a547a35d7751ba54ca64d9863cb28385e28cde9fae6f18446417d88fd3a6",
+    "bytes": 74094041
+  },
+  {
+    "file": "TRAINING_ENGINE_ONE_v3.5.0_RC1R17.zip",
+    "sha256": "b18541bb0ae6aa91d08bca1a8f032cf053b012ceb889a608b029dfc498361de6",
+    "bytes": 88659515
+  }
+]

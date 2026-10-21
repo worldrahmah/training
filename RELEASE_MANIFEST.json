@@ -119,6 +119,12 @@
   "workspace_schema": "8",
   "current_operational_review": "docs/RC1R16_OPERATIONAL_REVIEW.md",
   "source_validation": "PASS_72_NODE_15_BROWSER_186_SYNTAX_106_KIT_34_PDF",
-  "exact_zip_verification": "Pending immutable extraction/full repeat",
+  "exact_zip_verification": {
+    "status": "PASS",
+    "sha256": "b18541bb0ae6aa91d08bca1a8f032cf053b012ceb889a608b029dfc498361de6",
+    "source_commit": "cd5a84c5861f9cbdbcb292a2a309f0d8c98add9d",
+    "files": 1541,
+    "receipt": "releases/rc1r17/SEAL_RESULT.json"
+  },
   "previous_baseline": "ce04e23c238df2c17e7d6e080ad15ad208bab1ae"
 }
