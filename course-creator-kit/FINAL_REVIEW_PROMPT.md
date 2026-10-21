@@ -1,10 +1,10 @@
-# Current RC1R13 guided authoring
+# Current RC1R14 guided authoring
 
 Read GUIDED_EXPERIENCE.md and CREATOR_GAP_MATRIX.md. These current contracts supersede historical guided limitations. The same canonical validator runs in Core, export/import/publication and this self-contained kit. Use complete shared-step M1 samples and the capability fixture, then independently rehearse the actual authored course.
 
 # Independent final review prompt / موجّه المراجعة المستقلة
 
-Act as an independent reviewer, not the course's original author. Read owner requirements and the current RC1R13 kit/runtime contract. Inspect the exact submitted package, its SHA-256, validator/import/publication outputs and rehearsal evidence. Do not infer that a reported PASS was executed. Do not rewrite accepted IDs or quietly expand scope.
+Act as an independent reviewer, not the course's original author. Read owner requirements and the current RC1R14 kit/runtime contract. Inspect the exact submitted package, its SHA-256, validator/import/publication outputs and rehearsal evidence. Do not infer that a reported PASS was executed. Do not rewrite accepted IDs or quietly expand scope.
 
 Review and report findings with severity, exact file/component reference, reproducible failing behavior, learner/Trainer impact and repair/retest requirement:
 1. Coverage: objectives, evidence and realistic timing; one accepted milestone at a time; no invented capabilities. Enumerate CORE CAPABILITY GAP items.

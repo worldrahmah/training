@@ -59,10 +59,16 @@ In Builder, open a path and edit its goal, steps, canonical blocks, resources, p
 
 Preview as Participant executes the real renderer with temporary state, adjustable size and direction. Rehearse both complete M1 fixtures and the capability course. Trainer-Paced class convergence remains facilitator controlled while learner steps are independent. Participant-Paced mode preserves guided units and ordinary activities with return/resume and blocks premature exit; Front-of-Room pauses personal writes. Review scoped path/step/evaluation reports and CSV. Use existing submission review for file/image evidence. Recoverable class/course deletion retains history and restoration according to permissions.
 
-## RC1R13 operational update
+## RC1R14 — your panel and activity
 
-Delete moves courses/classes to the separate Trash. Restore retains original state/history. Only an administrator can permanently delete a trashed item after typing its exact name and reviewing the impact. Courses with classes cannot be purged until those classes are explicitly purged. Intentional Archive remains separate; old archived items have Move to Trash.
+Open your account menu → Personalize my panel. Choose English/Arabic, Light/Dark/System, and Workspace default, Teal, Blue, Indigo, Violet, Rose or Amber. Choices belong to your account, including when several users share a browser; another user's choices do not change your panel. The same account loads its saved choices on another device. UI language stays independent from course language. If disconnected, a pending choice stays on this device and syncs after reconnection.
 
-Participants open a dedicated selected-class page with the large hero/current task. Other learning is side navigation or below on mobile. My workspace returns to the class list and learning record; an ended class never silently switches to another running class.
+My activity shows your complete recorded activity, 10, 25 or 50 rows per page. Filter by activity type, All time/Today/Last 7 days/Last 30 days/Custom dates, or search. From/Through dates include both selected local calendar dates. Previous/Next and the total reflect the full filtered history. Use Refresh for new records. The own profile also contains this panel for every role; Course Editors can open it from their account menu. Authorized staff Audit & history is separate and respects assigned class/group scope.
 
-In Builder, use Add lesson: name, teaching content, task and reflection. Ordinary presentation/practice/closing nodes are connected automatically. Direct edits save without a separate Apply action. Navigate through Course outline; open Advanced settings when needed, then Preview, Review and publish/export. Trainer workspace return no longer waits for unrelated course/people/report lists.
+The running Student class is full width: a compact green LIVE marker sits above the hero, and the current task is below it. Use My workspace or the profile menu at the top; there is no duplicate learning sidebar. When the Trainer finishes this selected class, it stays ended and offers a workspace return without silently switching to another class.
+
+## Finish a class, then delete if needed
+
+Use Finish class in the live classroom header or beside the running class in Classes. Review the confirmation. This exits a stuck activity, practice or break without requiring the course workflow to finish first. Saved responses, uploads, partial progress and history remain; unfinished learner tasks are not marked complete. The class becomes Completed, learners/Projector see it ended, and new live submissions stop. You can then use Delete → Trash. Hold, Break and Finish section do not finish the class. Only authorized classroom staff can finish it; a completed class can be explicitly reopened through the existing activation flow when appropriate.
+
+Delete still uses the distinct Trash with history-preserving Restore. Permanent deletion requires an administrator to type the exact name and respects dependent classes. Old intentional Archive stays separate. Preserve data/storage/configuration during upgrades; follow RC1R14_UPGRADE_AND_ROLLBACK.md.

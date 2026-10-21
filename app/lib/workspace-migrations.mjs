@@ -50,7 +50,14 @@ export const WORKSPACE_MIGRATIONS=[{
   CREATE INDEX IF NOT EXISTS idx_course_versions_course ON course_versions(course_id,id);
   CREATE INDEX IF NOT EXISTS idx_classes_course_version ON classes(course_version_id);
   CREATE INDEX IF NOT EXISTS idx_class_trainers_user_class ON class_trainers(user_id,class_id);
-  INSERT INTO schema_meta(key,value) VALUES('workspace_schema','5') ON CONFLICT(key) DO UPDATE SET value=excluded.value;`}];
+  INSERT INTO schema_meta(key,value) VALUES('workspace_schema','5') ON CONFLICT(key) DO UPDATE SET value=excluded.value;`},{version:'one-workspace-0006',sql:`CREATE TABLE user_ui_preferences (
+  user_id INTEGER PRIMARY KEY,theme TEXT NOT NULL DEFAULT 'system' CHECK(theme IN ('light','dark','system')),
+  accent TEXT NOT NULL DEFAULT 'default' CHECK(accent IN ('default','teal','blue','indigo','violet','rose','amber')),
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE);
+  CREATE INDEX idx_activity_events_user_id ON activity_events(user_id,id DESC);
+  CREATE INDEX idx_activity_events_user_type_date ON activity_events(user_id,event_type,created_at,id);
+  CREATE INDEX IF NOT EXISTS idx_activity_events_class_id ON activity_events(class_id,id DESC);
+  INSERT INTO schema_meta(key,value) VALUES('workspace_schema','6') ON CONFLICT(key) DO UPDATE SET value=excluded.value;`}];
 export function workspaceMigrationPending(db){
   if(!db.prepare("SELECT 1 FROM sqlite_master WHERE type='table' AND name='schema_migrations'").get())return true;
   return WORKSPACE_MIGRATIONS.some(m=>!db.prepare('SELECT 1 FROM schema_migrations WHERE version=?').get(m.version));

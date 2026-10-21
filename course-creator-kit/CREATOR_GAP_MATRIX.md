@@ -1,14 +1,14 @@
-# RC1R13 operational Creator and classroom update
+# RC1R14 operational Creator and classroom update
 
-Current Core 3.5.0-rc.1.13 / core schema 3.2 / course schema 2.0 / additive workspace schema 5. The complete guided contract below is retained. Course Builder now offers Add lesson: teaching content, practical task and reflection produce ordinary canonical presentation/practice/convergence/closing nodes. Direct editing autosaves; optional settings are under Advanced settings; an outline keeps navigation visible. The pure app/public/creator-start.js helper is included in the portable kit and uses the same graph model. It is an authoring convenience, not a new course type. Preview, validator, export and runtime share the canonical model; no per-course Core change is needed.
+Current Core 3.5.0-rc.1.14 / core schema 3.2 / course schema 2.0 / additive workspace schema 6. The complete guided contract below is retained. Course Builder now offers Add lesson: teaching content, practical task and reflection produce ordinary canonical presentation/practice/convergence/closing nodes. Direct editing autosaves; optional settings are under Advanced settings; an outline keeps navigation visible. The pure app/public/creator-start.js helper is included in the portable kit and uses the same graph model. It is an authoring convenience, not a new course type. Preview, validator, export and runtime share the canonical model; no per-course Core change is needed.
 
-Participant delivery opens /student/class?class_id=... with one selected class and side/bottom learning navigation; /student?workspace=1 returns to the ordinary learning workspace. Course/class Delete uses distinct Trash. Intentional Archive remains separate. Trash restoration retains state/history; permanent deletion is a separate administrator-confirmed action with dependency guards. Old ambiguous archives remain Archive with Move to Trash.
+Participant delivery opens /student/class?class_id=... with one selected class at full width with workspace/profile access in the top menu; /student?workspace=1 returns to the ordinary learning workspace. Course/class Delete uses distinct Trash. Intentional Archive remains separate. Trash restoration retains state/history; permanent deletion is a separate administrator-confirmed action with dependency guards. Old ambiguous archives remain Archive with Move to Trash.
 
-# Creator/Core closure matrix — RC1R13
+# Creator/Core closure matrix — RC1R14
 
-The RC1R11 incomplete matrix is historical and superseded by this matrix and the full 0–90 trace in docs/RC1R13_REQUIREMENTS.md. No mandatory engineering item from the attached master prompt is deferred. Final automated receipts are in the validation/seal report; owner visual acceptance remains separate.
+The RC1R11 incomplete matrix is historical and superseded by this matrix and the full 0–90 trace in docs/RC1R14_REQUIREMENTS.md. No mandatory engineering item from the attached master prompt is deferred. Final automated receipts are in the validation/seal report; owner visual acceptance remains separate.
 
-| Capability | Before RC1R11 | After RC1R13 | Runtime | Creator | Validator | Tests |
+| Capability | Before RC1R11 | After RC1R14 | Runtime | Creator | Validator | Tests |
 |---|---|---|---|---|---|---|
 | Canonical 36 activities / all result cases / role privacy | Existing | Retained | Existing activity/Projector surfaces | Existing type editors | Registry and existing gates | Full inherited Node/browser suites |
 | Guided blocks, prompts/copy/edit/scroll/resume | Partial | Repaired and complete | Shared renderer | Exact executable preview | Content, evidence, references | Existing guided and complete M1 gates |

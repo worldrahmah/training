@@ -59,10 +59,12 @@ Choose one learning path and follow its steps. Copy copies only the prompt; long
 
 An already loaded page can preserve applicable edits/answers during a connection loss. They remain pending until confirmed. Reconnect to advance; review rejected/conflicting changes through Saved guided changes in your account menu. Newer work from another device is never overwritten automatically. Uploads/new page loads need the local server and external tools need their own connectivity. Your transcript/history remain available after class.
 
-## RC1R13 operational update
+## RC1R14 — your panel and activity
 
-Delete moves courses/classes to the separate Trash. Restore retains original state/history. Only an administrator can permanently delete a trashed item after typing its exact name and reviewing the impact. Courses with classes cannot be purged until those classes are explicitly purged. Intentional Archive remains separate; old archived items have Move to Trash.
+Open your account menu → Personalize my panel. Choose English/Arabic, Light/Dark/System, and Workspace default, Teal, Blue, Indigo, Violet, Rose or Amber. Choices belong to your account, including when several users share a browser; another user's choices do not change your panel. The same account loads its saved choices on another device. UI language stays independent from course language. If disconnected, a pending choice stays on this device and syncs after reconnection.
 
-Participants open a dedicated selected-class page with the large hero/current task. Other learning is side navigation or below on mobile. My workspace returns to the class list and learning record; an ended class never silently switches to another running class.
+My activity shows your complete recorded activity, 10, 25 or 50 rows per page. Filter by activity type, All time/Today/Last 7 days/Last 30 days/Custom dates, or search. From/Through dates include both selected local calendar dates. Previous/Next and the total reflect the full filtered history. Use Refresh for new records. The own profile also contains this panel for every role; Course Editors can open it from their account menu. Authorized staff Audit & history is separate and respects assigned class/group scope.
 
-In Builder, use Add lesson: name, teaching content, task and reflection. Ordinary presentation/practice/closing nodes are connected automatically. Direct edits save without a separate Apply action. Navigate through Course outline; open Advanced settings when needed, then Preview, Review and publish/export. Trainer workspace return no longer waits for unrelated course/people/report lists.
+The running Student class is full width: a compact green LIVE marker sits above the hero, and the current task is below it. Use My workspace or the profile menu at the top; there is no duplicate learning sidebar. When the Trainer finishes this selected class, it stays ended and offers a workspace return without silently switching to another class.
+
+Delete still uses the distinct Trash with history-preserving Restore. Permanent deletion requires an administrator to type the exact name and respects dependent classes. Old intentional Archive stays separate. Preserve data/storage/configuration during upgrades; follow RC1R14_UPGRADE_AND_ROLLBACK.md.

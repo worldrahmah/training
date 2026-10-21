@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+const values=new Map(),tab=new Map();
+globalThis.localStorage={getItem:k=>values.get(k)||null,setItem:(k,v)=>values.set(k,String(v)),removeItem:k=>values.delete(k)};
+globalThis.sessionStorage={getItem:k=>tab.get(k)||null,setItem:(k,v)=>tab.set(k,String(v)),removeItem:k=>tab.delete(k)};
+globalThis.document={dispatchEvent:()=>{}};
+const p=await import('../app/public/personal-preferences.js');
+p.writePreference('language','en');p.writePreference('theme','light');
+p.bindPreferenceAccount({id:1,ui_preferences:{language:'ar',theme:'dark',accent:'violet'}});assert.equal(p.readPreference('language'),'ar');assert.equal(p.readPreference('accent'),'violet');
+p.writePreference('language','en');const sent=p.pendingPreferences();p.writePreference('language','ar');p.acknowledgePreferences(1,sent);assert.equal(p.pendingPreferences().language,'ar','An older save acknowledgement must retain the newer change');
+p.writePreference('accent','teal');p.bindPreferenceAccount({id:2,ui_preferences:{language:'en',theme:'light',accent:'blue'}});assert.equal(p.readPreference('language'),'en');assert.equal(p.readPreference('theme'),'light');assert.equal(p.readPreference('accent'),'blue');assert.deepEqual(p.pendingPreferences(),{});
+p.writePreference('theme','dark');p.acknowledgePreferences(1,{language:'ar',accent:'teal'});assert.deepEqual(p.pendingPreferences(),{theme:'dark'},'An old account acknowledgement cannot clear this account changes');
+p.bindPreferenceAccount({id:1,ui_preferences:{language:'ar',theme:'dark',accent:'teal'}});assert.deepEqual(p.pendingPreferences(),{});assert.equal(p.readPreference('accent'),'teal');
+p.writePreference('language','en');p.bindPreferenceAccount({id:1,ui_preferences:{language:'ar',theme:'light',accent:'rose'}});assert.equal(p.readPreference('language'),'en','Unsent personal choice survives a reload with older server state');assert.equal(p.readPreference('accent'),'rose','Other independent remote preference fields still merge');
+p.bindPreferenceAccount(null);assert.equal(p.readPreference('language'),'en');assert.equal(p.readPreference('theme'),'light');assert.equal(localStorage.getItem('training_engine_locale'),'en','Authenticated choices must not rewrite the shared guest default');
+const source=fs.readFileSync(new URL('../app/public/core.js',import.meta.url),'utf8'),palette=vm.runInNewContext('('+source.match(/const paletteValues=(\{[^;]+\});/)[1]+')');
+const luminance=hex=>hex.slice(1).match(/../g).map(s=>parseInt(s,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((sum,v,i)=>sum+v*[.2126,.7152,.0722][i],0);
+const contrast=(a,b)=>{const x=luminance(a),y=luminance(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+for(const [name,[light,dark]] of Object.entries(palette)){assert.ok(contrast(light,'#ffffff')>=4.5,name+' light primary button contrast');assert.ok(contrast(dark,'#112035')>=4.5,name+' dark primary button contrast')}
+assert.deepEqual(Object.keys(palette),p.PANEL_COLORS.filter(c=>c!=='default'));
+console.log('PERSONAL_PREFERENCES_PASS account isolation, late acknowledgement, reload/offline merge, guest defaults and 12 actual palette contrast cases');

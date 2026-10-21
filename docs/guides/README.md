@@ -1,4 +1,4 @@
-# Training Engine ONE RC1R13 usage guides / أدلة الاستخدام
+# Training Engine ONE RC1R14 usage guides / أدلة الاستخدام
 
 Current owner-acceptance candidate. Read the guide for your role; permissions depend on assignment and grants. Admin, Trainer and Student are distinct surfaces. Course Editor is an isolated authoring role explained in Admin/Trainer guides. The application remains local-first; no cloud service is needed for classroom delivery.
 

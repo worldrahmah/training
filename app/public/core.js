@@ -1,3 +1,4 @@
+import {PANEL_COLORS,preferenceAccount,readPreference,writePreference,bindPreferenceAccount,pendingPreferences,acknowledgePreferences} from '/personal-preferences.js';
 export {activityLabel} from '/activity-labels.js';
 import {FONT_CATALOG} from '/font-catalog.js';
 import {applyLocale,cycleLocale,direction,getLocale,initLocale,langButton,setLocale,t,userMessage} from '/i18n.js';
@@ -7,7 +8,7 @@ export const TOKEN_KEY='training_engine_session';
 const ROTATED_KEY='training_engine_session_rotated_at';
 let rotating=null;
 export function getToken(){return sessionStorage.getItem(TOKEN_KEY)||''}
-export function setToken(v){if(getToken()!==String(v||'')){for(const promise of avatarPhotos.values())promise.then(url=>url&&URL.revokeObjectURL(url));avatarPhotos.clear()}if(v){sessionStorage.setItem(TOKEN_KEY,v);if(!sessionStorage.getItem(ROTATED_KEY))sessionStorage.setItem(ROTATED_KEY,String(Date.now()))}else{sessionStorage.removeItem(TOKEN_KEY);sessionStorage.removeItem(ROTATED_KEY)}}
+export function setToken(v){if(getToken()!==String(v||'')){for(const promise of avatarPhotos.values())promise.then(url=>url&&URL.revokeObjectURL(url));avatarPhotos.clear()}if(v){sessionStorage.setItem(TOKEN_KEY,v);if(!sessionStorage.getItem(ROTATED_KEY))sessionStorage.setItem(ROTATED_KEY,String(Date.now()))}else{sessionStorage.removeItem(TOKEN_KEY);sessionStorage.removeItem(ROTATED_KEY);bindPreferenceAccount(null);boundPreferenceUser=0;initLocale();initTheme()}}
 async function maybeRotate(path){const token=getToken();if(!token||path==='/api/login'||path==='/api/account/session/rotate')return;const last=Number(sessionStorage.getItem(ROTATED_KEY)||0);if(last&&Date.now()-last<30*60*1000)return;if(rotating)return rotating;rotating=(async()=>{try{const res=await fetch('/api/account/session/rotate',{method:'POST',headers:{'X-Session-Token':token}});if(!res.ok)return;const data=await res.json();if(data?.token){sessionStorage.setItem(TOKEN_KEY,data.token);sessionStorage.setItem(ROTATED_KEY,String(Date.now()))}}finally{rotating=null}})();return rotating}
 export async function api(path,opts={}){
   await maybeRotate(path);
@@ -15,7 +16,7 @@ export async function api(path,opts={}){
   if(opts.json!==undefined){headers['Content-Type']='application/json';opts.body=JSON.stringify(opts.json)}
   const res=await fetch(path,{...opts,headers}); let data=null; const ct=res.headers.get('content-type')||'';
   if(ct.includes('application/json'))data=await res.json();else data=await res.text();
-  if(!res.ok){const raw=data?.message||t('Request failed ({status})',{status:res.status});const e=new Error(userMessage(raw));e.status=res.status;e.data=data;throw e}return data;
+  if(!res.ok){const raw=data?.message||t('Request failed ({status})',{status:res.status});const e=new Error(userMessage(raw));e.status=res.status;e.data=data;throw e}if(data?.user&&path==='/api/me')bindPersonalPreferences(data.user);return data;
 }
 export function esc(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 export function md(v=''){
@@ -25,10 +26,39 @@ export function md(v=''){
 export function fmtDate(v){if(!v)return '—';try{return new Intl.DateTimeFormat(getLocale()==='ar'?'ar-IQ':'en-US',{year:'numeric',month:'short',day:'numeric'}).format(new Date(`${v}T12:00:00`))}catch{return v}}
 export function fmtDateTime(v){if(!v)return '—';try{return new Intl.DateTimeFormat(getLocale()==='ar'?'ar-IQ':'en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}).format(new Date(v.endsWith?.('Z')?v:v+'Z'))}catch{return v}}
 export function initials(name=''){const p=String(name).trim().split(/\s+/).filter(Boolean);return (p[0]?.[0]||'?')+(p[1]?.[0]||'')}
-export function setTheme(theme){const x=['light','dark','system'].includes(theme)?theme:'system';document.documentElement.dataset.theme=x;document.documentElement.dataset.effectiveTheme=x==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):x;localStorage.setItem('training_engine_theme',x);return x}
-export function initTheme(){return setTheme(localStorage.getItem('training_engine_theme')||'system')}
+export function setTheme(theme,persist=true){const x=['light','dark','system'].includes(theme)?theme:'system';document.documentElement.dataset.theme=x;document.documentElement.dataset.effectiveTheme=x==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):x;if(persist)writePreference('theme',x);applyPanelColor();return x}
+export function initTheme(){return setTheme(readPreference('theme','system'),false)}
 export function cycleTheme(){const cur=document.documentElement.dataset.theme||'system';return setTheme(cur==='system'?'light':cur==='light'?'dark':'system')}
 export function themeIcon(){return document.documentElement.dataset.theme==='dark'?'☾':document.documentElement.dataset.theme==='light'?'☀':'◐'}
+
+let boundPreferenceUser=0,preferenceSave=null;
+function bindPersonalPreferences(user){if(boundPreferenceUser===Number(user.id))return;boundPreferenceUser=Number(user.id);bindPreferenceAccount(user);initLocale();initTheme();flushPreferences()}
+async function flushPreferences(){
+ if(preferenceSave){await preferenceSave;return flushPreferences()}
+ const id=preferenceAccount(),token=getToken(),sent=pendingPreferences();if(!id||!token||!Object.keys(sent).length)return;
+ preferenceSave=(async()=>{try{const response=await fetch('/api/account/preferences',{method:'PATCH',headers:{'X-Session-Token':token,'Content-Type':'application/json'},body:JSON.stringify(sent),keepalive:true});if(response.ok)acknowledgePreferences(id,sent)}catch{}finally{preferenceSave=null}})();await preferenceSave;
+ if(preferenceAccount()===id&&getToken()===token&&Object.keys(pendingPreferences()).length&&JSON.stringify(pendingPreferences())!==JSON.stringify(sent))await flushPreferences();
+}
+document.addEventListener('one-personal-preference',()=>{applyPanelColor();flushPreferences()});
+window.addEventListener('online',flushPreferences);
+window.addEventListener('storage',event=>{if(event.key==='training_engine_preferences_v2:'+preferenceAccount()){initTheme()}});
+const paletteValues={teal:['#06755e','#79e3c8'],blue:['#2454c4','#9abaff'],indigo:['#4338ca','#b4b1ff'],violet:['#6d28d9','#d1b5ff'],rose:['#be123c','#ffacc2'],amber:['#92400e','#fcd38d']};
+export function applyPanelColor(){
+ const value=readPreference('accent','default'),color=PANEL_COLORS.includes(value)?value:'default',body=document.body;
+ document.documentElement.dataset.panelColor=color;if(!body||body.classList.contains('one-present'))return;
+ const dark=document.documentElement.dataset.effectiveTheme==='dark',accent=paletteValues[color]?.[dark?1:0];
+ for(const name of ['--role','--role-2','--role-soft','--one-brand','--accent','--accent-2','--accent-soft','--primary','--focus'])body.style.removeProperty(name);
+ if(accent){for(const name of ['--role','--role-2','--one-brand','--accent','--accent-2','--primary'])body.style.setProperty(name,accent);for(const name of ['--role-soft','--accent-soft'])body.style.setProperty(name,`color-mix(in srgb, ${accent} ${dark?14:9}%, transparent)`);body.style.setProperty('--focus',`0 0 0 4px color-mix(in srgb, ${accent} 25%, transparent)`)}
+}
+export function showPersonalSettings(){
+ let activeColor=readPreference('accent','default');
+ const wrap=modal(t('Personalize my panel'),`<p class="muted">${esc(t('These choices belong to your account. They do not change anyone else’s panel.'))}</p><div class="form-grid"><label class="field"><span>${esc(t('Language'))}</span><select class="select" data-personal-language><option value="en" ${getLocale()==='en'?'selected':''}>English</option><option value="ar" ${getLocale()==='ar'?'selected':''}>العربية</option></select></label><label class="field"><span>${esc(t('Appearance'))}</span><select class="select" data-personal-theme>${['system','light','dark'].map(x=>`<option value="${x}" ${document.documentElement.dataset.theme===x?'selected':''}>${esc(t(({system:'System',light:'Light',dark:'Dark'})[x]))}</option>`).join('')}</select></label></div><fieldset class="panel-color-choices"><legend>${esc(t('Panel color'))}</legend>${PANEL_COLORS.map(color=>`<label class="panel-color-choice" data-color="${color}"><input type="radio" name="panel-color" value="${color}" ${activeColor===color?'checked':''}><span class="panel-color-swatch" aria-hidden="true"></span><span>${esc(t(({default:'Workspace default',teal:'Teal',blue:'Blue',indigo:'Indigo',violet:'Violet',rose:'Rose',amber:'Amber'})[color]))}</span></label>`).join('')}</fieldset>`,{onConfirm:async()=>{
+  setLocale(wrap.querySelector('[data-personal-language]').value);setTheme(wrap.querySelector('[data-personal-theme]').value);writePreference('accent',wrap.querySelector('[name=panel-color]:checked').value);await flushPreferences();
+  if(Object.keys(pendingPreferences()).length)toast(t('Saved on this device. Your account preferences will sync when connected.'));else toast(t('Your personal preferences are saved.'),'success');
+  wrap.remove();document.dispatchEvent(new CustomEvent('one-personal-render'));location.reload();
+ }});return wrap;
+}
+document.addEventListener('click',event=>{if(event.target.closest?.('[data-personal-settings]'))showPersonalSettings()});
 
 // Shared disclosure controls. Native popovers keep actions above scrolling cards,
 // provide light-dismiss/Escape, and never masquerade as unsupported product tools.
@@ -42,7 +72,7 @@ export function actionMenu(label,body,{icon='menu',compact=false}={}){
   return `<div class="one-menu"><button type="button" class="btn one-menu-trigger${compact?' icon':''}" popovertarget="${id}" aria-controls="${id}" aria-expanded="false" aria-label="${esc(label)}">${uiIcon(icon)}${compact?'':`<span class="one-menu-caption">${esc(label)}</span>${uiIcon('chevron')}`}</button><div id="${id}" class="one-menu-panel" popover="auto"><div class="one-menu-heading">${esc(label)}</div><nav aria-label="${esc(label)}">${body}</nav></div></div>`;
 }
 export function appearanceActions(attribute='data-action'){
-  return `<button class="one-menu-item" ${attribute}="language">${uiIcon('language')}<span>${esc(t('Change language'))}</span><small>${esc(langButton())}</small></button><button class="one-menu-item" ${attribute}="theme">${uiIcon('theme')}<span>${esc(t('Appearance'))}</span><small>${esc(t(({light:'Light',dark:'Dark',system:'System'})[document.documentElement.dataset.theme]||'System'))}</small></button>`;
+  return `<button class="one-menu-item" data-personal-settings>${uiIcon('theme')}<span>${esc(t('Personalize my panel'))}</span></button><button class="one-menu-item" ${attribute}="language">${uiIcon('language')}<span>${esc(t('Change language'))}</span><small>${esc(langButton())}</small></button><button class="one-menu-item" ${attribute}="theme">${uiIcon('theme')}<span>${esc(t('Appearance'))}</span><small>${esc(t(({light:'Light',dark:'Dark',system:'System'})[document.documentElement.dataset.theme]||'System'))}</small></button>`;
 }
 function menuTrigger(panel){return document.querySelector(`[popovertarget="${panel.id}"]`)}
 function placeMenu(panel){
@@ -68,7 +98,7 @@ document.addEventListener('keydown',e=>{
   if(['ArrowDown','ArrowUp','Home','End'].includes(e.key)){e.preventDefault();const i=items.indexOf(document.activeElement),n=e.key==='Home'?0:e.key==='End'?items.length-1:(i+(e.key==='ArrowDown'?1:-1)+items.length)%items.length;items[n]?.focus()}
 });
 addEventListener('resize',()=>document.querySelectorAll('.one-menu-panel:popover-open').forEach(placeMenu));
-matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(document.documentElement.dataset.theme==='system')setTheme('system')});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(document.documentElement.dataset.theme==='system')setTheme('system',false)});
 
 // A localized paragraph can live inside a course of the other language. Determine
 // the paragraph's own base direction, without changing the authored course/model.
@@ -131,7 +161,7 @@ export function loginView({role='trainer',title=t('Welcome back'),subtitle=t('Si
 }
 export async function bindLogin(root,{requiredRole,onSuccess,onLocaleChange=null}){
   const form=root.querySelector('#loginForm');root.querySelector('#loginTheme')?.addEventListener('click',()=>{cycleTheme()});root.querySelector('#loginLang')?.addEventListener('click',()=>{cycleLocale();if(onLocaleChange)onLocaleChange();else location.reload()});
-  form.addEventListener('submit',async e=>{e.preventDefault();const fd=new FormData(form);const btn=form.querySelector('button[type=submit]');btn.disabled=true;try{const data=await api('/api/login',{method:'POST',json:{username:fd.get('username'),password:fd.get('password')}});if(requiredRole&&data.user.role!==requiredRole){setToken('');throw new Error(requiredRole==='trainer'?t('Use a trainer account for this page.'):t('Use a participant account for this page.'))}setToken(data.token);if(data.user.must_change_password)return temporaryPasswordView(root,data.user,onSuccess);await onSuccess(data.user)}catch(err){toast(err.message,'error')}finally{btn.disabled=false}})
+  form.addEventListener('submit',async e=>{e.preventDefault();const fd=new FormData(form);const btn=form.querySelector('button[type=submit]');btn.disabled=true;try{const data=await api('/api/login',{method:'POST',json:{username:fd.get('username'),password:fd.get('password')}});if(requiredRole&&data.user.role!==requiredRole){setToken('');throw new Error(requiredRole==='trainer'?t('Use a trainer account for this page.'):t('Use a participant account for this page.'))}setToken(data.token);bindPersonalPreferences(data.user);if(data.user.must_change_password)return temporaryPasswordView(root,data.user,onSuccess);await onSuccess(data.user)}catch(err){toast(err.message,'error')}finally{btn.disabled=false}})
 }
 export function temporaryPasswordView(root,user,onSuccess){
   root.innerHTML=loginView({title:t('Change password'),subtitle:t('Set a personal password before entering your workspace.')});
@@ -141,7 +171,7 @@ export function temporaryPasswordView(root,user,onSuccess){
   form.querySelector('[data-password-logout]').onclick=async()=>{await api('/api/logout',{method:'POST'}).catch(()=>{});setToken('');location.reload()};
 }
 export function eventSource(onRefresh,{onPointer=null,classId=null,pair=null}={}){let es=null;const connect=()=>{const token=getToken(),params=new URLSearchParams();if(token)params.set('token',token);if(classId)params.set('class_id',classId);if(pair)params.set('pair',pair);es=new EventSource(`/api/events?${params}`);if(onPointer)es.addEventListener('pointer',e=>{try{onPointer(JSON.parse(e.data))}catch{}});es.addEventListener('refresh',e=>{try{onRefresh(JSON.parse(e.data))}catch{onRefresh({})}});es.onerror=()=>{};};let disposed=false;const suspend=()=>es?.close(),resume=e=>{if(e.persisted&&!disposed)connect()};window.addEventListener('pagehide',suspend);window.addEventListener('pageshow',resume);connect();return()=>{disposed=true;es?.close();window.removeEventListener('pagehide',suspend);window.removeEventListener('pageshow',resume)}}
-export function humanEvent(type=''){const m={signed_in:'Signed in',course_created:'Course created',course_imported:'Course imported',class_created:'Class created',class_imported:'Class imported',class_activated:'Class started',teams_created:'Teams created',attendance_saved:'Attendance saved',student_note_added:'Trainer note added',roster_imported:'Roster imported',activity_opened:'Activity opened',activity_closed:'Activity closed',results_revealed:'Results shown',classroom_cleared:'Classroom returned to waiting',response_submitted:'Response submitted',team_response_submitted:'Team response submitted',mission_opened:'Mission opened',mission_updated:'Mission progress updated',mission_completed:'Mission completed',submission_added:'Submission added',backup_created:'Backup created',demo_removed:'Demo content removed',demo_reset:'Demo workspace restored',classroom_updated:'Classroom updated',password_changed:'Password changed',staff_created:'Trainer added',staff_updated:'Trainer updated',password_reset:'Password reset',participant_activated:'Participant account activated',participant_deactivated:'Participant account deactivated',class_trainers_updated:'Class trainers updated',class_status_changed:'Class status updated',participant_enrolled:'Participant enrolled',profile_updated:'Profile updated',notification_sent:'Notification sent',help_requested:'Help requested',help_request_updated:'Help request updated',participant_progress_updated:'Participant progress updated',course_draft_created:'Course draft created',course_draft_saved:'Course draft saved',course_version_published:'Course version published',projector_navigated:'Projector navigated',permissions_updated:'Permissions updated',course_updated:'Course updated',course_archived:'Course archived',class_updated:'Class updated',class_archived:'Class archived',workflow_node_started:'Section started',workflow_node_completed:'Section completed',workflow_node_skipped:'Section skipped'};return t(m[type]||String(type).replaceAll('_',' '))}
+export function humanEvent(type=''){const m={signed_in:'Signed in',course_created:'Course created',course_imported:'Course imported',class_created:'Class created',class_imported:'Class imported',class_activated:'Class started',teams_created:'Teams created',attendance_saved:'Attendance saved',student_note_added:'Trainer note added',roster_imported:'Roster imported',activity_opened:'Activity opened',activity_closed:'Activity closed',results_revealed:'Results shown',classroom_cleared:'Classroom returned to waiting',response_submitted:'Response submitted',team_response_submitted:'Team response submitted',mission_opened:'Mission opened',mission_updated:'Mission progress updated',mission_completed:'Mission completed',submission_added:'Submission added',backup_created:'Backup created',demo_removed:'Demo content removed',demo_reset:'Demo workspace restored',classroom_updated:'Classroom updated',password_changed:'Password changed',staff_created:'Trainer added',staff_updated:'Trainer updated',password_reset:'Password reset',participant_activated:'Participant account activated',participant_deactivated:'Participant account deactivated',class_trainers_updated:'Class trainers updated',class_finished:'Class finished',personal_preferences_updated:'Personal preferences updated',class_status_changed:'Class status updated',participant_enrolled:'Participant enrolled',profile_updated:'Profile updated',notification_sent:'Notification sent',help_requested:'Help requested',help_request_updated:'Help request updated',participant_progress_updated:'Participant progress updated',course_draft_created:'Course draft created',course_draft_saved:'Course draft saved',course_version_published:'Course version published',projector_navigated:'Projector navigated',permissions_updated:'Permissions updated',course_updated:'Course updated',course_archived:'Course archived',class_updated:'Class updated',class_archived:'Class archived',workflow_node_started:'Section started',workflow_node_completed:'Section completed',workflow_node_skipped:'Section skipped'};return t(m[type]||String(type).replaceAll('_',' '))}
 export function downloadUrl(path){const token=getToken();return `${path}${path.includes('?')?'&':'?'}token=${encodeURIComponent(token)}`}
 export function uiStatus(v=''){const map={draft:'Draft',planned:'Scheduled',active:'Active',scheduled:'Scheduled',completed:'Completed',cancelled:'Cancelled',published:'Published',ready:'Ready'};return t(map[String(v).toLowerCase()]||String(v))}
 

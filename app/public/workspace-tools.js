@@ -1,17 +1,19 @@
+import {mountActivityHistory} from '/activity-history.js';
 import {api,esc,t,modal,toast,fmtDateTime,humanEvent,uiIcon,uiStatus} from '/core.js';
 import {bindDiscovery,discoveryToolbar,refreshDiscoveries} from '/discovery.js';
 const humanRecordStatus=value=>({super_admin:'Super administrator',administrator:'Administrator',trainer:'Trainer',assistant:'Assistant trainer',course_editor:'Course Editor',connected:'Connected'})[value]?t(({super_admin:'Super administrator',administrator:'Administrator',trainer:'Trainer',assistant:'Assistant trainer',course_editor:'Course Editor',connected:'Connected'})[value]):uiStatus(value);
-const labels={groups:'Groups',admissions:'Admission requests',audit:'Audit & history',archive:'Archive & restore',trash:'Trash'};
+const labels={activity:'My activity',groups:'Groups',admissions:'Admission requests',audit:'Audit & history',archive:'Archive & restore',trash:'Trash'};
 export function classAdmissionPanel(w,cl,onRequests,{canReview=true}={}){
  const section=document.createElement('section');section.className='class-code-panel';section.innerHTML=`<div><strong>${esc(t('Class code'))}</strong><p class="small muted">${esc(t('Registered participants use this code to request trainer-approved admission.'))}</p></div><div class="class-code-actions"><input class="input" data-class-code value="${esc(cl.join_code||'')}" readonly dir="ltr" aria-label="${esc(t('Class code'))}"><button class="btn" data-copy-class-code>${esc(t('Copy code'))}</button>${canReview?`<button class="btn" data-open-admissions>${esc(t('Admission requests'))}</button>`:''}</div>`;
  w.querySelector('[data-body]').prepend(section);section.querySelector('[data-copy-class-code]').onclick=async()=>{try{await navigator.clipboard.writeText(cl.join_code);toast(t('Class code copied.'),'success')}catch{section.querySelector('[data-class-code]').select();toast(t('Code selected. Copy it using your device controls.'))}};section.querySelector('[data-open-admissions]')?.addEventListener('click',()=>{w.remove();onRequests()});
 }
-export function workspaceNavigation(){return ['groups','admissions','audit','archive','trash'].map(view=>`<button data-nav="workspace-${view}"><span>${uiIcon(view==='admissions'?'bell':view==='groups'?'user':'tools')}</span><span>${esc(t(labels[view]))}</span></button>`).join('')+`<a class="workspace-profile-link" href="/profile">${uiIcon('user')}<span>${esc(t('My profile'))}</span></a>`;}
+export function workspaceNavigation(){return ['activity','groups','admissions','audit','archive','trash'].map(view=>`<button data-nav="workspace-${view}"><span>${uiIcon(view==='admissions'?'bell':view==='groups'?'user':'tools')}</span><span>${esc(t(labels[view]))}</span></button>`).join('')+`<a class="workspace-profile-link" href="/profile">${uiIcon('user')}<span>${esc(t('My profile'))}</span></a>`;}
 export async function renderWorkspaceTool(view,page,user,onRecord){
  const key=view.replace('workspace-','');page.innerHTML=`<div class="page-head"><div><h1>${esc(t(labels[key]||'Workspace'))}</h1></div></div><div data-tool-content><div class="empty">${esc(t('Loading…'))}</div></div>`;
+ if(key==='activity'){const root=page.querySelector('[data-tool-content]');root.className='card';return mountActivityHistory(root,{userId:user.id})}
  if(key==='groups')return groups(page,user,onRecord);
  if(key==='admissions')return admissions(page,onRecord);
- if(key==='audit')return audit(page,onRecord);
+ if(key==='audit'){const root=page.querySelector('[data-tool-content]');root.className='card';return mountActivityHistory(root,{userId:user.id,mode:'audit',onRecord})}
  if(key==='archive')return archive(page,onRecord);
  if(key==='trash')return trash(page,user,onRecord);
 }

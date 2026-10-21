@@ -1,3 +1,4 @@
+import {activityPage} from './account-workspace.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -10,7 +11,7 @@ const integer=value=>{const n=Number(value);if(!Number.isSafeInteger(n)||n<1)fai
 const bounded=(value,max=200)=>String(value??'').trim().slice(0,max);
 const isEditor=user=>user?.staff_role==='course_editor';
 export function editorRouteAllowed(pathname,method){
-  if(['/api/me','/api/logout','/api/heartbeat','/api/profile','/api/account/password','/api/account/sessions','/api/account/session/rotate','/api/profile/consent-history','/api/public-settings'].includes(pathname))return true;
+  if(['/api/me','/api/logout','/api/heartbeat','/api/profile','/api/account/password','/api/account/sessions','/api/account/session/rotate','/api/account/preferences','/api/account/activity','/api/profile/consent-history','/api/public-settings'].includes(pathname))return true;
   if(pathname==='/api/settings')return method==='GET';
   if(/^\/api\/profiles\/\d+(\/photo)?$/.test(pathname))return true; // own-record check is mandatory in the handler
   if(pathname==='/api/typography')return method==='GET';
@@ -205,7 +206,7 @@ export async function handleWorkspaceApi(req,res,url,c){
     if(req.method==='DELETE'){const row=db.prepare('SELECT * FROM profile_media WHERE user_id=?').get(id);if(row){db.prepare('DELETE FROM profile_media WHERE user_id=?').run(id);if(safePhotoKey(row.asset_key))fs.rmSync(path.join(folder,row.asset_key),{force:true});}json(res,200,{ok:true});return true;}
   }
   if(p==='/api/workspace/audit'&&req.method==='GET'){
-    staff();const ids=visibleClassIds(user)||[],scope=isAdminLike(user)?'1':`e.class_id IN (${ids.length?ids.map(Number).join(','):'NULL'}) OR (e.entity_type='group' AND EXISTS(SELECT 1 FROM workspace_groups g WHERE CAST(g.id AS TEXT)=e.entity_id AND g.owner_id=?)) OR e.user_id=?`;const events=db.prepare(`SELECT e.id,e.class_id,e.entity_type,e.entity_id,e.event_type,e.created_at,u.display_name actor FROM activity_events e LEFT JOIN users u ON u.id=e.user_id WHERE ${scope} ORDER BY e.id DESC LIMIT 2000`).all(...(isAdminLike(user)?[]:[user.id,user.id]));json(res,200,{ok:true,events:events.map(row=>({...row,payload_json:undefined}))});return true;
+    staff();const ids=visibleClassIds(user)||[],scope=isAdminLike(user)?'1':`e.class_id IN (${ids.length?ids.map(Number).join(','):'NULL'}) OR (e.entity_type='group' AND EXISTS(SELECT 1 FROM workspace_groups g WHERE CAST(g.id AS TEXT)=e.entity_id AND g.owner_id=?)) OR e.user_id=?`;if(url.searchParams.has('page_size')){json(res,200,{ok:true,...activityPage(db,url.searchParams,scope,isAdminLike(user)?[]:[user.id,user.id])});return true;}const events=db.prepare(`SELECT e.id,e.class_id,e.entity_type,e.entity_id,e.event_type,e.created_at,u.display_name actor FROM activity_events e LEFT JOIN users u ON u.id=e.user_id WHERE ${scope} ORDER BY e.id DESC LIMIT 2000`).all(...(isAdminLike(user)?[]:[user.id,user.id]));json(res,200,{ok:true,events:events.map(row=>({...row,payload_json:undefined}))});return true;
   }
   return false;
 }

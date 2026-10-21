@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "qa_mode": "disabled by env -u TRAINING_ENGINE_TEST_ACCOUNTS",
+  "data_preservation": "existing configured SQLite/storage retained; additive migration6; no reset",
+  "pages": {
+    "/admin": 200,
+    "/trainer": 200,
+    "/student": 200,
+    "/builder": 200,
+    "/present": 200,
+    "/editor": 200,
+    "/profile": 200,
+    "/student/class": 200
+  },
+  "health": {
+    "status": 200,
+    "version": "3.5.0-rc.1.14"
+  },
+  "/api/course-versions/1/export": 401,
+  "/api/account/preferences": 401,
+  "/api/account/activity": 401
+}

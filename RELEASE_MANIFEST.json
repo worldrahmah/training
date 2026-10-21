@@ -1,15 +1,15 @@
 {
   "format": "training-engine-one-release",
-  "release_name": "TRAINING_ENGINE_ONE_v3.5.0_RC1R13",
+  "release_name": "TRAINING_ENGINE_ONE_v3.5.0_RC1R14",
   "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
-  "app_version": "3.5.0-rc.1.13",
+  "app_version": "3.5.0-rc.1.14",
   "core_schema_version": "3.2",
   "course_authoring_schema_version": "2.0",
   "baseline_core_v2_1_1_sha256": "82a8f0dd04f658429eec7d153319da5953e2bf0f308a43c2293f5947b7c755f5",
   "codex_master_handoff_sha256": "c0221a2b842215e06bd0c864a912a71922d833880a103c015913c723e2be4c52",
   "external_course_authoring_handoff": "course-creator-kit",
-  "manual_gate": "docs/RC1R13_ACCEPTANCE.md",
-  "test_output": "docs/verification/rc1r13/SOURCE_NODE_OUTPUT.txt",
+  "manual_gate": "docs/RC1R14_ACCEPTANCE.md",
+  "test_output": "docs/verification/rc1r14/SOURCE_NODE_OUTPUT.txt",
   "deep_ui_design": "docs/ONE_DEEP_EXPERIENCE_DESIGN.md",
   "canonical_registry": "registry/activity-component-registry.json",
   "development_authoring_contract": "course-creator-kit",
@@ -96,8 +96,8 @@
   "workspace_owner_acceptance": "docs/RC1R8_OWNER_ACCEPTANCE_CHECKLIST.md",
   "historical_external_authoring_handoff": "packaged-handoffs/TRAINING_ENGINE_ONE_COURSE_AUTHORING_HANDOFF_v1.3.zip",
   "current_user_guides": "docs/guides/README.md",
-  "security_review": "docs/RC1R13_SECURITY_REVIEW.md",
-  "known_limitations": "docs/KNOWN_LIMITATIONS_RC1R13.md",
+  "security_review": "docs/RC1R14_SECURITY_REVIEW.md",
+  "known_limitations": "docs/KNOWN_LIMITATIONS_RC1R14.md",
   "accepted_engineering_baseline": {
     "branch": "release/rc1r8-test",
     "commit": "db640e1047f210856a7b23d6ff5e469ffd10b89e"
@@ -112,18 +112,12 @@
   ],
   "rc1r9_automated_status": "PASS_WORKING_TREE_PENDING_EXACT_ZIP_RETEST",
   "rc1r9_manual_status": "PENDING_OWNER_WINDOWS_LAN_CLASSROOM_VISUAL_ACCEPTANCE",
-  "current_requirements_trace": "docs/RC1R13_REQUIREMENTS.json",
-  "current_browser_evidence": "docs/verification/rc1r13/SOURCE_BROWSER_OUTPUT.txt",
-  "current_scope": "Separate Trash, bounded workspace navigation, dedicated student classroom, beginner Creator and retained complete guided experience",
-  "preserved_continuation_baseline": "b0568cbd850e3a67e43d8ec7f7db045da37c608c",
-  "workspace_schema": "5",
-  "current_operational_review": "docs/RC1R13_OPERATIONAL_REVIEW.md",
-  "source_validation": "PASS_65_NODE_10_BROWSER_153_SYNTAX_104_KIT_34_PDF",
-  "exact_zip_verification": {
-    "status": "PASS",
-    "sha256": "2f4f97d28b367c995cefdd79a55f07f5c6264970cd580c62facb61e3505c71e5",
-    "source_commit": "2ce33553d1becd528a2228cd16040260899abd50",
-    "files": 1296,
-    "receipt": "releases/rc1r13/SEAL_RESULT.json"
-  }
+  "current_requirements_trace": "docs/RC1R14_REQUIREMENTS.json",
+  "current_browser_evidence": "docs/verification/rc1r14/SOURCE_BROWSER_OUTPUT.txt",
+  "current_scope": "Explicit class finish, independent account language/theme/colors, full-width Student class and complete paged activity history",
+  "preserved_continuation_baseline": "8f773a64300ec516860fa537051fb484997dd3e9",
+  "workspace_schema": "6",
+  "current_operational_review": "docs/RC1R14_OPERATIONAL_REVIEW.md",
+  "source_validation": "PASS_67_NODE_11_BROWSER_160_SYNTAX_104_KIT_34_PDF",
+  "exact_zip_verification": "Pending separate companion receipt; never inferred from source tests."
 }

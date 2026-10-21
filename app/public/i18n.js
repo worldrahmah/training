@@ -1,3 +1,4 @@
+import {readPreference,writePreference} from './personal-preferences.js';
 const KEY='training_engine_locale';
 const AR={
 "Advanced settings":"إعدادات متقدمة",
@@ -1091,13 +1092,62 @@ const AR={
   "Clear, confident learning.":"تعلّم بوضوح وثقة.",
   "Choose a supported bulk action.":"اختر إجراءً جماعيًا مدعومًا.",
   "Select at most 500 records for one bulk action.":"اختر ٥٠٠ سجلّ كحدّ أقصى للإجراء الجماعي الواحد.",
+  "Personalize my panel":"تخصيص لوحتي",
+  "These choices belong to your account. They do not change anyone else’s panel.":"هذه الخيارات خاصة بحسابك ولا تغيّر لوحة أي مستخدم آخر.",
+  "Panel color":"لون اللوحة",
+  "Workspace default":"اللون الافتراضي لمساحة العمل",
+  "Teal":"أخضر مزرق",
+  "Indigo":"نيلي",
+  "Violet":"بنفسجي",
+  "Rose":"وردي",
+  "Your personal preferences are saved.":"تم حفظ تفضيلاتك الشخصية.",
+  "Saved on this device. Your account preferences will sync when connected.":"تم الحفظ على هذا الجهاز. ستتم مزامنة تفضيلات حسابك عند الاتصال.",
+  "Finish class":"إنهاء الصف",
+  "Finish this class for everyone? This ends the live session and closes the current activity.":"هل تريد إنهاء هذا الصف للجميع؟ ستنتهي الجلسة المباشرة ويُغلق النشاط الحالي.",
+  "Saved responses and progress are kept. Unfinished learner tasks are not marked complete. You can move this class to Trash afterwards.":"ستبقى الإجابات والتقدّم محفوظين، ولن تُعدّ مهام المتعلّمين غير المنجزة مكتملة. يمكنك نقل الصف إلى سلة المهملات بعد إنهائه.",
+  "Class finished. Your records are saved.":"انتهى الصف. سجلاتك محفوظة.",
+  "LIVE":"مباشر",
+  "Class finished":"انتهى الصف",
+  "Personal preferences updated":"تم تحديث التفضيلات الشخصية",
+  "Workspace activity":"نشاط مساحة العمل",
+  "Activity history":"سجل النشاط",
+  "Show per page":"عدد العناصر في الصفحة",
+  "Time range":"الفترة الزمنية",
+  "All time":"كل الفترات",
+  "Last 7 days":"آخر ٧ أيام",
+  "Last 30 days":"آخر ٣٠ يومًا",
+  "Custom dates":"تواريخ مخصّصة",
+  "All activity types":"كل أنواع النشاط",
+  "From date":"من تاريخ",
+  "Through date":"حتى تاريخ",
+  "Showing {first}–{last} of {total}":"عرض {first}–{last} من أصل {total}",
+  "Page {page} of {pages}":"الصفحة {page} من {pages}",
+  "Activity history pages":"صفحات سجل النشاط",
+  "No activity matches these filters.":"لا توجد أنشطة تطابق هذه المرشّحات.",
+  "Activity could not be loaded. Adjust the filters or try Refresh.":"تعذّر تحميل النشاط. عدّل المرشّحات أو اضغط تحديث.",
+  "This class has finished. Return to your workspace.":"انتهى هذا الصف. عُد إلى مساحة عملك.",
+  "Only a running class can be finished.":"يمكن إنهاء الصف الجاري فقط.",
+  "The class changed. Review the current screen and try again.":"تغيّر الصف. راجع الشاشة الحالية وحاول مجددًا.",
+  "Choose a valid activity page.":"اختر صفحة نشاط صالحة.",
+  "Choose 10, 25 or 50 activities per page.":"اختر ١٠ أو ٢٥ أو ٥٠ نشاطًا في الصفحة.",
+  "Choose a valid activity date range.":"اختر فترة زمنية صالحة للنشاط.",
+  "The end date must be after the start date.":"يجب أن يكون تاريخ النهاية بعد تاريخ البداية.",
+  "Choose a valid activity type.":"اختر نوع نشاط صالحًا.",
+  "Choose supported activity filters.":"اختر مرشّحات نشاط مدعومة.",
+  "Choose a supported language, appearance and panel color.":"اختر لغة ومظهرًا ولون لوحة مدعومين.",
+  "This activity view is read only.":"سجل النشاط للقراءة فقط.",
+  "Choose a supported preference action.":"اختر إجراء تفضيلات مدعومًا.",
+  "Refresh":"تحديث",
+  "Thank you for participating. Your saved learning remains in your workspace.":"شكرًا لمشاركتك. تعلّمك المحفوظ متاح في مساحة عملك.",
+  "Search activity":"البحث في النشاط",
+  "Keep the activity search under 160 characters.":"اجعل البحث في النشاط أقل من ١٦٠ حرفًا.",
 };
-let locale=(localStorage.getItem(KEY)||'en').toLowerCase()==='ar'?'ar':'en';
+let locale=(readPreference('language','en')).toLowerCase()==='ar'?'ar':'en';
 export function getLocale(){return locale}
-export function setLocale(value){locale=String(value||'en').toLowerCase()==='ar'?'ar':'en';localStorage.setItem(KEY,locale);applyLocale();return locale}
+export function setLocale(value){locale=String(value||'en').toLowerCase()==='ar'?'ar':'en';writePreference('language',locale);applyLocale();return locale}
 export function cycleLocale(){return setLocale(locale==='ar'?'en':'ar')}
 export function applyLocale(){document.documentElement.lang=locale;document.documentElement.dir=locale==='ar'?'rtl':'ltr';document.documentElement.dataset.locale=locale;if(typeof CustomEvent!=='undefined')document.dispatchEvent?.(new CustomEvent('one-locale-change'));return locale}
-export function initLocale(){applyLocale();return locale}
+export function initLocale(){locale=readPreference('language','en')==='ar'?'ar':'en';applyLocale();return locale}
 export function t(key,vars={}){let s=locale==='ar'?(AR[key]??key):key;for(const [k,v] of Object.entries(vars||{}))s=s.replaceAll(`{${k}}`,String(v));return s}
 export function hasArabicTranslation(key){return Object.prototype.hasOwnProperty.call(AR,key)}
 export function langButton(){return locale==='ar'?'EN':'ع'}

@@ -37,6 +37,7 @@ try:
   executable=os.environ.get('ONE_BROWSER_EXECUTABLE') or shutil.which('chromium') or shutil.which('google-chrome')
   browser=p.chromium.launch(**({'executable_path':executable} if executable else {}),headless=True,args=['--no-sandbox'])
   def context(token,locale,theme='light',system='light'):
+   if token:req('/api/account/preferences',token,{'language':locale,'theme':theme},'PATCH')
    c=browser.new_context(viewport={'width':1440,'height':900},reduced_motion='reduce',color_scheme=system)
    c.on('page',lambda page:page.on('pageerror',lambda error:page_errors.append(str(error))))
    c.route('https://**/*',lambda route:route.abort())

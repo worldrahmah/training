@@ -1,6 +1,6 @@
 {
   "format": "training-engine-one-capability-registry",
-  "registry_version": "3.5.0-rc.1.13",
+  "registry_version": "3.5.0-rc.1.14",
   "status": "guided-experience-professional-closure",
   "projector": {
     "themes": [
@@ -857,7 +857,53 @@
       "route": "/student/class?class_id=…",
       "selected_class_only": true,
       "workspace_route": "/student?workspace=1",
-      "secondary_learning": "side_navigation_or_below_on_mobile"
+      "secondary_learning": "top_menu_workspace_and_profile_only",
+      "layout": "full_width_no_secondary_rail",
+      "live_indicator": "compact_above_hero"
+    },
+    "class_finish": {
+      "explicit_action": true,
+      "available_from": "live_console_and_class_list",
+      "preserves_partial_progress": true,
+      "distinct_from_hold_break_section": true,
+      "followed_by_trash": true
+    },
+    "personal_preferences": {
+      "account_scoped": true,
+      "languages": [
+        "en",
+        "ar"
+      ],
+      "themes": [
+        "system",
+        "light",
+        "dark"
+      ],
+      "panel_colors": [
+        "default",
+        "teal",
+        "blue",
+        "indigo",
+        "violet",
+        "rose",
+        "amber"
+      ],
+      "course_branding_unchanged": true
+    },
+    "activity_history": {
+      "all_roles": true,
+      "own_history": true,
+      "staff_audit_scoped": true,
+      "server_pagination": [
+        10,
+        25,
+        50
+      ],
+      "filters": [
+        "event_type",
+        "time_range",
+        "search"
+      ]
     }
   },
   "display_labels": {

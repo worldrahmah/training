@@ -1,0 +1,129 @@
+
+> training-engine-one@3.5.0-rc.1.14 test:browser
+> node tools/run-checks.mjs browser
+
+
+[3/11] python tests/browser-workspace-upgrade.py — PASS
+BROWSER_WORKSPACE_UPGRADE_PASS 12 gates; EN/AR mobile/desktop, offline fonts and actual state transitions
+
+[1/11] python tests/browser-repair.py — PASS
+BROWSER_REPAIR_PASS 12 role/locale visits; desktop/tablet/mobile, offline fonts, keyboard, export, matching, charts, Projector themes
+
+[5/11] python tests/browser-rc1r9.py — PASS
+RC1R9_BROWSER_PASS 52 visits; all entry screens EN/AR themes widths, 36 bilingual labels/stable IDs/authored text, owner logo on role surfaces
+
+[2/11] python tests/browser-workspace.py — FAIL
+Traceback (most recent call last):
+  File "/workspace/rc14-source-check/tests/browser-workspace.py", line 117, in <module>
+    c=context(st,'en');page=c.new_page();page.goto(BASE+'/student');page.wait_for_selector('.student-top');page.locator('.student-top .one-menu-trigger').click();page.locator('.one-menu-panel:popover-open [data-action="language"]').click();assert page.evaluate('document.documentElement.lang')=='ar';assert 'Cairo' in page.locator('body').evaluate('(e)=>getComputedStyle(e).fontFamily');c.close()
+                                                                                                                                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+[7/11] python tests/browser-rc1r11.py — FAIL
+Traceback (most recent call last):
+  File "/workspace/rc14-source-check/tests/browser-rc1r11.py", line 29, in <module>
+    ctx=context(token,locale,width);page=ctx.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)));page.goto(base+f'/student?class_id={cid}');page.locator('[data-guided-path]').first.wait_for();assert page.locator('.student-class-focus').count()==1;assert page.locator('details.student-disclosure').count()==4;assert page.locator('details.student-disclosure[open]').count()==0;page.locator('details.student-disclosure summary').first.focus();page.keyboard.press('Enter');expect(page.locator('details.student-disclosure').first).to_have_attribute('open','');page.reload();page.locator('[data-guided-path]').first.wait_for();assert page.locator('[data-guided-path]').count()==2
+                                                                                                                                                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+[6/11] python tests/browser-rc1r10.py — PASS
+RC1R10_BROWSER_PASS 7 workflow groups
+
+[4/11] python tests/browser-font-matrix.py — PASS
+FONT_MATRIX_BROWSER_PASS 640 actual global-font layout cases across 8 surfaces, EN/AR and mobile/desktop or 16:9
+
+[10/11] python tests/browser-operational.py — PASS
+OPERATIONAL_BROWSER_PASS 6 complete owner journeys
+
+[11/11] python tests/browser-personal-workspace.py — PASS
+PERSONAL_WORKSPACE_BROWSER_PASS 8 complete personal/finish/history/classroom journeys
+
+[8/11] python tests/browser-creator-closure.py — PASS
+SHARED_VARIABLE_AUTHORING_PASS
+ALL_28_VISUAL_EDITORS_PASS
+CREATOR_ARTIFACT_RUNTIME_PASS actual visual ZIP → isolated recipient import → selected Participant route → resolved shared prompt and variables
+
+CREATOR_CLOSURE_BROWSER_PASS 12 groups
+
+[9/11] python tests/browser-m1-closure.py — PASS
+M1_STEP en 0 m1-sleep-prepare
+M1_STEP en 0 m1-sleep-ask
+M1_STEP en 0 m1-sleep-verify
+M1_STEP en 0 m1-sleep-teach
+M1_STEP en 0 m1-sleep-tutor
+M1_STEP en 0 m1-sleep-reteach
+M1_STEP en 0 m1-sleep-check
+M1_STEP en 0 m1-sleep-master
+M1_STEP en 0 m1-sleep-converge
+M1_STEP en 0 m1-sleep-evaluate
+M1_STEP en 0 m1-sleep-close
+FULL_M1_ROUTE_PASS en 0 1440 trainer_paced
+M1_STEP en 1 m1-scholarship-prepare
+M1_STEP en 1 m1-scholarship-ask
+M1_STEP en 1 m1-scholarship-verify
+M1_STEP en 1 m1-scholarship-teach
+M1_STEP en 1 m1-scholarship-tutor
+M1_STEP en 1 m1-scholarship-reteach
+M1_STEP en 1 m1-scholarship-check
+M1_STEP en 1 m1-scholarship-master
+M1_STEP en 1 m1-scholarship-converge
+M1_STEP en 1 m1-scholarship-evaluate
+M1_STEP en 1 m1-scholarship-close
+FULL_M1_ROUTE_PASS en 1 390 participant_paced
+M1_STEP ar 0 m1-sleep-prepare
+M1_STEP ar 0 m1-sleep-ask
+M1_STEP ar 0 m1-sleep-verify
+M1_STEP ar 0 m1-sleep-teach
+M1_STEP ar 0 m1-sleep-tutor
+M1_STEP ar 0 m1-sleep-reteach
+M1_STEP ar 0 m1-sleep-check
+M1_STEP ar 0 m1-sleep-master
+M1_STEP ar 0 m1-sleep-converge
+M1_STEP ar 0 m1-sleep-evaluate
+M1_STEP ar 0 m1-sleep-close
+FULL_M1_ROUTE_PASS ar 0 390 trainer_paced
+M1_STEP ar 1 m1-scholarship-prepare
+M1_STEP ar 1 m1-scholarship-ask
+M1_STEP ar 1 m1-scholarship-verify
+M1_STEP ar 1 m1-scholarship-teach
+M1_STEP ar 1 m1-scholarship-tutor
+M1_STEP ar 1 m1-scholarship-reteach
+M1_STEP ar 1 m1-scholarship-check
+M1_STEP ar 1 m1-scholarship-master
+M1_STEP ar 1 m1-scholarship-converge
+M1_STEP ar 1 m1-scholarship-evaluate
+M1_STEP ar 1 m1-scholarship-close
+FULL_M1_ROUTE_PASS ar 1 768 participant_paced
+M1_STEP en 0 m1-sleep-prepare
+M1_STEP en 0 m1-sleep-ask
+M1_STEP en 0 m1-sleep-verify
+M1_STEP en 0 m1-sleep-teach
+M1_STEP en 0 m1-sleep-tutor
+M1_STEP en 0 m1-sleep-reteach
+M1_STEP en 0 m1-sleep-check
+M1_STEP en 0 m1-sleep-master
+M1_STEP en 0 m1-sleep-converge
+M1_STEP en 0 m1-sleep-evaluate
+M1_STEP en 0 m1-sleep-close
+FULL_M1_ROUTE_PASS en 0 768 participant_paced
+M1_STEP ar 1 m1-scholarship-prepare
+M1_STEP ar 1 m1-scholarship-ask
+M1_STEP ar 1 m1-scholarship-verify
+M1_STEP ar 1 m1-scholarship-teach
+M1_STEP ar 1 m1-scholarship-tutor
+M1_STEP ar 1 m1-scholarship-reteach
+M1_STEP ar 1 m1-scholarship-check
+M1_STEP ar 1 m1-scholarship-master
+M1_STEP ar 1 m1-scholarship-converge
+M1_STEP ar 1 m1-scholarship-evaluate
+M1_STEP ar 1 m1-scholarship-close
+FULL_M1_ROUTE_PASS ar 1 1440 trainer_paced
+FULL_M1_PREVIEW_PASS 0
+FULL_M1_PREVIEW_PASS 1
+FULL_M1_BROWSER_PASS 8 complete routes, shared convergence/evaluation/closing, conditional remediation, source copy, exact prompt copy, resume and both delivery modes
+CHECKS_FAIL browser python tests/browser-workspace.py; python tests/browser-rc1r11.py
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

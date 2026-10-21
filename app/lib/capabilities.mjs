@@ -28,7 +28,7 @@ export function capabilityContract(){
     guided_experience:CAPABILITY_REGISTRY.guided_experience,
     block_contracts:CAPABILITY_REGISTRY.block_contracts,
     workflow:{explicit_graph_validation:true,transition_simulation:true,class_branching:true,participant_branching:true,convergence:true,terminal_nodes:true,persisted_progress:true,resume:true,skip_override_audited:true},
-    live:{multiple_simultaneous_classes:true,dedicated_trainer_console:true,help_queue:true,participant_progress:true,class_timeline:true,projector_pairing:true,short_join_codes:true,classroom_health:true,private_presenter_notes:true,projector_modes:['welcome','focus','break','countdown','celebration','blackout','course'],projector_themes:PROJECTOR_THEMES,projector_theme_precedence:CAPABILITY_REGISTRY.projector.precedence},
+    live:{multiple_simultaneous_classes:true,dedicated_trainer_console:true,help_queue:true,participant_progress:true,class_timeline:true,explicit_class_finish:true,projector_pairing:true,short_join_codes:true,classroom_health:true,private_presenter_notes:true,projector_modes:['welcome','focus','break','countdown','celebration','blackout','course'],projector_themes:PROJECTOR_THEMES,projector_theme_precedence:CAPABILITY_REGISTRY.projector.precedence},
     interaction_policy:CAPABILITY_REGISTRY.interaction_policy,
     authoring_policy:CAPABILITY_REGISTRY.authoring_policy,
     delivery:CAPABILITY_REGISTRY.delivery,
@@ -39,7 +39,7 @@ export function capabilityContract(){
     operations:{rbac:true,global_search:true,saved_views:true,bulk_actions:true,submission_review:true,consent_history:true,session_management:true,session_token_rotation:true,failed_login_throttling:true,concurrent_device_limits:true,backup_verification:true,pre_restore_safety_backup:true,encrypted_portable_backups:true},
     analytics:{platform:true,course:true,version:true,class:true,trainer:true,participant:true,path_funnels:true,time_on_step:true,abandonment:true,help_wait_time:true,course_health:true,version_impact:true,version_to_version_comparison:true,course_improvement_findings:true,advanced:CAPABILITY_REGISTRY.analytics_expansion},
     learning_lifecycle:{transcript:true,transcript_csv:true,certificates:true,public_certificate_verification:true,printable_certificates:true,surveys:true,prerequisites:true,waitlists:true,question_banks:true,randomized_quizzes:true},
-    localization:{engine_locales:['en','ar'],rtl:true,course_language_independent:true,themes:['light','dark','system'],projector_themes:PROJECTOR_THEMES,canonical_typography:{en:'Montserrat',ar:'Cairo'},local_font_cache:true},
+    localization:{account_scoped_preferences:true,panel_colors:CAPABILITY_REGISTRY.workspace.personal_preferences.panel_colors,engine_locales:['en','ar'],rtl:true,course_language_independent:true,themes:['light','dark','system'],projector_themes:PROJECTOR_THEMES,canonical_typography:{en:'Montserrat',ar:'Cairo'},local_font_cache:true},
     local_first:true
   };
 }

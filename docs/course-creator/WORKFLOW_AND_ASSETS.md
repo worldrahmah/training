@@ -1,4 +1,4 @@
-# Current RC1R13 guided authoring
+# Current RC1R14 guided authoring
 
 Read GUIDED_EXPERIENCE.md and CREATOR_GAP_MATRIX.md. These current contracts supersede historical guided limitations. The same canonical validator runs in Core, export/import/publication and this self-contained kit. Use complete shared-step M1 samples and the capability fixture, then independently rehearse the actual authored course.
 

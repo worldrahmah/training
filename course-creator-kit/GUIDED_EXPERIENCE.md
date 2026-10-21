@@ -1,12 +1,18 @@
-# RC1R13 operational Creator and classroom update
+# RC1R14 personal workspace and delivery controls
 
-Current Core 3.5.0-rc.1.13 / core schema 3.2 / course schema 2.0 / additive workspace schema 5. The complete guided contract below is retained. Course Builder now offers Add lesson: teaching content, practical task and reflection produce ordinary canonical presentation/practice/convergence/closing nodes. Direct editing autosaves; optional settings are under Advanced settings; an outline keeps navigation visible. The pure app/public/creator-start.js helper is included in the portable kit and uses the same graph model. It is an authoring convenience, not a new course type. Preview, validator, export and runtime share the canonical model; no per-course Core change is needed.
+The Trainer has a distinct Finish class action in the live header and class list, available without completing a blocked workflow. It closes the live class, preserves saved answers/partial progress and permits subsequent Trash; it does not fabricate completed learner tasks. Hold, Break and Finish section remain separate. Student delivery is one full-width selected class with a compact LIVE / مباشر indicator above the hero and top-menu workspace/profile access; no redundant learning rail remains.
 
-Participant delivery opens /student/class?class_id=... with one selected class and side/bottom learning navigation; /student?workspace=1 returns to the ordinary learning workspace. Course/class Delete uses distinct Trash. Intentional Archive remains separate. Trash restoration retains state/history; permanent deletion is a separate administrator-confirmed action with dependency guards. Old ambiguous archives remain Archive with Move to Trash.
+UI language, light/dark/system and six panel colors plus workspace default belong to each account and persist independently. They never rewrite authored course language, Projector themes or another account's settings. All roles have own activity history with server-side 10/25/50 paging, inclusive local date/type/search filters, and scoped staff audit. These operational conveniences do not add course schemas or executable package content. The complete guided authoring/branching/evaluation/preview contract below remains supported.
 
-# Guided Creator and Participant contract — RC1R13
+# RC1R14 operational Creator and classroom update
 
-Core 3.5.0-rc.1.13, SQLite schema 3.2, course schemas 1.0/1.1/2.0. This completes the mandatory engineering scope of the attached 90-section master prompt while retaining RC1R11's focused running-class dashboard and recoverable class/course deletion. Automated release verification is attested in the current validation/seal report; owner Windows/classroom/assistive acceptance remains a separate manual gate.
+Current Core 3.5.0-rc.1.14 / core schema 3.2 / course schema 2.0 / additive workspace schema 6. The complete guided contract below is retained. Course Builder now offers Add lesson: teaching content, practical task and reflection produce ordinary canonical presentation/practice/convergence/closing nodes. Direct editing autosaves; optional settings are under Advanced settings; an outline keeps navigation visible. The pure app/public/creator-start.js helper is included in the portable kit and uses the same graph model. It is an authoring convenience, not a new course type. Preview, validator, export and runtime share the canonical model; no per-course Core change is needed.
+
+Participant delivery opens /student/class?class_id=... with one selected class at full width with workspace/profile access in the top menu; /student?workspace=1 returns to the ordinary learning workspace. Course/class Delete uses distinct Trash. Intentional Archive remains separate. Trash restoration retains state/history; permanent deletion is a separate administrator-confirmed action with dependency guards. Old ambiguous archives remain Archive with Move to Trash.
+
+# Guided Creator and Participant contract — RC1R14
+
+Core 3.5.0-rc.1.14, SQLite schema 3.2, course schemas 1.0/1.1/2.0. This completes the mandatory engineering scope of the attached 90-section master prompt while retaining RC1R11's focused running-class dashboard and recoverable class/course deletion. Automated release verification is attested in the current validation/seal report; owner Windows/classroom/assistive acceptance remains a separate manual gate.
 
 ## One model and renderer
 

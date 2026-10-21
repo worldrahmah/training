@@ -1,11 +1,11 @@
 {
   "format": "training-engine-core-capabilities",
   "app_name": "Training Engine ONE",
-  "app_version": "3.5.0-rc.1.13",
+  "app_version": "3.5.0-rc.1.14",
   "core_schema_version": "3.2",
   "latest_authoring_schema": "2.0",
   "registry_format": "training-engine-one-capability-registry",
-  "registry_version": "3.5.0-rc.1.13",
+  "registry_version": "3.5.0-rc.1.14",
   "compatible_course_schemas": [
     "1.0",
     "1.1",
@@ -2164,6 +2164,7 @@
     "help_queue": true,
     "participant_progress": true,
     "class_timeline": true,
+    "explicit_class_finish": true,
     "projector_pairing": true,
     "short_join_codes": true,
     "classroom_health": true,
@@ -2299,7 +2300,53 @@
       "route": "/student/class?class_id=…",
       "selected_class_only": true,
       "workspace_route": "/student?workspace=1",
-      "secondary_learning": "side_navigation_or_below_on_mobile"
+      "secondary_learning": "top_menu_workspace_and_profile_only",
+      "layout": "full_width_no_secondary_rail",
+      "live_indicator": "compact_above_hero"
+    },
+    "class_finish": {
+      "explicit_action": true,
+      "available_from": "live_console_and_class_list",
+      "preserves_partial_progress": true,
+      "distinct_from_hold_break_section": true,
+      "followed_by_trash": true
+    },
+    "personal_preferences": {
+      "account_scoped": true,
+      "languages": [
+        "en",
+        "ar"
+      ],
+      "themes": [
+        "system",
+        "light",
+        "dark"
+      ],
+      "panel_colors": [
+        "default",
+        "teal",
+        "blue",
+        "indigo",
+        "violet",
+        "rose",
+        "amber"
+      ],
+      "course_branding_unchanged": true
+    },
+    "activity_history": {
+      "all_roles": true,
+      "own_history": true,
+      "staff_audit_scoped": true,
+      "server_pagination": [
+        10,
+        25,
+        50
+      ],
+      "filters": [
+        "event_type",
+        "time_range",
+        "search"
+      ]
     }
   },
   "facilitation": {
@@ -2393,6 +2440,16 @@
     "randomized_quizzes": true
   },
   "localization": {
+    "account_scoped_preferences": true,
+    "panel_colors": [
+      "default",
+      "teal",
+      "blue",
+      "indigo",
+      "violet",
+      "rose",
+      "amber"
+    ],
     "engine_locales": [
       "en",
       "ar"

@@ -1,7 +1,7 @@
 {
   "format": "training-engine-one-course-authoring-handoff",
-  "version": "rc1r13-operational-creator-and-classroom",
-  "bound_core": "Training Engine ONE v3.5.0-rc.1.13 Professional Workspace",
+  "version": "rc1r14-personal-workspaces-and-class-finish",
+  "bound_core": "Training Engine ONE v3.5.0-rc.1.14 Professional Workspace",
   "bound_core_schema": "3.2",
   "latest_authoring_schema": "2.0",
   "purpose": "External ChatGPT course development against the exact ONE runtime capability contract",

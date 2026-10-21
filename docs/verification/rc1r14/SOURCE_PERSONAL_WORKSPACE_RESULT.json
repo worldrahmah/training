@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "two_accounts_same_origin_separate_tabs_language_theme_color": "PASS"
+    },
+    {
+      "personal_preferences_authoritative_on_another_device": "PASS"
+    },
+    {
+      "same_device_signout_signin_no_previous_account_color_inheritance": "PASS"
+    },
+    {
+      "full_history_10_25_50_next_previous_type_and_inclusive_date_range": "PASS"
+    },
+    {
+      "all_roles_own_activity_plus_scoped_staff_audit": "PASS"
+    },
+    {
+      "full_width_classroom_without_rail_live_above_hero_en_ar_three_widths": "PASS"
+    },
+    {
+      "visible_finish_from_unfinished_practice_then_actual_delete_to_trash": "PASS"
+    },
+    {
+      "workspace_finish_class_from_break": "PASS"
+    }
+  ],
+  "page_errors": []
+}
