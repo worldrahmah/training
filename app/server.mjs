@@ -700,7 +700,7 @@ async function handleApi(req,res,url){
   if(actor)assertOutsideTrash(req,actor);
 
   if(await handleStaffCollaboration(req,res,url,{db:db(),engine,json,send,readJson,readBuffer,requireUser,isAdminLike,hasGrant,STORAGE_DIR}))return;
-  if(await handlePersonalNotes(req,res,url,{db:db(),engine,json,send,readJson,requireUser}))return;
+  if(await handlePersonalNotes(req,res,url,{db:db(),engine,json,send,readJson,requireUser,SECURITY_HEADERS}))return;
   if(await handleActivityDetail(req,res,url,{db:db(),json,requireUser,isAdminLike,visibleClassIds,sectionPermission}))return;
   if(await handleAccountWorkspace(req,res,url,{db:db(),engine,json,readJson,requireUser}))return;
   if(await handleTrashApi(req,res,url,{db:db(),engine,json,readJson,refresh,requireUser,isAdminLike,canViewCourse,classPermission,getClassRow,hasGrant,STORAGE_DIR}))return;
