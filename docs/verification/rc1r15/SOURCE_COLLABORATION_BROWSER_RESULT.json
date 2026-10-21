@@ -11,8 +11,8 @@
     "participant class note saved and exported on mobile",
     "1000 account picker bounded to 25 rows, cross-page selections retained",
     "100 course searchable version table selects and creates actual class",
-    "/admin overview uses full history filters and detail dialog",
-    "/trainer overview uses full history filters and detail dialog",
+    "/admin overview uses full history filters, detail dialog and working Open class",
+    "/trainer overview uses full history filters, detail dialog and working Open class",
     "live operations hero follows personal color and theme",
     "Arabic RTL dark personal color and 390/768/1440 responsive staff calendar"
   ],
