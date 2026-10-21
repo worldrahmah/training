@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
+  "version": "3.5.0-rc.1.14",
+  "source_commit": "45f2b5c7dc2015528e30805d428a104b3ae5ccf7",
+  "mandatory_engineering_deferred": [],
+  "source_and_exact_extraction": {
+    "node_commands_each": 67,
+    "browser_programs_each": 11,
+    "syntax_files": 160,
+    "independent_pdf_reports_each": 34
+  },
+  "companions": [
+    {
+      "file": "COURSE_CREATOR_CAPABILITY_TEST.course.zip",
+      "bytes": 170176,
+      "sha256": "a302782f06553cbd5cb2e1697702a251f12bcafaa51a225afa96acbdced86146",
+      "crc": "PASS",
+      "safe_unique_paths": "PASS",
+      "checksum_manifest_entries": 0
+    },
+    {
+      "file": "M1_GUIDED_ACCEPTANCE.course.zip",
+      "bytes": 33437,
+      "sha256": "c8d17223208f17b7db35a1a317a8b4053b3c26f51a5b1850b7b8133a59879bd0",
+      "crc": "PASS",
+      "safe_unique_paths": "PASS",
+      "checksum_manifest_entries": 0
+    },
+    {
+      "file": "M1_GUIDED_ACCEPTANCE_EN.course.zip",
+      "bytes": 31227,
+      "sha256": "6b7a6e340eab2fbfef4f1a2bc9b505315a00f510c6ac259e42eaaf1546c35a68",
+      "crc": "PASS",
+      "safe_unique_paths": "PASS",
+      "checksum_manifest_entries": 0
+    },
+    {
+      "file": "TRAINING_ENGINE_ONE_COURSE_AUTHORING_HANDOFF_RC1R14.zip",
+      "bytes": 266108,
+      "sha256": "80ad385c32168dc3f03e99b0dba4d967d4c89253ad04e039ccfc7f0e8cc0ae45",
+      "crc": "PASS",
+      "safe_unique_paths": "PASS",
+      "checksum_manifest_entries": 247
+    },
+    {
+      "file": "TRAINING_ENGINE_ONE_COURSE_CREATOR_KIT_RC1R14.zip",
+      "bytes": 165880,
+      "sha256": "55a518063a2973eea38ca35c75c958bd50c1962f36ba41dd6132dde01a4a21fb",
+      "crc": "PASS",
+      "safe_unique_paths": "PASS",
+      "checksum_manifest_entries": 103
+    },
+    {
+      "file": "TRAINING_ENGINE_ONE_v3.5.0_RC1R14.zip",
+      "bytes": 68834315,
+      "sha256": "ee310adcf958908c8c943472f22a7251632f69a4390a635f723b0b69f286635b",
+      "crc": "PASS",
+      "safe_unique_paths": "PASS",
+      "checksum_manifest_entries": 1485
+    }
+  ],
+  "owner_manual_acceptance": "UNRUN; Windows/LAN, classroom, visual and actual assistive technology acceptance remain an owner gate",
+  "cloud_restore": "Separate environment publication/fresh-task restore not inferred from these tests"
+}

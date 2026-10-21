@@ -1,7 +1,7 @@
 {
   "owner_specification_sha256": "d36dcaa57fb337c9f079945acee6e3cc8b209b0ebfe28c5e8492ced0dbf023dd",
   "numbered_sections": 91,
-  "engineering_status": "IMPLEMENTED_SOURCE_VERIFIED",
+  "engineering_status": "IMPLEMENTED_VERIFIED",
   "scope": "All mandatory requirements; section 23 does not require introducing a repetition DSL; no arbitrary loops are allowed. Twelve prioritized embedded types are implemented; specialized/team/media responses use their canonical existing dedicated activities with truthful surface metadata.",
   "sections": [
     {
@@ -11,7 +11,7 @@
       "implementation": "Existing canonical engine, exact preserved RC1R11 baseline and registry",
       "files": "CODEX_EXEC_PLAN.md; registry/activity-component-registry.json",
       "evidence": "unchanged 62-command baseline; inherited certification/contracts",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 1,
@@ -20,7 +20,7 @@
       "implementation": "Existing canonical engine, exact preserved RC1R11 baseline and registry",
       "files": "CODEX_EXEC_PLAN.md; registry/activity-component-registry.json",
       "evidence": "unchanged 62-command baseline; inherited certification/contracts",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 2,
@@ -29,7 +29,7 @@
       "implementation": "Existing canonical engine, exact preserved RC1R11 baseline and registry",
       "files": "CODEX_EXEC_PLAN.md; registry/activity-component-registry.json",
       "evidence": "unchanged 62-command baseline; inherited certification/contracts",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 3,
@@ -38,7 +38,7 @@
       "implementation": "Existing canonical engine, exact preserved RC1R11 baseline and registry",
       "files": "CODEX_EXEC_PLAN.md; registry/activity-component-registry.json",
       "evidence": "unchanged 62-command baseline; inherited certification/contracts",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 4,
@@ -47,7 +47,7 @@
       "implementation": "Existing canonical engine, exact preserved RC1R11 baseline and registry",
       "files": "CODEX_EXEC_PLAN.md; registry/activity-component-registry.json",
       "evidence": "unchanged 62-command baseline; inherited certification/contracts",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 5,
@@ -56,7 +56,7 @@
       "implementation": "Shared prompt/content renderer, copy/edit/reset/scroll/resume",
       "files": "app/public/renderer.js; app/public/guided.js",
       "evidence": "browser-m1-closure.py; browser-rc1r11.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 6,
@@ -65,7 +65,7 @@
       "implementation": "Shared prompt/content renderer, copy/edit/reset/scroll/resume",
       "files": "app/public/renderer.js; app/public/guided.js",
       "evidence": "browser-m1-closure.py; browser-rc1r11.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 7,
@@ -74,7 +74,7 @@
       "implementation": "Shared prompt/content renderer, copy/edit/reset/scroll/resume",
       "files": "app/public/renderer.js; app/public/guided.js",
       "evidence": "browser-m1-closure.py; browser-rc1r11.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 8,
@@ -83,7 +83,7 @@
       "implementation": "Shared prompt/content renderer, copy/edit/reset/scroll/resume",
       "files": "app/public/renderer.js; app/public/guided.js",
       "evidence": "browser-m1-closure.py; browser-rc1r11.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 9,
@@ -92,7 +92,7 @@
       "implementation": "Shared prompt/content renderer, copy/edit/reset/scroll/resume",
       "files": "app/public/renderer.js; app/public/guided.js",
       "evidence": "browser-m1-closure.py; browser-rc1r11.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 10,
@@ -101,7 +101,7 @@
       "implementation": "Choice cards, locked branch, graph and route validation",
       "files": "guided.js; authoring-model.js; course-package.mjs",
       "evidence": "creator-closure.mjs; rc1r11-guided.mjs; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 11,
@@ -110,7 +110,7 @@
       "implementation": "Choice cards, locked branch, graph and route validation",
       "files": "guided.js; authoring-model.js; course-package.mjs",
       "evidence": "creator-closure.mjs; rc1r11-guided.mjs; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 12,
@@ -119,7 +119,7 @@
       "implementation": "Choice cards, locked branch, graph and route validation",
       "files": "guided.js; authoring-model.js; course-package.mjs",
       "evidence": "creator-closure.mjs; rc1r11-guided.mjs; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 13,
@@ -128,7 +128,7 @@
       "implementation": "Canonical individual questions, grouped evaluation, IDs and persistence",
       "files": "guided-model.js; guided.js; app/server.mjs",
       "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 14,
@@ -137,7 +137,7 @@
       "implementation": "Canonical individual questions, grouped evaluation, IDs and persistence",
       "files": "guided-model.js; guided.js; app/server.mjs",
       "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 15,
@@ -146,7 +146,7 @@
       "implementation": "Canonical individual questions, grouped evaluation, IDs and persistence",
       "files": "guided-model.js; guided.js; app/server.mjs",
       "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 16,
@@ -155,7 +155,7 @@
       "implementation": "Canonical individual questions, grouped evaluation, IDs and persistence",
       "files": "guided-model.js; guided.js; app/server.mjs",
       "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 17,
@@ -164,7 +164,7 @@
       "implementation": "Canonical individual questions, grouped evaluation, IDs and persistence",
       "files": "guided-model.js; guided.js; app/server.mjs",
       "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 18,
@@ -173,7 +173,7 @@
       "implementation": "Evidence navigation, optional/conditional/shared steps and context",
       "files": "guided-model.js; block-authoring.js; builder.js",
       "evidence": "creator-closure.mjs; browser-creator-closure.py; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 19,
@@ -182,7 +182,7 @@
       "implementation": "Evidence navigation, optional/conditional/shared steps and context",
       "files": "guided-model.js; block-authoring.js; builder.js",
       "evidence": "creator-closure.mjs; browser-creator-closure.py; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 20,
@@ -191,7 +191,7 @@
       "implementation": "Evidence navigation, optional/conditional/shared steps and context",
       "files": "guided-model.js; block-authoring.js; builder.js",
       "evidence": "creator-closure.mjs; browser-creator-closure.py; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 21,
@@ -200,7 +200,7 @@
       "implementation": "Evidence navigation, optional/conditional/shared steps and context",
       "files": "guided-model.js; block-authoring.js; builder.js",
       "evidence": "creator-closure.mjs; browser-creator-closure.py; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 22,
@@ -209,7 +209,7 @@
       "implementation": "Evidence navigation, optional/conditional/shared steps and context",
       "files": "guided-model.js; block-authoring.js; builder.js",
       "evidence": "creator-closure.mjs; browser-creator-closure.py; browser-m1-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 23,
@@ -218,7 +218,7 @@
       "implementation": "No unrestricted loops; optional new repetition DSL not introduced. Explicit finite steps retain IDs and resume.",
       "files": "authoring-model.js; guided-model.js",
       "evidence": "creator-closure.mjs cycle/safety-limit checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 24,
@@ -227,7 +227,7 @@
       "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
       "files": "renderer.js; guided.js; builder.js",
       "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 25,
@@ -236,7 +236,7 @@
       "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
       "files": "renderer.js; guided.js; builder.js",
       "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 26,
@@ -245,7 +245,7 @@
       "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
       "files": "renderer.js; guided.js; builder.js",
       "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 27,
@@ -254,7 +254,7 @@
       "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
       "files": "renderer.js; guided.js; builder.js",
       "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 28,
@@ -263,7 +263,7 @@
       "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
       "files": "renderer.js; guided.js; builder.js",
       "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 29,
@@ -272,7 +272,7 @@
       "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
       "files": "renderer.js; guided.js; builder.js",
       "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 30,
@@ -281,7 +281,7 @@
       "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
       "files": "renderer.js; guided.js; builder.js",
       "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 31,
@@ -290,7 +290,7 @@
       "implementation": "Resources/tools/evidence, exact temporary preview, responsive and direction",
       "files": "renderer.js; guided.js; builder.js",
       "evidence": "creator-closure-api.mjs; browser-rc1r11.py; browser-m1-closure.py; font matrix",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 32,
@@ -299,7 +299,7 @@
       "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
       "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
       "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 33,
@@ -308,7 +308,7 @@
       "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
       "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
       "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 34,
@@ -317,7 +317,7 @@
       "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
       "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
       "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 35,
@@ -326,7 +326,7 @@
       "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
       "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
       "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 36,
@@ -335,7 +335,7 @@
       "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
       "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
       "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 37,
@@ -344,7 +344,7 @@
       "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
       "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
       "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 38,
@@ -353,7 +353,7 @@
       "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
       "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
       "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 39,
@@ -362,7 +362,7 @@
       "implementation": "Registry property/surface metadata, complete visual inspectors, safe presets, actionable semantics and mechanical repairs",
       "files": "registry/activity-component-registry.json; block-authoring.js; authoring-model.js; authoring-diagnostics.js",
       "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 40,
@@ -371,7 +371,7 @@
       "implementation": "Actual edge graph visualization and bounded complete route enumeration",
       "files": "authoring-model.js; builder.js; server simulate endpoint",
       "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 41,
@@ -380,7 +380,7 @@
       "implementation": "Actual edge graph visualization and bounded complete route enumeration",
       "files": "authoring-model.js; builder.js; server simulate endpoint",
       "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 42,
@@ -389,7 +389,7 @@
       "implementation": "Scoped funnel/step/evaluation reports, durations, optional use and CSV",
       "files": "guided-report.mjs; guided-report.js",
       "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-rc1r11.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 43,
@@ -398,7 +398,7 @@
       "implementation": "Scoped funnel/step/evaluation reports, durations, optional use and CSV",
       "files": "guided-report.mjs; guided-report.js",
       "evidence": "rc1r11-guided.mjs; creator-closure-api.mjs; browser-rc1r11.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 44,
@@ -407,7 +407,7 @@
       "implementation": "Accessible role surfaces, Projector safety and private guidance retained",
       "files": "core.js; guided.js; audience.mjs; projector.js",
       "evidence": "inherited Node/browser/security/Projector gates; full M1",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 45,
@@ -416,7 +416,7 @@
       "implementation": "Accessible role surfaces, Projector safety and private guidance retained",
       "files": "core.js; guided.js; audience.mjs; projector.js",
       "evidence": "inherited Node/browser/security/Projector gates; full M1",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 46,
@@ -425,7 +425,7 @@
       "implementation": "Accessible role surfaces, Projector safety and private guidance retained",
       "files": "core.js; guided.js; audience.mjs; projector.js",
       "evidence": "inherited Node/browser/security/Projector gates; full M1",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 47,
@@ -434,7 +434,7 @@
       "implementation": "Accessible role surfaces, Projector safety and private guidance retained",
       "files": "core.js; guided.js; audience.mjs; projector.js",
       "evidence": "inherited Node/browser/security/Projector gates; full M1",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 48,
@@ -443,7 +443,7 @@
       "implementation": "Full capability and complete shared-step M1 fixtures",
       "files": "tools/build-guided-fixtures.mjs; tools/guided-examples.mjs",
       "evidence": "fixture validators; browser-m1-closure.py; canonical certification",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 49,
@@ -452,7 +452,7 @@
       "implementation": "Full capability and complete shared-step M1 fixtures",
       "files": "tools/build-guided-fixtures.mjs; tools/guided-examples.mjs",
       "evidence": "fixture validators; browser-m1-closure.py; canonical certification",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 50,
@@ -461,7 +461,7 @@
       "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
       "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
       "evidence": "full browser runner; legacy migration/import/workflow Node gates",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 51,
@@ -470,7 +470,7 @@
       "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
       "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
       "evidence": "full browser runner; legacy migration/import/workflow Node gates",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 52,
@@ -479,7 +479,7 @@
       "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
       "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
       "evidence": "full browser runner; legacy migration/import/workflow Node gates",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 53,
@@ -488,7 +488,7 @@
       "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
       "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
       "evidence": "full browser runner; legacy migration/import/workflow Node gates",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 54,
@@ -497,7 +497,7 @@
       "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
       "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
       "evidence": "full browser runner; legacy migration/import/workflow Node gates",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 55,
@@ -506,7 +506,7 @@
       "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
       "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
       "evidence": "full browser runner; legacy migration/import/workflow Node gates",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 56,
@@ -515,7 +515,7 @@
       "implementation": "Exact-copy, complete A/B, responsive/RTL/LTR, persistence and legacy acceptance",
       "files": "tests/browser-m1-closure.py; tests/browser-rc1r11.py",
       "evidence": "full browser runner; legacy migration/import/workflow Node gates",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 57,
@@ -524,7 +524,7 @@
       "implementation": "Complete guided authoring, branch designer, prompts/resources/shared library",
       "files": "builder.js; block-authoring.js; authoring-model.js",
       "evidence": "browser-creator-closure.py all 28 property editors, shared context, graph and actual ZIP recipient",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 58,
@@ -533,7 +533,7 @@
       "implementation": "Complete guided authoring, branch designer, prompts/resources/shared library",
       "files": "builder.js; block-authoring.js; authoring-model.js",
       "evidence": "browser-creator-closure.py all 28 property editors, shared context, graph and actual ZIP recipient",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 59,
@@ -542,7 +542,7 @@
       "implementation": "Complete guided authoring, branch designer, prompts/resources/shared library",
       "files": "builder.js; block-authoring.js; authoring-model.js",
       "evidence": "browser-creator-closure.py all 28 property editors, shared context, graph and actual ZIP recipient",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 60,
@@ -551,7 +551,7 @@
       "implementation": "Complete guided authoring, branch designer, prompts/resources/shared library",
       "files": "builder.js; block-authoring.js; authoring-model.js",
       "evidence": "browser-creator-closure.py all 28 property editors, shared context, graph and actual ZIP recipient",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 61,
@@ -560,7 +560,7 @@
       "implementation": "Complete guided authoring, branch designer, prompts/resources/shared library",
       "files": "builder.js; block-authoring.js; authoring-model.js",
       "evidence": "browser-creator-closure.py all 28 property editors, shared context, graph and actual ZIP recipient",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 62,
@@ -569,7 +569,7 @@
       "implementation": "Safe fallback, fail-closed semantic/package checks, synchronized schemas and registry",
       "files": "renderer.js; course-package.mjs; guided-validation.mjs; sync-contracts.mjs",
       "evidence": "guided-contract.mjs; creator-closure.mjs; contract drift and portable kit checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 63,
@@ -578,7 +578,7 @@
       "implementation": "Safe fallback, fail-closed semantic/package checks, synchronized schemas and registry",
       "files": "renderer.js; course-package.mjs; guided-validation.mjs; sync-contracts.mjs",
       "evidence": "guided-contract.mjs; creator-closure.mjs; contract drift and portable kit checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 64,
@@ -587,7 +587,7 @@
       "implementation": "Safe fallback, fail-closed semantic/package checks, synchronized schemas and registry",
       "files": "renderer.js; course-package.mjs; guided-validation.mjs; sync-contracts.mjs",
       "evidence": "guided-contract.mjs; creator-closure.mjs; contract drift and portable kit checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 65,
@@ -596,7 +596,7 @@
       "implementation": "Safe fallback, fail-closed semantic/package checks, synchronized schemas and registry",
       "files": "renderer.js; course-package.mjs; guided-validation.mjs; sync-contracts.mjs",
       "evidence": "guided-contract.mjs; creator-closure.mjs; contract drift and portable kit checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 66,
@@ -605,7 +605,7 @@
       "implementation": "Safe fallback, fail-closed semantic/package checks, synchronized schemas and registry",
       "files": "renderer.js; course-package.mjs; guided-validation.mjs; sync-contracts.mjs",
       "evidence": "guided-contract.mjs; creator-closure.mjs; contract drift and portable kit checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 67,
@@ -614,7 +614,7 @@
       "implementation": "Actual component playground, stable screenshots, focused step inspectors and bounded processing",
       "files": "builder.js; styles.css; authoring-model.js",
       "evidence": "browser-creator-closure.py; browser-m1-closure.py; font matrix; route safety limits",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 68,
@@ -623,7 +623,7 @@
       "implementation": "Actual component playground, stable screenshots, focused step inspectors and bounded processing",
       "files": "builder.js; styles.css; authoring-model.js",
       "evidence": "browser-creator-closure.py; browser-m1-closure.py; font matrix; route safety limits",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 69,
@@ -632,7 +632,7 @@
       "implementation": "Actual component playground, stable screenshots, focused step inspectors and bounded processing",
       "files": "builder.js; styles.css; authoring-model.js",
       "evidence": "browser-creator-closure.py; browser-m1-closure.py; font matrix; route safety limits",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 70,
@@ -641,7 +641,7 @@
       "implementation": "Declarative safety, role authorization, private data and safe rendering",
       "files": "course-package.mjs; audience.mjs; existing security layer",
       "evidence": "inherited security and negative API gates; export/import checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 71,
@@ -650,7 +650,7 @@
       "implementation": "Existing queue retained; durable guided saves/answers with conflict review and idempotence",
       "files": "guided-outbox.js; student.js; app/server.mjs",
       "evidence": "creator-closure.mjs; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 72,
@@ -659,7 +659,7 @@
       "implementation": "Both paced modes, independent progress, Front-of-Room pause and truthful class flow",
       "files": "app/server.mjs; student.js; guided-model.js",
       "evidence": "creator-closure-api.mjs; browser-m1-closure.py; inherited workflow tests",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 73,
@@ -668,7 +668,7 @@
       "implementation": "Both paced modes, independent progress, Front-of-Room pause and truthful class flow",
       "files": "app/server.mjs; student.js; guided-model.js",
       "evidence": "creator-closure-api.mjs; browser-m1-closure.py; inherited workflow tests",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 74,
@@ -677,7 +677,7 @@
       "implementation": "Actual asset readiness, same validated export/import and publish gates; categorized readiness",
       "files": "course-export.mjs; readiness endpoint; authoring-model.js",
       "evidence": "course-export.mjs test; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 75,
@@ -686,7 +686,7 @@
       "implementation": "Actual asset readiness, same validated export/import and publish gates; categorized readiness",
       "files": "course-export.mjs; readiness endpoint; authoring-model.js",
       "evidence": "course-export.mjs test; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 76,
@@ -695,7 +695,7 @@
       "implementation": "Actual asset readiness, same validated export/import and publish gates; categorized readiness",
       "files": "course-export.mjs; readiness endpoint; authoring-model.js",
       "evidence": "course-export.mjs test; creator-closure-api.mjs; browser-creator-closure.py",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 77,
@@ -704,7 +704,7 @@
       "implementation": "Current self-contained handoff/kit, contracts, examples and gap matrix",
       "files": "course-authoring-handoff; course-creator-kit; RC1R12_GAP_MATRIX.md",
       "evidence": "kit generation/drift; isolated portable validation; release archive checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 78,
@@ -713,7 +713,7 @@
       "implementation": "Current self-contained handoff/kit, contracts, examples and gap matrix",
       "files": "course-authoring-handoff; course-creator-kit; RC1R12_GAP_MATRIX.md",
       "evidence": "kit generation/drift; isolated portable validation; release archive checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 79,
@@ -722,7 +722,7 @@
       "implementation": "Current self-contained handoff/kit, contracts, examples and gap matrix",
       "files": "course-authoring-handoff; course-creator-kit; RC1R12_GAP_MATRIX.md",
       "evidence": "kit generation/drift; isolated portable validation; release archive checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 80,
@@ -731,7 +731,7 @@
       "implementation": "Complete applicable validation, truthful evidence and RC1R12 versioning",
       "files": "validation/commands.json; release/version.json; RC1R12_VALIDATION_REPORT.md",
       "evidence": "full source and exact-byte Node/browser/PDF/static/contracts checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 81,
@@ -740,7 +740,7 @@
       "implementation": "Complete applicable validation, truthful evidence and RC1R12 versioning",
       "files": "validation/commands.json; release/version.json; RC1R12_VALIDATION_REPORT.md",
       "evidence": "full source and exact-byte Node/browser/PDF/static/contracts checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 82,
@@ -749,7 +749,7 @@
       "implementation": "Complete applicable validation, truthful evidence and RC1R12 versioning",
       "files": "validation/commands.json; release/version.json; RC1R12_VALIDATION_REPORT.md",
       "evidence": "full source and exact-byte Node/browser/PDF/static/contracts checks",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 83,
@@ -758,7 +758,7 @@
       "implementation": "Complete runnable package, authoring downloads, fixtures, reports and exact hashes",
       "files": "releases/rc1r12 (created only after verification)",
       "evidence": "immutable ZIP/manifest/CRC/fresh-extraction repeated suite",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 84,
@@ -767,7 +767,7 @@
       "implementation": "Complete runnable package, authoring downloads, fixtures, reports and exact hashes",
       "files": "releases/rc1r12 (created only after verification)",
       "evidence": "immutable ZIP/manifest/CRC/fresh-extraction repeated suite",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 85,
@@ -785,7 +785,7 @@
       "implementation": "Implemented integrated continuation, reused canonical services, generic fixtures, full execution and actual downloads",
       "files": "CODEX_EXEC_PLAN.md; RC1R12_REQUIREMENTS.md; release companions",
       "evidence": "full source and exact-byte acceptance evidence",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 87,
@@ -794,7 +794,7 @@
       "implementation": "Implemented integrated continuation, reused canonical services, generic fixtures, full execution and actual downloads",
       "files": "CODEX_EXEC_PLAN.md; RC1R12_REQUIREMENTS.md; release companions",
       "evidence": "full source and exact-byte acceptance evidence",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 88,
@@ -803,7 +803,7 @@
       "implementation": "Implemented integrated continuation, reused canonical services, generic fixtures, full execution and actual downloads",
       "files": "CODEX_EXEC_PLAN.md; RC1R12_REQUIREMENTS.md; release companions",
       "evidence": "full source and exact-byte acceptance evidence",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 89,
@@ -812,7 +812,7 @@
       "implementation": "Implemented integrated continuation, reused canonical services, generic fixtures, full execution and actual downloads",
       "files": "CODEX_EXEC_PLAN.md; RC1R12_REQUIREMENTS.md; release companions",
       "evidence": "full source and exact-byte acceptance evidence",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     },
     {
       "section": 90,
@@ -821,10 +821,20 @@
       "implementation": "Implemented integrated continuation, reused canonical services, generic fixtures, full execution and actual downloads",
       "files": "CODEX_EXEC_PLAN.md; RC1R12_REQUIREMENTS.md; release companions",
       "evidence": "full source and exact-byte acceptance evidence",
-      "status": "IMPLEMENTED_SOURCE_VERIFIED"
+      "status": "IMPLEMENTED_VERIFIED"
     }
   ],
-  "immutable_gate": "Exact RC1R14 archive verification is attested separately in the companion after fresh-extraction repetition.",
+  "immutable_gate": {
+    "status": "PASS",
+    "sha256": "ee310adcf958908c8c943472f22a7251632f69a4390a635f723b0b69f286635b",
+    "source_commit": "45f2b5c7dc2015528e30805d428a104b3ae5ccf7",
+    "original_files_reverified": 1327,
+    "node_commands_each": 67,
+    "browser_programs_each": 11,
+    "syntax_files": 160,
+    "kit_files": 104,
+    "independent_pdf_reports_each": 34
+  },
   "release": "RC1R14",
   "preserved_baseline": "8f773a64300ec516860fa537051fb484997dd3e9",
   "owner_operational_corrections": {
@@ -843,7 +853,7 @@
     ]
   },
   "owner_personal_workspace_corrections": {
-    "status": "IMPLEMENTED_SOURCE_VERIFIED",
+    "status": "IMPLEMENTED_VERIFIED",
     "review": "docs/RC1R14_OPERATIONAL_REVIEW.md",
     "features": [
       "explicit Finish class",

@@ -208,3 +208,9 @@ All seven published artifact blobs and external SHA256SUMS match their sealed lo
 ### RC1R14 complete source gate PASS
 
 All required source gates pass: 67 Node commands, 11 browser programs, 160 syntax files, canonical/104-file kit drift and 34 independent PDF-reader reports. New personal/finish/history tests pass 222 API assertions and eight browser journeys; personal-store pending/ack isolation and 12 actual palette contrast cases pass. Normal production startup version 14 passes eight HTML routes and unauthenticated export/preferences/activity401 with existing data retained. No mandatory engineering feature is deferred. Exact immutable archive verification remains a separate required gate.
+
+### RC1R14 exact immutable release PASS
+
+Final immutable-extraction receipt: PASS. The exact sealed application repeats all 67 Node commands, 11 browser programs, 160 syntax files, canonical/104-file kit drift and independent PDF readers for 34 reports. All 1327 original files and every manifest entry reverify after preserving the four generated certification reports. Application ZIP SHA-256 remains `ee310adcf958908c8c943472f22a7251632f69a4390a635f723b0b69f286635b`. Source commit: 45f2b5c7dc2015528e30805d428a104b3ae5ccf7. The companion contains actual logs/screenshots and post-test integrity JSON. Normal startup version 14 passes eight HTML routes and unauthenticated export 401 with existing data retained and QA mode disabled.
+
+Standalone companion packaging and remote artifact verification finish delivery. Owner Windows/LAN/classroom/assistive acceptance and fresh cloud publication/restoration remain separate unrun gates. No mandatory engineering feature is deferred.
