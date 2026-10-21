@@ -1,3 +1,7 @@
+# Training Engine ONE RC1R17
+
+Current app/Core3.5.0-rc.1.17, Core schema3.2/course2.0/workspace8. Repairs Admin course creation/import and class session/roster actions; adds global staff unread/call handling, redesigned messaging and separate Tasks/Calendar pages, and selected-color overview contrast for light/dark. All Guided persistence and prior functionality remain mandatory regression gates. Read [changes and root cause](docs/RC1R17_STAFF_EXPERIENCE.md) and current verification reports. Preserve old packages and matched application/database/storage backups. No SQLite migration in this phase.
+
 # Training Engine ONE RC1R16
 
 Current app/Core: 3.5.0-rc.1.16; core schema 3.2, course schema 2.0, workspace schema 8. Includes the complete RC1R15 staff workspace plus Guided persistence and durable outbox repairs. Preserve RC1R14 and matched database/storage backups for rollback. Engineering release gates are recorded in the current verification report; owner hardware/classroom acceptance remains separate. Read [Guided root cause](docs/RC1R16_ROOT_CAUSE.md), [operational changes](docs/RC1R16_OPERATIONAL_REVIEW.md), and the current Course Creator handoff.
