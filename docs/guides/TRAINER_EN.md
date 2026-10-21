@@ -1,4 +1,4 @@
-# Trainer usage guide — RC1R10
+# Trainer usage guide — RC1R17
 
 ## Enter your workspace
 
@@ -36,7 +36,7 @@ Use class history, participant profiles, learning reports and scoped analytics t
 
 Use notifications/messages and Audit & history for authorized operational follow-up. Archive completed work only when permitted; retained history remains available. Ask Admin for account resets, restored access, verified backups or publication permissions. For a failed write read the actual error and verify persisted state before retrying. For a missing resource check the course version, enrollment and Projector pairing. For LAN failure confirm the host is running and devices share the network; Internet is not required for bundled resources. Renew expired sessions/pairings. Sign out, document unresolved classroom issues and obtain owner visual acceptance before treating a candidate as FINAL.
 
-## Current workspace repairs (RC1R10)
+## Current workspace repairs (RC1R17)
 
 Your saved profile photo appears in the account menu and workspace identity. Change photo in My profile accepts validated PNG/JPEG up to 2 MiB. Returning to the Student workspace shows the main class/task before optional transcript, inbox and learning tools finish. Network or server failure can still delay the main task; this is not a guarantee of a fixed loading time.
 
@@ -92,3 +92,10 @@ The staff calendar uses each browser’s local time zone, including tasks close 
 ## RC1R16: reliable Guided saves
 
 Acknowledge, evidence and answers must receive server confirmation before required Next/Finish. Actual offline edits remain saved on this device and replay when the server is reachable. A server/authentication/validation error has its own message; use Saved guided changes to review, retry or discard unresolved work. Do not clear browser storage. Reload old tabs after upgrade; an old queued answer without a revision needs review, preserving newer work. Uploads and fresh page loads need a connection. Staff workspace tools from RC1R15 remain included. See the release certification and root-cause reports for tested scope and deployment limits.
+
+
+## Messaging and work planning — RC1R17
+
+The Messages icon beside Notifications shows received unread messages on staff pages. Open a conversation to send text, files or a voice note. Removing your own message requires confirmation. Audio/video calls can arrive while you are in another staff workspace; accept/decline, mute, camera and end controls are explicit. The message cue lasts about2seconds; calling rings until answered/ended. Use Enable sound if browser activation is required. Personal preferences, permissions and Admin policy apply. Media needs HTTPS or loopback and suitable connectivity. Keep the call page open and use a separate tab to navigate during a call.
+
+Tasks and Calendar are separate pages outside Chat. Filter by ownership, status, priority, due date and search, and choose10/25/50 rows. Open task details for notes, checklists, dates and recurrence, or complete/reopen from the list. Calendar offers day/week/month/year with day drilldown and matching agenda. Export calendar uses current filters. Assigning others requires permission; only the creator may reassign/remove.

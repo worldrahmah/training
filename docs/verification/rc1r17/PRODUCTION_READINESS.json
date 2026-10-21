@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "database_exists": true,
+  "before": {
+    "users": 9,
+    "courses": 1,
+    "course_versions": 1,
+    "classes": 1,
+    "responses": 0
+  },
+  "listener": "NO_ACCESSIBLE_SERVER",
+  "health": {
+    "ok": true,
+    "name": "Training Engine ONE",
+    "version": "3.5.0-rc.1.17",
+    "core_schema": "3.2",
+    "port": 3000,
+    "server_id": "c93bd4d4acb0a135b81fa1a7f1b0f9d0",
+    "lan": "172.26.91.253",
+    "addresses": [
+      {
+        "name": "eth0",
+        "address": "172.26.91.253",
+        "score": 0
+      },
+      {
+        "name": "eth1",
+        "address": "172.31.2.158",
+        "score": 0
+      }
+    ],
+    "active_class_id": 1,
+    "active_class_ids": []
+  },
+  "html_routes": {
+    "/trainer": "PASS",
+    "/admin": "PASS",
+    "/student": "PASS",
+    "/student/class": "PASS",
+    "/live": "PASS",
+    "/editor": "PASS",
+    "/profile": "PASS",
+    "/present": "PASS",
+    "/staff": "PASS",
+    "/tasks": "PASS",
+    "/calendar": "PASS"
+  },
+  "unauthenticated_denials": {
+    "/api/staff-tools/stream": 401,
+    "/api/staff-tools/inbox": 401,
+    "/api/staff-tools/bootstrap": 401,
+    "/api/staff-tools/conversations": 401,
+    "/api/staff-tools/tasks": 401,
+    "/api/account/notes": 401,
+    "/api/account/notes/export": 401,
+    "/api/account/activity/1": 401
+  },
+  "after": {
+    "users": 9,
+    "courses": 1,
+    "course_versions": 1,
+    "classes": 1,
+    "responses": 0
+  },
+  "workspace_schema": "8",
+  "integrity_check": "ok",
+  "test_accounts_enabled": false
+}

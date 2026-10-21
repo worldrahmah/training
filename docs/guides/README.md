@@ -12,4 +12,4 @@ Also read [branding](../RC1R9_BRANDING.md), [upgrade and rollback](../RC1R9_UPGR
 
 الأدلة الحالية تفصل صلاحيات المسؤول والمدرب والمشارك، وتشرح دور محرر الدورات المعزول. اللغة المرئية مستقلة عن لغة محتوى الدورة. استخدم دليل دورك والوثائق المساندة، وراجع الصلاحيات مع مسؤول المؤسسة عند غياب أمر أو رفض عملية. لا تشارك بيانات حسابك ولا تضعها في محتوى الدورات.
 
-RC1R10 adds the ten owner-requested workflow repairs. See [release changes and walkthrough](../RC1R10_RELEASE_NOTES.md), [acceptance checklist](../RC1R10_ACCEPTANCE.md), [upgrade](../RC1R10_UPGRADE_AND_ROLLBACK.md) and [limits](../KNOWN_LIMITATIONS_RC1R10.md).
+RC1R17 adds the ten owner-requested workflow repairs. See [release changes and walkthrough](../RC1R17_RELEASE_NOTES.md), [acceptance checklist](../RC1R17_ACCEPTANCE.md), [upgrade](../RC1R17_UPGRADE_AND_ROLLBACK.md) and [limits](../KNOWN_LIMITATIONS_RC1R17.md).

@@ -1,0 +1,98 @@
+{
+  "ok": true,
+  "journeys": [
+    "Admin Create course opens, validates and persists an Arabic course shell",
+    "Admin Import course validates and imports the actual package",
+    "Admin Add session and roster preview/import persist actual class records",
+    "global staff badge receives updates/removals with measured two-second sound",
+    "dashboard receives/rings/accepts actual peer audio immediately; ringing stops on hangup",
+    "read badge clears, playing voice node survives updates, own-message removal is confirmed",
+    "removed message beyond the latest50updates immediately while older history is visible",
+    "independent Tasks page filters authorized ownership/priority, paginates and completes/reopens",
+    "independent Calendar has day/week/aligned-month/year views and compatible bookmarks",
+    "shared private stream supports simultaneous staff pages without dashboard request starvation",
+    "all six personal colors have distinct light/dark overview treatment with text contrast >=4.5",
+    "Arabic RTL chat, Tasks and Calendar remain usable at 390/768/1440 widths",
+    "participants have no messaging indicator or private staff tools"
+  ],
+  "timings": {
+    "message_indicator_ms": 28.0,
+    "incoming_call_ms": 122.0,
+    "accepted_to_connected_ms": 201.9
+  },
+  "overview_contrast": [
+    {
+      "accent": "teal",
+      "theme": "light",
+      "background": "linear-gradient(125deg, color(srgb 0.0243922 0.371686 0.315137), rgb(6, 117, 94))",
+      "contrast": 5.654448709513303
+    },
+    {
+      "accent": "teal",
+      "theme": "dark",
+      "background": "linear-gradient(125deg, color(srgb 0.579608 0.912157 0.827451), rgb(121, 227, 200))",
+      "contrast": 10.636720287998152
+    },
+    {
+      "accent": "blue",
+      "theme": "light",
+      "background": "linear-gradient(125deg, color(srgb 0.116157 0.270745 0.627137), rgb(36, 84, 196))",
+      "contrast": 6.687370850678653
+    },
+    {
+      "accent": "blue",
+      "theme": "dark",
+      "background": "linear-gradient(125deg, color(srgb 0.683137 0.783529 1), rgb(154, 186, 255))",
+      "contrast": 8.45776897367309
+    },
+    {
+      "accent": "indigo",
+      "theme": "light",
+      "background": "linear-gradient(125deg, color(srgb 0.21098 0.185098 0.64549), rgb(67, 56, 202))",
+      "contrast": 7.9031114800249425
+    },
+    {
+      "accent": "indigo",
+      "theme": "dark",
+      "background": "linear-gradient(125deg, color(srgb 0.764706 0.755294 1), rgb(180, 177, 255))",
+      "contrast": 8.326668105267801
+    },
+    {
+      "accent": "violet",
+      "theme": "light",
+      "background": "linear-gradient(125deg, color(srgb 0.339451 0.136157 0.691373), rgb(109, 40, 217))",
+      "contrast": 7.104892978519159
+    },
+    {
+      "accent": "violet",
+      "theme": "dark",
+      "background": "linear-gradient(125deg, color(srgb 0.855686 0.767843 1), rgb(209, 181, 255))",
+      "contrast": 9.177858058232232
+    },
+    {
+      "accent": "rose",
+      "theme": "light",
+      "background": "linear-gradient(125deg, color(srgb 0.587216 0.0688628 0.211137), rgb(190, 18, 60))",
+      "contrast": 6.285164560662439
+    },
+    {
+      "accent": "rose",
+      "theme": "dark",
+      "background": "linear-gradient(125deg, color(srgb 1 0.739608 0.808627), rgb(255, 172, 194))",
+      "contrast": 9.308456010159702
+    },
+    {
+      "accent": "amber",
+      "theme": "light",
+      "background": "linear-gradient(125deg, color(srgb 0.452627 0.209569 0.0704314), rgb(146, 64, 14))",
+      "contrast": 7.090048300172369
+    },
+    {
+      "accent": "amber",
+      "theme": "dark",
+      "background": "linear-gradient(125deg, color(srgb 0.990588 0.861961 0.642353), rgb(252, 211, 141))",
+      "contrast": 11.578145615204752
+    }
+  ],
+  "page_errors": []
+}

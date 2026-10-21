@@ -1,0 +1,75 @@
+{
+  "version": "3.5.0-rc.1.17",
+  "baseline_commit": "ce04e23c238df2c17e7d6e080ad15ad208bab1ae",
+  "engineering_status": "SOURCE_PASS_PENDING_IMMUTABLE_REPEAT",
+  "requirements": [
+    {
+      "area": "Admin Create course/import/session/roster",
+      "status": "SOURCE_PASS_PENDING_IMMUTABLE_REPEAT",
+      "evidence": "staff-experience/RESULT.json"
+    },
+    {
+      "area": "Selected hue light/dark overview, six palettes",
+      "status": "SOURCE_PASS_PENDING_IMMUTABLE_REPEAT",
+      "evidence": "staff-experience/RESULT.json"
+    },
+    {
+      "area": "Global unread badge/two-second cue and private updates",
+      "status": "SOURCE_PASS_PENDING_IMMUTABLE_REPEAT",
+      "evidence": "staff-experience/RESULT.json"
+    },
+    {
+      "area": "Global incoming calls/ringing/faster signaling",
+      "status": "SOURCE_PASS_PENDING_IMMUTABLE_REPEAT",
+      "evidence": "staff-experience/RESULT.json"
+    },
+    {
+      "area": "Professional chat/attachments/removal/stable voice/video",
+      "status": "SOURCE_PASS_PENDING_IMMUTABLE_REPEAT",
+      "evidence": "staff-collaboration and staff-experience"
+    },
+    {
+      "area": "Separate Tasks/Calendar, ownership/priority/due filters and paging",
+      "status": "SOURCE_PASS_PENDING_IMMUTABLE_REPEAT",
+      "evidence": "staff-experience/RESULT.json"
+    },
+    {
+      "area": "Staff authorization/private stream scopes/revocation/bounds",
+      "status": "SOURCE_PASS_PENDING_IMMUTABLE_REPEAT",
+      "evidence": "SOURCE_NODE_CERTIFIED_OUTPUT.txt"
+    },
+    {
+      "area": "Full prior course/class/permissions/Creator/Guided behavior",
+      "status": "SOURCE_PASS_PENDING_IMMUTABLE_REPEAT",
+      "evidence": "72 Node + 15 browser programs and guided-certification"
+    },
+    {
+      "area": "170 clients/five live classes plus20private streams",
+      "status": "SOURCE_PASS_PENDING_IMMUTABLE_REPEAT",
+      "evidence": "staff-load/RESULT.json"
+    },
+    {
+      "area": "Arabic/English/responsive/themes/contrast",
+      "status": "SOURCE_PASS_PENDING_IMMUTABLE_REPEAT",
+      "evidence": "staff-experience and inherited browser programs"
+    },
+    {
+      "area": "Migrations/backups/36activities/68result cases/34PDF readers",
+      "status": "SOURCE_PASS_PENDING_IMMUTABLE_REPEAT",
+      "evidence": "SOURCE_NODE_CERTIFIED_OUTPUT.txt and SOURCE_PDF_READER_CERTIFIED_RESULT.json"
+    }
+  ],
+  "manual_gates": [
+    "Owner Windows/LAN/physical camera/microphone/classroom/visual/assistive acceptance",
+    "Cloud publication and independent fresh-task restoration"
+  ],
+  "database_changes": "none; workspace8 preserved",
+  "api_changes": [
+    "GET /api/staff-tools/stream",
+    "GET /api/staff-tools/inbox",
+    "GET /api/staff-tools/conversations/:id",
+    "Conversation q search and bounded visible-message refresh (ids, up to100)",
+    "Task/calendar ownership/priority/due filters",
+    "Call accept only while ringing; duplicate answer409"
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "file": "admin.js",
+    "line": 134,
+    "message": "'newCourse' is not defined."
+  },
+  {
+    "file": "admin.js",
+    "line": 134,
+    "message": "'importCourse' is not defined."
+  },
+  {
+    "file": "admin.js",
+    "line": 142,
+    "message": "'adminImportRoster' is not defined."
+  },
+  {
+    "file": "admin.js",
+    "line": 142,
+    "message": "'addClassSession' is not defined."
+  }
+]

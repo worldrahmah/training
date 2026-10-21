@@ -1,3 +1,4 @@
+import {closeStaffStreams} from './lib/staff-events.mjs';
 import {guidedMutation} from './lib/guided-receipts.mjs';
 import {handleStaffCollaboration} from './lib/staff-collaboration.mjs';
 import {handlePersonalNotes} from './lib/personal-notes.mjs';
@@ -700,7 +701,7 @@ async function handleApi(req,res,url){
   }
   if(actor)assertOutsideTrash(req,actor);
 
-  if(await handleStaffCollaboration(req,res,url,{db:db(),engine,json,send,readJson,readBuffer,requireUser,isAdminLike,hasGrant,STORAGE_DIR}))return;
+  if(await handleStaffCollaboration(req,res,url,{db:db(),engine,json,send,readJson,readBuffer,requireUser,currentUser,isAdminLike,hasGrant,STORAGE_DIR}))return;
   if(await handlePersonalNotes(req,res,url,{db:db(),engine,json,send,readJson,requireUser,SECURITY_HEADERS}))return;
   if(await handleActivityDetail(req,res,url,{db:db(),json,requireUser,isAdminLike,visibleClassIds,sectionPermission}))return;
   if(await handleAccountWorkspace(req,res,url,{db:db(),engine,json,readJson,requireUser}))return;
@@ -1713,6 +1714,8 @@ const receiptHash=sha256(JSON.stringify(b)),prior=db().prepare('SELECT * FROM pa
 
 function staticPathFor(urlPath){
   if(urlPath==='/'||urlPath==='/trainer')return path.join(PUBLIC,'trainer.html');
+  if(urlPath==='/calendar')return path.join(PUBLIC,'tasks.html');
+  if(urlPath==='/tasks')return path.join(PUBLIC,'tasks.html');
   if(urlPath==='/staff')return path.join(PUBLIC,'staff.html');
   if(urlPath==='/profile')return path.join(PUBLIC,'profile.html');
   if(urlPath==='/editor')return path.join(PUBLIC,'editor.html');
@@ -1740,6 +1743,7 @@ const server=http.createServer(async(req,res)=>{
 function clearLocalControl(){try{const row=safeJsonParse(fs.readFileSync(LOCAL_CONTROL_FILE,'utf8'),{});if(row.server_id===LOCAL_CONTROL.server_id)fs.rmSync(LOCAL_CONTROL_FILE,{force:true})}catch{}}
 function stopOwnServer(){
   if(stopping)return;stopping=true;clearInterval(autoBackupTimer);
+  closeStaffStreams();
   for(const client of [...sseClients])try{client.res.end()}catch{}
   const finish=()=>{try{engine.close()}catch{}clearLocalControl();process.exit(0)};
   server.close(finish);setTimeout(()=>{server.closeAllConnections();finish()},3000).unref();

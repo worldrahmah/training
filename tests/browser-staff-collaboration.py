@@ -29,7 +29,7 @@ try:
   imp=req('/api/courses/import',at,course);cl=req('/api/classes',at,{'title':'Notes classroom','course_version_id':imp['version_id'],'participant_ids':[student['user']['id']],'trainers':[{'user_id':admin['user']['id'],'assignment_role':'lead'}]});req(f'/api/classes/{cl["id"]}/activate',at,{})
   browser=p.chromium.launch(executable_path=os.environ.get('ONE_BROWSER_EXECUTABLE')or shutil.which('chromium'),headless=True,args=['--no-sandbox','--use-fake-device-for-media-stream','--use-fake-ui-for-media-stream','--autoplay-policy=no-user-gesture-required']);errors=[]
   def context(token,width=1440,timezone='UTC'):
-   c=browser.new_context(timezone_id=timezone,viewport={'width':width,'height':1000},permissions=['camera','microphone'],reduced_motion='reduce');c.add_init_script('window.__qaPeers=[];const NativePeer=window.RTCPeerConnection;window.RTCPeerConnection=class extends NativePeer{constructor(...args){super(...args);window.__qaPeers.push(this)}};');c.add_init_script('sessionStorage.setItem("training_engine_session",'+json.dumps(token)+');sessionStorage.setItem("training_engine_session_rotated_at",String(Date.now()));localStorage.setItem("training_engine_locale","en");');return c
+   c=browser.new_context(timezone_id=timezone,viewport={'width':width,'height':1000},permissions=['camera','microphone'],reduced_motion='reduce');c.add_init_script('Object.defineProperty(Crypto.prototype,"randomUUID",{value:undefined,configurable:true})');c.add_init_script('window.__qaPeers=[];const NativePeer=window.RTCPeerConnection;window.RTCPeerConnection=class extends NativePeer{constructor(...args){super(...args);window.__qaPeers.push(this)}};');c.add_init_script('sessionStorage.setItem("training_engine_session",'+json.dumps(token)+');sessionStorage.setItem("training_engine_session_rotated_at",String(Date.now()));localStorage.setItem("training_engine_locale","en");');return c
   def page(c,path):
    pg=c.new_page();pg.on('pageerror',lambda e:errors.append(str(e)));pg.goto(base+path);return pg
   ac=context(at);tc=context(tt);ap=page(ac,'/staff#chat');tp=page(tc,'/staff#chat')
@@ -48,7 +48,8 @@ try:
     raise
    expect(tp.locator('[data-call-status]')).to_have_text('Connected',timeout=35000)
    assert ap.locator('[data-local-video]').evaluate('(v)=>v.srcObject.getAudioTracks()[0].readyState')=='live'
-   if kind=='video':assert tp.locator('[data-remote-video]').evaluate('(v)=>v.srcObject.getVideoTracks()[0].readyState')=='live'
+   if kind=='video':
+    assert tp.locator('[data-remote-video]').evaluate('(v)=>v.srcObject.getVideoTracks()[0].readyState')=='live';ap.screenshot(path=str(OUT/'staff-video-call-en.png'),full_page=True)
    ap.locator('[data-mute-call]').click();expect(ap.locator('[data-mute-call]')).to_have_text('Unmute microphone');ap.locator('[data-end-call]').click();expect(tp.locator('[data-call-host]')).to_be_empty(timeout=12000);checks.append('actual '+kind+' peer connection, live tracks, mute and hangup')
   ap.locator('[data-tab=tasks]').click();ap.locator('[data-new-task]').click();dialog=ap.get_by_role('dialog');dialog.locator('[name=title]').fill('Prepare classroom');dialog.locator('[name=due_at]').fill('2026-10-21T13:00');dialog.locator('[data-checklist-text]').fill('Check projector');dialog.locator('[data-checklist-add]').click();dialog.locator('[data-directory-search]').fill('Operations colleague');dialog.locator('[data-directory-id="'+str(staff['user']['id'])+'"]').check();dialog.locator('[data-confirm]').click();expect(ap.locator('[data-task-id]')).to_have_text('Prepare classroom');tp.locator('[data-tab=tasks]').click();tp.locator('[data-task-id]').click();dialog=tp.get_by_role('dialog');dialog.locator('[data-check-index]').check();dialog.locator('[name=status]').select_option('done');dialog.locator('[data-confirm]').click();expect(tp.locator('.task-card .badge').first).to_have_text('Done');checks.append('administrator assigns task, assignee completes checklist and status')
   ap.locator('[data-tab=calendar]').click();ap.locator('[data-calendar-date]').fill('2026-10-21');ap.locator('[data-calendar-date]').blur();ap.locator('[data-calendar-day="2026-10-21"]').wait_for();expect(ap.locator('[data-calendar-day="2026-10-21"] strong')).to_have_text('1');ap.locator('[data-calendar-day="2026-10-21"]').click();expect(ap.locator('[data-calendar-period]')).to_have_value('day');req('/api/staff-tools/tasks',at,{'title':'Late-night local planning','due_at':'2026-10-20T21:30:00Z'});beirut=context(at,390,'Asia/Beirut');bp=page(beirut,'/staff#calendar');bp.locator('[data-calendar-date]').fill('2026-10-21');bp.locator('[data-calendar-date]').blur();expect(bp.locator('[data-calendar-day="2026-10-21"] strong')).to_have_text('2');bp.locator('[data-calendar-day="2026-10-21"]').click();expect(bp.locator('[data-task-list]')).to_contain_text('Late-night local planning');beirut.close();checks.append('calendar complete local-day counts, Beirut midnight and day drilldown')
@@ -77,6 +78,14 @@ try:
   checks.append('Arabic RTL dark personal color and 390/768/1440 responsive staff calendar')
   assert not errors,errors
   (OUT/'RESULT.json').write_text(json.dumps({'ok':True,'journeys':checks,'page_errors':errors},indent=2));print('BROWSER_STAFF_COLLABORATION_PASS',len(checks),'journeys, including real fake-device audio/video peer streams');browser.close()
+except Exception:
+ print('BROWSER_ERRORS',locals().get('errors',[]),flush=True)
+ for i,c in enumerate(locals().get('browser',None).contexts if locals().get('browser',None) else []):
+  for j,pg in enumerate(c.pages):
+   try:(OUT/f'failure-{i}-{j}.html').write_text(pg.content());pg.screenshot(path=str(OUT/f'failure-{i}-{j}.png'),full_page=True)
+   except Exception:pass
+ print((TMP/'server.log').read_text()[-1800:],flush=True)
+ raise
 finally:
  server.terminate()
  try:server.wait(timeout=6)

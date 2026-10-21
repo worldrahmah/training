@@ -1,0 +1,14 @@
+PASS Admin Create course opens, validates and persists an Arabic course shell
+PASS Admin Import course validates and imports the actual package
+PASS Admin Add session and roster preview/import persist actual class records
+PASS global staff badge receives updates/removals with measured two-second sound
+PASS dashboard receives/rings/accepts actual peer audio immediately; ringing stops on hangup
+PASS read badge clears, playing voice node survives updates, own-message removal is confirmed
+PASS removed message beyond the latest50updates immediately while older history is visible
+PASS independent Tasks page filters authorized ownership/priority, paginates and completes/reopens
+PASS independent Calendar has day/week/aligned-month/year views and compatible bookmarks
+PASS shared private stream supports simultaneous staff pages without dashboard request starvation
+PASS all six personal colors have distinct light/dark overview treatment with text contrast >=4.5
+PASS Arabic RTL chat, Tasks and Calendar remain usable at 390/768/1440 widths
+PASS participants have no messaging indicator or private staff tools
+BROWSER_STAFF_EXPERIENCE_PASS 13 journeys {"message_indicator_ms": 28.0, "incoming_call_ms": 122.0, "accepted_to_connected_ms": 201.9}

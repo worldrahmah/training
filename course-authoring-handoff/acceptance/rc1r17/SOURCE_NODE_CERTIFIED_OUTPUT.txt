@@ -1,0 +1,190 @@
+WORKSPACE_AUTHORING_FONTS_PASS 251 gates: 40 pinned local fonts/licenses/glyphs/shaping, diagnostics locate short IDs without corrupting words, referenced milestones protected
+BACKUP_BUNDLE_SECURITY_PASS 14 scenarios; authenticated encryption, bounded expansion, metadata, path/case/duplicate/file-directory and base64 rejection
+WORKSPACE_MIGRATION_PASS populated v2.1.1 and exact RC1R7 fixture data/assets, legacy guest classification, verified pre-upgrade backup, journal checksums, repeat startup, atomic failure rollback and foreign keys
+WORKSPACE_OPERATIONS_PASS 126 assertions: editor isolation/publishing, registered pending admission, notifications/capacity/authorization, removed roster and resumed progress, reusable groups and private profiles
+PROFESSIONAL_PDF_REPORTS_PASS 253 assertions; seven templates × EN/AR, all 40 fonts, actual logo/photo upload, immutable retry, own-learner and editor isolation, reveal safety, invalid dates/media and PDF/photo/branding backup restore
+LOCAL_SHUTDOWN_PASS authenticated local-instance stop, confirmed exit/data retention, unrelated listener preservation and truthful failure
+RESTORE_RECOVERY_PASS 9 scenarios: commit, failure rollback, interrupted rename boundaries, accepted cleanup and fail-closed malformed journal
+OPERATIONAL_AUTHORIZATION_PASS 81 assertions: staff ownership/atomic rejection, active super-admin, session revocation, scoped courses/tools/search, quiz ownership, published-only classes and RTL preservation
+ZIP_INTEGRITY_PASS 9 invalid cases + entry/expanded limits + valid course/PPTX reader
+AUDIENCE_SECURITY_PASS 6 solution families, private guidance, pre-reveal score, recall, scoped cohorts, paced delivery
+CHART_SEMANTICS_PASS categorical/ordered, additive/average, positive/negative
+CONTRACT_SYNC_PASS
+CANONICAL_CONTRACT_REGISTRY_PASS
+COLLECTION_DISCOVERY_PASS
+REPORT_CHART_WORKSPACE_PASS
+PROFESSIONAL_EXPANSION_CONTRACT_PASS
+PROFESSIONAL_EXPANSION_RUNTIME_PASS
+BUILDER_ACTIVITY_EDITOR_PASS 36/36 activity types render a type-appropriate settings panel
+PASS Builder Activity Type transition defers disruptive autosave but persists dirty draft on Builder navigation
+PASS draft autosave persists all 36 canonical activity types without 422
+PASS incomplete draft is persisted but publish remains validation-gated
+PASS malformed draft structure still fails closed
+
+BUILDER_DRAFT_TRANSITIONS_PASS
+ASSESSMENT_FEEDBACK_RUNTIME_PASS
+ACTIVITY_SETTINGS_CERT_PASS 36/36
+ACTIVITY_VARIANT_RUNTIME_PASS
+ACTIVITY_SURFACE_CERT_PASS 36/36 activities · 68 result views
+ACTIVITY_INPUT_VALIDATION_PASS
+ALL_ACTIVITY_RUNTIME_CERT_PASS 36/36
+FULL_ACTIVITY_CERTIFICATION_MATRIX_PASS 36/36 · 68 result-view cases
+WORD_CLOUD_STAGE1A_PASS
+WORD_CLOUD_RUNTIME_PASS
+Q_AND_A_STAGE1B_PASS
+Q_AND_A_RUNTIME_PASS
+IDEAS_BOARD_STAGE1C_PASS
+IDEAS_BOARD_RUNTIME_PASS
+PROJECTOR_RESULT_RECALL_PASS
+PROJECTOR_PRESENCE_LIFECYCLE_PASS
+LIVE_HEALTH_AUTO_REFRESH_PASS
+PROJECTOR_THEME_PRECEDENCE_PASS
+I18N_AR_EN_PASS
+RESPONSIVE_UI_PASS
+PREMIUM_UI_SYSTEM_PASS
+DEEP_PRODUCT_UI_PASS
+ROLE_SURFACES_PASS
+COURSE_FLOW_UI_PASS
+WORKFLOW_VALIDATION_PASS
+PASS server starts
+PASS /trainer loads
+PASS /student loads
+PASS /present loads
+PASS trainer login
+PASS student login
+PASS trainer dashboard
+PASS student dashboard + enrollment
+PASS launch generic poll
+PASS student response persisted
+PASS close and reveal results
+PASS clear live state
+PASS trainer history
+PASS backup create/list
+PASS course package validation
+PASS transactional course import
+PASS course asset import/serve
+PASS class template import
+PASS CSV roster import
+PASS team assignment
+PASS imported participant login
+PASS team-scoped response
+PASS mission completion + achievement
+PASS safe demo removal preserves real data
+PASS CSV export
+
+SMOKE_TEST_PASS
+PASS legacy administrator capabilities preserved by admin-like role
+PASS create trainer from administration API
+PASS staff directory
+PASS assign multiple class trainers
+PASS trainer sees assigned class
+PASS trainer cannot browse unassigned class
+PASS unassigned class access denied
+PASS unassigned class mutation denied
+PASS non-lead trainer cannot alter roster
+PASS non-admin trainer cannot access system backups
+PASS trainer reports are limited to assigned scope
+PASS trainer report export is limited to assigned scope
+PASS trainer history is limited to assigned scope
+PASS class lifecycle
+PASS roster preview rejects staff username
+PASS classroom readiness
+PASS reports center
+PASS individual learning report
+PASS report CSV exports
+PASS universal content schema validation
+PASS unsupported activity fails closed
+
+CORE_V12_PASS
+RESTART_PERSISTENCE_PASS
+BACKUP_RESTORE_PASS startup_ms=562
+PASS v2 compatibility on canonical ONE server
+PASS super admin seeded
+PASS super admin operations dashboard
+PASS universal typography settings
+PASS secondary trainer
+PASS schema 2 workflow course import
+PASS granular course edit permission
+PASS immutable version -> draft -> validate -> publish
+PASS class creation with trainer assignment
+PASS class session CRUD create
+PASS class activation
+PASS rich participants enrolled
+PASS participant removal preserves enrollment history
+PASS rich self-service participant profile
+PASS in-app participant messaging
+PASS independent participant path branching
+PASS need help queue lifecycle
+PASS milestone progress and completion
+PASS true projector navigation control key
+PASS projector presentation-scale composition via shared renderer
+PASS rich learning analytics
+PASS super admin non-interactive live monitoring
+
+CORE_V20_PASS
+WORKFLOW_PROGRESS_PASS
+WORKFLOW_RESTART_PASS
+LEGACY_WORKFLOW_TRACKER_PASS
+PASS canonical version + security headers
+PASS machine-readable capability contract
+PASS temporary-password enforcement and recovery
+PASS failed-login throttling
+PASS multiple simultaneous live classes
+PASS short-code self enrollment
+PASS class-scoped expiring projector pairing + connected heartbeat
+PASS Left Early attendance + note
+PASS append-only consent history
+PASS trainer submission review lifecycle
+PASS participant schedule, calendar + reviewed feedback
+PASS participant optimistic concurrency
+PASS draft revisions + compare + strict simulation + conflict protection
+PASS course asset library
+PASS reusable authoring templates
+PASS global search + saved views
+PASS safe audited bulk administration
+PASS configurable backup + live operations policy
+PASS course-improvement analytics surfaces
+PASS verified backup
+PASS concurrent-device session limit
+
+TRAINING_ENGINE_ONE_CORE_PASS
+V211_TO_ONE_POPULATED_MIGRATION_PASS
+PASS automatic-session rotation API invalidates old token
+PASS searchable asset library with exact used-by references
+PASS live classroom readiness and device-health endpoint
+PASS private presenter-note contract preserved in live context
+PASS professional projector special modes
+PASS course evaluation/survey lifecycle
+PASS question bank and deterministic randomized quiz scoring
+PASS learner transcript, downloadable record and verifiable printable certificates
+PASS course prerequisite enforcement
+PASS registered admission stays pending and cannot bypass class capacity
+PASS encrypted portable backup export/import verification
+PASS course version impact comparison and improvement findings analytics
+
+TRAINING_ENGINE_COMPLETE_PROFESSIONAL_PASS
+PASS 20 participant identities and sessions
+PASS 20/20 connected classroom health
+PASS class-scoped projector paired
+PASS 20/20 concurrent classroom responses persisted
+PASS trainer live context contains the full room
+
+TRAINING_ENGINE_20_PARTICIPANT_REHEARSAL_PASS
+RC1R9_SECURITY_PASS 78 assertions; production bootstrap, populated upgrade, default lockout, resources, roles, sessions, request/file boundaries
+RC1R9_CONTRACT_PASS 368 assertions; 36 bilingual labels, no public demo credentials, portable intake/packaging, three real import/Draft/publication/launch paths
+COURSE_CREATOR_KIT_CHECK_PASS 106 files, 36 activities, EN/AR samples and workflow paths
+RC1R10_EXPERIENCE_PASS 157 assertions
+GUIDED_CONTRACT_PASS 39 negative and positive contracts
+RC1R11_GUIDED_PASS 127 assertions: validation, evidence, branch lock, revision, canonical responses, privacy, Trash/restore history
+COURSE_EXPORT_PASS 34 assertions: invalid Draft blocked, checksummed assets, permission denial, immutable source, actual Draft → publish → export ZIP → second-server import → Participant runtime
+CREATOR_CLOSURE_CONTRACT_PASS 145 route, editor-metadata, shared-variable, evidence and durable-retry assertions
+CREATOR_CLOSURE_API_PASS 96 upload ownership, image signatures, stale steps, exact retry receipts, grouped report and complete graph routes
+OPERATIONAL_WORKSPACE_PASS 92 Trash/Archive separation, restore history, confirmed atomic purge, permissions, strict single-class projection and valid beginner lesson
+PERSONAL_PREFERENCES_PASS account isolation, late acknowledgement, reload/offline merge, guest defaults and 12 actual palette contrast cases
+PERSONAL_WORKSPACE_PASS 222 account isolation/persistence, complete scoped history SQL pages/filters, Finish from four live phases, repeat/stale/late-write/role protection and Trash restore
+STAFF_EVENTS_PASS 12 private targeting, revocation, bounded buffers/connections and lifecycle cleanup
+STAFF_COLLABORATION_PASS 228 staff roles and Editor isolation, chat membership/files/retries/revocation, call signaling, task assignments/recurrence/stale writes, notes ownership/export, activity redaction and CSRF
+STAFF_LOAD_PASS {"ok":true,"accounts":{"staff":15,"trainers":5,"participants":150,"total":170},"simultaneous_live_classes":5,"concurrent_clients":170,"rounds_per_client":6,"private_stream_connections":20,"private_stream_events":2940,"requests":4255,"errors":[],"elapsed_ms":6187,"latency_ms":{"p50":92.48,"p95":157.66,"p99":3488.2,"max":4882},"peak_server_rss_bytes":128937984,"persisted":{"responses":150,"notes":900,"messages":140,"tasks":120,"attachments":20,"concurrent_call_signaling_sessions":5,"connection_signals":60},"limits":"Local synthetic authenticated HTTP workload, not 170 physical browsers/devices, production WAN/media capacity or universal latency guarantee. Login/password hashing excluded; real WebRTC media covered separately in browser tests."}
+GUIDED_PERSISTENCE_PASS 76 HTTP/non-JSON taxonomy, strict acknowledgements, actual transport failures, timeout, durable-before-send, retry receipts and ordered own revision chains
+GUIDED_PERSISTENCE_API_PASS 896 assertions; both paths, all evidence/12 interactions, persistent receipts beyond 64 edits, duplicate/lost/stale replies, authorization, database integrity and analytics
+CHECKS_PASS node: 72 commands

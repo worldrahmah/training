@@ -1,3 +1,7 @@
+# RC1R17 administration and staff experience update
+
+Current app/Core3.5.0-rc.1.17; Core schema3.2, course schema2.0, workspace schema8. This update preserves the complete RC1R16 Guided persistence contract and immutable RC1R14 fixtures. No course schema or migration change. Administration creation/import actions are repaired; staff have global unread/call handling, redesigned chat, separate Tasks and Calendar pages and selected-color light/dark overview contrast. See the current release verification receipts; source and immutable extraction checks must pass before distribution. Owner hardware/classroom/visual/assistive acceptance remains separate.
+
 # RC1R16 Guided persistence and complete staff workspace update
 
 Current Core/app 3.5.0-rc.1.16; core schema 3.2, course schema 2.0, additive workspace schema 8. RC1R14 is preserved as the rollback baseline. All RC1R15 staff chat/calls/tasks/calendar, participant notes, activity dialogs, theme and scalable selection features are included. This section supersedes earlier persistence certification statements. Engineering certification is recorded in the release reports; owner Windows/LAN/hardware/visual/assistive acceptance remains separate.

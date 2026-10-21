@@ -9,7 +9,7 @@ export const TOKEN_KEY='training_engine_session';
 const ROTATED_KEY='training_engine_session_rotated_at';
 let rotating=null;
 export function getToken(){return sessionStorage.getItem(TOKEN_KEY)||''}
-export function setToken(v){if(getToken()!==String(v||'')){for(const promise of avatarPhotos.values())promise.then(url=>url&&URL.revokeObjectURL(url));avatarPhotos.clear()}if(v){sessionStorage.setItem(TOKEN_KEY,v);if(!sessionStorage.getItem(ROTATED_KEY))sessionStorage.setItem(ROTATED_KEY,String(Date.now()))}else{sessionStorage.removeItem(TOKEN_KEY);sessionStorage.removeItem(ROTATED_KEY);bindPreferenceAccount(null);boundPreferenceUser=0;initLocale();initTheme()}}
+export function setToken(v){if(getToken()!==String(v||'')){for(const promise of avatarPhotos.values())promise.then(url=>url&&URL.revokeObjectURL(url));avatarPhotos.clear()}if(v){sessionStorage.setItem(TOKEN_KEY,v);if(!sessionStorage.getItem(ROTATED_KEY))sessionStorage.setItem(ROTATED_KEY,String(Date.now()))}else{document.dispatchEvent(new Event('one-session-cleared'));sessionStorage.removeItem(TOKEN_KEY);sessionStorage.removeItem(ROTATED_KEY);bindPreferenceAccount(null);boundPreferenceUser=0;initLocale();initTheme()}}
 async function maybeRotate(path){const token=getToken();if(!token||path==='/api/login'||path==='/api/account/session/rotate')return;const last=Number(sessionStorage.getItem(ROTATED_KEY)||0);if(last&&Date.now()-last<30*60*1000)return;if(rotating)return rotating;rotating=(async()=>{try{const res=await fetch('/api/account/session/rotate',{method:'POST',headers:{'X-Session-Token':token}});if(!res.ok)return;const data=await res.json();if(data?.token){sessionStorage.setItem(TOKEN_KEY,data.token);sessionStorage.setItem(ROTATED_KEY,String(Date.now()))}}finally{rotating=null}})();return rotating}
 export async function api(path,opts={}){
   await maybeRotate(path);
@@ -20,7 +20,7 @@ export async function api(path,opts={}){
   try{if(ct.includes('application/json'))data=await res.json();else data=await res.text()}catch{parseFailed=true}
   if(!res.ok){const raw=data?.message||t('Request failed ({status})',{status:res.status});const e=new Error(userMessage(raw));e.status=res.status;e.code=classifyGuidedFailure({status:res.status}).code;e.data=data;throw e}
   if(parseFailed)throw Object.assign(guidedFailure('CLIENT_RUNTIME_ERROR',{status:res.status,endpoint:path}),{message:t('The server returned an invalid response. Refresh and try again.')});
-  if(data?.user&&path==='/api/me')bindPersonalPreferences(data.user);return data;
+  if(path==='/api/me'){if(data?.user)bindPersonalPreferences(data.user);import('/staff-notifier.js').then(m=>m.startStaffNotifications(data?.user)).catch(()=>{})}return data;
 }
 export function esc(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 export function md(v=''){

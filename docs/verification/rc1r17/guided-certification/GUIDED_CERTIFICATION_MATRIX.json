@@ -1,0 +1,1493 @@
+{
+  "format": "training-engine-guided-certification",
+  "version": "3.5.0-rc.1.17",
+  "engineering_status": "PASS",
+  "core_schema": "3.2",
+  "course_schema": "2.0",
+  "workspace_schema": "8",
+  "rows": [
+    {
+      "area": "none",
+      "kind": "completion",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "acknowledge",
+      "kind": "completion",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "external",
+      "kind": "completion",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "text",
+      "kind": "completion",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "url",
+      "kind": "completion",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "checklist",
+      "kind": "completion",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "file",
+      "kind": "completion",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": "Offline covers retained submission reference/text edits; binary upload requires server connection."
+    },
+    {
+      "area": "image",
+      "kind": "completion",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": "Offline covers retained submission reference/text edits; binary upload requires server connection."
+    },
+    {
+      "area": "single_choice",
+      "kind": "interaction",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "multiple_choice",
+      "kind": "interaction",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "rating",
+      "kind": "interaction",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "confidence",
+      "kind": "interaction",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "reaction",
+      "kind": "interaction",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "short_answer",
+      "kind": "interaction",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "long_answer",
+      "kind": "interaction",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "numeric_answer",
+      "kind": "interaction",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "checklist",
+      "kind": "interaction",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "reflection",
+      "kind": "interaction",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "self_assessment",
+      "kind": "interaction",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "true_false",
+      "kind": "interaction",
+      "online": "PASS",
+      "offline": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "grouped evaluation",
+      "kind": "runtime",
+      "online": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "offline": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "path progress",
+      "kind": "runtime",
+      "online": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "offline": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "convergence",
+      "kind": "runtime",
+      "online": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "offline": "NOT_APPLICABLE",
+      "notes": "Class convergence itself requires a server connection."
+    },
+    {
+      "area": "shared variables/concrete step identities",
+      "kind": "runtime",
+      "online": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "offline": "PASS",
+      "notes": ""
+    },
+    {
+      "area": "terminal/resume",
+      "kind": "runtime",
+      "online": "PASS",
+      "reconnect": "PASS",
+      "refresh": "PASS",
+      "both_paths": "PASS",
+      "result": "PASS",
+      "offline": "NOT_APPLICABLE",
+      "notes": ""
+    }
+  ],
+  "official_routes": [
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-prepare",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 2,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-ask",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 2,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-verify",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 2,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-teach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 2,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-tutor",
+      "completion": "none",
+      "interactions": [
+        "m1-confidence"
+      ],
+      "class_id": 2,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-reteach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 2,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-check",
+      "completion": "none",
+      "interactions": [
+        "m1-check"
+      ],
+      "class_id": 2,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-master",
+      "completion": "none",
+      "interactions": [
+        "m1-master"
+      ],
+      "class_id": 2,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-converge",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 2,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-evaluate",
+      "completion": "none",
+      "interactions": [
+        "m1-evaluation-1",
+        "m1-evaluation-2",
+        "m1-evaluation-3",
+        "m1-evaluation-4",
+        "m1-evaluation-5",
+        "m1-evaluation-6",
+        "m1-evaluation-7",
+        "m1-evaluation-8",
+        "m1-evaluation-9",
+        "m1-evaluation-10"
+      ],
+      "class_id": 2,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-close",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 2,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-prepare",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 3,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-ask",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 3,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-verify",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 3,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-teach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 3,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-tutor",
+      "completion": "none",
+      "interactions": [
+        "m1-confidence"
+      ],
+      "class_id": 3,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-reteach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 3,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-check",
+      "completion": "none",
+      "interactions": [
+        "m1-check"
+      ],
+      "class_id": 3,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-master",
+      "completion": "none",
+      "interactions": [
+        "m1-master"
+      ],
+      "class_id": 3,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-converge",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 3,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-evaluate",
+      "completion": "none",
+      "interactions": [
+        "m1-evaluation-1",
+        "m1-evaluation-2",
+        "m1-evaluation-3",
+        "m1-evaluation-4",
+        "m1-evaluation-5",
+        "m1-evaluation-6",
+        "m1-evaluation-7",
+        "m1-evaluation-8",
+        "m1-evaluation-9",
+        "m1-evaluation-10"
+      ],
+      "class_id": 3,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-close",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 3,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-prepare",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 4,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-ask",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 4,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-verify",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 4,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-teach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 4,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-tutor",
+      "completion": "none",
+      "interactions": [
+        "m1-confidence"
+      ],
+      "class_id": 4,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-reteach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 4,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-check",
+      "completion": "none",
+      "interactions": [
+        "m1-check"
+      ],
+      "class_id": 4,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-master",
+      "completion": "none",
+      "interactions": [
+        "m1-master"
+      ],
+      "class_id": 4,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-converge",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 4,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-evaluate",
+      "completion": "none",
+      "interactions": [
+        "m1-evaluation-1",
+        "m1-evaluation-2",
+        "m1-evaluation-3",
+        "m1-evaluation-4",
+        "m1-evaluation-5",
+        "m1-evaluation-6",
+        "m1-evaluation-7",
+        "m1-evaluation-8",
+        "m1-evaluation-9",
+        "m1-evaluation-10"
+      ],
+      "class_id": 4,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-close",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 4,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-prepare",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 5,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-ask",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 5,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-verify",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 5,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-teach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 5,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-tutor",
+      "completion": "none",
+      "interactions": [
+        "m1-confidence"
+      ],
+      "class_id": 5,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-reteach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 5,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-check",
+      "completion": "none",
+      "interactions": [
+        "m1-check"
+      ],
+      "class_id": 5,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-master",
+      "completion": "none",
+      "interactions": [
+        "m1-master"
+      ],
+      "class_id": 5,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-converge",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 5,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-evaluate",
+      "completion": "none",
+      "interactions": [
+        "m1-evaluation-1",
+        "m1-evaluation-2",
+        "m1-evaluation-3",
+        "m1-evaluation-4",
+        "m1-evaluation-5",
+        "m1-evaluation-6",
+        "m1-evaluation-7",
+        "m1-evaluation-8",
+        "m1-evaluation-9",
+        "m1-evaluation-10"
+      ],
+      "class_id": 5,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-close",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 5,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-prepare",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 6,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-ask",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 6,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-verify",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 6,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-teach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 6,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-tutor",
+      "completion": "none",
+      "interactions": [
+        "m1-confidence"
+      ],
+      "class_id": 6,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-reteach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 6,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-check",
+      "completion": "none",
+      "interactions": [
+        "m1-check"
+      ],
+      "class_id": 6,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-master",
+      "completion": "none",
+      "interactions": [
+        "m1-master"
+      ],
+      "class_id": 6,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-converge",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 6,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-evaluate",
+      "completion": "none",
+      "interactions": [
+        "m1-evaluation-1",
+        "m1-evaluation-2",
+        "m1-evaluation-3",
+        "m1-evaluation-4",
+        "m1-evaluation-5",
+        "m1-evaluation-6",
+        "m1-evaluation-7",
+        "m1-evaluation-8",
+        "m1-evaluation-9",
+        "m1-evaluation-10"
+      ],
+      "class_id": 6,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 2,
+      "step": "m1-sleep-close",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 6,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-prepare",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 7,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-ask",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 7,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-verify",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 7,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-teach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 7,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-tutor",
+      "completion": "none",
+      "interactions": [
+        "m1-confidence"
+      ],
+      "class_id": 7,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-reteach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 7,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-check",
+      "completion": "none",
+      "interactions": [
+        "m1-check"
+      ],
+      "class_id": 7,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-master",
+      "completion": "none",
+      "interactions": [
+        "m1-master"
+      ],
+      "class_id": 7,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-converge",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 7,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-evaluate",
+      "completion": "none",
+      "interactions": [
+        "m1-evaluation-1",
+        "m1-evaluation-2",
+        "m1-evaluation-3",
+        "m1-evaluation-4",
+        "m1-evaluation-5",
+        "m1-evaluation-6",
+        "m1-evaluation-7",
+        "m1-evaluation-8",
+        "m1-evaluation-9",
+        "m1-evaluation-10"
+      ],
+      "class_id": 7,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-sleep",
+      "confidence": 5,
+      "step": "m1-sleep-close",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 7,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-prepare",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 8,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-ask",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 8,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-verify",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 8,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-teach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 8,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-tutor",
+      "completion": "none",
+      "interactions": [
+        "m1-confidence"
+      ],
+      "class_id": 8,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-reteach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 8,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-check",
+      "completion": "none",
+      "interactions": [
+        "m1-check"
+      ],
+      "class_id": 8,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-master",
+      "completion": "none",
+      "interactions": [
+        "m1-master"
+      ],
+      "class_id": 8,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-converge",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 8,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-evaluate",
+      "completion": "none",
+      "interactions": [
+        "m1-evaluation-1",
+        "m1-evaluation-2",
+        "m1-evaluation-3",
+        "m1-evaluation-4",
+        "m1-evaluation-5",
+        "m1-evaluation-6",
+        "m1-evaluation-7",
+        "m1-evaluation-8",
+        "m1-evaluation-9",
+        "m1-evaluation-10"
+      ],
+      "class_id": 8,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 2,
+      "step": "m1-scholarship-close",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 8,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-prepare",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 9,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-ask",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 9,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-verify",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 9,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-teach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 9,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-tutor",
+      "completion": "none",
+      "interactions": [
+        "m1-confidence"
+      ],
+      "class_id": 9,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-reteach",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 9,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-check",
+      "completion": "none",
+      "interactions": [
+        "m1-check"
+      ],
+      "class_id": 9,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-master",
+      "completion": "none",
+      "interactions": [
+        "m1-master"
+      ],
+      "class_id": 9,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-converge",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 9,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-evaluate",
+      "completion": "none",
+      "interactions": [
+        "m1-evaluation-1",
+        "m1-evaluation-2",
+        "m1-evaluation-3",
+        "m1-evaluation-4",
+        "m1-evaluation-5",
+        "m1-evaluation-6",
+        "m1-evaluation-7",
+        "m1-evaluation-8",
+        "m1-evaluation-9",
+        "m1-evaluation-10"
+      ],
+      "class_id": 9,
+      "participant_id": 2,
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "path": "path-scholarship",
+      "confidence": 5,
+      "step": "m1-scholarship-close",
+      "completion": "acknowledge",
+      "interactions": [],
+      "class_id": 9,
+      "participant_id": 2,
+      "status": "PASS"
+    }
+  ],
+  "official_grouped_offline_checks": [
+    {
+      "grouped_evaluation_offline_edit_all_ten_reconnect_refresh": "PASS",
+      "language": "ar",
+      "path": "path-sleep"
+    },
+    {
+      "grouped_evaluation_offline_edit_all_ten_reconnect_refresh": "PASS",
+      "language": "ar",
+      "path": "path-scholarship"
+    },
+    {
+      "grouped_evaluation_offline_edit_all_ten_reconnect_refresh": "PASS",
+      "language": "en",
+      "path": "path-sleep"
+    },
+    {
+      "grouped_evaluation_offline_edit_all_ten_reconnect_refresh": "PASS",
+      "language": "en",
+      "path": "path-scholarship"
+    }
+  ],
+  "browser_faults": [
+    {
+      "status": 500,
+      "body": "html",
+      "code": "SERVER_ERROR",
+      "result": "PASS"
+    },
+    {
+      "status": 500,
+      "body": "json",
+      "code": "SERVER_ERROR",
+      "result": "PASS"
+    },
+    {
+      "status": 422,
+      "body": "html",
+      "code": "VALIDATION_ERROR",
+      "result": "PASS"
+    },
+    {
+      "status": 422,
+      "body": "json",
+      "code": "VALIDATION_ERROR",
+      "result": "PASS"
+    },
+    {
+      "status": 401,
+      "body": "json",
+      "code": "UNAUTHORIZED",
+      "result": "PASS"
+    },
+    {
+      "status": 403,
+      "body": "json",
+      "code": "FORBIDDEN",
+      "result": "PASS"
+    },
+    {
+      "status": 404,
+      "body": "html",
+      "code": "NOT_FOUND",
+      "result": "PASS"
+    },
+    {
+      "status": 409,
+      "body": "json",
+      "code": "CONFLICT",
+      "result": "PASS"
+    },
+    {
+      "status": 200,
+      "body": "html",
+      "code": "CLIENT_RUNTIME_ERROR",
+      "result": "PASS"
+    },
+    {
+      "offline_refresh_reconnect": "PASS"
+    },
+    {
+      "lost_reply_after_commit": "PASS"
+    },
+    {
+      "same_participant_two_tab_stale_write": "PASS"
+    },
+    {
+      "refresh_before_and_after_path_selection": "PASS"
+    },
+    {
+      "refresh_while_save_pending_after_commit": "PASS"
+    },
+    {
+      "different_tab_offline_chain_never_rebased": "PASS"
+    }
+  ],
+  "api_assertions": 896,
+  "scope_limits": [
+    "Binary uploads and fresh page loading require the local server.",
+    "Owner physical Windows/LAN/media/visual/assistive acceptance is separate.",
+    "Original deployment response was not supplied; reproduced non-JSON500 path is documented precisely."
+  ]
+}

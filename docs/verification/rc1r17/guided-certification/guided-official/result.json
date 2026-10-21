@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "language": "ar",
+      "branch": 0,
+      "width": 390,
+      "mode": "trainer_paced",
+      "theme": "light",
+      "ui_locale": "ar",
+      "status": "PASS"
+    },
+    {
+      "grouped_evaluation_offline_edit_all_ten_reconnect_refresh": "PASS",
+      "language": "ar",
+      "path": "path-sleep"
+    },
+    {
+      "language": "ar",
+      "branch": 0,
+      "width": 1440,
+      "mode": "participant_paced",
+      "theme": "light",
+      "ui_locale": "ar",
+      "status": "PASS"
+    },
+    {
+      "language": "ar",
+      "branch": 1,
+      "width": 390,
+      "mode": "trainer_paced",
+      "theme": "dark",
+      "ui_locale": "ar",
+      "status": "PASS"
+    },
+    {
+      "grouped_evaluation_offline_edit_all_ten_reconnect_refresh": "PASS",
+      "language": "ar",
+      "path": "path-scholarship"
+    },
+    {
+      "language": "ar",
+      "branch": 1,
+      "width": 1440,
+      "mode": "participant_paced",
+      "theme": "dark",
+      "ui_locale": "ar",
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "branch": 0,
+      "width": 390,
+      "mode": "trainer_paced",
+      "theme": "light",
+      "ui_locale": "en",
+      "status": "PASS"
+    },
+    {
+      "grouped_evaluation_offline_edit_all_ten_reconnect_refresh": "PASS",
+      "language": "en",
+      "path": "path-sleep"
+    },
+    {
+      "language": "en",
+      "branch": 0,
+      "width": 1440,
+      "mode": "participant_paced",
+      "theme": "light",
+      "ui_locale": "en",
+      "status": "PASS"
+    },
+    {
+      "language": "en",
+      "branch": 1,
+      "width": 390,
+      "mode": "trainer_paced",
+      "theme": "dark",
+      "ui_locale": "en",
+      "status": "PASS"
+    },
+    {
+      "grouped_evaluation_offline_edit_all_ten_reconnect_refresh": "PASS",
+      "language": "en",
+      "path": "path-scholarship"
+    },
+    {
+      "language": "en",
+      "branch": 1,
+      "width": 1440,
+      "mode": "participant_paced",
+      "theme": "dark",
+      "ui_locale": "en",
+      "status": "PASS"
+    }
+  ]
+}

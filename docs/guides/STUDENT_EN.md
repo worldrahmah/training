@@ -1,4 +1,4 @@
-# Student / Participant usage guide — RC1R10
+# Student / Participant usage guide — RC1R17
 
 ## Get an account and sign in
 
@@ -38,7 +38,7 @@ Review learning history, class schedule/calendar, mission feedback, achievements
 
 If you cannot join, confirm account, code, approval and capacity with the Trainer. If a response fails, read the error, check saved state/queue and retry only when appropriate. If the host is unavailable, keep your work and wait for reconnection; Internet access will not replace the classroom server. Expired sessions require sign-in. Unexpectedly visible private answers or another person's details should be reported immediately to the Trainer. Sign out on shared devices and close downloaded personal reports when finished.
 
-## Current workspace repairs (RC1R10)
+## Current workspace repairs (RC1R17)
 
 My profile → Change photo accepts validated PNG/JPEG up to 2 MiB. The saved picture appears in your account menu on return to the workspace. The main class/task loads before optional transcript/tools/inbox data; those sections can finish afterward. Loading still depends on the host and LAN.
 

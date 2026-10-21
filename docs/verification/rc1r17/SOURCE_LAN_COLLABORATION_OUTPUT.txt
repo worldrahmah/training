@@ -1,0 +1,15 @@
+PASS staff text delivered incrementally and escaped
+PASS authenticated file uploaded and downloaded by peer
+PASS real MediaRecorder voice note saved and playable
+PASS actual audio peer connection, live tracks, mute and hangup
+PASS actual video peer connection, live tracks, mute and hangup
+PASS administrator assigns task, assignee completes checklist and status
+PASS calendar complete local-day counts, Beirut midnight and day drilldown
+PASS participant class note saved and exported on mobile
+PASS 1000 account picker bounded to 25 rows, cross-page selections retained
+PASS 100 course searchable version table selects and creates actual class
+PASS /admin overview uses full history filters, detail dialog and working Open class
+PASS /trainer overview uses full history filters, detail dialog and working Open class
+PASS live operations hero follows personal color and theme
+PASS Arabic RTL dark personal color and 390/768/1440 responsive staff calendar
+BROWSER_STAFF_COLLABORATION_PASS 14 journeys, including real fake-device audio/video peer streams

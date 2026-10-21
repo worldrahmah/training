@@ -67,6 +67,7 @@
     "node tests/operational-workspace.mjs",
     "node tests/personal-preferences.mjs",
     "node tests/personal-workspace.mjs",
+    "node tests/staff-events.mjs",
     "node tests/staff-collaboration.mjs",
     "node tests/staff-load.mjs",
     "node tests/guided-persistence.mjs",
@@ -86,6 +87,7 @@
     "python tests/browser-personal-workspace.py",
     "python tests/browser-staff-collaboration.py",
     "python tests/browser-guided-official.py",
-    "python tests/browser-guided-persistence.py"
+    "python tests/browser-guided-persistence.py",
+    "python tests/browser-staff-experience.py"
   ]
 }

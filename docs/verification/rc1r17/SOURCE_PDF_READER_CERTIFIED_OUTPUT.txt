@@ -1,0 +1,1 @@
+PDF_RENDER_ACCEPTANCE_PASS 34 reports with actual logo, embedded-font text and reader rendering

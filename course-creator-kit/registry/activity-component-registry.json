@@ -1,6 +1,6 @@
 {
   "format": "training-engine-one-capability-registry",
-  "registry_version": "3.5.0-rc.1.16",
+  "registry_version": "3.5.0-rc.1.17",
   "status": "guided-experience-professional-closure",
   "projector": {
     "themes": [
@@ -928,7 +928,33 @@
         "calendar",
         "ics_export"
       ],
-      "private_incremental_updates": true
+      "private_incremental_updates": true,
+      "global_unread_indicator": true,
+      "global_incoming_calls": true,
+      "private_updates": "authenticated_stream_invalidation_with_scoped_fetch_and_poll_fallback",
+      "cross_tab_stream_sharing": "Web_Locks_and_BroadcastChannel_when_supported",
+      "message_sound_seconds": 2,
+      "ringing": "incoming_and_outgoing_respects_user_sound_and_browser_activation",
+      "task_route": "/tasks",
+      "calendar_route": "/calendar",
+      "task_filters": [
+        "ownership",
+        "status",
+        "priority",
+        "due",
+        "search"
+      ],
+      "task_page_sizes": [
+        10,
+        25,
+        50
+      ],
+      "calendar_views": [
+        "day",
+        "week",
+        "month",
+        "year"
+      ]
     },
     "participant_notes": {
       "own_only": true,

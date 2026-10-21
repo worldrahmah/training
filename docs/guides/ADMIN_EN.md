@@ -1,4 +1,4 @@
-# Admin usage guide — RC1R10
+# Admin usage guide — RC1R17
 
 ## First launch and sign-in
 
@@ -38,7 +38,7 @@ Use backup tools to create and verify a complete backup of database plus storage
 
 A permission denial means assignment/grants need review; do not edit the database. A stale-version conflict requires refresh/review, not forced overwrite. Check data is saved before retrying after a network interruption. An expired Projector pairing must be renewed. For missing files check the supported version/enrollment/pairing and asset packaging. For startup failures check Node version, log and occupied port; do not run two servers against one data directory. Sign out on shared devices, verify backup, and stop only the intended instance. Owner Windows/LAN/browser/Projector visual acceptance remains required; automation does not establish FINAL release acceptance.
 
-## Current workspace repairs (RC1R10)
+## Current workspace repairs (RC1R17)
 
 Your saved profile photo appears in the account menu and workspace identity. Change photo in My profile accepts validated PNG/JPEG up to 2 MiB. Returning to the Student workspace shows the main class/task before optional transcript, inbox and learning tools finish. Network or server failure can still delay the main task; this is not a guarantee of a fixed loading time.
 
@@ -102,3 +102,10 @@ The staff calendar uses each browser’s local time zone, including tasks close 
 ## RC1R16: reliable Guided saves
 
 Acknowledge, evidence and answers must receive server confirmation before required Next/Finish. Actual offline edits remain saved on this device and replay when the server is reachable. A server/authentication/validation error has its own message; use Saved guided changes to review, retry or discard unresolved work. Do not clear browser storage. Reload old tabs after upgrade; an old queued answer without a revision needs review, preserving newer work. Uploads and fresh page loads need a connection. Staff workspace tools from RC1R15 remain included. See the release certification and root-cause reports for tested scope and deployment limits.
+
+
+## Messaging and work planning — RC1R17
+
+The Messages icon beside Notifications shows received unread messages on staff pages. Open a conversation to send text, files or a voice note. Removing your own message requires confirmation. Audio/video calls can arrive while you are in another staff workspace; accept/decline, mute, camera and end controls are explicit. The message cue lasts about2seconds; calling rings until answered/ended. Use Enable sound if browser activation is required. Personal preferences, permissions and Admin policy apply. Media needs HTTPS or loopback and suitable connectivity. Keep the call page open and use a separate tab to navigate during a call.
+
+Tasks and Calendar are separate pages outside Chat. Filter by ownership, status, priority, due date and search, and choose10/25/50 rows. Open task details for notes, checklists, dates and recurrence, or complete/reopen from the list. Calendar offers day/week/month/year with day drilldown and matching agenda. Export calendar uses current filters. Assigning others requires permission; only the creator may reassign/remove.

@@ -1,8 +1,8 @@
 {
   "format": "training-engine-one-release",
-  "release_name": "TRAINING_ENGINE_ONE_v3.5.0_RC1R16",
+  "release_name": "TRAINING_ENGINE_ONE_v3.5.0_RC1R17",
   "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
-  "app_version": "3.5.0-rc.1.16",
+  "app_version": "3.5.0-rc.1.17",
   "core_schema_version": "3.2",
   "course_authoring_schema_version": "2.0",
   "baseline_core_v2_1_1_sha256": "82a8f0dd04f658429eec7d153319da5953e2bf0f308a43c2293f5947b7c755f5",
@@ -118,12 +118,7 @@
   "preserved_continuation_baseline": "538d6be30bb9bf76de3215bbd72e607ab4655bbf",
   "workspace_schema": "8",
   "current_operational_review": "docs/RC1R16_OPERATIONAL_REVIEW.md",
-  "source_validation": "PASS_71_NODE_14_BROWSER_178_SYNTAX_106_KIT_34_PDF",
-  "exact_zip_verification": {
-    "status": "PASS",
-    "sha256": "d7b9fdf5bb49bbcca4f57f948abb228ed43b95160d160520317f236a059ca3f3",
-    "source_commit": "ac1a976a846a1888bf2ab8fa4614dba3193f492a",
-    "files": 1454,
-    "receipt": "releases/rc1r16/SEAL_RESULT.json"
-  }
+  "source_validation": "PASS_72_NODE_15_BROWSER_186_SYNTAX_106_KIT_34_PDF",
+  "exact_zip_verification": "Pending immutable extraction/full repeat",
+  "previous_baseline": "ce04e23c238df2c17e7d6e080ad15ad208bab1ae"
 }

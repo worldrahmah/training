@@ -1,0 +1,330 @@
+{
+  "status": "PASS",
+  "assertions": 896,
+  "routes": [
+    {
+      "path": "path-a",
+      "step": "a-prepare",
+      "evidence": "acknowledge",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-evidence-none",
+      "evidence": "none",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-evidence-acknowledge",
+      "evidence": "acknowledge",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-evidence-external",
+      "evidence": "external",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-evidence-text",
+      "evidence": "text",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-evidence-url",
+      "evidence": "url",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-evidence-checklist",
+      "evidence": "checklist",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-evidence-file",
+      "evidence": "file",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-evidence-image",
+      "evidence": "image",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-question-single_choice",
+      "evidence": "none",
+      "interaction": "question-single_choice",
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-question-multiple_choice",
+      "evidence": "none",
+      "interaction": "question-multiple_choice",
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-question-rating",
+      "evidence": "none",
+      "interaction": "question-rating",
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-question-confidence",
+      "evidence": "none",
+      "interaction": "question-confidence",
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-question-reaction",
+      "evidence": "none",
+      "interaction": "question-reaction",
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-question-short_answer",
+      "evidence": "none",
+      "interaction": "question-short_answer",
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-question-long_answer",
+      "evidence": "none",
+      "interaction": "question-long_answer",
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-question-numeric_answer",
+      "evidence": "none",
+      "interaction": "question-numeric_answer",
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-question-checklist",
+      "evidence": "none",
+      "interaction": "question-checklist",
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-question-reflection",
+      "evidence": "none",
+      "interaction": "question-reflection",
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-question-self_assessment",
+      "evidence": "none",
+      "interaction": "question-self_assessment",
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-question-true_false",
+      "evidence": "none",
+      "interaction": "question-true_false",
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-converge",
+      "evidence": "acknowledge",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-a",
+      "step": "a-close",
+      "evidence": "acknowledge",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-prepare",
+      "evidence": "acknowledge",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-evidence-none",
+      "evidence": "none",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-evidence-acknowledge",
+      "evidence": "acknowledge",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-evidence-external",
+      "evidence": "external",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-evidence-text",
+      "evidence": "text",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-evidence-url",
+      "evidence": "url",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-evidence-checklist",
+      "evidence": "checklist",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-evidence-file",
+      "evidence": "file",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-evidence-image",
+      "evidence": "image",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-question-single_choice",
+      "evidence": "none",
+      "interaction": "question-single_choice",
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-question-multiple_choice",
+      "evidence": "none",
+      "interaction": "question-multiple_choice",
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-question-rating",
+      "evidence": "none",
+      "interaction": "question-rating",
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-question-confidence",
+      "evidence": "none",
+      "interaction": "question-confidence",
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-question-reaction",
+      "evidence": "none",
+      "interaction": "question-reaction",
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-question-short_answer",
+      "evidence": "none",
+      "interaction": "question-short_answer",
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-question-long_answer",
+      "evidence": "none",
+      "interaction": "question-long_answer",
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-question-numeric_answer",
+      "evidence": "none",
+      "interaction": "question-numeric_answer",
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-question-checklist",
+      "evidence": "none",
+      "interaction": "question-checklist",
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-question-reflection",
+      "evidence": "none",
+      "interaction": "question-reflection",
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-question-self_assessment",
+      "evidence": "none",
+      "interaction": "question-self_assessment",
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-question-true_false",
+      "evidence": "none",
+      "interaction": "question-true_false",
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-converge",
+      "evidence": "acknowledge",
+      "interaction": null,
+      "status": "PASS"
+    },
+    {
+      "path": "path-b",
+      "step": "b-close",
+      "evidence": "acknowledge",
+      "interaction": null,
+      "status": "PASS"
+    }
+  ],
+  "integrity": "PASS",
+  "receipt_count": 276
+}
