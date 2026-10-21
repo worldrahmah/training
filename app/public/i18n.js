@@ -1,6 +1,12 @@
 import {readPreference,writePreference} from './personal-preferences.js';
 const KEY='training_engine_locale';
 const AR={
+"A connection to the server is required. Reconnect and try again.":"يلزم الاتصال بالخادم. أعد الاتصال وحاول مجددًا.",
+"The server could not be reached. Please try again.":"تعذّر الوصول إلى الخادم. أعد المحاولة.",
+"The request timed out. Please try again.":"انتهت مهلة الطلب. أعد المحاولة.",
+"The request could not be completed. Refresh and try again.":"تعذّر إكمال الطلب. حدّث الصفحة وأعد المحاولة.",
+"The server returned an invalid response. Refresh and try again.":"أعاد الخادم استجابة غير صالحة. حدّث الصفحة وأعد المحاولة.",
+
 "The save timed out. Your change is saved on this device; retry to confirm it.":"انتهت مهلة الحفظ. حُفظ التغيير على هذا الجهاز؛ أعد المحاولة لتأكيده.",
 "Sign in to confirm your saved changes.":"سجّل الدخول لتأكيد تغييراتك المحفوظة.",
 "You do not have permission to save this change.":"ليست لديك صلاحية حفظ هذا التغيير.",

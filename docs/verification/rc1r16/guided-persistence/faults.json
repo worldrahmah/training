@@ -1,0 +1,74 @@
+[
+  {
+    "status": 500,
+    "body": "html",
+    "code": "SERVER_ERROR",
+    "result": "PASS"
+  },
+  {
+    "status": 500,
+    "body": "json",
+    "code": "SERVER_ERROR",
+    "result": "PASS"
+  },
+  {
+    "status": 422,
+    "body": "html",
+    "code": "VALIDATION_ERROR",
+    "result": "PASS"
+  },
+  {
+    "status": 422,
+    "body": "json",
+    "code": "VALIDATION_ERROR",
+    "result": "PASS"
+  },
+  {
+    "status": 401,
+    "body": "json",
+    "code": "UNAUTHORIZED",
+    "result": "PASS"
+  },
+  {
+    "status": 403,
+    "body": "json",
+    "code": "FORBIDDEN",
+    "result": "PASS"
+  },
+  {
+    "status": 404,
+    "body": "html",
+    "code": "NOT_FOUND",
+    "result": "PASS"
+  },
+  {
+    "status": 409,
+    "body": "json",
+    "code": "CONFLICT",
+    "result": "PASS"
+  },
+  {
+    "status": 200,
+    "body": "html",
+    "code": "CLIENT_RUNTIME_ERROR",
+    "result": "PASS"
+  },
+  {
+    "offline_refresh_reconnect": "PASS"
+  },
+  {
+    "lost_reply_after_commit": "PASS"
+  },
+  {
+    "same_participant_two_tab_stale_write": "PASS"
+  },
+  {
+    "refresh_before_and_after_path_selection": "PASS"
+  },
+  {
+    "refresh_while_save_pending_after_commit": "PASS"
+  },
+  {
+    "different_tab_offline_chain_never_rebased": "PASS"
+  }
+]

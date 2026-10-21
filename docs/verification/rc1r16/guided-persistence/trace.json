@@ -1,0 +1,4402 @@
+[
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-prepare",
+    "offline_pending": [
+      {
+        "id": "f403d893ca2e1da443dff2f9d6bed164",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 2,
+          "expected_step_id": "a-prepare",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:33.524Z",
+            "evidence": {
+              "acknowledged": true,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "prompt": "Offline draft a-prepare"
+            },
+            "updated_at": "2026-10-21T11:26:34.716Z"
+          },
+          "client_write_id": "f403d893ca2e1da443dff2f9d6bed164"
+        },
+        "origin_instance": "1e2879ae66be70ce2c6f07336c1fa845",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:35.216Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:26:35.217Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:26:35.232Z"
+        }
+      },
+      {
+        "id": "00db15f9bc90e016e4062ea537730abe",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 2,
+          "expected_step_id": "a-prepare",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:33.524Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "prompt": "Offline draft a-prepare"
+            },
+            "updated_at": "2026-10-21T11:26:34.716Z"
+          },
+          "client_write_id": "00db15f9bc90e016e4062ea537730abe"
+        },
+        "origin_instance": "1e2879ae66be70ce2c6f07336c1fa845",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:35.624Z",
+        "retry_count": 0
+      },
+      {
+        "id": "570af1b5fe7e3219636594e63410a721",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 2,
+          "expected_step_id": "a-prepare",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:33.524Z",
+            "evidence": {
+              "acknowledged": true,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "prompt": "Offline draft a-prepare"
+            },
+            "updated_at": "2026-10-21T11:26:34.716Z"
+          },
+          "client_write_id": "570af1b5fe7e3219636594e63410a721"
+        },
+        "origin_instance": "1e2879ae66be70ce2c6f07336c1fa845",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:35.670Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-prepare",
+    "confirmed_revision": 5,
+    "server_evidence": {
+      "acknowledged": true,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "prompt": "Offline draft a-prepare"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-none",
+    "offline_pending": [
+      {
+        "id": "645bec07be962f5fc4e2b55d7afad82b",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 6,
+          "expected_step_id": "a-evidence-none",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:36.938Z",
+            "evidence": {},
+            "prompts": {
+              "draft": "Offline draft a-evidence-none"
+            }
+          },
+          "client_write_id": "645bec07be962f5fc4e2b55d7afad82b"
+        },
+        "origin_instance": "d86c696af7bd9ece80cd6ff1d1f3c878",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:37.442Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:26:37.442Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:26:37.447Z"
+        }
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-none",
+    "confirmed_revision": 7,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-evidence-none"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-acknowledge",
+    "offline_pending": [
+      {
+        "id": "c58429870c07d3f398f90bf6d3c8a1c5",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 9,
+          "expected_step_id": "a-evidence-acknowledge",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:38.820Z",
+            "evidence": {
+              "acknowledged": true,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-acknowledge"
+            },
+            "updated_at": "2026-10-21T11:26:39.067Z"
+          },
+          "client_write_id": "c58429870c07d3f398f90bf6d3c8a1c5"
+        },
+        "origin_instance": "2d3f04f36f832b3c71dd6c6bd0ec970e",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:39.452Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:26:39.452Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:26:39.455Z"
+        }
+      },
+      {
+        "id": "8e673adfe184bb9919fc6f127b4904f4",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 9,
+          "expected_step_id": "a-evidence-acknowledge",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:38.820Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-acknowledge"
+            },
+            "updated_at": "2026-10-21T11:26:39.067Z"
+          },
+          "client_write_id": "8e673adfe184bb9919fc6f127b4904f4"
+        },
+        "origin_instance": "2d3f04f36f832b3c71dd6c6bd0ec970e",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:39.873Z",
+        "retry_count": 0
+      },
+      {
+        "id": "010642a8b9570cf560aac6463fbab870",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 9,
+          "expected_step_id": "a-evidence-acknowledge",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:38.820Z",
+            "evidence": {
+              "acknowledged": true,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-acknowledge"
+            },
+            "updated_at": "2026-10-21T11:26:39.067Z"
+          },
+          "client_write_id": "010642a8b9570cf560aac6463fbab870"
+        },
+        "origin_instance": "2d3f04f36f832b3c71dd6c6bd0ec970e",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:39.954Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-acknowledge",
+    "confirmed_revision": 12,
+    "server_evidence": {
+      "acknowledged": true,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-evidence-acknowledge"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-external",
+    "offline_pending": [
+      {
+        "id": "65a8c602a39f98667def35d094d369b9",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 14,
+          "expected_step_id": "a-evidence-external",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:40.856Z",
+            "evidence": {
+              "acknowledged": true,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-external"
+            },
+            "updated_at": "2026-10-21T11:26:41.117Z"
+          },
+          "client_write_id": "65a8c602a39f98667def35d094d369b9"
+        },
+        "origin_instance": "bba355c9e442f8eb48d0063715b3969f",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:41.459Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:26:41.459Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:26:41.462Z"
+        }
+      },
+      {
+        "id": "00a5196d5ebd87ce3c9b6910da26be4f",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 14,
+          "expected_step_id": "a-evidence-external",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:40.856Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-external"
+            },
+            "updated_at": "2026-10-21T11:26:41.117Z"
+          },
+          "client_write_id": "00a5196d5ebd87ce3c9b6910da26be4f"
+        },
+        "origin_instance": "bba355c9e442f8eb48d0063715b3969f",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:41.885Z",
+        "retry_count": 0
+      },
+      {
+        "id": "a9d3c61fa9f0e814e95d60a0626d4370",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 14,
+          "expected_step_id": "a-evidence-external",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:40.856Z",
+            "evidence": {
+              "acknowledged": true,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-external"
+            },
+            "updated_at": "2026-10-21T11:26:41.117Z"
+          },
+          "client_write_id": "a9d3c61fa9f0e814e95d60a0626d4370"
+        },
+        "origin_instance": "bba355c9e442f8eb48d0063715b3969f",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:41.941Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-external",
+    "confirmed_revision": 17,
+    "server_evidence": {
+      "acknowledged": true,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-evidence-external"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-text",
+    "offline_pending": [
+      {
+        "id": "6f6f53d781d8f15c20d93c1cbf0fa511",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 19,
+          "expected_step_id": "a-evidence-text",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:43.424Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "My online evidence",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-text"
+            },
+            "updated_at": "2026-10-21T11:26:43.532Z"
+          },
+          "client_write_id": "6f6f53d781d8f15c20d93c1cbf0fa511"
+        },
+        "origin_instance": "5888805695f9565b842bb54c1acc2a4f",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:43.941Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:26:43.941Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:26:43.947Z"
+        }
+      },
+      {
+        "id": "b41f28728f9364153aa2e3e4a4909004",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 19,
+          "expected_step_id": "a-evidence-text",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:43.424Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "My offline evidence",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-text"
+            },
+            "updated_at": "2026-10-21T11:26:43.532Z"
+          },
+          "client_write_id": "b41f28728f9364153aa2e3e4a4909004"
+        },
+        "origin_instance": "5888805695f9565b842bb54c1acc2a4f",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:43.969Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-text",
+    "confirmed_revision": 21,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "My offline evidence",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-evidence-text"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-url",
+    "offline_pending": [
+      {
+        "id": "def3153309a7a05d650e6a8d1244b1a8",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 23,
+          "expected_step_id": "a-evidence-url",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:44.738Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "https://example.com/evidence",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-url"
+            },
+            "updated_at": "2026-10-21T11:26:44.864Z"
+          },
+          "client_write_id": "def3153309a7a05d650e6a8d1244b1a8"
+        },
+        "origin_instance": "69e19bc3880c1107979e08c48da25070",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:45.192Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:26:45.193Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:26:45.196Z"
+        }
+      },
+      {
+        "id": "964f0b328316eb890de8e53eff61ef3c",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 23,
+          "expected_step_id": "a-evidence-url",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:44.738Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "https://example.com/offline",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-url"
+            },
+            "updated_at": "2026-10-21T11:26:44.864Z"
+          },
+          "client_write_id": "964f0b328316eb890de8e53eff61ef3c"
+        },
+        "origin_instance": "69e19bc3880c1107979e08c48da25070",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:45.268Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-url",
+    "confirmed_revision": 25,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "https://example.com/offline",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-evidence-url"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-checklist",
+    "offline_pending": [
+      {
+        "id": "fc77763a821f617c37bcf936142f8aa0",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 28,
+          "expected_step_id": "a-evidence-checklist",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:46.055Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": [
+                0,
+                1
+              ]
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-checklist"
+            },
+            "updated_at": "2026-10-21T11:26:47.155Z"
+          },
+          "client_write_id": "fc77763a821f617c37bcf936142f8aa0"
+        },
+        "origin_instance": "b2d0295f0c128e59140a896944f5e7ee",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:47.560Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:26:47.561Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:26:47.569Z"
+        }
+      },
+      {
+        "id": "98775092d8ed637a8a3051b06a642eab",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 28,
+          "expected_step_id": "a-evidence-checklist",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:46.055Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": [
+                1
+              ]
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-checklist"
+            },
+            "updated_at": "2026-10-21T11:26:47.155Z"
+          },
+          "client_write_id": "98775092d8ed637a8a3051b06a642eab"
+        },
+        "origin_instance": "b2d0295f0c128e59140a896944f5e7ee",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:47.984Z",
+        "retry_count": 0
+      },
+      {
+        "id": "3cdb5dc320008cef2d812382fb94b769",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 28,
+          "expected_step_id": "a-evidence-checklist",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:46.055Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": [
+                0,
+                1
+              ]
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-checklist"
+            },
+            "updated_at": "2026-10-21T11:26:47.155Z"
+          },
+          "client_write_id": "3cdb5dc320008cef2d812382fb94b769"
+        },
+        "origin_instance": "b2d0295f0c128e59140a896944f5e7ee",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:48.076Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-checklist",
+    "confirmed_revision": 31,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": [
+        0,
+        1
+      ]
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-evidence-checklist"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-file",
+    "offline_pending": [
+      {
+        "id": "11e4afd62c49e190c6f11ff5d9d44231",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 33,
+          "expected_step_id": "a-evidence-file",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:49.317Z",
+            "evidence": {
+              "submission_id": 1,
+              "name": "evidence.txt",
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-file"
+            },
+            "updated_at": "2026-10-21T11:26:49.447Z"
+          },
+          "client_write_id": "11e4afd62c49e190c6f11ff5d9d44231"
+        },
+        "origin_instance": "d107438bbd557d5b3087f4feefd74d6d",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:49.673Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:26:49.674Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:26:49.676Z"
+        }
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-file",
+    "confirmed_revision": 34,
+    "server_evidence": {
+      "submission_id": 1,
+      "name": "evidence.txt",
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-evidence-file"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-image",
+    "offline_pending": [
+      {
+        "id": "0ead01b94d1c262ad48979e82ae4bf61",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 36,
+          "expected_step_id": "a-evidence-image",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:50.398Z",
+            "evidence": {
+              "submission_id": 2,
+              "name": "report-logo.png",
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-evidence-image"
+            },
+            "updated_at": "2026-10-21T11:26:50.523Z"
+          },
+          "client_write_id": "0ead01b94d1c262ad48979e82ae4bf61"
+        },
+        "origin_instance": "9b0609e840accb8c45837174ca7479a5",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:50.865Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:26:50.865Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:26:50.873Z"
+        }
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-evidence-image",
+    "confirmed_revision": 37,
+    "server_evidence": {
+      "submission_id": 2,
+      "name": "report-logo.png",
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-evidence-image"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-single_choice",
+    "offline_pending": [
+      {
+        "id": "20ed5e2f213aae7c2c4b121c748605fe",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 40,
+          "expected_step_id": "a-question-single_choice",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:51.806Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-single_choice"
+            },
+            "updated_at": "2026-10-21T11:26:52.962Z"
+          },
+          "client_write_id": "20ed5e2f213aae7c2c4b121c748605fe"
+        },
+        "origin_instance": "d04ce5e70f931a9ff65346e933ffe24e",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:53.538Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:26:53.538Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:26:53.544Z"
+        }
+      },
+      {
+        "id": "c20c7b658185c66502f5a27e17df4429",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 40,
+          "expected_step_id": "a-question-single_choice",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:51.806Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-single_choice"
+            },
+            "updated_at": "2026-10-21T11:26:52.962Z"
+          },
+          "client_write_id": "c20c7b658185c66502f5a27e17df4429"
+        },
+        "origin_instance": "d04ce5e70f931a9ff65346e933ffe24e",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:53.875Z",
+        "retry_count": 0
+      },
+      {
+        "id": "84a55d4cd485c64437a90add13bd82e7",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "activity_id": "question-single_choice",
+          "answer": "Two",
+          "expected_revision": 40,
+          "expected_step_id": "a-question-single_choice",
+          "client_write_id": "84a55d4cd485c64437a90add13bd82e7"
+        },
+        "origin_instance": "d04ce5e70f931a9ff65346e933ffe24e",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:53.876Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-single_choice",
+    "confirmed_revision": 43,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-question-single_choice"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-multiple_choice",
+    "offline_pending": [
+      {
+        "id": "84106e97a4cbdd94bd4964ff37fe1b97",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 46,
+          "expected_step_id": "a-question-multiple_choice",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:54.783Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-multiple_choice"
+            },
+            "updated_at": "2026-10-21T11:26:55.378Z"
+          },
+          "client_write_id": "84106e97a4cbdd94bd4964ff37fe1b97"
+        },
+        "origin_instance": "57c2149dca21b58bc4960e16e4e90b74",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:55.721Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:26:55.721Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:26:55.723Z"
+        }
+      },
+      {
+        "id": "edabccdbf0174ee29d3ec2d29f0bdecf",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 46,
+          "expected_step_id": "a-question-multiple_choice",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:54.783Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-multiple_choice"
+            },
+            "updated_at": "2026-10-21T11:26:55.378Z"
+          },
+          "client_write_id": "edabccdbf0174ee29d3ec2d29f0bdecf"
+        },
+        "origin_instance": "57c2149dca21b58bc4960e16e4e90b74",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:56.306Z",
+        "retry_count": 0
+      },
+      {
+        "id": "b1ab201e3810bd3955c2a8428bafc524",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "activity_id": "question-multiple_choice",
+          "answer": [
+            "Two"
+          ],
+          "expected_revision": 46,
+          "expected_step_id": "a-question-multiple_choice",
+          "client_write_id": "b1ab201e3810bd3955c2a8428bafc524"
+        },
+        "origin_instance": "57c2149dca21b58bc4960e16e4e90b74",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:56.311Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-multiple_choice",
+    "confirmed_revision": 49,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-question-multiple_choice"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-rating",
+    "offline_pending": [
+      {
+        "id": "da83d72399190f74110ed83e820d1b46",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 52,
+          "expected_step_id": "a-question-rating",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:57.137Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-rating"
+            },
+            "updated_at": "2026-10-21T11:26:57.713Z"
+          },
+          "client_write_id": "da83d72399190f74110ed83e820d1b46"
+        },
+        "origin_instance": "39adfd81306b21f686b96039b1055d4d",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:58.164Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:26:58.164Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:26:58.167Z"
+        }
+      },
+      {
+        "id": "d940d9809e29a34324850dfe4b62b2f9",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 52,
+          "expected_step_id": "a-question-rating",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:57.137Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-rating"
+            },
+            "updated_at": "2026-10-21T11:26:57.713Z"
+          },
+          "client_write_id": "d940d9809e29a34324850dfe4b62b2f9"
+        },
+        "origin_instance": "39adfd81306b21f686b96039b1055d4d",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:58.640Z",
+        "retry_count": 0
+      },
+      {
+        "id": "c9acffbe9284f4576b0565ae4f3ea433",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "activity_id": "question-rating",
+          "answer": 2,
+          "expected_revision": 52,
+          "expected_step_id": "a-question-rating",
+          "client_write_id": "c9acffbe9284f4576b0565ae4f3ea433"
+        },
+        "origin_instance": "39adfd81306b21f686b96039b1055d4d",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:26:58.640Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-rating",
+    "confirmed_revision": 55,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-question-rating"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-confidence",
+    "offline_pending": [
+      {
+        "id": "52e135f18e628fe1148a12339a07a2d1",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 58,
+          "expected_step_id": "a-question-confidence",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:59.380Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-confidence"
+            },
+            "updated_at": "2026-10-21T11:27:00.427Z"
+          },
+          "client_write_id": "52e135f18e628fe1148a12339a07a2d1"
+        },
+        "origin_instance": "b4b785f0e5b19ef516ecae62078e4a01",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:00.724Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:00.724Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:27:00.730Z"
+        }
+      },
+      {
+        "id": "e920eef80525f626a21a6ac19f7f999d",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 58,
+          "expected_step_id": "a-question-confidence",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:26:59.380Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-confidence"
+            },
+            "updated_at": "2026-10-21T11:27:00.427Z"
+          },
+          "client_write_id": "e920eef80525f626a21a6ac19f7f999d"
+        },
+        "origin_instance": "b4b785f0e5b19ef516ecae62078e4a01",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:01.201Z",
+        "retry_count": 0
+      },
+      {
+        "id": "1fddaf6fc988ea8a5c45d7a343a4f79e",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "activity_id": "question-confidence",
+          "answer": 2,
+          "expected_revision": 58,
+          "expected_step_id": "a-question-confidence",
+          "client_write_id": "1fddaf6fc988ea8a5c45d7a343a4f79e"
+        },
+        "origin_instance": "b4b785f0e5b19ef516ecae62078e4a01",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:01.202Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-confidence",
+    "confirmed_revision": 61,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-question-confidence"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-reaction",
+    "offline_pending": [
+      {
+        "id": "880b5f6e218e4057f4eb4317f0c0a4ef",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 64,
+          "expected_step_id": "a-question-reaction",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:02.340Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-reaction"
+            },
+            "updated_at": "2026-10-21T11:27:03.381Z"
+          },
+          "client_write_id": "880b5f6e218e4057f4eb4317f0c0a4ef"
+        },
+        "origin_instance": "e81f940af227154a2c8e01b97718c0ae",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:03.639Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:03.639Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:27:03.641Z"
+        }
+      },
+      {
+        "id": "1979506122083886a6e6cde84e6794e6",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 64,
+          "expected_step_id": "a-question-reaction",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:02.340Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-reaction"
+            },
+            "updated_at": "2026-10-21T11:27:03.381Z"
+          },
+          "client_write_id": "1979506122083886a6e6cde84e6794e6"
+        },
+        "origin_instance": "e81f940af227154a2c8e01b97718c0ae",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:04.139Z",
+        "retry_count": 0
+      },
+      {
+        "id": "7fe41b1c9cefa21dca535b1fc31747a9",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "activity_id": "question-reaction",
+          "answer": "Two",
+          "expected_revision": 64,
+          "expected_step_id": "a-question-reaction",
+          "client_write_id": "7fe41b1c9cefa21dca535b1fc31747a9"
+        },
+        "origin_instance": "e81f940af227154a2c8e01b97718c0ae",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:04.140Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-reaction",
+    "confirmed_revision": 67,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-question-reaction"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-short_answer",
+    "offline_pending": [
+      {
+        "id": "d0aaa562218af67a22a1ee85b235126a",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 70,
+          "expected_step_id": "a-question-short_answer",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:04.979Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-short_answer"
+            },
+            "updated_at": "2026-10-21T11:27:06.001Z"
+          },
+          "client_write_id": "d0aaa562218af67a22a1ee85b235126a"
+        },
+        "origin_instance": "620dd07e87e0e1e62a3a1c9579e5ce0a",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:06.273Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:06.273Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:27:06.275Z"
+        }
+      },
+      {
+        "id": "e7231b861edcf2e161c5ad20ecf2527f",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 70,
+          "expected_step_id": "a-question-short_answer",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:04.979Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-short_answer"
+            },
+            "updated_at": "2026-10-21T11:27:06.001Z"
+          },
+          "client_write_id": "e7231b861edcf2e161c5ad20ecf2527f"
+        },
+        "origin_instance": "620dd07e87e0e1e62a3a1c9579e5ce0a",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:06.676Z",
+        "retry_count": 0
+      },
+      {
+        "id": "96209f0dd25b51c7ec975964a9aa9840",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "activity_id": "question-short_answer",
+          "answer": "Changed confirmed evidence",
+          "expected_revision": 70,
+          "expected_step_id": "a-question-short_answer",
+          "client_write_id": "96209f0dd25b51c7ec975964a9aa9840"
+        },
+        "origin_instance": "620dd07e87e0e1e62a3a1c9579e5ce0a",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:06.677Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-short_answer",
+    "confirmed_revision": 73,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-question-short_answer"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-long_answer",
+    "offline_pending": [
+      {
+        "id": "65c8c972db635e472b88e06ec72cae9a",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 76,
+          "expected_step_id": "a-question-long_answer",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:07.538Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-long_answer"
+            },
+            "updated_at": "2026-10-21T11:27:08.600Z"
+          },
+          "client_write_id": "65c8c972db635e472b88e06ec72cae9a"
+        },
+        "origin_instance": "69fc0936748fe3f1c40e55879f8f6c56",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:08.990Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:08.990Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:27:08.996Z"
+        }
+      },
+      {
+        "id": "0bcc90fb2cab7b27f587652530349606",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 76,
+          "expected_step_id": "a-question-long_answer",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:07.538Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-long_answer"
+            },
+            "updated_at": "2026-10-21T11:27:08.600Z"
+          },
+          "client_write_id": "0bcc90fb2cab7b27f587652530349606"
+        },
+        "origin_instance": "69fc0936748fe3f1c40e55879f8f6c56",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:09.417Z",
+        "retry_count": 0
+      },
+      {
+        "id": "816fdfcdd2f31b9f66fd6d15608fe508",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "activity_id": "question-long_answer",
+          "answer": "Changed confirmed evidence",
+          "expected_revision": 76,
+          "expected_step_id": "a-question-long_answer",
+          "client_write_id": "816fdfcdd2f31b9f66fd6d15608fe508"
+        },
+        "origin_instance": "69fc0936748fe3f1c40e55879f8f6c56",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:09.424Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-long_answer",
+    "confirmed_revision": 79,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-question-long_answer"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-numeric_answer",
+    "offline_pending": [
+      {
+        "id": "8fc6521231085958e3cf43185bcc05bf",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 82,
+          "expected_step_id": "a-question-numeric_answer",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:10.774Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-numeric_answer"
+            },
+            "updated_at": "2026-10-21T11:27:11.965Z"
+          },
+          "client_write_id": "8fc6521231085958e3cf43185bcc05bf"
+        },
+        "origin_instance": "7af433ee9ddfaf80d685a9a70ce5147c",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:12.525Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:12.525Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:27:12.532Z"
+        }
+      },
+      {
+        "id": "fad958f45ccad919bfca87e0a738f7b8",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 82,
+          "expected_step_id": "a-question-numeric_answer",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:10.774Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-numeric_answer"
+            },
+            "updated_at": "2026-10-21T11:27:11.965Z"
+          },
+          "client_write_id": "fad958f45ccad919bfca87e0a738f7b8"
+        },
+        "origin_instance": "7af433ee9ddfaf80d685a9a70ce5147c",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:12.951Z",
+        "retry_count": 0
+      },
+      {
+        "id": "c2e0f1c4120052012cb51e34b4ffbf83",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "activity_id": "question-numeric_answer",
+          "answer": 2,
+          "expected_revision": 82,
+          "expected_step_id": "a-question-numeric_answer",
+          "client_write_id": "c2e0f1c4120052012cb51e34b4ffbf83"
+        },
+        "origin_instance": "7af433ee9ddfaf80d685a9a70ce5147c",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:12.951Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-numeric_answer",
+    "confirmed_revision": 85,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-question-numeric_answer"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-checklist",
+    "offline_pending": [
+      {
+        "id": "4a95299080bf4550ef2d00711392aaa6",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 88,
+          "expected_step_id": "a-question-checklist",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:14.164Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-checklist"
+            },
+            "updated_at": "2026-10-21T11:27:14.726Z"
+          },
+          "client_write_id": "4a95299080bf4550ef2d00711392aaa6"
+        },
+        "origin_instance": "3f3c6c21b5f81c4016aa48e487452123",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:15.045Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:15.045Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:27:15.047Z"
+        }
+      },
+      {
+        "id": "ba5b4bc7e88c141d568773b878198450",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 88,
+          "expected_step_id": "a-question-checklist",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:14.164Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-checklist"
+            },
+            "updated_at": "2026-10-21T11:27:14.726Z"
+          },
+          "client_write_id": "ba5b4bc7e88c141d568773b878198450"
+        },
+        "origin_instance": "3f3c6c21b5f81c4016aa48e487452123",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:15.657Z",
+        "retry_count": 0
+      },
+      {
+        "id": "a853c934160390ee4d4fe3646121098a",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "activity_id": "question-checklist",
+          "answer": [
+            "Verify"
+          ],
+          "expected_revision": 88,
+          "expected_step_id": "a-question-checklist",
+          "client_write_id": "a853c934160390ee4d4fe3646121098a"
+        },
+        "origin_instance": "3f3c6c21b5f81c4016aa48e487452123",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:15.658Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-checklist",
+    "confirmed_revision": 91,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-question-checklist"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-reflection",
+    "offline_pending": [
+      {
+        "id": "b3345c81f78b835688ea2daed2e857ab",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 94,
+          "expected_step_id": "a-question-reflection",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:16.901Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-reflection"
+            },
+            "updated_at": "2026-10-21T11:27:17.951Z"
+          },
+          "client_write_id": "b3345c81f78b835688ea2daed2e857ab"
+        },
+        "origin_instance": "59369d07f96e9b0af64f0d3980113137",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:18.415Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:18.416Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:27:18.420Z"
+        }
+      },
+      {
+        "id": "ffd24a969fc1d6dd9c48295a89e6777a",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 94,
+          "expected_step_id": "a-question-reflection",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:16.901Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-reflection"
+            },
+            "updated_at": "2026-10-21T11:27:17.951Z"
+          },
+          "client_write_id": "ffd24a969fc1d6dd9c48295a89e6777a"
+        },
+        "origin_instance": "59369d07f96e9b0af64f0d3980113137",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:18.871Z",
+        "retry_count": 0
+      },
+      {
+        "id": "0528aec4e11dc742341de7bc6e55c371",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "activity_id": "question-reflection",
+          "answer": "Changed confirmed evidence",
+          "expected_revision": 94,
+          "expected_step_id": "a-question-reflection",
+          "client_write_id": "0528aec4e11dc742341de7bc6e55c371"
+        },
+        "origin_instance": "59369d07f96e9b0af64f0d3980113137",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:18.872Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-reflection",
+    "confirmed_revision": 97,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-question-reflection"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-self_assessment",
+    "offline_pending": [
+      {
+        "id": "c6c2e1861e86c0738b71c53dc4870f85",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 100,
+          "expected_step_id": "a-question-self_assessment",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:20.178Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-self_assessment"
+            },
+            "updated_at": "2026-10-21T11:27:20.885Z"
+          },
+          "client_write_id": "c6c2e1861e86c0738b71c53dc4870f85"
+        },
+        "origin_instance": "023f9751e0254d732fb26d4f54abcd7c",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:21.254Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:21.255Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:27:21.257Z"
+        }
+      },
+      {
+        "id": "e7c0de8b76fe5644f4c9a8cd5fe5c4fa",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 100,
+          "expected_step_id": "a-question-self_assessment",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:20.178Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-self_assessment"
+            },
+            "updated_at": "2026-10-21T11:27:20.885Z"
+          },
+          "client_write_id": "e7c0de8b76fe5644f4c9a8cd5fe5c4fa"
+        },
+        "origin_instance": "023f9751e0254d732fb26d4f54abcd7c",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:21.666Z",
+        "retry_count": 0
+      },
+      {
+        "id": "f3b2ca91ebff00668e2e9984dd7ac8c2",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "activity_id": "question-self_assessment",
+          "answer": "Changed confirmed evidence",
+          "expected_revision": 100,
+          "expected_step_id": "a-question-self_assessment",
+          "client_write_id": "f3b2ca91ebff00668e2e9984dd7ac8c2"
+        },
+        "origin_instance": "023f9751e0254d732fb26d4f54abcd7c",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:21.667Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-self_assessment",
+    "confirmed_revision": 103,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-question-self_assessment"
+    }
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-true_false",
+    "offline_pending": [
+      {
+        "id": "2ab7f2f59f37bcde94589791b295f487",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 106,
+          "expected_step_id": "a-question-true_false",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:22.960Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-true_false"
+            },
+            "updated_at": "2026-10-21T11:27:24.017Z"
+          },
+          "client_write_id": "2ab7f2f59f37bcde94589791b295f487"
+        },
+        "origin_instance": "538cf77d926b7a26824cadf17225d2dd",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:24.349Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:24.350Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/2",
+          "at": "2026-10-21T11:27:24.352Z"
+        }
+      },
+      {
+        "id": "bddf1c6f810782c6f8345806e2071aed",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "expected_revision": 106,
+          "expected_step_id": "a-question-true_false",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:22.960Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft a-question-true_false"
+            },
+            "updated_at": "2026-10-21T11:27:24.017Z"
+          },
+          "client_write_id": "bddf1c6f810782c6f8345806e2071aed"
+        },
+        "origin_instance": "538cf77d926b7a26824cadf17225d2dd",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:24.791Z",
+        "retry_count": 0
+      },
+      {
+        "id": "66cd45c44e659203aede240110263f97",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 2,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-a",
+          "activity_id": "question-true_false",
+          "answer": false,
+          "expected_revision": 106,
+          "expected_step_id": "a-question-true_false",
+          "client_write_id": "66cd45c44e659203aede240110263f97"
+        },
+        "origin_instance": "538cf77d926b7a26824cadf17225d2dd",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:24.792Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 2,
+    "path": "path-a",
+    "step": "a-question-true_false",
+    "confirmed_revision": 109,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft a-question-true_false"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-prepare",
+    "offline_pending": [
+      {
+        "id": "48550320b2a56c99dd78192618cb70a1",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 2,
+          "expected_step_id": "b-prepare",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:31.737Z",
+            "evidence": {
+              "acknowledged": true,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "prompt": "Offline draft b-prepare"
+            },
+            "updated_at": "2026-10-21T11:27:32.577Z"
+          },
+          "client_write_id": "48550320b2a56c99dd78192618cb70a1"
+        },
+        "origin_instance": "45bb35097ad555f6424139ebcb29ae40",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:32.949Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:32.950Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:27:32.955Z"
+        }
+      },
+      {
+        "id": "33f4a2d0c11919afc2048d1b7f166342",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 2,
+          "expected_step_id": "b-prepare",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:31.737Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "prompt": "Offline draft b-prepare"
+            },
+            "updated_at": "2026-10-21T11:27:32.577Z"
+          },
+          "client_write_id": "33f4a2d0c11919afc2048d1b7f166342"
+        },
+        "origin_instance": "45bb35097ad555f6424139ebcb29ae40",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:33.379Z",
+        "retry_count": 0
+      },
+      {
+        "id": "d0da89fb25920988917a56c84b89fde7",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 2,
+          "expected_step_id": "b-prepare",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:31.737Z",
+            "evidence": {
+              "acknowledged": true,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "prompt": "Offline draft b-prepare"
+            },
+            "updated_at": "2026-10-21T11:27:32.577Z"
+          },
+          "client_write_id": "d0da89fb25920988917a56c84b89fde7"
+        },
+        "origin_instance": "45bb35097ad555f6424139ebcb29ae40",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:33.420Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-prepare",
+    "confirmed_revision": 5,
+    "server_evidence": {
+      "acknowledged": true,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "prompt": "Offline draft b-prepare"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-none",
+    "offline_pending": [
+      {
+        "id": "7aeb87de1e6c2af1e10eb81ea6cfb7f5",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 6,
+          "expected_step_id": "b-evidence-none",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:34.095Z",
+            "evidence": {},
+            "prompts": {
+              "draft": "Offline draft b-evidence-none"
+            }
+          },
+          "client_write_id": "7aeb87de1e6c2af1e10eb81ea6cfb7f5"
+        },
+        "origin_instance": "cba4aed4eb8b72d8697a3dccfe7b07dd",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:34.386Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:34.386Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:27:34.389Z"
+        }
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-none",
+    "confirmed_revision": 7,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-evidence-none"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-acknowledge",
+    "offline_pending": [
+      {
+        "id": "0b95b01c88f8a3c83cde1aca1533119a",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 9,
+          "expected_step_id": "b-evidence-acknowledge",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:35.600Z",
+            "evidence": {
+              "acknowledged": true,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-acknowledge"
+            },
+            "updated_at": "2026-10-21T11:27:36.117Z"
+          },
+          "client_write_id": "0b95b01c88f8a3c83cde1aca1533119a"
+        },
+        "origin_instance": "793d686f62af3c3ceb7609b0573127a4",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:36.462Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:36.462Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:27:36.464Z"
+        }
+      },
+      {
+        "id": "6f9478505e9680292c38352ddbd4044f",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 9,
+          "expected_step_id": "b-evidence-acknowledge",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:35.600Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-acknowledge"
+            },
+            "updated_at": "2026-10-21T11:27:36.117Z"
+          },
+          "client_write_id": "6f9478505e9680292c38352ddbd4044f"
+        },
+        "origin_instance": "793d686f62af3c3ceb7609b0573127a4",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:36.872Z",
+        "retry_count": 0
+      },
+      {
+        "id": "ea6be7f2d9aa3187a2cc76d24dcb3d86",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 9,
+          "expected_step_id": "b-evidence-acknowledge",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:35.600Z",
+            "evidence": {
+              "acknowledged": true,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-acknowledge"
+            },
+            "updated_at": "2026-10-21T11:27:36.117Z"
+          },
+          "client_write_id": "ea6be7f2d9aa3187a2cc76d24dcb3d86"
+        },
+        "origin_instance": "793d686f62af3c3ceb7609b0573127a4",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:36.918Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-acknowledge",
+    "confirmed_revision": 12,
+    "server_evidence": {
+      "acknowledged": true,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-evidence-acknowledge"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-external",
+    "offline_pending": [
+      {
+        "id": "bef0d8f28fc7aa81ae4de3b3b08423d0",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 14,
+          "expected_step_id": "b-evidence-external",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:37.765Z",
+            "evidence": {
+              "acknowledged": true,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-external"
+            },
+            "updated_at": "2026-10-21T11:27:38.910Z"
+          },
+          "client_write_id": "bef0d8f28fc7aa81ae4de3b3b08423d0"
+        },
+        "origin_instance": "36ba40edd9e1e427c371790642d2b601",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:39.274Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:39.275Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:27:39.278Z"
+        }
+      },
+      {
+        "id": "08469b5e2d8dc86111ce60c8aa03bb40",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 14,
+          "expected_step_id": "b-evidence-external",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:37.765Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-external"
+            },
+            "updated_at": "2026-10-21T11:27:38.910Z"
+          },
+          "client_write_id": "08469b5e2d8dc86111ce60c8aa03bb40"
+        },
+        "origin_instance": "36ba40edd9e1e427c371790642d2b601",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:39.673Z",
+        "retry_count": 0
+      },
+      {
+        "id": "5b996025b8b9141f6fe41304fd337825",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 14,
+          "expected_step_id": "b-evidence-external",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:37.765Z",
+            "evidence": {
+              "acknowledged": true,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-external"
+            },
+            "updated_at": "2026-10-21T11:27:38.910Z"
+          },
+          "client_write_id": "5b996025b8b9141f6fe41304fd337825"
+        },
+        "origin_instance": "36ba40edd9e1e427c371790642d2b601",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:39.752Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-external",
+    "confirmed_revision": 17,
+    "server_evidence": {
+      "acknowledged": true,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-evidence-external"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-text",
+    "offline_pending": [
+      {
+        "id": "1a7dcdb713c27a890d1f6020fe159da5",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 19,
+          "expected_step_id": "b-evidence-text",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:40.651Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "My online evidence",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-text"
+            },
+            "updated_at": "2026-10-21T11:27:40.733Z"
+          },
+          "client_write_id": "1a7dcdb713c27a890d1f6020fe159da5"
+        },
+        "origin_instance": "6b36693891b7b99d16c47d3b1d0c9d96",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:41.081Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:41.082Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:27:41.093Z"
+        }
+      },
+      {
+        "id": "07d323a944afe29633fa5faed394a5d8",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 19,
+          "expected_step_id": "b-evidence-text",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:40.651Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "My offline evidence",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-text"
+            },
+            "updated_at": "2026-10-21T11:27:40.733Z"
+          },
+          "client_write_id": "07d323a944afe29633fa5faed394a5d8"
+        },
+        "origin_instance": "6b36693891b7b99d16c47d3b1d0c9d96",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:41.143Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-text",
+    "confirmed_revision": 21,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "My offline evidence",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-evidence-text"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-url",
+    "offline_pending": [
+      {
+        "id": "557aa36c18b28fa91116f326d5e05abf",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 23,
+          "expected_step_id": "b-evidence-url",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:42.397Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "https://example.com/evidence",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-url"
+            },
+            "updated_at": "2026-10-21T11:27:42.486Z"
+          },
+          "client_write_id": "557aa36c18b28fa91116f326d5e05abf"
+        },
+        "origin_instance": "6a783f4889466b2873cb94ec4303f74a",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:43.035Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:43.035Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:27:43.039Z"
+        }
+      },
+      {
+        "id": "d3a59b80f4f359aa7959a04b59088985",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 23,
+          "expected_step_id": "b-evidence-url",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:42.397Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "https://example.com/offline",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-url"
+            },
+            "updated_at": "2026-10-21T11:27:42.486Z"
+          },
+          "client_write_id": "d3a59b80f4f359aa7959a04b59088985"
+        },
+        "origin_instance": "6a783f4889466b2873cb94ec4303f74a",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:43.102Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-url",
+    "confirmed_revision": 25,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "https://example.com/offline",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-evidence-url"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-checklist",
+    "offline_pending": [
+      {
+        "id": "1d9d331dc0a43a9b6492e4456c5826d5",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 28,
+          "expected_step_id": "b-evidence-checklist",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:44.325Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": [
+                0,
+                1
+              ]
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-checklist"
+            },
+            "updated_at": "2026-10-21T11:27:45.506Z"
+          },
+          "client_write_id": "1d9d331dc0a43a9b6492e4456c5826d5"
+        },
+        "origin_instance": "6eada86d907e70842bf02fc07b84145d",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:45.778Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:45.778Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:27:45.780Z"
+        }
+      },
+      {
+        "id": "71d77fae9df3e6040f63c46dddf6f6e2",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 28,
+          "expected_step_id": "b-evidence-checklist",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:44.325Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": [
+                1
+              ]
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-checklist"
+            },
+            "updated_at": "2026-10-21T11:27:45.506Z"
+          },
+          "client_write_id": "71d77fae9df3e6040f63c46dddf6f6e2"
+        },
+        "origin_instance": "6eada86d907e70842bf02fc07b84145d",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:46.198Z",
+        "retry_count": 0
+      },
+      {
+        "id": "2071ce0565d4069d7de0e2a877275c61",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 28,
+          "expected_step_id": "b-evidence-checklist",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:44.325Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": [
+                0,
+                1
+              ]
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-checklist"
+            },
+            "updated_at": "2026-10-21T11:27:45.506Z"
+          },
+          "client_write_id": "2071ce0565d4069d7de0e2a877275c61"
+        },
+        "origin_instance": "6eada86d907e70842bf02fc07b84145d",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:46.254Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-checklist",
+    "confirmed_revision": 31,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": [
+        0,
+        1
+      ]
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-evidence-checklist"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-file",
+    "offline_pending": [
+      {
+        "id": "8f0b8d4632cef29dd32fef9acb7bf715",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 33,
+          "expected_step_id": "b-evidence-file",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:47.012Z",
+            "evidence": {
+              "submission_id": 3,
+              "name": "evidence.txt",
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-file"
+            },
+            "updated_at": "2026-10-21T11:27:47.150Z"
+          },
+          "client_write_id": "8f0b8d4632cef29dd32fef9acb7bf715"
+        },
+        "origin_instance": "eed46ee6a89339033d34d4cdc413f6ea",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:47.699Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:47.700Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:27:47.705Z"
+        }
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-file",
+    "confirmed_revision": 34,
+    "server_evidence": {
+      "submission_id": 3,
+      "name": "evidence.txt",
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-evidence-file"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-image",
+    "offline_pending": [
+      {
+        "id": "069fe5c7d1bcff2a7784dfe352f1acf8",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 36,
+          "expected_step_id": "b-evidence-image",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:49.012Z",
+            "evidence": {
+              "submission_id": 4,
+              "name": "report-logo.png",
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-evidence-image"
+            },
+            "updated_at": "2026-10-21T11:27:49.141Z"
+          },
+          "client_write_id": "069fe5c7d1bcff2a7784dfe352f1acf8"
+        },
+        "origin_instance": "676497bb877cdda7011cbd77f0661df9",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:49.481Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:49.482Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:27:49.486Z"
+        }
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-evidence-image",
+    "confirmed_revision": 37,
+    "server_evidence": {
+      "submission_id": 4,
+      "name": "report-logo.png",
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-evidence-image"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-single_choice",
+    "offline_pending": [
+      {
+        "id": "0bd188975c7c12b45ca9e19536a465bd",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 40,
+          "expected_step_id": "b-question-single_choice",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:50.925Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-single_choice"
+            },
+            "updated_at": "2026-10-21T11:27:51.515Z"
+          },
+          "client_write_id": "0bd188975c7c12b45ca9e19536a465bd"
+        },
+        "origin_instance": "31bb83922dd6441d0ca252de51d00346",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:51.879Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:51.880Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:27:51.885Z"
+        }
+      },
+      {
+        "id": "ccd7cc6323bcb60327300ab8c3ddb2e3",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 40,
+          "expected_step_id": "b-question-single_choice",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:50.925Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-single_choice"
+            },
+            "updated_at": "2026-10-21T11:27:51.515Z"
+          },
+          "client_write_id": "ccd7cc6323bcb60327300ab8c3ddb2e3"
+        },
+        "origin_instance": "31bb83922dd6441d0ca252de51d00346",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:52.348Z",
+        "retry_count": 0
+      },
+      {
+        "id": "b706ba7521077cb0d02630208b5929b3",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "activity_id": "question-single_choice",
+          "answer": "Two",
+          "expected_revision": 40,
+          "expected_step_id": "b-question-single_choice",
+          "client_write_id": "b706ba7521077cb0d02630208b5929b3"
+        },
+        "origin_instance": "31bb83922dd6441d0ca252de51d00346",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:52.349Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-single_choice",
+    "confirmed_revision": 43,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-question-single_choice"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-multiple_choice",
+    "offline_pending": [
+      {
+        "id": "be30cceee79a4d7bd2273851a66d8dd0",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 46,
+          "expected_step_id": "b-question-multiple_choice",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:53.130Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-multiple_choice"
+            },
+            "updated_at": "2026-10-21T11:27:54.346Z"
+          },
+          "client_write_id": "be30cceee79a4d7bd2273851a66d8dd0"
+        },
+        "origin_instance": "70ab46152d4d33c3f83df6563a01f0e4",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:54.791Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:54.791Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:27:54.793Z"
+        }
+      },
+      {
+        "id": "5a894a536f7cae847c2c4e9e6474731e",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 46,
+          "expected_step_id": "b-question-multiple_choice",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:53.130Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-multiple_choice"
+            },
+            "updated_at": "2026-10-21T11:27:54.346Z"
+          },
+          "client_write_id": "5a894a536f7cae847c2c4e9e6474731e"
+        },
+        "origin_instance": "70ab46152d4d33c3f83df6563a01f0e4",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:55.321Z",
+        "retry_count": 0
+      },
+      {
+        "id": "c4f41317a857329d41f4647ba6d535c8",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "activity_id": "question-multiple_choice",
+          "answer": [
+            "Two"
+          ],
+          "expected_revision": 46,
+          "expected_step_id": "b-question-multiple_choice",
+          "client_write_id": "c4f41317a857329d41f4647ba6d535c8"
+        },
+        "origin_instance": "70ab46152d4d33c3f83df6563a01f0e4",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:55.321Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-multiple_choice",
+    "confirmed_revision": 49,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-question-multiple_choice"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-rating",
+    "offline_pending": [
+      {
+        "id": "8c569695cb1e12486396020a2a1a3ec7",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 52,
+          "expected_step_id": "b-question-rating",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:56.170Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-rating"
+            },
+            "updated_at": "2026-10-21T11:27:56.782Z"
+          },
+          "client_write_id": "8c569695cb1e12486396020a2a1a3ec7"
+        },
+        "origin_instance": "31f13329d3a1eb051cb1fd5e8692ce4d",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:57.193Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:27:57.194Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:27:57.202Z"
+        }
+      },
+      {
+        "id": "3187fcb259f9bc9a109837234b8a1e89",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 52,
+          "expected_step_id": "b-question-rating",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:56.170Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-rating"
+            },
+            "updated_at": "2026-10-21T11:27:56.782Z"
+          },
+          "client_write_id": "3187fcb259f9bc9a109837234b8a1e89"
+        },
+        "origin_instance": "31f13329d3a1eb051cb1fd5e8692ce4d",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:57.773Z",
+        "retry_count": 0
+      },
+      {
+        "id": "c622202d4a2c2c587fedb7c7d1a38c43",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "activity_id": "question-rating",
+          "answer": 2,
+          "expected_revision": 52,
+          "expected_step_id": "b-question-rating",
+          "client_write_id": "c622202d4a2c2c587fedb7c7d1a38c43"
+        },
+        "origin_instance": "31f13329d3a1eb051cb1fd5e8692ce4d",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:27:57.776Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-rating",
+    "confirmed_revision": 55,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-question-rating"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-confidence",
+    "offline_pending": [
+      {
+        "id": "effbedcc15ffcb8fd139a62c4021c43f",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 58,
+          "expected_step_id": "b-question-confidence",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:58.730Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-confidence"
+            },
+            "updated_at": "2026-10-21T11:27:59.841Z"
+          },
+          "client_write_id": "effbedcc15ffcb8fd139a62c4021c43f"
+        },
+        "origin_instance": "bd44a99837e273d540503360063eaa06",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:00.316Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:28:00.316Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:28:00.323Z"
+        }
+      },
+      {
+        "id": "da588068741a6d6bdf6e1cedd56108f4",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 58,
+          "expected_step_id": "b-question-confidence",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:27:58.730Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-confidence"
+            },
+            "updated_at": "2026-10-21T11:27:59.841Z"
+          },
+          "client_write_id": "da588068741a6d6bdf6e1cedd56108f4"
+        },
+        "origin_instance": "bd44a99837e273d540503360063eaa06",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:00.805Z",
+        "retry_count": 0
+      },
+      {
+        "id": "74e73542accb01ccf5ddc9f17a6b127c",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "activity_id": "question-confidence",
+          "answer": 2,
+          "expected_revision": 58,
+          "expected_step_id": "b-question-confidence",
+          "client_write_id": "74e73542accb01ccf5ddc9f17a6b127c"
+        },
+        "origin_instance": "bd44a99837e273d540503360063eaa06",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:00.805Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-confidence",
+    "confirmed_revision": 61,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-question-confidence"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-reaction",
+    "offline_pending": [
+      {
+        "id": "d5e538669489dd3114190f742cd244e7",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 64,
+          "expected_step_id": "b-question-reaction",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:01.803Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-reaction"
+            },
+            "updated_at": "2026-10-21T11:28:02.930Z"
+          },
+          "client_write_id": "d5e538669489dd3114190f742cd244e7"
+        },
+        "origin_instance": "9ec732ca99460f7f1446d324a316e428",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:03.288Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:28:03.289Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:28:03.292Z"
+        }
+      },
+      {
+        "id": "e36e2baca19132a3d54872acdadf9384",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 64,
+          "expected_step_id": "b-question-reaction",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:01.803Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-reaction"
+            },
+            "updated_at": "2026-10-21T11:28:02.930Z"
+          },
+          "client_write_id": "e36e2baca19132a3d54872acdadf9384"
+        },
+        "origin_instance": "9ec732ca99460f7f1446d324a316e428",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:03.770Z",
+        "retry_count": 0
+      },
+      {
+        "id": "54752dbd5429b9e27375df796dcd647f",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "activity_id": "question-reaction",
+          "answer": "Two",
+          "expected_revision": 64,
+          "expected_step_id": "b-question-reaction",
+          "client_write_id": "54752dbd5429b9e27375df796dcd647f"
+        },
+        "origin_instance": "9ec732ca99460f7f1446d324a316e428",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:03.770Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-reaction",
+    "confirmed_revision": 67,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-question-reaction"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-short_answer",
+    "offline_pending": [
+      {
+        "id": "f810e493d34dc024a00d3c9209a7afe6",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 70,
+          "expected_step_id": "b-question-short_answer",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:04.504Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-short_answer"
+            },
+            "updated_at": "2026-10-21T11:28:05.065Z"
+          },
+          "client_write_id": "f810e493d34dc024a00d3c9209a7afe6"
+        },
+        "origin_instance": "ed6bb7c1dddb8c20d23f1cd9f37443b6",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:05.385Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:28:05.386Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:28:05.390Z"
+        }
+      },
+      {
+        "id": "185a9f7ceb29fa91c8a308acb0eeb9b0",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 70,
+          "expected_step_id": "b-question-short_answer",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:04.504Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-short_answer"
+            },
+            "updated_at": "2026-10-21T11:28:05.065Z"
+          },
+          "client_write_id": "185a9f7ceb29fa91c8a308acb0eeb9b0"
+        },
+        "origin_instance": "ed6bb7c1dddb8c20d23f1cd9f37443b6",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:05.806Z",
+        "retry_count": 0
+      },
+      {
+        "id": "b5b8f25f5e2a88458473a3d87b71f0c1",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "activity_id": "question-short_answer",
+          "answer": "Changed confirmed evidence",
+          "expected_revision": 70,
+          "expected_step_id": "b-question-short_answer",
+          "client_write_id": "b5b8f25f5e2a88458473a3d87b71f0c1"
+        },
+        "origin_instance": "ed6bb7c1dddb8c20d23f1cd9f37443b6",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:05.808Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-short_answer",
+    "confirmed_revision": 73,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-question-short_answer"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-long_answer",
+    "offline_pending": [
+      {
+        "id": "d716724de1bcd49f965fe2222568ef76",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 76,
+          "expected_step_id": "b-question-long_answer",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:06.548Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-long_answer"
+            },
+            "updated_at": "2026-10-21T11:28:07.617Z"
+          },
+          "client_write_id": "d716724de1bcd49f965fe2222568ef76"
+        },
+        "origin_instance": "e4a7cb1061a72d6fa0b4376bdccd006f",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:07.926Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:28:07.927Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:28:07.931Z"
+        }
+      },
+      {
+        "id": "66d101607b802dd1972b8c5c1f24ced5",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 76,
+          "expected_step_id": "b-question-long_answer",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:06.548Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-long_answer"
+            },
+            "updated_at": "2026-10-21T11:28:07.617Z"
+          },
+          "client_write_id": "66d101607b802dd1972b8c5c1f24ced5"
+        },
+        "origin_instance": "e4a7cb1061a72d6fa0b4376bdccd006f",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:08.374Z",
+        "retry_count": 0
+      },
+      {
+        "id": "419953636e61789560fbae31226c2b89",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "activity_id": "question-long_answer",
+          "answer": "Changed confirmed evidence",
+          "expected_revision": 76,
+          "expected_step_id": "b-question-long_answer",
+          "client_write_id": "419953636e61789560fbae31226c2b89"
+        },
+        "origin_instance": "e4a7cb1061a72d6fa0b4376bdccd006f",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:08.374Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-long_answer",
+    "confirmed_revision": 79,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-question-long_answer"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-numeric_answer",
+    "offline_pending": [
+      {
+        "id": "a80844414ee1498b2651687119e4eb33",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 82,
+          "expected_step_id": "b-question-numeric_answer",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:09.368Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-numeric_answer"
+            },
+            "updated_at": "2026-10-21T11:28:10.446Z"
+          },
+          "client_write_id": "a80844414ee1498b2651687119e4eb33"
+        },
+        "origin_instance": "fdf1a886f5e405590fc244a6f894fb3c",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:10.772Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:28:10.772Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:28:10.774Z"
+        }
+      },
+      {
+        "id": "b53fd2a859d32c0badd086eaa8fb16cf",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 82,
+          "expected_step_id": "b-question-numeric_answer",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:09.368Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-numeric_answer"
+            },
+            "updated_at": "2026-10-21T11:28:10.446Z"
+          },
+          "client_write_id": "b53fd2a859d32c0badd086eaa8fb16cf"
+        },
+        "origin_instance": "fdf1a886f5e405590fc244a6f894fb3c",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:11.196Z",
+        "retry_count": 0
+      },
+      {
+        "id": "e5e27a859daa3733be8cf8c9a0e0af60",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "activity_id": "question-numeric_answer",
+          "answer": 2,
+          "expected_revision": 82,
+          "expected_step_id": "b-question-numeric_answer",
+          "client_write_id": "e5e27a859daa3733be8cf8c9a0e0af60"
+        },
+        "origin_instance": "fdf1a886f5e405590fc244a6f894fb3c",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:11.197Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-numeric_answer",
+    "confirmed_revision": 85,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-question-numeric_answer"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-checklist",
+    "offline_pending": [
+      {
+        "id": "275a77a7e434f3a7ed004d2ffa0e81ff",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 88,
+          "expected_step_id": "b-question-checklist",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:12.052Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-checklist"
+            },
+            "updated_at": "2026-10-21T11:28:13.149Z"
+          },
+          "client_write_id": "275a77a7e434f3a7ed004d2ffa0e81ff"
+        },
+        "origin_instance": "cae6bc586080b1b029a07f86321cd37c",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:13.474Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:28:13.474Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:28:13.476Z"
+        }
+      },
+      {
+        "id": "4c8b34cde08197bdbb2982dd0f0cbdf1",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 88,
+          "expected_step_id": "b-question-checklist",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:12.052Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-checklist"
+            },
+            "updated_at": "2026-10-21T11:28:13.149Z"
+          },
+          "client_write_id": "4c8b34cde08197bdbb2982dd0f0cbdf1"
+        },
+        "origin_instance": "cae6bc586080b1b029a07f86321cd37c",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:13.970Z",
+        "retry_count": 0
+      },
+      {
+        "id": "3250eae4257cf04a7d91e90870c80c03",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "activity_id": "question-checklist",
+          "answer": [
+            "Verify"
+          ],
+          "expected_revision": 88,
+          "expected_step_id": "b-question-checklist",
+          "client_write_id": "3250eae4257cf04a7d91e90870c80c03"
+        },
+        "origin_instance": "cae6bc586080b1b029a07f86321cd37c",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:13.971Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-checklist",
+    "confirmed_revision": 91,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-question-checklist"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-reflection",
+    "offline_pending": [
+      {
+        "id": "759d28ca894783d0bc3f21395b431414",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 94,
+          "expected_step_id": "b-question-reflection",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:14.674Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-reflection"
+            },
+            "updated_at": "2026-10-21T11:28:15.695Z"
+          },
+          "client_write_id": "759d28ca894783d0bc3f21395b431414"
+        },
+        "origin_instance": "875a84fab15aa5fe6697faf62593fd7a",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:16.070Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:28:16.070Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:28:16.075Z"
+        }
+      },
+      {
+        "id": "5839652e94c4911d7161213f26f8a1af",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 94,
+          "expected_step_id": "b-question-reflection",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:14.674Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-reflection"
+            },
+            "updated_at": "2026-10-21T11:28:15.695Z"
+          },
+          "client_write_id": "5839652e94c4911d7161213f26f8a1af"
+        },
+        "origin_instance": "875a84fab15aa5fe6697faf62593fd7a",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:16.373Z",
+        "retry_count": 0
+      },
+      {
+        "id": "347cda9fc82ef2326bb6cef71661c1c3",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "activity_id": "question-reflection",
+          "answer": "Changed confirmed evidence",
+          "expected_revision": 94,
+          "expected_step_id": "b-question-reflection",
+          "client_write_id": "347cda9fc82ef2326bb6cef71661c1c3"
+        },
+        "origin_instance": "875a84fab15aa5fe6697faf62593fd7a",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:16.374Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-reflection",
+    "confirmed_revision": 97,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-question-reflection"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-self_assessment",
+    "offline_pending": [
+      {
+        "id": "f01b1a8945a4f14b7d5bf6a7d83add8d",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 100,
+          "expected_step_id": "b-question-self_assessment",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:17.630Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-self_assessment"
+            },
+            "updated_at": "2026-10-21T11:28:18.645Z"
+          },
+          "client_write_id": "f01b1a8945a4f14b7d5bf6a7d83add8d"
+        },
+        "origin_instance": "846354b2238eb49d28144f94925281ba",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:18.945Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:28:18.946Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:28:18.949Z"
+        }
+      },
+      {
+        "id": "26ab649cbaf81c497c6be0cc811f313a",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 100,
+          "expected_step_id": "b-question-self_assessment",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:17.630Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-self_assessment"
+            },
+            "updated_at": "2026-10-21T11:28:18.645Z"
+          },
+          "client_write_id": "26ab649cbaf81c497c6be0cc811f313a"
+        },
+        "origin_instance": "846354b2238eb49d28144f94925281ba",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:19.353Z",
+        "retry_count": 0
+      },
+      {
+        "id": "accb6786698075ce6838b2c0d8393b9f",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "activity_id": "question-self_assessment",
+          "answer": "Changed confirmed evidence",
+          "expected_revision": 100,
+          "expected_step_id": "b-question-self_assessment",
+          "client_write_id": "accb6786698075ce6838b2c0d8393b9f"
+        },
+        "origin_instance": "846354b2238eb49d28144f94925281ba",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:19.354Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-self_assessment",
+    "confirmed_revision": 103,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-question-self_assessment"
+    }
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-true_false",
+    "offline_pending": [
+      {
+        "id": "fad4189ff7cb04f0df1ea5ab02f58afa",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 106,
+          "expected_step_id": "b-question-true_false",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:20.093Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-true_false"
+            },
+            "updated_at": "2026-10-21T11:28:21.182Z"
+          },
+          "client_write_id": "fad4189ff7cb04f0df1ea5ab02f58afa"
+        },
+        "origin_instance": "d0f7ebe6686d25a29cb296f3827577d1",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:21.460Z",
+        "retry_count": 1,
+        "attempted": true,
+        "last_attempt_at": "2026-10-21T11:28:21.460Z",
+        "error": "Saved on this device. Reconnect to continue.",
+        "last_error": {
+          "code": "OFFLINE",
+          "phase": "SAVE_FAILED",
+          "status": null,
+          "endpoint": "/api/student/runtime/3",
+          "at": "2026-10-21T11:28:21.462Z"
+        }
+      },
+      {
+        "id": "604ec5ef75d2c799e3d8e61984fffa2c",
+        "user_id": 2,
+        "kind": "progress",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "expected_revision": 106,
+          "expected_step_id": "b-question-true_false",
+          "guided_action": "save",
+          "step_data": {
+            "entered_at": "2026-10-21T11:28:20.093Z",
+            "evidence": {
+              "acknowledged": false,
+              "text": "",
+              "checked": []
+            },
+            "prompts": {
+              "draft": "Offline draft b-question-true_false"
+            },
+            "updated_at": "2026-10-21T11:28:21.182Z"
+          },
+          "client_write_id": "604ec5ef75d2c799e3d8e61984fffa2c"
+        },
+        "origin_instance": "d0f7ebe6686d25a29cb296f3827577d1",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:21.903Z",
+        "retry_count": 0
+      },
+      {
+        "id": "34b1c0a290e26e86c40581803e8a52bb",
+        "user_id": 2,
+        "kind": "response",
+        "class_id": 3,
+        "payload": {
+          "module_id": "persistence",
+          "path_id": "path-b",
+          "activity_id": "question-true_false",
+          "answer": false,
+          "expected_revision": 106,
+          "expected_step_id": "b-question-true_false",
+          "client_write_id": "34b1c0a290e26e86c40581803e8a52bb"
+        },
+        "origin_instance": "d0f7ebe6686d25a29cb296f3827577d1",
+        "status": "pending",
+        "queued_at": "2026-10-21T11:28:21.904Z",
+        "retry_count": 0
+      }
+    ]
+  },
+  {
+    "class_id": 3,
+    "path": "path-b",
+    "step": "b-question-true_false",
+    "confirmed_revision": 109,
+    "server_evidence": {
+      "acknowledged": false,
+      "text": "",
+      "checked": []
+    },
+    "server_prompts": {
+      "draft": "Offline draft b-question-true_false"
+    }
+  },
+  {
+    "request": {
+      "module_id": "persistence",
+      "path_id": "path-a",
+      "expected_revision": 2,
+      "expected_step_id": "a-prepare",
+      "guided_action": "save",
+      "step_data": {
+        "entered_at": "2026-10-21T11:29:20.665Z",
+        "evidence": {
+          "acknowledged": false,
+          "text": "",
+          "checked": []
+        },
+        "prompts": {},
+        "updated_at": "2026-10-21T11:29:23.596Z"
+      },
+      "client_write_id": "b565fadb9b1a10e1b3910a235730455e"
+    },
+    "reply": {
+      "ok": true,
+      "revision": 3,
+      "mutation_id": "b565fadb9b1a10e1b3910a235730455e",
+      "code": "CONFIRMED"
+    }
+  }
+]

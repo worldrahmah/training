@@ -1,0 +1,62 @@
+{
+  "before": {
+    "users": 9,
+    "courses": 1,
+    "course_versions": 1,
+    "classes": 1,
+    "responses": 0
+  },
+  "health": {
+    "ok": true,
+    "name": "Training Engine ONE",
+    "version": "3.5.0-rc.1.16",
+    "core_schema": "3.2",
+    "port": 3000,
+    "server_id": "079509c76cf03c9030d1d90d3d05a8a8",
+    "lan": "172.26.91.253",
+    "addresses": [
+      {
+        "name": "eth0",
+        "address": "172.26.91.253",
+        "score": 0
+      },
+      {
+        "name": "eth1",
+        "address": "172.31.11.94",
+        "score": 0
+      }
+    ],
+    "active_class_id": 1,
+    "active_class_ids": []
+  },
+  "html_routes": {
+    "/trainer": "PASS",
+    "/admin": "PASS",
+    "/student": "PASS",
+    "/student/class": "PASS",
+    "/live": "PASS",
+    "/editor": "PASS",
+    "/profile": "PASS",
+    "/present": "PASS",
+    "/staff": "PASS"
+  },
+  "unauthenticated_denials": {
+    "/api/staff-tools/bootstrap": 401,
+    "/api/staff-tools/conversations": 401,
+    "/api/staff-tools/tasks": 401,
+    "/api/account/notes": 401,
+    "/api/account/notes/export": 401,
+    "/api/account/activity/1": 401
+  },
+  "after": {
+    "users": 9,
+    "courses": 1,
+    "course_versions": 1,
+    "classes": 1,
+    "responses": 0
+  },
+  "workspace_schema": "8",
+  "integrity_check": "ok",
+  "status": "PASS",
+  "test_accounts_enabled": false
+}

@@ -1,0 +1,7 @@
+# RC1R16 source validation
+
+PASS: all71 Node commands (76 new persistence unit assertions,896 new persistence API/database assertions,162 staff collaboration assertions), all14 browser programs,178 syntax files, canonical/106-file kit drift and34 independently parsed/rendered PDF reports. Guided report:25 areas,88 official AR/EN route-step cases,46 technical both-path rows,4 ten-answer offline grouped evaluation checks and15 browser online-error/recovery cases. Full logs and machine matrices accompany this report.
+
+The170-client/five-class authenticated workload passed4255 requests with zero errors; measured p50/p95/p9965.87/214.36/5388.15ms and peak RSS125796352bytes. The14 staff browser journeys include actual two-person audio/video streams, authenticated files/voice, assigned tasks/calendar, notes/export,1000participant/100course selection and theme/RTL/responsive checks. Timing under concurrent cloud QA is a measurement, not a universal deployment guarantee.
+
+Normal startup schema8 retained existing data, passed9HTML routes and6auth denials with QA accounts disabled. Initial five-second legacy backup readiness failures were retained and diagnosed; the fixture now uses a bounded30-second deadline, early child-exit diagnostics, ephemeral ports and confirmed cleanup without altering backup/restore assertions. Immutable fresh extraction and remote artifact verification remain mandatory pending gates. Owner physical Windows/LAN/devices/classroom/visual/assistive acceptance is separate.

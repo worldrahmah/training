@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "path": "path-a",
+      "type": "file",
+      "offline_rejected_without_false_saved_claim": "PASS",
+      "online_uploaded_and_server_confirmed": "PASS"
+    },
+    {
+      "path": "path-a",
+      "type": "image",
+      "offline_rejected_without_false_saved_claim": "PASS",
+      "online_uploaded_and_server_confirmed": "PASS"
+    },
+    {
+      "path": "path-b",
+      "type": "file",
+      "offline_rejected_without_false_saved_claim": "PASS",
+      "online_uploaded_and_server_confirmed": "PASS"
+    },
+    {
+      "path": "path-b",
+      "type": "image",
+      "offline_rejected_without_false_saved_claim": "PASS",
+      "online_uploaded_and_server_confirmed": "PASS"
+    }
+  ]
+}

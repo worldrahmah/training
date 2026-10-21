@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "accounts": {
+    "staff": 15,
+    "trainers": 5,
+    "participants": 150,
+    "total": 170
+  },
+  "simultaneous_live_classes": 5,
+  "concurrent_clients": 170,
+  "rounds_per_client": 6,
+  "requests": 4255,
+  "errors": [],
+  "elapsed_ms": 9702,
+  "latency_ms": {
+    "p50": 65.87,
+    "p95": 214.36,
+    "p99": 5388.15,
+    "max": 6546
+  },
+  "peak_server_rss_bytes": 125796352,
+  "persisted": {
+    "responses": 150,
+    "notes": 900,
+    "messages": 140,
+    "tasks": 120,
+    "attachments": 20,
+    "concurrent_call_signaling_sessions": 5,
+    "connection_signals": 60
+  },
+  "limits": "Local synthetic authenticated HTTP workload, not 170 physical browsers/devices, production WAN/media capacity or universal latency guarantee. Login/password hashing excluded; real WebRTC media covered separately in browser tests."
+}

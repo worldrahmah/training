@@ -15,11 +15,11 @@ export async function api(path,opts={}){
   await maybeRotate(path);
   const headers={...(opts.headers||{})}; const token=getToken(); if(token)headers['X-Session-Token']=token;
   if(opts.json!==undefined){headers['Content-Type']='application/json';opts.body=JSON.stringify(opts.json)}
-  let res;try{res=await fetch(path,{...opts,headers})}catch(error){throw guidedFailure(error instanceof TypeError?(navigator.onLine===false?'OFFLINE':'REQUEST_FAILED'):error?.name==='AbortError'?'TIMEOUT':'CLIENT_RUNTIME_ERROR',{endpoint:path})}
+  let res;try{res=await fetch(path,{...opts,headers})}catch(error){const failure=guidedFailure(error instanceof TypeError?(navigator.onLine===false?'OFFLINE':'REQUEST_FAILED'):error?.name==='AbortError'?'TIMEOUT':'CLIENT_RUNTIME_ERROR',{endpoint:path});failure.message=t(failure.code==='OFFLINE'?'A connection to the server is required. Reconnect and try again.':failure.code==='REQUEST_FAILED'?'The server could not be reached. Please try again.':failure.code==='TIMEOUT'?'The request timed out. Please try again.':'The request could not be completed. Refresh and try again.');throw failure}
   let data=null;const ct=res.headers.get('content-type')||'';let parseFailed=false;
   try{if(ct.includes('application/json'))data=await res.json();else data=await res.text()}catch{parseFailed=true}
   if(!res.ok){const raw=data?.message||t('Request failed ({status})',{status:res.status});const e=new Error(userMessage(raw));e.status=res.status;e.code=classifyGuidedFailure({status:res.status}).code;e.data=data;throw e}
-  if(parseFailed)throw guidedFailure('CLIENT_RUNTIME_ERROR',{status:res.status,endpoint:path});
+  if(parseFailed)throw Object.assign(guidedFailure('CLIENT_RUNTIME_ERROR',{status:res.status,endpoint:path}),{message:t('The server returned an invalid response. Refresh and try again.')});
   if(data?.user&&path==='/api/me')bindPersonalPreferences(data.user);return data;
 }
 export function esc(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}

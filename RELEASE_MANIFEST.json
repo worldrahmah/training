@@ -118,6 +118,6 @@
   "preserved_continuation_baseline": "538d6be30bb9bf76de3215bbd72e607ab4655bbf",
   "workspace_schema": "8",
   "current_operational_review": "docs/RC1R16_OPERATIONAL_REVIEW.md",
-  "source_validation": "PENDING_FULL_GATES",
-  "exact_zip_verification": "PENDING"
+  "source_validation": "PASS_71_NODE_14_BROWSER_178_SYNTAX_106_KIT_34_PDF",
+  "exact_zip_verification": "Pending full immutable extraction repeat"
 }

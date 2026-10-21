@@ -52,6 +52,7 @@ try:
     elif kind in ['file','image']:
      file=ROOT/'tests/fixtures/report-logo.png' if kind=='image' else TMP/'evidence.txt';
      if kind=='file':file.write_text('Canonical evidence file')
+     ctx.set_offline(True);upload.set_input_files(str(file));expect(page.locator('[data-guided-upload-status]')).to_contain_text('A connection to the server is required.');assert 'Saved' not in page.locator('[data-guided-upload-status]').inner_text();assert not queue(page);ctx.set_offline(False);upload.set_input_files([])
      upload.set_input_files(str(file))
     activity=next((a for a in mod['activities'] if a['id']==step.get('interaction',{}).get('activity_id')),None)
     if activity:
@@ -77,7 +78,7 @@ try:
      elif kind in ['file','image']:assert confirmed_evidence['submission_id']==before['progress']['steps'][key]['evidence']['submission_id']
      if activity:
       dash=req(f'/api/student/dashboard?focused=1&class_id={cid}',token);value=dash['active']['guided_responses'][activity['id']]['value'];expected=False if activity['type']=='true_false' else ['Two'] if activity['type']=='multiple_choice' else ['Verify'] if activity['type']=='checklist' else 2 if activity['type'] in ['rating','confidence','numeric_answer'] else 'Two' if activity['type'] in ['single_choice','reaction'] else 'Changed confirmed evidence';assert value==expected,(activity['type'],value,expected)
-    matrix.append({'path':path['id'],'step':key,'area':activity['type'] if activity else kind,'online':'PASS','offline':'PASS' if page.locator('[data-prompt-editor]').count() else 'NOT_APPLICABLE','reconnect':'PASS' if page.locator('[data-prompt-editor]').count() else 'NOT_APPLICABLE','refresh':'PASS','binary_offline':'NOT_SUPPORTED' if kind in ['file','image'] else 'NOT_APPLICABLE','result':'PASS'})
+    matrix.append({'path':path['id'],'step':key,'area':activity['type'] if activity else kind,'online':'PASS','offline':'PASS' if page.locator('[data-prompt-editor]').count() else 'NOT_APPLICABLE','reconnect':'PASS' if page.locator('[data-prompt-editor]').count() else 'NOT_APPLICABLE','refresh':'PASS','binary_offline':'NOT_SUPPORTED' if kind in ['file','image'] else 'NOT_APPLICABLE','offline_upload_honesty':kind in ['file','image'],'result':'PASS'})
     page.locator('[data-guided-nav]:last-child').click()
    expect(page.locator('.guided-activity')).to_contain_text('Path completed');page.reload();expect(page.locator('.guided-activity')).to_contain_text('Path completed');assert not queue(page)
    req(f'/api/live/{cid}/practice/close',at,{});req(f'/api/live/{cid}/workflow/generic',at,{'module_id':mod['id'],'node_id':'join'});req(f'/api/live/{cid}/clear',at,{});req(f'/api/live/{cid}/workflow/generic',at,{'module_id':mod['id'],'node_id':'closing'});req(f'/api/live/{cid}/clear',at,{});assert req(f'/api/live/{cid}/workflow',at)['workflow']['modules'][0]['complete'];ctx.close()
