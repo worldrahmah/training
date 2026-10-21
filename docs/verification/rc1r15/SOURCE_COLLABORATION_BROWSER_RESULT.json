@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "journeys": [
+    "staff text delivered incrementally and escaped",
+    "authenticated file uploaded and downloaded by peer",
+    "real MediaRecorder voice note saved and playable",
+    "actual audio peer connection, live tracks, mute and hangup",
+    "actual video peer connection, live tracks, mute and hangup",
+    "administrator assigns task, assignee completes checklist and status",
+    "calendar complete daily counts and day drilldown",
+    "participant class note saved and exported on mobile",
+    "1000 account picker bounded to 25 rows, cross-page selections retained",
+    "100 course searchable version table selects and creates actual class",
+    "/admin overview uses full history filters and detail dialog",
+    "/trainer overview uses full history filters and detail dialog",
+    "live operations hero follows personal color and theme",
+    "Arabic RTL dark personal color and 390/768/1440 responsive staff calendar"
+  ],
+  "page_errors": []
+}

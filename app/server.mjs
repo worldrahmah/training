@@ -1,3 +1,6 @@
+import {handleStaffCollaboration} from './lib/staff-collaboration.mjs';
+import {handlePersonalNotes} from './lib/personal-notes.mjs';
+import {handleActivityDetail} from './lib/activity-detail.mjs';
 import {handleAccountWorkspace,accountPreferences} from './lib/account-workspace.mjs';
 import {handleTrashApi,inTrash} from './lib/trash.mjs';
 import {simulateRoutes,readinessCategories} from './public/authoring-model.js';
@@ -86,7 +89,7 @@ const SECURITY_HEADERS={
   'X-Permitted-Cross-Domain-Policies':'none',
   'X-Frame-Options':'SAMEORIGIN',
   'Referrer-Policy':'same-origin',
-  'Permissions-Policy':'camera=(), microphone=(), geolocation=()',
+  'Permissions-Policy':'camera=(self), microphone=(self), geolocation=()',
   'Cross-Origin-Resource-Policy':'same-origin',
   'Content-Security-Policy':"default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; frame-ancestors 'self'; form-action 'self'; base-uri 'self'"
 };
@@ -696,6 +699,9 @@ async function handleApi(req,res,url){
   }
   if(actor)assertOutsideTrash(req,actor);
 
+  if(await handleStaffCollaboration(req,res,url,{db:db(),engine,json,send,readJson,readBuffer,requireUser,isAdminLike,hasGrant,STORAGE_DIR}))return;
+  if(await handlePersonalNotes(req,res,url,{db:db(),engine,json,send,readJson,requireUser}))return;
+  if(await handleActivityDetail(req,res,url,{db:db(),json,requireUser,isAdminLike,visibleClassIds,sectionPermission}))return;
   if(await handleAccountWorkspace(req,res,url,{db:db(),engine,json,readJson,requireUser}))return;
   if(await handleTrashApi(req,res,url,{db:db(),engine,json,readJson,refresh,requireUser,isAdminLike,canViewCourse,classPermission,getClassRow,hasGrant,STORAGE_DIR}))return;
   if(await handleExperienceApi(req,res,url,{db:db(),engine,json,readJson,refresh,requireUser,isAdminLike,classList,classPermission}))return;
@@ -1454,7 +1460,7 @@ async function handleApi(req,res,url){
   if(/^\/api\/staff\/\d+\/permissions$/.test(p)){
     const admin=administrator(req,res,url);if(!admin)return;const uid=Number(p.split('/')[3]);if(!protectedStaffTarget(admin,uid,res))return;
     if(req.method==='GET')return json(res,200,{ok:true,permissions:db().prepare('SELECT * FROM permission_grants WHERE user_id=? ORDER BY resource_type,resource_id,action').all(uid)});
-    if(req.method==='PUT'){const b=await readJson(req),rows=b.permissions;const allowed={course:['view','edit','publish','create','delete','restrict'],class:['view','manage','create','edit','delete','control','enroll','teams','attendance','message','student_edit','student_delete','restrict'],student:['manage'],workspace:['view','edit','delete','restrict']};
+    if(req.method==='PUT'){const b=await readJson(req),rows=b.permissions;const allowed={course:['view','edit','publish','create','delete','restrict'],class:['view','manage','create','edit','delete','control','enroll','teams','attendance','message','student_edit','student_delete','restrict'],student:['manage'],collaboration:['view','send','files','voice','call','video','group','tasks','assign_tasks','restrict'],workspace:['view','edit','delete','restrict']};
       if(!Array.isArray(rows)||rows.length>1000||rows.some(r=>!r||!allowed[r.resource_type]?.includes(r.action)||!(String(r.resource_id??'*')==='*'||/^[1-9]\d*$/.test(String(r.resource_id)))))return json(res,400,{ok:false,message:'Choose supported resource permissions.'});
       engine.transaction(()=>{db().prepare('DELETE FROM permission_grants WHERE user_id=?').run(uid);for(const r of rows){if(!r?.resource_type||!r?.action)continue;db().prepare('INSERT OR IGNORE INTO permission_grants(user_id,resource_type,resource_id,action,granted_by) VALUES(?,?,?,?,?)').run(uid,String(r.resource_type),String(r.resource_id??'*'),String(r.action),admin.id);}});engine.log(null,admin.id,'permissions_updated','user',uid,{count:rows.length});return json(res,200,{ok:true});}
   }
@@ -1689,6 +1695,7 @@ async function handleApi(req,res,url){
 
 function staticPathFor(urlPath){
   if(urlPath==='/'||urlPath==='/trainer')return path.join(PUBLIC,'trainer.html');
+  if(urlPath==='/staff')return path.join(PUBLIC,'staff.html');
   if(urlPath==='/profile')return path.join(PUBLIC,'profile.html');
   if(urlPath==='/editor')return path.join(PUBLIC,'editor.html');
   if(urlPath==='/admin')return path.join(PUBLIC,'admin.html');

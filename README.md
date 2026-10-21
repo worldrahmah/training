@@ -1,14 +1,9 @@
-# Training Engine ONE v3.5.0 RC1R14
+# Training Engine ONE v3.5.0 RC1R15
 
-Complete guided Creator/runtime with explicit Finish class, account-owned language/light-dark/panel colors, a full-width focused Student classroom and complete filtered/paged activity history. The existing 36 activities, 68 result cases, entire master-prompt implementation, distinct Trash/Restore and simpler Builder remain. Full source gates pass; exact-archive receipts are in the release companion. Owner Windows/LAN/classroom/assistive acceptance is separate.
+Staff chat/files/voice and two-person audio/video calls, task calendar/checklists/assignment, private participant class notes, safe activity detail dialogs on fully paged staff dashboards, scalable selection tables and personal-theme operations hero. All RC1R14 Finish/Trash/personal preferences and the complete 36-activity/68-result guided Creator/runtime remain.
 
-Run START_TRAINING_ENGINE.bat on Windows, START_TRAINING_ENGINE.sh, or npm start. Node 22.5+ is required (verified 24.19). No npm install, build or external service is required. Keep configured data/storage/backups/exports and local configuration. Never enable disposable QA accounts on owner data.
+Run START_TRAINING_ENGINE.bat on Windows, START_TRAINING_ENGINE.sh, or npm start. Node22.5+ (verified24.19); no npm install/build/external service required. Preserve configured data/storage/backups/exports and configuration. Never enable disposable QA accounts on owner data. Workspace migration0007 uses the existing verified pre-upgrade backup/journal; core3.2/course2.0 are unchanged.
 
-- [Current operational review](docs/RC1R14_OPERATIONAL_REVIEW.md) and [changes](docs/RC1R14_CHANGELOG.md)
-- [EN/AR guides](docs/guides/README.md) and [portable Creator kit](course-creator-kit/README.md)
-- [Upgrade/rollback](docs/RC1R14_UPGRADE_AND_ROLLBACK.md) and [security review](docs/RC1R14_SECURITY_REVIEW.md)
-- [Validation](docs/RC1R14_VALIDATION_REPORT.md), [acceptance](docs/RC1R14_ACCEPTANCE.md), [boundaries](docs/KNOWN_LIMITATIONS_RC1R14.md)
+See [operational guide](docs/RC1R15_OPERATIONAL_REVIEW.md), [EN/AR guides](docs/guides/README.md), [upgrade/rollback](docs/RC1R15_UPGRADE_AND_ROLLBACK.md), [security review](docs/RC1R15_SECURITY_REVIEW.md), [validation](docs/RC1R15_VALIDATION_REPORT.md), [limits](docs/KNOWN_LIMITATIONS_RC1R15.md) and [owner acceptance](docs/RC1R15_ACCEPTANCE.md).
 
-Workspace migration 0006 adds account preference storage and activity indexes under the existing verified pre-upgrade backup/journal process. Core schema 3.2 and course schema 2.0 remain. No reset or owner data deletion occurs. Finish preserves partial learning; Trash remains separate from administrator-confirmed permanent deletion.
-
-npm test runs 67 sequential Node commands. npm run test:browser runs 11 isolated browser programs; ONE_BROWSER_TEST_CONCURRENCY=3 optionally parallelizes those programs only. Use disposable source copies because four certification tests regenerate tracked reports. Full source and immutable ZIP gates, download hashes and actual receipts are recorded only after they pass.
+npm test runs69 Node commands; npm run test:browser runs12 browser programs. Use disposable copies because four certification programs regenerate tracked reports. WebRTC browser tests require actual media capability; managed networks may need an authenticated TCP TURN relay, configurable through ONE_TURN_SERVER_BIN for an isolated local QA relay. This test dependency is optional for application runtime. Detailed final receipts, immutable ZIP hashes and owner gates are recorded separately; no universal security/performance claim.

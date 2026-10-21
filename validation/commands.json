@@ -66,7 +66,9 @@
     "node tests/creator-closure-api.mjs",
     "node tests/operational-workspace.mjs",
     "node tests/personal-preferences.mjs",
-    "node tests/personal-workspace.mjs"
+    "node tests/personal-workspace.mjs",
+    "node tests/staff-collaboration.mjs",
+    "node tests/staff-load.mjs"
   ],
   "browser": [
     "python tests/browser-repair.py",
@@ -79,6 +81,7 @@
     "python tests/browser-creator-closure.py",
     "python tests/browser-m1-closure.py",
     "python tests/browser-operational.py",
-    "python tests/browser-personal-workspace.py"
+    "python tests/browser-personal-workspace.py",
+    "python tests/browser-staff-collaboration.py"
   ]
 }

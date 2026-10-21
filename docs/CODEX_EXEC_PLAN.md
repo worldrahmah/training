@@ -1,3 +1,27 @@
+# ExecPlan — RC1R15 staff collaboration and scalable workspaces
+
+Baseline: clean RC1R14 commit 538d6be30bb9bf76de3215bbd72e607ab4655bbf, version 3.5.0-rc.1.14. Unchanged 67-command Node regression PASSED before application edits; log /workspace/rc15-release-work/baseline-node.log. Prior immutable releases and all historical data retained. No worktree, agents or reset.
+
+Target: use the shared full-history widget on visible Admin/Trainer dashboards and safe activity-detail dialogs everywhere. Add staff-only collaboration with separate notifications, direct/group conversations, attachments/voice, authenticated incremental updates, WebRTC voice/video signaling and actual browser capability detection; personal chat settings plus Admin policy and granular grants. Add staff-owned calendar/tasks, authorized supervisor assignment, checklists and notes. Add own participant class notes and export. Use one scalable searchable/paged checkbox table for selection forms and repair overview theme colors.
+
+Milestones and acceptance: (1) unchanged baseline; (2) additive migration and scoped collaboration/notes/detail APIs with authorization tests; (3) shared EN/AR responsive collaboration UI and scalable selection tables; (4) functional browser, negative-security and 170-account/five-class concurrent workload; (5) full regression and current guides/contracts; (6) commit, immutable seal, fresh exact extraction/full repeat, seven deliverables and independent remote hashes; (7) save tested cloud startup instructions. Stop and repair failed milestone checks.
+
+Validation commands: npm test; ONE_BROWSER_TEST_CONCURRENCY=3 npm run test:browser; python tools/check-syntax.py; npm run contracts:check; portable kit drift and 34 independent PDF readers. New API/browser/load programs cover own-data boundaries, staff exclusion of participants, membership/revocation, file caps and attachment authorization, idempotency/revisions, call signaling, task assignment, notes ownership/export, activity payload redaction, picker cross-page selection, AR/RTL and light/dark on 390/768/1440 widths. Record p50/p95/p99 and error/resource counts for 15 staff + 5 Trainers + 150 participants on five live classes, including concurrent chat/task/note traffic; do not generalize local measurements to every deployment.
+
+Migration and rollback: append journaled workspace migration 0007, never change accepted migration SQL. Preserve automatic verified pre-upgrade SQLite/storage backup. Collaboration files live under existing backed-up storage; never serve them publicly. Existing course schemas 1.0/1.1/2.x, core schema3.2, 36 activities, 68 result cases and immutable published packages stay compatible. Roll back using full matched pre-upgrade database/storage/application backup, never downgrade the live database in place.
+
+UX matrix: all staff roles including Course Editor can access only their authorized collaboration tools; Editor retains classroom isolation. Participant sees own notes only. Test complete EN/LTR and AR/RTL, light/dark/personal colors, keyboard dialogs, narrow/desktop layouts; Projector never receives private collaboration or notes.
+
+Risks/non-goals: no universal security certificate or invented 100% protection. WebRTC requires HTTPS or loopback for media devices; remote networks may require administrator-configured STUN/TURN and certificates. Calls use peer media; signaling and chat are authenticated locally. No external cloud service required. Windows/LAN hardware, real microphones/cameras and owner classroom/accessibility acceptance remain manual gates. No course package executable code or unrelated schema rewrite.
+
+Decisions: retain one local-first server and SQLite, indexed bounded queries; private incremental collaboration traffic must not trigger global classroom refreshes. Use strict server permissions and safe human-readable activity allowlists rather than exposing event JSON. Existing notification composer stays distinct and is relabeled Send notification.
+
+Progress: repository inspected and unchanged baseline passed. Implementation and source gates complete; immutable archive gates pending.
+
+Final checklist: all requested tools working; scopes and restore/migration tested; full source and exact sealed extraction gates pass; safe ZIP paths/CRC/checksums verified; downloadable application/Creator kit/handoff/course samples/reports with SHA-256; remote byte proof; honest security/performance limits; saved startup draft. Status OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL until owner Windows/LAN/classroom acceptance.
+
+---
+
 # ExecPlan — RC1R14 personal workspaces and explicit class finish
 
 Baseline: clean 8f773a64300ec516860fa537051fb484997dd3e9, version 3.5.0-rc.1.13, preserved sealed RC1R13 SHA-256 2f4f97d28b367c995cefdd79a55f07f5c6264970cd580c62facb61e3505c71e5. The unchanged 65-command baseline passes from /workspace/rc14-baseline before application edits (/tmp/rc14-baseline-node.log). Existing operating rules apply; owner explicitly requests these software changes. No worktree, agents, reset or historical package modification.
@@ -218,3 +242,7 @@ Standalone companion packaging and remote artifact verification finish delivery.
 ### RC1R14 independent remote delivery verified
 
 All seven remote artifact ZIP blobs and the external SHA256SUMS exactly match local sealed hash/size from a fresh remote-only bare HTTPS clone. Verified artifact commit 67de32c83addcbab3d4ecf38d6d5e212f45f8b1d on feature/personal-workspace-and-class-finish-rc1r14. Receipt: releases/rc1r14/REMOTE_ARTIFACT_VERIFICATION.json. Exact immutable ZIP SHA-256 ee310adcf958908c8c943472f22a7251632f69a4390a635f723b0b69f286635b. Owner manual acceptance and independent cloud publication/restore are not claimed.
+
+### RC1R15 complete source gates
+
+Full source gates PASS: 69 sequential Node commands (including 153 staff security/API assertions), all 12 browser programs (new collaboration 14 journeys, actual audio/video peer streams, 100 courses/1000 participant pickers, theme and EN/AR responsive checks), 171 syntax files, canonical/104-file portable-kit drift, 34 independent PDF-reader reports. The expanded workload was separately repeated after adding 20 attachments and five simultaneous call signaling sessions: 4255 requests, zero request errors, p50/p95/p99 83.91/201.42/3230.28 ms, peak server RSS 126562304 bytes. The complete 69-command regression also includes the earlier 4115-request workload; separate expanded receipts supersede that subset for capacity reporting. Normal production startup schema7/nine HTML routes/six auth denials passes with QA mode disabled and existing data retained. Exact immutable extraction remains a separate pending mandatory gate.

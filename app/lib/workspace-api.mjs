@@ -12,6 +12,7 @@ const bounded=(value,max=200)=>String(value??'').trim().slice(0,max);
 const isEditor=user=>user?.staff_role==='course_editor';
 export function editorRouteAllowed(pathname,method){
   if(['/api/me','/api/logout','/api/heartbeat','/api/profile','/api/account/password','/api/account/sessions','/api/account/session/rotate','/api/account/preferences','/api/account/activity','/api/profile/consent-history','/api/public-settings'].includes(pathname))return true;
+  if(pathname.startsWith('/api/staff-tools/')||/^\/api\/account\/activity\/\d+$/.test(pathname))return true;
   if(pathname==='/api/settings')return method==='GET';
   if(/^\/api\/profiles\/\d+(\/photo)?$/.test(pathname))return true; // own-record check is mandatory in the handler
   if(pathname==='/api/typography')return method==='GET';
@@ -26,7 +27,7 @@ export async function handleWorkspaceApi(req,res,url,c){
   if(!handled)return false;
   const {db,engine,json,send,readJson,readBuffer,refresh,requireUser,isAdminLike,canManageClass,canAdministerClass,canAdministerStudent,getClassRow,courseList,classList,visibleClassIds,prereqStatus,STORAGE_DIR}=c;
   if(p==='/api/guest/join'){json(res,403,{ok:false,message:'A registered participant account is required to request admission. Sign in, then enter your class code.'});return true;}
-  const user=requireUser(req,res,url);if(!user)return true;
+  let user=requireUser(req,res,url);if(!user)return true;
   const staff=()=>{if(user.role!=='trainer'||isEditor(user))fail('Trainer or administrator access is required.',403)};
   const admin=()=>{if(!isAdminLike(user))fail('Administrator access is required.',403)};
   const classManager=(id,required=null)=>{staff();if(!c.classPermission(user,id,required||(['GET','HEAD'].includes(req.method)?'enroll':p.includes('/admissions')?'enroll':c.classAction(req))))fail('You do not have permission to manage this class.',403);const cl=getClassRow(id);if(!cl)fail('Class not found.',404);return cl};
@@ -42,6 +43,16 @@ export async function handleWorkspaceApi(req,res,url,c){
   const canReviewApplicant=id=>user.role==='trainer'&&!isEditor(user)&&db.prepare("SELECT class_id FROM class_join_requests WHERE student_id=? AND status='pending'").all(id).some(row=>c.classPermission(user,row.class_id,'enroll'));
   const archiveSnapshot=(type,id,row)=>db.prepare('INSERT INTO archive_records(entity_type,entity_id,snapshot_json,archived_by) VALUES(?,?,?,?) ON CONFLICT(entity_type,entity_id) DO UPDATE SET snapshot_json=excluded.snapshot_json,archived_by=excluded.archived_by,archived_at=CURRENT_TIMESTAMP,restored_at=NULL').run(type,id,JSON.stringify(row),user.id);
   const cancelPending=classId=>{for(const row of db.prepare("SELECT id,student_id FROM class_join_requests WHERE class_id=? AND status='pending'").all(classId)){db.prepare("UPDATE class_join_requests SET status='cancelled',revision=revision+1,decided_by=?,decided_at=CURRENT_TIMESTAMP,note='Class closed to admission' WHERE id=?").run(user.id,row.id);notify(row.student_id,'Class admission cancelled','The class is closed to admission.',{type:'admission',class_id:classId,request_id:row.id});}};
+  if(/^\/api\/workspace\/classes\/\d+\/roster-selection$/.test(p)&&req.method==='POST'){
+    const classId=integer(p.split('/')[4]);classManager(classId,'enroll');const b=await readJson(req);user=requireUser(req,res,url);if(!user)return true;classManager(classId,'enroll');if(db.prepare("SELECT 1 FROM trash_records WHERE entity_type='class' AND entity_id=?").get(classId))fail('Restore this class before editing it.',409);if(!['add','remove'].includes(b.operation)||!Array.isArray(b.student_ids)||!b.student_ids.length||b.student_ids.length>500)fail('Choose up to 500 participants and a roster action.');const ids=[...new Set(b.student_ids.map(integer))];
+    engine.transaction(()=>{const cl=getClassRow(classId);if(['completed','cancelled'].includes(cl.status))fail('Choose an open class.',409);const current=db.prepare("SELECT student_id FROM enrollments WHERE class_id=? AND status='active'").all(classId).map(r=>r.student_id);if(b.operation==='add'&&new Set([...current,...ids]).size>cl.capacity)fail('Increase class capacity before adding these participants.',409);
+      for(const sid of ids){const target=db.prepare("SELECT id FROM users WHERE id=? AND role='student' AND active=1").get(sid);if(!target||!isAdminLike(user)&&!canAdministerStudent(user,sid))fail('You cannot manage one of these participants.',403);if(b.operation==='add'&&!prereqStatus(sid,cl.course_id).ok)fail('A participant has incomplete course prerequisites.',409);}
+      for(const sid of ids){if(b.operation==='add'){db.prepare("INSERT INTO enrollments(class_id,student_id,status) VALUES(?,?,'active') ON CONFLICT(class_id,student_id) DO UPDATE SET status='active'").run(classId,sid);db.prepare("UPDATE class_join_requests SET status='approved',decided_at=CURRENT_TIMESTAMP,decided_by=?,revision=revision+1 WHERE class_id=? AND student_id=? AND status='pending'").run(user.id,classId,sid)}else{db.prepare("UPDATE enrollments SET status='withdrawn' WHERE class_id=? AND student_id=?").run(classId,sid);db.prepare('DELETE FROM team_members WHERE student_id=? AND team_id IN (SELECT id FROM teams WHERE class_id=?)').run(sid,classId)}}
+      engine.log(classId,user.id,'roster_selection_applied','class',classId,{operation:b.operation,count:ids.length});});refresh(classId,'roster');json(res,200,{ok:true,count:ids.length});return true;
+  }
+  if(p==='/api/workspace/course-options'&&req.method==='GET'){
+    staff();const versions=db.prepare("SELECT cv.id,c.id course_id,c.title,cv.version FROM course_versions cv JOIN courses c ON c.id=cv.course_id WHERE cv.status='published' AND c.archived_at IS NULL AND NOT EXISTS(SELECT 1 FROM trash_records tr WHERE tr.entity_type='course' AND tr.entity_id=c.id) ORDER BY c.title,cv.id DESC").all().filter(row=>c.canViewCourse(user,row.course_id)).map(row=>({id:row.id,label:row.title+' · v'+row.version}));json(res,200,{ok:true,versions});return true;
+  }
   if(/^\/api\/classes\/\d+\/enroll$/.test(p)&&req.method==='POST'){
     const classId=integer(p.split('/')[3]),cl=classManager(classId),b=await readJson(req),sid=integer(b.student_id);if(!db.prepare("SELECT id FROM users WHERE id=? AND role='student' AND active=1").get(sid))fail('Participant not found.',404);
     engine.transaction(()=>{const already=db.prepare("SELECT 1 FROM enrollments WHERE class_id=? AND student_id=? AND status<>'withdrawn'").get(classId,sid),count=db.prepare("SELECT COUNT(*) n FROM enrollments WHERE class_id=? AND status='active'").get(classId).n;if(!already&&count>=cl.capacity)fail('The class is full. Increase capacity before adding another participant.',409);

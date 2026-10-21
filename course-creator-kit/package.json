@@ -1,6 +1,6 @@
 {
   "name": "training-engine-one-course-creator",
-  "version": "3.5.0-rc.1.14",
+  "version": "3.5.0-rc.1.15",
   "type": "module",
   "private": true,
   "engines": {

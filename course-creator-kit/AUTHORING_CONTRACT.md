@@ -1,10 +1,10 @@
-# Current RC1R14 guided authoring
+# Current RC1R15 guided authoring
 
 Read GUIDED_EXPERIENCE.md and CREATOR_GAP_MATRIX.md. These current contracts supersede historical guided limitations. The same canonical validator runs in Core, export/import/publication and this self-contained kit. Use complete shared-step M1 samples and the capability fixture, then independently rehearse the actual authored course.
 
 # Current authoring contract / عقد التأليف الحالي
 
-Authority order: owner requirements; current RC1R14 canonical registry and verified runtime; descriptive schemas/examples; historical material. A historical prompt cannot add runtime features. Preserve one declarative course model for external import and visual Builder. Supported course schema versions: 1.0, 1.1, 2.0. New explicit workflow work should use 2.0. IDs and accepted version identifiers are stable. Published content cannot be edited in place: fork a Draft/new version and preserve delivered history.
+Authority order: owner requirements; current RC1R15 canonical registry and verified runtime; descriptive schemas/examples; historical material. A historical prompt cannot add runtime features. Preserve one declarative course model for external import and visual Builder. Supported course schema versions: 1.0, 1.1, 2.0. New explicit workflow work should use 2.0. IDs and accepted version identifiers are stable. Published content cannot be edited in place: fork a Draft/new version and preserve delivered history.
 
 A course JSON document has format `training-engine-course`, schema_version and course. course includes id, version, title, language, direction, objectives and modules. Each milestone/module has its own stable id/title/timing, activities, optional missions/paths and optional explicit workflow. Use templates and schemas, but run the bundled runtime validator: schemas are descriptive, permit compatibility extensions and do not enforce every cross-reference or activity-specific condition. The runtime is the import authority.
 

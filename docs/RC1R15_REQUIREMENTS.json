@@ -1,0 +1,42 @@
+{
+  "baseline": "538d6be30bb9bf76de3215bbd72e607ab4655bbf",
+  "status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
+  "requirements": [
+    {
+      "id": "activity",
+      "requirement": "Visible staff dashboard paging/filters and safe event detail dialogs",
+      "validation": "full receipts plus owner acceptance"
+    },
+    {
+      "id": "chat",
+      "requirement": "Private staff text/group/files/voice/audio/video and settings/permissions",
+      "validation": "full receipts plus owner acceptance"
+    },
+    {
+      "id": "tasks",
+      "requirement": "Own/supervisor tasks, notes/checklists/recurrence/calendar/export",
+      "validation": "full receipts plus owner acceptance"
+    },
+    {
+      "id": "notes",
+      "requirement": "Participant own class notes and export",
+      "validation": "full receipts plus owner acceptance"
+    },
+    {
+      "id": "theme",
+      "requirement": "Admin hero uses personal theme",
+      "validation": "full receipts plus owner acceptance"
+    },
+    {
+      "id": "selection",
+      "requirement": "Paged searchable cross-page checkbox selection and roster bulk actions",
+      "validation": "full receipts plus owner acceptance"
+    },
+    {
+      "id": "security_load",
+      "requirement": "Meaningful security regression and 170-account/five-class measured workload",
+      "validation": "full receipts plus owner acceptance"
+    }
+  ],
+  "engineering_status": "SOURCE_VERIFIED_PENDING_EXACT_ARCHIVE"
+}

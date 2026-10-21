@@ -1,0 +1,133 @@
+
+[3/12] python tests/browser-workspace-upgrade.py — PASS
+BROWSER_WORKSPACE_UPGRADE_PASS 12 gates; EN/AR mobile/desktop, offline fonts and actual state transitions
+
+[1/12] python tests/browser-repair.py — PASS
+BROWSER_REPAIR_PASS 12 role/locale visits; desktop/tablet/mobile, offline fonts, keyboard, export, matching, charts, Projector themes
+
+[5/12] python tests/browser-rc1r9.py — PASS
+RC1R9_BROWSER_PASS 52 visits; all entry screens EN/AR themes widths, 36 bilingual labels/stable IDs/authored text, owner logo on role surfaces
+
+[2/12] python tests/browser-workspace.py — PASS
+BROWSER_WORKSPACE_PASS 107 recorded screen/view checks; contrast, menus, actual writes, onboarding, RTL punctuation, calendar, role boundaries
+
+[6/12] python tests/browser-rc1r10.py — PASS
+RC1R10_BROWSER_PASS 7 workflow groups
+
+[4/12] python tests/browser-font-matrix.py — PASS
+FONT_MATRIX_BROWSER_PASS 640 actual global-font layout cases across 8 surfaces, EN/AR and mobile/desktop or 16:9
+
+[8/12] python tests/browser-creator-closure.py — PASS
+SHARED_VARIABLE_AUTHORING_PASS
+ALL_28_VISUAL_EDITORS_PASS
+CREATOR_ARTIFACT_RUNTIME_PASS actual visual ZIP → isolated recipient import → selected Participant route → resolved shared prompt and variables
+
+CREATOR_CLOSURE_BROWSER_PASS 12 groups
+
+[10/12] python tests/browser-operational.py — PASS
+OPERATIONAL_BROWSER_PASS 6 complete owner journeys
+
+[7/12] python tests/browser-rc1r11.py — PASS
+GUIDED_BROWSER_GROUP_PASS en 0 1440
+GUIDED_BROWSER_GROUP_PASS en 1 390
+GUIDED_BROWSER_GROUP_PASS ar 0 390
+GUIDED_BROWSER_GROUP_PASS ar 1 768
+RC1R11_BROWSER_PASS 12 groups
+
+[11/12] python tests/browser-personal-workspace.py — PASS
+PERSONAL_WORKSPACE_BROWSER_PASS 8 complete personal/finish/history/classroom journeys
+
+[12/12] python tests/browser-staff-collaboration.py — PASS
+PASS staff text delivered incrementally and escaped
+PASS authenticated file uploaded and downloaded by peer
+PASS real MediaRecorder voice note saved and playable
+PASS actual audio peer connection, live tracks, mute and hangup
+PASS actual video peer connection, live tracks, mute and hangup
+PASS administrator assigns task, assignee completes checklist and status
+PASS calendar complete daily counts and day drilldown
+PASS participant class note saved and exported on mobile
+PASS 1000 account picker bounded to 25 rows, cross-page selections retained
+PASS 100 course searchable version table selects and creates actual class
+PASS /admin overview uses full history filters and detail dialog
+PASS /trainer overview uses full history filters and detail dialog
+PASS live operations hero follows personal color and theme
+PASS Arabic RTL dark personal color and 390/768/1440 responsive staff calendar
+BROWSER_STAFF_COLLABORATION_PASS 14 journeys, including real fake-device audio/video peer streams
+
+[9/12] python tests/browser-m1-closure.py — PASS
+M1_STEP en 0 m1-sleep-prepare
+M1_STEP en 0 m1-sleep-ask
+M1_STEP en 0 m1-sleep-verify
+M1_STEP en 0 m1-sleep-teach
+M1_STEP en 0 m1-sleep-tutor
+M1_STEP en 0 m1-sleep-reteach
+M1_STEP en 0 m1-sleep-check
+M1_STEP en 0 m1-sleep-master
+M1_STEP en 0 m1-sleep-converge
+M1_STEP en 0 m1-sleep-evaluate
+M1_STEP en 0 m1-sleep-close
+FULL_M1_ROUTE_PASS en 0 1440 trainer_paced
+M1_STEP en 1 m1-scholarship-prepare
+M1_STEP en 1 m1-scholarship-ask
+M1_STEP en 1 m1-scholarship-verify
+M1_STEP en 1 m1-scholarship-teach
+M1_STEP en 1 m1-scholarship-tutor
+M1_STEP en 1 m1-scholarship-reteach
+M1_STEP en 1 m1-scholarship-check
+M1_STEP en 1 m1-scholarship-master
+M1_STEP en 1 m1-scholarship-converge
+M1_STEP en 1 m1-scholarship-evaluate
+M1_STEP en 1 m1-scholarship-close
+FULL_M1_ROUTE_PASS en 1 390 participant_paced
+M1_STEP ar 0 m1-sleep-prepare
+M1_STEP ar 0 m1-sleep-ask
+M1_STEP ar 0 m1-sleep-verify
+M1_STEP ar 0 m1-sleep-teach
+M1_STEP ar 0 m1-sleep-tutor
+M1_STEP ar 0 m1-sleep-reteach
+M1_STEP ar 0 m1-sleep-check
+M1_STEP ar 0 m1-sleep-master
+M1_STEP ar 0 m1-sleep-converge
+M1_STEP ar 0 m1-sleep-evaluate
+M1_STEP ar 0 m1-sleep-close
+FULL_M1_ROUTE_PASS ar 0 390 trainer_paced
+M1_STEP ar 1 m1-scholarship-prepare
+M1_STEP ar 1 m1-scholarship-ask
+M1_STEP ar 1 m1-scholarship-verify
+M1_STEP ar 1 m1-scholarship-teach
+M1_STEP ar 1 m1-scholarship-tutor
+M1_STEP ar 1 m1-scholarship-reteach
+M1_STEP ar 1 m1-scholarship-check
+M1_STEP ar 1 m1-scholarship-master
+M1_STEP ar 1 m1-scholarship-converge
+M1_STEP ar 1 m1-scholarship-evaluate
+M1_STEP ar 1 m1-scholarship-close
+FULL_M1_ROUTE_PASS ar 1 768 participant_paced
+M1_STEP en 0 m1-sleep-prepare
+M1_STEP en 0 m1-sleep-ask
+M1_STEP en 0 m1-sleep-verify
+M1_STEP en 0 m1-sleep-teach
+M1_STEP en 0 m1-sleep-tutor
+M1_STEP en 0 m1-sleep-reteach
+M1_STEP en 0 m1-sleep-check
+M1_STEP en 0 m1-sleep-master
+M1_STEP en 0 m1-sleep-converge
+M1_STEP en 0 m1-sleep-evaluate
+M1_STEP en 0 m1-sleep-close
+FULL_M1_ROUTE_PASS en 0 768 participant_paced
+M1_STEP ar 1 m1-scholarship-prepare
+M1_STEP ar 1 m1-scholarship-ask
+M1_STEP ar 1 m1-scholarship-verify
+M1_STEP ar 1 m1-scholarship-teach
+M1_STEP ar 1 m1-scholarship-tutor
+M1_STEP ar 1 m1-scholarship-reteach
+M1_STEP ar 1 m1-scholarship-check
+M1_STEP ar 1 m1-scholarship-master
+M1_STEP ar 1 m1-scholarship-converge
+M1_STEP ar 1 m1-scholarship-evaluate
+M1_STEP ar 1 m1-scholarship-close
+FULL_M1_ROUTE_PASS ar 1 1440 trainer_paced
+FULL_M1_PREVIEW_PASS 0
+FULL_M1_PREVIEW_PASS 1
+FULL_M1_BROWSER_PASS 8 complete routes, shared convergence/evaluation/closing, conditional remediation, source copy, exact prompt copy, resume and both delivery modes
+CHECKS_PASS browser: 12 commands

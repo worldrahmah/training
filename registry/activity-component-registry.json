@@ -1,6 +1,6 @@
 {
   "format": "training-engine-one-capability-registry",
-  "registry_version": "3.5.0-rc.1.14",
+  "registry_version": "3.5.0-rc.1.15",
   "status": "guided-experience-professional-closure",
   "projector": {
     "themes": [
@@ -903,7 +903,47 @@
         "event_type",
         "time_range",
         "search"
-      ]
+      ],
+      "visible_staff_dashboards": true,
+      "details": "authorized_redacted_dialog"
+    },
+    "staff_collaboration": {
+      "staff_only": true,
+      "separate_notifications": true,
+      "messages": [
+        "direct",
+        "group",
+        "files",
+        "voice_notes",
+        "read_receipts"
+      ],
+      "calls": "two_party_WebRTC_with_authenticated_signaling",
+      "media_requires": "HTTPS_or_loopback_and_network_ICE_connectivity",
+      "tasks": [
+        "own",
+        "authorized_assignment",
+        "checklists",
+        "notes",
+        "recurrence",
+        "calendar",
+        "ics_export"
+      ],
+      "private_incremental_updates": true
+    },
+    "participant_notes": {
+      "own_only": true,
+      "inside_class": true,
+      "export": "text"
+    },
+    "selection_tables": {
+      "search": true,
+      "page_sizes": [
+        10,
+        25,
+        50
+      ],
+      "cross_page_selection": true,
+      "bulk_page_actions": true
     }
   },
   "display_labels": {

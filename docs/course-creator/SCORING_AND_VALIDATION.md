@@ -1,4 +1,4 @@
-# Current RC1R14 guided authoring
+# Current RC1R15 guided authoring
 
 Read GUIDED_EXPERIENCE.md and CREATOR_GAP_MATRIX.md. These current contracts supersede historical guided limitations. The same canonical validator runs in Core, export/import/publication and this self-contained kit. Use complete shared-step M1 samples and the capability fixture, then independently rehearse the actual authored course.
 
@@ -17,6 +17,6 @@ Validation ladder:
 5. Role rehearsal: Trainer launch/close/reveal/explain/transition; two Participants, correct/incorrect/saved responses; real paired Projector; path completion/convergence; EN/AR application UI independent from course content; offline assets; desktop/tablet/mobile; restart/reconnect; scoring/report evidence and privacy negatives.
 6. Independent review using FINAL_REVIEW_PROMPT.md. Keep real outputs, exact package hash, failed/skipped/unrun checks and owner acceptance. Passing the parser alone does not certify educational quality or every security property.
 
-Use the full RC1R14 runtime for final rehearsal. The portable kit contains the same parser dependencies, not a second alternative validator. The generator's drift check proves it matches the current source. If a generated output differs, regenerate from current canonical source and review changes; do not edit packaged validator copies by hand.
+Use the full RC1R15 runtime for final rehearsal. The portable kit contains the same parser dependencies, not a second alternative validator. The generator's drift check proves it matches the current source. If a generated output differs, regenerate from current canonical source and review changes; do not edit packaged validator copies by hand.
 
 قيّم كل نشاط بنموذجه الحقيقي: المشاركة ليست إتقانًا، والمراجعة اليدوية ليست تصحيحًا آليًا. اختبر إجابات صحيحة وخاطئة وإخفاء النتيجة قبل الكشف ثم ظهور التغذية الراجعة المناسبة بعده. التحقق متدرج من الأهداف وJSON إلى ZIP ثم الاستيراد والمسودة والنشر والتجريب بالأدوار وإعادة التشغيل والمراجعة المستقلة. احتفظ بالدليل والبصمة والاختبارات الفاشلة والمتجاوزة وغير المنفذة؛ قبول المدقق وحده لا يكفي لقبول الدورة.

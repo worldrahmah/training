@@ -57,7 +57,22 @@ export const WORKSPACE_MIGRATIONS=[{
   CREATE INDEX idx_activity_events_user_id ON activity_events(user_id,id DESC);
   CREATE INDEX idx_activity_events_user_type_date ON activity_events(user_id,event_type,created_at,id);
   CREATE INDEX IF NOT EXISTS idx_activity_events_class_id ON activity_events(class_id,id DESC);
-  INSERT INTO schema_meta(key,value) VALUES('workspace_schema','6') ON CONFLICT(key) DO UPDATE SET value=excluded.value;`}];
+  INSERT INTO schema_meta(key,value) VALUES('workspace_schema','6') ON CONFLICT(key) DO UPDATE SET value=excluded.value;`},{version:'one-workspace-0007',sql:`CREATE TABLE staff_collaboration_preferences(user_id INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,settings_json TEXT NOT NULL DEFAULT '{}');
+ CREATE TABLE staff_conversations(id INTEGER PRIMARY KEY,kind TEXT NOT NULL CHECK(kind IN ('direct','group')),title TEXT NOT NULL DEFAULT '',creator_id INTEGER NOT NULL REFERENCES users(id),direct_key TEXT UNIQUE,created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+ CREATE TABLE staff_conversation_members(conversation_id INTEGER NOT NULL REFERENCES staff_conversations(id) ON DELETE CASCADE,user_id INTEGER NOT NULL REFERENCES users(id),last_read_id INTEGER NOT NULL DEFAULT 0,muted INTEGER NOT NULL DEFAULT 0,PRIMARY KEY(conversation_id,user_id));
+ CREATE INDEX idx_staff_members_user ON staff_conversation_members(user_id,conversation_id);
+ CREATE TABLE staff_messages(id INTEGER PRIMARY KEY,conversation_id INTEGER NOT NULL REFERENCES staff_conversations(id) ON DELETE CASCADE,sender_id INTEGER NOT NULL REFERENCES users(id),request_id TEXT NOT NULL,body TEXT NOT NULL DEFAULT '',attachment_key TEXT,attachment_name TEXT,attachment_mime TEXT,attachment_size INTEGER,attachment_sha256 TEXT,voice INTEGER NOT NULL DEFAULT 0,deleted_at TEXT,created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,UNIQUE(sender_id,request_id));
+ CREATE INDEX idx_staff_messages_conversation ON staff_messages(conversation_id,id DESC);
+ CREATE TABLE staff_calls(id INTEGER PRIMARY KEY,conversation_id INTEGER NOT NULL REFERENCES staff_conversations(id),caller_id INTEGER NOT NULL REFERENCES users(id),callee_id INTEGER NOT NULL REFERENCES users(id),kind TEXT NOT NULL CHECK(kind IN ('audio','video')),status TEXT NOT NULL CHECK(status IN ('ringing','accepted','ended')),caller_seen_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,callee_seen_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+ CREATE INDEX idx_staff_calls_recipient ON staff_calls(callee_id,status,id);
+ CREATE TABLE staff_call_signals(id INTEGER PRIMARY KEY,call_id INTEGER NOT NULL REFERENCES staff_calls(id) ON DELETE CASCADE,sender_id INTEGER NOT NULL REFERENCES users(id),signal_json TEXT NOT NULL,created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+ CREATE INDEX idx_staff_call_signals_call ON staff_call_signals(call_id,id);
+ CREATE TABLE staff_tasks(id INTEGER PRIMARY KEY,creator_id INTEGER NOT NULL REFERENCES users(id),assignee_id INTEGER NOT NULL REFERENCES users(id),title TEXT NOT NULL,description TEXT NOT NULL DEFAULT '',notes TEXT NOT NULL DEFAULT '',status TEXT NOT NULL DEFAULT 'todo' CHECK(status IN ('todo','doing','done','cancelled')),priority TEXT NOT NULL DEFAULT 'normal' CHECK(priority IN ('low','normal','high')),starts_at TEXT,due_at TEXT,recurrence TEXT NOT NULL DEFAULT 'none' CHECK(recurrence IN ('none','daily','weekly','monthly','yearly')),checklist_json TEXT NOT NULL DEFAULT '[]',revision INTEGER NOT NULL DEFAULT 1,created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+ CREATE INDEX idx_staff_tasks_assignee_due ON staff_tasks(assignee_id,due_at,id);
+ CREATE INDEX idx_staff_tasks_creator ON staff_tasks(creator_id,id);
+ CREATE TABLE participant_notes(id INTEGER PRIMARY KEY,user_id INTEGER NOT NULL REFERENCES users(id),class_id INTEGER NOT NULL REFERENCES classes(id) ON DELETE CASCADE,title TEXT NOT NULL,body TEXT NOT NULL DEFAULT '',revision INTEGER NOT NULL DEFAULT 1,created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+ CREATE INDEX idx_participant_notes_owner_class ON participant_notes(user_id,class_id,id DESC);
+ INSERT INTO schema_meta(key,value) VALUES('workspace_schema','7') ON CONFLICT(key) DO UPDATE SET value=excluded.value;`}];
 export function workspaceMigrationPending(db){
   if(!db.prepare("SELECT 1 FROM sqlite_master WHERE type='table' AND name='schema_migrations'").get())return true;
   return WORKSPACE_MIGRATIONS.some(m=>!db.prepare('SELECT 1 FROM schema_migrations WHERE version=?').get(m.version));

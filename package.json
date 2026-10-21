@@ -1,6 +1,6 @@
 {
   "name": "training-engine-one",
-  "version": "3.5.0-rc.1.14",
+  "version": "3.5.0-rc.1.15",
   "private": true,
   "type": "module",
   "description": "Training Engine ONE — local-first professional training management, course authoring and live classroom platform",

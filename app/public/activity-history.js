@@ -1,4 +1,4 @@
-import {api,esc,fmtDateTime,humanEvent,t,toast} from '/core.js';
+import {api,esc,fmtDateTime,humanEvent,t,toast,modal} from '/core.js';
 const controllers=new WeakMap(),views=new Map();
 const day=value=>{const [y,m,d]=value.split('-').map(Number);return new Date(y,m-1,d)};
 export function activityDateRange(period,from='',to='',now=new Date()){
@@ -32,7 +32,7 @@ export function mountActivityHistory(root,{userId,mode='mine',onRecord}={}){
    const select=root.querySelector('[data-history-type]');select.innerHTML=`<option value="">${esc(t('All activity types'))}</option>`+data.types.map(type=>`<option value="${esc(type)}" ${state.type===type?'selected':''}>${esc(humanEvent(type))}</option>`).join('');
    const first=data.total?(data.page-1)*data.page_size+1:0,last=Math.min(data.page*data.page_size,data.total);
    count.textContent=t('Showing {first}–{last} of {total}',{first,last,total:data.total});page.textContent=t('Page {page} of {pages}',{page:data.page,pages:data.pages});prev.disabled=data.page<=1;next.disabled=data.page>=data.pages;
-   results.innerHTML=data.events.length?data.events.map(event=>`<article class="timeline-item" data-history-event="${event.id}"><span class="timeline-dot" aria-hidden="true"></span><div><strong>${esc(humanEvent(event.event_type))}</strong><div class="small muted" dir="auto">${esc([event.class_title,mode==='audit'?event.actor:''].filter(Boolean).join(' · '))}</div></div><time datetime="${esc(event.created_at)}">${esc(fmtDateTime(event.created_at))}</time>${mode==='audit'&&event.class_id?`<button class="btn" data-audit-class="${event.class_id}">${esc(t('Open class'))}</button>`:''}</article>`).join(''):`<div class="empty">${esc(t('No activity matches these filters.'))}</div>`;
+   results.innerHTML=data.events.length?data.events.map(event=>`<article class="timeline-item" data-history-event="${event.id}"><span class="timeline-dot" aria-hidden="true"></span><div><button type="button" class="activity-detail-link" data-activity-detail="${event.id}" data-activity-scope="${mode}">${esc(humanEvent(event.event_type))}</button><div class="small muted" dir="auto">${esc([event.class_title,mode==='audit'?event.actor:''].filter(Boolean).join(' · '))}</div></div><time datetime="${esc(event.created_at)}">${esc(fmtDateTime(event.created_at))}</time>${mode==='audit'&&event.class_id?`<button class="btn" data-audit-class="${event.class_id}">${esc(t('Open class'))}</button>`:''}</article>`).join(''):`<div class="empty">${esc(t('No activity matches these filters.'))}</div>`;
   }catch(error){if(request===sequence&&root.isConnected){count.textContent=error.message;results.innerHTML=`<div class="empty">${esc(t('Activity could not be loaded. Adjust the filters or try Refresh.'))}</div>`;page.textContent='';toast(error.message,'error')}}
   finally{if(request===sequence)root.removeAttribute('aria-busy')}
  },dispose(){disposed=true;sequence++;clearTimeout(searchTimer)}};
@@ -46,3 +46,9 @@ export function mountActivityHistory(root,{userId,mode='mine',onRecord}={}){
  for(const field of ['from','to'])root.querySelector('[data-history-'+field+']').onchange=event=>{state[field]=event.target.value;filter()};
  root.querySelector('[data-history-refresh]').onclick=()=>controller.load();prev.onclick=()=>{state.page--;controller.load()};next.onclick=()=>{state.page++;controller.load()};controller.load();return controller;
 }
+
+export async function showActivityDetail(id,scope='mine'){
+ const data=await api('/api/account/activity/'+Number(id)+(scope==='audit'?'?scope=audit':'')),a=data.activity;
+ return modal(t('Activity details'),`<h3>${esc(humanEvent(a.event_type))}</h3><dl class="activity-detail-fields"><dt>${esc(t('When'))}</dt><dd>${esc(fmtDateTime(a.created_at))}</dd><dt>${esc(t('By'))}</dt><dd dir="auto">${esc(a.actor)}</dd>${a.class_title?`<dt>${esc(t('Class'))}</dt><dd dir="auto">${esc(a.class_title)}</dd>`:''}${a.fields.map(f=>`<dt>${esc(t(f.label))}</dt><dd dir="auto">${esc(f.label==='Title'?f.value:t(f.value))}</dd>`).join('')}</dl>`,{onConfirm:null,cancelText:t('Close')});
+}
+document.addEventListener('click',event=>{const el=event.target.closest('[data-activity-detail]');if(el)showActivityDetail(el.dataset.activityDetail,el.dataset.activityScope).catch(e=>toast(e.message,'error'))});
