@@ -1,6 +1,16 @@
 import {readPreference,writePreference} from './personal-preferences.js';
 const KEY='training_engine_locale';
 const AR={
+"The save timed out. Your change is saved on this device; retry to confirm it.":"انتهت مهلة الحفظ. حُفظ التغيير على هذا الجهاز؛ أعد المحاولة لتأكيده.",
+"Sign in to confirm your saved changes.":"سجّل الدخول لتأكيد تغييراتك المحفوظة.",
+"You do not have permission to save this change.":"ليست لديك صلاحية حفظ هذا التغيير.",
+"This learning activity is no longer available. Refresh your class.":"لم يعد هذا النشاط متاحًا. حدّث صفحة الصف.",
+"This change could not be accepted. Check your response and retry.":"تعذّر قبول هذا التغيير. راجع إجابتك وأعد المحاولة.",
+"The server could not save your change. Retry shortly.":"تعذّر على الخادم حفظ التغيير. أعد المحاولة بعد قليل.",
+"The save could not be confirmed. Refresh your class and review saved changes.":"تعذّر تأكيد الحفظ. حدّث صفحة الصف وراجع التغييرات المحفوظة.",
+"The server could not be reached. Your change is saved on this device; retry to confirm it.":"تعذّر الوصول إلى الخادم. حُفظ التغيير على هذا الجهاز؛ أعد المحاولة لتأكيده.",
+"A saved change needs confirmation. Review saved guided changes to continue.":"يحتاج تغيير محفوظ إلى تأكيد. راجع تغييرات التعلّم المحفوظة للمتابعة.",
+
 "Staff conversation created":"تم إنشاء محادثة موظفين",
 "Conversation members updated":"تم تحديث أعضاء المحادثة",
 "Staff message sent":"تم إرسال رسالة موظفين",

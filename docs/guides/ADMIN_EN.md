@@ -97,3 +97,8 @@ Visible Admin/Trainer overview panels now have the same complete 10/25/50 activi
 Selection forms use searchable, scrollable paginated tables, page select/remove, clear and selected-only actions. Form selections and assignment roles remain stable across pages. Group, audience, team, class participant/staff/course and other large native selection controls share this behavior. Existing people lists are paged locally after authorized retrieval; staff chat directory is SQL paged. Class creation fetches authorized published course-version options once instead of one request per course. Bulk roster selection adds/removes up to 500 participants atomically and preserves historical progress.
 
 The staff calendar uses each browser’s local time zone, including tasks close to midnight. Personal-note export streams the full authorized selection.
+
+
+## RC1R16: reliable Guided saves
+
+Acknowledge, evidence and answers must receive server confirmation before required Next/Finish. Actual offline edits remain saved on this device and replay when the server is reachable. A server/authentication/validation error has its own message; use Saved guided changes to review, retry or discard unresolved work. Do not clear browser storage. Reload old tabs after upgrade; an old queued answer without a revision needs review, preserving newer work. Uploads and fresh page loads need a connection. Staff workspace tools from RC1R15 remain included. See the release certification and root-cause reports for tested scope and deployment limits.

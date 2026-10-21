@@ -1,0 +1,181 @@
+{
+  "version": "3.5.0-rc.1.16",
+  "release_status": "OWNER_ACCEPTANCE_CANDIDATE_NOT_FINAL",
+  "preserved_prior_scope": [
+    "RC1R15 staff collaboration/tasks/calendar/notes/activity/details/scalable-pickers/theme",
+    "RC1R14 finish/per-account appearance/full-width classroom/history/Trash",
+    "Complete prior91-section Creator/runtime requirements,36activities/68resultcases"
+  ],
+  "requirements": [
+    {
+      "section": 1,
+      "requirement": "Read RC1R14 authoritative handoff",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 2,
+      "requirement": "Reproduce actual false offline save",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 3,
+      "requirement": "Repair Core without course weakening",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 4,
+      "requirement": "Use exact official fixtures and trace",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 5,
+      "requirement": "Trace UI to transaction to confirmation",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 6,
+      "requirement": "Correct online/offline detection",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 7,
+      "requirement": "Audit durable outbox lifecycle",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 8,
+      "requirement": "Idempotent retry and lost acknowledgement",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 9,
+      "requirement": "All declared completion/evidence modes",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 10,
+      "requirement": "All twelve embedded interactions",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 11,
+      "requirement": "Ten-question grouped evaluation",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 12,
+      "requirement": "Variables/shared concrete identities",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 13,
+      "requirement": "Branches/remediation/convergence",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 14,
+      "requirement": "Refresh/resume matrix",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 15,
+      "requirement": "Multi-tab/device conflict safety",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 16,
+      "requirement": "Participant authorization negatives",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 17,
+      "requirement": "Database integrity",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 18,
+      "requirement": "Failure taxonomy",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 19,
+      "requirement": "Deterministic quiet UI states",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 20,
+      "requirement": "Accurate saved-change review",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 21,
+      "requirement": "Arabic official fixture full routes",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 22,
+      "requirement": "English official fixture full routes",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 23,
+      "requirement": "Preview/live canonical renderer boundary",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 24,
+      "requirement": "Canonical M2 technical pattern",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 25,
+      "requirement": "Actual offline/reconnect",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 26,
+      "requirement": "Automated regression suites",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 27,
+      "requirement": "No persistence/evidence bypass acceptance",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 28,
+      "requirement": "Machine/human certification matrices",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 29,
+      "requirement": "Development diagnostics without secrets",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 30,
+      "requirement": "New version with RC14 rollback",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 31,
+      "requirement": "Regenerated current authoritative handoff",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 32,
+      "requirement": "Complete packages/hashes/reports",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 33,
+      "requirement": "Precise proven root cause",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    },
+    {
+      "section": 34,
+      "requirement": "Full engineering acceptance before delivery",
+      "status": "PENDING_FINAL_ENGINEERING_GATES"
+    }
+  ]
+}

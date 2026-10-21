@@ -72,7 +72,14 @@ export const WORKSPACE_MIGRATIONS=[{
  CREATE INDEX idx_staff_tasks_creator ON staff_tasks(creator_id,id);
  CREATE TABLE participant_notes(id INTEGER PRIMARY KEY,user_id INTEGER NOT NULL REFERENCES users(id),class_id INTEGER NOT NULL REFERENCES classes(id) ON DELETE CASCADE,title TEXT NOT NULL,body TEXT NOT NULL DEFAULT '',revision INTEGER NOT NULL DEFAULT 1,created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
  CREATE INDEX idx_participant_notes_owner_class ON participant_notes(user_id,class_id,id DESC);
- INSERT INTO schema_meta(key,value) VALUES('workspace_schema','7') ON CONFLICT(key) DO UPDATE SET value=excluded.value;`}];
+ INSERT INTO schema_meta(key,value) VALUES('workspace_schema','7') ON CONFLICT(key) DO UPDATE SET value=excluded.value;`},{version:'one-workspace-0008',sql:`CREATE TABLE guided_mutation_receipts (
+ class_id INTEGER NOT NULL REFERENCES classes(id) ON DELETE CASCADE,
+ user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+ mutation_id TEXT NOT NULL,kind TEXT NOT NULL CHECK(kind IN ('progress','response')),
+ payload_sha256 TEXT NOT NULL,reply_json TEXT NOT NULL,created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ PRIMARY KEY(class_id,user_id,mutation_id));
+ CREATE INDEX idx_guided_receipts_owner ON guided_mutation_receipts(user_id,class_id,created_at);
+ INSERT INTO schema_meta(key,value) VALUES('workspace_schema','8') ON CONFLICT(key) DO UPDATE SET value=excluded.value;`}];
 export function workspaceMigrationPending(db){
   if(!db.prepare("SELECT 1 FROM sqlite_master WHERE type='table' AND name='schema_migrations'").get())return true;
   return WORKSPACE_MIGRATIONS.some(m=>!db.prepare('SELECT 1 FROM schema_migrations WHERE version=?').get(m.version));

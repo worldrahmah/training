@@ -21,7 +21,7 @@ for(const language of ['en','ar']){
  const course={format:'training-engine-course',schema_version:'2.0',course:{id:`rc1r9-catalog-${language}`,version:'1.0',title:language==='ar'?'مختبر الأنشطة الستة والثلاثين':'36 Activity Laboratory',language,direction:language==='ar'?'rtl':'ltr',objectives:[language==='ar'?'اختبار التفاعل والخصوصية والكشف':'Rehearse interaction, privacy and reveal'],modules}};
  const entries=new Map([['course.json',Buffer.from(JSON.stringify(course,null,2)+'\n')],...sampleAssets]);const zip=packageFiles(entries);put(`examples/catalog-${language}.course.zip`,zip);for(const [name,bytes] of entries)put(`examples/catalog-${language}/${name}`,bytes);
 }
-for(const name of ['M1_GUIDED_ACCEPTANCE.course.zip','M1_GUIDED_ACCEPTANCE_EN.course.zip','COURSE_CREATOR_CAPABILITY_TEST.course.zip'])copy('authoring-kit/examples/'+name,'examples/'+name);
+for(const name of ['M1_GUIDED_ACCEPTANCE.course.zip','M1_GUIDED_ACCEPTANCE_EN.course.zip','COURSE_CREATOR_CAPABILITY_TEST.course.zip','GUIDED_PERSISTENCE_ACCEPTANCE.course.zip'])copy('authoring-kit/examples/'+name,'examples/'+name);
 // Preserve the existing executable path/mission example as a verified additional sample, not the historical v1.3 handoff.
 copy('authoring-kit/examples/ENGINE_V2_WORKFLOW_DEMO.course.zip','examples/workflow-paths.course.zip');
 for(const [name,bytes] of files)if(name.endsWith('.course.zip')){const result=parseCoursePackage(bytes,name);if(!result.ok)throw new Error(name+': '+result.errors.join('; '));put(name+'.sha256',sha(bytes)+'  '+path.basename(name)+'\n');}

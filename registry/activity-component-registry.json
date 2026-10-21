@@ -1,6 +1,6 @@
 {
   "format": "training-engine-one-capability-registry",
-  "registry_version": "3.5.0-rc.1.15",
+  "registry_version": "3.5.0-rc.1.16",
   "status": "guided-experience-professional-closure",
   "projector": {
     "themes": [
@@ -1243,8 +1243,14 @@
       "responses": true,
       "edits_and_evidence": true,
       "navigation": "server-confirmed only",
-      "retry": "idempotent request receipts; optimistic revision conflicts retained for review",
-      "uploads": "connection required"
+      "retry": "transactional durable mutation receipts for evidence and answers; optimistic revision conflicts require review",
+      "uploads": "connection required",
+      "durable_before_first_send": true,
+      "http_errors": "status preserved including non-JSON bodies; never classified as offline",
+      "confirmation": "positive revision and exact mutation ID required",
+      "stale_answers": "revision checked alongside evidence",
+      "binary_offline": false,
+      "rebase_scope": "same document origin only; other tab stale queued writes require conflict review"
     },
     "preview_state": "temporary in-memory; no production progress writes",
     "surface_support": {

@@ -1,3 +1,4 @@
+import {guidedFailure,classifyGuidedFailure} from '/guided-persistence.js';
 import {PANEL_COLORS,preferenceAccount,readPreference,writePreference,bindPreferenceAccount,pendingPreferences,acknowledgePreferences} from '/personal-preferences.js';
 export {activityLabel} from '/activity-labels.js';
 import {FONT_CATALOG} from '/font-catalog.js';
@@ -14,9 +15,12 @@ export async function api(path,opts={}){
   await maybeRotate(path);
   const headers={...(opts.headers||{})}; const token=getToken(); if(token)headers['X-Session-Token']=token;
   if(opts.json!==undefined){headers['Content-Type']='application/json';opts.body=JSON.stringify(opts.json)}
-  const res=await fetch(path,{...opts,headers}); let data=null; const ct=res.headers.get('content-type')||'';
-  if(ct.includes('application/json'))data=await res.json();else data=await res.text();
-  if(!res.ok){const raw=data?.message||t('Request failed ({status})',{status:res.status});const e=new Error(userMessage(raw));e.status=res.status;e.data=data;throw e}if(data?.user&&path==='/api/me')bindPersonalPreferences(data.user);return data;
+  let res;try{res=await fetch(path,{...opts,headers})}catch(error){throw guidedFailure(error instanceof TypeError?(navigator.onLine===false?'OFFLINE':'REQUEST_FAILED'):error?.name==='AbortError'?'TIMEOUT':'CLIENT_RUNTIME_ERROR',{endpoint:path})}
+  let data=null;const ct=res.headers.get('content-type')||'';let parseFailed=false;
+  try{if(ct.includes('application/json'))data=await res.json();else data=await res.text()}catch{parseFailed=true}
+  if(!res.ok){const raw=data?.message||t('Request failed ({status})',{status:res.status});const e=new Error(userMessage(raw));e.status=res.status;e.code=classifyGuidedFailure({status:res.status}).code;e.data=data;throw e}
+  if(parseFailed)throw guidedFailure('CLIENT_RUNTIME_ERROR',{status:res.status,endpoint:path});
+  if(data?.user&&path==='/api/me')bindPersonalPreferences(data.user);return data;
 }
 export function esc(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 export function md(v=''){

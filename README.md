@@ -1,3 +1,7 @@
+# Training Engine ONE RC1R16
+
+Current app/Core: 3.5.0-rc.1.16; core schema 3.2, course schema 2.0, workspace schema 8. Includes the complete RC1R15 staff workspace plus Guided persistence and durable outbox repairs. Preserve RC1R14 and matched database/storage backups for rollback. Engineering release gates are recorded in the current verification report; owner hardware/classroom acceptance remains separate. Read [Guided root cause](docs/RC1R16_ROOT_CAUSE.md), [operational changes](docs/RC1R16_OPERATIONAL_REVIEW.md), and the current Course Creator handoff.
+
 # Training Engine ONE v3.5.0 RC1R15
 
 Staff chat/files/voice and two-person audio/video calls, task calendar/checklists/assignment, private participant class notes, safe activity detail dialogs on fully paged staff dashboards, scalable selection tables and personal-theme operations hero. All RC1R14 Finish/Trash/personal preferences and the complete 36-activity/68-result guided Creator/runtime remain.
